@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         webfont: {
             icons: {
                 src: 'code/resources/assets/new-ui/icons/svg/*.svg',
-                dest: 'code/resources/assets/fonts/icons',
+                dest: 'code/resources/assets/fonts/koowa-icons',
                 destCss: 'code/resources/assets/new-ui/scss/utilities',
                 options: {
                     font: 'koowa-icons',

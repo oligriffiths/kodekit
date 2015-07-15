@@ -5062,3 +5062,88 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: auto; } }
+
+/* Editing for iframe */
+body.admin {
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+body.admin nav.navbar,
+body.admin header.header,
+body.admin .subhead-collapse,
+body.admin #status {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto; }
+
+body.admin header.header + div {
+  display: none; }
+
+body.admin .container-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  margin: 0 -20px;
+  padding: 0; }
+
+@media (min-width: 768px) {
+  body.admin .container-main {
+    margin: 0; } }
+
+#system-message-container {
+  display: none; }
+
+body.admin .container-main #content,
+body.admin .container-main #content .row-fluid,
+body.admin .container-main #content .row-fluid .span2,
+body.admin .container-main #content .row-fluid .span10 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto; }
+
+body.admin .container-main:before,
+body.admin .container-main:after,
+body.admin .container-main #content:before,
+body.admin .container-main #content:after,
+body.admin .container-main #content .row-fluid:before,
+body.admin .container-main #content .row-fluid:after,
+body.admin .container-main #content .row-fluid .span10:before,
+body.admin .container-main #content .row-fluid .span10:after {
+  display: none; }
+
+body.admin #system-debug,
+body.admin #system-message-container {
+  display: none; }
+
+body.admin #status {
+  position: relative;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto; }
+
+body.com_todo #content > .row-fluid > .span2 {
+  display: none !important; }
+
+body.com_todo .subhead-collapse,
+body.com_todo .span10 {
+  margin: 0; }
