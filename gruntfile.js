@@ -13,7 +13,7 @@ module.exports = function(grunt) {
         webfont: {
             icons: {
                 src: 'code/resources/assets/new-ui/icons/svg/*.svg',
-                dest: 'code/resources/assets/new-ui/fonts/icons',
+                dest: 'code/resources/assets/fonts/icons',
                 destCss: 'code/resources/assets/new-ui/scss/utilities',
                 options: {
                     font: 'koowa-icons',
@@ -34,10 +34,10 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'code/resources/assets/new-ui/css/admin-default.css': 'code/resources/assets/new-ui/scss/admin-default.scss',
-                    'code/resources/assets/new-ui/css/admin-other.css': 'code/resources/assets/new-ui/scss/admin-other.scss',
-                    'code/resources/assets/new-ui/css/admin-joomla.css': 'code/resources/assets/new-ui/scss/admin-joomla.scss',
-                    'code/resources/assets/new-ui/css/admin-wordpress.css': 'code/resources/assets/new-ui/scss/admin-wordpress.scss'
+                    'code/resources/assets/css/admin-default.css': 'code/resources/assets/new-ui/scss/admin-default.scss',
+                    'code/resources/assets/css/admin-other.css': 'code/resources/assets/new-ui/scss/admin-other.scss',
+                    'code/resources/assets/css/admin-joomla.css': 'code/resources/assets/new-ui/scss/admin-joomla.scss',
+                    'code/resources/assets/css/admin-wordpress.css': 'code/resources/assets/new-ui/scss/admin-wordpress.scss'
                 }
             }
         },
@@ -47,7 +47,11 @@ module.exports = function(grunt) {
         browserSync: {
             dev: {
                 bsFiles: {
-                    src : ["code/resources/assets/new-ui/*.*"]
+                    src : [
+                        "code/resources/assets/css/*.*",
+                        "code/resources/assets/js/*.*",
+                        "code/resources/assets/fonts/*.*"
+                    ]
                 },
                 options: {
                     proxy: "todo.dev",
@@ -68,7 +72,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'code/resources/assets/new-ui/js/scripts.js': [
+                    'code/resources/assets/js/scripts.js': [
                         'bower_components/jquery/dist/jquery.min.js',
                         'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
                         'bower_components/select2/dist/js/select2.min.js',
@@ -77,7 +81,7 @@ module.exports = function(grunt) {
                         'code/resources/assets/new-ui/scripts/overflowing.js',
                         'code/resources/assets/new-ui/scripts/main.js'
                     ],
-                    '_jekyll/js/modernizr.js': [
+                    'code/resources/assets/js/modernizr.js': [
                         'bower_components/modernizr/modernizr.js'
                     ]
                 }
@@ -93,8 +97,8 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 flatten: true,
-                src: 'code/resources/assets/new-ui/css/*.css',
-                dest: 'code/resources/assets/new-ui/css/'
+                src: 'code/resources/assets/css/*.css',
+                dest: 'code/resources/assets/css/'
             }
         },
 
