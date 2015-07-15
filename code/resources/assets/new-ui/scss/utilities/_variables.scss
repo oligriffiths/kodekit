@@ -1,0 +1,374 @@
+/**
+ * Breakpoints
+ * ===========
+ * 1. Separate $desktop variable is being used so all styles
+ *    change together when going from small to larger screen.
+ * 2. Separate $flexbox variable is being used so we can add
+ *    certain styles like height:100%; only when needed
+ */
+
+$alpha: 400px !default;
+$beta: 600px !default;
+$charlie: 768px !default;
+$delta: 1024px !default;
+$minwidth: $alpha !default;
+$desktop: $charlie !default; // 1
+$flexbox-horizontal: $beta !default; // 2
+$flexbox-vertical: 400px !default; // 2
+
+
+
+/**
+ * Typography
+ * ==========
+ */
+
+$font-family: Arial, sans-serif !default;
+$font-size: 13px !default;
+$line-height: 20px !default;
+$bold: 700 !default;
+$regular: 400 !default;
+$font-smoothing: subpixel-antialiased !default;
+
+
+
+/**
+ * Spacing
+ * =======
+ * can either be used as a padding or a margin on elements
+ * Rounding so we won't get half pixels
+ */
+
+$spacing-tiny: round($font-size / 2) !default;
+$spacing-small: round($font-size) !default;
+$spacing: round($font-size * 1.5) !default;
+$spacing-large: round($font-size * 2) !default;
+$spacing-huge: round($font-size * 3) !default;
+
+
+
+/**
+ * Unit size
+ * =========
+ * Rounding so we won't get half pixels
+ * Can be used for things like:
+ * - min-height on table cells
+ * - width and height on buttons inside fixed height rows
+ * - max-height for fixed height rows
+ */
+
+$unit-size: 32px !default;
+
+
+
+/**
+ * Focus color
+ * ===========
+ * The basic focus/outline color
+ */
+
+$color-focus: #F8B632 !default;
+
+
+
+/**
+ * Transition
+ * ==========
+ * The basic transition being used everywhere to get consistent animations
+ * Remember to sync the JavaScript animation time with this setting
+ */
+
+$transition: all 180ms ease-in-out !default;
+
+
+
+/**
+ * Type colors
+ * ===========
+ */
+
+$color-type: #222222 !default;
+$color-type-dark: #111111 !default;
+$color-type-light: #555555 !default;
+
+
+
+/**
+ * Primary color
+ * =============
+ */
+
+$color-primary: #34495e !default;
+$color-primary-lightest: lighten($color-primary, 10%) !default;
+$color-primary-light: lighten($color-primary, 5%) !default;
+$color-primary-dark: darken($color-primary, 5%) !default;
+$color-primary-darkest: darken($color-primary, 10%) !default;
+$color-primary-type: #ecf0f1 !default;
+
+
+
+/**
+ * Secondary color
+ * ===============
+ */
+
+$color-secondary: #3498db !default;
+$color-secondary-lightest: lighten($color-secondary, 10%) !default;
+$color-secondary-light: lighten($color-secondary, 5%) !default;
+$color-secondary-dark: darken($color-secondary, 7%) !default;
+$color-secondary-darkest: darken($color-secondary, 14%) !default;
+$color-secondary-type: white !default;
+
+
+
+/**
+ * Accent color
+ * ============
+ */
+
+$color-accent: $color-secondary !default;
+$color-accent-type: $color-primary !default;
+$color-accent-light: lighten($color-accent, 15%) !default;
+$color-accent-dark: darken($color-accent, 15%) !default;
+$color-accent-primary: $color-secondary !default;
+$color-accent-secondary: $color-accent !default;
+
+$color-success: #27ae60 !default;
+$color-success-type: white !default;
+
+
+/**
+ * Koowa
+ * =====
+ * The default koowa container
+ */
+
+$koowa-background: white !default;
+$koowa-padding: 0 !default;
+
+
+
+/* Border
+ * ======
+ * Set border-color to false if you don't want any borders in your theme
+ * You can override borders in each separate module
+ **/
+
+$border-color: false !default;
+$border-width: 1px !default;
+$border-style: solid !default;
+
+
+
+/**
+ * Sidebar
+ * =======
+ * 1. The width when sidebar is collapsed
+ * 2. Sidebar width on smaller screens
+ * 3. Sidebar width when screen is "$desktop"
+ */
+
+$sidebar-width-collapsed: 66px !default; // 1
+$sidebar-width-small: 180px !default; // 2
+$sidebar-width: 270px !default; // 3
+$sidebar-width-large: 360px !default; // 3
+
+$sidebar-background: $color-primary !default;
+$sidebar-border: $border-color !default;
+$sidebar-color: $color-primary-type !default;
+
+
+
+/**
+ * Toggle button
+ * =============
+ * The toggle button to toggle the sidebar
+ */
+
+$toggle-button-width: $unit-size !default;
+$toggle-button-height: $unit-size !default;
+$toggle-button-border: $border-color !default;
+
+
+
+/**
+ * Breadcrumbs
+ * ===========
+ * 1. The content of the divider
+ * 2. The width of dividers between breadcrumb items
+ * 3. Height of each breadcrumb item
+ * 4. On mobile we don't show all breadcrumb items
+ */
+$breadcrumb-divider-content: "»" !default; // 1
+$breadcrumb-divider-size: $spacing !default; // 2
+$breadcrumb-size: $unit-size !default; // 3
+$breadcrumb-missing-content: "…" !default; // 4
+
+
+
+/**
+ * Table
+ * =====
+ * 1. Height of the table headings
+ * 2. Color of the table headings
+ */
+
+$table-header-size: $unit-size !default; // 1
+$table-header-background: #eee !default; // 2
+$table-header-background-dark: darken($table-header-background, 25%) !default;
+$table-border: $border-color !default;
+
+
+
+/**
+ * Overview layout
+ * ===========
+ * The default overview layout
+ */
+
+$overview-background: white !default;
+$overview-border: $border-color !default;
+
+
+
+/**
+ * Scopebar
+ * ========
+ * 1. Height of the scopebar
+ */
+
+$scopebar-size: $unit-size !default; // 1
+$scopebar-search-background: white !default;
+$scopebar-search-color: $color-type !default;
+
+$scopebar-background: $color-secondary-dark !default;
+$scopebar-border: $border-color !default;
+$scopebar-color: $color-secondary-type !default;
+
+
+
+/**
+ * Default list
+ * ============
+ */
+
+$list-background: $color-primary !default;
+$list-color: $color-primary-type !default;
+
+$list-hover-background: $color-primary-light !default;
+$list-hover-border: $color-primary-lightest !default;
+$list-hover-color: $color-primary-type !default;
+
+$list-active-background: $list-background !default;
+$list-active-border: $color-accent-primary !default;
+$list-active-color: $color-accent-primary !default;
+
+
+
+/**
+ * Default navigation
+ * ==================
+ */
+
+$navigation-background: $color-primary-dark !default;
+$navigation-border: $border-color !default;
+$navigation-color: $color-primary-type !default;
+$navigation-accent: $color-accent-primary !default;
+
+$navigation-hover-background: $color-primary !default;
+$navigation-hover-border: $color-primary-light !default;
+$navigation-hover-color: $color-primary-type !default;
+$navigation-hover-accent: $color-accent-primary !default;
+
+$navigation-active-background: $navigation-background !default;
+$navigation-active-border: $navigation-accent !default;
+$navigation-active-color: $navigation-accent !default;
+
+
+
+/**
+ * Toolbar
+ * =======
+ */
+
+$toolbar-spacing: round($font-size * 0.7) !default;
+
+$toolbar-background: $color-primary-darkest !default;
+$toolbar-border: $border-color !default;
+$toolbar-color: $color-primary-type !default;
+
+$toolbar-button-background: $color-primary !default;
+$toolbar-button-color: $color-primary-type !default;
+$toolbar-button-hover-background: $color-primary-light !default;
+$toolbar-button-hover-color: $color-primary-type !default;
+
+$toolbar-button-primary-background: $color-secondary !default;
+$toolbar-button-primary-color: $color-secondary-type !default;
+$toolbar-button-primary-hover-background: $color-secondary-light !default;
+$toolbar-button-primary-hover-color: $color-secondary-type !default;
+
+$toolbar-title-background: darken($color-primary-darkest, 2%) !default;
+$toolbar-title-color: $color-primary-type !default;
+
+
+
+/**
+ * Overflowing
+ * Overflowing shadows
+ */
+
+$overflow-size: 6px;
+$overflow-blur: $overflow-size * 2;
+$overflow-offset: -($overflow-size);
+$overflow-color: rgba(0,0,0,.66);
+
+
+
+/**
+ * Radio toggle
+ * ============
+ * 1. Use styled radio toggles?
+ * 2. The color for "false"/0 items
+ * 3. The color for "true"/1 items
+ * 4. The color for neutral items
+ */
+
+$radio-toggle: true !default; // 1
+$radio-toggle-0: #c0392b !default; // 2
+$radio-toggle-1: $color-success !default; // 3
+$radio-toggle-neutral: $color-accent !default; // 4
+
+
+
+/**
+ * Bootstrap overrides
+ * ===================
+ * We depend on Bootstrap 3 for a few basic things
+ * This is the place to overwrite the used variables
+ */
+
+$input-height-base: 32px !default;
+$padding-base-vertical: 5px !default;
+$padding-base-horizontal: 10px !default;
+$btn-success-bg: $color-success;
+$btn-success-color: $color-success-type;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @TODO: refactor
+=========================================
+*/
+
+$location-border: $border-color !default;

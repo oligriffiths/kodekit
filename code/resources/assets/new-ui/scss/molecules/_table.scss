@@ -1,0 +1,75 @@
+// Table
+.k-table {
+  table {
+    width: 100%;
+    text-align: left;
+  }
+
+  th, td {
+    padding: 5px;
+  }
+
+  th {
+    background: $table-header-background;
+    height: $table-header-size;
+    position: relative; // For dropdown lists
+    text-align: left;
+    white-space: nowrap; // Don't use long header titles
+    @include border(bottom, $table-border);
+
+    a {
+      display: block; // whole th should be clickable
+    }
+
+    input {
+      display: inline-block;
+    }
+  }
+
+  td {
+    vertical-align: middle;
+    text-align: left;
+    @include border(bottom, $table-border);
+  }
+
+  small {
+    display: block;
+  }
+
+  tr {
+    &:nth-child(even) {
+      td {
+        background: #f5f5f5;
+      }
+    }
+
+    &.k-active {
+      td {
+        background: linear-gradient(to top, lighten($color-secondary, 25%) 0%, lighten($color-secondary, 28%) 100%);
+
+        a {
+          color: $color-type;
+        }
+      }
+    }
+  }
+
+  tfoot {
+    background: #eee;
+  }
+}
+
+// Checkbox
+.k-table__checkbox {
+  display: inline-block;
+}
+
+// Pagination
+.table-pagination {
+  text-align: center;
+
+  select {
+    width: auto;
+    display: inline-block;
+  }
+}

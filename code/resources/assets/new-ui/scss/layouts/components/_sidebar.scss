@@ -1,0 +1,91 @@
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-sidebar {
+  position: relative;
+  z-index: 2;
+  background: $sidebar-background;
+  color: $sidebar-color;
+  @include border(right, $sidebar-border);
+
+  // Faking flexbox on older browsers by using table styling
+  @include breakpoint($desktop) {
+    @include allwidth($sidebar-width-small);
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  // Larger sidebar when space is available
+  @include breakpoint($delta) {
+    @include allwidth($sidebar-width);
+  }
+}
+
+
+
+/**
+ * When JavaScript is enabled
+ * ==========================
+ */
+&.js-enabled {
+
+  .k-sidebar {
+    // Start with a small/closed sidebar
+    @include allwidth($sidebar-width-collapsed);
+    display: table-cell;
+    vertical-align: top;
+    overflow: hidden;
+
+    // On 'desktop' we 'open' the sidebar
+    @include breakpoint($desktop) {
+      @include allwidth($sidebar-width-small);
+    }
+
+    // And we make it even larger when there's enough space
+    @include breakpoint($delta) {
+      @include allwidth($sidebar-width);
+    }
+
+    // Make the sidebar small when closed class is added
+    &.k-closed {
+      @include allwidth($sidebar-width-collapsed);
+    }
+
+    // When on mobile but sidebar is toggled open
+    &.k-opened {
+      width: 100%;
+    }
+
+    // Using max-width here so jQuery can take over by using show()
+    // This way we don't manually have to set display to inline-block, table-cell or block
+    // depending on the element
+    .collapsible {
+      @media (max-width: $desktop) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+.k-flex {
+  @include flexsize {
+    .k-sidebar {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+    }
+
+    .k-sidebar__item {
+      flex: 1 0 auto;
+    }
+  }
+}

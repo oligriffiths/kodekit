@@ -1,0 +1,41 @@
+/**
+ * Default with JavaScript disabled
+ * ================================
+ */
+
+.k-location {
+  // Faking flexbox on older browsers by using table styling
+  display: table;
+  width: 100%;
+  @include border(bottom, $location-border);
+
+
+  background: $color-secondary;
+  color: $color-secondary-type;
+
+  a,
+  button {
+    color: $color-secondary-type;
+
+    &:focus,
+    &:hover {
+      background: $color-secondary-dark;
+    }
+  }
+}
+
+
+
+/**
+ * When flexboxt is in use
+ * =======================
+ */
+
+.k-flex {
+  @include flexsize {
+    .k-location {
+      display: flex;
+      flex: 0 0 auto;
+    }
+  }
+}

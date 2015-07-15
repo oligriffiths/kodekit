@@ -1,0 +1,63 @@
+/**
+ * Setting up html and body
+ * ========================
+ * This way we can work with full-height auto overflowing flexbox pages
+ */
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+// Setting default font
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+/**
+ * Default koowa wrapper
+ * =====================
+ * 1. For full height app with flexbox
+ * 2. By using a max-width we essentially set a min-width when the contents are
+ *    to large for the koowa container. The reason we don't use min-width is
+ *    because if the content is only 300px we don't need horizontal scrollbars
+ * 3. Reset the max-width when viewport is as large as minwidth
+ * 4. The default font smoothing
+ */
+
+.koowa {
+  min-height: 100%; // 1
+  max-width: $minwidth; // 2
+  overflow: auto; // 2
+  background: $koowa-background;
+  padding: $koowa-padding;
+  -webkit-font-smoothing: $font-smoothing;
+
+  @include breakpoint($minwidth) {
+    max-width: none; // 3
+  }
+
+  // Only make height 100% when window is tall enough
+  @media (min-height: $flexbox-vertical) {
+    height: 100%;
+  }
+
+  // Using z-index to be able to talk with JS
+  position: relative; // Needed fo webkit/blink to read z-index with JS
+  z-index: 0; // z-index of 0 on mobile view
+
+  @include breakpoint($desktop) {
+    z-index: 1; // z-index of 1 on desktop view
+  }
+
+  // Border Box size everything
+  &, *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+}

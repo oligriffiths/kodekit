@@ -1,0 +1,45 @@
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-content {
+  position: relative;
+
+  // Faking flexbox on older browsers by using table styling
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
+}
+
+
+
+/**
+ * When JavaScript is enabled
+ * ==========================
+ */
+
+&.js-enabled {
+  .k-content {
+    // Faking flexbox on older browsers by using table styling
+    display: table;
+    width: 100%;
+  }
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+.k-flex {
+  @include flexsize {
+    .k-content {
+      display: flex;
+      flex: 1 1 auto;
+    }
+  }
+}

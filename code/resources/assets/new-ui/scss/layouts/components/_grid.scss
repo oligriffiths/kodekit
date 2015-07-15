@@ -1,0 +1,12 @@
+// Spacing the Bootstrap containers
+.container-fluid {
+  padding: $spacing;
+}
+
+.row {
+  margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

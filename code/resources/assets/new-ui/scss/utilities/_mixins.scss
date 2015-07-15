@@ -1,0 +1,207 @@
+// Cover the entire parent element
+@mixin coverall($margin: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
+  @if $position == true {
+    position: absolute;
+  }
+  @if $top == true {
+    top: $margin;
+  } @else if $top != false {
+    top: $top;
+  }
+  @if $right == true {
+    right: $margin;
+  } @else if $right != false {
+    right: $right;
+  }
+  @if $bottom == true {
+    bottom: $margin;
+  } @else if $bottom != false {
+    bottom: $bottom;
+  }
+  @if $left == true {
+    left: $margin;
+  } @else if $left != false {
+    left: $left;
+  }
+  @if $reset == true {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+}
+
+// Aspect ratio blocks
+// Probably needs a coverall @mixin as a child
+@mixin ratio-block($ratio: 56.25%) {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: " ";
+    padding-top: $ratio;
+  }
+}
+
+// Psuedo elements (styling mostly)
+@mixin psuedo($psuedo: after, $parentposition: true, $display: true, $position: true, $content: true) {
+  @if $parentposition == true {
+    position: relative;
+  }
+  &:#{$psuedo} {
+    @if $display == true {
+      display: block;
+    }
+    @if $position == true {
+      position: absolute;
+    }
+    @if $content == true {
+      content: " ";
+    }
+    @content;
+  }
+}
+
+// Default transition
+@mixin transition($properties: all, $duration: .3s, $easing: ease-in-out) {
+  transition: $properties $duration $easing;
+  // No 1 pixel jumps on smooth transitons
+  -webkit-backface-visibility:hidden;
+}
+
+// Reset elements
+@mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
+  @if $margin == true {
+    margin: 0;
+  }
+  @if $padding == true {
+    padding: 0;
+  }
+  @if $list-style == true {
+    list-style: none;
+  }
+  @if $border == true {
+    border: none;
+  }
+  @if $background == true {
+    background: transparent;
+  }
+}
+
+// Breakpoint
+@mixin breakpoint($width, $type: min, $width--max: false) {
+  @if $type == min {
+    @media screen and (min-width: $width) {
+      @content;
+    }
+  } @else if $type == max {
+    @media screen and (max-width: $width) {
+      @content;
+    }
+  } @else if $type == range {
+    @media screen and (min-width: $width) and (max-width: $width--max) {
+      @content;
+    }
+  }
+}
+
+// Own better clearfix
+@mixin clearfix {
+  &:before,
+  &:after {
+    display: table;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+// Retina
+@mixin retina {
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    @content;
+  }
+}
+
+// Arrows
+@mixin arrow($direction: right, $size: 4px, $color: false) {
+
+  // Top and bottom arrows
+  @if $direction == top or $direction == bottom {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+
+  // Left and right arrows
+  @if $direction == left or $direction == right {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+  }
+
+  // Top
+  @if $direction == top {
+    border-bottom: $size solid;
+
+    @if $color {
+      border-bottom-color: $color;
+    }
+  }
+
+  // Right
+  @if $direction == right {
+    border-left: $size solid;
+
+    @if $color {
+      border-left-color: $color;
+    }
+  }
+
+  // Bottom
+  @if $direction == bottom {
+    border-top: $size solid;
+
+    @if $color {
+      border-top-color: $color;
+    }
+  }
+
+  // Left
+  @if $direction == left {
+    border-right: $size solid;
+
+    @if $color {
+      border-right-color: $color;
+    }
+  }
+}
+
+@mixin allwidth($width) {
+  min-width: $width;
+  width: $width;
+  max-width: $width;
+}
+
+@mixin allheight($height) {
+  min-height: $height;
+  height: $height;
+  max-height: $height;
+}
+
+@mixin flexsize {
+  @media (min-width: $flexbox-horizontal) and (min-height: $flexbox-vertical) {
+    @content
+  }
+}
+
+@mixin border($position, $border-color) {
+  @if $border-color != false {
+    @if $position == 'all' {
+      border: $border-width $border-style $border-color;
+    } @else {
+      border-#{$position}: $border-width $border-style $border-color;
+    }
+  }
+}
