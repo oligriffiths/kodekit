@@ -1,0 +1,24 @@
+/**
+ * Utilities
+ * ============
+ * Checking class three times so we win over most other classes
+ * without using !important. Most selectors are max three long
+ */
+.hidden.hidden.hidden {
+  display: none;
+}
+
+.visually-hidden.visually-hidden.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.margin-bottom.margin-bottom.margin-bottom {
+  margin-bottom: $spacing;
+}

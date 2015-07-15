@@ -1,0 +1,108 @@
+/**
+ * Default with JavaScript disabled
+ * ================================
+ */
+
+.k-toolbar {
+  @include border(bottom, $toolbar-border);
+
+  // Faking flexbox for older browsers
+  @include breakpoint($desktop) {
+    width: 100%;
+    display: table;
+  }
+
+  // When the sidebar is toggled we no longer need a fixed-width header
+  &.k-toggle {
+    .k-toolbar__title {
+      width: auto;
+
+      // Do set a max width so buttons don't get pushed off the page
+      @include breakpoint($desktop) {
+        max-width: $sidebar-width-small;
+      }
+
+      @include breakpoint($delta) {
+        max-width: $sidebar-width;
+      }
+    }
+
+    // Make the buttons as large as possible so the header will be as small as possible
+    .k-toolbar__buttons {
+      width: 100%;
+    }
+  }
+}
+
+
+// The title
+.k-toolbar__title {
+  // Faking flexbox for older browsers
+  @include breakpoint($desktop) {
+    display: table-cell;
+  }
+
+  @include breakpoint($desktop) {
+    @include allwidth($sidebar-width-small);
+  }
+
+  @include breakpoint($delta) {
+    @include allwidth($sidebar-width);
+  }
+
+  // wrap and overflow text in header
+  h2 {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  // Show on hover (now scrollable)
+  &:hover {
+    overflow: auto;
+
+    h2 {
+      overflow: visible;
+      text-overflow: initial;
+    }
+  }
+}
+
+
+// The buttons
+.k-toolbar__buttons {
+  // Faking flexbox for older browsers
+  @include breakpoint($desktop) {
+    display: table-cell;
+    white-space: nowrap;
+    overflow: auto;
+  }
+}
+
+
+
+/**
+ * When flexboxt is in use
+ * =======================
+ */
+
+.k-flex {
+  @include flexsize {
+    .k-toolbar {
+      display: flex;
+      flex: 0 0 auto;
+    }
+
+    .k-toolbar__title {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    .k-toolbar__buttons {
+      flex: 1 1 auto;
+    }
+  }
+}

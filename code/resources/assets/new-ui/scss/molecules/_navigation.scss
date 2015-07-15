@@ -1,0 +1,54 @@
+// Navigation
+.k-navigation {
+  @include reset;
+  @include clearfix;
+  @include border(bottom, $navigation-border);
+  padding: 8px 0;
+  background: $navigation-background;
+
+  a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 16px;
+    color: $navigation-color;
+    text-decoration: none;
+    border-left: 5px solid transparent;
+
+    &:hover,
+    &:focus {
+      background: $navigation-hover-background;
+      border-left-color: $navigation-hover-border;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $navigation-hover-accent;
+    }
+
+    &:focus:hover {
+      outline: none;
+    }
+  }
+
+  span {
+    display: inline-block;
+    text-align: center;
+    width: 24px;
+  }
+
+  .active {
+    a {
+      margin: 6px 0;
+      padding: 4px 16px;
+      font-weight: bold;
+      background: $navigation-active-background;
+      border-left-color: $navigation-active-border;
+      color: $navigation-active-color;
+
+      &:hover {
+        background: transparent;
+        cursor: default;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.k-tree {
+  max-height: 145px;
+  overflow: auto;
+
+  @include breakpoint($desktop) {
+    max-height: none;
+  }
+
+  ul {
+    @include reset;
+  }
+
+  li:hover {
+    background: transparent;
+  }
+
+  li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

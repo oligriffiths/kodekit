@@ -1,0 +1,34 @@
+.k-flex {
+  @media (min-width: $flexbox-horizontal) and (min-height: $flexbox-vertical) {
+
+
+
+    // Breadcrumb & scopebar
+    .k-upload {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+    }
+
+    // Table
+    .k-table-container {
+      display: flex;
+      flex: 1;
+
+      .k-table {
+        display: flex;
+        flex: 1;
+      }
+    }
+
+    .k-sidebar-right {
+      flex: 0 0 auto;
+    }
+
+    .k-sidebar__navigation,
+    .k-sidebar__footer {
+      flex: 0 0 auto;
+    }
+
+  }
+}

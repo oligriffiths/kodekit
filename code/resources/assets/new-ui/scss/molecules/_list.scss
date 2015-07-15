@@ -1,0 +1,117 @@
+// Sidebar list
+.k-list {
+  @include reset($margin: false);
+  margin: $spacing-tiny 0;
+
+  li {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    display: table;
+    border-left: 5px solid transparent;
+    padding: 10px 16px;
+    background: $list-background;
+    color: $list-color;
+    text-decoration: none;
+    width: 100%;
+    white-space: nowrap;
+    position: relative;
+
+    &:hover {
+      background: $list-hover-background;
+      color: $list-hover-color;
+      border-left-color: $list-hover-border;
+    }
+  }
+
+  span {
+    display: table-cell;
+  }
+
+  .k-clicker,
+  [class^="k-icon"] {
+    min-width: 1em;
+  }
+
+  .k-title {
+    width: 99%;
+    text-align: left;
+  }
+
+  .k-clicker {
+    width: 0;
+    min-width: 0;
+    margin-left: -1px;
+    position: relative;
+
+    @include psuedo(before, false) {
+      width: 16px;
+      height: 1.5em;
+      top: 50%;
+      left: -13px;
+      margin-top: -.75em;
+    }
+
+    @include psuedo(after, false) {
+      @include arrow;
+      top: 50%;
+      left: -6px;
+      margin-top: -4px;
+    }
+
+    &:hover {
+      &:after {
+        color: $color-accent-primary;
+      }
+    }
+  }
+
+  .toggled .k-clicker {
+    &:after {
+      border: none;
+      @include arrow(bottom);
+      margin-left: -3px;
+      margin-top: -2px;
+    }
+  }
+
+  .k-clicker + [class^="k-icon"] {
+    margin-left: -1px;
+  }
+
+  [class^="k-icon"] {
+    display: inline-block;
+    text-align: center;
+    width: 24px;
+  }
+
+  .k-spacer {
+    display: table-cell;
+    width: 12px;
+    min-width: 12px;
+    height: 1.5em;
+  }
+
+  .active {
+    a {
+      margin: 6px 0;
+      padding: 4px 16px;
+      font-weight: bold;
+      background: $list-active-background;
+      border-left-color: $list-active-border;
+      color: $list-active-color;
+
+      &:hover {
+        background: transparent;
+        cursor: default;
+      }
+    }
+  }
+
+  .k-control {
+    padding: 6px 9px;
+  }
+}

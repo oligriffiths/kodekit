@@ -1,0 +1,22 @@
+// The theme variables
+@import "themes/wordpress";
+
+// Variables and mixins
+@import "utilities";
+
+// Core styling
+@import "core";
+
+// @TODO: move this somewhere else?
+// Or add a proper comment section here explaining what this does
+.koowa {
+  // Special Wordpress styling
+  .k-overview {
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+  }
+
+  // Don't show the navigation in WP since it's already on the left
+  .k-navigation {
+    display: none;
+  }
+}

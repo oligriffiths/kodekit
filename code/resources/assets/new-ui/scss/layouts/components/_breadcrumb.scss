@@ -1,0 +1,238 @@
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-breadcrumb {
+  // Faking flexbox on older browsers by using table styling
+  display: table-cell;
+  width: 100%;
+  overflow: auto;
+  vertical-align: top;
+
+  ul {
+    @include reset; // Resetting the ul
+
+    /**
+     * Flexing items to get overflow ellipsis
+     * --------------------------------------
+     */
+
+    @include flexsize {
+      display: flex;
+    }
+  }
+
+  /**
+   * Styling list items
+   * ------------------
+   * 1. Floating items next to each other
+   * 2. Make each item at least one breadcrumb size wide
+   * 3. Make room for the separator
+   * 4. Set z-index to 0 so the :after psuedo element will be on top
+   * 5. Hide by default so we can show only a few on mobile
+   */
+
+  li {
+    float: left; // 1
+    min-width: $breadcrumb-size; // 2
+    margin-left: $breadcrumb-divider-size; // 3
+    position: relative; // 4
+    z-index: 0; // 4
+    display: none; // 5
+
+    // Display them on larger screens
+    @include breakpoint($desktop) {
+      display: block;
+    }
+
+
+
+    /**
+     * Flexing items to get overflow ellipsis
+     * --------------------------------------
+     */
+
+    white-space: nowrap;
+    flex: 0 1 auto;
+
+
+
+    /**
+     * List item separator
+     * ------------------
+     */
+
+    @include psuedo(before, $content: false) {
+      content: $breadcrumb-divider-content;
+      width: $breadcrumb-divider-size;
+      top: 0;
+      bottom: 0;
+      left: -$breadcrumb-divider-size;
+      text-align: center;
+      padding-top: $breadcrumb-size / 4;
+      padding-bottom: $breadcrumb-size / 4;
+      line-height: $breadcrumb-size / 2;
+    }
+
+
+    // No separator on last item
+    &:first-child {
+      margin-left: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+
+
+    /**
+     * Hover
+     * -----
+     * Making fake hovers using a data attribute showed
+     * by using a psuedo element
+     */
+
+    &:last-child {
+      a:after {
+        left: auto;
+        right: 2px;
+      }
+    }
+
+    // Increase z-index on hover
+    &:hover {
+      z-index: 1;
+    }
+  }
+
+
+
+  /**
+   * first and last elements
+   * -----------------------
+   * 1. No flexing for these items so the are readable
+   * 2. Always display these items
+   * 3. Do not show the hover
+   */
+
+  .active,
+  .home {
+    flex: 0 0 auto; // 1
+    display: block; // 2
+
+    // 3
+    a:after
+    a:focus:after,
+    a:hover:after {
+      display: none;
+    }
+  }
+
+
+
+  /**
+   * One but last item
+   * -----------------
+   * Show this item on mobile to get a sense of where you are
+   */
+
+  li:nth-last-child(2) {
+    display: block;
+
+    &:before {
+      content: $breadcrumb-missing-content;
+
+      @include breakpoint($desktop) {
+        content: $breadcrumb-divider-content;
+      }
+    }
+  }
+
+}
+
+
+
+/**
+ * Single breadcrumb items
+ * =======================
+ */
+
+.k-breadcrumb__item {
+  min-width: $breadcrumb-size;
+  min-height: $breadcrumb-size;
+  text-align: center;
+  display: block;
+  position: relative;
+  z-index: 2;
+  line-height: $breadcrumb-size / 2;
+  text-decoration: none;
+  padding: round($breadcrumb-size / 4);
+
+  &:after {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $color-secondary-dark;
+    padding: $breadcrumb-size / 4;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+
+    &:after {
+      display: block;
+    }
+  }
+
+  &:focus:after {
+    outline: 2px solid #EABF36;
+    outline-offset: -2px;
+  }
+
+  &:focus:hover:after {
+    outline: none;
+  }
+
+  span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// Bold active item
+.active {
+  .k-breadcrumb__item {
+    font-weight: $bold;
+  }
+}
+
+// Breadcrumb links
+a.k-breadcrumb__item {
+
+  &:after {
+    display: none;
+    position: absolute;
+    content: attr(data-title);
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      display: block;
+    }
+  }
+
+  span {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,72 @@
+/**
+ * Overview layout
+ * ===============
+ * The default overview layout
+ * 1. Left sidebar
+ * 2. Toggle button
+ * 3. Breadrumbs
+ * 4. Upload area
+ * 5. Scopebar
+ * 6. Table / grid / content
+ * 7. Right sidebar
+ * _____________________________
+ * |  1  |2|_3___________|  7  |
+ * |     |_4_____________|     |
+ * |     |_5_____________|     |
+ * |     | 6             |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |_____|_______________|_____|
+ */
+
+@import "components/content";
+@import "components/sidebar"; // 1
+@import "components/location";
+@import "components/toggle-button";
+@import "components/breadcrumb";
+@import "components/scopebar";
+@import "components/component"; // 6
+@import "components/sidebar-right"; // 7
+
+
+
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-overview {
+  background: $overview-background;
+  @include border(all, $overview-border);
+}
+
+
+
+/**
+ * When JavaScript is enabled
+ * ==========================
+ */
+
+&.js-enabled {
+  .k-overview {
+    height: 100%;
+  }
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+.k-flex {
+  &.k-overview {
+    @include flexsize {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      max-height: 100%;
+    }
+  }
+}

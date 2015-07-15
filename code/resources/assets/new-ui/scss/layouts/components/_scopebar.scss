@@ -1,0 +1,138 @@
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-scopebar {
+  @include breakpoint($beta) {
+    display: table;
+    width: 100%;
+  }
+
+  background: $scopebar-background;
+  color: $scopebar-color;
+
+  button {
+    height: $unit-size;
+    padding: 0 $spacing-tiny;
+  }
+
+  a {
+    color: $scopebar-color;
+    cursor: pointer;
+  }
+
+  .k-active {
+    background: rgba(0,0,0,.1);
+    box-shadow: inset 0 2px 3px rgba(0,0,0,.5);
+  }
+}
+
+
+
+/**
+ * Scopebar items
+ * ==============
+ * 1. So the dropdowns get placed properly
+ * 2. Clearing floats, don't use clearfix because flexbox is treating the psuedo elements as elements
+ *    which results in one pixel empty areas between flex children
+ */
+.k-scopebar__item {
+  display: block;
+  position: relative; // 1
+  overflow: hidden; // 2
+  @include border(bottom, $scopebar-border);
+
+  @include breakpoint($beta) {
+    display: table-cell;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+}
+
+.k-scopebar__item--fluid {
+  width: 100%;
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+.k-flex {
+  @include flexsize {
+    .k-scopebar {
+      display: flex;
+      flex: 0 0 auto;
+    }
+
+    .k-scopebar__item {
+      display: flex;
+      flex: 0 0 auto;
+    }
+
+    .k-scopebar__item--fluid {
+      flex: 1 1 auto;
+    }
+
+    .k-scopebar__search {
+      flex: 0 1 auto;
+    }
+  }
+}
+
+
+
+/**
+ * Scopebar buttons
+ * ================
+ */
+
+.k-scopebar__item--buttons {
+  display: table;
+}
+
+.k-scopebar__button {
+  height: $scopebar-size;
+  min-width: $scopebar-size;
+  text-align: center;
+  display: table-cell
+
+  &:focus,
+  &:hover {
+    background: $color-secondary-darkest;
+  }
+}
+
+
+/**
+ * Scopebar search
+ */
+
+.k-scopebar__search {
+  position: relative;
+  min-width: 180px;
+
+  .k-scopebar__search__input {
+    @include reset;
+    -webkit-appearance: none;
+    display: block;
+    background: $scopebar-search-background;
+    color: $scopebar-search-color;
+    padding: $spacing-tiny;
+    height: $scopebar-size;
+    padding-right: $scopebar-size;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .k-scopebar__search__button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $scopebar-size;
+    height: $scopebar-size;
+  }
+}
