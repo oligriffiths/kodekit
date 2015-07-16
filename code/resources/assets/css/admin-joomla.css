@@ -4301,7 +4301,7 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       min-height: 400px;
-      max-height: 100%; } }
+      height: auto; } }
   .koowa .container-fluid {
     padding: 20px; }
   .koowa .row {
