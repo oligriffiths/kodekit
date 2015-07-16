@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /**
+ * Toolbar
+ * =======
+ */
+/**
  * Breakpoints
  * ===========
  * 1. Separate $desktop variable is being used so all styles
@@ -1631,6 +1635,34 @@ body {
  * |     |               |     |
  * |     |               |     |
  * |_____|_______________|_____|
+ */
+  /**
+ * Default with JavaScript disabled
+ * ================================
+ */
+  /**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+  /**
+ * When JavaScript is enabled
+ * ==========================
+ */
+  /**
+ * When flexbox is in use
+ * ======================
+ */
+  /**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+  /**
+ * When JavaScript is enabled
+ * ==========================
+ */
+  /**
+ * When flexbox is in use
+ * ======================
  */
   /**
  * Default styles with JavaScript disabled
@@ -3623,6 +3655,21 @@ body {
     background: transparent;
     border: 0;
     -webkit-appearance: none; }
+  .koowa .k-titlebar {
+    background: #e0e0e0;
+    border-bottom: 1px solid #f2f2f2;
+    color: #555;
+    padding: 0 13px; }
+    .koowa .k-titlebar h2 {
+      padding: 3px 0;
+      font-weight: 400;
+      font-size: 14.95px; }
+      @media screen and (min-width: 768px) {
+        .koowa .k-titlebar h2 {
+          font-size: 16.25px; } }
+      @media screen and (min-width: 1024px) {
+        .koowa .k-titlebar h2 {
+          font-size: 18.2px; } }
   .koowa .k-content {
     position: relative; }
     @media screen and (min-width: 768px) {
@@ -3641,7 +3688,60 @@ body {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
-              flex: 1 1 auto; } }
+              flex: 1 1 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+  .koowa .k-content-wrapper {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .koowa .k-content-wrapper {
+        display: table;
+        width: 100%; } }
+  .koowa.js-enabled .k-content-wrapper {
+    display: table;
+    width: 100%; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .koowa .k-flex .k-content-wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  .koowa .k-component-wrapper {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .koowa .k-component-wrapper {
+        display: table;
+        width: 100%; } }
+  .koowa.js-enabled .k-component-wrapper {
+    display: table;
+    width: 100%; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .koowa .k-flex .k-component-wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   .koowa .k-sidebar {
     position: relative;
     z-index: 2;
@@ -4101,7 +4201,7 @@ a:focus:after,
     .koowa .row:last-child {
       margin-bottom: 0; }
   .koowa .k-toolbar {
-    border-bottom: 1px solid #e1e1e1; }
+    border-bottom: 1px solid #f2f2f2; }
     @media screen and (min-width: 768px) {
       .koowa .k-toolbar {
         width: 100%;
@@ -4144,6 +4244,24 @@ a:focus:after,
       display: table-cell;
       white-space: nowrap;
       overflow: auto; } }
+  .koowa .k-toolbar__buttons .btn-default {
+    background: white;
+    border-color: #f2f2f2;
+    color: #555; }
+    .koowa .k-toolbar__buttons .btn-default:focus,
+    .koowa .k-toolbar__buttons .btn-default:hover {
+      background: #f6f6f6;
+      border-color: #f2f2f2;
+      color: #555; }
+  .koowa .k-toolbar__buttons .btn-success {
+    background: #27ae60;
+    border-color: #27ae60;
+    color: white; }
+    .koowa .k-toolbar__buttons .btn-success:focus,
+    .koowa .k-toolbar__buttons .btn-success:hover {
+      background: #2ecc71;
+      border-color: #2ecc71;
+      color: white; }
   @media (min-width: 600px) and (min-height: 400px) {
     .koowa .k-flex .k-toolbar {
       display: -webkit-box;
@@ -4274,7 +4392,7 @@ a:focus:after,
         border-left-color: white; }
       .koowa .k-navigation a:focus {
         outline: none;
-        border-color: #0073AA; }
+        border-color: #f6f6f6; }
       .koowa .k-navigation a:focus:hover {
         outline: none; }
     .koowa .k-navigation span {
@@ -4286,8 +4404,8 @@ a:focus:after,
       padding: 4px 16px;
       font-weight: bold;
       background: #f2f2f2;
-      border-left-color: #0073AA;
-      color: #0073AA; }
+      border-left-color: #f6f6f6;
+      color: #f6f6f6; }
       .koowa .k-navigation .active a:hover {
         background: transparent;
         cursor: default; }
@@ -4388,7 +4506,7 @@ a:focus:after,
         left: -6px;
         margin-top: -4px; }
       .koowa .k-list .k-clicker:hover:after {
-        color: #0073AA; }
+        color: #f6f6f6; }
     .koowa .k-list .toggled .k-clicker:after {
       border: none;
       border-left: 4px solid transparent;
@@ -4412,8 +4530,8 @@ a:focus:after,
       padding: 4px 16px;
       font-weight: bold;
       background: white;
-      border-left-color: #0073AA;
-      color: #0073AA; }
+      border-left-color: #f6f6f6;
+      color: #f6f6f6; }
       .koowa .k-list .active a:hover {
         background: transparent;
         cursor: default; }
@@ -4886,12 +5004,6 @@ a:focus:after,
     .koowa .k-form__content form {
       max-width: 1080px;
       margin: auto; }
-  .koowa .button--primary {
-    background: #f6f6f6;
-    color: #555; }
-    .koowa .button--primary:hover {
-      background: white;
-      color: #555; }
   .koowa .btn {
     text-decoration: none; }
   .koowa .k-toolbar .select2-container--default .select2-selection--single {
@@ -5013,6 +5125,8 @@ a:focus:after,
     .koowa .k-sidebar-right .labl {
       display: inline-block;
       width: 100px; }
+  .koowa .btn-right {
+    float: right; }
   .koowa .hidden.hidden.hidden {
     display: none; }
   .koowa .visually-hidden.visually-hidden.visually-hidden {

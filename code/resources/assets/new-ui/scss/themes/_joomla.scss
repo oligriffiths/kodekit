@@ -45,16 +45,22 @@ $toolbar-background: #DCE3E9 !default;
 $toolbar-color: $color-accent-dark !default;
 $toolbar-title-background: darken($toolbar-background, 3%) !default;
 $toolbar-title-color: $color-accent-dark !default;
-
-$toolbar-button-background: white !default;
-$toolbar-button-color: $color-type !default;
-$toolbar-button-hover-background: $color-primary-dark !default;
-$toolbar-button-hover-color: $color-primary-type !default;
-
-$toolbar-button-primary-background: $color-success !default;
-$toolbar-button-primary-color: $color-success-type !default;
-$toolbar-button-primary-hover-background: $color-success-light !default;
-$toolbar-button-primary-hover-color: $color-success-type !default;
-
 $toolbar-border: #c7d1da !default;
+
+$toolbar-button-default-background: $color-primary !default;
+$toolbar-button-default-border: $toolbar-border !default;
+$toolbar-button-default-color: $color-primary-type !default;
+$toolbar-button-default-hover-background: $color-secondary !default;
+$toolbar-button-default-hover-border: $toolbar-border !default;
+$toolbar-button-default-hover-color: $color-secondary-type !default;
+
+$toolbar-button-success-background: $color-success !default;
+$toolbar-button-success-border: $color-success !default;
+$toolbar-button-success-color: $color-success-type !default;
+$toolbar-button-success-hover-background: $color-success-light !default;
+$toolbar-button-success-hover-border: $color-success-light !default;
+$toolbar-button-success-hover-color: $color-success-type !default;
+
+
+
 
