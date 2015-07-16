@@ -74,7 +74,6 @@ module.exports = function(grunt) {
                 files: {
                     'code/resources/assets/js/scripts.js': [
                         'bower_components/jquery/dist/jquery.min.js',
-                        'bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
                         'bower_components/select2/dist/js/select2.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'code/resources/assets/new-ui/scripts/tableHeadFixer.js',
