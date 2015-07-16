@@ -46,6 +46,10 @@ body.component {
     padding-bottom: 10px;
   }
 
+  .subhead-collapse {
+    display: none;
+  }
+
   .container-main #content,
   .container-main #content .row-fluid,
   .container-main #content .row-fluid .span12 {

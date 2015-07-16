@@ -65,6 +65,9 @@ body.component {
   body.admin #system-debug,
   body.component #system-debug {
     padding-bottom: 10px; }
+  body.admin .subhead-collapse,
+  body.component .subhead-collapse {
+    display: none; }
   body.admin .container-main #content,
   body.admin .container-main #content .row-fluid,
   body.admin .container-main #content .row-fluid .span12,
