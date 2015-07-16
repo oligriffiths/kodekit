@@ -34,13 +34,10 @@
  * Scopebar items
  * ==============
  * 1. So the dropdowns get placed properly
- * 2. Clearing floats, don't use clearfix because flexbox is treating the psuedo elements as elements
- *    which results in one pixel empty areas between flex children
  */
 .k-scopebar__item {
   display: block;
   position: relative; // 1
-  overflow: hidden; // 2
   @include border(bottom, $scopebar-border);
 
   @include breakpoint($beta) {

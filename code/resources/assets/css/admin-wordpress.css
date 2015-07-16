@@ -1729,8 +1729,6 @@ body {
  * Scopebar items
  * ==============
  * 1. So the dropdowns get placed properly
- * 2. Clearing floats, don't use clearfix because flexbox is treating the psuedo elements as elements
- *    which results in one pixel empty areas between flex children
  */
   /**
  * When flexbox is in use
@@ -4037,7 +4035,6 @@ a:focus:after,
   .koowa .k-scopebar__item {
     display: block;
     position: relative;
-    overflow: hidden;
     border-bottom: 1px solid #e1e1e1; }
     @media screen and (min-width: 600px) {
       .koowa .k-scopebar__item {

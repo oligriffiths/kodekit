@@ -1,24 +1,24 @@
 /*
 Error: Invalid CSS after "  &": expected ";", was ":focus,"
-        on line 103 of layouts/components/_scopebar.scss
+        on line 100 of layouts/components/_scopebar.scss
         from line 28 of layouts/_overview.scss
         from line 53 of _core.scss
         from line 9 of admin-joomla.scss
 
-98:   height: $scopebar-size;
-99:   min-width: $scopebar-size;
-100:   text-align: center;
-101:   display: table-cell
-102: 
-103:   &:focus,
-104:   &:hover {
-105:     background: $color-secondary-darkest;
-106:   }
-107: }
-108: 
+95:   height: $scopebar-size;
+96:   min-width: $scopebar-size;
+97:   text-align: center;
+98:   display: table-cell
+99: 
+100:   &:focus,
+101:   &:hover {
+102:     background: $color-secondary-darkest;
+103:   }
+104: }
+105: 
 
 Backtrace:
-layouts/components/_scopebar.scss:103
+layouts/components/_scopebar.scss:100
 layouts/_overview.scss:28
 _core.scss:53
 admin-joomla.scss:9
@@ -119,4 +119,4 @@ admin-joomla.scss:9
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 103 of layouts/components/_scopebar.scss\A         from line 28 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 9 of admin-joomla.scss\A \A 98:   height: $scopebar-size;\A 99:   min-width: $scopebar-size;\A 100:   text-align: center;\A 101:   display: table-cell\A 102: \A 103:   &:focus,\A 104:   &:hover {\A 105:     background: $color-secondary-darkest;\A 106:   }\A 107: }\A 108: "; }
+  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 100 of layouts/components/_scopebar.scss\A         from line 28 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 9 of admin-joomla.scss\A \A 95:   height: $scopebar-size;\A 96:   min-width: $scopebar-size;\A 97:   text-align: center;\A 98:   display: table-cell\A 99: \A 100:   &:focus,\A 101:   &:hover {\A 102:     background: $color-secondary-darkest;\A 103:   }\A 104: }\A 105: "; }
