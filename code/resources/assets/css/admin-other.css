@@ -144,7 +144,9 @@
     font-family: "koowa-icons";
     src: url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); } }
 
-.koowa-icon-calendar, .koowa-icon-clock, .koowa-icon-close, .koowa-icon-folder, .koowa-icon-grid, .koowa-icon-home, .koowa-icon-menu, .koowa-icon-plus, .koowa-icon-search, .koowa-icon-settings, .koowa-icon-star, .koowa-icon-table, .koowa-icon-user, .koowa .k-icon-star:before, .koowa .k-icon-remove:before, .koowa .k-icon-calendar:before, .koowa .k-icon-home:before, .koowa .k-icon-burger:before, .koowa .k-icon-list:before, .koowa .k-icon-grid:before, .koowa .k-icon-settings:before, .koowa .k-icon-search:before, .koowa .k-icon-plus:before, .koowa .k-icon-user:before, .koowa .k-icon-clock:before, .koowa .k-icon-folder:before {
+.koowa-icon-calendar, .koowa-icon-clock, .koowa-icon-close, .koowa-icon-folder, .koowa-icon-grid, .koowa-icon-home, .koowa-icon-menu, .koowa-icon-plus, .koowa-icon-search, .koowa-icon-settings, .koowa-icon-star, .koowa-icon-table, .koowa-icon-user, .koowa .k-icon-star:before, .koowa .k-icon-remove:before, .koowa .k-icon-calendar:before,
+.koowa .k-icon-activities:before, .koowa .k-icon-home:before,
+.koowa .k-icon-tasks:before, .koowa .k-icon-burger:before, .koowa .k-icon-list:before, .koowa .k-icon-grid:before, .koowa .k-icon-settings:before, .koowa .k-icon-search:before, .koowa .k-icon-plus:before, .koowa .k-icon-user:before, .koowa .k-icon-clock:before, .koowa .k-icon-folder:before {
   speak: none;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
@@ -156,7 +158,9 @@
   font-variant: normal;
   font-weight: normal;
   font-family: 'koowa-icons'; }
-  .koowa-icon-calendar:before, .koowa-icon-clock:before, .koowa-icon-close:before, .koowa-icon-folder:before, .koowa-icon-grid:before, .koowa-icon-home:before, .koowa-icon-menu:before, .koowa-icon-plus:before, .koowa-icon-search:before, .koowa-icon-settings:before, .koowa-icon-star:before, .koowa-icon-table:before, .koowa-icon-user:before, .koowa .k-icon-star:before, .koowa .k-icon-remove:before, .koowa .k-icon-calendar:before, .koowa .k-icon-home:before, .koowa .k-icon-burger:before, .koowa .k-icon-list:before, .koowa .k-icon-grid:before, .koowa .k-icon-settings:before, .koowa .k-icon-search:before, .koowa .k-icon-plus:before, .koowa .k-icon-user:before, .koowa .k-icon-clock:before, .koowa .k-icon-folder:before {
+  .koowa-icon-calendar:before, .koowa-icon-clock:before, .koowa-icon-close:before, .koowa-icon-folder:before, .koowa-icon-grid:before, .koowa-icon-home:before, .koowa-icon-menu:before, .koowa-icon-plus:before, .koowa-icon-search:before, .koowa-icon-settings:before, .koowa-icon-star:before, .koowa-icon-table:before, .koowa-icon-user:before, .koowa .k-icon-star:before, .koowa .k-icon-remove:before, .koowa .k-icon-calendar:before,
+  .koowa .k-icon-activities:before, .koowa .k-icon-home:before,
+  .koowa .k-icon-tasks:before, .koowa .k-icon-burger:before, .koowa .k-icon-list:before, .koowa .k-icon-grid:before, .koowa .k-icon-settings:before, .koowa .k-icon-search:before, .koowa .k-icon-plus:before, .koowa .k-icon-user:before, .koowa .k-icon-clock:before, .koowa .k-icon-folder:before {
     display: inline-block;
     margin: auto; }
 
@@ -4919,10 +4923,14 @@ a:focus:after,
   .koowa .k-icon-remove:before {
     content: "";
     font-size: 10px; }
-  .koowa .k-icon-calendar:before {
-    content: ""; }
-  .koowa .k-icon-home:before {
-    content: ""; }
+  .koowa .k-icon-calendar:before,
+  .koowa .k-icon-activities:before {
+    content: "";
+    margin-right: 10px; }
+  .koowa .k-icon-home:before,
+  .koowa .k-icon-tasks:before {
+    content: "";
+    margin-right: 10px; }
   .koowa .k-icon-burger:before {
     content: ""; }
   .koowa .k-icon-list:before {
