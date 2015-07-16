@@ -78,6 +78,32 @@
     white-space: nowrap;
     overflow: auto;
   }
+
+  .btn-default {
+    background: $toolbar-button-default-background;
+    border-color: $toolbar-button-default-border;
+    color: $toolbar-button-default-color;
+
+    &:focus,
+    &:hover {
+      background: $toolbar-button-default-hover-background;
+      border-color: $toolbar-button-default-hover-border;
+      color: $toolbar-button-default-hover-color;
+    }
+  }
+
+  .btn-success {
+    background: $toolbar-button-success-background;
+    border-color: $toolbar-button-success-border;
+    color: $toolbar-button-success-color;
+
+    &:focus,
+    &:hover {
+      background: $toolbar-button-success-hover-background;
+      border-color: $toolbar-button-success-hover-border;
+      color: $toolbar-button-success-hover-color;
+    }
+  }
 }
 
 
