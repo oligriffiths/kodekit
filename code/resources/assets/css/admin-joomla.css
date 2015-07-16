@@ -65,15 +65,12 @@ body.component {
   body.admin #system-debug,
   body.component #system-debug {
     padding-bottom: 10px; }
-  body.admin .subhead-collapse,
-  body.component .subhead-collapse {
-    display: none; }
   body.admin .container-main #content,
   body.admin .container-main #content .row-fluid,
-  body.admin .container-main #content .row-fluid .span10,
+  body.admin .container-main #content .row-fluid .span12,
   body.component .container-main #content,
   body.component .container-main #content .row-fluid,
-  body.component .container-main #content .row-fluid .span10 {
+  body.component .container-main #content .row-fluid .span12 {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -107,12 +104,6 @@ body.component {
     right: auto;
     bottom: auto;
     left: auto; }
-
-body.com_todo #content > .row-fluid > .span2 {
-  display: none !important; }
-
-body.com_todo #content > .row-fluid > .span10 {
-  width: 100% !important; }
 
 body.com_todo .subhead-collapse,
 body.com_todo .span10 {
