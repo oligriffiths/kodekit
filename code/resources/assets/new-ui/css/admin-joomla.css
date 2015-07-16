@@ -3,7 +3,7 @@ Error: Invalid CSS after "  &": expected ";", was ":focus,"
         on line 103 of layouts/components/_scopebar.scss
         from line 28 of layouts/_overview.scss
         from line 53 of _core.scss
-        from line 8 of admin-joomla.scss
+        from line 9 of admin-joomla.scss
 
 98:   height: $scopebar-size;
 99:   min-width: $scopebar-size;
@@ -21,7 +21,7 @@ Backtrace:
 layouts/components/_scopebar.scss:103
 layouts/_overview.scss:28
 _core.scss:53
-admin-joomla.scss:8
+admin-joomla.scss:9
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1098:in `expected'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1093:in `tok!'
@@ -119,4 +119,4 @@ admin-joomla.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 103 of layouts/components/_scopebar.scss\A         from line 28 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 8 of admin-joomla.scss\A \A 98:   height: $scopebar-size;\A 99:   min-width: $scopebar-size;\A 100:   text-align: center;\A 101:   display: table-cell\A 102: \A 103:   &:focus,\A 104:   &:hover {\A 105:     background: $color-secondary-darkest;\A 106:   }\A 107: }\A 108: "; }
+  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 103 of layouts/components/_scopebar.scss\A         from line 28 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 9 of admin-joomla.scss\A \A 98:   height: $scopebar-size;\A 99:   min-width: $scopebar-size;\A 100:   text-align: center;\A 101:   display: table-cell\A 102: \A 103:   &:focus,\A 104:   &:hover {\A 105:     background: $color-secondary-darkest;\A 106:   }\A 107: }\A 108: "; }

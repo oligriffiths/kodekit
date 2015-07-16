@@ -31,20 +31,16 @@ body {
  */
 
 .koowa {
-  min-height: 100%; // 1
   max-width: $minwidth; // 2
   overflow: auto; // 2
   background: $koowa-background;
   padding: $koowa-padding;
   -webkit-font-smoothing: $font-smoothing;
+  display: flex;
+  flex: 1 1 auto;
 
   @include breakpoint($minwidth) {
     max-width: none; // 3
-  }
-
-  // Only make height 100% when window is tall enough
-  @media (min-height: $flexbox-vertical) {
-    height: 100%;
   }
 
   // Using z-index to be able to talk with JS

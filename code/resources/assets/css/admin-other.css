@@ -1584,20 +1584,24 @@ body {
  * 4. The default font smoothing
  */
 .koowa {
-  min-height: 100%;
   max-width: 400px;
   overflow: auto;
   background: white;
   padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   position: relative;
   z-index: 0; }
   @media screen and (min-width: 400px) {
     .koowa {
       max-width: none; } }
-  @media (min-height: 400px) {
-    .koowa {
-      height: 100%; } }
   @media screen and (min-width: 768px) {
     .koowa {
       z-index: 1; } }
@@ -3671,7 +3675,7 @@ body {
       .koowa .k-content {
         display: table;
         width: 100%; } }
-  .koowa.js-enabled .k-content {
+  .k-js-enabled .k-content {
     display: table;
     width: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
@@ -3696,7 +3700,7 @@ body {
       .koowa .k-content-wrapper {
         display: table;
         width: 100%; } }
-  .koowa.js-enabled .k-content-wrapper {
+  .k-js-enabled .k-content-wrapper {
     display: table;
     width: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
@@ -3720,7 +3724,7 @@ body {
       .koowa .k-component-wrapper {
         display: table;
         width: 100%; } }
-  .koowa.js-enabled .k-component-wrapper {
+  .k-js-enabled .k-component-wrapper {
     display: table;
     width: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
@@ -3755,7 +3759,7 @@ body {
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
-  .koowa.js-enabled .k-sidebar {
+  .k-js-enabled .k-sidebar {
     min-width: 66px;
     width: 66px;
     max-width: 66px;
@@ -3763,23 +3767,23 @@ body {
     vertical-align: top;
     overflow: hidden; }
     @media screen and (min-width: 768px) {
-      .koowa.js-enabled .k-sidebar {
+      .k-js-enabled .k-sidebar {
         min-width: 180px;
         width: 180px;
         max-width: 180px; } }
     @media screen and (min-width: 1024px) {
-      .koowa.js-enabled .k-sidebar {
+      .k-js-enabled .k-sidebar {
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
-    .koowa.js-enabled .k-sidebar.k-closed {
+    .k-js-enabled .k-sidebar.k-closed {
       min-width: 66px;
       width: 66px;
       max-width: 66px; }
-    .koowa.js-enabled .k-sidebar.k-opened {
+    .k-js-enabled .k-sidebar.k-opened {
       width: 100%; }
     @media (max-width: 768px) {
-      .koowa.js-enabled .k-sidebar .collapsible {
+      .k-js-enabled .k-sidebar .collapsible {
         display: none; } }
   @media (min-width: 600px) and (min-height: 400px) {
     .koowa .k-flex .k-sidebar {
@@ -3831,11 +3835,11 @@ body {
     min-width: 32px;
     width: 32px;
     max-width: 32px; }
-  .koowa.js-enabled .k-button--toggle {
+  .k-js-enabled .k-button--toggle {
     display: table-cell;
     vertical-align: top; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa.js-enabled .k-flex .k-button--toggle {
+    .k-js-enabled .k-flex .k-button--toggle {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4100,7 +4104,7 @@ a:focus:after,
       .koowa .k-component {
         display: table-cell;
         vertical-align: top; } }
-  .koowa.js-enabled .k-component {
+  .k-js-enabled .k-component {
     display: table-cell;
     vertical-align: top; }
   @media (min-width: 600px) and (min-height: 400px) {
@@ -4144,30 +4148,30 @@ a:focus:after,
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
-  .koowa.js-enabled .k-sidebar-right {
+  .k-js-enabled .k-sidebar-right {
     min-width: 180px;
     width: 180px;
     max-width: 180px;
     display: table-cell;
     vertical-align: top; }
     @media screen and (min-width: 1024px) {
-      .koowa.js-enabled .k-sidebar-right {
+      .k-js-enabled .k-sidebar-right {
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
     @media screen and (min-width: 768px) {
-      .koowa.js-enabled .k-sidebar-right--large {
+      .k-js-enabled .k-sidebar-right--large {
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
     @media screen and (min-width: 1024px) {
-      .koowa.js-enabled .k-sidebar-right--large {
+      .k-js-enabled .k-sidebar-right--large {
         min-width: 360px;
         width: 360px;
         max-width: 360px; } }
   .koowa .k-overview {
     background: white; }
-  .koowa.js-enabled .k-overview {
+  .k-js-enabled .k-overview {
     height: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
     .koowa .k-flex.k-overview {
@@ -4184,6 +4188,7 @@ a:focus:after,
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
+      min-height: 400px;
       max-height: 100%; } }
   .koowa .container-fluid {
     padding: 20px; }
@@ -4351,7 +4356,7 @@ a:focus:after,
       margin-bottom: 0; }
   .koowa .k-js-control {
     display: none; }
-  .koowa.js-enabled .k-js-control {
+  .k-js-enabled .k-js-control {
     display: block; }
   .koowa .k-navigation {
     margin: 0;
@@ -4996,9 +5001,9 @@ a:focus:after,
     background: red; }
   .koowa .k-list button {
     color: white; }
-  .koowa.js-enabled .k-tree {
+  .k-js-enabled .k-tree {
     max-height: none; }
-    .koowa.js-enabled .k-tree ul {
+    .k-js-enabled .k-tree ul {
       display: none; }
   .koowa .k-sidebar__footer {
     padding: 13px;
@@ -5115,8 +5120,6 @@ a:focus:after,
     float: right; }
   .koowa .k-table {
     overflow: auto; }
-    .koowa .k-table table {
-      height: 900px; }
   .koowa .hidden.hidden.hidden {
     display: none; }
   .koowa .visually-hidden.visually-hidden.visually-hidden {

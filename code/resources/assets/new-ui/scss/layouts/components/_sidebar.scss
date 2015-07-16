@@ -29,7 +29,7 @@
  * When JavaScript is enabled
  * ==========================
  */
-&.js-enabled {
+@at-root .k-js-enabled {
 
   .k-sidebar {
     // Start with a small/closed sidebar

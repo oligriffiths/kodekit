@@ -227,7 +227,7 @@ $table-border: $border-color !default;
  */
 
 $overview-background: white !default;
-$overview-border: false !default;
+$overview-border: $border-color !default;
 
 
 

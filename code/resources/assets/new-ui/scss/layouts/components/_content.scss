@@ -20,7 +20,7 @@
  * ==========================
  */
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-content {
     // Faking flexbox on older browsers by using table styling
     display: table;
@@ -78,7 +78,7 @@
  * ==========================
  */
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-content-wrapper {
     // Faking flexbox on older browsers by using table styling
     display: table;
@@ -133,7 +133,7 @@
  * ==========================
  */
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-component-wrapper {
     // Faking flexbox on older browsers by using table styling
     display: table;

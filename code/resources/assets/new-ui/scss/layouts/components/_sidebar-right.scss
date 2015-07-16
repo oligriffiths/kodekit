@@ -7,7 +7,7 @@
   }
 }
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-sidebar-right {
     @include allwidth($sidebar-width-small);
 
