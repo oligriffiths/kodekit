@@ -3964,18 +3964,16 @@ body {
           -ms-flex: 0 0 32px;
               flex: 0 0 32px; } }
   .koowa .k-breadcrumb {
-    display: table-cell;
-    width: 100%;
     overflow: auto;
     vertical-align: top;
     /**
    * Styling list items
    * ------------------
-   * 1. Floating items next to each other
-   * 2. Make each item at least one breadcrumb size wide
-   * 3. Make room for the separator
-   * 4. Set z-index to 0 so the :after psuedo element will be on top
-   * 5. Hide by default so we can show only a few on mobile
+   * 1. Make each item at least one breadcrumb size wide
+   * 2. Make room for the separator
+   * 3. Set z-index to 0 so the :after psuedo element will be on top
+   * 4. Hide by default so we can show only a few on mobile
+   * 5. Hide overflowing content
    */
     /**
    * first and last elements
@@ -3996,6 +3994,12 @@ body {
       border: none;
       background: transparent;
       /**
+     * Fallback for non flexbox capable browsers
+     * -----------------------------------------
+     */
+      display: table;
+      width: 100%;
+      /**
      * Flexing items to get overflow ellipsis
      * --------------------------------------
      */ }
@@ -4006,21 +4010,16 @@ body {
           display: -ms-flexbox;
           display: flex; } }
     .koowa .k-breadcrumb li {
-      float: left;
       min-width: 32px;
-      margin-left: 20px;
+      padding-left: 20px;
       position: relative;
       z-index: 0;
       display: none;
+      overflow: hidden;
       /**
      * Flexing items to get overflow ellipsis
      * --------------------------------------
      */
-      white-space: nowrap;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 1 auto;
-          -ms-flex: 0 1 auto;
-              flex: 0 1 auto;
       /**
      * List item separator
      * ------------------
@@ -4029,12 +4028,20 @@ body {
       /**
      * Hover
      * -----
-     * Making fake hovers using a data attribute showed
-     * by using a psuedo element
      */ }
       @media screen and (min-width: 768px) {
         .koowa .k-breadcrumb li {
-          display: block; } }
+          display: table-cell; } }
+      @media (min-width: 600px) and (min-height: 400px) {
+        .koowa .k-breadcrumb li {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 1 auto;
+              -ms-flex: 0 1 auto;
+                  flex: 0 1 auto; } }
       .koowa .k-breadcrumb li:before {
         display: block;
         position: absolute;
@@ -4042,27 +4049,38 @@ body {
         width: 20px;
         top: 0;
         bottom: 0;
-        left: -20px;
+        left: 0;
         text-align: center;
         padding-top: 8px;
         padding-bottom: 8px;
         line-height: 16px; }
+      .koowa .k-breadcrumb li:after {
+        display: none;
+        content: " "; }
       .koowa .k-breadcrumb li:first-child {
-        margin-left: 0; }
+        padding-left: 0; }
         .koowa .k-breadcrumb li:first-child:before {
           display: none; }
       .koowa .k-breadcrumb li:last-child a:after {
         left: auto;
         right: 2px; }
       .koowa .k-breadcrumb li:hover {
-        z-index: 1; }
+        z-index: 1;
+        overflow: visible;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto; }
+        .koowa .k-breadcrumb li:hover:after {
+          display: block; }
     .koowa .k-breadcrumb .active,
     .koowa .k-breadcrumb .home {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto;
-      display: block; }
+      display: block;
+      overflow: visible; }
       .koowa .k-breadcrumb .active a:after
 a:focus:after,
       .koowa .k-breadcrumb .active a:hover:after,
@@ -4086,13 +4104,10 @@ a:focus:after,
     z-index: 2;
     line-height: 16px;
     text-decoration: none;
-    padding: 8px; }
-    .koowa .k-breadcrumb__item:after {
-      top: 0;
-      left: 0;
-      bottom: 0;
-      background: #e4e4e4;
-      padding: 8px; }
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
     .koowa .k-breadcrumb__item:hover,
     .koowa .k-breadcrumb__item:focus {
       outline: none; }
@@ -4104,27 +4119,8 @@ a:focus:after,
       outline-offset: -2px; }
     .koowa .k-breadcrumb__item:focus:hover:after {
       outline: none; }
-    .koowa .k-breadcrumb__item span {
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis; }
   .koowa .active .k-breadcrumb__item {
     font-weight: 700; }
-  .koowa a.k-breadcrumb__item:after {
-    display: none;
-    position: absolute;
-    content: attr(data-title);
-    z-index: 3;
-    pointer-events: none; }
-  .koowa a.k-breadcrumb__item:hover:after,
-  .koowa a.k-breadcrumb__item:focus:after {
-    display: block; }
-  .koowa a.k-breadcrumb__item span {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
   .koowa .k-scopebar {
     background: #eee;
     color: #555; }
