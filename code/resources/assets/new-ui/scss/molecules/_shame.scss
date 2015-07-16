@@ -214,3 +214,11 @@
 .btn-right {
   float: right;
 }
+
+.k-table {
+  overflow: auto;
+
+  table {
+    height: 900px;
+  }
+}

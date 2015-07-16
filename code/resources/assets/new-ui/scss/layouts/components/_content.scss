@@ -62,6 +62,7 @@
 
 .k-content-wrapper {
   position: relative;
+  margin: 0;
 
   // Faking flexbox on older browsers by using table styling
   @include breakpoint($desktop) {

@@ -3690,7 +3690,8 @@ body {
           -ms-flex-direction: column;
               flex-direction: column; } }
   .koowa .k-content-wrapper {
-    position: relative; }
+    position: relative;
+    margin: 0; }
     @media screen and (min-width: 768px) {
       .koowa .k-content-wrapper {
         display: table;
@@ -5112,6 +5113,10 @@ a:focus:after,
       width: 100px; }
   .koowa .btn-right {
     float: right; }
+  .koowa .k-table {
+    overflow: auto; }
+    .koowa .k-table table {
+      height: 900px; }
   .koowa .hidden.hidden.hidden {
     display: none; }
   .koowa .visually-hidden.visually-hidden.visually-hidden {
