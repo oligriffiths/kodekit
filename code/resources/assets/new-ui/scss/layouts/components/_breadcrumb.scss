@@ -4,14 +4,20 @@
  */
 
 .k-breadcrumb {
-  // Faking flexbox on older browsers by using table styling
-  display: table-cell;
-  width: 100%;
   overflow: auto;
   vertical-align: top;
 
   ul {
     @include reset; // Resetting the ul
+
+
+    /**
+     * Fallback for non flexbox capable browsers
+     * -----------------------------------------
+     */
+    display: table;
+    width: 100%;
+
 
     /**
      * Flexing items to get overflow ellipsis
@@ -21,40 +27,41 @@
     @include flexsize {
       display: flex;
     }
+
   }
 
   /**
    * Styling list items
    * ------------------
-   * 1. Floating items next to each other
-   * 2. Make each item at least one breadcrumb size wide
-   * 3. Make room for the separator
-   * 4. Set z-index to 0 so the :after psuedo element will be on top
-   * 5. Hide by default so we can show only a few on mobile
+   * 1. Make each item at least one breadcrumb size wide
+   * 2. Make room for the separator
+   * 3. Set z-index to 0 so the :after psuedo element will be on top
+   * 4. Hide by default so we can show only a few on mobile
+   * 5. Hide overflowing content
    */
 
   li {
-    float: left; // 1
-    min-width: $breadcrumb-size; // 2
-    margin-left: $breadcrumb-divider-size; // 3
-    position: relative; // 4
-    z-index: 0; // 4
-    display: none; // 5
+    min-width: $breadcrumb-size; // 1
+    padding-left: $breadcrumb-divider-size; // 2
+    position: relative; // 3
+    z-index: 0; // 3
+    display: none; // 4
+    overflow: hidden; // 5
 
     // Display them on larger screens
     @include breakpoint($desktop) {
-      display: block;
+      display: table-cell;
     }
-
-
 
     /**
      * Flexing items to get overflow ellipsis
      * --------------------------------------
      */
 
-    white-space: nowrap;
-    flex: 0 1 auto;
+    @include flexsize {
+      display: flex;
+      flex: 0 1 auto;
+    }
 
 
 
@@ -68,17 +75,24 @@
       width: $breadcrumb-divider-size;
       top: 0;
       bottom: 0;
-      left: -$breadcrumb-divider-size;
+      left: 0;
       text-align: center;
       padding-top: $breadcrumb-size / 4;
       padding-bottom: $breadcrumb-size / 4;
       line-height: $breadcrumb-size / 2;
     }
 
+    // Adding psuedo element to show on hover
+    // This way on mobile you get a double tap
+    &:after {
+      display: none;
+      content: " ";
+    }
 
-    // No separator on last item
+
+    // No separator on first item
     &:first-child {
-      margin-left: 0;
+      padding-left: 0;
 
       &:before {
         display: none;
@@ -90,8 +104,6 @@
     /**
      * Hover
      * -----
-     * Making fake hovers using a data attribute showed
-     * by using a psuedo element
      */
 
     &:last-child {
@@ -104,6 +116,13 @@
     // Increase z-index on hover
     &:hover {
       z-index: 1;
+      overflow: visible;
+      flex: 0 0 auto;
+
+      // Display the psuedo element to get a double tap
+      &:after {
+        display: block;
+      }
     }
   }
 
@@ -121,6 +140,7 @@
   .home {
     flex: 0 0 auto; // 1
     display: block; // 2
+    overflow: visible;
 
     // 3
     a:after
@@ -169,14 +189,9 @@
   line-height: $breadcrumb-size / 2;
   text-decoration: none;
   padding: round($breadcrumb-size / 4);
-
-  &:after {
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background: $color-secondary-dark;
-    padding: $breadcrumb-size / 4;
-  }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover,
   &:focus {
@@ -195,44 +210,11 @@
   &:focus:hover:after {
     outline: none;
   }
-
-  span {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 // Bold active item
 .active {
   .k-breadcrumb__item {
     font-weight: $bold;
-  }
-}
-
-// Breadcrumb links
-a.k-breadcrumb__item {
-
-  &:after {
-    display: none;
-    position: absolute;
-    content: attr(data-title);
-    z-index: 3;
-    pointer-events: none;
-  }
-
-  &:hover,
-  &:focus {
-    &:after {
-      display: block;
-    }
-  }
-
-  span {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 }
