@@ -108,12 +108,18 @@
 }
 
 
-.k-icon-calendar {
-  @include icon-before(calendar, true);
+.k-icon-calendar,
+.k-icon-activities {
+  @include icon-before(calendar, true) {
+    margin-right: 10px;
+  }
 }
 
-.k-icon-home {
-  @include icon-before(home, true);
+.k-icon-home,
+.k-icon-tasks {
+  @include icon-before(home, true) {
+    margin-right: 10px;
+  }
 }
 
 .k-icon-burger {
