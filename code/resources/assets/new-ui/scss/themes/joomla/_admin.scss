@@ -52,7 +52,7 @@ body.component {
 
   .container-main #content,
   .container-main #content .row-fluid,
-  .container-main #content .row-fluid .span12 {
+  .container-main #content .row-fluid .span10 {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -80,6 +80,10 @@ body.component {
 
 body.com_todo #content>.row-fluid>.span2 {
   display: none !important;
+}
+
+body.com_todo #content>.row-fluid>.span10 {
+  width: 100% !important;
 }
 
 body.com_todo {
