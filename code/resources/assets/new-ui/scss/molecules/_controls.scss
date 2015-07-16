@@ -5,6 +5,6 @@
 }
 
 // Display JS only controls when JS is enabled
-&.js-enabled .k-js-control {
+@at-root .k-js-enabled .k-js-control {
   display: block;
 }

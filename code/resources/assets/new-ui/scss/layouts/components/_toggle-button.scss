@@ -19,7 +19,7 @@
  * ==========================
  */
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-button--toggle {
     // Faking flexbox on older browsers by using table styling
     display: table-cell;
@@ -34,7 +34,7 @@
  * =======================
  */
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-flex {
     @include flexsize {
       .k-button--toggle {

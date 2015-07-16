@@ -39,7 +39,7 @@
   }
 }
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-tree {
     max-height: none;
 
@@ -219,6 +219,6 @@
   overflow: auto;
 
   table {
-    height: 900px;
+//    height: 1800px;
   }
 }

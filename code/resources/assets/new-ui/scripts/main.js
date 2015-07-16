@@ -2,13 +2,8 @@ $(document).ready(function() {
 
 
     // Sticky table header and footer
-    // @TODO: find a better one that's actually responsive
-   // $('.table--fixed').fixedHeaderTable({ footer: true, cloneHeadToFoot: false, fixedColumn: false, height: "auto" });
+    $('.table--fixed').tableHeadFixer({'foot' : true, 'head' : true});
 
-    $(document).ready(function() {
-        $('.table--fixed').tableHeadFixer({'foot' : true, 'head' : true});
-    });
-    
 
     // Enable Select2 for all selectboxes within a select2 class container
     var select2 = $('.select2');

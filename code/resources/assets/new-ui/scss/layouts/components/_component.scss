@@ -20,7 +20,7 @@
  * ==========================
  */
 
-&.js-enabled {
+@at-root .k-js-enabled {
   .k-component {
     display: table-cell;
     vertical-align: top;
