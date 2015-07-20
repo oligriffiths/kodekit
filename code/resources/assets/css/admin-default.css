@@ -4193,20 +4193,22 @@ a:focus:after,
     margin-bottom: 20px; }
     .koowa .row:last-child {
       margin-bottom: 0; }
-  @media screen and (min-width: 768px) {
-    .koowa .k-toolbar {
-      width: 100%;
-      display: table; } }
-  .koowa .k-toolbar.k-toggle .k-toolbar__title {
-    width: auto; }
+  .koowa .k-toolbar {
+    background: #222f3d; }
     @media screen and (min-width: 768px) {
-      .koowa .k-toolbar.k-toggle .k-toolbar__title {
-        max-width: 180px; } }
-    @media screen and (min-width: 1024px) {
-      .koowa .k-toolbar.k-toggle .k-toolbar__title {
-        max-width: 270px; } }
-  .koowa .k-toolbar.k-toggle .k-toolbar__buttons {
-    width: 100%; }
+      .koowa .k-toolbar {
+        width: 100%;
+        display: table; } }
+    .koowa .k-toolbar.k-toggle .k-toolbar__title {
+      width: auto; }
+      @media screen and (min-width: 768px) {
+        .koowa .k-toolbar.k-toggle .k-toolbar__title {
+          max-width: 180px; } }
+      @media screen and (min-width: 1024px) {
+        .koowa .k-toolbar.k-toggle .k-toolbar__title {
+          max-width: 270px; } }
+    .koowa .k-toolbar.k-toggle .k-toolbar__buttons {
+      width: 100%; }
   @media screen and (min-width: 768px) {
     .koowa .k-toolbar__title {
       display: table-cell; } }
