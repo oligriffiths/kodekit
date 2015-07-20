@@ -1593,16 +1593,18 @@ body {
   background: white;
   padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
   position: relative;
   z-index: 0; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .koowa {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto; } }
   @media screen and (min-width: 400px) {
     .koowa {
       max-width: none; } }
@@ -3953,21 +3955,26 @@ body {
         right: 2px; }
       .koowa .k-breadcrumb li:hover {
         z-index: 1;
-        overflow: visible;
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 auto;
-            -ms-flex: 0 0 auto;
-                flex: 0 0 auto; }
+        overflow: visible; }
+        @media (min-width: 600px) and (min-height: 400px) {
+          .koowa .k-breadcrumb li:hover {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 auto;
+                -ms-flex: 0 0 auto;
+                    flex: 0 0 auto; } }
         .koowa .k-breadcrumb li:hover:after {
           display: block; }
     .koowa .k-breadcrumb .active,
     .koowa .k-breadcrumb .home {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto;
       display: block;
       overflow: visible; }
+      @media (min-width: 600px) and (min-height: 400px) {
+        .koowa .k-breadcrumb .active,
+        .koowa .k-breadcrumb .home {
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 auto;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto; } }
       .koowa .k-breadcrumb .active a:after
 a:focus:after,
       .koowa .k-breadcrumb .active a:hover:after,
@@ -4553,15 +4560,16 @@ a:focus:after,
       background: rgba(0, 0, 0, 0.05); }
   .koowa .overflowing {
     position: relative; }
-    .koowa .overflowing--flex {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; }
+    @media (min-width: 600px) and (min-height: 400px) {
+      .koowa .overflowing--flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto; } }
     .koowa .overflowing--top,
     .koowa .overflowing--right,
     .koowa .overflowing--bottom,

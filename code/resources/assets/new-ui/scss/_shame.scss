@@ -14,8 +14,8 @@
 }
 
 
-.k-flex {
-  @include flexsize {
+@include flexbox {
+  .k-flex {
     &.k-form {
       display: flex;
       flex: 1 1 auto;

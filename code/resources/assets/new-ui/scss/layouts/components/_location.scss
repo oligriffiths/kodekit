@@ -31,8 +31,8 @@
  * =======================
  */
 
-.k-flex {
-  @include flexsize {
+@include flexbox {
+  .k-flex {
     .k-location {
       display: flex;
       flex: 0 0 auto;
