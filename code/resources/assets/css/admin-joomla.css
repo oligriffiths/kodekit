@@ -213,7 +213,25 @@
 /* Editing for iframe */
 body.admin,
 body.component {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  /**
+   * Basic setup
+   * -----------
+   * Always remove the toolbar and empty div
+   * We are showing this ourselves
+   */
+  /**
+   * Flexbox setup
+   * -------------
+   * Set Joomla containers to flex and adjust margins and paddings
+   * As soon as something in this chain of classnames changes we fall back to non-flexbox view
+   */ }
+  body.admin header.header + div,
+  body.component header.header + div {
+    display: none; }
+  body.admin .subhead-collapse,
+  body.component .subhead-collapse {
+    display: none; }
   @media (min-width: 600px) and (min-height: 400px) {
     body.admin,
     body.component {
@@ -225,7 +243,22 @@ body.component {
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      /**
+     * Do not flex following items
+     */
+      /**
+     * The main container
+     */
+      /**
+     * Remove spacing and border-radius to align alerts to the side
+     */
+      /**
+     * Reduce bottom padding on debug container
+     */
+      /**
+     * Remove margin from bootstrap grid item
+     */ }
       body.admin nav.navbar,
       body.admin header.header,
       body.admin .subhead-collapse,
@@ -242,9 +275,6 @@ body.component {
         -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
                 flex: 0 0 auto; }
-      body.admin header.header + div,
-      body.component header.header + div {
-        display: none; }
       body.admin .container-main,
       body.component .container-main {
         display: -webkit-box;
@@ -256,12 +286,68 @@ body.component {
             -ms-flex: 1 1 auto;
                 flex: 1 1 auto;
         margin: 0 -20px;
-        padding: 0; } }
-  @media (min-width: 600px) and (min-height: 400px) and (min-width: 768px) {
-    body.admin .container-main,
-    body.component .container-main {
-      margin: 0; } }
+        padding: 0;
+        /**
+       * Flex all children of main container
+       */
+        /**
+       * Remove clearfix psuedo elements
+       * Otherwise they'll be treated as 1 pixel flex items
+       */
+        /**
+       * No longer a fixed position for the statusbar
+       * since that doesn't play nice with flexbox
+       */
+        /**
+       * Remove the border on successful flexbox
+       */ } }
+    @media screen and (min-width: 600px) and (min-height: 400px) and (min-width: 768px) {
+      body.admin .container-main,
+      body.component .container-main {
+        margin: 0; } }
   @media (min-width: 600px) and (min-height: 400px) {
+        body.admin .container-main #content,
+        body.admin .container-main #content .row-fluid,
+        body.admin .container-main #content .row-fluid .span12,
+        body.component .container-main #content,
+        body.component .container-main #content .row-fluid,
+        body.component .container-main #content .row-fluid .span12 {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1 1 auto;
+              -ms-flex: 1 1 auto;
+                  flex: 1 1 auto;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: column;
+              -ms-flex-direction: column;
+                  flex-direction: column; }
+        body.admin .container-main:before,
+        body.admin .container-main:after,
+        body.admin .container-main #content:before,
+        body.admin .container-main #content:after,
+        body.admin .container-main #content .row-fluid:before,
+        body.admin .container-main #content .row-fluid:after,
+        body.component .container-main:before,
+        body.component .container-main:after,
+        body.component .container-main #content:before,
+        body.component .container-main #content:after,
+        body.component .container-main #content .row-fluid:before,
+        body.component .container-main #content .row-fluid:after {
+          display: none; }
+        body.admin .container-main + #status,
+        body.component .container-main + #status {
+          position: relative;
+          top: auto;
+          right: auto;
+          bottom: auto;
+          left: auto; }
+        body.admin .container-main #content .row-fluid .span12 .k-overview,
+        body.component .container-main #content .row-fluid .span12 .k-overview {
+          border: none; }
       body.admin #system-message-container,
       body.component #system-message-container {
         padding: 0; }
@@ -273,55 +359,8 @@ body.component {
       body.admin #system-debug,
       body.component #system-debug {
         padding-bottom: 10px; }
-      body.admin .subhead-collapse,
-      body.component .subhead-collapse {
-        display: none; }
-      body.admin .container-main #content,
-      body.admin .container-main #content .row-fluid,
-      body.admin .container-main #content .row-fluid .span12,
-      body.component .container-main #content,
-      body.component .container-main #content .row-fluid,
-      body.component .container-main #content .row-fluid .span12 {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1 1 auto;
-            -ms-flex: 1 1 auto;
-                flex: 1 1 auto;
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column; }
-      body.admin .container-main:before,
-      body.admin .container-main:after,
-      body.admin .container-main #content:before,
-      body.admin .container-main #content:after,
-      body.admin .container-main #content .row-fluid:before,
-      body.admin .container-main #content .row-fluid:after,
-      body.component .container-main:before,
-      body.component .container-main:after,
-      body.component .container-main #content:before,
-      body.component .container-main #content:after,
-      body.component .container-main #content .row-fluid:before,
-      body.component .container-main #content .row-fluid:after {
-        display: none; }
-      body.admin .container-main + #status,
-      body.component .container-main + #status {
-        position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto; }
-      body.admin .k-overview,
-      body.component .k-overview {
-        border: none; }
-      body.admin.com_todo .subhead-collapse,
-      body.admin.com_todo .span10,
-      body.component.com_todo .subhead-collapse,
-      body.component.com_todo .span10 {
+      body.admin .span10,
+      body.component .span10 {
         margin: 0; } }
 
 /**

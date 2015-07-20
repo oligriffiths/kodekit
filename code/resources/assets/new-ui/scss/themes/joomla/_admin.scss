@@ -4,9 +4,38 @@ body.admin,
 body.component {
   box-sizing: border-box;
 
+  /**
+   * Basic setup
+   * -----------
+   * Always remove the toolbar and empty div
+   * We are showing this ourselves
+   */
+
+  header.header + div {
+    display: none;
+  }
+
+  .subhead-collapse {
+    display: none;
+  }
+
+
+
+  /**
+   * Flexbox setup
+   * -------------
+   * Set Joomla containers to flex and adjust margins and paddings
+   * As soon as something in this chain of classnames changes we fall back to non-flexbox view
+   */
+
   @include flexbox {
     display: flex;
     flex-direction: column;
+
+
+    /**
+     * Do not flex following items
+     */
 
     nav.navbar,
     header.header,
@@ -17,22 +46,80 @@ body.component {
       flex: 0 0 auto;
     }
 
-    header.header + div {
-      display: none;
-    }
+
+    /**
+     * The main container
+     */
 
     .container-main {
       display: flex;
       flex: 1 1 auto;
       margin: 0 -20px;
       padding: 0;
-    }
 
-    @media (min-width: 768px) {
-      .container-main {
+      // Remove negative margin when screen is wide enough
+      @include breakpoint(768px) {
         margin: 0;
       }
+
+
+      /**
+       * Flex all children of main container
+       */
+
+      #content,
+      #content .row-fluid,
+      #content .row-fluid .span12 {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+      }
+
+
+      /**
+       * Remove clearfix psuedo elements
+       * Otherwise they'll be treated as 1 pixel flex items
+       */
+
+      &:before,
+      &:after,
+      #content:before,
+      #content:after,
+      #content .row-fluid:before,
+      #content .row-fluid:after {
+        display: none;
+      }
+
+
+      /**
+       * No longer a fixed position for the statusbar
+       * since that doesn't play nice with flexbox
+       */
+
+      & + #status {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+      }
+
+
+      /**
+       * Remove the border on successful flexbox
+       */
+
+      #content .row-fluid .span12 {
+        .k-overview {
+          border: none;
+        }
+      }
     }
+
+
+    /**
+     * Remove spacing and border-radius to align alerts to the side
+     */
 
     #system-message-container {
       padding: 0;
@@ -44,48 +131,22 @@ body.component {
       }
     }
 
+
+    /**
+     * Reduce bottom padding on debug container
+     */
+
     #system-debug {
       padding-bottom: 10px;
     }
 
-    .subhead-collapse {
-      display: none;
-    }
 
-    .container-main #content,
-    .container-main #content .row-fluid,
-    .container-main #content .row-fluid .span12 {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-    }
+    /**
+     * Remove margin from bootstrap grid item
+     */
 
-    .container-main:before,
-    .container-main:after,
-    .container-main #content:before,
-    .container-main #content:after,
-    .container-main #content .row-fluid:before,
-    .container-main #content .row-fluid:after {
-      display: none;
-    }
-
-    .container-main + #status {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-    }
-
-    .k-overview {
-      border: none;
-    }
-
-    &.com_todo {
-      .subhead-collapse,
-      .span10 {
-        margin: 0;
-      }
+    .span10 {
+      margin: 0;
     }
   }
 }
