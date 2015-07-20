@@ -49,8 +49,7 @@ module.exports = function(grunt) {
                 bsFiles: {
                     src : [
                         "code/resources/assets/css/*.*",
-                        "code/resources/assets/js/*.*",
-                        "code/resources/assets/fonts/*.*"
+                        "code/resources/assets/js/*.*"
                     ]
                 },
                 options: {
