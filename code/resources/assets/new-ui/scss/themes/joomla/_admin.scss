@@ -20,6 +20,15 @@ body.component {
   }
 
 
+  /**
+   * Adding spacing to overview
+   */
+
+  .k-overview {
+    margin-top: $spacing;
+  }
+
+
 
   /**
    * Flexbox setup
@@ -112,6 +121,7 @@ body.component {
       #content .row-fluid .span12 {
         .k-overview {
           border: none;
+          margin-top: 0;
         }
       }
     }

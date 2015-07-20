@@ -5,7 +5,19 @@
 
 .k-breadcrumb {
   overflow: auto;
-  vertical-align: top;
+  background: $color-secondary;
+  color: $color-secondary-type;
+  @include border(bottom, $location-border);
+
+  a,
+  button {
+    color: $color-secondary-type;
+
+    &:focus,
+    &:hover {
+      background: $color-secondary-dark;
+    }
+  }
 
   ul {
     @include reset; // Resetting the ul
@@ -175,6 +187,22 @@
     }
   }
 
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+@include flexbox {
+  .k-flex {
+    .k-breadcrumb {
+      display: flex;
+      flex: 0 0 auto;
+    }
+  }
 }
 
 
