@@ -4,6 +4,7 @@
  */
 
 .k-toolbar {
+  background: $toolbar-background;
   @include border(bottom, $toolbar-border);
 
   // Faking flexbox for older browsers

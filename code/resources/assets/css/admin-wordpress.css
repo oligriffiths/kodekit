@@ -4204,6 +4204,7 @@ a:focus:after,
     .koowa .row:last-child {
       margin-bottom: 0; }
   .koowa .k-toolbar {
+    background: #e6e6e6;
     border-bottom: 1px solid #f2f2f2; }
     @media screen and (min-width: 768px) {
       .koowa .k-toolbar {
