@@ -4857,9 +4857,13 @@ a:focus:after,
         .koowa .k-toolbar__title h2 {
           font-size: 18.2px; } }
   .koowa .k-toolbar__buttons {
-    padding: 9px;
-    padding-bottom: 0;
-    background: #DCE3E9; }
+    padding: 9px 9px 0 0;
+    background: #DCE3E9;
+    width: 100%; }
+    .koowa .k-toolbar__buttons .btn-toolbar {
+      margin: 0; }
+    .koowa .k-toolbar__buttons .btn-group {
+      margin-left: 0; }
     .koowa .k-toolbar__buttons .btn {
       margin-right: 0;
       margin-left: 9px;
