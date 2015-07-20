@@ -176,9 +176,17 @@
 }
 
 .k-toolbar__buttons {
-  padding: $toolbar-spacing;
-  padding-bottom: 0;
+  padding: $toolbar-spacing $toolbar-spacing 0 0;
   background: $toolbar-background;
+  width: 100%;
+
+  .btn-toolbar {
+    margin: 0;
+  }
+
+  .btn-group {
+    margin-left: 0;
+  }
 
   .btn {
     margin-right: 0;
