@@ -1595,16 +1595,6 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   position: relative;
   z-index: 0; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; } }
   @media screen and (min-width: 400px) {
     .koowa {
       max-width: none; } }
@@ -1651,10 +1641,6 @@ body {
  * =======================================
  */
   /**
- * When JavaScript is enabled
- * ==========================
- */
-  /**
  * When flexbox is in use
  * ======================
  */
@@ -1693,14 +1679,6 @@ body {
   /**
  * When flexbox is in use
  * ======================
- */
-  /**
- * Default with JavaScript disabled
- * ================================
- */
-  /**
- * When flexboxt is in use
- * =======================
  */
   /**
  * Default with JavaScript disabled
@@ -1718,6 +1696,10 @@ body {
   /**
  * Default styles with JavaScript disabled
  * =======================================
+ */
+  /**
+ * When flexbox is in use
+ * ======================
  */
   /**
  * Single breadcrumb items
@@ -1746,10 +1728,6 @@ body {
   /**
  * Default styles with JavaScript disabled
  * =======================================
- */
-  /**
- * When JavaScript is enabled
- * ==========================
  */
   /**
  * When flexbox is in use
@@ -3677,26 +3655,8 @@ body {
     position: relative; }
     @media screen and (min-width: 768px) {
       .koowa .k-content {
-        display: table;
+        display: table-cell;
         width: 100%; } }
-  .k-js-enabled .k-content {
-    display: table;
-    width: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-content {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column; } }
   .koowa .k-content-wrapper {
     position: relative;
     margin: 0; }
@@ -3707,21 +3667,6 @@ body {
   .k-js-enabled .k-content-wrapper {
     display: table;
     width: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-content-wrapper {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
   .koowa .k-component-wrapper {
     position: relative; }
     @media screen and (min-width: 768px) {
@@ -3731,21 +3676,6 @@ body {
   .k-js-enabled .k-component-wrapper {
     display: table;
     width: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-component-wrapper {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
   .koowa .k-sidebar {
     position: relative;
     z-index: 2;
@@ -3789,49 +3719,6 @@ body {
     @media (max-width: 768px) {
       .k-js-enabled .k-sidebar .collapsible {
         display: none; } }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-sidebar {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .koowa .k-flex .k-sidebar__item {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 auto;
-          -ms-flex: 1 0 auto;
-              flex: 1 0 auto; } }
-  .koowa .k-location {
-    display: table;
-    width: 100%;
-    background: #3498db;
-    color: white; }
-    .koowa .k-location a,
-    .koowa .k-location button {
-      color: white; }
-      .koowa .k-location a:focus,
-      .koowa .k-location a:hover,
-      .koowa .k-location button:focus,
-      .koowa .k-location button:hover {
-        background: #2386c8; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-location {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; } }
   .koowa .k-button--toggle {
     display: none;
     min-height: 32px;
@@ -3842,19 +3729,10 @@ body {
   .k-js-enabled .k-button--toggle {
     display: table-cell;
     vertical-align: top; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .k-js-enabled .k-flex .k-button--toggle {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 32px;
-          -ms-flex: 0 0 32px;
-              flex: 0 0 32px; } }
   .koowa .k-breadcrumb {
     overflow: auto;
-    vertical-align: top;
+    background: #3498db;
+    color: white;
     /**
    * Styling list items
    * ------------------
@@ -3876,6 +3754,14 @@ body {
    * -----------------
    * Show this item on mobile to get a sense of where you are
    */ }
+    .koowa .k-breadcrumb a,
+    .koowa .k-breadcrumb button {
+      color: white; }
+      .koowa .k-breadcrumb a:focus,
+      .koowa .k-breadcrumb a:hover,
+      .koowa .k-breadcrumb button:focus,
+      .koowa .k-breadcrumb button:hover {
+        background: #2386c8; }
     .koowa .k-breadcrumb ul {
       margin: 0;
       padding: 0;
@@ -3892,12 +3778,6 @@ body {
      * Flexing items to get overflow ellipsis
      * --------------------------------------
      */ }
-      @media (min-width: 600px) and (min-height: 400px) {
-        .koowa .k-breadcrumb ul {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex; } }
     .koowa .k-breadcrumb li {
       min-width: 32px;
       padding-left: 20px;
@@ -3921,16 +3801,6 @@ body {
       @media screen and (min-width: 768px) {
         .koowa .k-breadcrumb li {
           display: table-cell; } }
-      @media (min-width: 600px) and (min-height: 400px) {
-        .koowa .k-breadcrumb li {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-flex: 0;
-          -webkit-flex: 0 1 auto;
-              -ms-flex: 0 1 auto;
-                  flex: 0 1 auto; } }
       .koowa .k-breadcrumb li:before {
         display: block;
         position: absolute;
@@ -3956,25 +3826,12 @@ body {
       .koowa .k-breadcrumb li:hover {
         z-index: 1;
         overflow: visible; }
-        @media (min-width: 600px) and (min-height: 400px) {
-          .koowa .k-breadcrumb li:hover {
-            -webkit-box-flex: 0;
-            -webkit-flex: 0 0 auto;
-                -ms-flex: 0 0 auto;
-                    flex: 0 0 auto; } }
         .koowa .k-breadcrumb li:hover:after {
           display: block; }
     .koowa .k-breadcrumb .active,
     .koowa .k-breadcrumb .home {
       display: block;
       overflow: visible; }
-      @media (min-width: 600px) and (min-height: 400px) {
-        .koowa .k-breadcrumb .active,
-        .koowa .k-breadcrumb .home {
-          -webkit-box-flex: 0;
-          -webkit-flex: 0 0 auto;
-              -ms-flex: 0 0 auto;
-                  flex: 0 0 auto; } }
       .koowa .k-breadcrumb .active a:after
 a:focus:after,
       .koowa .k-breadcrumb .active a:hover:after,
@@ -4041,35 +3898,6 @@ a:focus:after,
         white-space: nowrap; } }
   .koowa .k-scopebar__item--fluid {
     width: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-scopebar {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .koowa .k-flex .k-scopebar__item {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .koowa .k-flex .k-scopebar__item--fluid {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; }
-    .koowa .k-flex .k-scopebar__search {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 1 auto;
-          -ms-flex: 0 1 auto;
-              flex: 0 1 auto; } }
   .koowa .k-scopebar__item--buttons {
     display: table; }
   .koowa .k-scopebar__button {
@@ -4104,28 +3932,6 @@ a:focus:after,
       height: 32px; }
   .koowa .k-component {
     position: relative; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-component {
-        display: table-cell;
-        vertical-align: top; } }
-  .k-js-enabled .k-component {
-    display: table-cell;
-    vertical-align: top; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-component {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; } }
   .koowa .k-component.k-closed {
     position: absolute;
     top: 0;
@@ -4177,23 +3983,6 @@ a:focus:after,
     background: white; }
   .k-js-enabled .k-overview {
     height: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex.k-overview {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      min-height: 400px;
-      height: auto; } }
   .koowa .container-fluid {
     padding: 20px; }
   .koowa .row {
@@ -4243,7 +4032,8 @@ a:focus:after,
     .koowa .k-toolbar__buttons {
       display: table-cell;
       white-space: nowrap;
-      overflow: auto; } }
+      overflow: auto;
+      vertical-align: top; } }
   .koowa .k-toolbar__buttons .btn-default {
     background: #46627f;
     border-color: #46627f;
@@ -4262,83 +4052,6 @@ a:focus:after,
       background: #4aa3df;
       border-color: #4aa3df;
       color: white; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-toolbar {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .koowa .k-flex .k-toolbar__title {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto;
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; }
-    .koowa .k-flex .k-toolbar__buttons {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; } }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-upload {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .koowa .k-flex .k-table-container {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1; }
-      .koowa .k-flex .k-table-container .k-table {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-            -ms-flex: 1;
-                flex: 1; }
-    .koowa .k-flex .k-sidebar-right {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .koowa .k-flex .k-sidebar__navigation,
-    .koowa .k-flex .k-sidebar__footer {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; } }
   .koowa a {
     color: #3498db; }
   .koowa button {
@@ -4560,16 +4273,6 @@ a:focus:after,
       background: rgba(0, 0, 0, 0.05); }
   .koowa .overflowing {
     position: relative; }
-    @media (min-width: 600px) and (min-height: 400px) {
-      .koowa .overflowing--flex {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-flex: 1;
-        -webkit-flex: 1 1 auto;
-            -ms-flex: 1 1 auto;
-                flex: 1 1 auto; } }
     .koowa .overflowing--top,
     .koowa .overflowing--right,
     .koowa .overflowing--bottom,
@@ -5151,25 +4854,5 @@ a:focus:after,
     float: left; }
   .koowa .btn-sm, .koowa .btn-group-sm > .btn {
     padding: 3px 8px; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex.k-form {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      height: 100%; }
-    .koowa .k-flex .k-form__content {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      overflow: auto; } }
+  .koowa .k-nowrap {
+    white-space: nowrap; }

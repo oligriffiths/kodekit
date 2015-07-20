@@ -8,22 +8,7 @@
 
   // Faking flexbox on older browsers by using table styling
   @include breakpoint($desktop) {
-    display: table;
-    width: 100%;
-  }
-}
-
-
-
-/**
- * When JavaScript is enabled
- * ==========================
- */
-
-@at-root .k-js-enabled {
-  .k-content {
-    // Faking flexbox on older browsers by using table styling
-    display: table;
+    display: table-cell;
     width: 100%;
   }
 }
