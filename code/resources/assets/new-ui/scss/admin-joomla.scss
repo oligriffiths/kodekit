@@ -1,9 +1,11 @@
 // The theme variables
 @import "themes/joomla/variables";
-@import "themes/joomla/admin";
 
 // Variables and mixins
 @import "utilities";
+
+// Joomla overrides
+@import "themes/joomla/admin";
 
 // Core styling
 @import "core";

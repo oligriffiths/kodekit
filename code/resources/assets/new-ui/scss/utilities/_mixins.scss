@@ -190,9 +190,11 @@
   max-height: $height;
 }
 
-@mixin flexsize {
-  @media (min-width: $flexbox-horizontal) and (min-height: $flexbox-vertical) {
-    @content
+@mixin flexbox {
+  @if $flexbox == true {
+    @media (min-width: $flexbox-horizontal) and (min-height: $flexbox-vertical) {
+      @content
+    }
   }
 }
 

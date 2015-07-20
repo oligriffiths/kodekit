@@ -114,8 +114,8 @@
  * =======================
  */
 
-.k-flex {
-  @include flexsize {
+@include flexbox {
+  .k-flex {
     .k-toolbar {
       display: flex;
       flex: 0 0 auto;

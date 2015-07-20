@@ -33,9 +33,11 @@
 .overflowing {
   position: relative;
 
-  &--flex {
-    display: flex;
-    flex: 1 1 auto;
+  @include flexbox {
+    &--flex {
+      display: flex;
+      flex: 1 1 auto;
+    }
   }
 
   &--top,

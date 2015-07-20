@@ -34,9 +34,9 @@
  * =======================
  */
 
-@at-root .k-js-enabled {
-  .k-flex {
-    @include flexsize {
+@include flexbox {
+  @at-root .k-js-enabled {
+    .k-flex {
       .k-button--toggle {
         display: flex;
         flex: 0 0 $toggle-button-width;

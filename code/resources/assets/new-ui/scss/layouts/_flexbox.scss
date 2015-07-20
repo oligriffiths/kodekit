@@ -1,8 +1,5 @@
-.k-flex {
-  @media (min-width: $flexbox-horizontal) and (min-height: $flexbox-vertical) {
-
-
-
+@include flexbox {
+  .k-flex {
     // Breadcrumb & scopebar
     .k-upload {
       display: flex;
@@ -29,6 +26,5 @@
     .k-sidebar__footer {
       flex: 0 0 auto;
     }
-
   }
 }

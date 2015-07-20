@@ -6,115 +6,6 @@
  * Toolbar
  * =======
  */
-/* Editing for iframe */
-body.admin,
-body.component {
-  box-sizing: border-box;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-  body.admin nav.navbar,
-  body.admin header.header,
-  body.admin .subhead-collapse,
-  body.admin #status,
-  body.admin #system-message-container,
-  body.admin #system-debug,
-  body.component nav.navbar,
-  body.component header.header,
-  body.component .subhead-collapse,
-  body.component #status,
-  body.component #system-message-container,
-  body.component #system-debug {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto; }
-  body.admin header.header + div,
-  body.component header.header + div {
-    display: none; }
-  body.admin .container-main,
-  body.component .container-main {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    margin: 0 -20px;
-    padding: 0; }
-  @media (min-width: 768px) {
-    body.admin .container-main,
-    body.component .container-main {
-      margin: 0; } }
-  body.admin #system-message-container,
-  body.component #system-message-container {
-    padding: 0; }
-    body.admin #system-message-container .alert,
-    body.component #system-message-container .alert {
-      margin: 0;
-      border-radius: 0;
-      border-bottom: none; }
-  body.admin #system-debug,
-  body.component #system-debug {
-    padding-bottom: 10px; }
-  body.admin .subhead-collapse,
-  body.component .subhead-collapse {
-    display: none; }
-  body.admin .container-main #content,
-  body.admin .container-main #content .row-fluid,
-  body.admin .container-main #content .row-fluid .span12,
-  body.component .container-main #content,
-  body.component .container-main #content .row-fluid,
-  body.component .container-main #content .row-fluid .span12 {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-  body.admin .container-main:before,
-  body.admin .container-main:after,
-  body.admin .container-main #content:before,
-  body.admin .container-main #content:after,
-  body.admin .container-main #content .row-fluid:before,
-  body.admin .container-main #content .row-fluid:after,
-  body.component .container-main:before,
-  body.component .container-main:after,
-  body.component .container-main #content:before,
-  body.component .container-main #content:after,
-  body.component .container-main #content .row-fluid:before,
-  body.component .container-main #content .row-fluid:after {
-    display: none; }
-  body.admin .container-main + #status,
-  body.component .container-main + #status {
-    position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
-    left: auto; }
-  body.admin .k-overview,
-  body.component .k-overview {
-    border: none; }
-
-body.com_todo .subhead-collapse,
-body.com_todo .span10 {
-  margin: 0; }
-
 /**
  * Breakpoints
  * ===========
@@ -318,6 +209,120 @@ body.com_todo .span10 {
 
 .koowa-icon-user:before {
   content: ""; }
+
+/* Editing for iframe */
+body.admin,
+body.component {
+  box-sizing: border-box; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    body.admin,
+    body.component {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      body.admin nav.navbar,
+      body.admin header.header,
+      body.admin .subhead-collapse,
+      body.admin #status,
+      body.admin #system-message-container,
+      body.admin #system-debug,
+      body.component nav.navbar,
+      body.component header.header,
+      body.component .subhead-collapse,
+      body.component #status,
+      body.component #system-message-container,
+      body.component #system-debug {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto; }
+      body.admin header.header + div,
+      body.component header.header + div {
+        display: none; }
+      body.admin .container-main,
+      body.component .container-main {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        margin: 0 -20px;
+        padding: 0; } }
+  @media (min-width: 600px) and (min-height: 400px) and (min-width: 768px) {
+    body.admin .container-main,
+    body.component .container-main {
+      margin: 0; } }
+  @media (min-width: 600px) and (min-height: 400px) {
+      body.admin #system-message-container,
+      body.component #system-message-container {
+        padding: 0; }
+        body.admin #system-message-container .alert,
+        body.component #system-message-container .alert {
+          margin: 0;
+          border-radius: 0;
+          border-bottom: none; }
+      body.admin #system-debug,
+      body.component #system-debug {
+        padding-bottom: 10px; }
+      body.admin .subhead-collapse,
+      body.component .subhead-collapse {
+        display: none; }
+      body.admin .container-main #content,
+      body.admin .container-main #content .row-fluid,
+      body.admin .container-main #content .row-fluid .span12,
+      body.component .container-main #content,
+      body.component .container-main #content .row-fluid,
+      body.component .container-main #content .row-fluid .span12 {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+      body.admin .container-main:before,
+      body.admin .container-main:after,
+      body.admin .container-main #content:before,
+      body.admin .container-main #content:after,
+      body.admin .container-main #content .row-fluid:before,
+      body.admin .container-main #content .row-fluid:after,
+      body.component .container-main:before,
+      body.component .container-main:after,
+      body.component .container-main #content:before,
+      body.component .container-main #content:after,
+      body.component .container-main #content .row-fluid:before,
+      body.component .container-main #content .row-fluid:after {
+        display: none; }
+      body.admin .container-main + #status,
+      body.component .container-main + #status {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto; }
+      body.admin .k-overview,
+      body.component .k-overview {
+        border: none; }
+      body.admin.com_todo .subhead-collapse,
+      body.admin.com_todo .span10,
+      body.component.com_todo .subhead-collapse,
+      body.component.com_todo .span10 {
+        margin: 0; } }
 
 /**
  * Outside of the koowa namespace
@@ -1709,16 +1714,18 @@ body {
   background: white;
   padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
   position: relative;
   z-index: 0; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .koowa {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto; } }
   @media screen and (min-width: 400px) {
     .koowa {
       max-width: none; } }
@@ -4073,21 +4080,26 @@ body {
         right: 2px; }
       .koowa .k-breadcrumb li:hover {
         z-index: 1;
-        overflow: visible;
-        -webkit-box-flex: 0;
-        -webkit-flex: 0 0 auto;
-            -ms-flex: 0 0 auto;
-                flex: 0 0 auto; }
+        overflow: visible; }
+        @media (min-width: 600px) and (min-height: 400px) {
+          .koowa .k-breadcrumb li:hover {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 auto;
+                -ms-flex: 0 0 auto;
+                    flex: 0 0 auto; } }
         .koowa .k-breadcrumb li:hover:after {
           display: block; }
     .koowa .k-breadcrumb .active,
     .koowa .k-breadcrumb .home {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto;
       display: block;
       overflow: visible; }
+      @media (min-width: 600px) and (min-height: 400px) {
+        .koowa .k-breadcrumb .active,
+        .koowa .k-breadcrumb .home {
+          -webkit-box-flex: 0;
+          -webkit-flex: 0 0 auto;
+              -ms-flex: 0 0 auto;
+                  flex: 0 0 auto; } }
       .koowa .k-breadcrumb .active a:after
 a:focus:after,
       .koowa .k-breadcrumb .active a:hover:after,
@@ -4677,15 +4689,16 @@ a:focus:after,
       background: rgba(0, 0, 0, 0.05); }
   .koowa .overflowing {
     position: relative; }
-    .koowa .overflowing--flex {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; }
+    @media (min-width: 600px) and (min-height: 400px) {
+      .koowa .overflowing--flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto; } }
     .koowa .overflowing--top,
     .koowa .overflowing--right,
     .koowa .overflowing--bottom,

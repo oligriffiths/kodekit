@@ -35,8 +35,8 @@
  * ======================
  */
 
-.k-flex {
-  @include flexsize {
+@include flexbox {
+  .k-flex {
     .k-content {
       display: flex;
       flex: 1 1 auto;
@@ -93,8 +93,8 @@
  * ======================
  */
 
-.k-flex {
-  @include flexsize {
+@include flexbox {
+  .k-flex {
     .k-content-wrapper {
       display: flex;
       flex: 1 1 auto;
@@ -148,8 +148,8 @@
  * ======================
  */
 
-.k-flex {
-  @include flexsize {
+@include flexbox {
+  .k-flex {
     .k-component-wrapper {
       display: flex;
       flex: 1 1 auto;

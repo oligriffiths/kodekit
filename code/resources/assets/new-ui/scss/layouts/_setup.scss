@@ -36,8 +36,11 @@ body {
   background: $koowa-background;
   padding: $koowa-padding;
   -webkit-font-smoothing: $font-smoothing;
-  display: flex;
-  flex: 1 1 auto;
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+  }
 
   @include breakpoint($minwidth) {
     max-width: none; // 3

@@ -24,7 +24,7 @@
      * --------------------------------------
      */
 
-    @include flexsize {
+    @include flexbox {
       display: flex;
     }
 
@@ -58,7 +58,7 @@
      * --------------------------------------
      */
 
-    @include flexsize {
+    @include flexbox {
       display: flex;
       flex: 0 1 auto;
     }
@@ -117,7 +117,10 @@
     &:hover {
       z-index: 1;
       overflow: visible;
-      flex: 0 0 auto;
+
+      @include flexbox {
+        flex: 0 0 auto;
+      }
 
       // Display the psuedo element to get a double tap
       &:after {
@@ -138,7 +141,9 @@
 
   .active,
   .home {
-    flex: 0 0 auto; // 1
+    @include flexbox {
+      flex: 0 0 auto; // 1
+    }
     display: block; // 2
     overflow: visible;
 
