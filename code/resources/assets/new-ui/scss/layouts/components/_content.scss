@@ -4,7 +4,19 @@
  */
 
 .k-content {
-  position: relative;
+  transition: $transition;
+
+  @include psuedo(after) {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: black;
+    z-index: -1;
+    display: block;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+  }
 
   // Faking flexbox on older browsers by using table styling
   @include breakpoint($desktop) {
@@ -12,7 +24,14 @@
     width: 100%;
   }
 }
+.k-sidebar-toggled .k-content {
+  transform: translate(200px,0);
+}
 
+.k-sidebar-toggled .k-content:after {
+  opacity: .5;
+  z-index: 1;
+}
 
 
 /**
@@ -48,6 +67,7 @@
 .k-content-wrapper {
   position: relative;
   margin: 0;
+  overflow-x: hidden;
 
   // Faking flexbox on older browsers by using table styling
   @include breakpoint($desktop) {
