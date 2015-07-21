@@ -3657,14 +3657,38 @@ body {
         .koowa .k-titlebar h2 {
           font-size: 18.2px; } }
   .koowa .k-content {
+    -webkit-transition: all 180ms ease-in-out;
+            transition: all 180ms ease-in-out;
     position: relative; }
+    .koowa .k-content:after {
+      display: block;
+      position: absolute;
+      content: " ";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: black;
+      z-index: -1;
+      display: block;
+      opacity: 0;
+      -webkit-transition: all 0.2s ease-in-out;
+              transition: all 0.2s ease-in-out; }
     @media screen and (min-width: 768px) {
       .koowa .k-content {
         display: table-cell;
         width: 100%; } }
+  .koowa .k-sidebar-toggled .k-content {
+    -webkit-transform: translate(200px, 0);
+        -ms-transform: translate(200px, 0);
+            transform: translate(200px, 0); }
+  .koowa .k-sidebar-toggled .k-content:after {
+    opacity: .5;
+    z-index: 1; }
   .koowa .k-content-wrapper {
     position: relative;
-    margin: 0; }
+    margin: 0;
+    overflow-x: hidden; }
     @media screen and (min-width: 768px) {
       .koowa .k-content-wrapper {
         display: table;
@@ -4874,6 +4898,53 @@ a:focus:after,
     padding: 3px 8px; }
   .koowa .k-nowrap {
     white-space: nowrap; }
+  .koowa .off-canvas-menu-toggle {
+    width: 43px;
+    height: 43px;
+    border-radius: 3px;
+    background: #232323;
+    color: white;
+    border: none;
+    padding: 0;
+    margin: 10px;
+    position: relative;
+    z-index: 9; }
+  .koowa .off-canvas-menu-toggle:focus {
+    outline: none; }
+  .koowa .off-canvas-menu-toggle .bar1,
+  .koowa .off-canvas-menu-toggle .bar2,
+  .koowa .off-canvas-menu-toggle .bar3 {
+    width: 24px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    left: 10px;
+    background: white;
+    border-radius: 1px;
+    vertical-align: middle;
+    -webkit-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out; }
+  .koowa .off-canvas-menu-toggle .bar1 {
+    top: 13px; }
+  .koowa .off-canvas-menu-toggle .bar2 {
+    top: 20px; }
+  .koowa .off-canvas-menu-toggle .bar3 {
+    top: 27px; }
+  .koowa .k-sidebar-toggled .off-canvas-menu-toggle .bar1 {
+    top: 20px;
+    -webkit-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+            transform: rotate(135deg); }
+  .koowa .k-sidebar-toggled .off-canvas-menu-toggle .bar3 {
+    top: 20px;
+    -webkit-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+            transform: rotate(-135deg); }
+  .koowa .k-sidebar-toggled .off-canvas-menu-toggle .bar2 {
+    opacity: 0;
+    -webkit-transform: translate(-100%, 0);
+        -ms-transform: translate(-100%, 0);
+            transform: translate(-100%, 0); }
 
 .koowa .k-overview {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); }

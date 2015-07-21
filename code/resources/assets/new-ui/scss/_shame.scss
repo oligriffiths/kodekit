@@ -33,3 +33,76 @@
 .k-nowrap {
   white-space: nowrap;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.off-canvas-menu-toggle {
+  width: 43px;
+  height: 43px;
+  border-radius: 3px;
+  background: #232323;
+  color: white;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  position: relative;
+  z-index: 9;
+}
+
+.off-canvas-menu-toggle:focus {
+  outline: none;
+}
+
+.off-canvas-menu-toggle .bar1,
+.off-canvas-menu-toggle .bar2,
+.off-canvas-menu-toggle .bar3 {
+  width: 24px;
+  height: 3px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  background: white;
+  border-radius: 1px;
+  vertical-align: middle;
+  transition: all .2s ease-in-out;
+}
+
+.off-canvas-menu-toggle .bar1 {
+  top: 13px;
+}
+
+.off-canvas-menu-toggle .bar2 {
+  top: 20px;
+}
+
+.off-canvas-menu-toggle .bar3 {
+  top: 27px;
+}
+
+.k-sidebar-toggled .off-canvas-menu-toggle .bar1 {
+  top: 20px;
+  transform: rotate(135deg);
+}
+
+.k-sidebar-toggled .off-canvas-menu-toggle .bar3 {
+  top: 20px;
+  transform: rotate(-135deg);
+}
+
+.k-sidebar-toggled .off-canvas-menu-toggle .bar2 {
+  opacity: 0;
+  transform: translate(-100%, 0);
+}
