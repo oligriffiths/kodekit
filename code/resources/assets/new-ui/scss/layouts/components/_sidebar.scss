@@ -33,7 +33,7 @@
 
   .k-sidebar {
     // Start with a small/closed sidebar
-    @include allwidth($sidebar-width-collapsed);
+    @include allwidth($sidebar-width);
     display: table-cell;
     vertical-align: top;
     overflow: hidden;

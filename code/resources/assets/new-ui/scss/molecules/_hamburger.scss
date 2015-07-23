@@ -1,0 +1,74 @@
+// Hamburger
+$button-size: 33px;
+$bar-width: 15px; // Best to grab a number that can be divided by 5
+$bar-height: round($bar-width / 5);
+
+.off-canvas-menu-toggle {
+  width: $button-size;
+  height: $button-size;
+  border-radius: 3px;
+  background: #34495e;
+  color: #ecf0f1;
+  border: none;
+  padding: 0;
+  margin: 10px;
+  z-index: 3;
+  position: relative;
+  float: left;
+
+  @include breakpoint($desktop) {
+    display: none; // hide toggle buttons when screen is wide enough
+  }
+
+  .bar1,
+  .bar2,
+  .bar3 {
+    width: $bar-width;
+    height: $bar-height;
+    display: block;
+    position: absolute;
+    left: round(($button-size - $bar-width) / 2);
+    background: #ecf0f1;
+    border-radius: 1px;
+    vertical-align: middle;
+    transition: $transition;
+  }
+
+  .bar1 {
+    top: round(($button-size - $bar-width) / 2);
+  }
+
+  .bar2 {
+    top: round((($button-size - $bar-width) / 2) + ($bar-height * 2));
+  }
+
+  .bar3 {
+    top: round((($button-size - $bar-width) / 2) + ($bar-height * 4));
+  }
+}
+
+#left-menu-toggle {
+  left: 0;
+}
+
+#right-menu-toggle {
+  right: 0;
+}
+
+.show-left-menu .off-canvas-menu-toggle#left-menu-toggle,
+.show-right-menu .off-canvas-menu-toggle#right-menu-toggle {
+  .bar1 {
+    top: round(($button-size / 2) - ($bar-height / 2));
+    transform: rotate(135deg);
+  }
+
+  .bar2 {
+    transform: translate(-100%, 0);
+    opacity: 0;
+  }
+
+  .bar3 {
+    top: round(($button-size / 2) - ($bar-height / 2));
+    transform: rotate(-135deg);
+  }
+}

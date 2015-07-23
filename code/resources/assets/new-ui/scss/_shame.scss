@@ -49,60 +49,94 @@
 
 
 
-.off-canvas-menu-toggle {
-  width: 43px;
-  height: 43px;
-  border-radius: 3px;
-  background: #232323;
-  color: white;
-  border: none;
-  padding: 0;
-  margin: 10px;
-  position: relative;
-  z-index: 9;
-}
 
-.off-canvas-menu-toggle:focus {
-  outline: none;
-}
 
-.off-canvas-menu-toggle .bar1,
-.off-canvas-menu-toggle .bar2,
-.off-canvas-menu-toggle .bar3 {
-  width: 24px;
-  height: 3px;
-  display: block;
+
+// Vars
+$transition-time-easing: 350ms cubic-bezier(.2,.57,.44,.83);
+$transition: all $transition-time-easing;
+$query: 8000px;
+
+
+.off-canvas-overlay {
+  content: " ";
   position: absolute;
-  left: 10px;
-  background: white;
-  border-radius: 1px;
-  vertical-align: middle;
-  transition: all .2s ease-in-out;
-}
-
-.off-canvas-menu-toggle .bar1 {
-  top: 13px;
-}
-
-.off-canvas-menu-toggle .bar2 {
-  top: 20px;
-}
-
-.off-canvas-menu-toggle .bar3 {
-  top: 27px;
-}
-
-.k-sidebar-toggled .off-canvas-menu-toggle .bar1 {
-  top: 20px;
-  transform: rotate(135deg);
-}
-
-.k-sidebar-toggled .off-canvas-menu-toggle .bar3 {
-  top: 20px;
-  transform: rotate(-135deg);
-}
-
-.k-sidebar-toggled .off-canvas-menu-toggle .bar2 {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #2c3e50;
+  z-index: -1;
+  display: block;
   opacity: 0;
-  transform: translate(-100%, 0);
+  transition: opacity $transition-time-easing;
+}
+
+.k-sidebar {
+  width: $sidebar-width;
+  height: 100%;
+  background: $sidebar-background;
+  color: $sidebar-color;
+  position: absolute;
+  top: 0;
+  overflow: auto;
+  z-index: 3;
+  -webkit-overflow-scrolling: touch;
+  left: -$sidebar-width;
+
+  @include breakpoint($desktop) {
+    position: relative; // Resetting position to relative
+    display: table-cell; // Faking flexbox for older browsers
+    flex: 0 0 $sidebar-width;
+  }
+}
+
+.show-left-menu {
+  transform: translate($sidebar-width, 0);
+}
+
+.show-right-menu {
+  transform: translate(-$sidebar-width, 0);
+}
+
+
+.k-content-wrapper {
+  transition: $transition;
+}
+
+
+
+.show-left-menu,
+.show-right-menu {
+  .off-canvas-overlay {
+    opacity: .75;
+
+  }
+}
+
+.opened {
+  .off-canvas-overlay {
+    z-index: 1;
+    right: -10px; // Make sure the overlay is behind the nav so we won't get weird jumps
+    left: -10px; // Make sure the overlay is behind the nav so we won't get weird jumps
+  }
+}
+
+
+
+/**
+ * Javascript specific
+ =====================
+ */
+
+.js-enabled .off-canvas-menu {
+  display: none; // Hide when JS is enabled
+
+  @media (min-width:$query) {
+    display: block; // Show again when screen is wide enough
+  }
+}
+
+.off-canvas-menu.opened {
+  display: block; // Show when menu is opened
 }

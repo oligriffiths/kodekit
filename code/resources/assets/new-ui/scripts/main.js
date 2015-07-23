@@ -3,11 +3,7 @@ $(function() {
     // Offcanvasmenu
     new OffCanvasMenuController({
         $menu: $('#k-sidebar'),
-        $menuToggle: $('#k-toggle-button'),
-        $menuExpandedClassTarget: $('#k-offcanvas-container'),
-        menuExpandedClass: 'k-sidebar-toggled',
-        position: 'left',
-        wrapper: $('#k-offcanvas-container')
+        $menuToggle: $('#k-toggle-button')
     });
 
     // Sticky table header and footer
