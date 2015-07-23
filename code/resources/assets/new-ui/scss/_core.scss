@@ -78,6 +78,7 @@
   @import "molecules/button-group";
   @import "molecules/icons";
   @import "molecules/tree";
+  @import "molecules/hamburger";
   @import "molecules/shame";
 
   // Utilities | loading last so we have the biggest chance of 'winning' specificity wars without using !important

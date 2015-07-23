@@ -2,54 +2,144 @@
 
 (function(window) {
 
+    function openMenu(self) {
+        self.$menu.show();
+        self.$menuExpandedClassTarget['addClass'](self.menuExpandedClass);
+        self.$menuToggle.attr({'aria-expanded': 'true'});
+        self.$wrapper.addClass('opened').parent().css('overflow-x', 'hidden');
+        self.$wrapper.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e) {
+            // When $wrapper transition has ended add the 'opened' class
+            // We do this to always win over the closing transitionend
+            self.$menu.addClass('opened');
+            self.$wrapper.addClass('opened');
+        });
+    }
+
+    function closeMenu(self, transitionDuration) {
+        self.$menuExpandedClassTarget['removeClass'](self.menuExpandedClass);
+        self.$menuToggle.attr({'aria-expanded': 'false'});
+        self.$overlay.removeAttr('style');
+        self.$wrapper.on("transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd", function(e) {
+            // Remove style and class only on transationend
+            // We do this so the menu stays visible on closing
+            self.$menu.removeAttr('style').removeClass('opened');
+            self.$wrapper.removeClass('opened');
+        });
+    }
+
+    function toggleMenu(self, transitionDuration) {
+        var method = !self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass) ? 'closed' : 'opened';
+        if ( method === 'closed' ) { openMenu(self); }
+        if ( method === 'opened' ) { closeMenu(self, transitionDuration); }
+    }
+
     window.OffCanvasMenuController = function(options){
 
         options = options || {};
 
+        // The menu
         this.$menu = options.$menu;
-        this.menuExpandedClass = options.menuExpandedClass;
+        this.position = options.position || 'left';
+        this.menuExpandedClass = options.menuExpandedClass || 'show-' + this.position + '-menu';
 
         // Escape if the menu is not found.
-        if(this.$menu.length == 0 || !this.menuExpandedClass)
+        if(this.$menu.length == 0)
             return;
 
         this.$menuToggle = options.$menuToggle || [];
-        this.$menuExpandedClassTarget = options.$menuExpandedClassTarget || $('body');
-        this.position = options.position || 'left';
-
-        this.$wrapper = options.wrapper || $('#outer-wrapper');
+        this.$wrapper = options.wrapper || this.$menu.parent();
         this.wrapper = this.$wrapper[0];
-
-        this.dragHandleOffset = options.dragHandleOffset || this.$menuToggle.outerWidth();
+        this.$menuExpandedClassTarget = options.$menuExpandedClassTarget || this.$wrapper;
         this.expandedWidth = this.$menu.outerWidth();
+        this.ariaControls = options.ariaControls || this.$menu.selector.replace('#', '');
+        this.offCanvasOverlay = options.offCanvasOverlay || 'off-canvas-overlay';
+        this.$offCanvasOverlay = $('.' + this.offCanvasOverlay);
+        // The overlay
+        if ( !this.$offCanvasOverlay.length ) {
+            this.$wrapper.append('<div class="' + this.offCanvasOverlay + '"></div>');
+        }
+        this.$overlay = $('.' + this.offCanvasOverlay);
+        this.overlay = this.$overlay[0];
+        this.overlayOpacity = options.overlayOpacity || '0.75';
+        this.transitionDuration = this.$wrapper.css('transition-duration').replace('s', '') * 1000;
 
-        console.log(this.$menuExpandedClassTarget);
-
-        if(this.$menuToggle.length > 0){
+        // If we have a toggle button available
+        if(this.$menuToggle.length){
             var self = this;
 
-            // Set up toggle button:
+            // Set ARIA attributes
+            this.$menuToggle.attr({
+                'role': 'button',
+                'aria-controls': self.ariaControls,
+                'aria-expanded': 'false'
+            });
+
+            // Toggle button:
             this.$menuToggle.click(function(event){
                 event.stopPropagation();
-                console.log('clicked');
-                var method = !self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass) ? 'addClass' : 'removeClass';
-                self.$menuExpandedClassTarget[method](self.menuExpandedClass);
+                toggleMenu(self, self.transitionDuration);
             });
 
-            // Close menu on clicking next to sidebar
-            this.$wrapper.click(function(){
-                self.$menuExpandedClassTarget['removeClass'](self.menuExpandedClass);
-            });
-
-            // Close menu if esc keydown and menu is open
-            this.$menuExpandedClassTarget.bind('keydown', function(e) {
-                if (e.which == 27 && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
-                    self.$menuExpandedClassTarget['removeClass'](self.menuExpandedClass);
+            // Close menu by clicking anywhere
+            this.$wrapper.click(function(event){
+                if ( self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass) ) {
+                    event.stopPropagation();
+                    closeMenu(self, self.transitionDuration);
                 }
             });
 
             // Don't close the menu when clicked on sidemenu
-            this.$menu.click(function(event){ event.stopPropagation(); });
+            this.$menu.click(function(event){
+                event.stopPropagation();
+            });
+
+            // Keyboard accessible left menu
+            if (this.position === 'left') {
+                // At start of navigation block, return focus to toggle button
+                this.$menu.find('li:first-child a').bind('keydown', function(e) {
+                    if (e.keyCode === 9 && e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                        e.preventDefault();
+                        self.$menuToggle.focus();
+                    }
+                });
+
+                // Set focus to menu when tabbing on toggle button
+                this.$menuToggle.bind('keydown', function(e) {
+                    if (e.keyCode === 9 && !e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                        e.preventDefault();
+                        self.$menu.find('li:first-child a').focus();
+                    }
+                });
+            }
+
+            // Keyboard accessible right menu
+            if (this.position === 'right') {
+
+                // Set focus to menu when tabbing on toggle button
+                this.$menuToggle.bind('keydown', function(e) {
+                    if (e.keyCode === 9 && e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                        e.preventDefault();
+                        self.$menu.find('li:last-child a').focus();
+                    }
+                });
+
+                // At end of navigation block, return focus to toggle button
+                this.$menu.find('li:last-child a').bind('keydown', function(e) {
+                    if (e.keyCode === 9 && !e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                        e.preventDefault();
+                        self.$menuToggle.focus();
+                    }
+                });
+            }
+
+            // Close menu if esc keydown and menu is open and set focus to toggle button
+            $(document).bind('keydown', function(event) {
+                if (event.keyCode === 27 && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                    event.stopPropagation();
+                    closeMenu(self, self.transitionDuration);
+                    self.$menuToggle.focus();
+                }
+            });
 
         }
 
@@ -82,18 +172,17 @@
         },
 
         inBounds: function(position){
-            return (this.position == 'left' && position >= 0 && position <= this.expandedWidth) ||
-                (position >= -this.expandedWidth && position <= 0);
+            return (this.position == 'left' && position >= -25 && position <= this.expandedWidth) ||
+                (this.position == 'right' && position >= -this.expandedWidth && position <= 25);
         },
 
         onTouchStart: function(e){
 
-            var pageX = e.touches[0].pageX;
-
-            // Escape if invalid start touch position
-            if(this.currentPosition() - this.dragHandleOffset > pageX ||
-                this.currentPosition() + this.dragHandleOffset < pageX)
+            // Escape if Menu is closed
+            if(!this.$menuExpandedClassTarget.hasClass(this.menuExpandedClass))
                 return;
+
+            var pageX = e.touches[0].pageX;
 
             this.start = {
                 startingX: this.currentPosition(),
@@ -111,15 +200,12 @@
 
             // set transition time to 0 for 1-to-1 touch movement
             this.wrapper.style.MozTransitionDuration = this.wrapper.style.webkitTransitionDuration = 0;
+            this.overlay.style.MozTransitionDuration = this.overlay.style.webkitTransitionDuration = 0;
 
             e.stopPropagation();
         },
 
         onTouchMove: function(e){
-
-            // Escape if invalid start or not in bounds:
-            if(!this.start)
-                return;
 
             this.deltaX = e.touches[0].pageX - this.start.pageX;
 
@@ -137,11 +223,14 @@
                 var newPos = this.position == 'left' ? this.start.startingX + this.deltaX
                     : this.deltaX - ($(window).width() - this.start.startingX);
 
+                var opacity = (this.overlayOpacity / this.expandedWidth) * Math.abs(newPos);
+
                 if(!this.inBounds(newPos))
                     return;
 
                 // translate immediately 1-to-1
-                this.wrapper.style.MozTransform = this.wrapper.style.webkitTransform = 'translate3d(' + newPos + 'px,0,0)';
+                this.wrapper.style.MozTransform = this.wrapper.style.webkitTransform = 'translate(' + newPos + 'px,0)';
+                this.overlay.style.opacity = opacity;
 
                 e.stopPropagation();
             }
@@ -155,19 +244,24 @@
             if(!this.start)
                 return;
 
+            var newPos = this.position == 'left' ? this.start.startingX + this.deltaX
+                : this.deltaX - ($(window).width() - this.start.startingX);
+
+            // Converting to positive number
+            var absNewPos = Math.abs(newPos);
+
             // if not scrolling vertically
             if (!this.isScrolling) {
 
-                // determine if swipe will trigger open/close menu
-                var isOpeningMenu = (this.position == 'left' && this.deltaX > 0) ||
-                    (this.position == 'right' && this.deltaX < 0);
+                this.$wrapper.removeAttr('style');
 
-                // Reset styles
-                this.$wrapper.attr('style', '');
-
-                // open/close menu:
-                var method = isOpeningMenu ? 'addClass' : 'removeClass';
-                this.$menuExpandedClassTarget[method](this.menuExpandedClass);
+                if ( ( this.position == 'left' && ( absNewPos <= (this.expandedWidth * 0.66) || newPos <= 0 ) ) ||
+                    ( this.position == 'right' && ( absNewPos <= (this.expandedWidth * 0.66) || newPos >= 0 ) ) ) {
+                    closeMenu(this, this.transitionDuration);
+                } else {
+                    openMenu(this);
+                    this.$overlay.removeAttr('style');
+                }
             }
 
             // Reset start object:

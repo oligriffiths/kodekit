@@ -15,8 +15,9 @@ body.component {
     display: none;
   }
 
+  .btn-subhead,
   .subhead-collapse {
-    display: none;
+    display: none !important;
   }
 
 
@@ -37,126 +38,124 @@ body.component {
    * As soon as something in this chain of classnames changes we fall back to non-flexbox view
    */
 
-  @include flexbox {
+  display: flex;
+  flex-direction: column;
+
+
+  /**
+   * Do not flex following items
+   */
+
+  nav.navbar,
+  header.header,
+  .subhead-collapse,
+  #status,
+  #system-message-container,
+  #system-debug {
+    flex: 0 0 auto;
+  }
+
+
+  /**
+   * The main container
+   */
+
+  .container-main {
     display: flex;
-    flex-direction: column;
+    flex: 1 1 auto;
+    margin: 0 -20px;
+    padding: 0;
 
-
-    /**
-     * Do not flex following items
-     */
-
-    nav.navbar,
-    header.header,
-    .subhead-collapse,
-    #status,
-    #system-message-container,
-    #system-debug {
-      flex: 0 0 auto;
-    }
-
-
-    /**
-     * The main container
-     */
-
-    .container-main {
-      display: flex;
-      flex: 1 1 auto;
-      margin: 0 -20px;
-      padding: 0;
-
-      // Remove negative margin when screen is wide enough
-      @include breakpoint(768px) {
-        margin: 0;
-      }
-
-
-      /**
-       * Flex all children of main container
-       */
-
-      #content,
-      #content .row-fluid,
-      #content .row-fluid .span12 {
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
-      }
-
-
-      /**
-       * Remove clearfix psuedo elements
-       * Otherwise they'll be treated as 1 pixel flex items
-       */
-
-      &:before,
-      &:after,
-      #content:before,
-      #content:after,
-      #content .row-fluid:before,
-      #content .row-fluid:after {
-        display: none;
-      }
-
-
-      /**
-       * No longer a fixed position for the statusbar
-       * since that doesn't play nice with flexbox
-       */
-
-      & + #status {
-        position: relative;
-        top: auto;
-        right: auto;
-        bottom: auto;
-        left: auto;
-      }
-
-
-      /**
-       * Remove the border on successful flexbox
-       */
-
-      #content .row-fluid .span12 {
-        .k-overview {
-          border: none;
-          margin-top: 0;
-        }
-      }
-    }
-
-
-    /**
-     * Remove spacing and border-radius to align alerts to the side
-     */
-
-    #system-message-container {
-      padding: 0;
-
-      .alert {
-        margin: 0;
-        border-radius: 0;
-        border-bottom: none;
-      }
-    }
-
-
-    /**
-     * Reduce bottom padding on debug container
-     */
-
-    #system-debug {
-      padding-bottom: 10px;
-    }
-
-
-    /**
-     * Remove margin from bootstrap grid item
-     */
-
-    .span10 {
+    // Remove negative margin when screen is wide enough
+    @include breakpoint(768px) {
       margin: 0;
     }
+
+
+    /**
+     * Flex all children of main container
+     */
+
+    #content,
+    #content .row-fluid,
+    #content .row-fluid .span12 {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+    }
+
+
+    /**
+     * Remove clearfix psuedo elements
+     * Otherwise they'll be treated as 1 pixel flex items
+     */
+
+    &:before,
+    &:after,
+    #content:before,
+    #content:after,
+    #content .row-fluid:before,
+    #content .row-fluid:after {
+      display: none;
+    }
+
+
+    /**
+     * No longer a fixed position for the statusbar
+     * since that doesn't play nice with flexbox
+     */
+
+    & + #status {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      left: auto;
+    }
+
+
+    /**
+     * Remove the border on successful flexbox
+     */
+
+    #content .row-fluid .span12 {
+      .k-overview {
+        border: none;
+        margin-top: 0;
+      }
+    }
+  }
+
+
+  /**
+   * Remove spacing and border-radius to align alerts to the side
+   */
+
+  #system-message-container {
+    padding: 0;
+
+    .alert {
+      margin: 0;
+      border-radius: 0;
+      border-bottom: none;
+    }
+  }
+
+
+  /**
+   * Reduce bottom padding on debug container
+   */
+
+  #system-debug {
+    padding-bottom: 10px;
+  }
+
+
+  /**
+   * Remove margin from bootstrap grid item
+   */
+
+  .span10 {
+    margin: 0;
   }
 }
