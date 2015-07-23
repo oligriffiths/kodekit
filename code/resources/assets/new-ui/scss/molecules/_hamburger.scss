@@ -55,8 +55,7 @@ $bar-height: round($bar-width / 5);
   right: 0;
 }
 
-.show-left-menu .off-canvas-menu-toggle#left-menu-toggle,
-.show-right-menu .off-canvas-menu-toggle#right-menu-toggle {
+.show-left-menu .off-canvas-menu-toggle {
   .bar1 {
     top: round(($button-size / 2) - ($bar-height / 2));
     transform: rotate(135deg);
