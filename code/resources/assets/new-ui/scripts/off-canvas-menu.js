@@ -1,6 +1,179 @@
+/*!
+ * jQuery.tabbable 1.0 - Simple utility for selecting the next / previous ':tabbable' element.
+ * https://github.com/marklagendijk/jQuery.tabbable
+ *
+ * Includes ':tabbable' and ':focusable' selectors from jQuery UI Core
+ *
+ * Copyright 2013, Mark Lagendijk
+ * Released under the MIT license
+ *
+ */
+(function($){
+    'use strict';
+
+    /**
+     * Focusses the next :focusable element. Elements with tabindex=-1 are focusable, but not tabable.
+     * Does not take into account that the taborder might be different as the :tabbable elements order
+     * (which happens when using tabindexes which are greater than 0).
+     */
+    $.focusNext = function(){
+        selectNextTabbableOrFocusable(':focusable');
+    };
+
+    /**
+     * Focusses the previous :focusable element. Elements with tabindex=-1 are focusable, but not tabable.
+     * Does not take into account that the taborder might be different as the :tabbable elements order
+     * (which happens when using tabindexes which are greater than 0).
+     */
+    $.focusPrev = function(){
+        selectPrevTabbableOrFocusable(':focusable');
+    };
+
+    /**
+     * Focusses the next :tabable element.
+     * Does not take into account that the taborder might be different as the :tabbable elements order
+     * (which happens when using tabindexes which are greater than 0).
+     */
+    $.tabNext = function(){
+        selectNextTabbableOrFocusable(':tabbable');
+    };
+
+    /**
+     * Focusses the previous :tabbable element
+     * Does not take into account that the taborder might be different as the :tabbable elements order
+     * (which happens when using tabindexes which are greater than 0).
+     */
+    $.tabPrev = function(){
+        selectPrevTabbableOrFocusable(':tabbable');
+    };
+
+    function selectNextTabbableOrFocusable(selector){
+        var selectables = $(selector);
+        var current = $(':focus');
+        var nextIndex = 0;
+        if(current.length === 1){
+            var currentIndex = selectables.index(current);
+            if(currentIndex + 1 < selectables.length){
+                nextIndex = currentIndex + 1;
+            }
+        }
+
+        selectables.eq(nextIndex).focus();
+    }
+
+    function selectPrevTabbableOrFocusable(selector){
+        var selectables = $(selector);
+        var current = $(':focus');
+        var prevIndex = selectables.length - 1;
+        if(current.length === 1){
+            var currentIndex = selectables.index(current);
+            if(currentIndex > 0){
+                prevIndex = currentIndex - 1;
+            }
+        }
+
+        selectables.eq(prevIndex).focus();
+    }
+
+    /**
+     * :focusable and :tabbable, both taken from jQuery UI Core
+     */
+    $.extend($.expr[ ':' ], {
+        data: $.expr.createPseudo ?
+            $.expr.createPseudo(function(dataName){
+                return function(elem){
+                    return !!$.data(elem, dataName);
+                };
+            }) :
+            // support: jQuery <1.8
+            function(elem, i, match){
+                return !!$.data(elem, match[ 3 ]);
+            },
+
+        focusable: function(element){
+            return focusable(element, !isNaN($.attr(element, 'tabindex')));
+        },
+
+        tabbable: function(element){
+            var tabIndex = $.attr(element, 'tabindex'),
+                isTabIndexNaN = isNaN(tabIndex);
+            return ( isTabIndexNaN || tabIndex >= 0 ) && focusable(element, !isTabIndexNaN);
+        }
+    });
+
+    /**
+     * focussable function, taken from jQuery UI Core
+     * @param element
+     * @returns {*}
+     */
+    function focusable(element){
+        var map, mapName, img,
+            nodeName = element.nodeName.toLowerCase(),
+            isTabIndexNotNaN = !isNaN($.attr(element, 'tabindex'));
+        if('area' === nodeName){
+            map = element.parentNode;
+            mapName = map.name;
+            if(!element.href || !mapName || map.nodeName.toLowerCase() !== 'map'){
+                return false;
+            }
+            img = $('img[usemap=#' + mapName + ']')[0];
+            return !!img && visible(img);
+        }
+        return ( /input|select|textarea|button|object/.test(nodeName) ?
+                !element.disabled :
+                'a' === nodeName ?
+                element.href || isTabIndexNotNaN :
+                    isTabIndexNotNaN) &&
+                // the element and all of its ancestors must be visible
+            visible(element);
+
+        function visible(element){
+            return $.expr.filters.visible(element) && !$(element).parents().addBack().filter(function(){
+                    return $.css(this, 'visibility') === 'hidden';
+                }).length;
+        }
+    }
+})(jQuery);
+
+
+
 "use strict";
 
 (function(window) {
+
+    function tabToggle(self) {
+        // When tabbing on toggle button
+        self.$menuToggle.bind('keydown', function(e) {
+            if (e.keyCode === 9 && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                e.preventDefault();
+                if ( e.shiftKey ) {
+                    self.$menu.find(':tabbable').last().focus();
+                } else {
+                    self.$menu.find(':tabbable').first().focus();
+                }
+            }
+        });
+
+        // When tabbing on first tabbable menu item
+        self.$menu.find(':tabbable').first().bind('keydown', function(e) {
+            if (e.keyCode === 9 && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                if ( e.shiftKey ) {
+                    e.preventDefault();
+                    self.$menuToggle.focus();
+                }
+            }
+        });
+
+        // When tabbing on last tabbable menu item
+        self.$menu.find(':tabbable').last().bind('keydown', function(e) {
+            if (e.keyCode === 9 && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
+                if ( !e.shiftKey ) {
+                    e.preventDefault();
+                    self.$menuToggle.focus();
+                }
+            }
+        });
+    }
 
     function openMenu(self) {
         self.$menu.show();
@@ -13,6 +186,8 @@
             self.$menu.addClass('opened');
             self.$wrapper.addClass('opened');
         });
+        // Enable toggling
+        tabToggle(self);
     }
 
     function closeMenu(self, transitionDuration) {
@@ -92,45 +267,6 @@
             this.$menu.click(function(event){
                 event.stopPropagation();
             });
-
-            // Keyboard accessible left menu
-            if (this.position === 'left') {
-                // At start of navigation block, return focus to toggle button
-                this.$menu.find('li:first-child a').bind('keydown', function(e) {
-                    if (e.keyCode === 9 && e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
-                        e.preventDefault();
-                        self.$menuToggle.focus();
-                    }
-                });
-
-                // Set focus to menu when tabbing on toggle button
-                this.$menuToggle.bind('keydown', function(e) {
-                    if (e.keyCode === 9 && !e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
-                        e.preventDefault();
-                        self.$menu.find('li:first-child a').focus();
-                    }
-                });
-            }
-
-            // Keyboard accessible right menu
-            if (this.position === 'right') {
-
-                // Set focus to menu when tabbing on toggle button
-                this.$menuToggle.bind('keydown', function(e) {
-                    if (e.keyCode === 9 && e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
-                        e.preventDefault();
-                        self.$menu.find('li:last-child a').focus();
-                    }
-                });
-
-                // At end of navigation block, return focus to toggle button
-                this.$menu.find('li:last-child a').bind('keydown', function(e) {
-                    if (e.keyCode === 9 && !e.shiftKey && self.$menuExpandedClassTarget.hasClass(self.menuExpandedClass)) {
-                        e.preventDefault();
-                        self.$menuToggle.focus();
-                    }
-                });
-            }
 
             // Close menu if esc keydown and menu is open and set focus to toggle button
             $(document).bind('keydown', function(event) {
