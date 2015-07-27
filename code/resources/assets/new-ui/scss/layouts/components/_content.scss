@@ -5,6 +5,7 @@
 
 .k-content {
   transition: $transition;
+  background: white;
 
   @include psuedo(after) {
     top: 0;
