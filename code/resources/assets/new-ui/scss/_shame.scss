@@ -51,74 +51,124 @@
 
 
 
-
 // Vars
-$transition-time-easing: 350ms cubic-bezier(.2,.57,.44,.83);
+$menuwidth: $sidebar-width;
+$transition-time-easing: 360ms cubic-bezier(.2,.57,.44,.83);
 $transition: all $transition-time-easing;
-$query: 8000px;
+$query: $desktop;
 
+// Hamburger
+$button-size: 38px;
+$bar-width: 20px; // Best to grab a number that can be divided by 5
+$bar-height: round($bar-width / 5);
 
-.off-canvas-overlay {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #2c3e50;
-  z-index: -1;
-  display: block;
-  opacity: 0;
-  transition: opacity $transition-time-easing;
+// Overlay
+$overlay-background: black;
+
+/**
+ * The transitioning container
+ * ===========================
+ * 1. Set transition to transforms only
+ * 2. Set the z-index higher than the menus
+ */
+
+.k-content {
+  transition: transform $transition-time-easing; // 1
+  position: relative; // 2
+  z-index: 2; // 2
 }
 
-.k-sidebar {
-  width: $sidebar-width;
-  height: 100%;
-  background: $sidebar-background;
-  color: $sidebar-color;
-  position: absolute;
-  top: 0;
-  overflow: auto;
-  z-index: 3;
-  -webkit-overflow-scrolling: touch;
-  left: -$sidebar-width;
 
-  @include breakpoint($desktop) {
-    position: relative; // Resetting position to relative
-    display: table-cell; // Faking flexbox for older browsers
-    flex: 0 0 $sidebar-width;
+
+/**
+ * The overlay
+ * ===========
+ * 1. Cover the entire container
+ * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
+ * 3. Set opacity to 0 by default
+ * 4. Hide overlay when screen is wide enough
+ */
+
+.off-canvas-overlay {
+  display: block;
+  content: " ";
+  position: absolute; // 1
+  top: 0; // 1
+  right: 0; // 1
+  bottom: 0; // 1
+  left: 0; // 1
+  z-index: -1; //2
+  opacity: 0; // 3
+  background: $overlay-background;
+  transition: opacity $transition-time-easing;
+
+  @media (min-width:$query) {
+    display: none; // 4
   }
 }
 
+
+
+/**
+ * Container when toggled
+ * ======================
+ * 1. Set left to the width of the menu so the menu will appear
+ * 2. Set right to the negative width of the menu so the menu will appear
+ * 3. Reset when screen is wide enough
+ * 4. Set a box shadow so menus appear behind container
+ */
+
 .show-left-menu {
-  transform: translate($sidebar-width, 0);
+  .k-content {
+    transform: translate($menuwidth, 0); // 1
+
+    @media (min-width:$query) {
+      transform: translate(0, 0); // 3
+    }
+  }
 }
 
 .show-right-menu {
-  transform: translate(-$sidebar-width, 0);
+  .k-content {
+    transform: translate(-$menuwidth, 0); // 2
+
+    @media (min-width:$query) {
+      transform: translate(0, 0); // 3
+    }
+  }
+}
+
+.opened--left,
+.opened--right {
+  .k-content {
+    overflow: hidden;
+
+    @media (min-width:$query) {
+      overflow: auto; // 3
+    }
+  }
 }
 
 
-.k-content-wrapper {
-  transition: $transition;
-}
 
-
+/**
+ * Overlay when toggled
+ * ====================
+ * 1. Set opacity
+ * 2. Set z-index to 1 so it will become visible
+ */
 
 .show-left-menu,
 .show-right-menu {
   .off-canvas-overlay {
-    opacity: .75;
-
+    opacity: .5; // 1
   }
 }
 
-.opened {
+.opened--left,
+.opened--left {
   .off-canvas-overlay {
-    z-index: 1;
-    right: -10px; // Make sure the overlay is behind the nav so we won't get weird jumps
-    left: -10px; // Make sure the overlay is behind the nav so we won't get weird jumps
+    z-index: 2; // 2
   }
 }
 
@@ -126,17 +176,57 @@ $query: 8000px;
 
 /**
  * Javascript specific
- =====================
+ * ===================
+ * 1. Set the width of the menu
+ * 2. Position the menu
+ * 3. Set height to 100% and make div overflowable
+ * 4. Set a lower index than the container
+ * 5. Hide menu when JS is enabled
+ * 6. Make menu visible when screen is wide enough
+ * 7. Always show menu when toggled and in animation
  */
 
-.js-enabled .off-canvas-menu {
-  display: none; // Hide when JS is enabled
+.k-sidebar {
+  width: $menuwidth; // 1
+  position: absolute; // 2
+  top: 0; // 2
+  height: 100%; //3
+  overflow: auto; // 3
+  z-index: 1; // 4
+  display: none; // 5
+  -webkit-overflow-scrolling: touch;
 
   @media (min-width:$query) {
-    display: block; // Show again when screen is wide enough
+    position: relative; // 6
+    display: block; // 6
+  }
+
+  left: 0; // 2
+
+  &--right {
+    right: 0; // 2
   }
 }
 
-.off-canvas-menu.opened {
-  display: block; // Show when menu is opened
+
+
+/**
+ * Disable transitions
+ * ===================
+ */
+
+.no-transition.no-transition {
+  transition: none !important;
+}
+
+.opened--left {
+  .k-sidebar {
+    display: block;
+  }
+}
+
+.opened--right {
+  .k-sidebar--right {
+    display: block;
+  }
 }
