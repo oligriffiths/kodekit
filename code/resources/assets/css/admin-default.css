@@ -4078,8 +4078,6 @@ a:focus:after,
         display: table-cell;
         vertical-align: middle;
         white-space: nowrap; } }
-  .koowa .k-scopebar__item--fluid {
-    width: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
     .koowa .k-flex .k-scopebar {
       display: -webkit-box;
@@ -5324,3 +5322,5 @@ a:focus:after,
     display: block; }
   .koowa .opened--right .k-sidebar--right {
     display: block; }
+  .koowa .k- {
+    display: none !important; }

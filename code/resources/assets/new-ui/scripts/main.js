@@ -13,6 +13,22 @@
         $('.table--fixed').tableHeadFixer({'foot' : true, 'head' : true});
 
 
+        // Breadcrumbs
+        var breadcrumb = $('.k-breadcrumb');
+        function breadcrumb() {
+            if ( breadcrumb.length ) {
+                breadcrumb.css('width', '1px');
+                var breadwidth = breadcrumb.parent().width();
+                breadcrumb.width(breadwidth);
+            }
+        }
+
+        breadcrumb();
+
+        $(window).on('resize', function() {
+            breadcrumb();
+        });
+
         // Enable Select2 for all selectboxes within a select2 class container
         var select2 = $('.select2');
         if ( select2 ) {
