@@ -73,3 +73,22 @@
     flex: 1 0 auto;
   }
 }
+
+
+
+/**
+ * When sidebar is toggled
+ * =======================
+ */
+
+.opened--left {
+  .k-sidebar {
+    display: block;
+  }
+}
+
+.opened--right {
+  .k-sidebar--right {
+    display: block;
+  }
+}

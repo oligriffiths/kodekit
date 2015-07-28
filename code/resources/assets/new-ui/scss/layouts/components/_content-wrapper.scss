@@ -29,3 +29,22 @@
     flex-direction: row;
   }
 }
+
+
+
+/**
+ * Wrapper when toggled
+ * ====================
+ * 1. Hide overflowing when menu is toggled
+ * 2. Set back to auto when screen is wide enough
+ */
+
+.opened--left,
+.opened--right {
+  position: relative; // 1
+  overflow: hidden; // 1
+
+  @include breakpoint($desktop) {
+    overflow: auto; // 2
+  }
+}
