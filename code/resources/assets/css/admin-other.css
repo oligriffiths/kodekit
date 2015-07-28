@@ -1718,19 +1718,6 @@ body {
  * =======================
  */
   /**
- * Default with JavaScript disabled
- * ================================
- * By default we hide the button so it won't show when JS is disabled
- */
-  /**
- * When JavaScript is enabled
- * ==========================
- */
-  /**
- * When flexbox is in use
- * =======================
- */
-  /**
  * Default styles with JavaScript disabled
  * =======================================
  */
@@ -3888,26 +3875,6 @@ body {
     display: block; }
   .koowa .opened--right .k-sidebar--right {
     display: block; }
-  .koowa .k-button--toggle {
-    display: none;
-    min-height: 32px;
-    height: 100%;
-    min-width: 32px;
-    width: 32px;
-    max-width: 32px; }
-  .k-js-enabled .k-button--toggle {
-    display: table-cell;
-    vertical-align: top; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .k-js-enabled .k-flex .k-button--toggle, .k-js-enabled .k-flex .k-button--toggle {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 32px;
-          -ms-flex: 0 0 32px;
-              flex: 0 0 32px; } }
   .koowa .k-breadcrumb {
     overflow: auto;
     background: #3BA49B;
@@ -4056,7 +4023,7 @@ a:focus:after,
           .koowa .k-breadcrumb li:nth-last-child(2):before {
             content: "»"; } }
   @media (min-width: 600px) and (min-height: 400px) {
-    .flexbox .koowa .k-flex .k-breadcrumb, .flexboxlegacy .koowa .k-flex .k-breadcrumb {
+    .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4117,7 +4084,7 @@ a:focus:after,
         vertical-align: middle;
         white-space: nowrap; } }
   @media (min-width: 600px) and (min-height: 400px) {
-    .flexbox .koowa .k-flex .k-scopebar, .flexboxlegacy .koowa .k-flex .k-scopebar {
+    .flexbox .koowa .k-scopebar, .flexboxlegacy .koowa .k-scopebar {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4126,7 +4093,7 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .flexbox .koowa .k-flex .k-scopebar__item, .flexboxlegacy .koowa .k-flex .k-scopebar__item {
+    .flexbox .koowa .k-scopebar__item, .flexboxlegacy .koowa .k-scopebar__item {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4135,12 +4102,12 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .flexbox .koowa .k-flex .k-scopebar__item--fluid, .flexboxlegacy .koowa .k-flex .k-scopebar__item--fluid {
+    .flexbox .koowa .k-scopebar__item--fluid, .flexboxlegacy .koowa .k-scopebar__item--fluid {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; }
-    .flexbox .koowa .k-flex .k-scopebar__search, .flexboxlegacy .koowa .k-flex .k-scopebar__search {
+    .flexbox .koowa .k-scopebar__search, .flexboxlegacy .koowa .k-scopebar__search {
       -webkit-box-flex: 0;
       -webkit-flex: 0 1 auto;
           -ms-flex: 0 1 auto;
@@ -4187,7 +4154,7 @@ a:focus:after,
     display: table;
     width: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .flexbox .koowa .k-flex .k-component-wrapper, .flexboxlegacy .koowa .k-flex .k-component-wrapper {
+    .flexbox .koowa .k-component-wrapper, .flexboxlegacy .koowa .k-component-wrapper {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4389,7 +4356,7 @@ a:focus:after,
       margin-right: 0;
       margin-left: 9px; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .flexbox .koowa .k-flex .k-upload, .flexboxlegacy .koowa .k-flex .k-upload {
+    .flexbox .koowa .k-upload, .flexboxlegacy .koowa .k-upload {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4403,32 +4370,38 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .flexbox .koowa .k-flex .k-table-container, .flexboxlegacy .koowa .k-flex .k-table-container {
+    .flexbox .koowa .k-table-container, .flexboxlegacy .koowa .k-table-container {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       -webkit-box-flex: 1;
-      -webkit-flex: 1;
-          -ms-flex: 1;
-              flex: 1; }
-      .flexbox .koowa .k-flex .k-table-container .k-table, .flexboxlegacy .koowa .k-flex .k-table-container .k-table {
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      .flexbox .koowa .k-table-container .k-table, .flexboxlegacy .koowa .k-table-container .k-table {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-flex: 1;
-        -webkit-flex: 1;
-            -ms-flex: 1;
-                flex: 1; }
-    .flexbox .koowa .k-flex .k-sidebar-right, .flexboxlegacy .koowa .k-flex .k-sidebar-right {
+        -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+                flex: 1 1 auto;
+        max-height: 100%; }
+    .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar-right {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .flexbox .koowa .k-flex .k-sidebar__navigation,
-    .flexbox .koowa .k-flex .k-sidebar__footer, .flexboxlegacy .koowa .k-flex .k-sidebar__navigation,
-    .flexboxlegacy .koowa .k-flex .k-sidebar__footer {
+    .flexbox .koowa .k-sidebar__navigation,
+    .flexbox .koowa .k-sidebar__footer, .flexboxlegacy .koowa .k-sidebar__navigation,
+    .flexboxlegacy .koowa .k-sidebar__footer {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
@@ -5255,8 +5228,6 @@ a:focus:after,
       width: 100px; }
   .koowa .btn-right {
     float: right; }
-  .koowa .k-table {
-    overflow: auto; }
   .koowa .hidden.hidden.hidden {
     display: none; }
   .koowa .visually-hidden.visually-hidden.visually-hidden {

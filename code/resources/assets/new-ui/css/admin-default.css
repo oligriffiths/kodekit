@@ -1,25 +1,25 @@
 /*
 Error: Invalid CSS after "  &": expected ";", was ":focus,"
-        on line 97 of layouts/components/_scopebar.scss
-        from line 28 of layouts/_overview.scss
+        on line 95 of layouts/components/_scopebar.scss
+        from line 27 of layouts/_overview.scss
         from line 53 of _core.scss
         from line 5 of admin-default.scss
 
-92:   height: $scopebar-size;
-93:   min-width: $scopebar-size;
-94:   text-align: center;
-95:   display: table-cell
-96: 
-97:   &:focus,
-98:   &:hover {
-99:     background: $color-secondary-darkest;
-100:   }
-101: }
-102: 
+90:   height: $scopebar-size;
+91:   min-width: $scopebar-size;
+92:   text-align: center;
+93:   display: table-cell
+94: 
+95:   &:focus,
+96:   &:hover {
+97:     background: $color-secondary-darkest;
+98:   }
+99: }
+100: 
 
 Backtrace:
-layouts/components/_scopebar.scss:97
-layouts/_overview.scss:28
+layouts/components/_scopebar.scss:95
+layouts/_overview.scss:27
 _core.scss:53
 admin-default.scss:5
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
@@ -119,4 +119,4 @@ admin-default.scss:5
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 97 of layouts/components/_scopebar.scss\A         from line 28 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 5 of admin-default.scss\A \A 92:   height: $scopebar-size;\A 93:   min-width: $scopebar-size;\A 94:   text-align: center;\A 95:   display: table-cell\A 96: \A 97:   &:focus,\A 98:   &:hover {\A 99:     background: $color-secondary-darkest;\A 100:   }\A 101: }\A 102: "; }
+  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 95 of layouts/components/_scopebar.scss\A         from line 27 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 5 of admin-default.scss\A \A 90:   height: $scopebar-size;\A 91:   min-width: $scopebar-size;\A 92:   text-align: center;\A 93:   display: table-cell\A 94: \A 95:   &:focus,\A 96:   &:hover {\A 97:     background: $color-secondary-darkest;\A 98:   }\A 99: }\A 100: "; }

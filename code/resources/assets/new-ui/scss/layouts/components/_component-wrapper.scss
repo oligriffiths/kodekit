@@ -39,11 +39,9 @@
  */
 
 @include flexbox {
-  .k-flex {
-    .k-component-wrapper {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: row;
-    }
+  .k-component-wrapper {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
   }
 }
