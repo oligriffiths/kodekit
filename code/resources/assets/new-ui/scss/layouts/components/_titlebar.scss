@@ -4,22 +4,22 @@
  */
 
 .k-titlebar {
-  background: $toolbar-title-background;
   @include border(bottom, $toolbar-border);
+  background: $toolbar-title-background;
   color: $toolbar-color;
   padding: 0 $spacing-small;
 
   h2 {
     padding: 3px 0;
     font-weight: $regular;
-    font-size: $font-size * 1.15;
+    font-size: round($font-size * 1.15);
 
     @include breakpoint($desktop) {
-      font-size: $font-size * 1.25;
+      font-size: round($font-size * 1.25);
     }
 
     @include breakpoint($delta) {
-      font-size: $font-size * 1.4;
+      font-size: round($font-size * 1.4);
     }
   }
 }

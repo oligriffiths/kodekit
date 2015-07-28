@@ -1,11 +1,13 @@
 /**
  * Default styles with JavaScript disabled
  * =======================================
+ * 1. Used for the off canvas menu
+ * 2. Setting a background so container will fall nicely over the sidebar
  */
 
 .k-content {
-  transition: $transition;
-  background: white;
+  transition: $transition; // 1
+  background: white; // 2
 
   @include psuedo(after) {
     top: 0;
@@ -25,14 +27,6 @@
     width: 100%;
   }
 }
-.k-sidebar-toggled .k-content {
-  transform: translate(200px,0);
-}
-
-.k-sidebar-toggled .k-content:after {
-  opacity: .5;
-  z-index: 1;
-}
 
 
 /**
@@ -41,126 +35,10 @@
  */
 
 @include flexbox {
-  .k-flex {
-    .k-content {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: column;
-    }
+  .k-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: auto;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Default styles with JavaScript disabled
- * =======================================
- */
-
-.k-content-wrapper {
-  position: relative;
-  margin: 0;
-
-  // Faking flexbox on older browsers by using table styling
-  @include breakpoint($desktop) {
-    display: table;
-    width: 100%;
-  }
-}
-
-
-
-/**
- * When JavaScript is enabled
- * ==========================
- */
-
-@at-root .k-js-enabled {
-  .k-content-wrapper {
-    // Faking flexbox on older browsers by using table styling
-    display: table;
-    width: 100%;
-  }
-}
-
-
-
-/**
- * When flexbox is in use
- * ======================
- */
-
-@include flexbox {
-  .k-flex {
-    .k-content-wrapper {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: row;
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-/**
- * Default styles with JavaScript disabled
- * =======================================
- */
-
-.k-component-wrapper {
-  position: relative;
-
-  // Faking flexbox on older browsers by using table styling
-  @include breakpoint($desktop) {
-    display: table;
-    width: 100%;
-  }
-}
-
-
-
-/**
- * When JavaScript is enabled
- * ==========================
- */
-
-@at-root .k-js-enabled {
-  .k-component-wrapper {
-    // Faking flexbox on older browsers by using table styling
-    display: table;
-    width: 100%;
-  }
-}
-
-
-
-/**
- * When flexbox is in use
- * ======================
- */
-
-@include flexbox {
-  .k-flex {
-    .k-component-wrapper {
-      display: flex;
-      flex: 1 1 auto;
-      flex-direction: row;
-    }
-  }
-}
-
-

@@ -37,18 +37,18 @@ body {
   padding: $koowa-padding;
   -webkit-font-smoothing: $font-smoothing;
 
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-  }
+  // Using z-index to be able to talk with JS
+  position: relative; // Needed fo webkit/blink to read z-index with JS
+  z-index: 0; // z-index of 0 on mobile view
 
   @include breakpoint($minwidth) {
     max-width: none; // 3
   }
 
-  // Using z-index to be able to talk with JS
-  position: relative; // Needed fo webkit/blink to read z-index with JS
-  z-index: 0; // z-index of 0 on mobile view
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+  }
 
   @include breakpoint($desktop) {
     z-index: 1; // z-index of 1 on desktop view

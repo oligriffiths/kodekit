@@ -190,10 +190,26 @@
   max-height: $height;
 }
 
-@mixin flexbox {
-  @if $flexbox == true {
-    @media (min-width: $flexbox-horizontal) and (min-height: $flexbox-vertical) {
-      @content
+
+
+/**
+ * Flexbox
+ * =======
+ * 1. Is flexbox variable set to true?
+ * 2. Make sure to place selector at root since we use modernizr (add classes to html tag)
+ * 3. Check for modernizr classes
+ * 4. Set media query
+ */
+
+@mixin flexbox($horizontal: $flexbox-horizontal, $vertical: $flexbox-vertical) {
+  @if $flexbox == true { // 1
+    @at-root { // 2
+      .flexbox &, // 3
+      .flexboxlegacy & { // 3
+        @media (min-width: $horizontal) and (min-height: $vertical) { // 4
+          @content
+        }
+      }
     }
   }
 }
@@ -205,5 +221,12 @@
     } @else {
       border-#{$position}: $border-width $border-style $border-color;
     }
+  }
+}
+
+
+@mixin js-enabled {
+  @at-root .k-js-enabled & {
+    @content;
   }
 }

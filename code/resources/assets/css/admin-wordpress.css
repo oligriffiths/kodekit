@@ -136,6 +136,14 @@
 /* @TODO: refactor
 =========================================
 */
+/**
+ * Flexbox
+ * =======
+ * 1. Is flexbox variable set to true?
+ * 2. Make sure to place selector at root since we use modernizr (add classes to html tag)
+ * 3. Check for modernizr classes
+ * 4. Set media query
+ */
 @font-face {
   font-family: "koowa-icons";
   src: url("../fonts/koowa-icons/koowa-icons.eot");
@@ -1599,8 +1607,11 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   position: relative;
   z-index: 0; }
-  @media (min-width: 600px) and (min-height: 400px) {
+  @media screen and (min-width: 400px) {
     .koowa {
+      max-width: none; } }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .flexbox .koowa, .flexboxlegacy .koowa {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -1609,9 +1620,6 @@ body {
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; } }
-  @media screen and (min-width: 400px) {
-    .koowa {
-      max-width: none; } }
   @media screen and (min-width: 768px) {
     .koowa {
       z-index: 1; } }
@@ -1661,22 +1669,8 @@ body {
   /**
  * Default styles with JavaScript disabled
  * =======================================
- */
-  /**
- * When JavaScript is enabled
- * ==========================
- */
-  /**
- * When flexbox is in use
- * ======================
- */
-  /**
- * Default styles with JavaScript disabled
- * =======================================
- */
-  /**
- * When JavaScript is enabled
- * ==========================
+ * 1. Used for the off canvas menu
+ * 2. Setting a background so container will fall nicely over the sidebar
  */
   /**
  * When flexbox is in use
@@ -1744,12 +1738,20 @@ body {
  * =======================================
  */
   /**
+ * When JavaScript is enabled
+ * ==========================
+ */
+  /**
  * When flexbox is in use
  * ======================
  */
   /**
- * After toggling the sidebar
- * ==========================
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+  /**
+ * When flexbox is in use
+ * ======================
  */
   /**
  * Default styles with JavaScript disabled
@@ -1768,8 +1770,8 @@ body {
  * ================================
  */
   /**
- * When flexboxt is in use
- * =======================
+ * When flexbox is in use
+ * ======================
  */
   /**
  * Utilities
@@ -3690,23 +3692,46 @@ body {
     border: 0;
     -webkit-appearance: none; }
   .koowa .k-titlebar {
-    background: #e0e0e0;
     border-bottom: 1px solid #f2f2f2;
+    background: #e0e0e0;
     color: #555;
     padding: 0 13px; }
     .koowa .k-titlebar h2 {
       padding: 3px 0;
       font-weight: 400;
-      font-size: 14.95px; }
+      font-size: 15px; }
       @media screen and (min-width: 768px) {
         .koowa .k-titlebar h2 {
-          font-size: 16.25px; } }
+          font-size: 16px; } }
       @media screen and (min-width: 1024px) {
         .koowa .k-titlebar h2 {
-          font-size: 18.2px; } }
+          font-size: 18px; } }
+  .koowa .k-content-wrapper {
+    position: relative;
+    margin: 0; }
+    @media screen and (min-width: 768px) {
+      .koowa .k-content-wrapper {
+        display: table;
+        width: 100%; } }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .flexbox .koowa .k-content-wrapper, .flexboxlegacy .koowa .k-content-wrapper {
+      width: auto;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   .koowa .k-content {
-    -webkit-transition: all 180ms ease-in-out;
-            transition: all 180ms ease-in-out;
+    -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
     background: white;
     position: relative; }
     .koowa .k-content:after {
@@ -3727,15 +3752,8 @@ body {
       .koowa .k-content {
         display: table-cell;
         width: 100%; } }
-  .koowa .k-sidebar-toggled .k-content {
-    -webkit-transform: translate(200px, 0);
-        -ms-transform: translate(200px, 0);
-            transform: translate(200px, 0); }
-  .koowa .k-sidebar-toggled .k-content:after {
-    opacity: .5;
-    z-index: 1; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-content {
+    .flexbox .koowa .k-content, .flexboxlegacy .koowa .k-content {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -3748,75 +3766,27 @@ body {
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
-              flex-direction: column; } }
-  .koowa .k-content-wrapper {
-    position: relative;
-    margin: 0; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-content-wrapper {
-        display: table;
-        width: 100%; } }
-  .k-js-enabled .k-content-wrapper {
-    display: table;
-    width: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-content-wrapper {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
-  .koowa .k-component-wrapper {
-    position: relative; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-component-wrapper {
-        display: table;
-        width: 100%; } }
-  .k-js-enabled .k-component-wrapper {
-    display: table;
-    width: 100%; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-component-wrapper {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
+              flex-direction: column;
+      width: auto; } }
   .koowa .k-sidebar {
     border-right: 1px solid #e1e1e1;
+    position: relative;
     background: white;
     color: #555;
-    -webkit-overflow-scrolling: touch;
-    vertical-align: top; }
+    -webkit-overflow-scrolling: touch; }
     @media screen and (min-width: 768px) {
       .koowa .k-sidebar {
         min-width: 170px;
         width: 170px;
         max-width: 170px;
-        position: relative;
-        display: table-cell; } }
+        display: table-cell;
+        vertical-align: top; } }
     @media screen and (min-width: 1024px) {
       .koowa .k-sidebar {
         min-width: 210px;
         width: 210px;
         max-width: 210px; } }
-  .k-js-enabled .k-sidebar {
+  .k-js-enabled .koowa .k-sidebar {
     min-width: 210px;
     width: 210px;
     max-width: 210px;
@@ -3827,25 +3797,21 @@ body {
     overflow: auto;
     display: none;
     left: 0; }
-    .k-js-enabled .k-sidebar--right {
-      right: 0; }
-    .k-js-enabled .k-sidebar .opened--left .k-sidebar {
-      display: block; }
     @media screen and (min-width: 768px) {
-      .k-js-enabled .k-sidebar {
+      .k-js-enabled .koowa .k-sidebar {
         min-width: 170px;
         width: 170px;
         max-width: 170px;
         position: relative;
         height: auto;
-        display: block; } }
+        display: table-cell; } }
     @media screen and (min-width: 1024px) {
-      .k-js-enabled .k-sidebar {
+      .k-js-enabled .koowa .k-sidebar {
         min-width: 210px;
         width: 210px;
         max-width: 210px; } }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-sidebar {
+  @media (min-width: 768px) and (min-height: 400px) {
+    .flexbox .koowa .k-sidebar, .flexboxlegacy .koowa .k-sidebar {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -3859,7 +3825,7 @@ body {
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .koowa .k-flex .k-sidebar__item {
+    .flexbox .koowa .k-sidebar__item, .flexboxlegacy .koowa .k-sidebar__item {
       -webkit-box-flex: 1;
       -webkit-flex: 1 0 auto;
           -ms-flex: 1 0 auto;
@@ -3876,7 +3842,7 @@ body {
     display: table-cell;
     vertical-align: top; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .k-js-enabled .k-flex .k-button--toggle {
+    .k-js-enabled .k-flex .k-button--toggle, .k-js-enabled .k-flex .k-button--toggle {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -3936,7 +3902,7 @@ body {
      * --------------------------------------
      */ }
       @media (min-width: 600px) and (min-height: 400px) {
-        .koowa .k-breadcrumb ul {
+        .flexbox .koowa .k-breadcrumb ul, .flexboxlegacy .koowa .k-breadcrumb ul {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -3965,7 +3931,7 @@ body {
         .koowa .k-breadcrumb li {
           display: table-cell; } }
       @media (min-width: 600px) and (min-height: 400px) {
-        .koowa .k-breadcrumb li {
+        .flexbox .koowa .k-breadcrumb li, .flexboxlegacy .koowa .k-breadcrumb li {
           display: -webkit-box;
           display: -webkit-flex;
           display: -ms-flexbox;
@@ -4000,7 +3966,7 @@ body {
         z-index: 1;
         overflow: visible; }
         @media (min-width: 600px) and (min-height: 400px) {
-          .koowa .k-breadcrumb li:hover {
+          .flexbox .koowa .k-breadcrumb li:hover, .flexboxlegacy .koowa .k-breadcrumb li:hover {
             -webkit-box-flex: 0;
             -webkit-flex: 0 0 auto;
                 -ms-flex: 0 0 auto;
@@ -4012,8 +3978,9 @@ body {
       display: block;
       overflow: visible; }
       @media (min-width: 600px) and (min-height: 400px) {
-        .koowa .k-breadcrumb .active,
-        .koowa .k-breadcrumb .home {
+        .flexbox .koowa .k-breadcrumb .active,
+        .flexboxlegacy .koowa .k-breadcrumb .active,
+        .flexbox .koowa .k-breadcrumb .home, .flexboxlegacy .koowa .k-breadcrumb .home {
           -webkit-box-flex: 0;
           -webkit-flex: 0 0 auto;
               -ms-flex: 0 0 auto;
@@ -4033,7 +4000,7 @@ a:focus:after,
           .koowa .k-breadcrumb li:nth-last-child(2):before {
             content: "»"; } }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-breadcrumb {
+    .flexbox .koowa .k-flex .k-breadcrumb, .flexboxlegacy .koowa .k-flex .k-breadcrumb {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4052,7 +4019,7 @@ a:focus:after,
     line-height: 16px;
     text-decoration: none;
     padding: 8px;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis; }
     .koowa .k-breadcrumb__item:hover,
@@ -4094,7 +4061,7 @@ a:focus:after,
         vertical-align: middle;
         white-space: nowrap; } }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-scopebar {
+    .flexbox .koowa .k-flex .k-scopebar, .flexboxlegacy .koowa .k-flex .k-scopebar {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4103,7 +4070,7 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .koowa .k-flex .k-scopebar__item {
+    .flexbox .koowa .k-flex .k-scopebar__item, .flexboxlegacy .koowa .k-flex .k-scopebar__item {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4112,12 +4079,12 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .koowa .k-flex .k-scopebar__item--fluid {
+    .flexbox .koowa .k-flex .k-scopebar__item--fluid, .flexboxlegacy .koowa .k-flex .k-scopebar__item--fluid {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; }
-    .koowa .k-flex .k-scopebar__search {
+    .flexbox .koowa .k-flex .k-scopebar__search, .flexboxlegacy .koowa .k-flex .k-scopebar__search {
       -webkit-box-flex: 0;
       -webkit-flex: 0 1 auto;
           -ms-flex: 0 1 auto;
@@ -4154,10 +4121,34 @@ a:focus:after,
       right: 0;
       width: 32px;
       height: 32px; }
+  .koowa .k-component-wrapper {
+    position: relative; }
+    @media screen and (min-width: 768px) {
+      .koowa .k-component-wrapper {
+        display: table;
+        width: 100%; } }
+  .k-js-enabled .k-component-wrapper {
+    display: table;
+    width: 100%; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .flexbox .koowa .k-flex .k-component-wrapper, .flexboxlegacy .koowa .k-flex .k-component-wrapper {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   .koowa .k-component {
     position: relative; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-component {
+    .flexbox .koowa .k-component, .flexboxlegacy .koowa .k-component {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4171,25 +4162,6 @@ a:focus:after,
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; } }
-  .koowa .k-component.k-closed {
-    position: absolute;
-    top: 0;
-    left: 100%;
-    z-index: 9;
-    width: 999px;
-    margin-left: -32px; }
-    .koowa .k-component.k-closed:after {
-      position: absolute;
-      content: " ";
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 9; }
-    .koowa .k-component.k-closed .k-location {
-      position: relative;
-      z-index: 10; }
   .koowa .k-sidebar-right {
     width: 100%; }
     @media screen and (min-width: 768px) {
@@ -4221,10 +4193,10 @@ a:focus:after,
   .koowa .k-overview {
     background: white;
     border: 1px solid #e1e1e1; }
-  .k-js-enabled .k-overview {
+  .k-js-enabled .koowa .k-overview {
     height: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex.k-overview {
+    .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4311,7 +4283,7 @@ a:focus:after,
       border-color: #2ecc71;
       color: white; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-toolbar {
+    .flexbox .koowa .k-toolbar, .flexboxlegacy .koowa .k-toolbar {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4320,7 +4292,7 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .koowa .k-flex .k-toolbar__title {
+    .flexbox .koowa .k-toolbar__title, .flexboxlegacy .koowa .k-toolbar__title {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
@@ -4338,13 +4310,13 @@ a:focus:after,
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row; }
-    .koowa .k-flex .k-toolbar__buttons {
+    .flexbox .koowa .k-toolbar__buttons, .flexboxlegacy .koowa .k-toolbar__buttons {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; } }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex .k-upload {
+    .flexbox .koowa .k-flex .k-upload, .flexboxlegacy .koowa .k-flex .k-upload {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4358,7 +4330,7 @@ a:focus:after,
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .koowa .k-flex .k-table-container {
+    .flexbox .koowa .k-flex .k-table-container, .flexboxlegacy .koowa .k-flex .k-table-container {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -4367,7 +4339,7 @@ a:focus:after,
       -webkit-flex: 1;
           -ms-flex: 1;
               flex: 1; }
-      .koowa .k-flex .k-table-container .k-table {
+      .flexbox .koowa .k-flex .k-table-container .k-table, .flexboxlegacy .koowa .k-flex .k-table-container .k-table {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -4376,13 +4348,14 @@ a:focus:after,
         -webkit-flex: 1;
             -ms-flex: 1;
                 flex: 1; }
-    .koowa .k-flex .k-sidebar-right {
+    .flexbox .koowa .k-flex .k-sidebar-right, .flexboxlegacy .koowa .k-flex .k-sidebar-right {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; }
-    .koowa .k-flex .k-sidebar__navigation,
-    .koowa .k-flex .k-sidebar__footer {
+    .flexbox .koowa .k-flex .k-sidebar__navigation,
+    .flexbox .koowa .k-flex .k-sidebar__footer, .flexboxlegacy .koowa .k-flex .k-sidebar__navigation,
+    .flexboxlegacy .koowa .k-flex .k-sidebar__footer {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
@@ -4610,7 +4583,7 @@ a:focus:after,
   .koowa .overflowing {
     position: relative; }
     @media (min-width: 600px) and (min-height: 400px) {
-      .koowa .overflowing--flex {
+      .flexbox .koowa .overflowing--flex, .flexboxlegacy .koowa .overflowing--flex {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -5260,7 +5233,7 @@ a:focus:after,
   .koowa .btn-sm, .koowa .btn-group-sm > .btn {
     padding: 3px 8px; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .koowa .k-flex.k-form {
+    .flexbox .koowa .k-flex.k-form, .flexboxlegacy .koowa .k-flex.k-form {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -5275,7 +5248,7 @@ a:focus:after,
           -ms-flex-direction: column;
               flex-direction: column;
       height: 100%; }
-    .koowa .k-flex .k-form__content {
+    .flexbox .koowa .k-flex .k-form__content, .flexboxlegacy .koowa .k-flex .k-form__content {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;

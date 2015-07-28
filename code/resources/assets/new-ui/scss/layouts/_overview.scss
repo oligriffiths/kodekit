@@ -20,14 +20,15 @@
  */
 
 @import "components/titlebar";
+@import "components/content-wrapper";
 @import "components/content";
-@import "components/sidebar"; // 1
+@import "components/sidebar";
 @import "components/toggle-button";
 @import "components/breadcrumb";
 @import "components/scopebar";
-@import "components/component"; // 6
-@import "components/sidebar-right"; // 7
-
+@import "components/component-wrapper";
+@import "components/component";
+@import "components/sidebar-right";
 
 
 
@@ -48,7 +49,7 @@
  * ==========================
  */
 
-@at-root .k-js-enabled {
+@include js-enabled {
   .k-overview {
     height: 100%;
   }
@@ -62,13 +63,11 @@
  */
 
 @include flexbox {
-  .k-flex {
-    &.k-overview {
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
-      min-height: $flexbox-vertical;
-      height: auto;
-    }
+  .k-overview {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: $flexbox-vertical;
+    height: auto;
   }
 }

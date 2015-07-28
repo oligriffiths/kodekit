@@ -222,7 +222,7 @@
   line-height: $breadcrumb-size / 2;
   text-decoration: none;
   padding: round($breadcrumb-size / 4);
-  white-space: nowrap;
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
 

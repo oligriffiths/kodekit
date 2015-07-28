@@ -51,20 +51,6 @@
 
 
 
-// Vars
-$menuwidth: $sidebar-width;
-$transition-time-easing: 180ms cubic-bezier(.2,.57,.44,.83);
-$transition: all $transition-time-easing;
-$query: $desktop;
-
-// Hamburger
-$button-size: 38px;
-$bar-width: 20px; // Best to grab a number that can be divided by 5
-$bar-height: round($bar-width / 5);
-
-// Overlay
-$overlay-background: black;
-
 /**
  * The transitioning container
  * ===========================
