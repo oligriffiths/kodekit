@@ -2,6 +2,7 @@ $color-primary: white !default;
 $color-primary-type: #555 !default;
 $color-primary-light: lighten($color-primary, 5%) !default;
 $color-primary-dark: darken($color-primary, 5%) !default;
+$color-primary-darkest: darken($color-primary, 8%) !default;
 $color-secondary: #f6f6f6 !default;
 $color-secondary-type: #555 !default;
 
@@ -11,7 +12,7 @@ $color-accent-type: white !default;
 
 $color-type: #333 !default;
 
-$border-color: #d6d6d6 !default;
+$border-color: #ddd !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 
@@ -32,9 +33,9 @@ $table-header-background: white !default;
 $list-hover-background: #f5f5f5 !default;
 $list-hover-border: #ddd !default;
 
+$navigation-background: $color-primary-darkest !default;
 $navigation-hover-background: #f9f9f9 !default;
 $navigation-hover-border: #ddd !default;
-
 
 
 /**
@@ -43,7 +44,7 @@ $navigation-hover-border: #ddd !default;
  */
 $toolbar-spacing: 9px !default;
 
-$toolbar-background: #F5F5F5 !default;
+$toolbar-background: #E3E6EB !default;
 $toolbar-color: $color-accent-dark !default;
 $toolbar-title-background: darken($toolbar-background, 3%) !default;
 $toolbar-title-color: $color-accent-dark !default;
@@ -64,6 +65,21 @@ $toolbar-button-success-hover-border: $color-success-light !default;
 $toolbar-button-success-hover-color: $color-success-type !default;
 
 
+$breadcrumb-background: #EBEDF1;
+$scopebar-background: #F7F8F9;
+$scopebar-border: darken($scopebar-background, 10%);
 
 
-$breadcrumb-background: #f1f1f1 !default;
+
+
+
+$sidebar-background: #EBEDF1;
+$sidebar-border: #CCD2DC;
+
+$navigation-background: #DBDFE6;
+$navigation-border: darken($navigation-background, 5%);
+
+$table-header-background: #EBEDF1;
+$table-header-border: darken($table-header-background, 5%);
+$table-footer-background: #EBEDF1;
+$table-header-border: darken($table-footer-background, 5%);
