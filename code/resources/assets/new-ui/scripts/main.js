@@ -10,7 +10,8 @@
             $togglebutton = $('#k-toggle-button'),
             $fixedtable = $('.table--fixed'),
             $tableitems = $('tbody td'),
-            $select2 = $('.select2'),
+            $select2default = $('.select2--default'),
+            $select2nogfx = $('.select2--no-gfx select'),
             $tree = $('.k-clicker'),
             $magnificframe = $('.mfp-iframe');
 
@@ -32,8 +33,15 @@
 
 
         // Enable Select2 for all selectboxes within a select2 class container
-        if ( $select2.length ) {
-            $select2.select2();
+        if ( $select2default.length ) {
+            $select2default.select2();
+        }
+
+        // Enable Select2 for all selectboxes within a select2 class container
+        if ( $select2nogfx.length ) {
+            $select2nogfx.select2({
+                minimumResultsForSearch: Infinity
+            });
         }
 
         
@@ -79,3 +87,4 @@
     });
 
 })(jQuery);
+

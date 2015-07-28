@@ -32,6 +32,22 @@ body.component {
 
 
   /**
+   * Component only
+   * ==============
+   */
+
+  &.component {
+    padding: 0;
+
+    .k-overview {
+      margin-top: 0;
+      border: none;
+    }
+  }
+
+
+
+  /**
    * Flexbox setup
    * -------------
    * Set Joomla containers to flex and adjust margins and paddings

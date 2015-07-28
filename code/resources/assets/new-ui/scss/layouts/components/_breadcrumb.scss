@@ -5,7 +5,7 @@
 
 .k-breadcrumb {
   overflow: auto;
-  background: $color-secondary;
+  background: $breadcrumb-background;
   color: $color-secondary-type;
   @include border(bottom, $location-border);
 

@@ -5,13 +5,13 @@ $color-primary-dark: darken($color-primary, 5%) !default;
 $color-secondary: #f6f6f6 !default;
 $color-secondary-type: #555 !default;
 
-$color-accent: #0073AA !default;
+$color-accent: #0088CC !default;
 $color-accent-dark: darken($color-accent, 15%) !default;
 $color-accent-type: white !default;
 
 $color-type: #333 !default;
 
-$border-color: #e1e1e1 !default;
+$border-color: #d6d6d6 !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 
@@ -35,17 +35,19 @@ $list-hover-border: #ddd !default;
 $navigation-hover-background: #f9f9f9 !default;
 $navigation-hover-border: #ddd !default;
 
+
+
 /**
  * Toolbar
  * =======
  */
 $toolbar-spacing: 9px !default;
 
-$toolbar-background: #DCE3E9 !default;
+$toolbar-background: #F5F5F5 !default;
 $toolbar-color: $color-accent-dark !default;
 $toolbar-title-background: darken($toolbar-background, 3%) !default;
 $toolbar-title-color: $color-accent-dark !default;
-$toolbar-border: #c7d1da !default;
+$toolbar-border: darken($toolbar-background, 5%) !default;
 
 $toolbar-button-default-background: $color-primary !default;
 $toolbar-button-default-border: $toolbar-border !default;
@@ -64,3 +66,4 @@ $toolbar-button-success-hover-color: $color-success-type !default;
 
 
 
+$breadcrumb-background: #f1f1f1 !default;

@@ -390,3 +390,8 @@ $button-size: 38px;
 $bar-width: 20px; // Best to grab a number that can be divided by 5
 $bar-height: round($bar-width / 5);
 $overlay-background: black;
+
+
+
+
+$breadcrumb-background: $color-secondary !default;

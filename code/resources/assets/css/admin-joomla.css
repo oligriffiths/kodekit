@@ -232,6 +232,10 @@ body.component {
    * Adding spacing to overview
    */
   /**
+   * Component only
+   * ==============
+   */
+  /**
    * Flexbox setup
    * -------------
    * Set Joomla containers to flex and adjust margins and paddings
@@ -272,6 +276,13 @@ body.component {
   body.admin .k-overview,
   body.component .k-overview {
     margin-top: 20px; }
+  body.admin.component,
+  body.component.component {
+    padding: 0; }
+    body.admin.component .k-overview,
+    body.component.component .k-overview {
+      margin-top: 0;
+      border: none; }
   body.admin nav.navbar,
   body.admin header.header,
   body.admin .subhead-collapse,
@@ -687,7 +698,7 @@ body.component {
 
 .select2-container--classic .select2-selection--single {
   background-color: #f7f7f7;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #d6d6d6;
   border-radius: 4px;
   outline: 0;
   background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%);
@@ -709,7 +720,7 @@ body.component {
   .select2-container--classic .select2-selection--single .select2-selection__arrow {
     background-color: #ddd;
     border: none;
-    border-left: 1px solid #e1e1e1;
+    border-left: 1px solid #d6d6d6;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 26px;
@@ -738,7 +749,7 @@ body.component {
 
 .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
   border: none;
-  border-right: 1px solid #e1e1e1;
+  border-right: 1px solid #d6d6d6;
   border-radius: 0;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -774,7 +785,7 @@ body.component {
 
 .select2-container--classic .select2-selection--multiple {
   background-color: white;
-  border: 1px solid #e1e1e1;
+  border: 1px solid #d6d6d6;
   border-radius: 4px;
   cursor: text;
   outline: 0; }
@@ -788,7 +799,7 @@ body.component {
     display: none; }
   .select2-container--classic .select2-selection--multiple .select2-selection__choice {
     background-color: #e4e4e4;
-    border: 1px solid #e1e1e1;
+    border: 1px solid #d6d6d6;
     border-radius: 4px;
     cursor: default;
     float: left;
@@ -829,7 +840,7 @@ body.component {
   border-bottom-right-radius: 0; }
 
 .select2-container--classic .select2-search--dropdown .select2-search__field {
-  border: 1px solid #e1e1e1;
+  border: 1px solid #d6d6d6;
   outline: 0; }
 
 .select2-container--classic .select2-search--inline .select2-search__field {
@@ -3856,9 +3867,9 @@ body {
     border: 0;
     -webkit-appearance: none; }
   .koowa .k-titlebar {
-    border-bottom: 1px solid #c7d1da;
-    background: #d3dbe3;
-    color: #003f5d;
+    border-bottom: 1px solid #e8e8e8;
+    background: #ededed;
+    color: #005580;
     padding: 0 13px; }
     .koowa .k-titlebar h2 {
       padding: 3px 0;
@@ -3990,7 +4001,7 @@ body {
   .koowa .opened--left .off-canvas-overlay {
     z-index: 2; }
   .koowa .k-sidebar {
-    border-right: 1px solid #e1e1e1;
+    border-right: 1px solid #d6d6d6;
     position: relative;
     background: white;
     color: #555;
@@ -4062,7 +4073,7 @@ body {
     min-width: 32px;
     width: 32px;
     max-width: 32px;
-    border-right: 1px solid #e1e1e1; }
+    border-right: 1px solid #d6d6d6; }
   .k-js-enabled .k-button--toggle {
     display: table-cell;
     vertical-align: top; }
@@ -4078,9 +4089,9 @@ body {
               flex: 0 0 32px; } }
   .koowa .k-breadcrumb {
     overflow: auto;
-    background: #f6f6f6;
+    background: #f1f1f1;
     color: #555;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #d6d6d6;
     /**
    * Styling list items
    * ------------------
@@ -4267,6 +4278,7 @@ a:focus:after,
       .koowa .k-scopebar {
         display: table;
         width: 100%; } }
+    .koowa .k-scopebar .select2,
     .koowa .k-scopebar button {
       height: 32px;
       padding: 0 7px; }
@@ -4279,7 +4291,7 @@ a:focus:after,
   .koowa .k-scopebar__item {
     display: block;
     position: relative;
-    border-bottom: 1px solid #e1e1e1; }
+    border-bottom: 1px solid #d6d6d6; }
     @media screen and (min-width: 600px) {
       .koowa .k-scopebar__item {
         display: table-cell;
@@ -4417,7 +4429,7 @@ a:focus:after,
         max-width: 360px; } }
   .koowa .k-overview {
     background: white;
-    border: 1px solid #e1e1e1; }
+    border: 1px solid #d6d6d6; }
   .k-js-enabled .koowa .k-overview {
     height: 100%; }
   @media (min-width: 600px) and (min-height: 400px) {
@@ -4444,8 +4456,8 @@ a:focus:after,
     .koowa .row:last-child {
       margin-bottom: 0; }
   .koowa .k-toolbar {
-    background: #DCE3E9;
-    border-bottom: 1px solid #c7d1da; }
+    background: #F5F5F5;
+    border-bottom: 1px solid #e8e8e8; }
     @media screen and (min-width: 768px) {
       .koowa .k-toolbar {
         width: 100%;
@@ -4489,14 +4501,16 @@ a:focus:after,
       white-space: nowrap;
       overflow: auto;
       vertical-align: top; } }
+  .koowa .k-toolbar__buttons .btn {
+    margin-right: 9px; }
   .koowa .k-toolbar__buttons .btn-default {
     background: white;
-    border-color: #c7d1da;
+    border-color: #e8e8e8;
     color: #555; }
     .koowa .k-toolbar__buttons .btn-default:focus,
     .koowa .k-toolbar__buttons .btn-default:hover {
       background: #f6f6f6;
-      border-color: #c7d1da;
+      border-color: #e8e8e8;
       color: #555; }
   .koowa .k-toolbar__buttons .btn-success {
     background: #27ae60;
@@ -4540,6 +4554,23 @@ a:focus:after,
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; } }
+  .koowa .k-toolbar__buttons {
+    padding: 9px 9px 0 9px;
+    background: #F5F5F5;
+    width: 100%; }
+    .koowa .k-toolbar__buttons .btn-toolbar {
+      margin: 0; }
+    .koowa .k-toolbar__buttons .btn-group {
+      margin-left: 0; }
+    .koowa .k-toolbar__buttons .btn {
+      line-height: 1.2em;
+      margin-right: 9px;
+      margin-bottom: 9px; }
+  .koowa #toolbar-options {
+    float: right; }
+    .koowa #toolbar-options .btn {
+      margin-right: 0;
+      margin-left: 9px; }
   @media (min-width: 600px) and (min-height: 400px) {
     .flexbox .koowa .k-flex .k-upload, .flexboxlegacy .koowa .k-flex .k-upload {
       display: -webkit-box;
@@ -4586,7 +4617,7 @@ a:focus:after,
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; } }
   .koowa a {
-    color: #0073AA; }
+    color: #0088CC; }
   .koowa button {
     display: inline-block;
     background: transparent;
@@ -4616,7 +4647,7 @@ a:focus:after,
     list-style: none;
     border: none;
     background: transparent;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #d6d6d6;
     padding: 8px 0;
     background: #f2f2f2; }
     .koowa .k-navigation:before,
@@ -4638,7 +4669,7 @@ a:focus:after,
         border-left-color: #ddd; }
       .koowa .k-navigation a:focus {
         outline: none;
-        border-color: #0073AA; }
+        border-color: #0088CC; }
       .koowa .k-navigation a:focus:hover {
         outline: none; }
     .koowa .k-navigation span {
@@ -4650,8 +4681,8 @@ a:focus:after,
       padding: 4px 16px;
       font-weight: bold;
       background: #f2f2f2;
-      border-left-color: #0073AA;
-      color: #0073AA; }
+      border-left-color: #0088CC;
+      color: #0088CC; }
       .koowa .k-navigation .active a:hover {
         background: transparent;
         cursor: default; }
@@ -4752,7 +4783,7 @@ a:focus:after,
         left: -6px;
         margin-top: -4px; }
       .koowa .k-list .k-clicker:hover:after {
-        color: #0073AA; }
+        color: #0088CC; }
     .koowa .k-list .toggled .k-clicker:after {
       border: none;
       border-left: 4px solid transparent;
@@ -4776,8 +4807,8 @@ a:focus:after,
       padding: 4px 16px;
       font-weight: bold;
       background: white;
-      border-left-color: #0073AA;
-      color: #0073AA; }
+      border-left-color: #0088CC;
+      color: #0088CC; }
       .koowa .k-list .active a:hover {
         background: transparent;
         cursor: default; }
@@ -4850,14 +4881,14 @@ a:focus:after,
     width: 100%;
     text-align: left; }
   .koowa .k-table th, .koowa .k-table td {
-    padding: 5px; }
+    padding: 7px; }
   .koowa .k-table th {
     background: white;
     height: 32px;
     position: relative;
     text-align: left;
     white-space: nowrap;
-    border-bottom: 1px solid #e1e1e1; }
+    border-bottom: 1px solid #d6d6d6; }
     .koowa .k-table th a {
       display: block; }
     .koowa .k-table th input {
@@ -4865,7 +4896,7 @@ a:focus:after,
   .koowa .k-table td {
     vertical-align: middle;
     text-align: left;
-    border-bottom: 1px solid #e1e1e1; }
+    border-bottom: 1px solid #d6d6d6; }
   .koowa .k-table small {
     display: block; }
   .koowa .k-table tr:nth-child(even) td {
@@ -4991,7 +5022,7 @@ a:focus:after,
       background: #27ae60; }
     .koowa .radio-toggle:not(ie) :checked + label span:before,
     .koowa .radio-toggle:not(ie).radio-toggle--neutral input[value]:checked + label span:before {
-      background: #0073AA; }
+      background: #0088CC; }
   .koowa .checkbox-toggle:not(old-ie) {
     display: table;
     width: 100%;
@@ -5378,27 +5409,16 @@ a:focus:after,
       left: 50%;
       margin-left: -7px; }
   .koowa .from-web {
-    color: #0073AA; }
+    color: #0088CC; }
   .koowa .k-toolbar {
-    background: #DCE3E9;
-    color: #003f5d; }
-    .koowa .k-toolbar.k-toggle .k-toolbar__title {
-      width: auto;
-      background: transparent; }
-      @media screen and (min-width: 768px) {
-        .koowa .k-toolbar.k-toggle .k-toolbar__title {
-          max-width: 180px; } }
-      @media screen and (min-width: 1024px) {
-        .koowa .k-toolbar.k-toggle .k-toolbar__title {
-          max-width: 270px; } }
-    .koowa .k-toolbar.k-toggle .k-toolbar__buttons {
-      width: 100%; }
+    background: #F5F5F5;
+    color: #005580; }
   .koowa .k-toolbar__title {
     padding: 9px; }
     @media screen and (min-width: 768px) {
       .koowa .k-toolbar__title {
-        background: #d3dbe3;
-        color: #003f5d; } }
+        background: #ededed;
+        color: #005580; } }
     .koowa .k-toolbar__title h2 {
       padding: 3px 0;
       font-weight: 400;
@@ -5409,20 +5429,6 @@ a:focus:after,
       @media screen and (min-width: 1024px) {
         .koowa .k-toolbar__title h2 {
           font-size: 18.2px; } }
-  .koowa .k-toolbar__buttons {
-    padding: 9px 9px 0 0;
-    background: #DCE3E9;
-    width: 100%; }
-    .koowa .k-toolbar__buttons .btn-toolbar {
-      margin: 0; }
-    .koowa .k-toolbar__buttons .btn-group {
-      margin-left: 0; }
-    .koowa .k-toolbar__buttons .btn {
-      margin-right: 0;
-      margin-left: 9px;
-      margin-bottom: 9px; }
-      .koowa .k-toolbar__buttons .btn:first-child {
-        margin-left: 0; }
   .koowa .k-sidebar-right {
     background: #eee;
     padding: 12px 18px;
@@ -5484,3 +5490,10 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: auto; } }
+  .koowa .select2--no-gfx .select2 {
+    width: auto !important; }
+  .koowa .select2--no-gfx .select2-selection {
+    background: transparent;
+    border: none; }
+  .select2-dropdown {
+    min-width: 200px; }
