@@ -1665,6 +1665,7 @@ body {
   /**
  * When flexbox is in use
  * ======================
+ * 1. Otherwise flexbox doesn't work
  */
   /**
  * Wrapper when toggled
@@ -1772,6 +1773,7 @@ body {
   /**
  * When flexbox is in use
  * ======================
+ * 1. Otherwise flexbox doesn't work
  */
   /**
  * Default styles with JavaScript disabled
@@ -3718,7 +3720,8 @@ body {
       -webkit-box-direction: normal;
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
-              flex-direction: row; } }
+              flex-direction: row;
+      overflow: hidden; } }
   .koowa .opened--left,
   .koowa .opened--right {
     position: relative;
@@ -4192,7 +4195,8 @@ a:focus:after,
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
-              flex: 1 1 auto; } }
+              flex: 1 1 auto;
+      overflow: hidden; } }
   .koowa .k-sidebar-right {
     width: 100%; }
     @media screen and (min-width: 768px) {
@@ -4232,16 +4236,11 @@ a:focus:after,
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
-      min-height: 400px;
+      overflow: hidden;
       height: auto; } }
   .koowa .container-fluid {
     padding: 20px; }
@@ -4402,8 +4401,12 @@ a:focus:after,
         -webkit-box-flex: 1;
         -webkit-flex: 1 1 auto;
             -ms-flex: 1 1 auto;
-                flex: 1 1 auto;
-        max-height: 100%; }
+                flex: 1 1 auto; }
+        .flexbox .koowa .k-table-container .k-table table, .flexboxlegacy .koowa .k-table-container .k-table table {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1 1 auto;
+              -ms-flex: 1 1 auto;
+                  flex: 1 1 auto; }
     .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar-right {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
