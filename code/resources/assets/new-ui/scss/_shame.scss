@@ -27,3 +27,19 @@
     overflow: auto;
   }
 }
+
+
+.select2--no-gfx {
+  .select2 {
+    width: auto !important;
+  }
+
+  .select2-selection {
+    background: transparent;
+    border: none;
+  }
+}
+
+@at-root .select2-dropdown {
+  min-width: 200px;
+}

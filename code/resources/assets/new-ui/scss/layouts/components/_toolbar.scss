@@ -81,6 +81,10 @@
     vertical-align: top;
   }
 
+  .btn {
+    margin-right: $toolbar-spacing;
+  }
+
   .btn-default {
     background: $toolbar-button-default-background;
     border-color: $toolbar-button-default-border;
@@ -130,5 +134,36 @@
 
   .k-toolbar__buttons {
     flex: 1 1 auto;
+  }
+}
+
+
+
+.k-toolbar__buttons {
+  padding: $toolbar-spacing $toolbar-spacing 0 $toolbar-spacing;
+  background: $toolbar-background;
+  width: 100%;
+
+  .btn-toolbar {
+    margin: 0;
+  }
+
+  .btn-group {
+    margin-left: 0;
+  }
+
+  .btn {
+    line-height: 1.2em;
+    margin-right: $toolbar-spacing;
+    margin-bottom: $toolbar-spacing;
+  }
+}
+
+#toolbar-options {
+  float: right;
+
+  .btn {
+    margin-right: 0;
+    margin-left: $toolbar-spacing;
   }
 }

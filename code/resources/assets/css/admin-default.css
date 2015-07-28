@@ -4098,6 +4098,7 @@ a:focus:after,
       .koowa .k-scopebar {
         display: table;
         width: 100%; } }
+    .koowa .k-scopebar .select2,
     .koowa .k-scopebar button {
       height: 32px;
       padding: 0 7px; }
@@ -4317,6 +4318,8 @@ a:focus:after,
       white-space: nowrap;
       overflow: auto;
       vertical-align: top; } }
+  .koowa .k-toolbar__buttons .btn {
+    margin-right: 9px; }
   .koowa .k-toolbar__buttons .btn-default {
     background: #46627f;
     border-color: #46627f;
@@ -4368,6 +4371,23 @@ a:focus:after,
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; } }
+  .koowa .k-toolbar__buttons {
+    padding: 9px 9px 0 9px;
+    background: #222f3d;
+    width: 100%; }
+    .koowa .k-toolbar__buttons .btn-toolbar {
+      margin: 0; }
+    .koowa .k-toolbar__buttons .btn-group {
+      margin-left: 0; }
+    .koowa .k-toolbar__buttons .btn {
+      line-height: 1.2em;
+      margin-right: 9px;
+      margin-bottom: 9px; }
+  .koowa #toolbar-options {
+    float: right; }
+    .koowa #toolbar-options .btn {
+      margin-right: 0;
+      margin-left: 9px; }
   @media (min-width: 600px) and (min-height: 400px) {
     .flexbox .koowa .k-flex .k-upload, .flexboxlegacy .koowa .k-flex .k-upload {
       display: -webkit-box;
@@ -4677,7 +4697,7 @@ a:focus:after,
     width: 100%;
     text-align: left; }
   .koowa .k-table th, .koowa .k-table td {
-    padding: 5px; }
+    padding: 7px; }
   .koowa .k-table th {
     background: #eee;
     height: 32px;
@@ -5207,17 +5227,6 @@ a:focus:after,
   .koowa .k-toolbar {
     background: #222f3d;
     color: #ecf0f1; }
-    .koowa .k-toolbar.k-toggle .k-toolbar__title {
-      width: auto;
-      background: transparent; }
-      @media screen and (min-width: 768px) {
-        .koowa .k-toolbar.k-toggle .k-toolbar__title {
-          max-width: 180px; } }
-      @media screen and (min-width: 1024px) {
-        .koowa .k-toolbar.k-toggle .k-toolbar__title {
-          max-width: 270px; } }
-    .koowa .k-toolbar.k-toggle .k-toolbar__buttons {
-      width: 100%; }
   .koowa .k-toolbar__title {
     padding: 9px; }
     @media screen and (min-width: 768px) {
@@ -5234,20 +5243,6 @@ a:focus:after,
       @media screen and (min-width: 1024px) {
         .koowa .k-toolbar__title h2 {
           font-size: 18.2px; } }
-  .koowa .k-toolbar__buttons {
-    padding: 9px 9px 0 0;
-    background: #222f3d;
-    width: 100%; }
-    .koowa .k-toolbar__buttons .btn-toolbar {
-      margin: 0; }
-    .koowa .k-toolbar__buttons .btn-group {
-      margin-left: 0; }
-    .koowa .k-toolbar__buttons .btn {
-      margin-right: 0;
-      margin-left: 9px;
-      margin-bottom: 9px; }
-      .koowa .k-toolbar__buttons .btn:first-child {
-        margin-left: 0; }
   .koowa .k-sidebar-right {
     background: #eee;
     padding: 12px 18px;
@@ -5309,3 +5304,10 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: auto; } }
+  .koowa .select2--no-gfx .select2 {
+    width: auto !important; }
+  .koowa .select2--no-gfx .select2-selection {
+    background: transparent;
+    border: none; }
+  .select2-dropdown {
+    min-width: 200px; }

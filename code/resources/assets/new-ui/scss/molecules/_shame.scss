@@ -130,26 +130,6 @@
 .k-toolbar {
   background: $toolbar-background;
   color: $toolbar-color;
-
-  // When the sidebar is toggled we no longer need a fixed width header
-  &.k-toggle {
-    .k-toolbar__title {
-      width: auto;
-      background: transparent;
-
-      @include breakpoint($desktop) {
-        max-width: $sidebar-width-small;
-      }
-
-      @include breakpoint($delta) {
-        max-width: $sidebar-width;
-      }
-    }
-
-    .k-toolbar__buttons {
-      width: 100%;
-    }
-  }
 }
 
 .k-toolbar__title {
@@ -175,29 +155,7 @@
   }
 }
 
-.k-toolbar__buttons {
-  padding: $toolbar-spacing $toolbar-spacing 0 0;
-  background: $toolbar-background;
-  width: 100%;
 
-  .btn-toolbar {
-    margin: 0;
-  }
-
-  .btn-group {
-    margin-left: 0;
-  }
-
-  .btn {
-    margin-right: 0;
-    margin-left: $toolbar-spacing;
-    margin-bottom: $toolbar-spacing;
-
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-}
 
 
 .k-sidebar-right {
