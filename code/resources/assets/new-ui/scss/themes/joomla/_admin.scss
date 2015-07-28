@@ -3,6 +3,7 @@
 body.admin,
 body.component {
   box-sizing: border-box;
+  padding-top: 0;
 
   /**
    * Basic setup
@@ -10,6 +11,14 @@ body.component {
    * Always remove the toolbar and empty div
    * We are showing this ourselves
    */
+
+  nav.navbar {
+    position: static;
+  }
+
+  header.header {
+    border-top: none;
+  }
 
   header.header + div {
     display: none;
@@ -56,6 +65,7 @@ body.component {
 
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
 
   /**
@@ -78,6 +88,7 @@ body.component {
 
   .container-main {
     display: flex;
+    overflow: hidden;
     flex: 1 1 auto;
     margin: 0 -20px;
     padding: 0;
@@ -96,6 +107,7 @@ body.component {
     #content .row-fluid,
     #content .row-fluid .span12 {
       display: flex;
+      overflow: hidden;
       flex: 1 1 auto;
       flex-direction: column;
     }

@@ -12,6 +12,7 @@
 /**
  * When flexbox is in use
  * ======================
+ * 1. Otherwise flexbox doesn't work
  */
 
 @include flexbox {
@@ -19,5 +20,6 @@
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
+    overflow: hidden; // 1
   }
 }
