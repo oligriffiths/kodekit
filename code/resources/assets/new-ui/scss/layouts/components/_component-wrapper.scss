@@ -1,0 +1,49 @@
+
+
+
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-component-wrapper {
+  position: relative;
+
+  // Faking flexbox on older browsers by using table styling
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
+}
+
+
+
+/**
+ * When JavaScript is enabled
+ * ==========================
+ */
+
+@at-root .k-js-enabled {
+  .k-component-wrapper {
+    // Faking flexbox on older browsers by using table styling
+    display: table;
+    width: 100%;
+  }
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+@include flexbox {
+  .k-flex {
+    .k-component-wrapper {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: row;
+    }
+  }
+}

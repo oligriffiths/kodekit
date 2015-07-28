@@ -3,8 +3,15 @@
  * =======================================
  */
 
-.k-component {
+.k-content-wrapper {
   position: relative;
+  margin: 0;
+
+  // Faking flexbox on older browsers by using table styling
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
 }
 
 
@@ -15,9 +22,10 @@
  */
 
 @include flexbox {
-  .k-component {
+  .k-content-wrapper {
+    width: auto;
     display: flex;
-    flex-direction: column;
     flex: 1 1 auto;
+    flex-direction: row;
   }
 }
