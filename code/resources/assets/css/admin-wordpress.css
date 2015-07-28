@@ -1792,6 +1792,12 @@ body {
  * 4. Hide overlay when screen is wide enough
  */
   /**
+ * Wrapper when toggled
+ * ====================
+ * 1. Hide overflowing when menu is toggled
+ * 2. Set back to auto when screen is wide enough
+ */
+  /**
  * Container when toggled
  * ======================
  * 1. Set left to the width of the menu so the menu will appear
@@ -5278,8 +5284,8 @@ a:focus:after,
   .koowa .k-nowrap {
     white-space: nowrap; }
   .koowa .k-content {
-    -webkit-transition: -webkit-transform 360ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-            transition: transform 360ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
     position: relative;
     z-index: 2; }
   .koowa .off-canvas-overlay {
@@ -5293,11 +5299,19 @@ a:focus:after,
     z-index: -1;
     opacity: 0;
     background: black;
-    -webkit-transition: opacity 360ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-            transition: opacity 360ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
+    -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     @media (min-width: 768px) {
       .koowa .off-canvas-overlay {
         display: none; } }
+  .koowa .opened--left,
+  .koowa .opened--right {
+    position: relative;
+    overflow: hidden; }
+    @media (min-width: 768px) {
+      .koowa .opened--left,
+      .koowa .opened--right {
+        overflow: auto; } }
   .koowa .show-left-menu .k-content {
     -webkit-transform: translate(210px, 0);
         -ms-transform: translate(210px, 0);
@@ -5336,8 +5350,6 @@ a:focus:after,
     display: block; }
   .koowa .opened--right .k-sidebar--right {
     display: block; }
-  .koowa .k- {
-    display: none !important; }
 
 .koowa .k-overview {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); }
