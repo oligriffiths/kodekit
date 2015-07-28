@@ -22,3 +22,23 @@
 .margin-bottom.margin-bottom.margin-bottom {
   margin-bottom: $spacing;
 }
+
+
+
+/**
+ * Disable transitions
+ * ===================
+ */
+
+.no-transition.no-transition.no-transition {
+  transition: none;
+}
+
+/**
+  * Nowrap
+  * ======
+  */
+
+.k-nowrap.k-nowrap.k-nowrap {
+  white-space: nowrap;
+}

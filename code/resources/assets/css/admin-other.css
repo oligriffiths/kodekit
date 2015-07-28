@@ -1663,14 +1663,43 @@ body {
  * ======================
  */
   /**
+ * Wrapper when toggled
+ * ====================
+ * 1. Hide overflowing when menu is toggled
+ * 2. Set back to auto when screen is wide enough
+ */
+  /**
  * Default styles with JavaScript disabled
  * =======================================
  * 1. Used for the off canvas menu
  * 2. Setting a background so container will fall nicely over the sidebar
+ * 3. Set the z-index higher than the menus
  */
   /**
  * When flexbox is in use
  * ======================
+ */
+  /**
+ * Container when toggled
+ * ======================
+ * 1. Set left to the width of the menu so the menu will appear
+ * 2. Set right to the negative width of the menu so the menu will appear
+ * 3. Reset when screen is wide enough
+ * 4. Set a box shadow so menus appear behind container
+ */
+  /**
+ * The overlay
+ * ===========
+ * 1. Cover the entire container
+ * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
+ * 3. Set opacity to 0 by default
+ * 4. Hide overlay when screen is wide enough
+ */
+  /**
+ * Overlay when toggled
+ * ====================
+ * 1. Set opacity
+ * 2. Set z-index to 1 so it will become visible
  */
   /**
  * Default styles with JavaScript disabled
@@ -1683,6 +1712,10 @@ body {
   /**
  * When flexbox is in use
  * ======================
+ */
+  /**
+ * When sidebar is toggled
+ * =======================
  */
   /**
  * Default with JavaScript disabled
@@ -1776,43 +1809,13 @@ body {
  * without using !important. Most selectors are max three long
  */
   /**
- * The transitioning container
- * ===========================
- * 1. Set transition to transforms only
- * 2. Set the z-index higher than the menus
- */
-  /**
- * The overlay
- * ===========
- * 1. Cover the entire container
- * 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block
- * 3. Set opacity to 0 by default
- * 4. Hide overlay when screen is wide enough
- */
-  /**
- * Wrapper when toggled
- * ====================
- * 1. Hide overflowing when menu is toggled
- * 2. Set back to auto when screen is wide enough
- */
-  /**
- * Container when toggled
- * ======================
- * 1. Set left to the width of the menu so the menu will appear
- * 2. Set right to the negative width of the menu so the menu will appear
- * 3. Reset when screen is wide enough
- * 4. Set a box shadow so menus appear behind container
- */
-  /**
- * Overlay when toggled
- * ====================
- * 1. Set opacity
- * 2. Set z-index to 1 so it will become visible
- */
-  /**
  * Disable transitions
  * ===================
- */ }
+ */
+  /**
+  * Nowrap
+  * ======
+  */ }
   .koowa html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
@@ -3724,10 +3727,20 @@ body {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row; } }
+  .koowa .opened--left,
+  .koowa .opened--right {
+    position: relative;
+    overflow: hidden; }
+    @media screen and (min-width: 768px) {
+      .koowa .opened--left,
+      .koowa .opened--right {
+        overflow: auto; } }
   .koowa .k-content {
-    -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-            transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
     background: white;
+    position: relative;
+    z-index: 2;
     position: relative; }
     .koowa .k-content:after {
       display: block;
@@ -3763,6 +3776,53 @@ body {
           -ms-flex-direction: column;
               flex-direction: column;
       width: auto; } }
+  .koowa .show-left-menu .k-content {
+    -webkit-transform: translate(270px, 0);
+        -ms-transform: translate(270px, 0);
+            transform: translate(270px, 0); }
+    @media screen and (min-width: 768px) {
+      .koowa .show-left-menu .k-content {
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0); } }
+  .koowa .show-right-menu .k-content {
+    -webkit-transform: translate(-270px, 0);
+        -ms-transform: translate(-270px, 0);
+            transform: translate(-270px, 0); }
+    @media screen and (min-width: 768px) {
+      .koowa .show-right-menu .k-content {
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0); } }
+  .koowa .opened--left .k-content,
+  .koowa .opened--right .k-content {
+    overflow: hidden; }
+    @media screen and (min-width: 768px) {
+      .koowa .opened--left .k-content,
+      .koowa .opened--right .k-content {
+        overflow: auto; } }
+  .koowa .off-canvas-overlay {
+    display: block;
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    background: black;
+    -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
+    @media screen and (min-width: 768px) {
+      .koowa .off-canvas-overlay {
+        display: none; } }
+  .koowa .show-left-menu .off-canvas-overlay,
+  .koowa .show-right-menu .off-canvas-overlay {
+    opacity: .5; }
+  .koowa .opened--left .off-canvas-overlay,
+  .koowa .opened--left .off-canvas-overlay {
+    z-index: 2; }
   .koowa .k-sidebar {
     position: relative;
     background: #5E4731;
@@ -3824,6 +3884,10 @@ body {
       -webkit-flex: 1 0 auto;
           -ms-flex: 1 0 auto;
               flex: 1 0 auto; } }
+  .koowa .opened--left .k-sidebar {
+    display: block; }
+  .koowa .opened--right .k-sidebar--right {
+    display: block; }
   .koowa .k-button--toggle {
     display: none;
     min-height: 32px;
@@ -5211,6 +5275,11 @@ a:focus:after,
     border: 0; }
   .koowa .margin-bottom.margin-bottom.margin-bottom {
     margin-bottom: 20px; }
+  .koowa .no-transition.no-transition.no-transition {
+    -webkit-transition: none;
+            transition: none; }
+  .koowa .k-nowrap.k-nowrap.k-nowrap {
+    white-space: nowrap; }
   .koowa .form-group:last-child {
     margin-bottom: 0; }
   .koowa .dropdown-holder {
@@ -5219,7 +5288,7 @@ a:focus:after,
   .koowa .btn-sm, .koowa .btn-group-sm > .btn {
     padding: 3px 8px; }
   @media (min-width: 600px) and (min-height: 400px) {
-    .flexbox .koowa .k-flex.k-form, .flexboxlegacy .koowa .k-flex.k-form {
+    .flexbox .koowa.k-form, .flexboxlegacy .koowa.k-form {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -5234,78 +5303,9 @@ a:focus:after,
           -ms-flex-direction: column;
               flex-direction: column;
       height: 100%; }
-    .flexbox .koowa .k-flex .k-form__content, .flexboxlegacy .koowa .k-flex .k-form__content {
+    .flexbox .koowa .k-form__content, .flexboxlegacy .koowa .k-form__content {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: auto; } }
-  .koowa .k-nowrap {
-    white-space: nowrap; }
-  .koowa .k-content {
-    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-            transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-    position: relative;
-    z-index: 2; }
-  .koowa .off-canvas-overlay {
-    display: block;
-    content: " ";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 0;
-    background: black;
-    -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-            transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
-    @media (min-width: 768px) {
-      .koowa .off-canvas-overlay {
-        display: none; } }
-  .koowa .opened--left,
-  .koowa .opened--right {
-    position: relative;
-    overflow: hidden; }
-    @media (min-width: 768px) {
-      .koowa .opened--left,
-      .koowa .opened--right {
-        overflow: auto; } }
-  .koowa .show-left-menu .k-content {
-    -webkit-transform: translate(270px, 0);
-        -ms-transform: translate(270px, 0);
-            transform: translate(270px, 0); }
-    @media (min-width: 768px) {
-      .koowa .show-left-menu .k-content {
-        -webkit-transform: translate(0, 0);
-            -ms-transform: translate(0, 0);
-                transform: translate(0, 0); } }
-  .koowa .show-right-menu .k-content {
-    -webkit-transform: translate(-270px, 0);
-        -ms-transform: translate(-270px, 0);
-            transform: translate(-270px, 0); }
-    @media (min-width: 768px) {
-      .koowa .show-right-menu .k-content {
-        -webkit-transform: translate(0, 0);
-            -ms-transform: translate(0, 0);
-                transform: translate(0, 0); } }
-  .koowa .opened--left .k-content,
-  .koowa .opened--right .k-content {
-    overflow: hidden; }
-    @media (min-width: 768px) {
-      .koowa .opened--left .k-content,
-      .koowa .opened--right .k-content {
-        overflow: auto; } }
-  .koowa .show-left-menu .off-canvas-overlay,
-  .koowa .show-right-menu .off-canvas-overlay {
-    opacity: .5; }
-  .koowa .opened--left .off-canvas-overlay,
-  .koowa .opened--left .off-canvas-overlay {
-    z-index: 2; }
-  .koowa .no-transition.no-transition {
-    -webkit-transition: none !important;
-            transition: none !important; }
-  .koowa .opened--left .k-sidebar {
-    display: block; }
-  .koowa .opened--right .k-sidebar--right {
-    display: block; }
