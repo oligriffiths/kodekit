@@ -4068,7 +4068,7 @@ body {
     display: block; }
   .koowa .k-breadcrumb {
     overflow: auto;
-    background: #EBEDF1;
+    background: #f6f6f6;
     color: #555;
     border-bottom: 1px solid #ddd;
     /**
@@ -4251,7 +4251,7 @@ a:focus:after,
   .koowa .active .k-breadcrumb__item {
     font-weight: 700; }
   .koowa .k-scopebar {
-    background: #F7F8F9;
+    background: #eee;
     color: #555; }
     @media screen and (min-width: 600px) {
       .koowa .k-scopebar {
@@ -4267,7 +4267,7 @@ a:focus:after,
   .koowa .k-scopebar__item {
     display: block;
     position: relative;
-    border-bottom: 1px solid #dadfe3; }
+    border-bottom: 1px solid #ddd; }
     @media screen and (min-width: 600px) {
       .koowa .k-scopebar__item {
         display: table-cell;
@@ -4865,12 +4865,12 @@ a:focus:after,
   .koowa .k-table th, .koowa .k-table td {
     padding: 10px; }
   .koowa .k-table th {
-    background: #EBEDF1;
+    background: white;
     height: 32px;
     position: relative;
     text-align: left;
     white-space: nowrap;
-    border-bottom: 1px solid #dce0e6; }
+    border-bottom: 1px solid #f2f2f2; }
     .koowa .k-table th a {
       display: block; }
     .koowa .k-table th input {
@@ -4882,8 +4882,8 @@ a:focus:after,
   .koowa .k-table small {
     display: block; }
   .koowa .k-table tfoot td {
-    background: #EBEDF1;
-    border-top: 1px solid #dce0e6; }
+    background: #eee;
+    border-top: 1px solid #f2f2f2; }
   .koowa .k-table__checkbox {
     display: inline-block; }
   .koowa .table-pagination {
@@ -5137,18 +5137,18 @@ a:focus:after,
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       border-bottom: 4px solid;
-      border-bottom-color: #a0aabd;
+      border-bottom-color: #bfbfbf;
       margin-bottom: 1px; }
     .koowa .k-icon-arrows:after {
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
       border-top: 4px solid;
-      border-top-color: #a0aabd; }
+      border-top-color: #bfbfbf; }
   .koowa .k-ordered-asc .k-icon-arrows:before {
     border-bottom-color: inherit; }
   .koowa .k-ordered-asc a:hover .k-icon-arrows:before,
   .koowa .k-ordered-asc a:focus .k-icon-arrows:before {
-    border-bottom-color: #a0aabd; }
+    border-bottom-color: #bfbfbf; }
   .koowa .k-ordered-asc a:hover .k-icon-arrows:after,
   .koowa .k-ordered-asc a:focus .k-icon-arrows:after {
     border-top-color: inherit; }
@@ -5156,13 +5156,13 @@ a:focus:after,
     border-top-color: inherit; }
   .koowa .k-ordered-desc a:hover .k-icon-arrows:after,
   .koowa .k-ordered-desc a:focus .k-icon-arrows:after {
-    border-top-color: #a0aabd; }
+    border-top-color: #bfbfbf; }
   .koowa .k-ordered-desc a:hover .k-icon-arrows:before,
   .koowa .k-ordered-desc a:focus .k-icon-arrows:before {
     border-bottom-color: inherit; }
   .koowa .k-table th a:hover .k-icon-arrows:after,
   .koowa .k-table th a:focus .k-icon-arrows:after {
-    border-top-color: #a0aabd; }
+    border-top-color: #bfbfbf; }
   .koowa .k-table th a:hover .k-icon-arrows:before,
   .koowa .k-table th a:focus .k-icon-arrows:before {
     border-bottom-color: inherit; }
