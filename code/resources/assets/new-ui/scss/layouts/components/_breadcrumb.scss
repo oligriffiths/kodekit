@@ -197,11 +197,9 @@
  */
 
 @include flexbox {
-  .k-flex {
-    .k-breadcrumb {
-      display: flex;
-      flex: 0 0 auto;
-    }
+  .k-breadcrumb {
+    display: flex;
+    flex: 0 0 auto;
   }
 }
 
