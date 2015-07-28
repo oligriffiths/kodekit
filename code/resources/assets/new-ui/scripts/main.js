@@ -62,10 +62,10 @@
 
         // The tree
         if ( $tree.length ) {
-            $('.k-clicker').click(function(event) {
+            $tree.click(function(event) {
                 event.stopPropagation();
                 var element = $(this).parent();
-                toggleTree(element);
+                element.toggleClass('toggled').next('ul').toggleClass('opened').slideToggle('fast');
             });
         }
 
