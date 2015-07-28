@@ -53,7 +53,7 @@
 
 // Vars
 $menuwidth: $sidebar-width;
-$transition-time-easing: 360ms cubic-bezier(.2,.57,.44,.83);
+$transition-time-easing: 180ms cubic-bezier(.2,.57,.44,.83);
 $transition: all $transition-time-easing;
 $query: $desktop;
 
@@ -104,6 +104,25 @@ $overlay-background: black;
 
   @media (min-width:$query) {
     display: none; // 4
+  }
+}
+
+
+
+/**
+ * Wrapper when toggled
+ * ====================
+ * 1. Hide overflowing when menu is toggled
+ * 2. Set back to auto when screen is wide enough
+ */
+
+.opened--left,
+.opened--right {
+  position: relative; // 1
+  overflow: hidden; // 1
+
+  @media (min-width:$query) {
+    overflow: auto; // 2
   }
 }
 
@@ -199,14 +218,3 @@ $overlay-background: black;
 
 
 
-
-
-
-
-
-
-
-
-.k- {
-  display: none !important;
-}
