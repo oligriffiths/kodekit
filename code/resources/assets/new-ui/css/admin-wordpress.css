@@ -1,24 +1,24 @@
 /*
 Error: Invalid CSS after "  &": expected ";", was ":focus,"
-        on line 95 of layouts/components/_scopebar.scss
+        on line 90 of layouts/components/_scopebar.scss
         from line 27 of layouts/_overview.scss
         from line 53 of _core.scss
         from line 8 of admin-wordpress.scss
 
-90:   height: $scopebar-size;
-91:   min-width: $scopebar-size;
-92:   text-align: center;
-93:   display: table-cell
-94: 
-95:   &:focus,
-96:   &:hover {
-97:     background: $color-secondary-darkest;
-98:   }
-99: }
-100: 
+85:   height: $scopebar-size;
+86:   min-width: $scopebar-size;
+87:   text-align: center;
+88:   display: table-cell
+89: 
+90:   &:focus,
+91:   &:hover {
+92:     background: $color-secondary-darkest;
+93:   }
+94: }
+95: 
 
 Backtrace:
-layouts/components/_scopebar.scss:95
+layouts/components/_scopebar.scss:90
 layouts/_overview.scss:27
 _core.scss:53
 admin-wordpress.scss:8
@@ -119,4 +119,4 @@ admin-wordpress.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 95 of layouts/components/_scopebar.scss\A         from line 27 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 8 of admin-wordpress.scss\A \A 90:   height: $scopebar-size;\A 91:   min-width: $scopebar-size;\A 92:   text-align: center;\A 93:   display: table-cell\A 94: \A 95:   &:focus,\A 96:   &:hover {\A 97:     background: $color-secondary-darkest;\A 98:   }\A 99: }\A 100: "; }
+  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 90 of layouts/components/_scopebar.scss\A         from line 27 of layouts/_overview.scss\A         from line 53 of _core.scss\A         from line 8 of admin-wordpress.scss\A \A 85:   height: $scopebar-size;\A 86:   min-width: $scopebar-size;\A 87:   text-align: center;\A 88:   display: table-cell\A 89: \A 90:   &:focus,\A 91:   &:hover {\A 92:     background: $color-secondary-darkest;\A 93:   }\A 94: }\A 95: "; }

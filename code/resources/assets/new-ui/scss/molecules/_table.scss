@@ -6,7 +6,7 @@
   }
 
   th, td {
-    padding: 7px;
+    padding: 10px;
   }
 
   th {
@@ -15,7 +15,7 @@
     position: relative; // For dropdown lists
     text-align: left;
     white-space: nowrap; // Don't use long header titles
-    @include border(bottom, $table-border);
+    @include border(bottom, $table-header-border);
 
     a {
       display: block; // whole th should be clickable
@@ -36,26 +36,11 @@
     display: block;
   }
 
-  tr {
-    &:nth-child(even) {
-      td {
-        background: #f5f5f5;
-      }
-    }
-
-    &.k-active {
-      td {
-        background: linear-gradient(to top, lighten($color-secondary, 25%) 0%, lighten($color-secondary, 28%) 100%);
-
-        a {
-          color: $color-type;
-        }
-      }
-    }
-  }
-
   tfoot {
-    background: #eee;
+    td {
+      background: $table-footer-background;
+      border-top: 1px solid $table-footer-border;
+    }
   }
 }
 

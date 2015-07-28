@@ -217,7 +217,10 @@ $breadcrumb-missing-content: "…" !default; // 4
 $table-header-size: $unit-size !default; // 1
 $table-header-background: #eee !default; // 2
 $table-header-background-dark: darken($table-header-background, 25%) !default;
-$table-border: $border-color !default;
+$table-header-border: darken($table-header-background, 5%) !default;
+$table-footer-background: #eee !default; // 2
+$table-footer-border: darken($table-header-background, 5%) !default;
+$table-border: #EFEFEF !default;
 
 
 
@@ -245,6 +248,7 @@ $scopebar-search-color: $color-type !default;
 $scopebar-background: $color-secondary-dark !default;
 $scopebar-border: $border-color !default;
 $scopebar-color: $color-secondary-type !default;
+$scopebar-color: $color-secondary-type !default;
 
 
 
@@ -253,8 +257,8 @@ $scopebar-color: $color-secondary-type !default;
  * ============
  */
 
-$list-background: $color-primary !default;
-$list-color: $color-primary-type !default;
+$list-background: $sidebar-background !default;
+$list-color: $sidebar-color !default;
 
 $list-hover-background: $color-primary-light !default;
 $list-hover-border: $color-primary-lightest !default;

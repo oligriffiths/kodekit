@@ -4075,9 +4075,6 @@ a:focus:after,
     .koowa .k-scopebar a {
       color: white;
       cursor: pointer; }
-    .koowa .k-scopebar .k-active {
-      background: rgba(0, 0, 0, 0.1);
-      box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5); }
   .koowa .k-scopebar__item {
     display: block;
     position: relative; }
@@ -4286,12 +4283,12 @@ a:focus:after,
       vertical-align: top; } }
   .koowa .k-toolbar__buttons .btn {
     margin-right: 9px; }
-  .koowa .k-toolbar__buttons .btn-default {
+  .koowa .k-toolbar__buttons .btn {
     background: #46627f;
     border-color: #46627f;
     color: #ecf0f1; }
-    .koowa .k-toolbar__buttons .btn-default:focus,
-    .koowa .k-toolbar__buttons .btn-default:hover {
+    .koowa .k-toolbar__buttons .btn:focus,
+    .koowa .k-toolbar__buttons .btn:hover {
       background: #4aa3df;
       border-color: #4aa3df;
       color: white; }
@@ -4673,31 +4670,27 @@ a:focus:after,
     width: 100%;
     text-align: left; }
   .koowa .k-table th, .koowa .k-table td {
-    padding: 7px; }
+    padding: 10px; }
   .koowa .k-table th {
     background: #eee;
     height: 32px;
     position: relative;
     text-align: left;
-    white-space: nowrap; }
+    white-space: nowrap;
+    border-bottom: 1px solid #e1e1e1; }
     .koowa .k-table th a {
       display: block; }
     .koowa .k-table th input {
       display: inline-block; }
   .koowa .k-table td {
     vertical-align: middle;
-    text-align: left; }
+    text-align: left;
+    border-bottom: 1px solid #EFEFEF; }
   .koowa .k-table small {
     display: block; }
-  .koowa .k-table tr:nth-child(even) td {
-    background: #f5f5f5; }
-  .koowa .k-table tr.k-active td {
-    background: -webkit-linear-gradient(bottom, #a0cfee 0%, #add6f1 100%);
-    background: linear-gradient(to top, #a0cfee 0%, #add6f1 100%); }
-    .koowa .k-table tr.k-active td a {
-      color: #222222; }
-  .koowa .k-table tfoot {
-    background: #eee; }
+  .koowa .k-table tfoot td {
+    background: #eee;
+    border-top: 1px solid #e1e1e1; }
   .koowa .k-table__checkbox {
     display: inline-block; }
   .koowa .table-pagination {
