@@ -100,9 +100,17 @@
 
 .k-scopebar__search {
   position: relative;
-  min-width: 180px;
+  min-width: 200px;
 
-  .k-scopebar__search__input {
+  .search__container {
+    width: 100%;
+  }
+
+  label {
+    display: none;
+  }
+
+  .search_button {
     @include reset;
     -webkit-appearance: none;
     display: block;
@@ -113,13 +121,15 @@
     padding-right: $scopebar-size;
     border-radius: 0;
     width: 100%;
+    border-left: 1px solid $border-color;
+    box-shadow: none;
   }
 
-  .k-scopebar__search__button {
+  .search_button--empty {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: $scopebar-size;
-    height: $scopebar-size;
+    top: 7px;
+    right: 10px;
+    font-size: 10px;
   }
+
 }
