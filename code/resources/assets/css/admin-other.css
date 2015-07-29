@@ -4055,8 +4055,7 @@ a:focus:after,
       .koowa .k-breadcrumb__item:focus:after {
         display: block; }
     .koowa .k-breadcrumb__item:focus:after {
-      outline: 2px solid #EABF36;
-      outline-offset: -2px; }
+      outline: 2px solid #EABF36; }
     .koowa .k-breadcrumb__item:focus:hover:after {
       outline: none; }
   .koowa .active .k-breadcrumb__item {
@@ -4462,7 +4461,6 @@ a:focus:after,
         background: #5E4731;
         border-left-color: #6f543a; }
       .koowa .k-navigation a:focus {
-        outline: none;
         border-color: #3BA49B; }
       .koowa .k-navigation a:focus:hover {
         outline: none; }
