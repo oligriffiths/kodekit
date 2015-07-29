@@ -4122,8 +4122,12 @@ a:focus:after,
       display-background: #1e72aa; }
   .koowa .k-scopebar__search {
     position: relative;
-    min-width: 180px; }
-    .koowa .k-scopebar__search .k-scopebar__search__input {
+    min-width: 200px; }
+    .koowa .k-scopebar__search .search__container {
+      width: 100%; }
+    .koowa .k-scopebar__search label {
+      display: none; }
+    .koowa .k-scopebar__search .search_button {
       margin: 0;
       padding: 0;
       list-style: none;
@@ -4137,13 +4141,14 @@ a:focus:after,
       height: 32px;
       padding-right: 32px;
       border-radius: 0;
-      width: 100%; }
-    .koowa .k-scopebar__search .k-scopebar__search__button {
+      width: 100%;
+      border-left: 1px solid false;
+      box-shadow: none; }
+    .koowa .k-scopebar__search .search_button--empty {
       position: absolute;
-      top: 0;
-      right: 0;
-      width: 32px;
-      height: 32px; }
+      top: 7px;
+      right: 10px;
+      font-size: 10px; }
   .koowa .k-component-wrapper {
     position: relative; }
     @media screen and (min-width: 768px) {
