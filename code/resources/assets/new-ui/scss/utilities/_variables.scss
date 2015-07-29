@@ -12,6 +12,7 @@ $beta: 600px !default;
 $charlie: 768px !default;
 $delta: 1024px !default;
 $minwidth: $alpha !default;
+$maxwidth: $delta !default;
 $desktop: $charlie !default; // 1
 $flexbox-horizontal: $beta !default; // 2
 $flexbox-vertical: 400px !default; // 2
