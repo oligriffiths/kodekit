@@ -95,3 +95,10 @@ table .limit {
 .k-form-block__content {
   padding: 15px;
 }
+
+
+.control-group {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
