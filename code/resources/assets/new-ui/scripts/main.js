@@ -40,11 +40,12 @@
         // Enable Select2 for all selectboxes within a select2 class container
         if ( $select2nogfx.length ) {
             $select2nogfx.select2({
-                minimumResultsForSearch: Infinity
+                minimumResultsForSearch: Infinity,
+                allowClear: true
             });
         }
 
-        
+
         // Table items
         if ( $tableitems.length ) {
             $tableitems.click(function () {

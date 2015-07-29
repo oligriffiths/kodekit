@@ -40,6 +40,7 @@
     td {
       background: $table-footer-background;
       border-top: 1px solid $table-footer-border;
+      border-bottom: none;
     }
   }
 }

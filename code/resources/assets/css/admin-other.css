@@ -4695,7 +4695,8 @@ a:focus:after,
     display: block; }
   .koowa .k-table tfoot td {
     background: #eee;
-    border-top: 1px solid #e1e1e1; }
+    border-top: 1px solid #e1e1e1;
+    border-bottom: none; }
   .koowa .k-table__checkbox {
     display: inline-block; }
   .koowa .table-pagination {
@@ -5283,3 +5284,5 @@ a:focus:after,
     border: none; }
   .select2-dropdown {
     min-width: 200px; }
+  .koowa .select2-selection__clear {
+    margin: -1px -2px 0 10px; }
