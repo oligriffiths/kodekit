@@ -5302,3 +5302,5 @@ a:focus:after,
     background: #f3f4f7; }
   .koowa .k-form-block__content {
     padding: 15px; }
+  .koowa .control-group:last-child {
+    margin-bottom: 0; }
