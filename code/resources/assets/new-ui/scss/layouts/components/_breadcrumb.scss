@@ -226,19 +226,9 @@
 
   &:hover,
   &:focus {
-    outline: none;
-
     &:after {
       display: block;
     }
-  }
-
-  &:focus:after {
-    outline: 2px solid #EABF36;
-  }
-
-  &:focus:hover:after {
-    outline: none;
   }
 }
 
