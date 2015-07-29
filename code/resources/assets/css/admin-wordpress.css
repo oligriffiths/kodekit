@@ -5288,15 +5288,19 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: auto; } }
-  .koowa .select2--no-gfx .select2 {
+  .koowa .select2--link-style .select2 {
     width: auto !important; }
-  .koowa .select2--no-gfx .select2-selection {
+  .koowa .select2--link-style .select2-selection {
     background: transparent;
     border: none; }
   .select2-dropdown {
     min-width: 200px; }
   .koowa .select2-selection__clear {
     margin: -1px -2px 0 10px; }
+  .koowa table .limit {
+    text-align: center; }
+    .koowa table .limit select {
+      width: auto; }
 
 .koowa .k-overview {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04); }
