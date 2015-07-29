@@ -13,7 +13,8 @@
             $select2default = $('.select2--default'),
             $select2filter = $('.select2--filter select'),
             $tree = $('.k-clicker'),
-            $magnificframe = $('.mfp-iframe');
+            $magnificframe = $('.mfp-iframe'),
+            $clickable = $('a, button');
 
 
         // Offcanvasmenu
@@ -29,6 +30,14 @@
         // Sticky table header and footer
         if ( $fixedtable.length ) {
             $fixedtable.tableHeadFixer({'foot' : true, 'head' : true});
+        }
+
+
+        // Clickable items
+        if ( $clickable.length ) {
+            $clickable.click(function() {
+                $(this).toggleClass('k-opened');
+            });
         }
 
 

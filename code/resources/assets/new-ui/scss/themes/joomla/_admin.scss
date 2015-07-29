@@ -187,4 +187,29 @@ body.component {
   .span10 {
     margin: 0;
   }
+
+
+
+  /**
+   * Setting focus for accessibility
+   */
+
+  :focus {
+    outline: 1px solid #f1c40f;
+    outline-offset: -2px;
+
+    &:hover {
+      outline: none;
+    }
+  }
+
+  .dropdown.open a:focus {
+    outline: none;
+  }
+
+
+  // Shame
+  .navbar .admin-logo {
+    padding: 7px 12px 5px 15px
+  }
 }
