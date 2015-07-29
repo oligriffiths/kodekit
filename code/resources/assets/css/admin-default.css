@@ -27,11 +27,6 @@
  * - max-height for fixed height rows
  */
 /**
- * Focus color
- * ===========
- * The basic focus/outline color
- */
-/**
  * Transition
  * ==========
  * The basic transition being used everywhere to get consistent animations
@@ -1109,7 +1104,6 @@ img.mfp-img {
   height: 100%;
   z-index: 1043;
   position: fixed;
-  outline: none !important;
   -webkit-backface-visibility: hidden; }
   .mfp-wrap .well {
     min-height: 20px;
@@ -1621,6 +1615,8 @@ body {
       z-index: 1; } }
   .koowa, .koowa *, .koowa *:before, .koowa *:after {
     box-sizing: border-box; }
+  .koowa a:focus {
+    outline: auto 5px -webkit-focus-ring-color; }
 
 /**
  * Koowa namespaced styling
@@ -4048,16 +4044,9 @@ a:focus:after,
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis; }
-    .koowa .k-breadcrumb__item:hover,
-    .koowa .k-breadcrumb__item:focus {
-      outline: none; }
-      .koowa .k-breadcrumb__item:hover:after,
-      .koowa .k-breadcrumb__item:focus:after {
-        display: block; }
+    .koowa .k-breadcrumb__item:hover:after,
     .koowa .k-breadcrumb__item:focus:after {
-      outline: 2px solid #EABF36; }
-    .koowa .k-breadcrumb__item:focus:hover:after {
-      outline: none; }
+      display: block; }
   .koowa .active .k-breadcrumb__item {
     font-weight: 700; }
   .koowa .k-scopebar {
@@ -4462,8 +4451,6 @@ a:focus:after,
         border-left-color: #3d566e; }
       .koowa .k-navigation a:focus {
         border-color: #3498db; }
-      .koowa .k-navigation a:focus:hover {
-        outline: none; }
     .koowa .k-navigation span {
       display: inline-block;
       text-align: center;

@@ -34,11 +34,6 @@
  * - max-height for fixed height rows
  */
 /**
- * Focus color
- * ===========
- * The basic focus/outline color
- */
-/**
  * Transition
  * ==========
  * The basic transition being used everywhere to get consistent animations
@@ -266,9 +261,6 @@ body.component {
    */
   /**
    * Remove margin from bootstrap grid item
-   */
-  /**
-   * Setting focus for accessibility
    */ }
   body.admin nav.navbar,
   body.component nav.navbar {
@@ -400,19 +392,6 @@ body.component {
   body.admin .span10,
   body.component .span10 {
     margin: 0; }
-  body.admin :focus,
-  body.component :focus {
-    outline: 1px solid #f1c40f;
-    outline-offset: -2px; }
-    body.admin :focus:hover,
-    body.component :focus:hover {
-      outline: none; }
-  body.admin .dropdown.open a:focus,
-  body.component .dropdown.open a:focus {
-    outline: none; }
-  body.admin .navbar .admin-logo,
-  body.component .navbar .admin-logo {
-    padding: 7px 12px 5px 15px; }
 
 /**
  * Outside of the koowa namespace
@@ -1312,7 +1291,6 @@ img.mfp-img {
   height: 100%;
   z-index: 1043;
   position: fixed;
-  outline: none !important;
   -webkit-backface-visibility: hidden; }
   .mfp-wrap .well {
     min-height: 20px;
@@ -1824,6 +1802,8 @@ body {
       z-index: 1; } }
   .koowa, .koowa *, .koowa *:before, .koowa *:after {
     box-sizing: border-box; }
+  .koowa a:focus {
+    outline: auto 5px -webkit-focus-ring-color; }
 
 /**
  * Koowa namespaced styling
@@ -4254,16 +4234,9 @@ a:focus:after,
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis; }
-    .koowa .k-breadcrumb__item:hover,
-    .koowa .k-breadcrumb__item:focus {
-      outline: none; }
-      .koowa .k-breadcrumb__item:hover:after,
-      .koowa .k-breadcrumb__item:focus:after {
-        display: block; }
+    .koowa .k-breadcrumb__item:hover:after,
     .koowa .k-breadcrumb__item:focus:after {
-      outline: 2px solid #EABF36; }
-    .koowa .k-breadcrumb__item:focus:hover:after {
-      outline: none; }
+      display: block; }
   .koowa .active .k-breadcrumb__item {
     font-weight: 700; }
   .koowa .k-scopebar {
@@ -4672,8 +4645,6 @@ a:focus:after,
         border-left-color: #ddd; }
       .koowa .k-navigation a:focus {
         border-color: #0088CC; }
-      .koowa .k-navigation a:focus:hover {
-        outline: none; }
     .koowa .k-navigation span {
       display: inline-block;
       text-align: center;
