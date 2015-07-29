@@ -3285,44 +3285,49 @@ body {
       opacity: 0.65;
       filter: alpha(opacity=65);
       box-shadow: none; }
-  .koowa .btn-default {
+  .koowa .btn-default, .koowa .btn {
     color: #333;
     background-color: #fff;
     border-color: #ccc; }
     .koowa .btn-default:hover,
-    .koowa .btn-default:focus,
-    .koowa .btn-default.focus,
-    .koowa .btn-default:active,
-    .koowa .btn-default.active,
-    .open > .koowa .btn-default.dropdown-toggle {
+    .koowa .btn:hover, .koowa .btn-default:focus,
+    .koowa .btn:focus, .koowa .btn-default.focus,
+    .koowa .focus.btn, .koowa .btn-default:active,
+    .koowa .btn:active, .koowa .btn-default.active,
+    .koowa .active.btn, .open > .koowa .btn-default.dropdown-toggle, .open > .koowa .dropdown-toggle.btn {
       color: #333;
       background-color: #e6e6e6;
       border-color: #adadad; }
     .koowa .btn-default:active,
-    .koowa .btn-default.active,
-    .open > .koowa .btn-default.dropdown-toggle {
+    .koowa .btn:active, .koowa .btn-default.active,
+    .koowa .active.btn, .open > .koowa .btn-default.dropdown-toggle, .open > .koowa .dropdown-toggle.btn {
       background-image: none; }
     .koowa .btn-default.disabled,
-    .koowa .btn-default.disabled:hover,
-    .koowa .btn-default.disabled:focus,
-    .koowa .btn-default.disabled.focus,
-    .koowa .btn-default.disabled:active,
-    .koowa .btn-default.disabled.active,
-    .koowa .btn-default[disabled],
-    .koowa .btn-default[disabled]:hover,
-    .koowa .btn-default[disabled]:focus,
-    .koowa .btn-default[disabled].focus,
-    .koowa .btn-default[disabled]:active,
-    .koowa .btn-default[disabled].active,
-    fieldset[disabled] .koowa .btn-default,
+    .koowa .disabled.btn, .koowa .btn-default.disabled:hover,
+    .koowa .disabled.btn:hover, .koowa .btn-default.disabled:focus,
+    .koowa .disabled.btn:focus, .koowa .btn-default.disabled.focus,
+    .koowa .disabled.focus.btn, .koowa .btn-default.disabled:active,
+    .koowa .disabled.btn:active, .koowa .btn-default.disabled.active,
+    .koowa .disabled.active.btn, .koowa .btn-default[disabled],
+    .koowa [disabled].btn, .koowa .btn-default[disabled]:hover,
+    .koowa [disabled].btn:hover, .koowa .btn-default[disabled]:focus,
+    .koowa [disabled].btn:focus, .koowa .btn-default[disabled].focus,
+    .koowa [disabled].focus.btn, .koowa .btn-default[disabled]:active,
+    .koowa [disabled].btn:active, .koowa .btn-default[disabled].active,
+    .koowa [disabled].active.btn, fieldset[disabled] .koowa .btn-default,
+    fieldset[disabled] .koowa .btn,
     fieldset[disabled] .koowa .btn-default:hover,
+    fieldset[disabled] .koowa .btn:hover,
     fieldset[disabled] .koowa .btn-default:focus,
+    fieldset[disabled] .koowa .btn:focus,
     fieldset[disabled] .koowa .btn-default.focus,
+    fieldset[disabled] .koowa .focus.btn,
     fieldset[disabled] .koowa .btn-default:active,
-    fieldset[disabled] .koowa .btn-default.active {
+    fieldset[disabled] .koowa .btn:active,
+    fieldset[disabled] .koowa .btn-default.active, fieldset[disabled] .koowa .active.btn {
       background-color: #fff;
       border-color: #ccc; }
-    .koowa .btn-default .badge {
+    .koowa .btn-default .badge, .koowa .btn .badge {
       color: #fff;
       background-color: #333; }
   .koowa .btn-primary {
@@ -5469,3 +5474,25 @@ a:focus:after,
     text-align: center; }
     .koowa table .limit select {
       width: auto; }
+  .koowa .k-form {
+    background: #EBEDF1; }
+    .koowa .k-form .container-fluid {
+      max-width: 1024px; }
+  @media (min-width: 600px) and (min-height: 400px) {
+    .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form {
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      overflow: auto; } }
+  .koowa .k-form-block {
+    display: block;
+    background: white;
+    border: 1px solid #CCD2DC; }
+  .koowa .k-form-block__header {
+    border-bottom: 1px solid #CCD2DC;
+    padding: 10px 10px 9px;
+    font-weight: bold;
+    background: #f3f4f7; }
+  .koowa .k-form-block__content {
+    padding: 15px; }

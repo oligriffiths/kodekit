@@ -57,3 +57,41 @@ table .limit {
     width: auto;
   }
 }
+
+.btn {
+  @extend .btn-default;
+}
+
+
+
+.k-form {
+  background: #EBEDF1;
+
+  .container-fluid {
+    max-width: $maxwidth;
+  }
+}
+
+@include flexbox {
+  .k-form {
+    flex: 1 1 auto;
+    overflow: auto;
+  }
+}
+
+.k-form-block {
+  display: block;
+  background: white;
+  border: 1px solid #CCD2DC;
+}
+
+.k-form-block__header {
+  border-bottom: 1px solid #CCD2DC;
+  padding: 10px 10px 9px;
+  font-weight: bold;
+  background: #f3f4f7;
+}
+
+.k-form-block__content {
+  padding: 15px;
+}
