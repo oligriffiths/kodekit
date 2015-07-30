@@ -121,19 +121,7 @@
 
 @include flexbox {
   .k-toolbar {
-    display: flex;
     flex: 0 0 auto;
-  }
-
-  .k-toolbar__title {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  .k-toolbar__buttons {
-    flex: 1 1 auto;
   }
 }
 

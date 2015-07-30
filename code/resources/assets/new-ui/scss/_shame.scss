@@ -93,3 +93,51 @@ table .limit {
     margin-bottom: 0;
   }
 }
+
+table {
+  th,
+  td {
+    &:nth-child(n+3) {
+      display: none;
+    }
+  }
+}
+
+
+.k-toolbar {
+  button,
+  .btn {
+    margin: 10px 0 10px 10px;
+    width: 33px;
+    height: 33px;
+    padding: 6px 8px;
+
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.k-toolbar__text {
+  display: none;
+
+  @include breakpoint($charlie) {
+    display: inline;
+  }
+}
+
+.disabled {
+  display: none;
+}
+
+.k-btn-options {
+  float: right;
+}
+
+.toggle-search {
+  float: right;
+}
+
+.k-scopebar__search {
+  display: none;
+}
