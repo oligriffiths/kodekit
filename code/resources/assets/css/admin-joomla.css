@@ -5447,15 +5447,19 @@ a:focus:after,
     padding: 15px; }
   .koowa .control-group:last-child {
     margin-bottom: 0; }
-  .koowa table th:nth-child(n+3),
-  .koowa table td:nth-child(n+3) {
-    display: none; }
+  @media screen and (min-width: 0) and (max-width: 600px) {
+    .koowa table th:nth-child(n+3),
+    .koowa table td:nth-child(n+3) {
+      display: none; } }
   .koowa .k-toolbar button,
   .koowa .k-toolbar .btn {
-    margin: 10px 0 10px 10px;
-    width: 33px;
-    height: 33px;
-    padding: 6px 8px; }
+    margin: 10px 0 10px 10px; }
+    @media screen and (min-width: 0) and (max-width: 600px) {
+      .koowa .k-toolbar button,
+      .koowa .k-toolbar .btn {
+        width: 33px;
+        height: 33px;
+        padding: 6px 8px; } }
     .koowa .k-toolbar button:last-child,
     .koowa .k-toolbar .btn:last-child {
       margin-right: 10px; }
@@ -5470,5 +5474,21 @@ a:focus:after,
     float: right; }
   .koowa .toggle-search {
     float: right; }
+    @media screen and (min-width: 600px) {
+      .koowa .toggle-search {
+        display: none; } }
   .koowa .k-scopebar__search {
     display: none; }
+    @media screen and (min-width: 600px) {
+      .koowa .k-scopebar__search {
+        display: block; } }
+  .koowa thead th {
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .koowa thead th {
+        display: table-cell; } }
+  .koowa tr.selected td {
+    background: #0088CC;
+    color: white; }
+    .koowa tr.selected td a {
+      color: white; }
