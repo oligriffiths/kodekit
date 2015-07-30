@@ -94,6 +94,13 @@
             });
         }
 
+
+
+        $('.toggle-search').click(function() {
+            $('.k-scopebar__search').slideToggle();
+        });
+
+
     });
 
 })(jQuery);

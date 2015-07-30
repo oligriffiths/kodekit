@@ -50,7 +50,7 @@
  * ======================
  */
 
-@include flexbox {
+@include flexbox($horizontal: $beta) {
   .k-scopebar {
     display: flex;
     flex: 0 0 auto;
@@ -121,8 +121,10 @@
     padding-right: $scopebar-size;
     border-radius: 0;
     width: 100%;
-    border-left: 1px solid $border-color;
     box-shadow: none;
+    @include breakpoint($beta) {
+      border-left: 1px solid $border-color;
+    }
   }
 
   .search_button--empty {

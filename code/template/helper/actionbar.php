@@ -53,9 +53,7 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         }
 
         //Render the buttons
-        $html = '<div class="btn-toolbar koowa-toolbar" id="toolbar-'.$config->toolbar->getName().'">';
-        $html .= '%s';
-        $html .= '</div>';
+        $html = '%s';
 
         $buttons = '';
         foreach ($config->toolbar->getCommands() as $command)
@@ -108,7 +106,7 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         //Create the id
         $id = 'toolbar-'.$command->id;
 
-        $command->attribs->class->append(array('btn', 'btn-small'));
+        $command->attribs->class->append(array('btn', 'btn-md', 'k-btn-'.$command->id));
 
         $icon = $this->_getIconClass($command->icon);
         if ($command->id === 'new' || $command->id === 'apply') {
@@ -119,16 +117,16 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         $attribs = clone $command->attribs;
         $attribs->class = implode(" ", KObjectConfig::unbox($attribs->class));
 
-        $html = '<div class="btn-group" id="'.$id.'">';
-        $html .= '<a '.$this->buildAttributes($attribs).'>';
+        $html = '<a '.$this->buildAttributes($attribs).'>';
 
         if ($this->_useIcons()) {
             $html .= '<i class="'.$icon.'"></i> ';
         }
 
+        $html .= '<span class="k-toolbar__text">';
         $html .= $translator->translate($command->label);
+        $html .= '</span>';
         $html .= '</a>';
-        $html .= '</div>';
 
         return $html;
     }
@@ -177,7 +175,7 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
             'command' => NULL
         ));
 
-        return '<div class="btn-group"></div>';
+        return '';
     }
 
     /**
