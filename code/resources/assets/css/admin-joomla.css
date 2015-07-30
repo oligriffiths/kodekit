@@ -1952,7 +1952,6 @@ body {
   /**
  * When flexbox is in use
  * ======================
- * 1. Otherwise flexbox doesn't work
  */
   /**
  * Default styles with JavaScript disabled
@@ -4374,7 +4373,7 @@ a:focus:after,
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
-      overflow: hidden; } }
+      overflow: auto; } }
   .koowa .k-sidebar-right {
     width: 100%; }
     @media screen and (min-width: 768px) {
@@ -5299,14 +5298,6 @@ a:focus:after,
     line-height: 32px; }
   .koowa .select2-container--default .select2-selection--single .select2-selection__arrow {
     height: 30px; }
-  .koowa .k-form {
-    background: white; }
-    .koowa .k-form:before,
-    .koowa .k-form:after {
-      content: " ";
-      display: table; }
-    .koowa .k-form:after {
-      clear: both; }
   .koowa .k-form__content {
     background: white; }
     .koowa .k-form__content form {
@@ -5439,28 +5430,6 @@ a:focus:after,
     float: left; }
   .koowa .btn-sm, .koowa .btn-group-sm > .btn {
     padding: 3px 8px; }
-  @media (min-width: 600px) and (min-height: 400px) {
-    .flexbox .koowa.k-form, .flexboxlegacy .koowa.k-form {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      height: 100%; }
-    .flexbox .koowa .k-form__content, .flexboxlegacy .koowa .k-form__content {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      overflow: auto; } }
   .koowa .select2--link-style .select2 {
     width: auto !important; }
   .koowa .select2--link-style .select2-selection {
@@ -5474,17 +5443,22 @@ a:focus:after,
     text-align: center; }
     .koowa table .limit select {
       width: auto; }
-  .koowa .k-form {
-    background: #EBEDF1; }
-    .koowa .k-form .container-fluid {
-      max-width: 1024px; }
+  .koowa .k-form .k-component {
+    background: #F3F4F7; }
+  .koowa .k-form .container-fluid {
+    max-width: 1024px; }
   @media (min-width: 600px) and (min-height: 400px) {
     .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
-      overflow: auto; } }
+      overflow: hidden;
+      height: auto; } }
   .koowa .k-form-block {
     display: block;
     background: white;
@@ -5493,7 +5467,7 @@ a:focus:after,
     border-bottom: 1px solid #CCD2DC;
     padding: 10px 10px 9px;
     font-weight: bold;
-    background: #f3f4f7; }
+    background: #E3E6EB; }
   .koowa .k-form-block__content {
     padding: 15px; }
   .koowa .control-group:last-child {

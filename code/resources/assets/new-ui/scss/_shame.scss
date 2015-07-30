@@ -14,20 +14,6 @@
 }
 
 
-@include flexbox {
-  &.k-form {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .k-form__content {
-    flex: 1 1 auto;
-    overflow: auto;
-  }
-}
-
 
 .select2--link-style {
   .select2 {
@@ -65,7 +51,10 @@ table .limit {
 
 
 .k-form {
-  background: #EBEDF1;
+
+  .k-component {
+    background: #F3F4F7;
+  }
 
   .container-fluid {
     max-width: $maxwidth;
@@ -74,8 +63,10 @@ table .limit {
 
 @include flexbox {
   .k-form {
+    display: flex;
     flex: 1 1 auto;
-    overflow: auto;
+    overflow: hidden;
+    height: auto;
   }
 }
 
@@ -89,7 +80,7 @@ table .limit {
   border-bottom: 1px solid #CCD2DC;
   padding: 10px 10px 9px;
   font-weight: bold;
-  background: #f3f4f7;
+  background: #E3E6EB;
 }
 
 .k-form-block__content {
