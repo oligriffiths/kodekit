@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns#" lang="en">
-<head>
-    <title>Nooku UI</title>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name=”mobile-web-app-capable” content=”yes” />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Nooku UI">
-
-    <link rel="stylesheet" href="admin-joomla.css">
-    <script src="/media/jui/js/jquery.min.js"></script>
-    <script src="../js/modernizr.js"></script>
-    <script src="../js/scripts.js"></script>
-</head>
-<body class="component">
-
-<!-- Begin Nooku Admin Layout -->
-<div id="koowa" class="koowa">
-    <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
+<?php include '_header.php'; ?>
 
     <!-- Begin List layout -->
     <div class="k-overview">
@@ -33,7 +11,7 @@
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </button>
-            <h2 style="float: left;">Upload / Insert a file</h2>
+            <h2 style="float: left;">Select / Upload document</h2>
             <button id="k-toggle-button-right" class="off-canvas-menu-toggle" type="button" style="float: right;">
                 <span class="bar1"></span>
                 <span class="bar2"></span>
@@ -54,9 +32,16 @@
                         <ul class="k-list">
                             <li class="k-tree">
                                 <a href="#">
-                                    <span class="k-clicker collapsible"></span>
+                                    <span class="k-clicker"></span>
                                     <span class="k-icon-folder"></span>
-                                    <span class="k-title collapsible">Home</span>
+                                    <span class="k-title">Menu item</span>
+                                </a>
+                            </li>
+                            <li class="k-tree active">
+                                <a href="#">
+                                    <span class="k-clicker"></span>
+                                    <span class="k-icon-folder"></span>
+                                    <span class="k-title">Some other menu item</span>
                                 </a>
                             </li>
                         </ul>
@@ -86,36 +71,20 @@
                                         </a>
                                     </li>
                                     <li class="active">
-                                        <span class="k-breadcrumb__item" data-title="Category 6">Category 6</span>
+                                        <span class="k-breadcrumb__item" data-title="Some other menu item">Some other menu item</span>
                                     </li>
                                 </ul>
                             </div>
-
                         </div>
 
                         <!-- upload -->
                         <div class="k-upload">
-                            <div class="upload-from">
-                                <div class="from-from">
-                                    Upload from:
-                                </div>
-                                <div class="from-computer">
-                                    Computer
-                                </div>
-                                <div class="from-web">
-                                    Web
-                                </div>
-                                <small class="max-upload">
-                                    Each file should be smaller than 10 MB
-                                </small>
+                            <div class="drop-message">
+                                Drop files here <small style="font-size: 14px;padding-left: 5px;">(max 10MB)</small>
                             </div>
-                            <div class="k-drop-area">
-                                <div class="drop-message">
-                                    Drop files here
-                                </div>
-                                <div class="select-message">
-                                    <button class="btn btn-sm btn-primary">Select manually</button>
-                                </div>
+                            <div class="select-message">
+                                <button class="btn btn-sm btn-primary">Select</button>
+                                <button class="btn btn-sm btn-primary">From URL</button>
                             </div>
                         </div>
 
@@ -125,10 +94,21 @@
                             <!-- Filter items by -->
                             <div class="k-scopebar__item k-scopebar__item--fluid">
                                 <div class="select2-wrapper select2--link-style select2--filter">
-                                    <select name="enabled" id="select2-filter" data-placeholder="Status">
+                                    <select name="enabled" id="select2-filter-access" data-placeholder="Access">
+                                        <option></option>
+                                        <option value="1">Super administrator</option>
+                                        <option value="0">Publisher</option>
+                                        <option value="0">Editor</option>
+                                        <option value="0">Public</option>
+                                    </select>
+                                </div>
+                                <div class="select2-wrapper select2--link-style select2--filter">
+                                    <select name="enabled" id="select2-filter-date" data-placeholder="Date">
                                         <option></option>
                                         <option value="1">Published</option>
                                         <option value="0">Unpublished</option>
+                                        <option value="0">Pending</option>
+                                        <option value="0">Archived</option>
                                     </select>
                                 </div>
                             </div>
@@ -150,47 +130,25 @@
                         <div class="k-table-container">
                             <div class="k-table">
                                 <table class="table--fixed" summary="List of documents">
+                                    <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Access</th>
+                                        <th>Date</th>
+                                    </tr>
+                                    </thead>
                                     <tbody>
+                                    <?php for ($x = 0; $x <= 10; $x++) { ?>
                                     <tr>
                                         <td><a href="form.html">Example file</a></td>
+                                        <td>Public</td>
+                                        <td>21 may 2015</td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
+                                    <?php } ?>
                                     </tbody>
                                     <tfoot>
                                     <tr>
-                                        <td>
+                                        <td colspan="3">
                                             <div class="table-pagination">
                                                 <select>
                                                     <option>20</option>
@@ -205,29 +163,35 @@
                                 </table>
                             </div>
                         </div>
-
                     </div> <!-- .k-component -->
 
-                </div> <!-- .k-contents -->
+                </div> <!-- .k-component-wrapper -->
 
             </div> <!-- .k-content -->
 
             <!-- Selected file -->
             <div id="k-sidebar-right" class="k-sidebar-right">
-                <p><strong>Selected file</strong></p>
-                <p><img src="http://demo.joomlatools.com/joomla3/docman/image-gallery/127-donkey-1/file"></p>
-                <p><strong class="labl">Name</strong> Donkey.jpg</p>
-                <p><strong class="labl">Dimensions</strong> 1280 x 897</p>
-                <p><strong class="labl">Size</strong> 449.57KB</p>
-                <p style="margin-top: 1em;"><a href="select-document.html" class="btn btn-success btn-block">Insert file</a></p>
+                <div class="control-group margin-bottom">
+                    <label class="control-label" for="name">Name</label>
+                    <div class="controls">
+                        <input required class="form-control" id="name" type="text" name="name" value="Example file" />
+                    </div>
+                </div>
+                <div class="control-group margin-bottom">
+                    <label class="control-label" for="class">Class</label>
+                    <div class="controls">
+                        <input required class="form-control" id="class" type="text" name="class" value="" placeholder="Add class" />
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <a href="select-file.html" class="btn btn-success btn-block">Insert category link</a>
+                    </div>
+                </div>
             </div>
 
-        </form><!-- .k-content-wrapper -->
+        </form> <!-- .k-content-wrapper -->
 
     </div> <!-- .k-overview -->
 
-</div> <!-- #koowa -->
-<!-- End Nooku Admin Layout -->
-
-</body>
-</html>
+<?php include '_footer.php'; ?>

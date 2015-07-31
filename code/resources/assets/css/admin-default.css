@@ -5209,7 +5209,7 @@ a:focus:after,
     padding: 13px;
     color: #ecf0f1; }
   .koowa .k-upload {
-    background: #3498db;
+    background: #34495e;
     padding: 13px;
     border-bottom: 1px solid #e1e1e1; }
     @media (min-width: 320px) and (min-height: 400px) {
@@ -5218,69 +5218,30 @@ a:focus:after,
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: vertical;
+        -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-                flex-direction: column;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
                 flex: 0 0 auto; } }
-  .koowa .k-drop-area {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background: white;
-    padding: 20px;
-    text-align: center; }
   .koowa .drop-message {
     font-size: 1.65em;
     line-height: 1.25em;
     margin: 0;
     color: #595959;
-    float: left; }
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto; }
   .koowa .select-message {
-    float: right; }
-  .koowa .upload-from {
-    display: block;
-    margin-bottom: 6px; }
-  .koowa .from-from,
-  .koowa .from-computer,
-  .koowa .from-web,
-  .koowa .max-upload {
-    display: inline-block; }
-  .koowa .from-computer,
-  .koowa .from-web,
-  .koowa .max-upload {
-    padding: 0 10px;
-    cursor: pointer; }
-  .koowa .from-computer {
-    font-weight: 700;
-    position: relative; }
-    .koowa .from-computer:before {
-      display: block;
-      position: absolute;
-      content: " ";
-      border-left: 8px solid transparent;
-      border-right: 8px solid transparent;
-      border-bottom: 8px solid;
-      border-bottom-color: #ddd;
-      bottom: -8px;
-      left: 50%;
-      margin-left: -8px; }
-    .koowa .from-computer:after {
-      display: block;
-      position: absolute;
-      content: " ";
-      border-left: 7px solid transparent;
-      border-right: 7px solid transparent;
-      border-bottom: 7px solid;
-      border-bottom-color: white;
-      bottom: -8px;
-      left: 50%;
-      margin-left: -7px; }
-  .koowa .from-web {
-    color: #3498db; }
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    padding-left: 10px; }
   .koowa .k-toolbar {
     background: #222f3d;
     color: #ecf0f1; }
