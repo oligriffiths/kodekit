@@ -7,7 +7,7 @@
  */
 
 .k-content {
-  transition: transform $transition-time-easing; // 1
+  transition: transform $transition; // 1
   background: white; // 2
   position: relative; // 3
   z-index: 2; // 3
@@ -113,7 +113,7 @@
   z-index: -1; //2
   opacity: 0; // 3
   background: $overlay-background;
-  transition: opacity $transition-time-easing;
+  transition: opacity $transition;
 
   @include breakpoint($desktop) {
     display: none; // 4

@@ -68,3 +68,27 @@ table .limit {
     width: auto;
   }
 }
+
+
+thead {
+  th {
+    display: none;
+
+    @include breakpoint($beta) {
+      display: table-cell;
+    }
+  }
+}
+
+
+
+tr.selected {
+  td {
+    background: #0088CC;
+    color: white;
+
+    a {
+      color: white;
+    }
+  }
+}

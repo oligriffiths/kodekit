@@ -34,6 +34,8 @@
   transition: none;
 }
 
+
+
 /**
   * Nowrap
   * ======
@@ -41,4 +43,15 @@
 
 .k-nowrap.k-nowrap.k-nowrap {
   white-space: nowrap;
+}
+
+
+
+/**
+  * Disabled
+  * ========
+  */
+
+.disabled.disabled.disabled {
+  display: none;
 }

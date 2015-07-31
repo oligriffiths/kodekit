@@ -2,7 +2,7 @@
 Error: Invalid CSS after "  &": expected ";", was ":focus,"
         on line 90 of layouts/components/_scopebar.scss
         from line 26 of layouts/_overview.scss
-        from line 56 of _core.scss
+        from line 57 of _core.scss
         from line 11 of admin-joomla.scss
 
 85:   height: $scopebar-size;
@@ -20,7 +20,7 @@ Error: Invalid CSS after "  &": expected ";", was ":focus,"
 Backtrace:
 layouts/components/_scopebar.scss:90
 layouts/_overview.scss:26
-_core.scss:56
+_core.scss:57
 admin-joomla.scss:11
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1162:in `expected'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/scss/parser.rb:1098:in `expected'
@@ -119,4 +119,4 @@ admin-joomla.scss:11
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 90 of layouts/components/_scopebar.scss\A         from line 26 of layouts/_overview.scss\A         from line 56 of _core.scss\A         from line 11 of admin-joomla.scss\A \A 85:   height: $scopebar-size;\A 86:   min-width: $scopebar-size;\A 87:   text-align: center;\A 88:   display: table-cell\A 89: \A 90:   &:focus,\A 91:   &:hover {\A 92:     background: $color-secondary-darkest;\A 93:   }\A 94: }\A 95: "; }
+  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 90 of layouts/components/_scopebar.scss\A         from line 26 of layouts/_overview.scss\A         from line 57 of _core.scss\A         from line 11 of admin-joomla.scss\A \A 85:   height: $scopebar-size;\A 86:   min-width: $scopebar-size;\A 87:   text-align: center;\A 88:   display: table-cell\A 89: \A 90:   &:focus,\A 91:   &:hover {\A 92:     background: $color-secondary-darkest;\A 93:   }\A 94: }\A 95: "; }

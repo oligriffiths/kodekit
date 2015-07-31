@@ -70,7 +70,9 @@ $unit-size: 32px !default;
  * Remember to sync the JavaScript animation time with this setting
  */
 
-$transition: all 180ms ease-in-out !default;
+$transition-duration: 180ms !default;
+$transition-easing: cubic-bezier(.2,.57,.44,.83) !default;
+$transition: $transition-duration $transition-easing !default;
 
 
 
@@ -377,16 +379,10 @@ $location-border: $border-color !default;
 
 
 // For the off canvas menu
-$menuwidth: $sidebar-width;
-$transition-time-easing: 180ms cubic-bezier(.2,.57,.44,.83);
-$transition: all $transition-time-easing;
-$query: $desktop;
 $button-size: 38px;
 $bar-width: 20px; // Best to grab a number that can be divided by 5
 $bar-height: round($bar-width / 5);
 $overlay-background: black;
-
-
 
 
 $breadcrumb-background: $color-secondary !default;

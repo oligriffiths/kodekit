@@ -31,7 +31,7 @@ $bar-height: round($bar-width / 5);
     background: #ecf0f1;
     border-radius: 1px;
     vertical-align: middle;
-    transition: $transition;
+    transition: all $transition;
   }
 
   .bar1 {

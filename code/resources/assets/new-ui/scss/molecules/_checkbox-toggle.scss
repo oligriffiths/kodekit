@@ -2,7 +2,6 @@
 $red: #c0392b;
 $green: #27ae60;
 $blue: #2980b9;
-$transition: all .25s cubic-bezier(.15,.8,.2,.9);
 $checkbox-toggle-width: 120px;
 $checkbox-toggle-height: 32px;
 $checkbox-toggle-border-width: 1px;
@@ -56,7 +55,7 @@ $checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-bord
     background: white;
     border: $checkbox-toggle-border-width solid #ccc;
     border-radius: $checkbox-toggle-border-radius;
-    transition: $transition;
+    transition: all $transition;
   }
 
   label:after {
@@ -67,7 +66,7 @@ $checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-bord
     right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
     background: $red;
     border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
-    transition: $transition;
+    transition: all $transition;
   }
 
   span:before,
@@ -76,7 +75,7 @@ $checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-bord
     line-height: $checkbox-toggle-height-inner - 2;
     text-transform: uppercase;
     text-align: center;
-    transition: $transition;
+    transition: all $transition;
   }
 
   span:before {
@@ -101,7 +100,7 @@ $checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-bord
     color: white;
     right: $checkbox-toggle-width - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
     border: 1px solid $red;
-    transition: $transition;
+    transition: all $transition;
   }
 
   span {
