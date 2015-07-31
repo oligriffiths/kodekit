@@ -29,18 +29,10 @@
 /**
  * Scopebar items
  * ==============
- * 1. So the dropdowns get placed properly
  */
 .k-scopebar__item {
   display: block;
-  position: relative; // 1
   @include border(bottom, $scopebar-border);
-
-  @include breakpoint($beta) {
-    display: table-cell;
-    vertical-align: middle;
-    white-space: nowrap;
-  }
 }
 
 
@@ -49,6 +41,12 @@
  * When flexbox is in use
  * ======================
  */
+
+@include flexbox {
+  .k-scopebar {
+    flex: 0 0 auto;
+  }
+}
 
 @include flexbox($horizontal: $beta) {
   .k-scopebar {
