@@ -23,13 +23,6 @@
     @include reset; // Resetting the ul
 
 
-    /**
-     * Fallback for non flexbox capable browsers
-     * -----------------------------------------
-     */
-    display: table;
-    width: 100%;
-
 
     /**
      * Flexing items to get overflow ellipsis
@@ -50,6 +43,7 @@
    * 3. Set z-index to 0 so the :after psuedo element will be on top
    * 4. Hide by default so we can show only a few on mobile
    * 5. Hide overflowing content
+   * 6. Proper spacing for non-flexbox use
    */
 
   li {
@@ -59,10 +53,11 @@
     z-index: 0; // 3
     display: none; // 4
     overflow: hidden; // 5
+    vertical-align: middle; // 6
 
     // Display them on larger screens
     @include breakpoint($breadcrumb-query) {
-      display: table-cell;
+      display: inline-block;
     }
 
     /**
@@ -153,7 +148,7 @@
 
   .active,
   .home {
-    display: table-cell; // 2
+    display: inline-block; // 2
     overflow: visible;
 
     @include flexbox($horizontal:$breadcrumb-query) {
@@ -177,7 +172,7 @@
    */
 
   li:nth-last-child(2) {
-    display: block;
+    display: inline-block;
 
     &:before {
       content: $breadcrumb-missing-content;

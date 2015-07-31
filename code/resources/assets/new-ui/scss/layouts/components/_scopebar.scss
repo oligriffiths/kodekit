@@ -31,8 +31,13 @@
  * ==============
  */
 .k-scopebar__item {
-  display: block;
+  vertical-align: middle;
+  width: 100%;
   @include border(bottom, $scopebar-border);
+
+  @include breakpoint($beta) {
+    display: table-cell;
+  }
 }
 
 
@@ -55,7 +60,7 @@
   }
 
   .k-scopebar__item {
-    display: flex;
+    display: block;
     flex: 0 0 auto;
   }
 
@@ -147,6 +152,10 @@
   display: none;
 
   @include breakpoint($beta) {
+    display: table-cell;
+  }
+
+  @include breakpoint($desktop) {
     display: block;
   }
 }

@@ -1,24 +1,24 @@
 /*
 Error: Invalid CSS after "  &": expected ";", was ":focus,"
-        on line 88 of layouts/components/_scopebar.scss
+        on line 93 of layouts/components/_scopebar.scss
         from line 27 of layouts/_overview.scss
         from line 57 of _core.scss
         from line 8 of admin-other.scss
 
-83:   height: $scopebar-size;
-84:   min-width: $scopebar-size;
-85:   text-align: center;
-86:   display: table-cell
-87: 
-88:   &:focus,
-89:   &:hover {
-90:     background: $color-secondary-darkest;
-91:   }
-92: }
-93: 
+88:   height: $scopebar-size;
+89:   min-width: $scopebar-size;
+90:   text-align: center;
+91:   display: table-cell
+92: 
+93:   &:focus,
+94:   &:hover {
+95:     background: $color-secondary-darkest;
+96:   }
+97: }
+98: 
 
 Backtrace:
-layouts/components/_scopebar.scss:88
+layouts/components/_scopebar.scss:93
 layouts/_overview.scss:27
 _core.scss:57
 admin-other.scss:8
@@ -119,4 +119,4 @@ admin-other.scss:8
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 88 of layouts/components/_scopebar.scss\A         from line 27 of layouts/_overview.scss\A         from line 57 of _core.scss\A         from line 8 of admin-other.scss\A \A 83:   height: $scopebar-size;\A 84:   min-width: $scopebar-size;\A 85:   text-align: center;\A 86:   display: table-cell\A 87: \A 88:   &:focus,\A 89:   &:hover {\A 90:     background: $color-secondary-darkest;\A 91:   }\A 92: }\A 93: "; }
+  content: "Error: Invalid CSS after \"  &\": expected \";\", was \":focus,\"\A         on line 93 of layouts/components/_scopebar.scss\A         from line 27 of layouts/_overview.scss\A         from line 57 of _core.scss\A         from line 8 of admin-other.scss\A \A 88:   height: $scopebar-size;\A 89:   min-width: $scopebar-size;\A 90:   text-align: center;\A 91:   display: table-cell\A 92: \A 93:   &:focus,\A 94:   &:hover {\A 95:     background: $color-secondary-darkest;\A 96:   }\A 97: }\A 98: "; }
