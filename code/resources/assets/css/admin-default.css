@@ -1639,6 +1639,7 @@ body {
 .koowa {
   max-width: 400px;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 0;
   position: relative;
   background: white;
@@ -1816,7 +1817,6 @@ body {
   /**
  * Scopebar items
  * ==============
- * 1. So the dropdowns get placed properly
  */
   /**
  * When flexbox is in use
@@ -4206,13 +4206,13 @@ a:focus:after,
       color: white;
       cursor: pointer; }
   .koowa .k-scopebar__item {
-    display: block;
-    position: relative; }
-    @media screen and (min-width: 600px) {
-      .koowa .k-scopebar__item {
-        display: table-cell;
-        vertical-align: middle;
-        white-space: nowrap; } }
+    display: block; }
+  @media (min-width: 320px) and (min-height: 400px) {
+    .flexbox .koowa .k-scopebar, .flexboxlegacy .koowa .k-scopebar {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto; } }
   @media (min-width: 600px) and (min-height: 400px) {
     .flexbox .koowa .k-scopebar, .flexboxlegacy .koowa .k-scopebar {
       display: -webkit-box;

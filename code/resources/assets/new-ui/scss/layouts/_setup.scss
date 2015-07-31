@@ -54,7 +54,8 @@ body {
 
 .koowa {
   max-width: $minwidth; // 1
-  overflow: auto; // 1
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 0; // 3
   position: relative; // 4
   background: $koowa-background;
