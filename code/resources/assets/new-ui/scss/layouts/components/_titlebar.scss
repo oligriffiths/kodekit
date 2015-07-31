@@ -1,44 +1,48 @@
 /**
  * Default with JavaScript disabled
  * ================================
+ * 1. Set transition for off canvas sidebar
+ * 2. Setting a background so container will fall nicely over the sidebar
+ * 3. Set the z-index higher than the menus
  */
 
 .k-titlebar {
   @include border(bottom, $toolbar-border);
-  background: $toolbar-title-background;
-  color: $toolbar-color;
-  padding: 0;
   transition: transform $transition; // 1
-  position: relative;
-  z-index: 2;
+  background: $toolbar-title-background; // 2
+  color: $toolbar-color;
+  position: relative; // 3
+  z-index: 2; // 3
+
+  /**
+   * Create custom 'overlay' for off canvas sidebar
+   * ----------------------------------------------
+   * 1. Overlay over bottom border
+   * 2. Hide with negative z-index and opacity: 0
+   * 3. Give it a transition
+   * 4. Do not display when screen is wide enough
+   */
 
   @include psuedo(before) {
-    @include coverall();
-    margin-bottom: -1px;
-    z-index: -1;
+    @include coverall;
+    margin-bottom: -1px; // 1
+    z-index: -1; // 2
+    opacity: 0; // 2
     background: $overlay-background;
-    transition: opacity $transition;
-    opacity: 0;
+    transition: opacity $transition; // 3
 
     @include breakpoint($desktop) {
       display: none; // 4
     }
   }
-
-  h2 {
-    padding: 3px 0;
-    font-weight: $regular;
-    font-size: round($font-size * 1.15);
-
-    @include breakpoint($desktop) {
-      font-size: round($font-size * 1.25);
-    }
-
-    @include breakpoint($delta) {
-      font-size: round($font-size * 1.4);
-    }
-  }
 }
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
 
 @include flexbox {
   .k-titlebar {
@@ -47,11 +51,42 @@
 }
 
 
+
 /**
- * Overlay when toggled
- * ====================
+ * Titlebar when toggled
+ * =====================
+ * 1. Set left to the width of the menu so the menu will appear
+ * 2. Set right to the negative width of the menu so the menu will appear
+ * 3. Reset when screen is wide enough
+ */
+
+.show-left-menu {
+  .k-titlebar {
+    transform: translate($sidebar-width, 0); // 1
+
+    @include breakpoint($desktop) {
+      transform: translate(0, 0); // 3
+    }
+  }
+}
+
+.show-right-menu {
+  .k-titlebar {
+    transform: translate(-($sidebar-width), 0); // 2
+
+    @include breakpoint($desktop) {
+      transform: translate(0, 0); // 3
+    }
+  }
+}
+
+
+
+/**
+ * Fake Overlay when toggled
+ * =========================
  * 1. Set opacity
- * 2. Set z-index to 1 so it will become visible
+ * 2. Set z-index so it will become visible
  */
 
 .show-left-menu,

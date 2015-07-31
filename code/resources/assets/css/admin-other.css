@@ -1718,13 +1718,14 @@ body {
   /**
  * Default styles with JavaScript disabled
  * =======================================
- * 1. Used for the off canvas menu
+ * 1. Set transition for off canvas sidebar
  * 2. Setting a background so container will fall nicely over the sidebar
  * 3. Set the z-index higher than the menus
  */
   /**
  * When flexbox is in use
  * ======================
+ * 1. Reset width needed for table
  */
   /**
  * Container when toggled
@@ -1761,8 +1762,20 @@ body {
  * ======================
  */
   /**
+ * Left sidebar specific
+ * ---------------------
+ */
+  /**
  * When sidebar is toggled
- * =======================
+ * -----------------------
+ */
+  /**
+ * Right sidebar specific
+ * ----------------------
+ */
+  /**
+ * When sidebar is toggled
+ * -----------------------
  */
   /**
  * Default styles with JavaScript disabled
@@ -1801,32 +1814,12 @@ body {
  * =======================================
  */
   /**
- * When JavaScript is enabled
- * ==========================
- */
-  /**
  * When flexbox is in use
  * ======================
  */
   /**
- * Default styles with JavaScript disabled
- * =======================================
- */
-  /**
  * When flexbox is in use
  * ======================
- */
-  /**
- * When JavaScript is enabled
- * ==========================
- */
-  /**
- * When flexbox is in use
- * ======================
- */
-  /**
- * When sidebar is toggled
- * =======================
  */
   /**
  * Default styles with JavaScript disabled
@@ -1857,24 +1850,30 @@ body {
   /**
  * Default with JavaScript disabled
  * ================================
- */
-  /**
- * Overlay when toggled
- * ====================
- * 1. Set opacity
- * 2. Set z-index to 1 so it will become visible
- */
-  /**
- * Default styles with JavaScript disabled
- * =======================================
+ * 1. Set transition for off canvas sidebar
+ * 2. Setting a background so container will fall nicely over the sidebar
+ * 3. Set the z-index higher than the menus
  */
   /**
  * When flexbox is in use
  * ======================
  */
   /**
- * Default with JavaScript disabled
- * ================================
+ * Titlebar when toggled
+ * =====================
+ * 1. Set left to the width of the menu so the menu will appear
+ * 2. Set right to the negative width of the menu so the menu will appear
+ * 3. Reset when screen is wide enough
+ */
+  /**
+ * Fake Overlay when toggled
+ * =========================
+ * 1. Set opacity
+ * 2. Set z-index so it will become visible
+ */
+  /**
+ * Default styles with JavaScript disabled
+ * =======================================
  */
   /**
  * When flexbox is in use
@@ -3812,22 +3811,7 @@ body {
             transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
     background: white;
     position: relative;
-    z-index: 2;
-    position: relative; }
-    .koowa .k-content:after {
-      display: block;
-      position: absolute;
-      content: " ";
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: black;
-      z-index: -1;
-      display: block;
-      opacity: 0;
-      -webkit-transition: all 0.2s ease-in-out;
-              transition: all 0.2s ease-in-out; }
+    z-index: 2; }
     @media screen and (min-width: 768px) {
       .koowa .k-content {
         display: table-cell;
@@ -3899,24 +3883,26 @@ body {
   .koowa .opened--left .off-canvas-overlay,
   .koowa .opened--right .off-canvas-overlay {
     z-index: 2; }
-  .koowa .k-sidebar {
+  .koowa .k-sidebar,
+  .koowa .k-sidebar-right {
     position: relative;
-    background: #5E4731;
-    color: #ecf0f1;
     -webkit-overflow-scrolling: touch; }
     @media screen and (min-width: 768px) {
-      .koowa .k-sidebar {
+      .koowa .k-sidebar,
+      .koowa .k-sidebar-right {
         min-width: 180px;
         width: 180px;
         max-width: 180px;
         display: table-cell;
         vertical-align: top; } }
     @media screen and (min-width: 1024px) {
-      .koowa .k-sidebar {
+      .koowa .k-sidebar,
+      .koowa .k-sidebar-right {
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
-  .k-js-enabled .koowa .k-sidebar {
+  .k-js-enabled .koowa .k-sidebar,
+  .k-js-enabled .koowa .k-sidebar-right {
     min-width: 270px;
     width: 270px;
     max-width: 270px;
@@ -3925,23 +3911,26 @@ body {
     top: 0;
     height: 100%;
     overflow: auto;
-    display: none;
-    left: 0; }
+    display: none; }
     @media screen and (min-width: 768px) {
-      .k-js-enabled .koowa .k-sidebar {
+      .k-js-enabled .koowa .k-sidebar,
+      .k-js-enabled .koowa .k-sidebar-right {
         min-width: 180px;
         width: 180px;
         max-width: 180px;
-        position: relative;
+        position: static;
         height: auto;
         display: table-cell; } }
     @media screen and (min-width: 1024px) {
-      .k-js-enabled .koowa .k-sidebar {
+      .k-js-enabled .koowa .k-sidebar,
+      .k-js-enabled .koowa .k-sidebar-right {
         min-width: 270px;
         width: 270px;
         max-width: 270px; } }
   @media (min-width: 768px) and (min-height: 400px) {
-    .flexbox .koowa .k-sidebar, .flexboxlegacy .koowa .k-sidebar {
+    .flexbox .koowa .k-sidebar,
+    .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar,
+    .flexboxlegacy .koowa .k-sidebar-right {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -3954,13 +3943,20 @@ body {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
-    .flexbox .koowa .k-sidebar__item, .flexboxlegacy .koowa .k-sidebar__item {
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 0 auto;
-          -ms-flex: 1 0 auto;
-              flex: 1 0 auto; } }
+              flex: 0 0 auto; } }
+  .koowa .k-sidebar {
+    background: #5E4731;
+    color: #ecf0f1; }
+    .k-js-enabled .koowa .k-sidebar {
+      left: 0; }
   .koowa .opened--left .k-sidebar {
+    display: block; }
+  .koowa .k-sidebar-right {
+    background: #5E4731;
+    color: #ecf0f1; }
+    .k-js-enabled .koowa .k-sidebar-right {
+      right: 0; }
+  .koowa .opened--right .k-sidebar-right {
     display: block; }
   .koowa .k-breadcrumb {
     overflow: auto;
@@ -4237,15 +4233,10 @@ a:focus:after,
     @media screen and (min-width: 600px) {
       .koowa .k-scopebar__search {
         display: block; } }
-  .koowa .k-component-wrapper {
-    position: relative; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-component-wrapper {
-        display: table;
-        width: 100%; } }
-  .k-js-enabled .koowa .k-component-wrapper {
-    display: table;
-    width: 100%; }
+  @media screen and (min-width: 768px) {
+    .koowa .k-component-wrapper {
+      display: table;
+      width: 100%; } }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-component-wrapper, .flexboxlegacy .koowa .k-component-wrapper {
       display: -webkit-box;
@@ -4262,8 +4253,6 @@ a:focus:after,
           -ms-flex-direction: row;
               flex-direction: row;
       overflow: hidden; } }
-  .koowa .k-component {
-    position: relative; }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-component, .flexboxlegacy .koowa .k-component {
       display: -webkit-box;
@@ -4280,64 +4269,6 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: auto; } }
-  .koowa .k-sidebar-right {
-    position: relative;
-    background: #5E4731;
-    color: #ecf0f1;
-    -webkit-overflow-scrolling: touch; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-sidebar-right {
-        min-width: 180px;
-        width: 180px;
-        max-width: 180px;
-        display: table-cell;
-        vertical-align: top; } }
-    @media screen and (min-width: 1024px) {
-      .koowa .k-sidebar-right {
-        min-width: 270px;
-        width: 270px;
-        max-width: 270px; } }
-  .k-js-enabled .koowa .k-sidebar-right {
-    min-width: 270px;
-    width: 270px;
-    max-width: 270px;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    height: 100%;
-    overflow: auto;
-    display: none;
-    right: 0; }
-    @media screen and (min-width: 768px) {
-      .k-js-enabled .koowa .k-sidebar-right {
-        min-width: 180px;
-        width: 180px;
-        max-width: 180px;
-        position: relative;
-        height: auto;
-        display: table-cell; } }
-    @media screen and (min-width: 1024px) {
-      .k-js-enabled .koowa .k-sidebar-right {
-        min-width: 270px;
-        width: 270px;
-        max-width: 270px; } }
-  @media (min-width: 768px) and (min-height: 400px) {
-    .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar-right {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; } }
-  .koowa .opened--right .k-sidebar-right {
-    display: block; }
   .koowa .k-overview {
     background: white; }
   @media (min-width: 320px) and (min-height: 400px) {
@@ -4357,13 +4288,20 @@ a:focus:after,
           -ms-flex-direction: column;
               flex-direction: column; } }
   .koowa .k-titlebar {
-    background: #36291c;
-    color: #ecf0f1;
-    padding: 0;
     -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
             transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+    background: #36291c;
+    color: #ecf0f1;
     position: relative;
     z-index: 2;
+    /**
+   * Create custom 'overlay' for off canvas sidebar
+   * ----------------------------------------------
+   * 1. Overlay over bottom border
+   * 2. Hide with negative z-index and opacity: 0
+   * 3. Give it a transition
+   * 4. Do not display when screen is wide enough
+   */
     position: relative; }
     .koowa .k-titlebar:before {
       display: block;
@@ -4376,29 +4314,37 @@ a:focus:after,
       left: 0;
       margin-bottom: -1px;
       z-index: -1;
+      opacity: 0;
       background: black;
       -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-              transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-      opacity: 0; }
+              transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
       @media screen and (min-width: 768px) {
         .koowa .k-titlebar:before {
           display: none; } }
-    .koowa .k-titlebar h2 {
-      padding: 3px 0;
-      font-weight: 400;
-      font-size: 15px; }
-      @media screen and (min-width: 768px) {
-        .koowa .k-titlebar h2 {
-          font-size: 16px; } }
-      @media screen and (min-width: 1024px) {
-        .koowa .k-titlebar h2 {
-          font-size: 18px; } }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-titlebar, .flexboxlegacy .koowa .k-titlebar {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; } }
+  .koowa .show-left-menu .k-titlebar {
+    -webkit-transform: translate(270px, 0);
+        -ms-transform: translate(270px, 0);
+            transform: translate(270px, 0); }
+    @media screen and (min-width: 768px) {
+      .koowa .show-left-menu .k-titlebar {
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0); } }
+  .koowa .show-right-menu .k-titlebar {
+    -webkit-transform: translate(-270px, 0);
+        -ms-transform: translate(-270px, 0);
+            transform: translate(-270px, 0); }
+    @media screen and (min-width: 768px) {
+      .koowa .show-right-menu .k-titlebar {
+        -webkit-transform: translate(0, 0);
+            -ms-transform: translate(0, 0);
+                transform: translate(0, 0); } }
   .koowa .show-left-menu .k-titlebar:before,
   .koowa .show-right-menu .k-titlebar:before {
     opacity: .5; }
@@ -4429,119 +4375,6 @@ a:focus:after,
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto; } }
-  .koowa .container-fluid {
-    padding: 20px; }
-  .koowa .row {
-    margin-bottom: 20px; }
-    .koowa .row:last-child {
-      margin-bottom: 0; }
-  .koowa .k-toolbar {
-    background: #3c2e20; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-toolbar {
-        width: 100%;
-        display: table; } }
-    .koowa .k-toolbar.k-toggle .k-toolbar__title {
-      width: auto; }
-      @media screen and (min-width: 768px) {
-        .koowa .k-toolbar.k-toggle .k-toolbar__title {
-          max-width: 180px; } }
-      @media screen and (min-width: 1024px) {
-        .koowa .k-toolbar.k-toggle .k-toolbar__title {
-          max-width: 270px; } }
-    .koowa .k-toolbar.k-toggle .k-toolbar__buttons {
-      width: 100%; }
-  @media screen and (min-width: 768px) {
-    .koowa .k-toolbar__title {
-      display: table-cell; } }
-  @media screen and (min-width: 768px) {
-    .koowa .k-toolbar__title {
-      min-width: 180px;
-      width: 180px;
-      max-width: 180px; } }
-  @media screen and (min-width: 1024px) {
-    .koowa .k-toolbar__title {
-      min-width: 270px;
-      width: 270px;
-      max-width: 270px; } }
-  .koowa .k-toolbar__title h2 {
-    margin: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .koowa .k-toolbar__title:hover {
-    overflow: auto; }
-    .koowa .k-toolbar__title:hover h2 {
-      overflow: visible;
-      text-overflow: initial; }
-  @media screen and (min-width: 768px) {
-    .koowa .k-toolbar__buttons {
-      display: table-cell;
-      white-space: nowrap;
-      overflow: auto;
-      vertical-align: top; } }
-  .koowa .k-toolbar__buttons .btn {
-    margin-right: 9px; }
-  .koowa .k-toolbar__buttons .btn {
-    background: #806042;
-    border-color: #806042;
-    color: #ecf0f1; }
-    .koowa .k-toolbar__buttons .btn:focus,
-    .koowa .k-toolbar__buttons .btn:hover {
-      background: #42b7ad;
-      border-color: #42b7ad;
-      color: white; }
-  .koowa .k-toolbar__buttons .btn-success {
-    background: #3BA49B;
-    border-color: #3BA49B;
-    color: white; }
-    .koowa .k-toolbar__buttons .btn-success:focus,
-    .koowa .k-toolbar__buttons .btn-success:hover {
-      background: #42b7ad;
-      border-color: #42b7ad;
-      color: white; }
-  @media (min-width: 320px) and (min-height: 400px) {
-    .flexbox .koowa .k-toolbar, .flexboxlegacy .koowa .k-toolbar {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; } }
-  .koowa .k-toolbar__buttons {
-    padding: 9px 9px 0 9px;
-    background: #3c2e20;
-    width: 100%; }
-    .koowa .k-toolbar__buttons .btn-toolbar {
-      margin: 0; }
-    .koowa .k-toolbar__buttons .btn-group {
-      margin-left: 0; }
-    .koowa .k-toolbar__buttons .btn {
-      line-height: 1.2em;
-      margin-right: 9px;
-      margin-bottom: 9px; }
-  .koowa #toolbar-options {
-    float: right; }
-    .koowa #toolbar-options .btn {
-      margin-right: 0;
-      margin-left: 9px; }
-  .koowa .k-toolbar button,
-  .koowa .k-toolbar .btn {
-    margin: 10px 0 10px 10px; }
-    @media screen and (min-width: 0) and (max-width: 600px) {
-      .koowa .k-toolbar button,
-      .koowa .k-toolbar .btn {
-        width: 33px;
-        height: 33px;
-        padding: 6px 8px; } }
-    .koowa .k-toolbar button:last-child,
-    .koowa .k-toolbar .btn:last-child {
-      margin-right: 10px; }
-  .koowa .k-toolbar__text {
-    display: none; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-toolbar__text {
-        display: inline; } }
-  .koowa .k-btn-options {
-    float: right; }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-upload, .flexboxlegacy .koowa .k-upload {
       display: -webkit-box;
@@ -4585,11 +4418,6 @@ a:focus:after,
           -webkit-flex: 1 1 auto;
               -ms-flex: 1 1 auto;
                   flex: 1 1 auto; }
-    .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar-right {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; }
     .flexbox .koowa .k-sidebar__navigation,
     .flexbox .koowa .k-sidebar__footer, .flexboxlegacy .koowa .k-sidebar__navigation,
     .flexboxlegacy .koowa .k-sidebar__footer {
@@ -5463,6 +5291,12 @@ a:focus:after,
     margin-bottom: 0; }
   .koowa .control-group:last-child {
     margin-bottom: 0; }
+  .koowa .container-fluid {
+    padding: 20px; }
+  .koowa .row {
+    margin-bottom: 20px; }
+    .koowa .row:last-child {
+      margin-bottom: 0; }
   @media screen and (min-width: 0) and (max-width: 600px) {
     .koowa table th:nth-child(n+3),
     .koowa table td:nth-child(n+3) {
