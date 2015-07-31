@@ -59,22 +59,23 @@
                     <!-- Component -->
                     <div class="k-component">
 
-                        <!-- location bar -->
-                        <div class="k-location">
-
-                            <!-- Breadcrumbs -->
-                            <div class="k-breadcrumb">
-                                <ul>
-                                    <li class="home">
-                                        <a class="k-breadcrumb__item k-icon-home" href="#">
-                                            <span class="visually-hidden-icon-label">Home</span>
-                                        </a>
-                                    </li>
-                                    <li class="active">
-                                        <span class="k-breadcrumb__item" data-title="Some other menu item">Some other menu item</span>
-                                    </li>
-                                </ul>
-                            </div>
+                        <!-- Breadcrumbs -->
+                        <div class="k-breadcrumb">
+                            <ul>
+                                <li class="home">
+                                    <a class="k-breadcrumb__item k-icon-home" href="#">
+                                        <span class="visually-hidden-icon-label">Home</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="k-breadcrumb__item" href="#">
+                                        Some menu item
+                                    </a>
+                                </li>
+                                <li class="active">
+                                    <span class="k-breadcrumb__item" data-title="Some other menu item">Some other menu item</span>
+                                </li>
+                            </ul>
                         </div>
 
                         <!-- upload -->

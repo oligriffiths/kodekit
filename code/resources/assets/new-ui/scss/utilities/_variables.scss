@@ -216,11 +216,13 @@ $toggle-button-border: $border-color !default;
  * 2. The width of dividers between breadcrumb items
  * 3. Height of each breadcrumb item
  * 4. On mobile we don't show all breadcrumb items
+ * 5. The width when showing all breadcrumbs instead of only first and last
  */
 $breadcrumb-divider-content: "»" !default; // 1
 $breadcrumb-divider-size: $spacing !default; // 2
 $breadcrumb-size: $unit-size !default; // 3
 $breadcrumb-missing-content: "…" !default; // 4
+$breadcrumb-query: $charlie !default; // 5
 
 
 

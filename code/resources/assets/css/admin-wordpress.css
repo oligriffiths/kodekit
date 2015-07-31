@@ -51,23 +51,27 @@
  * ===============
  */
 /**
- * Secondary color
- * ===============
+ * Tertiary color
+ * ==============
  */
 /**
  * Accent color
  * ============
  */
 /**
- * Koowa
- * =====
- * The default koowa container
+ * States
+ * ======
  */
 /* Border
  * ======
  * Set border-color to false if you don't want any borders in your theme
  * You can override borders in each separate module
  **/
+/**
+ * Koowa
+ * =====
+ * The default koowa container
+ */
 /**
  * Sidebar
  * =======
@@ -87,6 +91,7 @@
  * 2. The width of dividers between breadcrumb items
  * 3. Height of each breadcrumb item
  * 4. On mobile we don't show all breadcrumb items
+ * 5. The width when showing all breadcrumbs instead of only first and last
  */
 /**
  * Table
@@ -1736,6 +1741,7 @@ body {
  * When flexbox is in use
  * ======================
  * 1. Reset width needed for table
+ * 2. Needed for breadcrumbs to work on Chrome
  */
   /**
  * Container when toggled
@@ -3849,7 +3855,8 @@ body {
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column;
-      width: auto; } }
+      width: auto;
+      overflow: hidden; } }
   .koowa .show-left-menu .k-content,
   .koowa .show-left-menu .k-titlebar {
     -webkit-transform: translate(210px, 0);
@@ -4064,12 +4071,9 @@ body {
       @media screen and (min-width: 768px) {
         .koowa .k-breadcrumb li {
           display: table-cell; } }
-      @media (min-width: 320px) and (min-height: 400px) {
+      @media (min-width: 768px) and (min-height: 400px) {
         .flexbox .koowa .k-breadcrumb li, .flexboxlegacy .koowa .k-breadcrumb li {
-          display: -webkit-box;
-          display: -webkit-flex;
-          display: -ms-flexbox;
-          display: flex;
+          display: table-cell;
           -webkit-box-flex: 0;
           -webkit-flex: 0 1 auto;
               -ms-flex: 0 1 auto;
@@ -4109,9 +4113,9 @@ body {
           display: block; }
     .koowa .k-breadcrumb .active,
     .koowa .k-breadcrumb .home {
-      display: block;
+      display: table-cell;
       overflow: visible; }
-      @media (min-width: 320px) and (min-height: 400px) {
+      @media (min-width: 768px) and (min-height: 400px) {
         .flexbox .koowa .k-breadcrumb .active,
         .flexboxlegacy .koowa .k-breadcrumb .active,
         .flexbox .koowa .k-breadcrumb .home, .flexboxlegacy .koowa .k-breadcrumb .home {
@@ -4135,10 +4139,7 @@ a:focus:after,
             content: "»"; } }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
+      display: block;
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
@@ -4153,7 +4154,7 @@ a:focus:after,
     line-height: 16px;
     text-decoration: none;
     padding: 8px;
-    white-space: normal;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
     .koowa .k-breadcrumb__item:hover:after,

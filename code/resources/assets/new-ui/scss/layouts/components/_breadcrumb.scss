@@ -61,7 +61,7 @@
     overflow: hidden; // 5
 
     // Display them on larger screens
-    @include breakpoint($desktop) {
+    @include breakpoint($breadcrumb-query) {
       display: table-cell;
     }
 
@@ -70,8 +70,8 @@
      * --------------------------------------
      */
 
-    @include flexbox {
-      display: flex;
+    @include flexbox($horizontal:$breadcrumb-query) {
+      display: table-cell;
       flex: 0 1 auto;
     }
 
@@ -153,11 +153,12 @@
 
   .active,
   .home {
-    @include flexbox {
+    display: table-cell; // 2
+    overflow: visible;
+
+    @include flexbox($horizontal:$breadcrumb-query) {
       flex: 0 0 auto; // 1
     }
-    display: block; // 2
-    overflow: visible;
 
     // 3
     a:after
@@ -181,7 +182,7 @@
     &:before {
       content: $breadcrumb-missing-content;
 
-      @include breakpoint($desktop) {
+      @include breakpoint($breadcrumb-query) {
         content: $breadcrumb-divider-content;
       }
     }
@@ -198,7 +199,7 @@
 
 @include flexbox {
   .k-breadcrumb {
-    display: flex;
+    display: block;
     flex: 0 0 auto;
   }
 }
@@ -220,7 +221,7 @@
   line-height: $breadcrumb-size / 2;
   text-decoration: none;
   padding: round($breadcrumb-size / 4);
-  white-space: normal;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 
