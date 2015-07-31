@@ -3,11 +3,9 @@
  * =======================================
  */
 
-.k-sidebar {
-  @include border(right, $sidebar-border);
+.k-sidebar,
+.k-sidebar-right {
   position: relative;
-  background: $sidebar-background;
-  color: $sidebar-color;
   -webkit-overflow-scrolling: touch;
 
   // Faking flexbox on older browsers by using table styling
@@ -29,8 +27,10 @@
  * When JavaScript is enabled
  * ==========================
  */
+
 @include js-enabled {
-  .k-sidebar {
+  .k-sidebar,
+  .k-sidebar-right {
     @include allwidth($sidebar-width);
     position: absolute;
     z-index: 1;
@@ -38,12 +38,11 @@
     height: 100%;
     overflow: auto;
     display: none;
-    left: 0;
 
     // On 'desktop' we 'open' the sidebar
     @include breakpoint($desktop) {
       @include allwidth($sidebar-width-small);
-      position: relative;
+      position: static;
       height: auto;
       display: table-cell;
     }
@@ -63,14 +62,28 @@
  */
 
 @include flexbox($horizontal: $desktop) {
-  .k-sidebar {
+  .k-sidebar,
+  .k-sidebar-right {
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
   }
+}
 
-  .k-sidebar__item {
-    flex: 1 0 auto;
+
+
+/**
+ * Left sidebar specific
+ * ---------------------
+ */
+
+.k-sidebar {
+  @include border(right, $sidebar-border);
+  background: $sidebar-background;
+  color: $sidebar-color;
+
+  @include js-enabled {
+    left: 0;
   }
 }
 
@@ -78,11 +91,41 @@
 
 /**
  * When sidebar is toggled
- * =======================
+ * -----------------------
  */
 
 .opened--left {
   .k-sidebar {
+    display: block;
+  }
+}
+
+
+
+/**
+ * Right sidebar specific
+ * ----------------------
+ */
+
+.k-sidebar-right {
+  @include border(left, $sidebar-border);
+  background: $sidebar-background;
+  color: $sidebar-color;
+
+  @include js-enabled {
+    right: 0;
+  }
+}
+
+
+
+/**
+ * When sidebar is toggled
+ * -----------------------
+ */
+
+.opened--right {
+  .k-sidebar-right {
     display: block;
   }
 }

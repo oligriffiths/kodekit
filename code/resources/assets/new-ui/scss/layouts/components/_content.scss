@@ -1,28 +1,16 @@
 /**
  * Default styles with JavaScript disabled
  * =======================================
- * 1. Used for the off canvas menu
+ * 1. Set transition for off canvas sidebar
  * 2. Setting a background so container will fall nicely over the sidebar
  * 3. Set the z-index higher than the menus
  */
 
 .k-content {
   transition: transform $transition; // 1
-  background: white; // 2
+  background: $overview-background; // 2
   position: relative; // 3
   z-index: 2; // 3
-
-  @include psuedo(after) {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: black;
-    z-index: -1;
-    display: block;
-    opacity: 0;
-    transition: all .2s ease-in-out;
-  }
 
   // Faking flexbox on older browsers by using table styling
   @include breakpoint($desktop) {
@@ -36,6 +24,7 @@
 /**
  * When flexbox is in use
  * ======================
+ * 1. Reset width needed for table
  */
 
 @include flexbox {
@@ -43,7 +32,7 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    width: auto;
+    width: auto; // 1
   }
 }
 
