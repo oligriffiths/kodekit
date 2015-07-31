@@ -4,88 +4,13 @@
   }
 }
 
-.dropdown-holder {
-  position: relative;
-  float: left;
-}
-
-.btn-sm {
-  padding: 3px 8px;
-}
-
-
-
-.select2--link-style {
-  .select2 {
-    width: auto !important;
-  }
-
-  .select2-selection {
-    background: transparent;
-    border: none;
-  }
-}
-
-@at-root .select2-dropdown {
-  min-width: 200px;
-}
-
-.select2-selection__clear {
-  margin: -1px -2px 0 10px;
-}
-
-
-// Table pagination
-table .limit {
-  text-align: center;
-
-  select {
-    width: auto;
-  }
-}
-
 .btn {
   @extend .btn-default;
 }
 
 
 
-.k-form {
 
-  .k-component {
-    background: #F3F4F7;
-  }
-
-  .container-fluid {
-    max-width: $maxwidth;
-  }
-}
-
-@include flexbox {
-  .k-form {
-    display: flex;
-    flex: 1 1 auto;
-    overflow: hidden;
-    height: auto;
-  }
-}
-
-.k-form-block {
-  display: block;
-  background: white;
-  border: 1px solid #CCD2DC;
-}
-
-.k-form-block__header {
-  border-bottom: 1px solid #CCD2DC;
-  padding: 10px 10px 9px;
-  font-weight: bold;
-  background: #E3E6EB;
-}
-
-.k-form-block__content {
-  padding: 15px;
-}
 
 
 .control-group {

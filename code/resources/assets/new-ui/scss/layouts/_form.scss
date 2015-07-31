@@ -1,0 +1,64 @@
+/**
+ * Form layout
+ * ===========
+ * The default form layout
+ * 1. titlebar
+ * 2. left sidebar
+ * 3. content
+ * 4. right sidebar
+ * _____________________________
+ * |____________ 1_____________|
+ * |     |               |     |
+ * |  2  |       3       |  4  |
+ * |     |               |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |_____|_______________|_____|
+ */
+
+@import "components/titlebar";
+
+/**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+
+.k-form {
+
+  /**
+   * Component background
+   * --------------------
+   * Default component has background for when sliding over sidebars
+   */
+
+  .k-component {
+    background: #F3F4F7;
+  }
+
+
+
+  /**
+   * Form width
+   * ----------
+   */
+
+  .container-fluid {
+    max-width: $maxwidth;
+  }
+
+}
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+@include flexbox {
+  .k-form {
+    display: flex;
+    flex: 1 1 auto;
+  }
+}

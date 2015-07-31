@@ -1560,6 +1560,7 @@ img.mfp-img {
 /**
  * Setup
  * -----
+ * Styling html, body and koowa
  */
 /**
  * Setting up html and body
@@ -1571,13 +1572,22 @@ body {
   min-height: 100%;
   height: 100%; }
 
+/**
+ * Default body settings
+ * =====================
+ * Setting up font and spacing
+ */
 body {
   font-family: Arial, sans-serif;
   font-size: 13px;
   line-height: 20px;
   padding: 0;
   margin: 0;
-  border: none; }
+  border: none;
+  /**
+   * When flexbox is enabled
+   * -----------------------
+   */ }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox body, .flexboxlegacy body {
       display: -webkit-box;
@@ -1592,21 +1602,37 @@ body {
 /**
  * Default koowa wrapper
  * =====================
- * 1. For full height app with flexbox
- * 2. By using a max-width we essentially set a min-width when the contents are
+ * 1. By using a max-width we essentially set a min-width when the contents are
  *    to large for the koowa container. The reason we don't use min-width is
  *    because if the content is only 300px we don't need horizontal scrollbars
- * 3. Reset the max-width when viewport is as large as minwidth
- * 4. The default font smoothing
+ * 2. Reset the max-width when viewport is as large as minwidth
+ * 3. Use z-index to be able to talk with JavaScript
+ * 4. Needed for webkit / blink for JS to read zindex value
  */
 .koowa {
   max-width: 400px;
   overflow: auto;
+  z-index: 0;
+  position: relative;
   background: white;
   padding: 0;
   -webkit-font-smoothing: subpixel-antialiased;
-  position: relative;
-  z-index: 0; }
+  /**
+   * When flexbox is enabled
+   * -----------------------
+   */
+  /**
+   * On 'desktop' view
+   * -----------------
+   */
+  /**
+   * Border-box size everything
+   * --------------------------
+   */
+  /**
+   * Set default outline to items
+   * ----------------------------
+   */ }
   @media screen and (min-width: 400px) {
     .koowa {
       max-width: none; } }
@@ -1635,7 +1661,9 @@ body {
  * For example when using Nooku inside of another framework or CMS
  */
 .koowa {
+  /* Namespaced Normalize */
   /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+  /* Namespaced Twitter Bootstrap */
   /**
  * Overview layout
  * ===============
@@ -1655,16 +1683,6 @@ body {
  * |     |               |     |
  * |     |               |     |
  * |_____|_______________|_____|
- */
-  /**
- * Default with JavaScript disabled
- * ================================
- */
-  /**
- * Overlay when toggled
- * ====================
- * 1. Set opacity
- * 2. Set z-index to 1 so it will become visible
  */
   /**
  * Default styles with JavaScript disabled
@@ -1799,8 +1817,40 @@ body {
  * =======================================
  */
   /**
- * When JavaScript is enabled
- * ==========================
+ * When flexbox is in use
+ * ======================
+ */
+  /**
+ * Form layout
+ * ===========
+ * The default form layout
+ * 1. titlebar
+ * 2. left sidebar
+ * 3. content
+ * 4. right sidebar
+ * _____________________________
+ * |____________ 1_____________|
+ * |     |               |     |
+ * |  2  |       3       |  4  |
+ * |     |               |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |_____|_______________|_____|
+ */
+  /**
+ * Default with JavaScript disabled
+ * ================================
+ */
+  /**
+ * Overlay when toggled
+ * ====================
+ * 1. Set opacity
+ * 2. Set z-index to 1 so it will become visible
+ */
+  /**
+ * Default styles with JavaScript disabled
+ * =======================================
  */
   /**
  * When flexbox is in use
@@ -3707,55 +3757,6 @@ body {
     background: transparent;
     border: 0;
     -webkit-appearance: none; }
-  .koowa .k-titlebar {
-    background: #1e2a37;
-    color: #ecf0f1;
-    padding: 0;
-    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-            transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-    position: relative;
-    z-index: 2;
-    position: relative; }
-    .koowa .k-titlebar:before {
-      display: block;
-      position: absolute;
-      content: " ";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: red;
-      z-index: -1;
-      background: black;
-      -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-              transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
-      opacity: 0; }
-      @media screen and (min-width: 768px) {
-        .koowa .k-titlebar:before {
-          display: none; } }
-    .koowa .k-titlebar h2 {
-      padding: 3px 0;
-      font-weight: 400;
-      font-size: 15px; }
-      @media screen and (min-width: 768px) {
-        .koowa .k-titlebar h2 {
-          font-size: 16px; } }
-      @media screen and (min-width: 1024px) {
-        .koowa .k-titlebar h2 {
-          font-size: 18px; } }
-  @media (min-width: 320px) and (min-height: 400px) {
-    .flexbox .koowa .k-titlebar, .flexboxlegacy .koowa .k-titlebar {
-      -webkit-box-flex: 0;
-      -webkit-flex: 0 0 auto;
-          -ms-flex: 0 0 auto;
-              flex: 0 0 auto; } }
-  .koowa .show-left-menu .k-titlebar:before,
-  .koowa .show-right-menu .k-titlebar:before {
-    opacity: .5; }
-  .koowa .opened--left .k-titlebar:before,
-  .koowa .opened--right .k-titlebar:before {
-    z-index: 2; }
   .koowa .k-content-wrapper {
     margin: 0; }
     @media screen and (min-width: 768px) {
@@ -4309,8 +4310,6 @@ a:focus:after,
     display: block; }
   .koowa .k-overview {
     background: white; }
-  .k-js-enabled .koowa .k-overview {
-    height: 100%; }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview {
       display: -webkit-box;
@@ -4322,12 +4321,84 @@ a:focus:after,
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
       overflow: hidden;
-      height: auto;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
               flex-direction: column; } }
+  .koowa .k-titlebar {
+    background: #1e2a37;
+    color: #ecf0f1;
+    padding: 0;
+    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+    position: relative;
+    z-index: 2;
+    position: relative; }
+    .koowa .k-titlebar:before {
+      display: block;
+      position: absolute;
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin-bottom: -1px;
+      z-index: -1;
+      background: black;
+      -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+      opacity: 0; }
+      @media screen and (min-width: 768px) {
+        .koowa .k-titlebar:before {
+          display: none; } }
+    .koowa .k-titlebar h2 {
+      padding: 3px 0;
+      font-weight: 400;
+      font-size: 15px; }
+      @media screen and (min-width: 768px) {
+        .koowa .k-titlebar h2 {
+          font-size: 16px; } }
+      @media screen and (min-width: 1024px) {
+        .koowa .k-titlebar h2 {
+          font-size: 18px; } }
+  @media (min-width: 320px) and (min-height: 400px) {
+    .flexbox .koowa .k-titlebar, .flexboxlegacy .koowa .k-titlebar {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 auto;
+          -ms-flex: 0 0 auto;
+              flex: 0 0 auto; } }
+  .koowa .show-left-menu .k-titlebar:before,
+  .koowa .show-right-menu .k-titlebar:before {
+    opacity: .5; }
+  .koowa .opened--left .k-titlebar:before,
+  .koowa .opened--right .k-titlebar:before {
+    z-index: 2; }
+  .koowa .k-form {
+    /**
+   * Component background
+   * --------------------
+   * Default component has background for when sliding over sidebars
+   */
+    /**
+   * Form width
+   * ----------
+   */ }
+    .koowa .k-form .k-component {
+      background: #F3F4F7; }
+    .koowa .k-form .container-fluid {
+      max-width: 1024px; }
+  @media (min-width: 320px) and (min-height: 400px) {
+    .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto; } }
   .koowa .container-fluid {
     padding: 20px; }
   .koowa .row {
@@ -4502,6 +4573,17 @@ a:focus:after,
     display: none; }
   .k-js-enabled .k-js-control {
     display: block; }
+  .koowa .k-form-block {
+    display: block;
+    background: white;
+    border: 1px solid #CCD2DC; }
+  .koowa .k-form-block__header {
+    border-bottom: 1px solid #CCD2DC;
+    padding: 10px 10px 9px;
+    font-weight: bold;
+    background: #E3E6EB; }
+  .koowa .k-form-block__content {
+    padding: 15px; }
   .koowa .k-navigation {
     margin: 0;
     padding: 0;
@@ -4767,9 +4849,22 @@ a:focus:after,
     .koowa .table-pagination select {
       width: auto;
       display: inline-block; }
+  .koowa table .limit {
+    text-align: center; }
+    .koowa table .limit select {
+      width: auto; }
   .koowa .select2 {
     width: 100%;
     max-width: 100% !important; }
+  .koowa .select2--link-style .select2 {
+    width: auto !important; }
+  .koowa .select2--link-style .select2-selection {
+    background: transparent;
+    border: none; }
+  .select2-dropdown {
+    min-width: 200px; }
+  .koowa .select2-selection__clear {
+    margin: -1px -2px 0 10px; }
   .koowa .radio-toggle:not(ie) {
     display: table;
     width: 100%;
@@ -5305,51 +5400,6 @@ a:focus:after,
     white-space: nowrap; }
   .koowa .form-group:last-child {
     margin-bottom: 0; }
-  .koowa .dropdown-holder {
-    position: relative;
-    float: left; }
-  .koowa .btn-sm, .koowa .btn-group-sm > .btn {
-    padding: 3px 8px; }
-  .koowa .select2--link-style .select2 {
-    width: auto !important; }
-  .koowa .select2--link-style .select2-selection {
-    background: transparent;
-    border: none; }
-  .select2-dropdown {
-    min-width: 200px; }
-  .koowa .select2-selection__clear {
-    margin: -1px -2px 0 10px; }
-  .koowa table .limit {
-    text-align: center; }
-    .koowa table .limit select {
-      width: auto; }
-  .koowa .k-form .k-component {
-    background: #F3F4F7; }
-  .koowa .k-form .container-fluid {
-    max-width: 1024px; }
-  @media (min-width: 320px) and (min-height: 400px) {
-    .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      overflow: hidden;
-      height: auto; } }
-  .koowa .k-form-block {
-    display: block;
-    background: white;
-    border: 1px solid #CCD2DC; }
-  .koowa .k-form-block__header {
-    border-bottom: 1px solid #CCD2DC;
-    padding: 10px 10px 9px;
-    font-weight: bold;
-    background: #E3E6EB; }
-  .koowa .k-form-block__content {
-    padding: 15px; }
   .koowa .control-group:last-child {
     margin-bottom: 0; }
   @media screen and (min-width: 0) and (max-width: 600px) {
