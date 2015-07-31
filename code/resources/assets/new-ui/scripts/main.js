@@ -5,9 +5,11 @@
         // Variables
         var $wrapper = $('.k-content-wrapper'),
             $sidebar = $('#k-sidebar'),
+            $sidebarright = $('#k-sidebar-right'),
             $sidebaritem = $('.k-sidebar__item'),
             $content = $('.k-content'),
             $togglebutton = $('#k-toggle-button'),
+            $togglebuttonright = $('#k-toggle-button-right'),
             $fixedtable = $('.table--fixed'),
             $tableitems = $('tbody td'),
             $select2default = $('.select2--default'),
@@ -23,6 +25,16 @@
                 menuToggle: $togglebutton,
                 wrapper: $wrapper,
                 container: $content
+            });
+        }
+
+        // Offcanvasmenu
+        if ( $sidebarright.length && $togglebuttonright.length && $wrapper.length && $content.length ) {
+            $sidebarright.offCanvasMenu({
+                menuToggle: $togglebuttonright,
+                wrapper: $wrapper,
+                container: $content,
+                position: 'right'
             });
         }
 

@@ -17,6 +17,11 @@ body {
   padding: 0;
   margin: 0;
   border: none;
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+  }
 }
 
 /**

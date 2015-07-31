@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en">
+<head>
+    <title>Nooku UI</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="text/html; charset=utf-8" http-equiv="content-type"  />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name=”mobile-web-app-capable” content=”yes” />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Nooku UI">
+
+    <link rel="stylesheet" href="admin-joomla.css">
+    <script src="/media/jui/js/jquery.min.js"></script>
+    <script src="../js/modernizr.js"></script>
+    <script src="../js/scripts.js"></script>
+</head>
+<body>
+
+<!-- Begin Nooku Admin Layout -->
+<div id="koowa" class="koowa">
+    <script data-inline type="text/javascript">var el = document.body; var cl = 'k-js-enabled'; if (el.classList) { el.classList.add(cl); }else{ el.className += ' ' + cl;}</script>
+
+    <!-- Begin List layout -->
+    <div class="k-overview">
+
+        <!-- Titlebar -->
+        <div class="k-titlebar">
+            <!-- Sidebar toggle button -->
+            <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </button>
+            <h2 style="float: left;">Upload / Insert a file</h2>
+            <button id="k-toggle-button-right" class="off-canvas-menu-toggle" type="button" style="float: right;">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </button>
+        </div>
+
+        <!-- The content -->
+        <form id="k-offcanvas-container" class="k-content-wrapper">
+
+            <!-- Sidebar -->
+            <div id="k-sidebar" class="k-sidebar">
+
+                <!-- Categories -->
+                <div class="k-sidebar__item">
+                    <div class="k-sidebar__content">
+
+                        <ul class="k-list">
+                            <li class="k-tree">
+                                <a href="#">
+                                    <span class="k-clicker collapsible"></span>
+                                    <span class="k-icon-folder"></span>
+                                    <span class="k-title collapsible">Home</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div> <!-- .k-sidebar -->
+
+            <!-- The content -->
+            <div class="k-content">
+
+                <!-- contents -->
+                <div class="k-component-wrapper">
+
+                    <!-- Component -->
+                    <div class="k-component">
+
+                        <!-- location bar -->
+                        <div class="k-location">
+
+                            <!-- Breadcrumbs -->
+                            <div class="k-breadcrumb">
+                                <ul>
+                                    <li class="home">
+                                        <a class="k-breadcrumb__item k-icon-home" href="#">
+                                            <span class="visually-hidden-icon-label">Home</span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
+                                        <span class="k-breadcrumb__item" data-title="Category 6">Category 6</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                        <!-- upload -->
+                        <div class="k-upload">
+                            <div class="upload-from">
+                                <div class="from-from">
+                                    Upload from:
+                                </div>
+                                <div class="from-computer">
+                                    Computer
+                                </div>
+                                <div class="from-web">
+                                    Web
+                                </div>
+                                <small class="max-upload">
+                                    Each file should be smaller than 10 MB
+                                </small>
+                            </div>
+                            <div class="k-drop-area">
+                                <div class="drop-message">
+                                    Drop files here
+                                </div>
+                                <div class="select-message">
+                                    <button class="btn btn-sm btn-primary">Select manually</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Scopebar -->
+                        <div class="k-scopebar">
+
+                            <!-- Filter items by -->
+                            <div class="k-scopebar__item k-scopebar__item--fluid">
+                                <div class="dropdown-holder">
+                                    <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--published" data-toggle="dropdown" aria-expanded="true">
+                                        Published
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--published">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Published</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Unpublished</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pending</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Archived</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-holder">
+                                    <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--owner" data-toggle="dropdown" aria-expanded="true">
+                                        Owned by
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--owner">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My documents</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else</a></li>
+                                    </ul>
+                                </div>
+                                <div class="dropdown-holder">
+                                    <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--access" data-toggle="dropdown" aria-expanded="true">
+                                        Access
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--access">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Super administrator</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Publisher</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editor</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Public</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Search filtered items -->
+                            <div class="k-scopebar__item k-scopebar__search">
+                                <input type="search" class="k-scopebar__search__input" placeholder="Search...">
+                                <button type="submit" class="k-scopebar__search__button k-icon-search">
+                                    <span class="visually-hidden-icon-label">Search</span>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <!-- The table -->
+                        <div class="k-table-container">
+                            <div class="k-table">
+                                <table class="table--fixed" summary="List of documents">
+                                    <tbody>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td>
+                                            <div class="table-pagination">
+                                                <select>
+                                                    <option>20</option>
+                                                    <option>50</option>
+                                                    <option>100</option>
+                                                    <option>All</option>
+                                                </select>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div> <!-- .k-component -->
+
+                </div> <!-- .k-contents -->
+
+            </div> <!-- .k-content -->
+
+            <!-- Selected file -->
+            <div id="k-sidebar-right" class="k-sidebar-right">
+                <p><strong>Selected file</strong></p>
+                <p><img src="http://demo.joomlatools.com/joomla3/docman/image-gallery/127-donkey-1/file"></p>
+                <p><strong class="labl">Name</strong> Donkey.jpg</p>
+                <p><strong class="labl">Dimensions</strong> 1280 x 897</p>
+                <p><strong class="labl">Size</strong> 449.57KB</p>
+                <p style="margin-top: 1em;"><a href="select-document.html" class="btn btn-success btn-block">Insert file</a></p>
+            </div>
+
+        </form><!-- .k-content-wrapper -->
+
+    </div> <!-- .k-overview -->
+
+</div> <!-- #koowa -->
+<!-- End Nooku Admin Layout -->
+
+</body>
+</html>

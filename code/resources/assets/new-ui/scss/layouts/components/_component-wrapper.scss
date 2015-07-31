@@ -23,7 +23,7 @@
  * ==========================
  */
 
-@at-root .k-js-enabled {
+@include js-enabled {
   .k-component-wrapper {
     // Faking flexbox on older browsers by using table styling
     display: table;
@@ -43,5 +43,6 @@
     display: flex;
     flex: 1 1 auto;
     flex-direction: row;
+    overflow: hidden;
   }
 }
