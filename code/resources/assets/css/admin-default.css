@@ -1557,6 +1557,22 @@ img.mfp-img {
       height: 100%;
       max-height: 100% !important; } }
 
+.koowa .select2 {
+  width: 100%;
+  max-width: 100% !important; }
+
+.koowa .select2--link-style .select2-container {
+  width: auto !important; }
+  .koowa .select2--link-style .select2-container .select2-selection {
+    background: transparent;
+    border: none; }
+
+.select2-dropdown {
+  min-width: 200px; }
+
+.koowa .select2-selection__clear {
+  margin: -1px -2px 0 10px; }
+
 /**
  * Setup
  * -----
@@ -1877,6 +1893,10 @@ body {
   /**
   * Nowrap
   * ======
+  */
+  /**
+  * Disabled
+  * ========
   */ }
   .koowa html {
     font-family: sans-serif;
@@ -4207,6 +4227,16 @@ a:focus:after,
       top: 7px;
       right: 10px;
       font-size: 10px; }
+  .koowa .toggle-search {
+    float: right; }
+    @media screen and (min-width: 600px) {
+      .koowa .toggle-search {
+        display: none; } }
+  .koowa .k-scopebar__search {
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .koowa .k-scopebar__search {
+        display: block; } }
   .koowa .k-component-wrapper {
     position: relative; }
     @media screen and (min-width: 768px) {
@@ -4493,6 +4523,25 @@ a:focus:after,
     .koowa #toolbar-options .btn {
       margin-right: 0;
       margin-left: 9px; }
+  .koowa .k-toolbar button,
+  .koowa .k-toolbar .btn {
+    margin: 10px 0 10px 10px; }
+    @media screen and (min-width: 0) and (max-width: 600px) {
+      .koowa .k-toolbar button,
+      .koowa .k-toolbar .btn {
+        width: 33px;
+        height: 33px;
+        padding: 6px 8px; } }
+    .koowa .k-toolbar button:last-child,
+    .koowa .k-toolbar .btn:last-child {
+      margin-right: 10px; }
+  .koowa .k-toolbar__text {
+    display: none; }
+    @media screen and (min-width: 768px) {
+      .koowa .k-toolbar__text {
+        display: inline; } }
+  .koowa .k-btn-options {
+    float: right; }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-upload, .flexboxlegacy .koowa .k-upload {
       display: -webkit-box;
@@ -4853,17 +4902,27 @@ a:focus:after,
     text-align: center; }
     .koowa table .limit select {
       width: auto; }
-  .koowa .select2 {
+  .koowa thead th {
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .koowa thead th {
+        display: table-cell; } }
+  .koowa tr.selected td {
+    background: #0088CC;
+    color: white; }
+    .koowa tr.selected td a {
+      color: white; }
+  .koowa .koowa .select2 {
     width: 100%;
     max-width: 100% !important; }
-  .koowa .select2--link-style .select2 {
+  .koowa .koowa .select2--link-style .select2-container {
     width: auto !important; }
-  .koowa .select2--link-style .select2-selection {
-    background: transparent;
-    border: none; }
+    .koowa .koowa .select2--link-style .select2-container .select2-selection {
+      background: transparent;
+      border: none; }
   .select2-dropdown {
     min-width: 200px; }
-  .koowa .select2-selection__clear {
+  .koowa .koowa .select2-selection__clear {
     margin: -1px -2px 0 10px; }
   .koowa .radio-toggle:not(ie) {
     display: table;
@@ -4917,8 +4976,8 @@ a:focus:after,
       font-weight: 400;
       position: relative;
       z-index: 2;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
       .koowa .radio-toggle:not(ie) span:before {
         border-radius: 3px; }
       .koowa .radio-toggle:not(ie) span:hover {
@@ -4934,8 +4993,8 @@ a:focus:after,
       background: transparent;
       pointer-events: none;
       z-index: -1;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     .koowa .radio-toggle:not(ie) .radio-toggle-item:first-child span:before,
     .koowa .radio-toggle:not(ie) .radio-toggle-item:last-child span:before {
       width: 100%;
@@ -5004,8 +5063,8 @@ a:focus:after,
       background: white;
       border: 1px solid #ccc;
       border-radius: 6px;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     .koowa .checkbox-toggle:not(old-ie) label:after {
       content: " ";
       width: 116px;
@@ -5014,16 +5073,16 @@ a:focus:after,
       right: 2px;
       background: #c0392b;
       border-radius: 5px;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     .koowa .checkbox-toggle:not(old-ie) span:before,
     .koowa .checkbox-toggle:not(old-ie) span:after {
       font-size: 10px;
       line-height: 26px;
       text-transform: uppercase;
       text-align: center;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     .koowa .checkbox-toggle:not(old-ie) span:before {
       content: attr(data-false);
       width: 88px;
@@ -5044,8 +5103,8 @@ a:focus:after,
       color: white;
       right: 90px;
       border: 1px solid #c0392b;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     .koowa .checkbox-toggle:not(old-ie) span {
       display: block;
       position: relative;
@@ -5239,8 +5298,8 @@ a:focus:after,
       background: #ecf0f1;
       border-radius: 1px;
       vertical-align: middle;
-      -webkit-transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9);
-              transition: all 0.25s cubic-bezier(0.15, 0.8, 0.2, 0.9); }
+      -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
     .koowa .off-canvas-menu-toggle .bar1 {
       top: 9px; }
     .koowa .off-canvas-menu-toggle .bar2 {
@@ -5398,6 +5457,8 @@ a:focus:after,
             transition: none; }
   .koowa .k-nowrap.k-nowrap.k-nowrap {
     white-space: nowrap; }
+  .koowa .disabled.disabled.disabled {
+    display: none; }
   .koowa .form-group:last-child {
     margin-bottom: 0; }
   .koowa .control-group:last-child {
@@ -5406,44 +5467,3 @@ a:focus:after,
     .koowa table th:nth-child(n+3),
     .koowa table td:nth-child(n+3) {
       display: none; } }
-  .koowa .k-toolbar button,
-  .koowa .k-toolbar .btn {
-    margin: 10px 0 10px 10px; }
-    @media screen and (min-width: 0) and (max-width: 600px) {
-      .koowa .k-toolbar button,
-      .koowa .k-toolbar .btn {
-        width: 33px;
-        height: 33px;
-        padding: 6px 8px; } }
-    .koowa .k-toolbar button:last-child,
-    .koowa .k-toolbar .btn:last-child {
-      margin-right: 10px; }
-  .koowa .k-toolbar__text {
-    display: none; }
-    @media screen and (min-width: 768px) {
-      .koowa .k-toolbar__text {
-        display: inline; } }
-  .koowa .disabled {
-    display: none; }
-  .koowa .k-btn-options {
-    float: right; }
-  .koowa .toggle-search {
-    float: right; }
-    @media screen and (min-width: 600px) {
-      .koowa .toggle-search {
-        display: none; } }
-  .koowa .k-scopebar__search {
-    display: none; }
-    @media screen and (min-width: 600px) {
-      .koowa .k-scopebar__search {
-        display: block; } }
-  .koowa thead th {
-    display: none; }
-    @media screen and (min-width: 600px) {
-      .koowa thead th {
-        display: table-cell; } }
-  .koowa tr.selected td {
-    background: #0088CC;
-    color: white; }
-    .koowa tr.selected td a {
-      color: white; }

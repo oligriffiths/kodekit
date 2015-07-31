@@ -135,3 +135,20 @@
   }
 
 }
+
+
+.toggle-search {
+  float: right;
+
+  @include breakpoint($beta) {
+    display: none;
+  }
+}
+
+.k-scopebar__search {
+  display: none;
+
+  @include breakpoint($beta) {
+    display: block;
+  }
+}

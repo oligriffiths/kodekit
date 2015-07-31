@@ -155,3 +155,34 @@
     margin-left: $toolbar-spacing;
   }
 }
+
+
+
+.k-toolbar {
+  button,
+  .btn {
+    margin: 10px 0 10px 10px;
+
+    @include breakpoint(0,range,$beta) {
+      width: 33px;
+      height: 33px;
+      padding: 6px 8px;
+    }
+
+    &:last-child {
+      margin-right: 10px;
+    }
+  }
+}
+
+.k-toolbar__text {
+  display: none;
+
+  @include breakpoint($charlie) {
+    display: inline;
+  }
+}
+
+.k-btn-options {
+  float: right;
+}

@@ -4,21 +4,17 @@
   }
 }
 
-.btn {
-  @extend .btn-default;
-}
-
-
-
-
-
-
 .control-group {
   &:last-child {
     margin-bottom: 0;
   }
 }
 
+.btn {
+  @extend .btn-default;
+}
+
+// @TODO: This needs to be fixed with JS by either using FooTable or our own
 @include breakpoint(0,range,$beta) {
   table {
     th,
@@ -26,76 +22,6 @@
       &:nth-child(n+3) {
         display: none;
       }
-    }
-  }
-}
-
-.k-toolbar {
-  button,
-  .btn {
-    margin: 10px 0 10px 10px;
-
-    @include breakpoint(0,range,$beta) {
-      width: 33px;
-      height: 33px;
-      padding: 6px 8px;
-    }
-
-    &:last-child {
-      margin-right: 10px;
-    }
-  }
-}
-
-.k-toolbar__text {
-  display: none;
-
-  @include breakpoint($charlie) {
-    display: inline;
-  }
-}
-
-.disabled {
-  display: none;
-}
-
-.k-btn-options {
-  float: right;
-}
-
-.toggle-search {
-  float: right;
-
-  @include breakpoint($beta) {
-    display: none;
-  }
-}
-
-.k-scopebar__search {
-  display: none;
-
-  @include breakpoint($beta) {
-    display: block;
-  }
-}
-
-thead {
-  th {
-    display: none;
-
-    @include breakpoint($beta) {
-      display: table-cell;
-    }
-  }
-}
-
-tr.selected {
-  td {
-    background: #0088CC;
-    color: white;
-
-    a {
-      color: white;
     }
   }
 }

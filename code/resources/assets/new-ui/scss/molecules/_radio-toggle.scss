@@ -1,4 +1,3 @@
-$transition: all .25s cubic-bezier(.15,.8,.2,.9);
 
 // Variables
 @if $radio-toggle == true {
@@ -71,7 +70,7 @@ $transition: all .25s cubic-bezier(.15,.8,.2,.9);
       font-weight: $regular;
       position: relative;
       z-index: 2;
-      transition: $transition;
+      transition: all $transition;
 
       &:before {
         border-radius: $input-border-radius - 1; // Better looking radius for children
@@ -94,7 +93,7 @@ $transition: all .25s cubic-bezier(.15,.8,.2,.9);
         background: transparent;
         pointer-events: none;
         z-index: -1;
-        transition: $transition;
+        transition: all $transition;
       }
 
       &:first-child,

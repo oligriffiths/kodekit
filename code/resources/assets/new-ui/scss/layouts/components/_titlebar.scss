@@ -8,7 +8,7 @@
   background: $toolbar-title-background;
   color: $toolbar-color;
   padding: 0;
-  transition: transform $transition-time-easing; // 1
+  transition: transform $transition; // 1
   position: relative;
   z-index: 2;
 
@@ -17,7 +17,7 @@
     margin-bottom: -1px;
     z-index: -1;
     background: $overlay-background;
-    transition: opacity $transition-time-easing;
+    transition: opacity $transition;
     opacity: 0;
 
     @include breakpoint($desktop) {
