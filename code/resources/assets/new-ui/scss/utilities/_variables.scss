@@ -1,22 +1,24 @@
 /**
  * Breakpoints
  * ===========
- * 1. Separate $desktop variable is being used so all styles
+ * 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base to work from
+ * 2. The max width of the form layout
+ * 3. Separate $desktop variable is being used so all styles
  *    change together when going from small to larger screen.
- * 2. Separate $flexbox variable is being used so we can add
- *    certain styles like height:100%; only when needed
+ * 4. Separate $flexbox variables are being used
+ * 5. Use flexbox in layouts
  */
 
 $alpha: 400px !default;
 $beta: 600px !default;
 $charlie: 768px !default;
 $delta: 1024px !default;
-$minwidth: $alpha !default;
-$maxwidth: $delta !default;
-$desktop: $charlie !default; // 1
-$flexbox-horizontal: 320px !default; // 2
-$flexbox-vertical: 400px !default; // 2
-$flexbox: true !default;
+$minwidth: $alpha !default; // 1
+$maxwidth: $delta !default; // 2
+$desktop: $charlie !default; // 3
+$flexbox-horizontal: 320px !default; // 4
+$flexbox-vertical: 400px !default; // 4
+$flexbox: true !default; // 5
 
 
 
@@ -116,6 +118,20 @@ $color-secondary-type: white !default;
 
 
 /**
+ * Tertiary color
+ * ==============
+ */
+
+$color-tertiary: #3498db !default;
+$color-tertiary-lightest: lighten($color-secondary, 10%) !default;
+$color-tertiary-light: lighten($color-secondary, 5%) !default;
+$color-tertiary-dark: darken($color-secondary, 7%) !default;
+$color-tertiary-darkest: darken($color-secondary, 14%) !default;
+$color-tertiary-type: white !default;
+
+
+
+/**
  * Accent color
  * ============
  */
@@ -127,18 +143,15 @@ $color-accent-dark: darken($color-accent, 15%) !default;
 $color-accent-primary: $color-secondary !default;
 $color-accent-secondary: $color-accent !default;
 
-$color-success: #27ae60 !default;
-$color-success-type: white !default;
 
 
 /**
- * Koowa
- * =====
- * The default koowa container
+ * States
+ * ======
  */
 
-$koowa-background: white !default;
-$koowa-padding: 0 !default;
+$color-success: #27ae60 !default;
+$color-success-type: white !default;
 
 
 
@@ -151,6 +164,17 @@ $koowa-padding: 0 !default;
 $border-color: false !default;
 $border-width: 1px !default;
 $border-style: solid !default;
+
+
+
+/**
+ * Koowa
+ * =====
+ * The default koowa container
+ */
+
+$koowa-background: white !default;
+$koowa-padding: 0 !default;
 
 
 

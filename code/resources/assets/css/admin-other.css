@@ -2,10 +2,12 @@
 /**
  * Breakpoints
  * ===========
- * 1. Separate $desktop variable is being used so all styles
+ * 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base to work from
+ * 2. The max width of the form layout
+ * 3. Separate $desktop variable is being used so all styles
  *    change together when going from small to larger screen.
- * 2. Separate $flexbox variable is being used so we can add
- *    certain styles like height:100%; only when needed
+ * 4. Separate $flexbox variables are being used
+ * 5. Use flexbox in layouts
  */
 /**
  * Typography
@@ -39,6 +41,10 @@
 /**
  * Primary color
  * =============
+ */
+/**
+ * Secondary color
+ * ===============
  */
 /**
  * Secondary color
