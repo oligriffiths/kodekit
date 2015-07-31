@@ -109,7 +109,7 @@
 
 
         $('.toggle-search').click(function() {
-            $('.k-scopebar__search').slideToggle();
+            $('.k-scopebar__search').slideToggle('fast');
         });
 
 
