@@ -59,7 +59,8 @@
  */
 
 .show-left-menu {
-  .k-content {
+  .k-content,
+  .k-titlebar {
     transform: translate($sidebar-width, 0); // 1
 
     @include breakpoint($desktop) {
@@ -69,7 +70,8 @@
 }
 
 .show-right-menu {
-  .k-content {
+  .k-content,
+  .k-titlebar {
     transform: translate(-($sidebar-width), 0); // 2
 
     @include breakpoint($desktop) {

@@ -1661,6 +1661,12 @@ body {
  * ================================
  */
   /**
+ * Overlay when toggled
+ * ====================
+ * 1. Set opacity
+ * 2. Set z-index to 1 so it will become visible
+ */
+  /**
  * Default styles with JavaScript disabled
  * =======================================
  */
@@ -3704,7 +3710,30 @@ body {
   .koowa .k-titlebar {
     background: #36291c;
     color: #ecf0f1;
-    padding: 0; }
+    padding: 0;
+    -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+            transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+    position: relative;
+    z-index: 2;
+    position: relative; }
+    .koowa .k-titlebar:before {
+      display: block;
+      position: absolute;
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: red;
+      z-index: -1;
+      background: black;
+      -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+              transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
+      opacity: 0; }
+      @media screen and (min-width: 768px) {
+        .koowa .k-titlebar:before {
+          display: none; } }
     .koowa .k-titlebar h2 {
       padding: 3px 0;
       font-weight: 400;
@@ -3721,8 +3750,13 @@ body {
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
               flex: 0 0 auto; } }
+  .koowa .show-left-menu .k-titlebar:before,
+  .koowa .show-right-menu .k-titlebar:before {
+    opacity: .5; }
+  .koowa .opened--left .k-titlebar:before,
+  .koowa .opened--right .k-titlebar:before {
+    z-index: 2; }
   .koowa .k-content-wrapper {
-    position: relative;
     margin: 0; }
     @media screen and (min-width: 768px) {
       .koowa .k-content-wrapper {
@@ -3747,7 +3781,6 @@ body {
       overflow: hidden; } }
   .koowa .opened--left,
   .koowa .opened--right {
-    position: relative;
     overflow: hidden; }
     @media screen and (min-width: 768px) {
       .koowa .opened--left,
@@ -3794,21 +3827,25 @@ body {
           -ms-flex-direction: column;
               flex-direction: column;
       width: auto; } }
-  .koowa .show-left-menu .k-content {
+  .koowa .show-left-menu .k-content,
+  .koowa .show-left-menu .k-titlebar {
     -webkit-transform: translate(270px, 0);
         -ms-transform: translate(270px, 0);
             transform: translate(270px, 0); }
     @media screen and (min-width: 768px) {
-      .koowa .show-left-menu .k-content {
+      .koowa .show-left-menu .k-content,
+      .koowa .show-left-menu .k-titlebar {
         -webkit-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
                 transform: translate(0, 0); } }
-  .koowa .show-right-menu .k-content {
+  .koowa .show-right-menu .k-content,
+  .koowa .show-right-menu .k-titlebar {
     -webkit-transform: translate(-270px, 0);
         -ms-transform: translate(-270px, 0);
             transform: translate(-270px, 0); }
     @media screen and (min-width: 768px) {
-      .koowa .show-right-menu .k-content {
+      .koowa .show-right-menu .k-content,
+      .koowa .show-right-menu .k-titlebar {
         -webkit-transform: translate(0, 0);
             -ms-transform: translate(0, 0);
                 transform: translate(0, 0); } }

@@ -8,6 +8,22 @@
   background: $toolbar-title-background;
   color: $toolbar-color;
   padding: 0;
+  transition: transform $transition-time-easing; // 1
+  position: relative;
+  z-index: 2;
+
+  @include psuedo(before) {
+    @include coverall();
+    background: red;
+    z-index: -1;
+    background: $overlay-background;
+    transition: opacity $transition-time-easing;
+    opacity: 0;
+
+    @include breakpoint($desktop) {
+      display: none; // 4
+    }
+  }
 
   h2 {
     padding: 3px 0;
@@ -27,5 +43,27 @@
 @include flexbox {
   .k-titlebar {
     flex: 0 0 auto;
+  }
+}
+
+
+/**
+ * Overlay when toggled
+ * ====================
+ * 1. Set opacity
+ * 2. Set z-index to 1 so it will become visible
+ */
+
+.show-left-menu,
+.show-right-menu {
+  .k-titlebar:before {
+    opacity: .5; // 1
+  }
+}
+
+.opened--left,
+.opened--right {
+  .k-titlebar:before {
+    z-index: 2; // 2
   }
 }
