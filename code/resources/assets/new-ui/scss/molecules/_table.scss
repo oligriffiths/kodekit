@@ -1,4 +1,21 @@
 // Table
+@include flexbox {
+  .k-table-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+
+    .k-table {
+      display: flex;
+      flex: 1 1 auto;
+
+      table {
+        flex: 1 1 auto;
+      }
+    }
+  }
+}
+
 .k-table {
   table {
     width: 100%;

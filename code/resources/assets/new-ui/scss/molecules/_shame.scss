@@ -54,6 +54,12 @@
   background: $color-secondary;
   padding: $spacing-small;
   border-bottom: 1px solid #e1e1e1;
+
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+  }
 }
 
 .k-drop-area {
