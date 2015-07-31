@@ -7,7 +7,7 @@
   @include border(bottom, $toolbar-border);
   background: $toolbar-title-background;
   color: $toolbar-color;
-  padding: 0 $spacing-small;
+  padding: 0;
 
   h2 {
     padding: 3px 0;
@@ -21,5 +21,11 @@
     @include breakpoint($delta) {
       font-size: round($font-size * 1.4);
     }
+  }
+}
+
+@include flexbox {
+  .k-titlebar {
+    flex: 0 0 auto;
   }
 }
