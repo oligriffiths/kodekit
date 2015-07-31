@@ -19,7 +19,6 @@
  * |_____|_______________|_____|
  */
 
-@import "components/titlebar";
 @import "components/content-wrapper";
 @import "components/content";
 @import "components/sidebar";
@@ -44,19 +43,6 @@
 
 
 /**
- * When JavaScript is enabled
- * ==========================
- */
-
-@include js-enabled {
-  .k-overview {
-    height: 100%;
-  }
-}
-
-
-
-/**
  * When flexbox is in use
  * ======================
  */
@@ -66,7 +52,6 @@
     display: flex;
     flex: 1 1 auto;
     overflow: hidden;
-    height: auto;
     flex-direction: column;
   }
 }

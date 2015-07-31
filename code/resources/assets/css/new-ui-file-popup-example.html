@@ -16,7 +16,7 @@
     <script src="../js/modernizr.js"></script>
     <script src="../js/scripts.js"></script>
 </head>
-<body>
+<body class="component">
 
 <!-- Begin Nooku Admin Layout -->
 <div id="koowa" class="koowa">
@@ -124,51 +124,24 @@
 
                             <!-- Filter items by -->
                             <div class="k-scopebar__item k-scopebar__item--fluid">
-                                <div class="dropdown-holder">
-                                    <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--published" data-toggle="dropdown" aria-expanded="true">
-                                        Published
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--published">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Published</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Unpublished</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Pending</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Archived</a></li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown-holder">
-                                    <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--owner" data-toggle="dropdown" aria-expanded="true">
-                                        Owned by
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--owner">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">My documents</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else</a></li>
-                                    </ul>
-                                </div>
-                                <div class="dropdown-holder">
-                                    <button class="k-scopebar__button k-scopebar__button--filter dropdown-toggle" id="scopebar-filter--access" data-toggle="dropdown" aria-expanded="true">
-                                        Access
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu" aria-labelledby="scopebar-filter--access">
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">All</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Super administrator</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Publisher</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Editor</a></li>
-                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Public</a></li>
-                                    </ul>
+                                <div class="select2-wrapper select2--link-style select2--filter">
+                                    <select name="enabled" id="select2-filter" data-placeholder="Status">
+                                        <option></option>
+                                        <option value="1">Published</option>
+                                        <option value="0">Unpublished</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <!-- Search filtered items -->
                             <div class="k-scopebar__item k-scopebar__search">
-                                <input type="search" class="k-scopebar__search__input" placeholder="Search...">
-                                <button type="submit" class="k-scopebar__search__button k-icon-search">
-                                    <span class="visually-hidden-icon-label">Search</span>
-                                </button>
+                                <div class="search__container search__container--has_empty_button">
+                                    <label for="search">
+                                        <i class="icon-search"></i>
+                                    </label>
+                                    <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="" id="search">
+                                    <a class="search_button--empty"><span>X</span></a>
+                                </div>
                             </div>
 
                         </div>
@@ -178,6 +151,24 @@
                             <div class="k-table">
                                 <table class="table--fixed" summary="List of documents">
                                     <tbody>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><a href="form.html">Example file</a></td>
+                                    </tr>
                                     <tr>
                                         <td><a href="form.html">Example file</a></td>
                                     </tr>
