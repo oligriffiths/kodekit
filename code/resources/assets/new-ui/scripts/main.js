@@ -3,7 +3,7 @@
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-content-wrapper'),
+        var $wrapper = $('.k-overview'),
             $sidebar = $('#k-sidebar'),
             $sidebarright = $('#k-sidebar-right'),
             $sidebaritem = $('.k-sidebar__item'),
