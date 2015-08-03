@@ -1,11 +1,50 @@
-// The theme variables
+/**
+ * Default Joomla theme
+ * ====================
+ */
+
+
+/**
+ * Joomla variables
+ * ----------------
+ * Load first so global variables can use them
+ */
+
 @import "themes/joomla/variables";
 
-// Variables and mixins
-@import "utilities";
 
-// Joomla overrides
+/**
+ * Global tools
+ * ------------
+ * Containing variables and mixins
+ */
+
+@import "core/tools";
+
+
+/**
+ * Joomla specific
+ * ---------------
+ * Styles that apply to the Joomla administrator
+ */
+
 @import "themes/joomla/admin";
 
-// Core styling
-@import "core";
+
+/**
+ * Core styling
+ * ------------
+ * Finally loading the default styling
+ * This now makes use of overwritten variables and mixins
+ */
+
+@import "core/core";
+
+
+/**
+ * Extra styling
+ * -------------
+ * If editing variables alone isn't enough
+ */
+
+//@import "themes/joomla/styles";

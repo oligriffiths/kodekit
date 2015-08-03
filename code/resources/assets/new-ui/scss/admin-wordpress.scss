@@ -1,11 +1,50 @@
-// The theme variables
+/**
+ * Default Wordpress theme
+ * =======================
+ */
+
+
+/**
+ * Wordpress variables
+ * -------------------
+ * Load first so global variables can use them
+ */
+
 @import "themes/wordpress/variables";
 
-// Variables and mixins
-@import "utilities";
 
-// Core styling
-@import "core";
+/**
+ * Global tools
+ * ------------
+ * Containing variables and mixins
+ */
 
-// Wordpress extra
-@import "themes/wordpress/extra";
+@import "core/tools";
+
+
+/**
+ * Wordpress specific
+ * ------------------
+ * Styles that apply to the Wordpress admin
+ */
+
+//@import "themes/joomla/admin";
+
+
+/**
+ * Core styling
+ * ------------
+ * Finally loading the default styling
+ * This now makes use of overwritten variables and mixins
+ */
+
+@import "core/core";
+
+
+/**
+ * Extra styling
+ * -------------
+ * If editing variables alone isn't enough
+ */
+
+@import "themes/wordpress/styles";

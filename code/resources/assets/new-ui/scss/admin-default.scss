@@ -1,5 +1,21 @@
-// Variables and mixins
-@import "utilities";
+/**
+ * Default theme
+ * =============
+ */
 
-// Core styling
-@import "core";
+
+/**
+ * Global tools
+ * ------------
+ * Containing variables and mixins
+ */
+
+@import "core/tools";
+
+
+/**
+ * Core styling
+ * ------------
+ */
+
+@import "core/core";

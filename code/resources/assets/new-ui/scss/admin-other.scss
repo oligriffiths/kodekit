@@ -1,8 +1,30 @@
-// The theme variables
+/**
+ * Default theme
+ * =============
+ */
+
+
+/**
+ * Variables
+ * ----------------
+ * Load first so global variables can use them
+ */
+
 @import "themes/other";
 
-// Variables and mixins
-@import "utilities";
 
-// Core styling
-@import "core";
+/**
+ * Global tools
+ * ------------
+ * Containing variables and mixins
+ */
+
+@import "core/tools";
+
+
+/**
+ * Core styling
+ * ------------
+ */
+
+@import "core/core";
