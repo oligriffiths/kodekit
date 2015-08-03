@@ -49,17 +49,21 @@
     @include border(bottom, $table-border);
   }
 
-  small {
-    display: block;
-  }
-
-  tfoot {
+  tr:last-child {
     td {
-      background: $table-footer-background;
-      border-top: 1px solid $table-footer-border;
       border-bottom: none;
     }
   }
+
+  small {
+    display: block;
+  }
+}
+
+.k-table-pagination {
+  background: $table-pagination-background;
+  border-top: 1px solid $table-pagination-border;
+  padding: $spacing-small;
 }
 
 // Checkbox

@@ -166,7 +166,7 @@ body.component {
     .alert {
       margin: 0;
       border-radius: 0;
-      border-bottom: none;
+      border-bottom: 1px solid $toolbar-border;
     }
   }
 

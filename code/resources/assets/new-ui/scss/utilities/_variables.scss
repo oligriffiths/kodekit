@@ -237,9 +237,9 @@ $table-header-size: $unit-size !default; // 1
 $table-header-background: #eee !default; // 2
 $table-header-background-dark: darken($table-header-background, 25%) !default;
 $table-header-border: darken($table-header-background, 5%) !default;
-$table-footer-background: #eee !default; // 2
-$table-footer-border: darken($table-header-background, 5%) !default;
 $table-border: #EFEFEF !default;
+$table-pagination-background: #eee !default; // 2
+$table-pagination-border: darken($table-pagination-background, 5%) !default;
 
 
 

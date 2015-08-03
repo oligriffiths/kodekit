@@ -396,7 +396,7 @@ body.component {
     body.component #system-message-container .alert {
       margin: 0;
       border-radius: 0;
-      border-bottom: none; }
+      border-bottom: 1px solid #d4d9e0; }
   body.admin #system-debug,
   body.component #system-debug {
     padding-bottom: 10px; }
@@ -4694,12 +4694,14 @@ a:focus:after,
     vertical-align: middle;
     text-align: left;
     border-bottom: 1px solid #EFEFEF; }
+  .koowa .k-table tr:last-child td {
+    border-bottom: none; }
   .koowa .k-table small {
     display: block; }
-  .koowa .k-table tfoot td {
+  .koowa .k-table-pagination {
     background: #eee;
-    border-top: 1px solid #f2f2f2;
-    border-bottom: none; }
+    border-top: 1px solid #e1e1e1;
+    padding: 13px; }
   .koowa .k-table__checkbox {
     display: inline-block; }
   .koowa .table-pagination {
