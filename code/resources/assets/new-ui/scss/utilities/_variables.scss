@@ -1,12 +1,18 @@
 /**
  * Breakpoints
  * ===========
- * 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base to work from
+ * Only work with either
+   - (min-width)
+   - (min-width) and (max-width)
+   Try to never use (max-width) alone since that not mobile-first
+ *
+ * 1. The min width of the interface. Will create a horizontal scrollbar.
+      This way we have a base width to work from
  * 2. The max width of the form layout
  * 3. Separate $desktop variable is being used so all styles
  *    change together when going from small to larger screen.
  * 4. Separate $flexbox variables are being used
- * 5. Use flexbox in layouts
+ * 5. Wether or not to Use flexbox in layouts
  */
 
 $alpha: 400px !default;
@@ -380,6 +386,8 @@ $padding-base-vertical: 5px !default;
 $padding-base-horizontal: 10px !default;
 $btn-success-bg: $color-success;
 $btn-success-color: $color-success-type;
+
+
 
 
 
