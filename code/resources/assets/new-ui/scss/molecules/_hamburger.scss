@@ -1,7 +1,7 @@
-// Hamburger
-$button-size: 33px;
-$bar-width: 15px; // Best to grab a number that can be divided by 5
-$bar-height: round($bar-width / 5);
+/**
+ * Animated hamburger button
+ * =========================
+ */
 
 .off-canvas-menu-toggle {
   width: $button-size;

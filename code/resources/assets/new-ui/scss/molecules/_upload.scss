@@ -1,3 +1,8 @@
+/**
+ * Upload
+ * ======
+ */
+
 .k-upload {
   background: $color-primary;
   padding: $spacing-small;
@@ -5,13 +10,26 @@
   display: table;
   width: 100%;
 
+
+
+  /**
+   * When flexbox is in use
+   */
+
   @include flexbox {
     display: flex;
     flex-direction: row;
     flex: 0 0 auto;
-    width: auto;
   }
 }
+
+
+
+/**
+ * The drop message
+ * ----------------
+ * 1. 100% width so this 'cell' expands
+ */
 
 .drop-message {
   font-size: 1.65em;
@@ -19,24 +37,51 @@
   margin: 0;
   color: #595959;
   display: table-cell;
-  width: 100%;
+  width: 100%; // 1
+
+
+
+  /**
+   * When flexbox is in use
+   * 1. Flexible item
+   * 2. Reset display to block
+   * 3. Reset width for flexbox
+   */
 
   @include flexbox {
-    width: auto;
-    display: block;
-    flex: 1 0 auto;
+    flex: 1 0 auto; // 1
+    display: block; // 2
+    width: auto; // 3
   }
 }
+
+
+
+/**
+ * Clickable buttons to upload
+ * ---------------------------
+ * 1. 1px width so this 'cell' stays small
+ * 2. nowrap to make sure buttons stay next to each other
+ */
 
 .select-message {
   padding-left: 10px;
   display: table-cell;
-  width: 1px;
-  white-space: nowrap;
+  width: 1px; // 1
+  white-space: nowrap; // 2
+
+
+
+  /**
+   * When flexbox is in use
+   * 1. Non-flexible item
+   * 2. Reset display to block
+   * 3. Reset width for flexbox
+   */
 
   @include flexbox {
-    display: block;
-    width: auto;
-    flex: 0 0 auto;
+    flex: 0 0 auto; // 1
+    display: block; // 2
+    width: auto; // 3
   }
 }

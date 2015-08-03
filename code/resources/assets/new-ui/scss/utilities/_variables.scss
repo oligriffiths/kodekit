@@ -420,3 +420,34 @@ $overlay-background: black;
 
 
 $breadcrumb-background: $color-secondary !default;
+
+
+
+
+
+
+$red: #c0392b;
+$green: #27ae60;
+$blue: #2980b9;
+$checkbox-toggle-width: 60px;
+$checkbox-toggle-height: 32px;
+$checkbox-toggle-border-width: 1px;
+$checkbox-toggle-padding: 1px;
+$checkbox-toggle-border-radius: 6px;
+$checkbox-toggle-width-inner: $checkbox-toggle-width - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
+$checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
+
+
+
+
+
+
+
+
+
+
+
+
+$button-size: 33px;
+$bar-width: 15px; // Best to grab a number that can be divided by 5
+$bar-height: round($bar-width / 5);

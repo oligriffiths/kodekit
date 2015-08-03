@@ -1532,6 +1532,10 @@ img.mfp-img {
       height: 100%;
       max-height: 100% !important; } }
 
+/**
+ * Select2
+ * =======
+ */
 .koowa .select2 {
   width: 100%;
   max-width: 100% !important; }
@@ -1738,58 +1742,33 @@ body {
   /* Namespaced Normalize */
   /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
   /* Namespaced Twitter Bootstrap */
-  /* New layouts */
+  /* Bootstrap overrides / additions */
   /**
- * Overview layout
- * ===============
- * The default overview layout
- * 1. Left sidebar
- * 2. Toggle button
- * 3. Breadrumbs
- * 4. Upload area
- * 5. Scopebar
- * 6. Table / grid / content
- * 7. Right sidebar
- * _____________________________
- * |  1  |2|_3___________|  7  |
- * |     |_4_____________|     |
- * |     |_5_____________|     |
- * |     | 6             |     |
- * |     |               |     |
- * |     |               |     |
- * |_____|_______________|_____|
+ * Default button styles
+ * =====================
+ * 1. Right floating buttons
  */
   /**
- * Default styles with JavaScript disabled
- * =======================================
+ * Grid
+ * ====
+ * Default spacing adjustments
+ * Remove bottom margin of last children
  */
   /**
- * When flexbox is in use
- * ======================
+ * Form and control groups
+ * =======================
+ * Remove the bottom margin of the last child
+ * This way the groups don't add large spacing in bordered boxes
  */
   /**
- * Form layout
- * ===========
- * The default form layout
- * 1. titlebar
- * 2. content
- * _____________________________
- * |_____________1_____________|
- * |                           |
- * |             3             |
- * |                           |
- * |                           |
- * |                           |
- * |                           |
- * |___________________________|
+ * Grid
+ * ----
+ * Default spacing adjustments
+ * Remove bottom margin of last childs
  */
   /**
- * Default styles with JavaScript disabled
- * =======================================
- */
-  /**
- * When flexbox is in use
- * ======================
+ * Bootstrap input-group
+ * =====================
  */
   /* Atoms */
   /**
@@ -1830,6 +1809,15 @@ body {
   /**
  * Single breadcrumb items
  * =======================
+ */
+  /**
+ * CSS only animated checkbox toggle styling
+ * =========================================
+ */
+  /**
+ * Cutting the mustard
+ * -------------------
+ * The :not(old-ie) makes sure nothing gets added to older IE
  */
   /**
  * When flexbox is in use
@@ -1882,6 +1870,32 @@ body {
  * ====================
  * 1. Hide overflowing when menu is toggled
  * 2. Set back to auto when screen is wide enough
+ */
+  /**
+ * Form block
+ * ==========
+ * To be used in sidebar of forms
+ * Data in these boxes should be non-required info
+ */
+  /**
+ * Animated hamburger button
+ * =========================
+ */
+  /**
+ * List
+ * ====
+ */
+  /**
+ * Navigation
+ * ==========
+ */
+  /**
+ * Overflowing
+ * ===========
+ */
+  /**
+ * CSS only animated radio toggle styling
+ * ======================================
  */
   /**
  * Default styles with JavaScript disabled
@@ -1942,6 +1956,10 @@ body {
  * -----------------------
  */
   /**
+ * Table
+ * =====
+ */
+  /**
  * Default with JavaScript disabled
  * ================================
  * 1. Set transition for off canvas sidebar
@@ -1979,6 +1997,79 @@ body {
  */
   /**
  * Toolbar contents
+ * ======================
+ */
+  /**
+ * Tree
+ * ====
+ */
+  /**
+ * Upload
+ * ======
+ */
+  /**
+ * The drop message
+ * ----------------
+ * 1. 100% width so this 'cell' expands
+ */
+  /**
+ * Clickable buttons to upload
+ * ---------------------------
+ * 1. 1px width so this 'cell' stays small
+ * 2. nowrap to make sure buttons stay next to each other
+ */
+  /* Good, we're empty! */
+  /* Organisms */
+  /**
+ * Overview layout
+ * ===============
+ * The default overview layout
+ * 1. Left sidebar
+ * 2. Toggle button
+ * 3. Breadrumbs
+ * 4. Upload area
+ * 5. Scopebar
+ * 6. Table / grid / content
+ * 7. Right sidebar
+ * _____________________________
+ * |  1  |2|_3___________|  7  |
+ * |     |_4_____________|     |
+ * |     |_5_____________|     |
+ * |     | 6             |     |
+ * |     |               |     |
+ * |     |               |     |
+ * |_____|_______________|_____|
+ */
+  /**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+  /**
+ * When flexbox is in use
+ * ======================
+ */
+  /**
+ * Form layout
+ * ===========
+ * The default form layout
+ * 1. titlebar
+ * 2. content
+ * _____________________________
+ * |_____________1_____________|
+ * |                           |
+ * |             3             |
+ * |                           |
+ * |                           |
+ * |                           |
+ * |                           |
+ * |___________________________|
+ */
+  /**
+ * Default styles with JavaScript disabled
+ * =======================================
+ */
+  /**
+ * When flexbox is in use
  * ======================
  */
   /**
@@ -3307,49 +3398,44 @@ body {
       opacity: 0.65;
       filter: alpha(opacity=65);
       box-shadow: none; }
-  .koowa .btn-default, .koowa .btn {
+  .koowa .btn-default {
     color: #333;
     background-color: #fff;
     border-color: #ccc; }
     .koowa .btn-default:hover,
-    .koowa .btn:hover, .koowa .btn-default:focus,
-    .koowa .btn:focus, .koowa .btn-default.focus,
-    .koowa .focus.btn, .koowa .btn-default:active,
-    .koowa .btn:active, .koowa .btn-default.active,
-    .koowa .active.btn, .open > .koowa .btn-default.dropdown-toggle, .open > .koowa .dropdown-toggle.btn {
+    .koowa .btn-default:focus,
+    .koowa .btn-default.focus,
+    .koowa .btn-default:active,
+    .koowa .btn-default.active,
+    .open > .koowa .btn-default.dropdown-toggle {
       color: #333;
       background-color: #e6e6e6;
       border-color: #adadad; }
     .koowa .btn-default:active,
-    .koowa .btn:active, .koowa .btn-default.active,
-    .koowa .active.btn, .open > .koowa .btn-default.dropdown-toggle, .open > .koowa .dropdown-toggle.btn {
+    .koowa .btn-default.active,
+    .open > .koowa .btn-default.dropdown-toggle {
       background-image: none; }
     .koowa .btn-default.disabled,
-    .koowa .disabled.btn, .koowa .btn-default.disabled:hover,
-    .koowa .disabled.btn:hover, .koowa .btn-default.disabled:focus,
-    .koowa .disabled.btn:focus, .koowa .btn-default.disabled.focus,
-    .koowa .disabled.focus.btn, .koowa .btn-default.disabled:active,
-    .koowa .disabled.btn:active, .koowa .btn-default.disabled.active,
-    .koowa .disabled.active.btn, .koowa .btn-default[disabled],
-    .koowa [disabled].btn, .koowa .btn-default[disabled]:hover,
-    .koowa [disabled].btn:hover, .koowa .btn-default[disabled]:focus,
-    .koowa [disabled].btn:focus, .koowa .btn-default[disabled].focus,
-    .koowa [disabled].focus.btn, .koowa .btn-default[disabled]:active,
-    .koowa [disabled].btn:active, .koowa .btn-default[disabled].active,
-    .koowa [disabled].active.btn, fieldset[disabled] .koowa .btn-default,
-    fieldset[disabled] .koowa .btn,
+    .koowa .btn-default.disabled:hover,
+    .koowa .btn-default.disabled:focus,
+    .koowa .btn-default.disabled.focus,
+    .koowa .btn-default.disabled:active,
+    .koowa .btn-default.disabled.active,
+    .koowa .btn-default[disabled],
+    .koowa .btn-default[disabled]:hover,
+    .koowa .btn-default[disabled]:focus,
+    .koowa .btn-default[disabled].focus,
+    .koowa .btn-default[disabled]:active,
+    .koowa .btn-default[disabled].active,
+    fieldset[disabled] .koowa .btn-default,
     fieldset[disabled] .koowa .btn-default:hover,
-    fieldset[disabled] .koowa .btn:hover,
     fieldset[disabled] .koowa .btn-default:focus,
-    fieldset[disabled] .koowa .btn:focus,
     fieldset[disabled] .koowa .btn-default.focus,
-    fieldset[disabled] .koowa .focus.btn,
     fieldset[disabled] .koowa .btn-default:active,
-    fieldset[disabled] .koowa .btn:active,
-    fieldset[disabled] .koowa .btn-default.active, fieldset[disabled] .koowa .active.btn {
+    fieldset[disabled] .koowa .btn-default.active {
       background-color: #fff;
       border-color: #ccc; }
-    .koowa .btn-default .badge, .koowa .btn .badge {
+    .koowa .btn-default .badge {
       color: #fff;
       background-color: #333; }
   .koowa .btn-primary {
@@ -3889,49 +3975,64 @@ body {
     background: transparent;
     border: 0;
     -webkit-appearance: none; }
-  .koowa .k-overview {
-    border: 1px solid #e1e1e1;
-    background: white; }
-  @media (min-width: 320px) and (min-height: 400px) {
-    .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      overflow: auto; } }
-  .koowa .k-form {
-    /**
-   * Component background
-   * --------------------
-   * Default component has background for when sliding over sidebars
-   */
-    /**
-   * Form width
-   * ----------
-   */ }
-    .koowa .k-form .k-component {
-      background: #F3F4F7; }
-    .koowa .k-form .container-fluid {
-      max-width: 1024px; }
-  @media (min-width: 320px) and (min-height: 400px) {
-    .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-flex: 1;
-      -webkit-flex: 1 1 auto;
-          -ms-flex: 1 1 auto;
-              flex: 1 1 auto; } }
+  .koowa .btn-right {
+    float: right; }
+  .koowa .container-fluid {
+    padding: 20px; }
+  .koowa .row {
+    margin-bottom: 20px; }
+    .koowa .row:last-child {
+      margin-bottom: 0; }
+  .koowa .form-group:last-child {
+    margin-bottom: 0; }
+  .koowa .control-group:last-child {
+    margin-bottom: 0; }
+  .koowa .container-fluid {
+    padding: 20px; }
+  .koowa .row {
+    margin-bottom: 20px; }
+    .koowa .row:last-child {
+      margin-bottom: 0; }
+  .koowa .input-group .help-block,
+  .koowa .input-group-inside .help-block {
+    position: absolute;
+    top: 100%;
+    left: auto; }
+  .koowa .input-group {
+    width: 100%; }
+  .koowa .input-group-inside {
+    position: relative;
+    border-collapse: separate;
+    width: 100%;
+    display: table; }
+    .koowa .input-group-inside .btn,
+    .koowa .input-group-inside .form-control:nth-child(n) {
+      border-radius: 4px; }
+  .koowa .input-group-input,
+  .koowa .input-group-btn,
+  .koowa .input-group-content {
+    vertical-align: top; }
+  .koowa .input-group .input-group-addon:not(:first-child):not(:last-child),
+  .koowa .input-group .input-group-btn:not(:first-child):not(:last-child) > .btn,
+  .koowa .input-group .form-control:not(:first-child):not(:last-child),
+  .koowa .input-group .input-group-content:not(:first-child):not(:last-child) .input-group-addon,
+  .koowa .input-group .input-group-content:not(:first-child):not(:last-child) .form-control {
+    border-radius: 0; }
+  .koowa .input-group .form-control:last-child,
+  .koowa .input-group .input-group-addon:last-child,
+  .koowa .input-group .input-group-btn:last-child > .btn,
+  .koowa .input-group .input-group-btn:last-child > .dropdown-toggle,
+  .koowa .input-group .input-group-btn:first-child > .btn:not(:first-child) {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0; }
+  .koowa .input-group .form-control:first-child:not(:last-child),
+  .koowa .input-group .input-group-addon:first-child,
+  .koowa .input-group .input-group-btn:first-child > .btn,
+  .koowa .input-group .input-group-btn:first-child > * > .btn,
+  .koowa .input-group .input-group-btn:first-child > .dropdown-toggle,
+  .koowa .input-group .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0; }
   .koowa a {
     color: #0073AA; }
   .koowa button {
@@ -3950,16 +4051,6 @@ body {
     margin-top: 0;
     margin-bottom: 1.5em; }
     .koowa p:last-child {
-      margin-bottom: 0; }
-  .koowa .form-group:last-child {
-    margin-bottom: 0; }
-  .koowa .control-group:last-child {
-    margin-bottom: 0; }
-  .koowa .container-fluid {
-    padding: 20px; }
-  .koowa .row {
-    margin-bottom: 20px; }
-    .koowa .row:last-child {
       margin-bottom: 0; }
   .koowa .k-breadcrumb {
     border-bottom: 1px solid #e1e1e1;
@@ -4130,21 +4221,12 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-  .koowa .btn {
-    text-decoration: none; }
-  .koowa .btn-right {
-    float: right; }
   .koowa .checkbox-toggle:not(old-ie) {
+    position: relative;
     display: table;
     width: 100%;
-    position: relative; }
-    .koowa .checkbox-toggle:not(old-ie) input {
-      width: 1px;
-      height: 1px;
-      position: absolute;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0); }
+    /* Hiding the input but keeping accessible */
+    /* Making label and span fully clickable */ }
     .koowa .checkbox-toggle:not(old-ie) label {
       display: block;
       line-height: 32px;
@@ -4526,46 +4608,6 @@ body {
     margin: -1px;
     padding: 0;
     border: 0; }
-  .koowa .input-group .help-block,
-  .koowa .input-group-inside .help-block {
-    position: absolute;
-    top: 100%;
-    left: auto; }
-  .koowa .input-group {
-    width: 100%; }
-  .koowa .input-group-inside {
-    position: relative;
-    border-collapse: separate;
-    width: 100%;
-    display: table; }
-    .koowa .input-group-inside .btn,
-    .koowa .input-group-inside .form-control:nth-child(n) {
-      border-radius: 4px; }
-  .koowa .input-group-input,
-  .koowa .input-group-btn,
-  .koowa .input-group-content {
-    vertical-align: top; }
-  .koowa .input-group .input-group-addon:not(:first-child):not(:last-child),
-  .koowa .input-group .input-group-btn:not(:first-child):not(:last-child) > .btn,
-  .koowa .input-group .form-control:not(:first-child):not(:last-child),
-  .koowa .input-group .input-group-content:not(:first-child):not(:last-child) .input-group-addon,
-  .koowa .input-group .input-group-content:not(:first-child):not(:last-child) .form-control {
-    border-radius: 0; }
-  .koowa .input-group .form-control:last-child,
-  .koowa .input-group .input-group-addon:last-child,
-  .koowa .input-group .input-group-btn:last-child > .btn,
-  .koowa .input-group .input-group-btn:last-child > .dropdown-toggle,
-  .koowa .input-group .input-group-btn:first-child > .btn:not(:first-child) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0; }
-  .koowa .input-group .form-control:first-child:not(:last-child),
-  .koowa .input-group .input-group-addon:first-child,
-  .koowa .input-group .input-group-btn:first-child > .btn,
-  .koowa .input-group .input-group-btn:first-child > * > .btn,
-  .koowa .input-group .input-group-btn:first-child > .dropdown-toggle,
-  .koowa .input-group .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0; }
   .koowa .k-list {
     padding: 0;
     list-style: none;
@@ -5267,7 +5309,10 @@ body {
     padding: 13px;
     border-bottom: 1px solid #e1e1e1;
     display: table;
-    width: 100%; }
+    width: 100%;
+    /**
+   * When flexbox is in use
+   */ }
     @media (min-width: 320px) and (min-height: 400px) {
       .flexbox .koowa .k-upload, .flexboxlegacy .koowa .k-upload {
         display: -webkit-box;
@@ -5282,39 +5327,93 @@ body {
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
-                flex: 0 0 auto;
-        width: auto; } }
+                flex: 0 0 auto; } }
   .koowa .drop-message {
     font-size: 1.65em;
     line-height: 1.25em;
     margin: 0;
     color: #595959;
     display: table-cell;
-    width: 100%; }
+    width: 100%;
+    /**
+   * When flexbox is in use
+   * 1. Flexible item
+   * 2. Reset display to block
+   * 3. Reset width for flexbox
+   */ }
     @media (min-width: 320px) and (min-height: 400px) {
       .flexbox .koowa .drop-message, .flexboxlegacy .koowa .drop-message {
-        width: auto;
-        display: block;
         -webkit-box-flex: 1;
         -webkit-flex: 1 0 auto;
             -ms-flex: 1 0 auto;
-                flex: 1 0 auto; } }
+                flex: 1 0 auto;
+        display: block;
+        width: auto; } }
   .koowa .select-message {
     padding-left: 10px;
     display: table-cell;
     width: 1px;
-    white-space: nowrap; }
+    white-space: nowrap;
+    /**
+   * When flexbox is in use
+   * 1. Non-flexible item
+   * 2. Reset display to block
+   * 3. Reset width for flexbox
+   */ }
     @media (min-width: 320px) and (min-height: 400px) {
       .flexbox .koowa .select-message, .flexboxlegacy .koowa .select-message {
-        display: block;
-        width: auto;
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;
-                flex: 0 0 auto; } }
+                flex: 0 0 auto;
+        display: block;
+        width: auto; } }
+  .koowa .k-overview {
+    border: 1px solid #e1e1e1;
+    background: white; }
+  @media (min-width: 320px) and (min-height: 400px) {
+    .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      overflow: auto; } }
+  .koowa .k-form {
+    /**
+   * Component background
+   * --------------------
+   * Default component has background for when sliding over sidebars
+   */
+    /**
+   * Form width
+   * ----------
+   */ }
+    .koowa .k-form .k-component {
+      background: #F3F4F7; }
+    .koowa .k-form .container-fluid {
+      max-width: 1024px; }
+  @media (min-width: 320px) and (min-height: 400px) {
+    .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1 1 auto;
+          -ms-flex: 1 1 auto;
+              flex: 1 1 auto; } }
   .koowa .hidden.hidden.hidden {
     display: none; }
-  .koowa .visually-hidden.visually-hidden.visually-hidden {
+  .koowa .visually-hidden.visually-hidden.visually-hidden, .koowa .checkbox-toggle:not(old-ie) input {
     position: absolute;
     overflow: hidden;
     clip: rect(0 0 0 0);

@@ -1,4 +1,8 @@
-// Variables
+/**
+ * CSS only animated radio toggle styling
+ * ======================================
+ */
+
 @if $radio-toggle == true {
   .radio-toggle:not(ie) {
     display: table;
