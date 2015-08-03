@@ -1,4 +1,8 @@
-// Sidebar list
+/**
+ * List
+ * ====
+ */
+
 .k-list {
   @include reset($margin: false);
   margin: $spacing-tiny 0;

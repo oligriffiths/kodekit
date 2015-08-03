@@ -63,9 +63,11 @@
   @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/component-animations";
   @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/close";
 
-  /* New layouts */
-  @import "../organisms/overview";
-  @import "../organisms/form";
+  /* Bootstrap overrides / additions */
+  @import "../molecules/bootstrap/buttons";
+  @import "../molecules/bootstrap/grid";
+  @import "../molecules/bootstrap/groups";
+  @import "../molecules/bootstrap/input-group";
 
   /* Atoms */
   @import "../atoms/a";
@@ -75,9 +77,7 @@
   @import "../atoms/p";
 
   /* Molecules */
-  @import "../molecules/bootstrap-overrides";
   @import "../molecules/breadcrumb";
-  @import "../molecules/buttons";
   @import "../molecules/checkbox-toggle";
   @import "../molecules/component";
   @import "../molecules/content";
@@ -85,7 +85,6 @@
   @import "../molecules/form-block";
   @import "../molecules/hamburger";
   @import "../molecules/icons";
-  @import "../molecules/input-group";
   @import "../molecules/list";
   @import "../molecules/navigation";
   @import "../molecules/overflowing";
@@ -98,6 +97,10 @@
   @import "../molecules/tree";
   @import "../molecules/upload";
   @import "../molecules/shame";
+
+  /* Organisms */
+  @import "../organisms/overview";
+  @import "../organisms/form";
 
   /**
    * Utilities

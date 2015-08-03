@@ -1,29 +1,23 @@
-// Checkbox toggle
-$red: #c0392b;
-$green: #27ae60;
-$blue: #2980b9;
-$checkbox-toggle-width: 60px;
-$checkbox-toggle-height: 32px;
-$checkbox-toggle-border-width: 1px;
-$checkbox-toggle-padding: 1px;
-$checkbox-toggle-border-radius: 6px;
-$checkbox-toggle-width-inner: $checkbox-toggle-width - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
-$checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
+/**
+ * CSS only animated checkbox toggle styling
+ * =========================================
+ */
 
-// The :not(old-ie) makes sure nothing get added to older IE
+
+/**
+ * Cutting the mustard
+ * -------------------
+ * The :not(old-ie) makes sure nothing gets added to older IE
+ */
+
 .checkbox-toggle:not(old-ie) {
+  position: relative;
   display: table;
   width: 100%;
-  position: relative;
 
-  // Hiding the input but keeping accessible
+  /* Hiding the input but keeping accessible */
   input {
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
+    @extend .visually-hidden;
   }
 
   label {
@@ -32,7 +26,7 @@ $checkbox-toggle-height-inner: $checkbox-toggle-height - (($checkbox-toggle-bord
     font-weight: $regular
   }
 
-  // Making label and span fully clickable
+  /* Making label and span fully clickable */
   label, span {
     display: block;
     cursor: pointer;
