@@ -35,8 +35,8 @@
  */
 
 .k-overview {
-  background: $overview-background;
   @include border(all, $overview-border);
+  background: $overview-background;
 }
 
 
@@ -50,7 +50,7 @@
   .k-overview {
     display: flex;
     flex: 1 1 auto;
-    overflow: hidden;
     flex-direction: column;
+    overflow: auto;
   }
 }
