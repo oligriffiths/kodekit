@@ -1,25 +1,31 @@
 <?php include '_header.php'; ?>
 
-    <!-- Begin List layout -->
+    <!-- Overview layout -->
     <div class="k-overview">
 
         <!-- Titlebar -->
         <div class="k-titlebar">
+
             <!-- Sidebar toggle button -->
             <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
                 <span class="bar1"></span>
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </button>
-            <h2 style="float: left;">Upload / Insert a file</h2>
+
+            <!-- Title -->
+            <h2 style="float: left;">Insert / Upload file</h2>
+
+            <!-- Right sidebar toggle button -->
             <button id="k-toggle-button-right" class="off-canvas-menu-toggle" type="button" style="float: right;">
                 <span class="bar1"></span>
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </button>
-        </div>
 
-        <!-- The content -->
+        </div><!-- .k-titlebar -->
+
+        <!-- Form -->
         <form id="k-offcanvas-container" class="k-content-wrapper">
 
             <!-- Sidebar -->
@@ -41,141 +47,130 @@
                     </div>
                 </div>
 
-            </div> <!-- .k-sidebar -->
+            </div><!-- .k-sidebar -->
 
-            <!-- The content -->
+            <!-- Content -->
             <div class="k-content">
 
-                <!-- contents -->
-                <div class="k-component-wrapper">
+                <!-- Component -->
+                <div class="k-component">
 
-                    <!-- Component -->
-                    <div class="k-component">
+                    <!-- Breadcrumbs -->
+                    <div class="k-breadcrumb">
+                        <ul>
+                            <li class="home">
+                                <a class="k-breadcrumb__item k-icon-home" href="#">
+                                    <span class="visually-hidden-icon-label">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="k-breadcrumb__item" href="#">
+                                    Some category
+                                </a>
+                            </li>
+                            <li class="active">
+                                <span class="k-breadcrumb__item">Some other category</span>
+                            </li>
+                        </ul>
+                    </div>
 
-                        <!-- Breadcrumbs -->
-                        <div class="k-breadcrumb">
-                            <ul>
-                                <li class="home">
-                                    <a class="k-breadcrumb__item k-icon-home" href="#">
-                                        <span class="visually-hidden-icon-label">Home</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="k-breadcrumb__item" href="#">
-                                        Some category
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <span class="k-breadcrumb__item" data-title="Some other menu item">Some other category</span>
-                                </li>
-                            </ul>
+                    <!-- upload -->
+                    <div class="k-upload">
+                        <div class="drop-message">
+                            Drop files here <small style="font-size: 14px;padding-left: 5px;">(max 10MB)</small>
+                        </div>
+                        <div class="select-message">
+                            <button class="btn btn-sm btn-primary">Select</button>
+                            <button class="btn btn-sm btn-primary">From URL</button>
+                        </div>
+                    </div><!-- .k-upload -->
+
+                    <!-- Scopebar -->
+                    <div class="k-scopebar">
+
+                        <!-- Filters -->
+                        <div class="k-scopebar__item k-scopebar__item--fluid">
+                            
+                            <!-- Filter -->
+                            <div class="select2-wrapper select2--link-style select2--filter">
+                                <select name="enabled" id="select2-filter" data-placeholder="Status">
+                                    <option></option>
+                                    <option value="1">Published</option>
+                                    <option value="0">Unpublished</option>
+                                </select>
+                            </div>
+
+                            <!-- Search toggle button -->
+                            <button type="button" class="toggle-search">Search</button>
+                            
                         </div>
 
-                        <!-- upload -->
-                        <div class="k-upload">
-                            <div class="drop-message">
-                                Drop files here <small style="font-size: 14px;padding-left: 5px;">(max 10MB)</small>
+                        <!-- Search -->
+                        <div class="k-scopebar__item k-scopebar__search">
+                            <div class="search__container search__container--has_empty_button">
+                                <label for="search">
+                                    <i class="icon-search"></i>
+                                </label>
+                                <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="" id="search">
+                                <a class="search_button--empty"><span>X</span></a>
                             </div>
-                            <div class="select-message">
-                                <button class="btn btn-sm btn-primary">Select</button>
-                                <button class="btn btn-sm btn-primary">From URL</button>
-                            </div>
-                        </div>
+                        </div><!-- .k-scopebar-search -->
 
-                        <!-- Scopebar -->
-                        <div class="k-scopebar">
+                    </div>
 
-                            <!-- Filter items by -->
-                            <div class="k-scopebar__item k-scopebar__item--fluid">
-                                <div class="select2-wrapper select2--link-style select2--filter">
-                                    <select name="enabled" id="select2-filter" data-placeholder="Status">
-                                        <option></option>
-                                        <option value="1">Published</option>
-                                        <option value="0">Unpublished</option>
-                                    </select>
-                                </div>
-                            </div>
+                    <!-- Table -->
+                    <div class="k-table-container">
+                        <div class="k-table">
+                            <table class="table--fixed">
+                                <tbody>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            
+                        </div><!-- .k-table -->
+                    
+                    </div><!-- .k-table-container -->
 
-                            <!-- Search filtered items -->
-                            <div class="k-scopebar__item k-scopebar__search">
-                                <div class="search__container search__container--has_empty_button">
-                                    <label for="search">
-                                        <i class="icon-search"></i>
-                                    </label>
-                                    <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="" id="search">
-                                    <a class="search_button--empty"><span>X</span></a>
-                                </div>
-                            </div>
+                </div><!-- .k-component-->
 
-                        </div>
+            </div><!-- .k-content -->
 
-                        <!-- The table -->
-                        <div class="k-table-container">
-                            <div class="k-table">
-                                <table class="table--fixed" summary="List of documents">
-                                    <tbody>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                    </tr>
-                                    </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <td>
-                                            <div class="table-pagination">
-                                                <select>
-                                                    <option>20</option>
-                                                    <option>50</option>
-                                                    <option>100</option>
-                                                    <option>All</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
-
-                    </div> <!-- .k-component -->
-
-                </div> <!-- .k-contents -->
-
-            </div> <!-- .k-content -->
-
-            <!-- Selected file -->
+            <!-- Right sidebar -->
             <div id="k-sidebar-right" class="k-sidebar-right">
                 <p><strong>Selected file</strong></p>
                 <p><img src="http://demo.joomlatools.com/joomla3/docman/image-gallery/127-donkey-1/file"></p>
@@ -183,10 +178,10 @@
                 <p><strong class="labl">Dimensions</strong> 1280 x 897</p>
                 <p><strong class="labl">Size</strong> 449.57KB</p>
                 <p style="margin-top: 1em;"><a href="select-document.html" class="btn btn-success btn-block">Insert file</a></p>
-            </div>
+            </div><!-- .k-sidebar-right -->
 
         </form><!-- .k-content-wrapper -->
 
-    </div> <!-- .k-overview -->
+    </div><!-- .k-overview -->
 
 <?php include '_footer.php'; ?>

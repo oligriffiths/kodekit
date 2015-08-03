@@ -187,4 +187,13 @@ body.component {
   .span10 {
     margin: 0;
   }
+
+
+  /**
+   * Joomla removes default focus style, we bring it back
+   */
+
+  a:focus {
+    outline: auto 5px -webkit-focus-ring-color;
+  }
 }
