@@ -1780,6 +1780,10 @@ body {
  * ======================
  */
   /**
+ * Breadcrumb contents
+ * ===================
+ */
+  /**
  * Single breadcrumb items
  * =======================
  */
@@ -1811,14 +1815,6 @@ body {
  * Scopebar search
  */
   /**
- * Default styles with JavaScript disabled
- * =======================================
- */
-  /**
- * When flexbox is in use
- * ======================
- */
-  /**
  * When flexbox is in use
  * ======================
  */
@@ -1835,18 +1831,16 @@ body {
  * ===========
  * The default form layout
  * 1. titlebar
- * 2. left sidebar
- * 3. content
- * 4. right sidebar
+ * 2. content
  * _____________________________
- * |____________ 1_____________|
- * |     |               |     |
- * |  2  |       3       |  4  |
- * |     |               |     |
- * |     |               |     |
- * |     |               |     |
- * |     |               |     |
- * |_____|_______________|_____|
+ * |_____________1_____________|
+ * |                           |
+ * |             3             |
+ * |                           |
+ * |                           |
+ * |                           |
+ * |                           |
+ * |___________________________|
  */
   /**
  * Default with JavaScript disabled
@@ -1883,6 +1877,26 @@ body {
   /**
  * When flexbox is in use
  * ======================
+ */
+  /**
+ * Default link style
+ * ==================
+ */
+  /**
+ * Default button style
+ * ====================
+ */
+  /**
+ * Default fieldset style
+ * ======================
+ */
+  /**
+ * Default img style
+ * =================
+ */
+  /**
+ * Default paragraph style
+ * =======================
  */
   /**
  * Utilities
@@ -3919,7 +3933,17 @@ body {
     overflow: auto;
     background: #f6f6f6;
     color: #555;
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #e1e1e1; }
+  .koowa .k-breadcrumb {
+    /**
+   * Links
+   * -----
+   */
+    /**
+   * List
+   * ----
+   * 1. Reset unordered list styling
+   */
     /**
    * Styling list items
    * ------------------
@@ -3935,20 +3959,23 @@ body {
    * -----------------------
    * 1. No flexing for these items so the are readable
    * 2. Always display these items
-   * 3. Do not show the hover
    */
     /**
    * One but last item
    * -----------------
    * Show this item on mobile to get a sense of where you are
+   *
+   * 1. Set 'missing' content
+   * 2. Reset to default content on wider screens
+   */
+    /**
+   * Active item
+   * --------------------------------------
    */ }
-    .koowa .k-breadcrumb a,
-    .koowa .k-breadcrumb button {
+    .koowa .k-breadcrumb a {
       color: #555; }
       .koowa .k-breadcrumb a:focus,
-      .koowa .k-breadcrumb a:hover,
-      .koowa .k-breadcrumb button:focus,
-      .koowa .k-breadcrumb button:hover {
+      .koowa .k-breadcrumb a:hover {
         background: #e4e4e4; }
     .koowa .k-breadcrumb ul {
       margin: 0;
@@ -3969,6 +3996,10 @@ body {
       overflow: hidden;
       vertical-align: middle;
       /**
+     * Display on larger screens
+     * -------------------------
+     */
+      /**
      * Flexing items to get overflow ellipsis
      * --------------------------------------
      */
@@ -3978,8 +4009,13 @@ body {
      */
       position: relative;
       /**
+     * No separator on first item
+     * --------------------------
+     */
+      /**
      * Hover
      * -----
+     * 1. Reset flexbox so the whole item is visible
      */ }
       @media screen and (min-width: 768px) {
         .koowa .k-breadcrumb li {
@@ -3996,32 +4032,16 @@ body {
         padding-top: 8px;
         padding-bottom: 8px;
         line-height: 16px; }
-      .koowa .k-breadcrumb li:after {
-        display: none;
-        content: " "; }
       .koowa .k-breadcrumb li:first-child {
         padding-left: 0; }
         .koowa .k-breadcrumb li:first-child:before {
           display: none; }
-      .koowa .k-breadcrumb li:last-child a:after {
-        left: auto;
-        right: 2px; }
       .koowa .k-breadcrumb li:hover {
-        z-index: 1;
         overflow: visible; }
-        .koowa .k-breadcrumb li:hover:after {
-          display: block; }
-    .koowa .k-breadcrumb .active,
-    .koowa .k-breadcrumb .home {
+    .koowa .k-breadcrumb .home
+.active {
       display: inline-block;
       overflow: visible; }
-      .koowa .k-breadcrumb .active a:after
-a:focus:after,
-      .koowa .k-breadcrumb .active a:hover:after,
-      .koowa .k-breadcrumb .home a:after
-a:focus:after,
-      .koowa .k-breadcrumb .home a:hover:after {
-        display: none; }
     .koowa .k-breadcrumb li:nth-last-child(2) {
       display: inline-block; }
       .koowa .k-breadcrumb li:nth-last-child(2):before {
@@ -4029,6 +4049,8 @@ a:focus:after,
         @media screen and (min-width: 768px) {
           .koowa .k-breadcrumb li:nth-last-child(2):before {
             content: "»"; } }
+    .koowa .k-breadcrumb .active .k-breadcrumb__item {
+      font-weight: 700; }
   .koowa .k-breadcrumb__item {
     min-width: 32px;
     min-height: 32px;
@@ -4041,12 +4063,14 @@ a:focus:after,
     padding: 8px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; }
+    text-overflow: ellipsis;
+    /**
+   * The divider
+   * -----------
+   */ }
     .koowa .k-breadcrumb__item:hover:after,
     .koowa .k-breadcrumb__item:focus:after {
       display: block; }
-  .koowa .active .k-breadcrumb__item {
-    font-weight: 700; }
   .koowa .k-toolbar {
     background: #e6e6e6;
     border-bottom: 1px solid #f2f2f2; }
@@ -4151,10 +4175,6 @@ a:focus:after,
     @media screen and (min-width: 768px) {
       .koowa .k-scopebar__search {
         display: block; } }
-  @media screen and (min-width: 768px) {
-    .koowa .k-component-wrapper {
-      display: table;
-      width: 100%; } }
   .koowa .k-overview {
     background: white;
     border: 1px solid #e1e1e1; }
@@ -4247,8 +4267,6 @@ a:focus:after,
     margin-bottom: 20px; }
     .koowa fieldset:last-child {
       margin-bottom: 0; }
-  .koowa legend {
-    padding-bottom: 7px; }
   .koowa img {
     max-width: 100%; }
   .koowa p {

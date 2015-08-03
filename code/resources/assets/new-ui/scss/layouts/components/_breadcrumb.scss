@@ -8,9 +8,37 @@
   background: $breadcrumb-background;
   color: $color-secondary-type;
   @include border(bottom, $location-border);
+}
 
-  a,
-  button {
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+@include flexbox {
+  .k-breadcrumb {
+    display: block;
+    flex: 0 0 auto;
+  }
+}
+
+
+
+/**
+ * Breadcrumb contents
+ * ===================
+ */
+
+.k-breadcrumb {
+
+  /**
+   * Links
+   * -----
+   */
+
+  a {
     color: $color-secondary-type;
 
     &:focus,
@@ -19,8 +47,16 @@
     }
   }
 
+
+
+  /**
+   * List
+   * ----
+   * 1. Reset unordered list styling
+   */
+
   ul {
-    @include reset; // Resetting the ul
+    @include reset; // 1
 
 
 
@@ -55,10 +91,18 @@
     overflow: hidden; // 5
     vertical-align: middle; // 6
 
-    // Display them on larger screens
+
+
+    /**
+     * Display on larger screens
+     * -------------------------
+     */
+
     @include breakpoint($breadcrumb-query) {
       display: inline-block;
     }
+
+
 
     /**
      * Flexing items to get overflow ellipsis
@@ -89,15 +133,13 @@
       line-height: $breadcrumb-size / 2;
     }
 
-    // Adding psuedo element to show on hover
-    // This way on mobile you get a double tap
-    &:after {
-      display: none;
-      content: " ";
-    }
 
 
-    // No separator on first item
+    /**
+     * No separator on first item
+     * --------------------------
+     */
+
     &:first-child {
       padding-left: 0;
 
@@ -111,27 +153,14 @@
     /**
      * Hover
      * -----
+     * 1. Reset flexbox so the whole item is visible
      */
 
-    &:last-child {
-      a:after {
-        left: auto;
-        right: 2px;
-      }
-    }
-
-    // Increase z-index on hover
     &:hover {
-      z-index: 1;
       overflow: visible;
 
       @include flexbox {
-        flex: 0 0 auto;
-      }
-
-      // Display the psuedo element to get a double tap
-      &:after {
-        display: block;
+        flex: 0 0 auto; // 1
       }
     }
   }
@@ -143,23 +172,15 @@
    * -----------------------
    * 1. No flexing for these items so the are readable
    * 2. Always display these items
-   * 3. Do not show the hover
    */
 
-  .active,
-  .home {
+  .home
+  .active {
     display: inline-block; // 2
     overflow: visible;
 
     @include flexbox($horizontal:$breadcrumb-query) {
       flex: 0 0 auto; // 1
-    }
-
-    // 3
-    a:after
-    a:focus:after,
-    a:hover:after {
-      display: none;
     }
   }
 
@@ -169,34 +190,36 @@
    * One but last item
    * -----------------
    * Show this item on mobile to get a sense of where you are
+   *
+   * 1. Set 'missing' content
+   * 2. Reset to default content on wider screens
    */
 
   li:nth-last-child(2) {
     display: inline-block;
 
     &:before {
-      content: $breadcrumb-missing-content;
+      content: $breadcrumb-missing-content; // 1
 
       @include breakpoint($breadcrumb-query) {
-        content: $breadcrumb-divider-content;
+        content: $breadcrumb-divider-content; // 2
       }
     }
   }
 
-}
 
+  
+  /**
+   * Active item
+   * --------------------------------------
+   */
 
-
-/**
- * When flexbox is in use
- * ======================
- */
-
-@include flexbox {
-  .k-breadcrumb {
-    display: block;
-    flex: 0 0 auto;
+  .active {
+    .k-breadcrumb__item {
+      font-weight: $bold;
+    }
   }
+
 }
 
 
@@ -220,17 +243,16 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
+
+  /**
+   * The divider
+   * -----------
+   */
+
   &:hover,
   &:focus {
     &:after {
       display: block;
     }
-  }
-}
-
-// Bold active item
-.active {
-  .k-breadcrumb__item {
-    font-weight: $bold;
   }
 }
