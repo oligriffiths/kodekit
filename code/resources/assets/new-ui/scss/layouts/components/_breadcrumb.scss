@@ -1,13 +1,14 @@
 /**
  * Default styles with JavaScript disabled
  * =======================================
+ * 1. Scroll when items don't fit parent anymore
  */
 
 .k-breadcrumb {
-  overflow: auto;
+  @include border(bottom, $location-border);
   background: $breadcrumb-background;
   color: $color-secondary-type;
-  @include border(bottom, $location-border);
+  overflow: auto; // 1
 }
 
 
@@ -19,7 +20,6 @@
 
 @include flexbox {
   .k-breadcrumb {
-    display: block;
     flex: 0 0 auto;
   }
 }
@@ -36,6 +36,7 @@
   /**
    * Links
    * -----
+   * 1. Full background hover
    */
 
   a {
@@ -43,7 +44,7 @@
 
     &:focus,
     &:hover {
-      background: $color-secondary-dark;
+      background: $color-secondary-dark; // 1
     }
   }
 
@@ -110,7 +111,7 @@
      */
 
     @include flexbox($horizontal:$breadcrumb-query) {
-      display: table-cell;
+      display: block;
       flex: 0 1 auto;
     }
 
@@ -170,17 +171,17 @@
   /**
    * first and last elements
    * -----------------------
-   * 1. No flexing for these items so the are readable
-   * 2. Always display these items
+   * 1. Always display these items
+   * 2. No flexing for these items so the are readable
    */
 
   .home
   .active {
-    display: inline-block; // 2
-    overflow: visible;
+    display: inline-block; // 1
+    overflow: visible; // 1
 
     @include flexbox($horizontal:$breadcrumb-query) {
-      flex: 0 0 auto; // 1
+      flex: 0 0 auto; // 2
     }
   }
 
@@ -242,17 +243,4 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
-
-  /**
-   * The divider
-   * -----------
-   */
-
-  &:hover,
-  &:focus {
-    &:after {
-      display: block;
-    }
-  }
 }

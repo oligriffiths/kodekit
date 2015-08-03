@@ -146,7 +146,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php for ($x = 0; $x <= 10; $x++) { ?>
+                                <?php for ($x = 0; $x <= 16; $x++) { ?>
                                 <tr>
                                     <td><a href="form.html">Example file</a></td>
                                     <td>Public</td>

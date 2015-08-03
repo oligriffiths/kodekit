@@ -257,7 +257,7 @@ body.component {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow: hidden;
+  overflow: auto;
   /**
    * Do not flex following items
    */
@@ -322,7 +322,7 @@ body.component {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    overflow: hidden;
+    overflow: auto;
     -webkit-box-flex: 1;
     -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
@@ -357,7 +357,7 @@ body.component {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      overflow: hidden;
+      overflow: auto;
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
@@ -1993,6 +1993,7 @@ body {
   /**
  * Default styles with JavaScript disabled
  * =======================================
+ * 1. Scroll when items don't fit parent anymore
  */
   /**
  * When flexbox is in use
@@ -4051,7 +4052,7 @@ body {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row;
-      overflow: hidden; } }
+      overflow: auto; } }
   .koowa .opened--left,
   .koowa .opened--right {
     overflow: hidden; }
@@ -4085,7 +4086,7 @@ body {
           -ms-flex-direction: column;
               flex-direction: column;
       width: auto;
-      overflow: hidden; } }
+      overflow: auto; } }
   .koowa .show-left-menu .k-content,
   .koowa .show-left-menu .k-titlebar {
     -webkit-transform: translate(270px, 0);
@@ -4231,13 +4232,12 @@ body {
   .koowa .opened--right .k-sidebar-right {
     display: block; }
   .koowa .k-breadcrumb {
-    overflow: auto;
+    border-bottom: 1px solid #ddd;
     background: #f6f6f6;
     color: #555;
-    border-bottom: 1px solid #ddd; }
+    overflow: auto; }
   @media (min-width: 320px) and (min-height: 400px) {
     .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb {
-      display: block;
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 auto;
           -ms-flex: 0 0 auto;
@@ -4246,6 +4246,7 @@ body {
     /**
    * Links
    * -----
+   * 1. Full background hover
    */
     /**
    * List
@@ -4265,8 +4266,8 @@ body {
     /**
    * first and last elements
    * -----------------------
-   * 1. No flexing for these items so the are readable
-   * 2. Always display these items
+   * 1. Always display these items
+   * 2. No flexing for these items so the are readable
    */
     /**
    * One but last item
@@ -4336,7 +4337,7 @@ body {
           display: inline-block; } }
       @media (min-width: 768px) and (min-height: 400px) {
         .flexbox .koowa .k-breadcrumb li, .flexboxlegacy .koowa .k-breadcrumb li {
-          display: table-cell;
+          display: block;
           -webkit-box-flex: 0;
           -webkit-flex: 0 1 auto;
               -ms-flex: 0 1 auto;
@@ -4398,14 +4399,7 @@ body {
     padding: 8px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
-    /**
-   * The divider
-   * -----------
-   */ }
-    .koowa .k-breadcrumb__item:hover:after,
-    .koowa .k-breadcrumb__item:focus:after {
-      display: block; }
+    text-overflow: ellipsis; }
   .koowa .k-toolbar {
     background: #E3E6EB;
     border-bottom: 1px solid #d4d9e0; }
@@ -4570,12 +4564,12 @@ body {
       -webkit-flex: 1 1 auto;
           -ms-flex: 1 1 auto;
               flex: 1 1 auto;
-      overflow: hidden;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
-              flex-direction: column; } }
+              flex-direction: column;
+      overflow: auto; } }
   .koowa .k-titlebar {
     border-bottom: 1px solid #d4d9e0;
     -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83);
@@ -4960,7 +4954,8 @@ body {
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
           -ms-flex-direction: column;
-              flex-direction: column; }
+              flex-direction: column;
+      overflow: auto; }
       .flexbox .koowa .k-table-container .k-table, .flexboxlegacy .koowa .k-table-container .k-table {
         display: -webkit-box;
         display: -webkit-flex;
@@ -4974,7 +4969,12 @@ body {
           -webkit-box-flex: 1;
           -webkit-flex: 1 1 auto;
               -ms-flex: 1 1 auto;
-                  flex: 1 1 auto; } }
+                  flex: 1 1 auto; }
+      .flexbox .koowa .k-table-container .k-table-pagination, .flexboxlegacy .koowa .k-table-container .k-table-pagination {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+                flex: 0 0 auto; } }
   .koowa .k-table table {
     width: 100%;
     text-align: left; }
@@ -5055,6 +5055,7 @@ body {
     width: 100%; }
     @media (min-width: 320px) and (min-height: 400px) {
       .flexbox .koowa .drop-message, .flexboxlegacy .koowa .drop-message {
+        width: auto;
         display: block;
         -webkit-box-flex: 1;
         -webkit-flex: 1 0 auto;
@@ -5068,6 +5069,7 @@ body {
     @media (min-width: 320px) and (min-height: 400px) {
       .flexbox .koowa .select-message, .flexboxlegacy .koowa .select-message {
         display: block;
+        width: auto;
         -webkit-box-flex: 0;
         -webkit-flex: 0 0 auto;
             -ms-flex: 0 0 auto;

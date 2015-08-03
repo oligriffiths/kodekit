@@ -22,6 +22,7 @@
   width: 100%;
 
   @include flexbox {
+    width: auto;
     display: block;
     flex: 1 0 auto;
   }
@@ -35,6 +36,7 @@
 
   @include flexbox {
     display: block;
+    width: auto;
     flex: 0 0 auto;
   }
 }

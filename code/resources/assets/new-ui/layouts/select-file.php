@@ -123,46 +123,32 @@
                         <div class="k-table">
                             <table class="table--fixed">
                                 <tbody>
+                                <?php for ($x = 0; $x <= 16; $x++) { ?>
                                 <tr>
                                     <td><a href="form.html">Example file</a></td>
                                 </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
-                                <tr>
-                                    <td><a href="form.html">Example file</a></td>
-                                </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
 
                         </div><!-- .k-table -->
+
+                        <div class="k-table-pagination">
+                            <div class="pagination pagination-toolbar">
+                                <div class="limit">
+                                    <select name="limit" size="1">
+                                        <option value="5" class="level1">5</option>
+                                        <option value="10" class="level1">10</option>
+                                        <option value="15" class="level1">15</option>
+                                        <option value="20" class="level1" selected="selected">20</option>
+                                        <option value="25" class="level1">25</option>
+                                        <option value="30" class="level1">30</option>
+                                        <option value="50" class="level1">50</option>
+                                        <option value="100" class="level1">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div><!-- .k-table-pagination -->
                     
                     </div><!-- .k-table-container -->
 

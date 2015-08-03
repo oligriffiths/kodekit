@@ -18,16 +18,14 @@
 /**
  * When flexbox is in use
  * ======================
- * 1. Otherwise flexbox doesn't work
  */
 
 @include flexbox {
   .k-content-wrapper {
-    width: auto;
     display: flex;
-    flex: 1 1 auto;
     flex-direction: row;
-    overflow: hidden; // 1
+    flex: 1 1 auto;
+    overflow: auto;
   }
 }
 
