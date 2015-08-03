@@ -133,6 +133,12 @@
  * 1. Height of the scopebar
  */
 /**
+ * Special colors for buttons in the toolbar?
+ * ------------------------------------------
+ * 1. When true colors are being used
+ */
+/* Success button */
+/**
  * Default list
  * ============
  */
@@ -5142,6 +5148,16 @@ body {
   .koowa .k-scopebar a {
     color: #555;
     cursor: pointer; }
+  .koowa .k-scopebar .select2-selection__placeholder {
+    color: #555;
+    opacity: .7; }
+  .koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-top-color: #555;
+    opacity: .7; }
+  .koowa .k-scopebar .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-bottom-color: #555; }
+  .koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #555; }
   .koowa .k-scopebar__item {
     vertical-align: middle;
     width: 100%;

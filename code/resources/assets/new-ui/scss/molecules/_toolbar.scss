@@ -60,6 +60,21 @@
       margin-right: 10px;
     }
   }
+
+  @if $scopebar-btn-alt == true {
+    .btn-success {
+      border-color: $scopebar-btn-success-border;
+      background: $scopebar-btn-success-background;
+      color: $scopebar-btn-success-color;
+
+      &:hover,
+      &:focus {
+        border-color: $scopebar-btn-success-hover-border;
+        background: $scopebar-btn-success-hover-background;
+        color: $scopebar-btn-success-hover-color;
+      }
+    }
+  }
 }
 
 .k-toolbar__text {

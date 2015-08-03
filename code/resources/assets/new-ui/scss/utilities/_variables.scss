@@ -275,6 +275,22 @@ $scopebar-border: $border-color !default;
 $scopebar-color: $color-secondary-type !default;
 $scopebar-color: $color-secondary-type !default;
 
+/**
+ * Special colors for buttons in the toolbar?
+ * ------------------------------------------
+ * 1. When true colors are being used
+ */
+
+$scopebar-btn-alt: true !default; // 1
+
+/* Success button */
+$scopebar-btn-success-border: $color-secondary-dark !default;
+$scopebar-btn-success-background: $color-secondary !default;
+$scopebar-btn-success-color: $color-secondary-type !default;
+$scopebar-btn-success-hover-border: darken($scopebar-btn-success-border, 5%) !default;
+$scopebar-btn-success-hover-background: darken($scopebar-btn-success-background, 5%) !default;
+$scopebar-btn-success-hover-color: darken($scopebar-btn-success-color, 5%) !default;
+
 
 
 /**

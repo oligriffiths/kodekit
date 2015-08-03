@@ -130,6 +130,12 @@
  * 1. Height of the scopebar
  */
 /**
+ * Special colors for buttons in the toolbar?
+ * ------------------------------------------
+ * 1. When true colors are being used
+ */
+/* Success button */
+/**
  * Default list
  * ============
  */
@@ -4953,6 +4959,16 @@ body {
   .koowa .k-scopebar a {
     color: #555;
     cursor: pointer; }
+  .koowa .k-scopebar .select2-selection__placeholder {
+    color: #555;
+    opacity: .7; }
+  .koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-top-color: #555;
+    opacity: .7; }
+  .koowa .k-scopebar .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-bottom-color: #555; }
+  .koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #555; }
   .koowa .k-scopebar__item {
     vertical-align: middle;
     width: 100%;
@@ -5280,6 +5296,15 @@ body {
     .koowa .k-toolbar button:last-child,
     .koowa .k-toolbar .btn:last-child {
       margin-right: 10px; }
+  .koowa .k-toolbar .btn-success {
+    border-color: #e4e4e4;
+    background: #f6f6f6;
+    color: #555; }
+    .koowa .k-toolbar .btn-success:hover,
+    .koowa .k-toolbar .btn-success:focus {
+      border-color: #d7d7d7;
+      background: #e9e9e9;
+      color: #484848; }
   .koowa .k-toolbar__text {
     display: none; }
     @media screen and (min-width: 768px) {
