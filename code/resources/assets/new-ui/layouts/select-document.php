@@ -1,25 +1,31 @@
 <?php include '_header.php'; ?>
 
-    <!-- Begin List layout -->
+    <!-- Overview layout -->
     <div class="k-overview">
 
         <!-- Titlebar -->
         <div class="k-titlebar">
+
             <!-- Sidebar toggle button -->
             <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
                 <span class="bar1"></span>
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </button>
+
+            <!-- Title -->
             <h2 style="float: left;">Select / Upload document</h2>
+
+            <!-- Right sidebar toggle button -->
             <button id="k-toggle-button-right" class="off-canvas-menu-toggle" type="button" style="float: right;">
                 <span class="bar1"></span>
                 <span class="bar2"></span>
                 <span class="bar3"></span>
             </button>
-        </div>
 
-        <!-- The content -->
+        </div><!-- .k-titlebar -->
+
+        <!-- Form -->
         <form id="k-offcanvas-container" class="k-content-wrapper">
 
             <!-- Sidebar -->
@@ -27,150 +33,154 @@
 
                 <!-- Categories -->
                 <div class="k-sidebar__item">
-                    <div class="k-sidebar__content">
-
-                        <ul class="k-list">
-                            <li class="k-tree">
-                                <a href="#">
-                                    <span class="k-clicker"></span>
-                                    <span class="k-icon-folder"></span>
-                                    <span class="k-title">Menu item</span>
-                                </a>
-                            </li>
-                            <li class="k-tree active">
-                                <a href="#">
-                                    <span class="k-clicker"></span>
-                                    <span class="k-icon-folder"></span>
-                                    <span class="k-title">Some other menu item</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="k-list">
+                        <li class="k-tree">
+                            <a href="#">
+                                <span class="k-clicker"></span>
+                                <span class="k-icon-folder"></span>
+                                <span class="k-title">Menu item</span>
+                            </a>
+                        </li>
+                        <li class="k-tree active">
+                            <a href="#">
+                                <span class="k-clicker"></span>
+                                <span class="k-icon-folder"></span>
+                                <span class="k-title">Some other menu item</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-            </div> <!-- .k-sidebar -->
+            </div><!-- .k-sidebar -->
 
-            <!-- The content -->
+            <!-- Content -->
             <div class="k-content">
 
-                <!-- contents -->
-                <div class="k-component-wrapper">
+                <!-- Component -->
+                <div class="k-component">
 
-                    <!-- Component -->
-                    <div class="k-component">
+                    <!-- Breadcrumbs -->
+                    <div class="k-breadcrumb">
+                        <ul>
+                            <li class="home">
+                                <a class="k-breadcrumb__item k-icon-home" href="#">
+                                    <span class="visually-hidden-icon-label">Home</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="k-breadcrumb__item" href="#">
+                                    Some menu item
+                                </a>
+                            </li>
+                            <li class="active">
+                                <span class="k-breadcrumb__item">Some other menu item</span>
+                            </li>
+                        </ul>
+                    </div><!-- .k-breadcrumb -->
 
-                        <!-- Breadcrumbs -->
-                        <div class="k-breadcrumb">
-                            <ul>
-                                <li class="home">
-                                    <a class="k-breadcrumb__item k-icon-home" href="#">
-                                        <span class="visually-hidden-icon-label">Home</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a class="k-breadcrumb__item" href="#">
-                                        Some menu item
-                                    </a>
-                                </li>
-                                <li class="active">
-                                    <span class="k-breadcrumb__item" data-title="Some other menu item">Some other menu item</span>
-                                </li>
-                            </ul>
+                    <!-- upload -->
+                    <div class="k-upload">
+                        <div class="drop-message">
+                            Drop files here <small style="font-size: 14px;padding-left: 5px;">(max 10MB)</small>
+                        </div>
+                        <div class="select-message">
+                            <button class="btn btn-sm btn-primary">Select</button>
+                            <button class="btn btn-sm btn-primary">From URL</button>
+                        </div>
+                    </div><!-- .k-upload -->
+
+                    <!-- Scopebar -->
+                    <div class="k-scopebar">
+
+                        <!-- Filters -->
+                        <div class="k-scopebar__item k-scopebar__item--fluid">
+
+                            <!-- Filter -->
+                            <div class="select2-wrapper select2--link-style select2--filter">
+                                <select name="enabled" id="select2-filter-access" data-placeholder="Access">
+                                    <option></option>
+                                    <option value="1">Super administrator</option>
+                                    <option value="0">Publisher</option>
+                                    <option value="0">Editor</option>
+                                    <option value="0">Public</option>
+                                </select>
+                            </div>
+
+                            <!-- Filter -->
+                            <div class="select2-wrapper select2--link-style select2--filter">
+                                <select name="enabled" id="select2-filter-date" data-placeholder="Date">
+                                    <option></option>
+                                    <option value="1">Published</option>
+                                    <option value="0">Unpublished</option>
+                                    <option value="0">Pending</option>
+                                    <option value="0">Archived</option>
+                                </select>
+                            </div>
+
+                            <!-- Search toggle button -->
+                            <button type="button" class="toggle-search">Search</button>
                         </div>
 
-                        <!-- upload -->
-                        <div class="k-upload">
-                            <div class="drop-message">
-                                Drop files here <small style="font-size: 14px;padding-left: 5px;">(max 10MB)</small>
+                        <!-- Search -->
+                        <div class="k-scopebar__item k-scopebar__search">
+                            <div class="search__container search__container--has_empty_button">
+                                <label for="search">
+                                    <i class="icon-search"></i>
+                                </label>
+                                <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="" id="search">
+                                <a class="search_button--empty"><span>X</span></a>
                             </div>
-                            <div class="select-message">
-                                <button class="btn btn-sm btn-primary">Select</button>
-                                <button class="btn btn-sm btn-primary">From URL</button>
-                            </div>
-                        </div>
+                        </div><!-- .k-scopebar-search -->
 
-                        <!-- Scopebar -->
-                        <div class="k-scopebar">
+                    </div>
 
-                            <!-- Filter items by -->
-                            <div class="k-scopebar__item k-scopebar__item--fluid">
-                                <div class="select2-wrapper select2--link-style select2--filter">
-                                    <select name="enabled" id="select2-filter-access" data-placeholder="Access">
-                                        <option></option>
-                                        <option value="1">Super administrator</option>
-                                        <option value="0">Publisher</option>
-                                        <option value="0">Editor</option>
-                                        <option value="0">Public</option>
-                                    </select>
-                                </div>
-                                <div class="select2-wrapper select2--link-style select2--filter">
-                                    <select name="enabled" id="select2-filter-date" data-placeholder="Date">
-                                        <option></option>
-                                        <option value="1">Published</option>
-                                        <option value="0">Unpublished</option>
-                                        <option value="0">Pending</option>
-                                        <option value="0">Archived</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <!-- Search filtered items -->
-                            <div class="k-scopebar__item k-scopebar__search">
-                                <div class="search__container search__container--has_empty_button">
-                                    <label for="search">
-                                        <i class="icon-search"></i>
-                                    </label>
-                                    <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="" id="search">
-                                    <a class="search_button--empty"><span>X</span></a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- The table -->
-                        <div class="k-table-container">
-                            <div class="k-table">
-                                <table class="table--fixed" summary="List of documents">
-                                    <thead>
+                    <!-- Table -->
+                    <div class="k-table-container">
+                        <div class="k-table">
+                            <table class="table--fixed">
+                                <thead>
                                     <tr>
                                         <th>Title</th>
                                         <th>Access</th>
                                         <th>Date</th>
                                     </tr>
-                                    </thead>
-                                    <tbody>
-                                    <?php for ($x = 0; $x <= 10; $x++) { ?>
-                                    <tr>
-                                        <td><a href="form.html">Example file</a></td>
-                                        <td>Public</td>
-                                        <td>21 may 2015</td>
-                                    </tr>
-                                    <?php } ?>
-                                    </tbody>
-                                    <tfoot>
-                                    <tr>
-                                        <td colspan="3">
-                                            <div class="table-pagination">
-                                                <select>
-                                                    <option>20</option>
-                                                    <option>50</option>
-                                                    <option>100</option>
-                                                    <option>All</option>
-                                                </select>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tfoot>
-                                </table>
+                                </thead>
+                                <tbody>
+                                <?php for ($x = 0; $x <= 10; $x++) { ?>
+                                <tr>
+                                    <td><a href="form.html">Example file</a></td>
+                                    <td>Public</td>
+                                    <td>21 may 2015</td>
+                                </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
+                        </div><!-- .k-table -->
+
+                        <div class="k-table-pagination">
+                            <div class="pagination pagination-toolbar">
+                                <div class="limit">
+                                    <select name="limit" size="1">
+                                        <option value="5" class="level1">5</option>
+                                        <option value="10" class="level1">10</option>
+                                        <option value="15" class="level1">15</option>
+                                        <option value="20" class="level1" selected="selected">20</option>
+                                        <option value="25" class="level1">25</option>
+                                        <option value="30" class="level1">30</option>
+                                        <option value="50" class="level1">50</option>
+                                        <option value="100" class="level1">100</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                    </div> <!-- .k-component -->
+                        </div><!-- .k-table-pagination -->
 
-                </div> <!-- .k-component-wrapper -->
+                    </div><!-- .k-table-container -->
 
-            </div> <!-- .k-content -->
+                </div><!-- .k-component -->
 
-            <!-- Selected file -->
+            </div><!-- .k-content -->
+
+            <!-- Right sidebar -->
             <div id="k-sidebar-right" class="k-sidebar-right">
                 <div class="control-group margin-bottom">
                     <label class="control-label" for="name">Name</label>
@@ -189,10 +199,10 @@
                         <a href="select-file.html" class="btn btn-success btn-block">Insert category link</a>
                     </div>
                 </div>
-            </div>
+            </div><!-- .k-sidebar-right -->
 
-        </form> <!-- .k-content-wrapper -->
+        </form><!-- .k-content-wrapper -->
 
-    </div> <!-- .k-overview -->
+    </div><!-- .k-overview -->
 
 <?php include '_footer.php'; ?>

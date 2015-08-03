@@ -54,11 +54,14 @@
   background: $color-primary;
   padding: $spacing-small;
   border-bottom: 1px solid #e1e1e1;
+  display: table;
+  width: 100%;
 
   @include flexbox {
     display: flex;
     flex-direction: row;
     flex: 0 0 auto;
+    width: auto;
   }
 }
 
@@ -67,12 +70,25 @@
   line-height: 1.25em;
   margin: 0;
   color: #595959;
-  flex: 1 0 auto;
+  display: table-cell;
+  width: 100%;
+
+  @include flexbox {
+    display: block;
+    flex: 1 0 auto;
+  }
 }
 
 .select-message {
-  flex: 0 0 auto;
   padding-left: 10px;
+  display: table-cell;
+  width: 1px;
+  white-space: nowrap;
+
+  @include flexbox {
+    display: block;
+    flex: 0 0 auto;
+  }
 }
 
 
@@ -130,3 +146,5 @@
 .btn-right {
   float: right;
 }
+
+

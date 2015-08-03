@@ -104,3 +104,16 @@
     z-index: 2; // 2
   }
 }
+
+
+
+/**
+ * Titlebar contents
+ * =================
+ */
+
+.k-titlebar {
+  h2 {
+    margin: $spacing-small;
+  }
+}

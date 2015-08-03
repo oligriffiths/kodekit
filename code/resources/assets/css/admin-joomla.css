@@ -272,6 +272,9 @@ body.component {
    */
   /**
    * Remove margin from bootstrap grid item
+   */
+  /**
+   * Joomla removes default focus style, we bring it back
    */ }
   body.admin nav.navbar,
   body.component nav.navbar {
@@ -403,6 +406,9 @@ body.component {
   body.admin .span10,
   body.component .span10 {
     margin: 0; }
+  body.admin a:focus,
+  body.component a:focus {
+    outline: auto 5px -webkit-focus-ring-color; }
 
 /**
  * Outside of the koowa namespace
@@ -1765,6 +1771,9 @@ img.mfp-img {
     background: transparent;
     border: none; }
 
+.koowa .select2--filter {
+  display: inline-block; }
+
 .select2-dropdown {
   min-width: 200px; }
 
@@ -1833,10 +1842,6 @@ body {
   /**
    * Border-box size everything
    * --------------------------
-   */
-  /**
-   * Set default outline to items
-   * ----------------------------
    */ }
   @media screen and (min-width: 400px) {
     .koowa {
@@ -1846,8 +1851,6 @@ body {
       z-index: 1; } }
   .koowa, .koowa *, .koowa *:before, .koowa *:after {
     box-sizing: border-box; }
-  .koowa a:focus {
-    outline: auto 5px -webkit-focus-ring-color; }
 
 /**
  * Koowa namespaced styling
@@ -2057,6 +2060,10 @@ body {
  * =========================
  * 1. Set opacity
  * 2. Set z-index so it will become visible
+ */
+  /**
+ * Titlebar contents
+ * =================
  */
   /**
  * Default styles with JavaScript disabled
@@ -4401,6 +4408,8 @@ a:focus:after,
   .koowa .opened--left .k-titlebar:before,
   .koowa .opened--right .k-titlebar:before {
     z-index: 2; }
+  .koowa .k-titlebar h2 {
+    margin: 13px; }
   .koowa .k-form {
     /**
    * Component background
@@ -4731,6 +4740,8 @@ a:focus:after,
     .koowa .koowa .select2--link-style .select2-container .select2-selection {
       background: transparent;
       border: none; }
+  .koowa .koowa .select2--filter {
+    display: inline-block; }
   .select2-dropdown {
     min-width: 200px; }
   .koowa .koowa .select2-selection__clear {
@@ -5164,22 +5175,21 @@ a:focus:after,
   .koowa .k-upload {
     background: white;
     padding: 13px;
-    border-bottom: 1px solid #e1e1e1; }
+    border-bottom: 1px solid #e1e1e1;
+    display: table;
+    width: 100%; }
   .koowa .drop-message {
     font-size: 1.65em;
     line-height: 1.25em;
     margin: 0;
     color: #595959;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-        -ms-flex: 1 0 auto;
-            flex: 1 0 auto; }
+    display: table-cell;
+    width: 100%; }
   .koowa .select-message {
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 0 auto;
-        -ms-flex: 0 0 auto;
-            flex: 0 0 auto;
-    padding-left: 10px; }
+    padding-left: 10px;
+    display: table-cell;
+    width: 1px;
+    white-space: nowrap; }
   .koowa .k-toolbar {
     background: #E3E6EB;
     color: #005580; }
