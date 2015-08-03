@@ -1,0 +1,26 @@
+.form-group {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.control-group {
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+// Spacing the Bootstrap containers
+.container-fluid {
+  padding: $spacing;
+}
+
+.row {
+  margin-bottom: $spacing;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

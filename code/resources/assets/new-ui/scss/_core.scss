@@ -65,17 +65,18 @@
   @import "atoms/p";
 
   // Molecules
-  @import "molecules/controls";
+  @import "molecules/bootstrap-overrides";
+  @import "molecules/buttons";
   @import "molecules/form-block";
   @import "molecules/navigation";
   @import "molecules/input-group";
   @import "molecules/list";
   @import "molecules/overflowing";
   @import "molecules/table";
+  @import "molecules/upload";
   @import "molecules/select2";
   @import "molecules/radio-toggle";
   @import "molecules/checkbox-toggle";
-  @import "molecules/button-group";
   @import "molecules/icons";
   @import "molecules/tree";
   @import "molecules/hamburger";
