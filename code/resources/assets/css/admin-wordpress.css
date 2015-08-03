@@ -1796,23 +1796,38 @@ body {
  * ======================
  */
   /**
+ * Toolbar contents
+ * ======================
+ */
+  /**
  * Default styles with JavaScript disabled
  * =======================================
+ */
+  /**
+ * When flexbox is in use
+ * ======================
+ * 1. The scopebar container itself. Changes on global flexbox setting
+ * 2. Flexing before global flexbox
+ */
+  /**
+ * Scopebar contents
+ * =================
  */
   /**
  * Scopebar items
  * ==============
  */
   /**
- * When flexbox is in use
- * ======================
- */
-  /**
- * Scopebar buttons
- * ================
- */
-  /**
  * Scopebar search
+ * ---------------
+ * 1. Hide by default so we can toggle it open
+ * 2. Display as table cell on medium sized screens
+ * 3. Display as block for flexbox on larger screens
+ */
+  /**
+ * Search toggle button
+ * --------------------
+ * 1. Hide when search is visible
  */
   /**
  * When flexbox is in use
@@ -4109,13 +4124,13 @@ body {
       .koowa .k-scopebar {
         display: table;
         width: 100%; } }
-    .koowa .k-scopebar .select2,
-    .koowa .k-scopebar button {
-      height: 32px;
-      padding: 0 7px; }
-    .koowa .k-scopebar a {
-      color: #555;
-      cursor: pointer; }
+  .koowa .k-scopebar .select2,
+  .koowa .k-scopebar button {
+    height: 32px;
+    padding: 0 7px; }
+  .koowa .k-scopebar a {
+    color: #555;
+    cursor: pointer; }
   .koowa .k-scopebar__item {
     vertical-align: middle;
     width: 100%;
@@ -4123,17 +4138,16 @@ body {
     @media screen and (min-width: 600px) {
       .koowa .k-scopebar__item {
         display: table-cell; } }
-  .koowa .k-scopebar__item--buttons {
-    display: table; }
-  .koowa .k-scopebar__button {
-    height: 32px;
-    min-width: 32px;
-    text-align: center;
-    display: table-cell .koowa .k-scopebar__button;
-      display-background: #d2d2d2; }
   .koowa .k-scopebar__search {
     position: relative;
-    min-width: 200px; }
+    min-width: 200px;
+    display: none; }
+    @media screen and (min-width: 600px) {
+      .koowa .k-scopebar__search {
+        display: table-cell; } }
+    @media screen and (min-width: 768px) {
+      .koowa .k-scopebar__search {
+        display: block; } }
     .koowa .k-scopebar__search .search__container {
       width: 100%; }
     .koowa .k-scopebar__search label {
@@ -4167,14 +4181,6 @@ body {
     @media screen and (min-width: 600px) {
       .koowa .toggle-search {
         display: none; } }
-  .koowa .k-scopebar__search {
-    display: none; }
-    @media screen and (min-width: 600px) {
-      .koowa .k-scopebar__search {
-        display: table-cell; } }
-    @media screen and (min-width: 768px) {
-      .koowa .k-scopebar__search {
-        display: block; } }
   .koowa .k-overview {
     background: white;
     border: 1px solid #e1e1e1; }

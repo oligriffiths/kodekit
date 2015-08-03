@@ -4,14 +4,59 @@
  */
 
 .k-scopebar {
+  background: $scopebar-background;
+  color: $scopebar-color;
+
   @include breakpoint($beta) {
     display: table;
     width: 100%;
   }
+}
 
-  background: $scopebar-background;
-  color: $scopebar-color;
 
+
+/**
+ * When flexbox is in use
+ * ======================
+ * 1. The scopebar container itself. Changes on global flexbox setting
+ * 2. Flexing before global flexbox
+ */
+
+@include flexbox { // 1
+  .k-scopebar {
+    width: auto;
+    flex: 0 0 auto;
+  }
+}
+
+@include flexbox($horizontal: $beta) { // 2
+  .k-scopebar {
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  .k-scopebar__item {
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  .k-scopebar__item--fluid {
+    flex: 1 1 auto;
+  }
+
+  .k-scopebar__search {
+    flex: 0 1 auto;
+  }
+}
+
+
+
+/**
+ * Scopebar contents
+ * =================
+ */
+
+.k-scopebar {
   .select2,
   button {
     height: $unit-size;
@@ -43,67 +88,25 @@
 
 
 /**
- * When flexbox is in use
- * ======================
- */
-
-@include flexbox {
-  .k-scopebar {
-    flex: 0 0 auto;
-  }
-}
-
-@include flexbox($horizontal: $beta) {
-  .k-scopebar {
-    display: flex;
-    flex: 0 0 auto;
-  }
-
-  .k-scopebar__item {
-    display: block;
-    flex: 0 0 auto;
-  }
-
-  .k-scopebar__item--fluid {
-    flex: 1 1 auto;
-  }
-
-  .k-scopebar__search {
-    flex: 0 1 auto;
-  }
-}
-
-
-
-/**
- * Scopebar buttons
- * ================
- */
-
-.k-scopebar__item--buttons {
-  display: table;
-}
-
-.k-scopebar__button {
-  height: $scopebar-size;
-  min-width: $scopebar-size;
-  text-align: center;
-  display: table-cell
-
-  &:focus,
-  &:hover {
-    background: $color-secondary-darkest;
-  }
-}
-
-
-/**
  * Scopebar search
+ * ---------------
+ * 1. Hide by default so we can toggle it open
+ * 2. Display as table cell on medium sized screens
+ * 3. Display as block for flexbox on larger screens
  */
 
 .k-scopebar__search {
   position: relative;
   min-width: 200px;
+  display: none; // 1
+
+  @include breakpoint($beta) {
+    display: table-cell; // 2
+  }
+
+  @include breakpoint($desktop) {
+    display: block; // 3
+  }
 
   .search__container {
     width: 100%;
@@ -140,22 +143,17 @@
 }
 
 
+
+/**
+ * Search toggle button
+ * --------------------
+ * 1. Hide when search is visible
+ */
+
 .toggle-search {
   float: right;
 
   @include breakpoint($beta) {
-    display: none;
-  }
-}
-
-.k-scopebar__search {
-  display: none;
-
-  @include breakpoint($beta) {
-    display: table-cell;
-  }
-
-  @include breakpoint($desktop) {
-    display: block;
+    display: none; // 1
   }
 }
