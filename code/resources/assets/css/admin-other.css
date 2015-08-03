@@ -4499,12 +4499,14 @@ a:focus:after,
     vertical-align: middle;
     text-align: left;
     border-bottom: 1px solid #EFEFEF; }
+  .koowa .k-table tr:last-child td {
+    border-bottom: none; }
   .koowa .k-table small {
     display: block; }
-  .koowa .k-table tfoot td {
+  .koowa .k-table-pagination {
     background: #eee;
     border-top: 1px solid #e1e1e1;
-    border-bottom: none; }
+    padding: 13px; }
   .koowa .k-table__checkbox {
     display: inline-block; }
   .koowa .table-pagination {
