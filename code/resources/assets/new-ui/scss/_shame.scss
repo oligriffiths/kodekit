@@ -1,31 +1,4 @@
-.form-group {
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
-.control-group {
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.btn {
-  @extend .btn-default;
-}
-
-// Spacing the Bootstrap containers
-.container-fluid {
-  padding: $spacing;
-}
-
-.row {
-  margin-bottom: $spacing;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
 
 // @TODO: This needs to be fixed with JS by either using FooTable or our own
 @include breakpoint(0,range,$beta) {

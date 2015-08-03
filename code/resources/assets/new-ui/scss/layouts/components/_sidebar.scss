@@ -120,6 +120,22 @@
   @include js-enabled {
     right: 0;
   }
+
+
+
+  /**
+    * Contents
+    * --------
+    */
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  .labl {
+    display: inline-block;
+    width: 100px;
+  }
 }
 
 
