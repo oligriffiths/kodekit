@@ -59,7 +59,7 @@
       height: $checkbox-toggle-height-inner;
       top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
       right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-      background: $red;
+      background: $color-error;
       border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
       transition: all $transition;
     }
@@ -94,7 +94,7 @@
       border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
       color: white;
       right: $checkbox-toggle-width - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
-      border: 1px solid $red;
+      border: 1px solid $color-error;
       transition: all $transition;
     }
 
@@ -115,7 +115,7 @@
 
     input:checked + label {
       &:after {
-        background: $green;
+        background: $color-success;
       }
 
       span {
@@ -125,7 +125,7 @@
 
         &:after {
           right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-          border-color: $green;
+          border-color: $color-success;
         }
       }
     }
@@ -150,12 +150,12 @@
 
       input:checked + label {
         &:after {
-          background: $blue;
+          background: $color-neutral;
         }
 
         span {
           &:after {
-            border-color: $blue;
+            border-color: $color-neutral;
           }
         }
       }

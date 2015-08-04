@@ -80,11 +80,6 @@ $spacing-huge:  round($font-size * 3) !default;
 /**
  * Unit size
  * =========
- * Rounding so we won't get half pixels
- * Can be used for things like:
- * - min-height on table cells
- * - width and height on buttons inside fixed height rows
- * - max-height for fixed height rows
  */
 
 $unit-size: 32px !default;
@@ -110,8 +105,8 @@ $transition:            $transition-duration $transition-easing !default;
  */
 
 $color-type:        #222222 !default;
-$color-type-dark:   #111111 !default;
-$color-type-light:  #555555 !default;
+$color-type-dark:   darken($color-type, 7%) !default;
+$color-type-light:  lighten($color-type, 20%) !default;
 
 
 
@@ -120,14 +115,14 @@ $color-type-light:  #555555 !default;
  * =============
  */
 
-$color-primary:           #34495e !default;
-$color-primary-lightest:  lightest($color-primary) !default;
-$color-primary-lighter:   lighter($color-primary) !default;
-$color-primary-light:     light($color-primary) !default;
-$color-primary-dark:      dark($color-primary) !default;
-$color-primary-darker:    darker($color-primary) !default;
-$color-primary-darkest:   darkest($color-primary) !default;
-$color-primary-type:      #ecf0f1 !default;
+$color-primary:             #34495e !default;
+$color-primary-type:        #ecf0f1 !default;
+$color-primary-lightest:    lightest($color-primary) !default;
+$color-primary-lighter:     lighter($color-primary) !default;
+$color-primary-light:       light($color-primary) !default;
+$color-primary-dark:        dark($color-primary) !default;
+$color-primary-darker:      darker($color-primary) !default;
+$color-primary-darkest:     darkest($color-primary) !default;
 
 
 
@@ -137,13 +132,13 @@ $color-primary-type:      #ecf0f1 !default;
  */
 
 $color-secondary:           #3498db !default;
+$color-secondary-type:      white !default;
 $color-secondary-lightest:  lightest($color-secondary) !default;
 $color-secondary-lighter:   lighter($color-secondary) !default;
 $color-secondary-light:     light($color-secondary) !default;
 $color-secondary-dark:      dark($color-secondary) !default;
 $color-secondary-darker:    darker($color-secondary) !default;
 $color-secondary-darkest:   darkest($color-secondary) !default;
-$color-secondary-type:      white !default;
 
 
 
@@ -152,14 +147,14 @@ $color-secondary-type:      white !default;
  * ==============
  */
 
-$color-tertiary:            #3498db !default;
-$color-tertiary-lightest:   lightest($color-secondary) !default;
-$color-tertiary-lighter:    lighter($color-secondary) !default;
-$color-tertiary-light:      light($color-secondary) !default;
-$color-tertiary-dark:       dark($color-secondary) !default;
-$color-tertiary-darker:     darker($color-secondary) !default;
-$color-tertiary-darkest:    darkest($color-secondary) !default;
+$color-tertiary:            #eeeeee !default;
 $color-tertiary-type:       white !default;
+$color-tertiary-lightest:   lightest($color-tertiary) !default;
+$color-tertiary-lighter:    lighter($color-tertiary) !default;
+$color-tertiary-light:      light($color-tertiary) !default;
+$color-tertiary-dark:       dark($color-tertiary) !default;
+$color-tertiary-darker:     darker($color-tertiary) !default;
+$color-tertiary-darkest:    darkest($color-tertiary) !default;
 
 
 
@@ -187,9 +182,11 @@ $color-secondary-accent-type:   $color-secondary !default;
 $color-success:       #27ae60 !default;
 $color-success-type:  white !default;
 
-$red:                 #c0392b;
-$green:               #27ae60;
-$blue:                #2980b9;
+$color-error:         #c0392b !default;
+$color-error-type:    white !default;
+
+$color-neutral:       #2980b9 !default;
+$color-neutral-type:  white !default;
 
 
 
@@ -260,25 +257,23 @@ $sidebar-color:             $color-primary-type !default;
 /**
  * Table
  * =====
- * 1. Height of the table headings
- * 2. Color of the table headings
- * 3. Height of the table cells
- * 4. Table cell padding
+ * 1. Height of the table cells
+ * 2. Table cell padding
  */
 
-$table-header-size:             $spacing-huge !default; // 1
-$table-header-background:       #eee !default; // 2
-$table-header-background-dark:  darken($table-header-background, 25%) !default;
-$table-header-border:           darken($table-header-background, 5%) !default;
-$table-border:                  #efefef !default;
+$table-cell-size:               round($font-size * 3) !default; // 1
+$table-cell-spacing:            $spacing-tiny !default; // 2
 
-$table-cell-size:               $spacing-huge !default;
-$table-cell-spacing:            $spacing-tiny !default;
+$table-header-background:       $color-tertiary !default;
+$table-header-border:           darker($table-header-background) !default;
+
+$table-cell-background:         $color-tertiary-lightest !default;
+$table-cell-border:             darker($table-cell-background) !default;
 $table-cell-accent-background:  $color-accent !default;
 $table-cell-accent-color:       $color-accent-type !default;
 
-$table-pagination-background:   #eee !default;
-$table-pagination-border:       darken($table-pagination-background, 5%) !default;
+$table-pagination-background:   $color-tertiary !default;
+$table-pagination-border:       dark($table-pagination-background) !default;
 $table-pagination-spacing:      $spacing-small !default;
 
 
@@ -301,34 +296,19 @@ $overview-border:       darker($overview-background) !default;
  */
 
 $scopebar-size:               $unit-size !default; // 1
-$scopebar-search-background:  white !default;
-$scopebar-search-color:       $color-type !default;
 
 $scopebar-background:         $color-secondary-dark !default;
 $scopebar-border:             darker($scopebar-background) !default;
 $scopebar-color:              $color-secondary-type !default;
-$scopebar-color:              $color-secondary-type !default;
+
+$scopebar-search-background:  white !default;
+$scopebar-search-color:       $color-type !default;
 
 
 
 /**
- * Special colors for buttons in the toolbar?
- * ------------------------------------------
- */
-
-/* Success button */
-$scopebar-btn-success-border:             $color-secondary-dark !default;
-$scopebar-btn-success-background:         $color-secondary !default;
-$scopebar-btn-success-color:              $color-secondary-type !default;
-$scopebar-btn-success-hover-border:       darken($scopebar-btn-success-border, 5%) !default;
-$scopebar-btn-success-hover-background:   darken($scopebar-btn-success-background, 5%) !default;
-$scopebar-btn-success-hover-color:        darken($scopebar-btn-success-color, 5%) !default;
-
-
-
-/**
- * Default list
- * ============
+ * List
+ * ====
  */
 
 $list-background:         $sidebar-background !default;
@@ -345,8 +325,8 @@ $list-active-color:       $color-primary-accent !default;
 
 
 /**
- * Default navigation
- * ==================
+ * Navigation
+ * ==========
  */
 
 $navigation-background:         $color-primary-dark !default;
@@ -368,10 +348,8 @@ $navigation-active-color:       $navigation-accent !default;
 /**
  * Toolbar
  * =======
- * 1. When true; colors are being used
+ * 1. When true; these colors are being used, when false; bootsrap defaults are being used
  */
-
-$toolbar-btn-alt:                        true !default; // 1
 
 $toolbar-spacing:                           round($font-size * 0.7) !default;
 
@@ -379,25 +357,22 @@ $toolbar-background:                        $color-primary-darkest !default;
 $toolbar-border:                            darker($toolbar-background) !default;
 $toolbar-color:                             $color-primary-type !default;
 
-$toolbar-button-default-background:         $color-primary-lightest !default;
-$toolbar-button-default-border:             $color-primary-lightest !default;
-$toolbar-button-default-color:              $color-primary-type !default;
-$toolbar-button-default-hover-background:   $color-secondary-light !default;
-$toolbar-button-default-hover-border:       $color-secondary-light !default;
-$toolbar-button-default-hover-color:        $color-secondary-type !default;
+$toolbar-btn-alt:                           true !default; // 1
 
-$toolbar-button-success-background:         $color-secondary !default;
-$toolbar-button-success-border:             $color-secondary !default;
-$toolbar-button-success-color:              $color-secondary-type !default;
-$toolbar-button-success-hover-background:   $color-secondary-light !default;
-$toolbar-button-success-hover-border:       $color-secondary-light !default;
-$toolbar-button-success-hover-color:        $color-secondary-type !default;
+/* Success button */
+$toolbar-btn-success-border:                $color-secondary-dark !default;
+$toolbar-btn-success-background:            $color-secondary !default;
+$toolbar-btn-success-color:                 $color-secondary-type !default;
+$toolbar-btn-success-hover-border:          darken($toolbar-btn-success-border, 5%) !default;
+$toolbar-btn-success-hover-background:      darken($toolbar-btn-success-background, 5%) !default;
+$toolbar-btn-success-hover-color:           darken($toolbar-btn-success-color, 5%) !default;
 
 
 
 /**
  * Titlebar
  * ========
+ * By default it looks the same as the toolbar
  */
 
 $titlebar-background:   $toolbar-background !default;
@@ -408,6 +383,7 @@ $titlebar-color:        $toolbar-color !default;
 
 /**
  * Overflowing
+ * ===========
  * Overflowing shadows
  */
 
@@ -428,9 +404,9 @@ $overflow-color:    rgba(0,0,0,.66);
  */
 
 $radio-toggle:          true !default; // 1
-$radio-toggle-0:        #c0392b !default; // 2
+$radio-toggle-0:        $color-error !default; // 2
 $radio-toggle-1:        $color-success !default; // 3
-$radio-toggle-neutral:  $color-accent !default; // 4
+$radio-toggle-neutral:  $color-neutral !default; // 4
 
 
 
@@ -467,9 +443,9 @@ $padding-base-horizontal:   10px !default;
 $btn-success-bg:            $color-success;
 $btn-success-color:         $color-success-type;
 
-$pagination-color:              $color-accent !default;
-$pagination-active-bg:          $color-accent !default;
-$pagination-active-border:      darker($color-accent) !default;
+$pagination-color:          $color-accent !default;
+$pagination-active-bg:      $color-accent !default;
+$pagination-active-border:  darker($color-accent) !default;
 
 
 
@@ -496,7 +472,7 @@ $bar-width: 20px; // Best to grab a number that can be divided by 5
 $bar-height: round($bar-width / 5);
 $overlay-background: black;
 
-// Other
+// Hamburger
 $button-size: 33px;
 $bar-width: 15px; // Best to grab a number that can be divided by 5
 $bar-height: round($bar-width / 5);

@@ -16,12 +16,12 @@
   }
 
   &:before {
-    @include arrow(top, 4px, $table-header-background-dark);
+    @include arrow(top, 4px, $color-type-light);
     margin-bottom: 1px;
   }
 
   &:after {
-    @include arrow(bottom, 4px, $table-header-background-dark);
+    @include arrow(bottom, 4px, $color-type-light);
   }
 }
 
@@ -34,7 +34,7 @@
   a:focus {
     .k-icon-arrows {
       &:before {
-        border-bottom-color: $table-header-background-dark;
+        border-bottom-color: $color-type-light;
       }
 
       &:after {
@@ -53,7 +53,7 @@
   a:focus {
     .k-icon-arrows {
       &:after {
-        border-top-color: $table-header-background-dark;
+        border-top-color: $color-type-light;
       }
 
       &:before {
@@ -68,7 +68,7 @@
   &:focus {
     .k-icon-arrows {
       &:after {
-        border-top-color: $table-header-background-dark;
+        border-top-color: $color-type-light;
       }
 
       &:before {
