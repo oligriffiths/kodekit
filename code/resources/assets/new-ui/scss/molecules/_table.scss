@@ -73,6 +73,10 @@
   border-top: 1px solid $table-pagination-border;
   padding: $spacing-small;
 
+  .pagination {
+    margin: 0;
+  }
+
   .limit {
     display: inline-block;
     text-align: center;

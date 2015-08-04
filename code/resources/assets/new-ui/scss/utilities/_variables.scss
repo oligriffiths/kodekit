@@ -195,13 +195,14 @@ $blue:                #2980b9;
 
 /* Border
  * ======
- * Set border-color to false if you don't want any borders in your theme
+ * Set borders to false if you don't want any borders in your theme
  * You can override borders in each separate module
  **/
 
-$border-color: false !default;
-$border-width: 1px !default;
-$border-style: solid !default;
+$borders:       false !default;
+$border-color:  false !default;
+$border-width:  1px !default;
+$border-style:  solid !default;
 
 
 
@@ -257,18 +258,6 @@ $sidebar-color:             $color-primary-type !default;
 
 
 /**
- * Toggle button
- * =============
- * The toggle button to toggle the sidebar
- */
-
-$toggle-button-width:   $unit-size !default;
-$toggle-button-height:  $unit-size !default;
-$toggle-button-border:  $border-color !default;
-
-
-
-/**
  * Table
  * =====
  * 1. Height of the table headings
@@ -293,7 +282,7 @@ $table-pagination-border:       darken($table-pagination-background, 5%) !defaul
  */
 
 $overview-background:   white !default;
-$overview-border:       $border-color !default;
+$overview-border:       darker($overview-background) !default;
 
 
 

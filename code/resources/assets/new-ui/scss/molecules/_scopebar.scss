@@ -147,8 +147,9 @@
     border-radius: 0;
     width: 100%;
     box-shadow: none;
+
     @include breakpoint($beta) {
-      border-left: 1px solid $border-color;
+      border-left: 1px solid $scopebar-border;
     }
   }
 

@@ -16,7 +16,7 @@
 /** Tertiary color ============== */
 /** Accent color ============ */
 /** States ====== */
-/* Border ====== Set border-color to false if you don't want any borders in your theme You can override borders in each separate module */
+/* Border ====== Set borders to false if you don't want any borders in your theme You can override borders in each separate module */
 /** Koowa ===== The default koowa container */
 /** Breadcrumbs =========== 1. On mobile we don't show all breadcrumb items 2. The content of the divider 3. The width of dividers between breadcrumb items 4. Height of each breadcrumb item 5. The width when showing all breadcrumbs instead of only first and last */
 /** Sidebar ======= 1. Sidebar width on smaller screens 2. Sidebar width when screen is "$desktop" */
@@ -1048,7 +1048,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa p:last-child { margin-bottom: 0; }
 
-.koowa .k-breadcrumb { border-bottom: 1px solid #e4e4e4; background: #f6f6f6; color: #555; overflow: auto; }
+.koowa .k-breadcrumb { background: #f6f6f6; color: #555; overflow: auto; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -1300,7 +1300,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-list .k-control { padding: 6px 9px; }
 
-.koowa .k-navigation { margin: 0; padding: 0; list-style: none; border: none; background: transparent; border-bottom: 1px solid #e0e0e0; padding: 8px 0; background: #f2f2f2; }
+.koowa .k-navigation { margin: 0; padding: 0; list-style: none; border: none; background: transparent; padding: 8px 0; background: #f2f2f2; }
 
 .koowa .k-navigation:before, .koowa .k-navigation:after { content: " "; display: table; }
 
@@ -1417,7 +1417,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__rendered { color: #555; }
 
-.koowa .k-scopebar__item { vertical-align: middle; width: 100%; border-bottom: 1px solid gainsboro; }
+.koowa .k-scopebar__item { vertical-align: middle; width: 100%; }
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar__item { display: table-cell; } }
 
@@ -1456,13 +1456,13 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 @media (min-width: 768px) and (min-height: 400px) { .flexbox .koowa .k-sidebar, .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar, .flexboxlegacy .koowa .k-sidebar-right { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
   .flexbox .koowa .k-sidebar__navigation, .flexbox .koowa .k-sidebar__footer, .flexboxlegacy .koowa .k-sidebar__navigation, .flexboxlegacy .koowa .k-sidebar__footer { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .k-sidebar { border-right: 1px solid #e0e0e0; background: white; color: #555; }
+.koowa .k-sidebar { background: white; color: #555; }
 
 .k-js-enabled .koowa .k-sidebar { left: 0; }
 
 .koowa .opened--left .k-sidebar { display: block; }
 
-.koowa .k-sidebar-right { border-left: 1px solid #e0e0e0; background: white; color: #555; /** Contents -------- */ }
+.koowa .k-sidebar-right { background: white; color: #555; /** Contents -------- */ }
 
 .k-js-enabled .koowa .k-sidebar-right { right: 0; }
 
@@ -1481,19 +1481,21 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-table th, .koowa .k-table td { padding: 10px; }
 
-.koowa .k-table th { background: white; height: 32px; position: relative; text-align: left; white-space: nowrap; border-bottom: 1px solid #f2f2f2; }
+.koowa .k-table th { background: white; height: 32px; position: relative; text-align: left; white-space: nowrap; }
 
 .koowa .k-table th a { display: block; }
 
 .koowa .k-table th input { display: inline-block; }
 
-.koowa .k-table td { vertical-align: middle; text-align: left; border-bottom: 1px solid #efefef; }
+.koowa .k-table td { vertical-align: middle; text-align: left; }
 
 .koowa .k-table tr:last-child td { border-bottom: none; }
 
 .koowa .k-table small { display: block; }
 
 .koowa .k-table-pagination { background: #eee; border-top: 1px solid #e1e1e1; padding: 13px; }
+
+.koowa .k-table-pagination .pagination { margin: 0; }
 
 .koowa .k-table-pagination .limit { display: inline-block; text-align: center; }
 
@@ -1515,7 +1517,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa tr.selected td a { color: white; }
 
-.koowa .k-titlebar { border-bottom: 1px solid #f2f2f2; -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #e0e0e0; color: #555; position: relative; z-index: 2; float: left; width: 100%; /** Create custom 'overlay' for off canvas sidebar ---------------------------------------------- 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; }
+.koowa .k-titlebar { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #e0e0e0; color: #555; position: relative; z-index: 2; float: left; width: 100%; /** Create custom 'overlay' for off canvas sidebar ---------------------------------------------- 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; }
 
 .koowa .k-titlebar:before { display: block; position: absolute; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin-bottom: -1px; z-index: -1; opacity: 0; background: black; -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
@@ -1537,7 +1539,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-titlebar h2 { margin: 13px; }
 
-.koowa .k-toolbar { background: #e0e0e0; border-bottom: 1px solid #f2f2f2; }
+.koowa .k-toolbar { background: #e0e0e0; }
 
 @media screen and (min-width: 768px) { .koowa .k-toolbar { width: 100%; display: table; } }
 
@@ -1595,7 +1597,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-form--front .k-container { background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
 
-.koowa .k-overview { border: 1px solid #e1e1e1; background: white; }
+.koowa .k-overview { background: white; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
 
