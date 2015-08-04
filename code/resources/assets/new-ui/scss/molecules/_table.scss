@@ -72,6 +72,19 @@
   background: $table-pagination-background;
   border-top: 1px solid $table-pagination-border;
   padding: $spacing-small;
+
+  .limit {
+    display: inline-block;
+    text-align: center;
+
+    select {
+      width: auto;
+    }
+  }
+
+  .pagination-list {
+    vertical-align: middle;
+  }
 }
 
 // Checkbox
@@ -86,15 +99,6 @@
   select {
     width: auto;
     display: inline-block;
-  }
-}
-
-
-table .limit {
-  text-align: center;
-
-  select {
-    width: auto;
   }
 }
 
