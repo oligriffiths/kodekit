@@ -7,10 +7,10 @@
  */
 
 .k-titlebar {
-  @include border(bottom, $toolbar-border);
+  @include border(bottom, $titlebar-border);
   transition: transform $transition; // 1
-  background: $toolbar-title-background; // 2
-  color: $toolbar-color;
+  background: $titlebar-background; // 2
+  color: $titlebar-color;
   position: relative; // 3
   z-index: 2; // 3
   float: left;

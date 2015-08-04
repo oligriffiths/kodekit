@@ -11,6 +11,7 @@ $color-accent-dark: darken($color-accent, 15%) !default;
 $color-accent-type: white !default;
 
 $color-type: #333 !default;
+$color-type-light: #555 !default;
 
 $border-color: #ddd !default;
 $border-width: 1px !default;
@@ -24,7 +25,7 @@ $color-success: #27ae60 !default;
 $color-success-light: #2ecc71 !default;
 $color-success-type: white !default;
 
-$color-accent-primary: $color-accent !default;
+$color-primary-accent: $color-accent !default;
 
 $scopebar-background: #eee !default;
 
@@ -45,10 +46,8 @@ $navigation-hover-border: #ddd !default;
 $toolbar-spacing: 9px !default;
 
 $toolbar-background: #E3E6EB !default;
-$toolbar-color: $color-accent-dark !default;
-$toolbar-title-background: darken($toolbar-background, 3%) !default;
-$toolbar-title-color: $color-accent-dark !default;
 $toolbar-border: darken($toolbar-background, 5%) !default;
+$toolbar-color: $color-type-light !default;
 
 $toolbar-button-default-background: $color-primary !default;
 $toolbar-button-default-border: $toolbar-border !default;
@@ -73,3 +72,6 @@ $navigation-border: darken($navigation-background, 5%);
 
 // We just want the regular button colors
 $scopebar-btn-alt: false;
+
+
+$toolbar-title-background: #E3E6EB !default;
