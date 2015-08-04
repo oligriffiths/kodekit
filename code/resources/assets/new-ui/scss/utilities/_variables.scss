@@ -262,16 +262,24 @@ $sidebar-color:             $color-primary-type !default;
  * =====
  * 1. Height of the table headings
  * 2. Color of the table headings
+ * 3. Height of the table cells
+ * 4. Table cell padding
  */
 
-$table-header-size:             $unit-size !default; // 1
+$table-header-size:             $spacing-huge !default; // 1
 $table-header-background:       #eee !default; // 2
 $table-header-background-dark:  darken($table-header-background, 25%) !default;
 $table-header-border:           darken($table-header-background, 5%) !default;
 $table-border:                  #efefef !default;
 
-$table-pagination-background:   #eee !default; // 2
+$table-cell-size:               $spacing-huge !default;
+$table-cell-spacing:            $spacing-tiny !default;
+$table-cell-accent-background:  $color-accent !default;
+$table-cell-accent-color:       $color-accent-type !default;
+
+$table-pagination-background:   #eee !default;
 $table-pagination-border:       darken($table-pagination-background, 5%) !default;
+$table-pagination-spacing:      $spacing-small !default;
 
 
 

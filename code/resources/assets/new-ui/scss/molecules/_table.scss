@@ -1,6 +1,6 @@
 /**
- * Table
- * =====
+ * When flexbox is in use
+ * ======================
  */
 
 @include flexbox {
@@ -18,117 +18,150 @@
         flex: 1 1 auto;
       }
     }
+
     .k-table-pagination {
       flex: 0 0 auto;
     }
   }
 }
 
+
+
+/**
+ * Table contents
+ * ==============
+ */
+
 .k-table {
+
   table {
     width: 100%;
     text-align: left;
   }
 
-  th, td {
-    padding: 10px;
-  }
+  /**
+   * Cells
+   * 1. Position checkbox
+   * 2. Remove default margin and set negative top margin to visually align vertically
+   */
 
-  th {
-    background: $table-header-background;
-    height: $table-header-size;
-    position: relative; // For dropdown lists
+  th,
+  td {
+    padding: $table-cell-spacing;
     text-align: left;
-    white-space: nowrap; // Don't use long header titles
-    @include border(bottom, $table-header-border);
-
-    a {
-      display: block; // whole th should be clickable
-    }
+    vertical-align: middle;
 
     input {
-      display: inline-block;
+      display: inline-block; // 1
+      vertical-align: middle; // 1
+      margin: -1px 0 0 0; // 2
     }
   }
 
+
+
+  /**
+   * Head
+   * 1. Don't use long header titles since they won't be wrapped
+   * 2. Hide by default on mobile since we only show the first cell
+   * 3. Whole <th> should be clickable
+   */
+
+  th {
+    @include border(bottom, $table-header-border);
+    background: $table-header-background;
+    height: $table-header-size;
+    white-space: nowrap; // 1
+    display: none; // 2
+
+    @include breakpoint($beta) {
+      display: table-cell; // 2
+    }
+
+    a {
+      display: block; // 3
+    }
+  }
+
+
+
+  /**
+   * Body
+   * 1. No bottom border for last item
+   * 2. Small extra info below title display" block to display below title
+   */
+
   td {
-    vertical-align: middle;
-    text-align: left;
     @include border(bottom, $table-border);
+    height: $table-cell-size; // 1
   }
 
   tr:last-child {
     td {
-      border-bottom: none;
+      border-bottom: none; // 1
     }
   }
 
   small {
-    display: block;
+    display: block; // 2
+  }
+
+
+
+  /**
+   * Selected
+   * 1. Coloring Links and extra elements
+   */
+
+  .selected {
+    td {
+      background: $table-cell-accent-background;
+      color: $table-cell-accent-color;
+
+      a, i, span {
+        color: $table-cell-accent-color;
+      }
+    }
   }
 }
 
+
+
+/**
+ * Table pagination
+ * ================
+ */
+
 .k-table-pagination {
+  @include border(top, $table-pagination-border);
   background: $table-pagination-background;
-  border-top: 1px solid $table-pagination-border;
-  padding: $spacing-small;
+  padding: $table-pagination-spacing;
+
+
+
+  /**
+   * Pagination contents
+   * -------------------
+   * 1. Align vertically
+   * 2. Remove standard Bootstrap margin
+   * 3. Style <select> to be as large as the pagination
+   * 4. Make sure <select> is always as small as possible
+   * 5. Separate <select> from pagination
+   */
 
   .limit,
   .pagination {
-    display: inline-block;
-    vertical-align: middle;
+    display: inline-block; // 1
+    vertical-align: middle; // 1
   }
 
   .pagination {
-    margin: 0;
+    margin: 0; // 2
   }
-
-  .limit {
-    text-align: center;
-
-    select {
-      width: auto;
-      height: $input-height-base + 2px;
-      margin-right: 10px;
-    }
-  }
-}
-
-// Checkbox
-.k-table__checkbox {
-  display: inline-block;
-}
-
-// Pagination
-.table-pagination {
-  text-align: center;
 
   select {
-    width: auto;
-    display: inline-block;
-  }
-}
-
-
-thead {
-  th {
-    display: none;
-
-    @include breakpoint($beta) {
-      display: table-cell;
-    }
-  }
-}
-
-
-
-tr.selected {
-  td {
-    background: #0088CC;
-    color: white;
-
-    a {
-      color: white;
-    }
+    height: $input-height-base; // 3
+    width: auto; // 4
+    margin-right: $table-pagination-spacing; // 5
   }
 }
