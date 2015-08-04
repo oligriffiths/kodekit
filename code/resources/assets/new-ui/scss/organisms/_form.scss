@@ -33,6 +33,20 @@
     background: #F3F4F7;
   }
 
+
+
+  /**
+   * Toolbar
+   * -------
+   * Set a max-width for the toolbar so it's just as big as the container below
+   */
+
+  .koowa-toolbar {
+    margin: 0 auto;
+    padding: 0 ($spacing / 2);
+    max-width: $maxwidth;
+  }
+
 }
 
 
