@@ -131,7 +131,7 @@ class KTemplateHelperPaginator extends KTemplateHelperSelect
 
         $this->_initialize($config);
 
-        $html = '<div class="pagination pagination-toolbar">';
+        $html = '<div class="k-pagination">';
 
         if($config->show_limit) {
             $html .= '<div class="limit">'.$this->limit($config).'</div>';
@@ -139,7 +139,7 @@ class KTemplateHelperPaginator extends KTemplateHelperSelect
 
         if ($config->show_pages)
         {
-            $html .= '<ul class="pagination-list">';
+            $html .= '<ul class="pagination">';
             $html .=  $this->_pages($this->_items($config));
             $html .= '</ul>';
         }
