@@ -14,7 +14,7 @@
 /** Function variables ================== These are used by our light, lighter, lightest, dark, darker and darkest funxtions This way we can change the amounts all in one. Overwrite-able per function call */
 /** Typography ========== */
 /** Spacing ======= can either be used as a padding or a margin on elements Rounding so we won't get half pixels */
-/** Unit size ========= Rounding so we won't get half pixels Can be used for things like: - min-height on table cells - width and height on buttons inside fixed height rows - max-height for fixed height rows */
+/** Unit size ========= */
 /** Transition ========== The basic transition being used everywhere to get consistent animations Remember to sync the JavaScript animation time with this setting */
 /** Type colors =========== */
 /** Primary color ============= */
@@ -26,16 +26,15 @@
 /** Koowa ===== The default koowa container */
 /** Breadcrumbs =========== 1. On mobile we don't show all breadcrumb items 2. The content of the divider 3. The width of dividers between breadcrumb items 4. Height of each breadcrumb item 5. The width when showing all breadcrumbs instead of only first and last */
 /** Sidebar ======= 1. Sidebar width on smaller screens 2. Sidebar width when screen is "$desktop" */
-/** Table ===== 1. Height of the table headings 2. Color of the table headings 3. Height of the table cells 4. Table cell padding */
+/** Table ===== 1. Height of the table cells 2. Table cell padding */
 /** Overview layout =========== The default overview layout */
 /** Scopebar ======== 1. Height of the scopebar */
-/** Special colors for buttons in the toolbar? ------------------------------------------ */
+/** List ==== */
+/** Navigation ========== */
+/** Toolbar ======= 1. When true; these colors are being used, when false; bootsrap defaults are being used */
 /* Success button */
-/** Default list ============ */
-/** Default navigation ================== */
-/** Toolbar ======= 1. When true; colors are being used */
-/** Titlebar ======== */
-/** Overflowing Overflowing shadows */
+/** Titlebar ======== By default it looks the same as the toolbar */
+/** Overflowing =========== Overflowing shadows */
 /** Radio toggle ============ 1. Use styled radio toggles? 2. The color for "false"/0 items 3. The color for "true"/1 items 4. The color for neutral items */
 /** Checkbox toggle ============ 1. Use styled checkbox toggles? */
 /** Bootstrap overrides =================== We depend on Bootstrap 3 for a few basic things This is the place to overwrite the used variables */
@@ -1288,23 +1287,23 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-icon-arrows:before, .koowa .k-icon-arrows:after { content: " "; display: block; }
 
-.koowa .k-icon-arrows:before { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid; border-bottom-color: #b3b3b3; margin-bottom: 1px; }
+.koowa .k-icon-arrows:before { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid; border-bottom-color: #555555; margin-bottom: 1px; }
 
-.koowa .k-icon-arrows:after { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; border-top-color: #b3b3b3; }
+.koowa .k-icon-arrows:after { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; border-top-color: #555555; }
 
 .koowa .k-ordered-asc .k-icon-arrows:before { border-bottom-color: inherit; }
 
-.koowa .k-ordered-asc a:hover .k-icon-arrows:before, .koowa .k-ordered-asc a:focus .k-icon-arrows:before { border-bottom-color: #b3b3b3; }
+.koowa .k-ordered-asc a:hover .k-icon-arrows:before, .koowa .k-ordered-asc a:focus .k-icon-arrows:before { border-bottom-color: #555555; }
 
 .koowa .k-ordered-asc a:hover .k-icon-arrows:after, .koowa .k-ordered-asc a:focus .k-icon-arrows:after { border-top-color: inherit; }
 
 .koowa .k-ordered-desc .k-icon-arrows:after { border-top-color: inherit; }
 
-.koowa .k-ordered-desc a:hover .k-icon-arrows:after, .koowa .k-ordered-desc a:focus .k-icon-arrows:after { border-top-color: #b3b3b3; }
+.koowa .k-ordered-desc a:hover .k-icon-arrows:after, .koowa .k-ordered-desc a:focus .k-icon-arrows:after { border-top-color: #555555; }
 
 .koowa .k-ordered-desc a:hover .k-icon-arrows:before, .koowa .k-ordered-desc a:focus .k-icon-arrows:before { border-bottom-color: inherit; }
 
-.koowa .k-table th a:hover .k-icon-arrows:after, .koowa .k-table th a:focus .k-icon-arrows:after { border-top-color: #b3b3b3; }
+.koowa .k-table th a:hover .k-icon-arrows:after, .koowa .k-table th a:focus .k-icon-arrows:after { border-top-color: #555555; }
 
 .koowa .k-table th a:hover .k-icon-arrows:before, .koowa .k-table th a:focus .k-icon-arrows:before { border-bottom-color: inherit; }
 
@@ -1468,7 +1467,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .radio-toggle:not(ie) [value="1"]:checked + label span:before { background: #27ae60; }
 
-.koowa .radio-toggle:not(ie) :checked + label span:before, .koowa .radio-toggle:not(ie).radio-toggle--neutral input[value]:checked + label span:before { background: #0088CC; }
+.koowa .radio-toggle:not(ie) :checked + label span:before, .koowa .radio-toggle:not(ie).radio-toggle--neutral input[value]:checked + label span:before { background: #2980b9; }
 
 .koowa .k-scopebar { background: #e6e6e6; color: #333; }
 
@@ -1557,17 +1556,17 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table table { width: 100%; text-align: left; }
 
-.koowa .k-table th, .koowa .k-table td { padding: 7px; text-align: left; vertical-align: middle; }
+.koowa .k-table th, .koowa .k-table td { padding: 7px; text-align: left; vertical-align: middle; height: 39px; }
 
 .koowa .k-table th input, .koowa .k-table td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; }
 
-.koowa .k-table th { border-bottom: 1px solid #e6e6e6; background: #F3F3F3; height: 39px; white-space: nowrap; display: none; }
+.koowa .k-table th { border-bottom: 1px solid #e1e1e1; background: #F3F3F3; white-space: nowrap; display: none; }
 
 @media screen and (min-width: 600px) { .koowa .k-table th { display: table-cell; } }
 
 .koowa .k-table th a { display: block; }
 
-.koowa .k-table td { border-bottom: 1px solid #efefef; height: 39px; }
+.koowa .k-table td { border-bottom: 1px solid #ededed; }
 
 .koowa .k-table tr:last-child td { border-bottom: none; }
 
@@ -1577,7 +1576,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table .selected td a, .koowa .k-table .selected td i, .koowa .k-table .selected td span { color: #EBEDF1; }
 
-.koowa .k-table-pagination { border-top: 1px solid #e1e1e1; background: #eee; padding: 13px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
+.koowa .k-table-pagination { border-top: 1px solid #e6e6e6; background: #eeeeee; padding: 13px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
 
 .koowa .k-table-pagination .limit, .koowa .k-table-pagination .pagination { display: inline-block; vertical-align: middle; }
 

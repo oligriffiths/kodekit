@@ -63,15 +63,15 @@
 
   @if $toolbar-btn-alt == true {
     .btn-success {
-      border-color: $scopebar-btn-success-border;
-      background: $scopebar-btn-success-background;
-      color: $scopebar-btn-success-color;
+      border-color: $toolbar-btn-success-border;
+      background: $toolbar-btn-success-background;
+      color: $toolbar-btn-success-color;
 
       &:hover,
       &:focus {
-        border-color: $scopebar-btn-success-hover-border;
-        background: $scopebar-btn-success-hover-background;
-        color: $scopebar-btn-success-hover-color;
+        border-color: $toolbar-btn-success-hover-border;
+        background: $toolbar-btn-success-hover-background;
+        color: $toolbar-btn-success-hover-color;
       }
     }
   }

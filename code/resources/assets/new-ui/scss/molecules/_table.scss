@@ -50,6 +50,7 @@
     padding: $table-cell-spacing;
     text-align: left;
     vertical-align: middle;
+    height: $table-cell-size;
 
     input {
       display: inline-block; // 1
@@ -70,7 +71,6 @@
   th {
     @include border(bottom, $table-header-border);
     background: $table-header-background;
-    height: $table-header-size;
     white-space: nowrap; // 1
     display: none; // 2
 
@@ -92,8 +92,7 @@
    */
 
   td {
-    @include border(bottom, $table-border);
-    height: $table-cell-size; // 1
+    @include border(bottom, $table-cell-border);
   }
 
   tr:last-child {
