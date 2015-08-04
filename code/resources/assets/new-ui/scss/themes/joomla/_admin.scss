@@ -167,6 +167,13 @@ body.component {
       margin: 0;
       border-radius: 0;
       border-bottom: 1px solid $toolbar-border;
+      padding: 10px 35px 10px 10px;
+
+      h4, p, div {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 
