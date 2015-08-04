@@ -1,48 +1,92 @@
 /**
  * Navigation
  * ==========
+ * 1. Reset default <ul> styling
  */
 
 .k-navigation {
-  @include reset;
-  @include clearfix;
+  @include reset($padding: false, $background: false); // 1
   @include border(bottom, $navigation-border);
-  padding: 8px 0;
+  padding: $navigation-spacing 0;
   background: $navigation-background;
 
-  a {
+
+
+  /* Items
+   * -----
+   */
+
+  li {
     display: block;
-    padding: 10px 16px;
-    font-size: 16px;
+  }
+
+
+
+  /**
+   * Links
+   * -----
+   * 1. Make it fully clickable
+   * 2. removing underlines
+   */
+
+  a {
+    display: block; // 1
+    text-decoration: none; // 2
+    padding-top: $navigation-spacing;
+    padding-bottom: $navigation-spacing;
+    padding-right: round($navigation-spacing * 2);
+    padding-left: round($navigation-spacing * 3);
+    font-size: $font-size-large;
     color: $navigation-color;
-    text-decoration: none;
-    border-left: 5px solid transparent;
+
+
+
+    /* Faux border
+     * -----------
+     * Adding a border to the left, using "after" psuedo since "before" is used for the icon
+     */
+
+    @include psuedo(after) {
+      width: 5px;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
+
+
+
+    /* Hover & focus
+     * -------------
+     */
 
     &:hover,
     &:focus {
       background: $navigation-hover-background;
-      border-left-color: $navigation-hover-border;
-    }
 
-    &:focus {
-      border-color: $navigation-hover-accent;
+      &:after {
+        background: $navigation-hover-border;
+      }
     }
   }
 
-  span {
-    display: inline-block;
-    text-align: center;
-    width: 24px;
-  }
+
+
+  /**
+   * Active link
+   * -----------
+   */
 
   .active {
     a {
-      margin: 6px 0;
-      padding: 4px 16px;
       font-weight: bold;
       background: $navigation-active-background;
-      border-left-color: $navigation-active-border;
       color: $navigation-active-color;
+
+      &:after {
+        height: 76%;
+        top: 12%;
+        background: $navigation-active-border;
+      }
 
       &:hover {
         background: transparent;

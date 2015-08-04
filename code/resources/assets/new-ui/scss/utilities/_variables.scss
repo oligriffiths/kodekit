@@ -55,6 +55,7 @@ $darkest-percentage:    12%;
 
 $font-family:     'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-size:       13px !default;
+$font-size-large: 16px !default;
 $line-height:     20px !default;
 $bold:            700 !default;
 $regular:         400 !default;
@@ -311,15 +312,15 @@ $scopebar-search-color:       $color-type !default;
  * ====
  */
 
+$list-spacing:            $spacing-tiny !default;
+
 $list-background:         $sidebar-background !default;
 $list-color:              $sidebar-color !default;
 
-$list-hover-background:   $color-primary-light !default;
-$list-hover-border:       $color-primary-lightest !default;
+$list-hover-background:   $color-primary-lighter !default;
 $list-hover-color:        $color-primary-type !default;
 
 $list-active-background:  $list-background !default;
-$list-active-border:      $color-primary-accent !default;
 $list-active-color:       $color-primary-accent !default;
 
 
@@ -329,13 +330,14 @@ $list-active-color:       $color-primary-accent !default;
  * ==========
  */
 
+$navigation-spacing:            $spacing-tiny !default;
 $navigation-background:         $color-primary-dark !default;
 $navigation-border:             darker($navigation-background);
 $navigation-color:              $color-primary-type !default;
 $navigation-accent:             $color-primary-accent !default;
 
-$navigation-hover-background:   $color-primary !default;
-$navigation-hover-border:       $color-primary-light !default;
+$navigation-hover-background:   $color-primary-light !default;
+$navigation-hover-border:       $color-primary-type !default;
 $navigation-hover-color:        $color-primary-type !default;
 $navigation-hover-accent:       $color-primary-accent !default;
 

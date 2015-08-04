@@ -1,40 +1,77 @@
 /**
  * List
  * ====
+ * 1. Reset default <ul> styling
  */
 
 .k-list {
-  @include reset($margin: false);
-  margin: $spacing-tiny 0;
+  @include reset($margin: false); // 1
+  margin: $list-spacing 0;
+
+
+
+  /* Items
+   * -----
+   */
 
   li {
     display: block;
-    margin: 0;
-    padding: 0;
   }
 
-  a {
-    display: table;
-    border-left: 5px solid transparent;
-    padding: 10px 16px;
-    background: $list-background;
-    color: $list-color;
-    text-decoration: none;
-    width: 100%;
-    white-space: nowrap;
-    position: relative;
 
-    &:hover {
+
+  /**
+   * Links
+   * -----
+   * 1. Make it fully clickable
+   * 2. removing underlines
+   */
+
+  a {
+    display: block; // 1
+    text-decoration: none; // 2
+    padding-top: $list-spacing;
+    padding-bottom: $list-spacing;
+    padding-right: round($list-spacing * 2);
+    padding-left: round($list-spacing * 2);
+    color: $list-color;
+
+
+
+    /* Hover & focus
+     * -------------
+     */
+
+    &:hover,
+    &:focus {
       background: $list-hover-background;
       color: $list-hover-color;
-      border-left-color: $list-hover-border;
     }
   }
 
-  span {
-    display: table-cell;
+
+
+  /**
+   * Active link
+   * -----------
+   */
+
+  .active {
+    a {
+      font-weight: bold;
+      background: $list-active-background;
+      color: $list-active-color;
+
+      &:hover {
+        background: transparent;
+        cursor: default;
+      }
+    }
   }
 
+
+
+  // @TODO: refactor
   .k-clicker,
   [class^="k-icon"] {
     min-width: 1em;
@@ -97,25 +134,5 @@
     width: 12px;
     min-width: 12px;
     height: 1.5em;
-  }
-
-  .active {
-    a {
-      margin: 6px 0;
-      padding: 4px 16px;
-      font-weight: bold;
-      background: $list-active-background;
-      border-left-color: $list-active-border;
-      color: $list-active-color;
-
-      &:hover {
-        background: transparent;
-        cursor: default;
-      }
-    }
-  }
-
-  .k-control {
-    padding: 6px 9px;
   }
 }
