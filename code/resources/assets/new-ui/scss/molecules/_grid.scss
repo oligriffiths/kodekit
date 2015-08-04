@@ -11,9 +11,13 @@
 }
 
 .k-container__main {
-  @include span(8);
+  @include breakpoint($charlie) {
+    @include span(8);
+  }
 }
 
 .k-container__sub {
-  @include span(4);
+  @include breakpoint($charlie) {
+    @include span(4);
+  }
 }

@@ -55,19 +55,22 @@
   right: 0;
 }
 
-.show-left-menu .off-canvas-menu-toggle {
-  .bar1 {
-    top: round(($button-size / 2) - ($bar-height / 2));
-    transform: rotate(135deg);
-  }
+.show-left-menu,
+.show-right-menu {
+  .off-canvas-menu-toggle {
+    .bar1 {
+      top: round(($button-size / 2) - ($bar-height / 2));
+      transform: rotate(135deg);
+    }
 
-  .bar2 {
-    transform: translate(-100%, 0);
-    opacity: 0;
-  }
+    .bar2 {
+      transform: translate(-100%, 0);
+      opacity: 0;
+    }
 
-  .bar3 {
-    top: round(($button-size / 2) - ($bar-height / 2));
-    transform: rotate(-135deg);
+    .bar3 {
+      top: round(($button-size / 2) - ($bar-height / 2));
+      transform: rotate(-135deg);
+    }
   }
 }
