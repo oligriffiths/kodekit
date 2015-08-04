@@ -24,6 +24,13 @@ CSS / Sass:
 * Illusion
 * Twitter Bootstrap
 
+Bootstrap:
+
+* normalize
+* forms
+* input-groups
+* buttons
+
 Features
 --------
 

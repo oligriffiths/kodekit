@@ -116,11 +116,11 @@
 .k-scopebar__search {
   position: relative;
   min-width: 200px;
-  max-width: 320px;
   display: none; // 1
 
   @include breakpoint($beta) {
     display: table-cell; // 2
+    max-width: 320px;
   }
 
   @include breakpoint($desktop) {

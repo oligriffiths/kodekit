@@ -1,49 +1,76 @@
 /*
-Error: File to import not found or unreadable: ../molecules/bootstrap-overrides.
-       Load paths:
-         /Users/robin/Sites/joomlatools-projects/com_files/resources/assets/scss
-         /Users/robin/Sites/joomlatools-projects/koowa/code/media/koowa/com_koowa/scss
-        on line 78 of core/_core.scss
+Error: Undefined variable: "$spacingt".
+        on line 15 of molecules/bootstrap/_groups.scss
+        from line 62 of core/_core.scss
         from line 21 of admin-default.scss
 
-73:   @import "../atoms/fieldset";
-74:   @import "../atoms/img";
-75:   @import "../atoms/p";
-76: 
-77:   /* Molecules *\/
-78:   @import "../molecules/bootstrap-overrides";
-79:   @import "../molecules/breadcrumb";
-80:   @import "../molecules/buttons";
-81:   @import "../molecules/checkbox-toggle";
-82:   @import "../molecules/component";
-83:   @import "../molecules/content";
+10:  * Containing variables and mixins
+11:  *\/
+12: 
+13: @import "core/tools";
+14: 
+15: 
+16: /**
+17:  * Core styling
+18:  * ------------
+19:  *\/
+20: 
 
 Backtrace:
-core/_core.scss:78
+molecules/bootstrap/_groups.scss:15
+core/_core.scss:62
 admin-default.scss:21
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:67:in `rescue in import'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:45:in `import'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/import_node.rb:28:in `imported_file'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:107:in `rescue in invalid_import_parent?'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:101:in `invalid_import_parent?'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:175:in `try_send'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:12:in `visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:38:in `visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `map'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:57:in `visit_root'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/script/tree/variable.rb:49:in `_perform'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/script/tree/list_literal.rb:63:in `map'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/script/tree/list_literal.rb:63:in `_perform'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/script/tree/node.rb:50:in `perform'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:394:in `visit_prop'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:24:in `visit'
-/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:324:in `block in visit_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `map'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `block in with_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `with_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:322:in `visit_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `block (2 levels) in visit_rule'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `map'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:430:in `block in visit_rule'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:428:in `visit_rule'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/base.rb:36:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `block in with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:79:in `with_base'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:158:in `visit'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `block (2 levels) in visit_import'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `map'
+/Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/tree/visitors/perform.rb:325:in `block in visit_import'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `block in with_import'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:115:in `with_frame'
 /Users/robin/.rvm/gems/ruby-2.1.1/gems/sass-3.4.15/lib/sass/stack.rb:88:in `with_import'
@@ -85,4 +112,4 @@ admin-default.scss:21
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: ../molecules/bootstrap-overrides.\A        Load paths:\A          /Users/robin/Sites/joomlatools-projects/com_files/resources/assets/scss\A          /Users/robin/Sites/joomlatools-projects/koowa/code/media/koowa/com_koowa/scss\A         on line 78 of core/_core.scss\A         from line 21 of admin-default.scss\A \A 73:   @import \"../atoms/fieldset\";\A 74:   @import \"../atoms/img\";\A 75:   @import \"../atoms/p\";\A 76: \A 77:   /* Molecules */\A 78:   @import \"../molecules/bootstrap-overrides\";\A 79:   @import \"../molecules/breadcrumb\";\A 80:   @import \"../molecules/buttons\";\A 81:   @import \"../molecules/checkbox-toggle\";\A 82:   @import \"../molecules/component\";\A 83:   @import \"../molecules/content\";"; }
+  content: "Error: Undefined variable: \"$spacingt\".\A         on line 15 of molecules/bootstrap/_groups.scss\A         from line 62 of core/_core.scss\A         from line 21 of admin-default.scss\A \A 10:  * Containing variables and mixins\A 11:  */\A 12: \A 13: @import \"core/tools\";\A 14: \A 15: \A 16: /**\A 17:  * Core styling\A 18:  * ------------\A 19:  */\A 20: "; }

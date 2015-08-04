@@ -12,25 +12,7 @@
 }
 
 .control-group {
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-
-/**
- * Grid
- * ----
- * Default spacing adjustments
- * Remove bottom margin of last childs
- */
-
-.container-fluid {
-  padding: $spacing;
-}
-
-.row {
-  margin-bottom: $spacing;
+  margin: 0 0 $spacingt 0;
 
   &:last-child {
     margin-bottom: 0;
