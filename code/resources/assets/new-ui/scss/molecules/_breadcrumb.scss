@@ -40,11 +40,11 @@
    */
 
   a {
-    color: $color-secondary-type;
+    color: $breadcrumb-color;
 
     &:focus,
     &:hover {
-      background: $color-secondary-dark; // 1
+      background: $breadcrumb-background-hover; // 1
     }
   }
 
