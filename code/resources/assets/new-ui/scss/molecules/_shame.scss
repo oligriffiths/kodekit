@@ -1,1 +1,23 @@
-/* Good, we're empty! */
+.k-form--front {
+  background: #333;
+
+  .k-content {
+    background: #333;
+  }
+
+  .k-toolbar {
+    max-width: $maxwidth;
+    margin: 1em auto 0;
+  }
+
+  .k-content {
+    .k-component{
+      background: #333;
+    }
+  }
+
+  .k-container {
+    background: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,.5)
+  }
+}

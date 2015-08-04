@@ -573,10 +573,14 @@ html, body { min-height: 100%; height: 100%; }
 /** Default body settings ===================== Setting up font and spacing */
 body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; line-height: 20px; padding: 0; margin: 0; border: none; /** When flexbox is enabled ----------------------- */ }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox body, .flexboxlegacy body { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+
 /** Default koowa wrapper ===================== 1. By using a max-width we essentially set a min-width when the contents are to large for the koowa container. The reason we don't use min-width is because if the content is only 300px we don't need horizontal scrollbars 2. Reset the max-width when viewport is as large as minwidth 3. Use z-index to be able to talk with JavaScript 4. Needed for webkit / blink for JS to read zindex value */
 .koowa { max-width: 400px; overflow: auto; -webkit-overflow-scrolling: touch; z-index: 0; position: relative; background: #F1F1F1; padding: 15px; -webkit-font-smoothing: subpixel-antialiased; /** When flexbox is enabled ----------------------- */ /** On 'desktop' view ----------------- */ /** Border-box size everything -------------------------- */ }
 
 @media screen and (min-width: 400px) { .koowa { max-width: none; } }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa, .flexboxlegacy .koowa { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
 
 @media screen and (min-width: 768px) { .koowa { z-index: 1; } }
 
@@ -618,7 +622,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 .koowa-icon-user:before { content: ""; }
 
 /** Koowa namespaced styling ======================== By namespacing we make sure our styles never interfere with other styles on the page For example when using Nooku inside of another framework or CMS */
-.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / additions */ /** Default button styles ===================== 1. Right floating buttons */ /** Form and control groups ======================= Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /** Bootstrap input-group ===================== */ /* Atoms */ /** Default link style ================== */ /** Default button style ==================== */ /** Default fieldset style ====================== */ /** Default img style ================= */ /** Default paragraph style ======================= 1. Using single colon so it works in IE8 as well */ /* Molecules */ /** Default styles with JavaScript disabled ======================================= 1. Scroll when items don't fit parent anymore */ /** When flexbox is in use ====================== */ /** Breadcrumb contents =================== */ /** Single breadcrumb items ======================= */ /** CSS only animated checkbox toggle styling ========================================= */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** When flexbox is in use ====================== */ /** Default styles with JavaScript disabled ======================================= 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== 1. Reset width needed for table */ /** Container when toggled ====================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough 4. Set a box shadow so menus appear behind container */ /** The overlay =========== 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled ==================== 1. Set opacity 2. Set z-index to 1 so it will become visible */ /** Default styles with JavaScript disabled ======================================= 1. Clearing toolbar floats when flexbox is not in use */ /** When flexbox is in use ====================== */ /** Wrapper when toggled ==================== 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /** Form block ========== To be used in sidebar of forms Data in these boxes should be non-required info */ /** Grid ==== */ /** Animated hamburger button ========================= */ /** List ==== */ /** Navigation ========== */ /** Overflowing =========== */ /** CSS only animated radio toggle styling ====================================== */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /** Scopebar contents ================= */ /** Scopebar items ============== */ /** Scopebar search --------------- 1. Hide by default so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens */ /** Search toggle button -------------------- 1. Hide when search is visible */ /** Default styles with JavaScript disabled ======================================= */ /** When JavaScript is enabled ========================== */ /** When flexbox is in use ====================== */ /** Left sidebar specific --------------------- */ /** When sidebar is toggled ----------------------- */ /** Right sidebar specific ---------------------- */ /** When sidebar is toggled ----------------------- */ /** Table ===== */ /** Default with JavaScript disabled ================================ 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== */ /** Titlebar when toggled ===================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled ========================= 1. Set opacity 2. Set z-index so it will become visible */ /** Titlebar contents ================= */ /** Default with JavaScript disabled ================================ */ /** When flexbox is in use ====================== */ /** Toolbar contents ====================== */ /** Tree ==== */ /** Upload ====== */ /** The drop message ---------------- 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload --------------------------- 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Good, we're empty! */ /* Organisms */ /** Overview layout =============== The default overview layout 1. Left sidebar 2. Toggle button 3. Breadrumbs 4. Upload area 5. Scopebar 6. Table / grid / content 7. Right sidebar _____________________________ |  1  |2|_3___________|  7  | |     |_4_____________|     | |     |_5_____________|     | |     | 6             |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== The default form layout 1. titlebar 2. content _____________________________ |_____________1_____________| |                           | |             3             | |                           | |                           | |                           | |                           | |___________________________| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Utilities --------- loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /** Utilities ============ Checking class three times so we win over most other classes without using !important. Most selectors are max three long */ /** Disable transitions =================== */ /** Nowrap ====== */ /** Disabled ======== */ /** Shame --------- Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
+.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / additions */ /** Default button styles ===================== 1. Right floating buttons */ /** Form and control groups ======================= Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /** Bootstrap input-group ===================== */ /* Atoms */ /** Default link style ================== */ /** Default button style ==================== */ /** Default fieldset style ====================== */ /** Default img style ================= */ /** Default paragraph style ======================= 1. Using single colon so it works in IE8 as well */ /* Molecules */ /** Default styles with JavaScript disabled ======================================= 1. Scroll when items don't fit parent anymore */ /** When flexbox is in use ====================== */ /** Breadcrumb contents =================== */ /** Single breadcrumb items ======================= */ /** CSS only animated checkbox toggle styling ========================================= */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** When flexbox is in use ====================== */ /** Default styles with JavaScript disabled ======================================= 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== 1. Reset width needed for table */ /** Container when toggled ====================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough 4. Set a box shadow so menus appear behind container */ /** The overlay =========== 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled ==================== 1. Set opacity 2. Set z-index to 1 so it will become visible */ /** Default styles with JavaScript disabled ======================================= 1. Clearing toolbar floats when flexbox is not in use */ /** When flexbox is in use ====================== */ /** Wrapper when toggled ==================== 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /** Form block ========== To be used in sidebar of forms Data in these boxes should be non-required info */ /** Grid ==== */ /** Animated hamburger button ========================= */ /** List ==== */ /** Navigation ========== */ /** Overflowing =========== */ /** CSS only animated radio toggle styling ====================================== */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /** Scopebar contents ================= */ /** Scopebar items ============== */ /** Scopebar search --------------- 1. Hide by default so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens */ /** Search toggle button -------------------- 1. Hide when search is visible */ /** Default styles with JavaScript disabled ======================================= */ /** When JavaScript is enabled ========================== */ /** When flexbox is in use ====================== */ /** Left sidebar specific --------------------- */ /** When sidebar is toggled ----------------------- */ /** Right sidebar specific ---------------------- */ /** When sidebar is toggled ----------------------- */ /** Table ===== */ /** Default with JavaScript disabled ================================ 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== */ /** Titlebar when toggled ===================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled ========================= 1. Set opacity 2. Set z-index so it will become visible */ /** Titlebar contents ================= */ /** Default with JavaScript disabled ================================ */ /** When flexbox is in use ====================== */ /** Toolbar contents ====================== */ /** Tree ==== */ /** Upload ====== */ /** The drop message ---------------- 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload --------------------------- 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /** Overview layout =============== The default overview layout 1. Left sidebar 2. Toggle button 3. Breadrumbs 4. Upload area 5. Scopebar 6. Table / grid / content 7. Right sidebar _____________________________ |  1  |2|_3___________|  7  | |     |_4_____________|     | |     |_5_____________|     | |     | 6             |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== The default form layout 1. titlebar 2. content _____________________________ |_____________1_____________| |                           | |             3             | |                           | |                           | |                           | |                           | |___________________________| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Utilities --------- loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /** Utilities ============ Checking class three times so we win over most other classes without using !important. Most selectors are max three long */ /** Disable transitions =================== */ /** Nowrap ====== */ /** Disabled ======== */ /** Shame --------- Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
 
 .koowa html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
@@ -1042,6 +1046,8 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-breadcrumb { border-bottom: 1px solid #e1e1e1; background: #f6f6f6; color: #555; overflow: auto; }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
+
 .koowa .k-breadcrumb { /** Links ----- 1. Full background hover */ /** List ---- 1. Reset unordered list styling */ /** Styling list items ------------------ 1. Make each item at least one breadcrumb size wide 2. Make room for the separator 3. Set z-index to 0 so the :after psuedo element will be on top 4. Hide by default so we can show only a few on mobile 5. Hide overflowing content 6. Proper spacing for non-flexbox use */ /** first and last elements ----------------------- 1. Always display these items 2. No flexing for these items so the are readable */ /** One but last item ----------------- Show this item on mobile to get a sense of where you are 1. Set 'missing' content 2. Reset to default content on wider screens */ /** Active item -------------------------------------- */ }
 
 .koowa .k-breadcrumb a { color: #555; }
@@ -1050,9 +1056,13 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-breadcrumb ul { margin: 0; padding: 0; list-style: none; border: none; background: transparent; /** Flexing items to get overflow ellipsis -------------------------------------- */ }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb ul, .flexboxlegacy .koowa .k-breadcrumb ul { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; } }
+
 .koowa .k-breadcrumb li { min-width: 32px; padding-left: 20px; position: relative; z-index: 0; display: none; overflow: hidden; vertical-align: middle; /** Display on larger screens ------------------------- */ /** Flexing items to get overflow ellipsis -------------------------------------- */ /** List item separator ------------------ */ position: relative; /** No separator on first item -------------------------- */ /** Hover ----- 1. Reset flexbox so the whole item is visible */ }
 
 @media screen and (min-width: 768px) { .koowa .k-breadcrumb li { display: inline-block; } }
+
+@media (min-width: 768px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb li, .flexboxlegacy .koowa .k-breadcrumb li { display: block; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; } }
 
 .koowa .k-breadcrumb li:before { display: block; position: absolute; content: "»"; width: 20px; top: 0; bottom: 0; left: 0; text-align: center; padding-top: 8px; padding-bottom: 8px; line-height: 16px; }
 
@@ -1062,7 +1072,11 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-breadcrumb li:hover { overflow: visible; }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb li:hover, .flexboxlegacy .koowa .k-breadcrumb li:hover { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
+
 .koowa .k-breadcrumb .home, .koowa .k-breadcrumb .active { display: inline-block; overflow: visible; }
+
+@media (min-width: 768px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb .home, .flexboxlegacy .koowa .k-breadcrumb .home, .flexbox .koowa .k-breadcrumb .active, .flexboxlegacy .koowa .k-breadcrumb .active { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 .koowa .k-breadcrumb li:nth-last-child(2) { display: inline-block; }
 
@@ -1112,9 +1126,13 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .checkbox-toggle:not(old-ie).checkbox-toggle--neutral input:checked + label span:after { border-color: #2980b9; }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-component, .flexboxlegacy .koowa .k-component { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
+
 .koowa .k-content { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: white; position: relative; z-index: 2; }
 
 @media screen and (min-width: 768px) { .koowa .k-content { display: table-cell; width: 100%; } }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-content, .flexboxlegacy .koowa .k-content { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; width: auto; } }
 
 .koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(210px, 0); -ms-transform: translate(210px, 0); transform: translate(210px, 0); }
 
@@ -1139,6 +1157,8 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 .koowa .k-content-wrapper { margin: 0; clear: both; }
 
 @media screen and (min-width: 768px) { .koowa .k-content-wrapper { display: table; width: 100%; } }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-content-wrapper, .flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
 
 .koowa .opened--left, .koowa .opened--right { overflow: hidden; }
 
@@ -1308,6 +1328,8 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .overflowing { position: relative; }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .overflowing--flex, .flexboxlegacy .koowa .overflowing--flex { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+
 .koowa .overflowing--top, .koowa .overflowing--right, .koowa .overflowing--bottom, .koowa .overflowing--left { position: absolute; z-index: 99; pointer-events: none; }
 
 .koowa .overflowing--top, .koowa .overflowing--bottom { height: 12px; left: 0; right: 0; }
@@ -1372,6 +1394,13 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar { display: table; width: 100%; } }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-scopebar, .flexboxlegacy .koowa .k-scopebar { width: auto; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
+
+@media (min-width: 600px) and (min-height: 400px) { .flexbox .koowa .k-scopebar, .flexboxlegacy .koowa .k-scopebar { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+  .flexbox .koowa .k-scopebar__item, .flexboxlegacy .koowa .k-scopebar__item { display: block; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+  .flexbox .koowa .k-scopebar__item--fluid, .flexboxlegacy .koowa .k-scopebar__item--fluid { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+  .flexbox .koowa .k-scopebar__search, .flexboxlegacy .koowa .k-scopebar__search { -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; } }
+
 .koowa .k-scopebar .select2, .koowa .k-scopebar button { height: 32px; padding: 0 7px; }
 
 .koowa .k-scopebar a { color: #555; cursor: pointer; }
@@ -1420,6 +1449,9 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 @media screen and (min-width: 1024px) { .k-js-enabled .koowa .k-sidebar, .k-js-enabled .koowa .k-sidebar-right { min-width: 210px; width: 210px; max-width: 210px; } }
 
+@media (min-width: 768px) and (min-height: 400px) { .flexbox .koowa .k-sidebar, .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar, .flexboxlegacy .koowa .k-sidebar-right { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
+  .flexbox .koowa .k-sidebar__navigation, .flexbox .koowa .k-sidebar__footer, .flexboxlegacy .koowa .k-sidebar__navigation, .flexboxlegacy .koowa .k-sidebar__footer { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
+
 .koowa .k-sidebar { border-right: 1px solid #e1e1e1; background: white; color: #555; }
 
 .k-js-enabled .koowa .k-sidebar { left: 0; }
@@ -1435,6 +1467,11 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 .koowa .k-sidebar-right .labl { display: inline-block; width: 100px; }
 
 .koowa .opened--right .k-sidebar-right { display: block; }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-table-container, .flexboxlegacy .koowa .k-table-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; }
+  .flexbox .koowa .k-table-container .k-table, .flexboxlegacy .koowa .k-table-container .k-table { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+  .flexbox .koowa .k-table-container .k-table table, .flexboxlegacy .koowa .k-table-container .k-table table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+  .flexbox .koowa .k-table-container .k-table-pagination, .flexboxlegacy .koowa .k-table-container .k-table-pagination { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 .koowa .k-table table { width: 100%; text-align: left; }
 
@@ -1454,15 +1491,17 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-table-pagination { background: #eee; border-top: 1px solid #e1e1e1; padding: 13px; }
 
+.koowa .k-table-pagination .limit { display: inline-block; text-align: center; }
+
+.koowa .k-table-pagination .limit select { width: auto; }
+
+.koowa .k-table-pagination .pagination-list { vertical-align: middle; }
+
 .koowa .k-table__checkbox { display: inline-block; }
 
 .koowa .table-pagination { text-align: center; }
 
 .koowa .table-pagination select { width: auto; display: inline-block; }
-
-.koowa table .limit { text-align: center; }
-
-.koowa table .limit select { width: auto; }
 
 .koowa thead th { display: none; }
 
@@ -1477,6 +1516,8 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 .koowa .k-titlebar:before { display: block; position: absolute; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin-bottom: -1px; z-index: -1; opacity: 0; background: black; -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
 @media screen and (min-width: 768px) { .koowa .k-titlebar:before { display: none; } }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-titlebar, .flexboxlegacy .koowa .k-titlebar { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(210px, 0); -ms-transform: translate(210px, 0); transform: translate(210px, 0); }
 
@@ -1495,6 +1536,8 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 .koowa .k-toolbar { background: #e6e6e6; border-bottom: 1px solid #f2f2f2; }
 
 @media screen and (min-width: 768px) { .koowa .k-toolbar { width: 100%; display: table; } }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-toolbar, .flexboxlegacy .koowa .k-toolbar { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 .koowa #toolbar-options { float: right; }
 
@@ -1528,17 +1571,37 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-upload { background: white; padding: 13px; border-bottom: 1px solid #e1e1e1; display: table; width: 100%; /** When flexbox is in use */ }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-upload, .flexboxlegacy .koowa .k-upload { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
+
 .koowa .drop-message { font-size: 1.65em; line-height: 1.25em; margin: 0; color: #595959; display: table-cell; width: 100%; /** When flexbox is in use 1. Flexible item 2. Reset display to block 3. Reset width for flexbox */ }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .drop-message, .flexboxlegacy .koowa .drop-message { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; display: block; width: auto; } }
 
 .koowa .select-message { padding-left: 10px; display: table-cell; width: 1px; white-space: nowrap; /** When flexbox is in use 1. Non-flexible item 2. Reset display to block 3. Reset width for flexbox */ }
 
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .select-message, .flexboxlegacy .koowa .select-message { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; display: block; width: auto; } }
+
+.koowa .k-form--front { background: #333; }
+
+.koowa .k-form--front .k-content { background: #333; }
+
+.koowa .k-form--front .k-toolbar { max-width: 1024px; margin: 1em auto 0; }
+
+.koowa .k-form--front .k-content .k-component { background: #333; }
+
+.koowa .k-form--front .k-container { background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
+
 .koowa .k-overview { border: 1px solid #e1e1e1; background: white; }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
 
 .koowa .k-form { /** Component background -------------------- Default component has background for when sliding over sidebars */ /** Toolbar ------- Set a max-width for the toolbar so it's just as big as the container below */ }
 
 .koowa .k-form .k-component { background: #F3F4F7; }
 
 .koowa .k-form .koowa-toolbar { margin: 0 auto; padding: 0 10px; max-width: 1024px; }
+
+@media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
 
 .koowa .hidden.hidden.hidden { display: none; }
 
