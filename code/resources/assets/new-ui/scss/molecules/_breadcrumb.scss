@@ -175,7 +175,7 @@
    * 2. No flexing for these items so the are readable
    */
 
-  .home
+  .home,
   .active {
     display: inline-block; // 1
     overflow: visible; // 1

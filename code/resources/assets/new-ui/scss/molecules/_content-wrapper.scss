@@ -1,10 +1,12 @@
 /**
  * Default styles with JavaScript disabled
  * =======================================
+ * 1. Clearing toolbar floats when flexbox is not in use
  */
 
 .k-content-wrapper {
   margin: 0;
+  clear: both;
 
   // Faking flexbox on older browsers by using table styling
   @include breakpoint($desktop) {
