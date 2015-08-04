@@ -2,7 +2,9 @@
 /** Default theme ============= */
 /** Variables ---------------- Load first so global variables can use them */
 /** Global tools ------------ Containing variables and mixins */
+/** Functions ========= */
 /** Breakpoints =========== Only work with either - (min-width) - (min-width) and (max-width) Try to never use (max-width) alone since that not mobile-first 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base width to work from 2. The max width of the form layout 3. Separate $desktop variable is being used so all styles change together when going from small to larger screen. 4. Separate $flexbox variables are being used 5. Wether or not to Use flexbox in layouts */
+/** Function variables ================== */
 /** Typography ========== */
 /** Spacing ======= can either be used as a padding or a margin on elements Rounding so we won't get half pixels */
 /** Unit size ========= Rounding so we won't get half pixels Can be used for things like: - min-height on table cells - width and height on buttons inside fixed height rows - max-height for fixed height rows */
@@ -15,9 +17,9 @@
 /** States ====== */
 /* Border ====== Set border-color to false if you don't want any borders in your theme You can override borders in each separate module */
 /** Koowa ===== The default koowa container */
+/** Breadcrumbs =========== 1. The content of the divider 2. The width of dividers between breadcrumb items 3. Height of each breadcrumb item 4. On mobile we don't show all breadcrumb items 5. The width when showing all breadcrumbs instead of only first and last */
 /** Sidebar ======= 1. The width when sidebar is collapsed 2. Sidebar width on smaller screens 3. Sidebar width when screen is "$desktop" */
 /** Toggle button ============= The toggle button to toggle the sidebar */
-/** Breadcrumbs =========== 1. The content of the divider 2. The width of dividers between breadcrumb items 3. Height of each breadcrumb item 4. On mobile we don't show all breadcrumb items 5. The width when showing all breadcrumbs instead of only first and last */
 /** Table ===== 1. Height of the table headings 2. Color of the table headings */
 /** Overview layout =========== The default overview layout */
 /** Scopebar ======== 1. Height of the scopebar */
@@ -26,6 +28,7 @@
 /** Default list ============ */
 /** Default navigation ================== */
 /** Toolbar ======= */
+/** Titlebar ======== */
 /** Overflowing Overflowing shadows */
 /** Radio toggle ============ 1. Use styled radio toggles? 2. The color for "false"/0 items 3. The color for "true"/1 items 4. The color for neutral items */
 /** Bootstrap overrides =================== We depend on Bootstrap 3 for a few basic things This is the place to overwrite the used variables */
@@ -620,7 +623,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 .koowa-icon-user:before { content: ""; }
 
 /** Koowa namespaced styling ======================== By namespacing we make sure our styles never interfere with other styles on the page For example when using Nooku inside of another framework or CMS */
-.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / additions */ /** Default button styles ===================== 1. Right floating buttons */ /** Form and control groups ======================= Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /** Bootstrap input-group ===================== */ /* Atoms */ /** Default link style ================== */ /** Default button style ==================== */ /** Default fieldset style ====================== */ /** Default img style ================= */ /** Default paragraph style ======================= 1. Using single colon so it works in IE8 as well */ /* Molecules */ /** Default styles with JavaScript disabled ======================================= 1. Scroll when items don't fit parent anymore */ /** When flexbox is in use ====================== */ /** Breadcrumb contents =================== */ /** Single breadcrumb items ======================= */ /** CSS only animated checkbox toggle styling ========================================= */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** When flexbox is in use ====================== */ /** Default styles with JavaScript disabled ======================================= 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== 1. Reset width needed for table */ /** Container when toggled ====================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough 4. Set a box shadow so menus appear behind container */ /** The overlay =========== 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled ==================== 1. Set opacity 2. Set z-index to 1 so it will become visible */ /** Default styles with JavaScript disabled ======================================= 1. Clearing toolbar floats when flexbox is not in use */ /** When flexbox is in use ====================== */ /** Wrapper when toggled ==================== 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /** Form block ========== To be used in sidebar of forms Data in these boxes should be non-required info */ /** Grid ==== */ /** Animated hamburger button ========================= */ /** List ==== */ /** Navigation ========== */ /** Overflowing =========== */ /** CSS only animated radio toggle styling ====================================== */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /** Scopebar contents ================= */ /** Scopebar items ============== */ /** Scopebar search --------------- 1. Hide by default so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens */ /** Search toggle button -------------------- 1. Hide when search is visible */ /** Default styles with JavaScript disabled ======================================= */ /** When JavaScript is enabled ========================== */ /** When flexbox is in use ====================== */ /** Left sidebar specific --------------------- */ /** When sidebar is toggled ----------------------- */ /** Right sidebar specific ---------------------- */ /** When sidebar is toggled ----------------------- */ /** Table ===== */ /** Default with JavaScript disabled ================================ 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== */ /** Titlebar when toggled ===================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled ========================= 1. Set opacity 2. Set z-index so it will become visible */ /** Titlebar contents ================= */ /** Default with JavaScript disabled ================================ */ /** When flexbox is in use ====================== */ /** Toolbar contents ====================== */ /** Tree ==== */ /** Upload ====== */ /** The drop message ---------------- 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload --------------------------- 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /** Overview layout =============== The default overview layout 1. Left sidebar 2. Toggle button 3. Breadrumbs 4. Upload area 5. Scopebar 6. Table / grid / content 7. Right sidebar _____________________________ |  1  |2|_3___________|  7  | |     |_4_____________|     | |     |_5_____________|     | |     | 6             |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== The default form layout 1. titlebar 2. content _____________________________ |_____________1_____________| |                           | |             3             | |                           | |                           | |                           | |                           | |___________________________| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Utilities --------- loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /** Utilities ============ Checking class three times so we win over most other classes without using !important. Most selectors are max three long */ /** Disable transitions =================== */ /** Nowrap ====== */ /** Disabled ======== */ /** Shame --------- Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
+.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / additions */ /** Default button styles ===================== 1. Right floating buttons */ /** Form and control groups ======================= Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /** Bootstrap input-group ===================== */ /* Atoms */ /** Default link style ================== */ /** Default button style ==================== */ /** Default fieldset style ====================== */ /** Default img style ================= */ /** Default paragraph style ======================= 1. Using single colon so it works in IE8 as well */ /* Molecules */ /** Default styles with JavaScript disabled ======================================= 1. Scroll when items don't fit parent anymore */ /** When flexbox is in use ====================== */ /** Breadcrumb contents =================== */ /** Single breadcrumb items ======================= */ /** CSS only animated checkbox toggle styling ========================================= */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** When flexbox is in use ====================== */ /** Default styles with JavaScript disabled ======================================= 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== 1. Reset width needed for table */ /** Container when toggled ====================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough 4. Set a box shadow so menus appear behind container */ /** The overlay =========== 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled ==================== 1. Set opacity 2. Set z-index to 1 so it will become visible */ /** Default styles with JavaScript disabled ======================================= 1. Clearing toolbar floats when flexbox is not in use */ /** When flexbox is in use ====================== */ /** Wrapper when toggled ==================== 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /** Form block ========== To be used in sidebar of forms Data in these boxes should be non-required info */ /** Grid ==== */ /** Animated hamburger button ========================= */ /** List ==== */ /** Navigation ========== */ /** Overflowing =========== */ /** CSS only animated radio toggle styling ====================================== */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /** Scopebar contents ================= */ /** Scopebar items ============== */ /** Scopebar search --------------- 1. Hide by default so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens */ /** Search toggle button -------------------- 1. Hide when search is visible */ /** Default styles with JavaScript disabled ======================================= */ /** When JavaScript is enabled ========================== */ /** When flexbox is in use ====================== */ /** Left sidebar specific --------------------- */ /** When sidebar is toggled ----------------------- */ /** Right sidebar specific ---------------------- */ /** When sidebar is toggled ----------------------- */ /** Table ===== */ /** Default with JavaScript disabled ================================ 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== */ /** Titlebar when toggled ===================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled ========================= 1. Set opacity 2. Set z-index so it will become visible */ /** Titlebar contents ================= */ /** Default with JavaScript disabled ================================ */ /** When flexbox is in use ====================== */ /** Toolbar contents ====================== */ /** Tree ==== */ /** Upload ====== */ /** The drop message ---------------- 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload --------------------------- 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /** Overview layout =============== The default overview layout 1. Left sidebar 2. Toggle button 3. Breadrumbs 4. Upload area 5. Scopebar 6. Table / grid / content 7. Right sidebar _____________________________ |  1  |2|_3___________|  7  | |     |_4_____________|     | |     |_5_____________|     | |     | 6             |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== The default form layout 1. titlebar 2. Main content 3. Extra (non-critical) content boxes _____________________________ |_____________1_____________| |                   _______ | |         2         |  3  | | |                   |_____| | |                   _______ | |                   |  3  | | |                   |_____| | |___________________________| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Utilities --------- loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /** Utilities ============ Checking class three times so we win over most other classes without using !important. Most selectors are max three long */ /** Disable transitions =================== */ /** Nowrap ====== */ /** Disabled ======== */ /** Shame --------- Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
 
 .koowa html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
@@ -1042,7 +1045,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa p:last-child { margin-bottom: 0; }
 
-.koowa .k-breadcrumb { background: #3BA49B; color: white; overflow: auto; }
+.koowa .k-breadcrumb { border-bottom: 1px solid #328a82; background: #3BA49B; color: white; overflow: auto; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -1050,7 +1053,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .k-breadcrumb a { color: white; }
 
-.koowa .k-breadcrumb a:focus, .koowa .k-breadcrumb a:hover { background: #328a82; }
+.koowa .k-breadcrumb a:focus, .koowa .k-breadcrumb a:hover { background: #379990; }
 
 .koowa .k-breadcrumb ul { margin: 0; padding: 0; list-style: none; border: none; background: transparent; /** Flexing items to get overflow ellipsis -------------------------------------- */ }
 
@@ -1264,7 +1267,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .k-list a { display: table; border-left: 5px solid transparent; padding: 10px 16px; background: #5E4731; color: #ecf0f1; text-decoration: none; width: 100%; white-space: nowrap; position: relative; }
 
-.koowa .k-list a:hover { background: #6f543a; color: #ecf0f1; border-left-color: #806042; }
+.koowa .k-list a:hover { background: #684f36; color: #ecf0f1; border-left-color: #866546; }
 
 .koowa .k-list span { display: table-cell; }
 
@@ -1294,7 +1297,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .k-list .k-control { padding: 6px 9px; }
 
-.koowa .k-navigation { margin: 0; padding: 0; list-style: none; border: none; background: transparent; padding: 8px 0; background: #4d3a28; }
+.koowa .k-navigation { margin: 0; padding: 0; list-style: none; border: none; background: transparent; padding: 8px 0; background: #543f2c; }
 
 .koowa .k-navigation:before, .koowa .k-navigation:after { content: " "; display: table; }
 
@@ -1302,13 +1305,13 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .k-navigation a { display: block; padding: 10px 16px; font-size: 16px; color: #ecf0f1; text-decoration: none; border-left: 5px solid transparent; }
 
-.koowa .k-navigation a:hover, .koowa .k-navigation a:focus { background: #5E4731; border-left-color: #6f543a; }
+.koowa .k-navigation a:hover, .koowa .k-navigation a:focus { background: #5E4731; border-left-color: #684f36; }
 
 .koowa .k-navigation a:focus { border-color: #3BA49B; }
 
 .koowa .k-navigation span { display: inline-block; text-align: center; width: 24px; }
 
-.koowa .k-navigation .active a { margin: 6px 0; padding: 4px 16px; font-weight: bold; background: #4d3a28; border-left-color: #3BA49B; color: #3BA49B; }
+.koowa .k-navigation .active a { margin: 6px 0; padding: 4px 16px; font-weight: bold; background: #543f2c; border-left-color: #3BA49B; color: #3BA49B; }
 
 .koowa .k-navigation .active a:hover { background: transparent; cursor: default; }
 
@@ -1388,7 +1391,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .radio-toggle:not(ie) :checked + label span:before, .koowa .radio-toggle:not(ie).radio-toggle--neutral input[value]:checked + label span:before { background: #3BA49B; }
 
-.koowa .k-scopebar { background: #328a82; color: white; }
+.koowa .k-scopebar { background: #379990; color: white; }
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar { display: table; width: 100%; } }
 
@@ -1509,7 +1512,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa tr.selected td a { color: white; }
 
-.koowa .k-titlebar { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #36291c; color: #ecf0f1; position: relative; z-index: 2; float: left; width: 100%; /** Create custom 'overlay' for off canvas sidebar ---------------------------------------------- 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; }
+.koowa .k-titlebar { border-bottom: 1px solid #1e1710; -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #36291c; color: #ecf0f1; position: relative; z-index: 2; float: left; width: 100%; /** Create custom 'overlay' for off canvas sidebar ---------------------------------------------- 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; }
 
 .koowa .k-titlebar:before { display: block; position: absolute; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin-bottom: -1px; z-index: -1; opacity: 0; background: black; -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
@@ -1531,7 +1534,7 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .k-titlebar h2 { margin: 13px; }
 
-.koowa .k-toolbar { background: #3c2e20; }
+.koowa .k-toolbar { background: #36291c; border-bottom: 1px solid #1e1710; }
 
 @media screen and (min-width: 768px) { .koowa .k-toolbar { width: 100%; display: table; } }
 
@@ -1547,9 +1550,9 @@ body { font-family: Arial, sans-serif; font-size: 13px; line-height: 20px; paddi
 
 .koowa .k-toolbar button:last-child, .koowa .k-toolbar .btn:last-child { margin-right: 10px; }
 
-.koowa .k-toolbar .btn-success { border-color: #328a82; background: #3BA49B; color: white; }
+.koowa .k-toolbar .btn-success { border-color: #379990; background: #3BA49B; color: white; }
 
-.koowa .k-toolbar .btn-success:hover, .koowa .k-toolbar .btn-success:focus { border-color: #2b7770; background: #349189; color: #f2f2f2; }
+.koowa .k-toolbar .btn-success:hover, .koowa .k-toolbar .btn-success:focus { border-color: #30867f; background: #349189; color: #f2f2f2; }
 
 .koowa .k-toolbar__text { display: none; }
 
