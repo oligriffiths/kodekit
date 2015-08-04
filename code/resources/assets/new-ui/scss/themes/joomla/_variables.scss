@@ -1,77 +1,135 @@
-$color-primary: white !default;
-$color-primary-type: #555 !default;
-$color-primary-light: lighten($color-primary, 5%) !default;
-$color-primary-dark: darken($color-primary, 5%) !default;
-$color-primary-darkest: darken($color-primary, 8%) !default;
-$color-secondary: #f6f6f6 !default;
-$color-secondary-type: #555 !default;
+//$color-primary: white !default;
+//$color-primary-type: #555 !default;
+//$color-primary-light: lighten($color-primary, 5%) !default;
+//$color-primary-dark: darken($color-primary, 5%) !default;
+//$color-primary-darkest: darken($color-primary, 8%) !default;
+//$color-secondary: #f6f6f6 !default;
+//$color-secondary-type: #555 !default;
+//
+//$color-accent: #0088CC !default;
+//$color-accent-dark: darken($color-accent, 15%) !default;
+//$color-accent-type: white !default;
+//
+//$color-type: #333 !default;
+//$color-type-light: #555 !default;
+//
 
-$color-accent: #0088CC !default;
-$color-accent-dark: darken($color-accent, 15%) !default;
-$color-accent-type: white !default;
+//
+//
+///**
+//* Accent colors
+//*/
+//$color-success: #27ae60 !default;
+//$color-success-light: #2ecc71 !default;
+//$color-success-type: white !default;
+//
+//$color-primary-accent: $color-accent !default;
+//
+//$scopebar-background: #eee !default;
+//
+//$table-header-background: white !default;
+//
+//$list-hover-background: #f5f5f5 !default;
+//$list-hover-border: #ddd !default;
+//
+//$navigation-background: $color-primary-darkest !default;
+//$navigation-hover-background: #f9f9f9 !default;
+//$navigation-hover-border: #ddd !default;
+//
+//
+///**
+//* Toolbar
+//* =======
+//*/
+//$toolbar-spacing: 9px !default;
+//
+//$toolbar-background: #E3E6EB !default;
+//$toolbar-border: darken($toolbar-background, 5%) !default;
+//$toolbar-color: $color-type-light !default;
+//
+//$toolbar-button-default-background: $color-primary !default;
+//$toolbar-button-default-border: $toolbar-border !default;
+//$toolbar-button-default-color: $color-primary-type !default;
+//$toolbar-button-default-hover-background: $color-secondary !default;
+//$toolbar-button-default-hover-border: $toolbar-border !default;
+//$toolbar-button-default-hover-color: $color-secondary-type !default;
+//
+//$toolbar-button-success-background: $color-success !default;
+//$toolbar-button-success-border: $color-success !default;
+//$toolbar-button-success-color: $color-success-type !default;
+//$toolbar-button-success-hover-background: $color-success-light !default;
+//$toolbar-button-success-hover-border: $color-success-light !default;
+//$toolbar-button-success-hover-color: $color-success-type !default;
+//
+//
+//$sidebar-background: #EBEDF1;
+//$sidebar-border: #CCD2DC;
+//
+//$navigation-background: #DBDFE6;
+//$navigation-border: darken($navigation-background, 5%);
+//
+//// We just want the regular button colors
+//$toolbar-btn-alt: false;
+//
+//
+//$toolbar-title-background: #E3E6EB !default;
 
-$color-type: #333 !default;
-$color-type-light: #555 !default;
+
+
+/**
+ * Primary color
+ * =============
+ */
+
+$color-primary: #EBEDF1;
+$color-primary-type: #333;
+$color-primary-accent: $color-accent;
+
+
+
+/**
+ * Secondary color
+ * ===============
+ */
+
+$color-secondary: #EEEEEE;
+$color-secondary-type: #333;
+
+
+
+/**
+ * Accent color
+ * ============
+ */
+
+$color-accent: #0088CC;
+
+
+
+/**
+ * Default border
+ * ==============
+ */
 
 $border-color: #ddd !default;
 $border-width: 1px !default;
 $border-style: solid !default;
 
 
+
 /**
-* Accent colors
-*/
-$color-success: #27ae60 !default;
-$color-success-light: #2ecc71 !default;
-$color-success-type: white !default;
+ * Toolbar
+ * =======
+ */
 
-$color-primary-accent: $color-accent !default;
+$toolbar-btn-alt: false;
+$toolbar-background: darken($color-primary, 4%);
 
-$scopebar-background: #eee !default;
-
-$table-header-background: white !default;
-
-$list-hover-background: #f5f5f5 !default;
-$list-hover-border: #ddd !default;
-
-$navigation-background: $color-primary-darkest !default;
-$navigation-hover-background: #f9f9f9 !default;
-$navigation-hover-border: #ddd !default;
 
 
 /**
-* Toolbar
-* =======
-*/
-$toolbar-spacing: 9px !default;
+ * Table
+ * =====
+ */
 
-$toolbar-background: #E3E6EB !default;
-$toolbar-border: darken($toolbar-background, 5%) !default;
-$toolbar-color: $color-type-light !default;
-
-$toolbar-button-default-background: $color-primary !default;
-$toolbar-button-default-border: $toolbar-border !default;
-$toolbar-button-default-color: $color-primary-type !default;
-$toolbar-button-default-hover-background: $color-secondary !default;
-$toolbar-button-default-hover-border: $toolbar-border !default;
-$toolbar-button-default-hover-color: $color-secondary-type !default;
-
-$toolbar-button-success-background: $color-success !default;
-$toolbar-button-success-border: $color-success !default;
-$toolbar-button-success-color: $color-success-type !default;
-$toolbar-button-success-hover-background: $color-success-light !default;
-$toolbar-button-success-hover-border: $color-success-light !default;
-$toolbar-button-success-hover-color: $color-success-type !default;
-
-
-$sidebar-background: #EBEDF1;
-$sidebar-border: #CCD2DC;
-
-$navigation-background: #DBDFE6;
-$navigation-border: darken($navigation-background, 5%);
-
-// We just want the regular button colors
-$scopebar-btn-alt: false;
-
-
-$toolbar-title-background: #E3E6EB !default;
+$table-header-background: #F3F3F3;

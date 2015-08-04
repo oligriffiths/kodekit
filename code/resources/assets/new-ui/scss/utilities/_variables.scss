@@ -251,7 +251,7 @@ $sidebar-width-small:       180px !default; // 1
 $sidebar-width:             270px !default; // 2
 
 $sidebar-background:        $color-primary !default;
-$sidebar-border:            $border-color !default;
+$sidebar-border:            darkest($sidebar-background) !default;
 $sidebar-color:             $color-primary-type !default;
 
 
@@ -308,7 +308,7 @@ $scopebar-search-background:  white !default;
 $scopebar-search-color:       $color-type !default;
 
 $scopebar-background:         $color-secondary-dark !default;
-$scopebar-border:             $border-color !default;
+$scopebar-border:             darker($scopebar-background) !default;
 $scopebar-color:              $color-secondary-type !default;
 $scopebar-color:              $color-secondary-type !default;
 
@@ -317,10 +317,7 @@ $scopebar-color:              $color-secondary-type !default;
 /**
  * Special colors for buttons in the toolbar?
  * ------------------------------------------
- * 1. When true; colors are being used
  */
-
-$scopebar-btn-alt:                        true !default; // 1
 
 /* Success button */
 $scopebar-btn-success-border:             $color-secondary-dark !default;
@@ -356,7 +353,7 @@ $list-active-color:       $color-primary-accent !default;
  */
 
 $navigation-background:         $color-primary-dark !default;
-$navigation-border:             $border-color !default;
+$navigation-border:             darker($navigation-background);
 $navigation-color:              $color-primary-type !default;
 $navigation-accent:             $color-primary-accent !default;
 
@@ -374,7 +371,10 @@ $navigation-active-color:       $navigation-accent !default;
 /**
  * Toolbar
  * =======
+ * 1. When true; colors are being used
  */
+
+$toolbar-btn-alt:                        true !default; // 1
 
 $toolbar-spacing:                           round($font-size * 0.7) !default;
 
@@ -497,22 +497,7 @@ $bar-width: 20px; // Best to grab a number that can be divided by 5
 $bar-height: round($bar-width / 5);
 $overlay-background: black;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Other
 $button-size: 33px;
 $bar-width: 15px; // Best to grab a number that can be divided by 5
 $bar-height: round($bar-width / 5);
