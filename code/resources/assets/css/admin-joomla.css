@@ -1,6 +1,12 @@
 @charset "UTF-8";
 /** Default Joomla theme ==================== */
 /** Joomla variables ---------------- Load first so global variables can use them */
+/** Borders ======= */
+/** Accent color ============ */
+/** Primary color ============= */
+/** Secondary color =============== */
+/** Toolbar ======= */
+/** Table ===== */
 /** Global tools ------------ Containing variables and mixins */
 /** Functions ========= */
 /** Breakpoints =========== Only work with either - (min-width) - (min-width) and (max-width) Try to never use (max-width) alone since that is not very mobile-first 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base width to work from 2. The max width of the form layout 3. Separate $desktop variable is being used so all styles change together when going from small to larger screen. 4. Wether or not to Use flexbox in layouts 5. Separate $flexbox variables are being used */
@@ -15,7 +21,7 @@
 /** Tertiary color ============== */
 /** Accent color ============ */
 /** States ====== */
-/* Border ====== Set border-color to false if you don't want any borders in your theme You can override borders in each separate module */
+/* Border ====== Set borders to false if you don't want any borders in your theme You can override borders in each separate module */
 /** Koowa ===== The default koowa container */
 /** Breadcrumbs =========== 1. On mobile we don't show all breadcrumb items 2. The content of the divider 3. The width of dividers between breadcrumb items 4. Height of each breadcrumb item 5. The width when showing all breadcrumbs instead of only first and last */
 /** Sidebar ======= 1. Sidebar width on smaller screens 2. Sidebar width when screen is "$desktop" */
@@ -216,7 +222,7 @@ body.admin a:focus, body.component a:focus { outline: auto 5px -webkit-focus-rin
 
 .select2-container--default .select2-results__group { cursor: default; display: block; padding: 6px; }
 
-.select2-container--classic .select2-selection--single { background-color: #f7f7f7; border: 1px solid #ddd; border-radius: 4px; outline: 0; background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%); background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='white', endColorstr='#eeeeee', GradientType=0); }
+.select2-container--classic .select2-selection--single { background-color: #f7f7f7; border: 1px solid false; border-radius: 4px; outline: 0; background-image: -webkit-linear-gradient(top, white 50%, #eeeeee 100%); background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='white', endColorstr='#eeeeee', GradientType=0); }
 
 .select2-container--classic .select2-selection--single:focus { border: 1px solid #5897fb; }
 
@@ -226,13 +232,13 @@ body.admin a:focus, body.component a:focus { outline: auto 5px -webkit-focus-rin
 
 .select2-container--classic .select2-selection--single .select2-selection__placeholder { color: #999; }
 
-.select2-container--classic .select2-selection--single .select2-selection__arrow { background-color: #ddd; border: none; border-left: 1px solid #ddd; border-top-right-radius: 4px; border-bottom-right-radius: 4px; height: 26px; position: absolute; top: 1px; right: 1px; width: 20px; background-image: -webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%); background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0); }
+.select2-container--classic .select2-selection--single .select2-selection__arrow { background-color: #ddd; border: none; border-left: 1px solid false; border-top-right-radius: 4px; border-bottom-right-radius: 4px; height: 26px; position: absolute; top: 1px; right: 1px; width: 20px; background-image: -webkit-linear-gradient(top, #eeeeee 50%, #cccccc 100%); background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#cccccc', GradientType=0); }
 
 .select2-container--classic .select2-selection--single .select2-selection__arrow b { border-color: #888 transparent transparent transparent; border-style: solid; border-width: 5px 4px 0 4px; height: 0; left: 50%; margin-left: -4px; margin-top: -2px; position: absolute; top: 50%; width: 0; }
 
 .select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear { float: left; }
 
-.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow { border: none; border-right: 1px solid #ddd; border-radius: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px; left: 1px; right: auto; }
+.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow { border: none; border-right: 1px solid false; border-radius: 0; border-top-left-radius: 4px; border-bottom-left-radius: 4px; left: 1px; right: auto; }
 
 .select2-container--classic.select2-container--open .select2-selection--single { border: 1px solid #5897fb; }
 
@@ -244,7 +250,7 @@ body.admin a:focus, body.component a:focus { outline: auto 5px -webkit-focus-rin
 
 .select2-container--classic.select2-container--open.select2-container--below .select2-selection--single { border-bottom: none; border-bottom-left-radius: 0; border-bottom-right-radius: 0; background-image: -webkit-linear-gradient(top, #eeeeee 50%, white 100%); background-image: linear-gradient(to bottom, #eeeeee 50%, white 100%); background-repeat: repeat-x; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='white', GradientType=0); }
 
-.select2-container--classic .select2-selection--multiple { background-color: white; border: 1px solid #ddd; border-radius: 4px; cursor: text; outline: 0; }
+.select2-container--classic .select2-selection--multiple { background-color: white; border: 1px solid false; border-radius: 4px; cursor: text; outline: 0; }
 
 .select2-container--classic .select2-selection--multiple:focus { border: 1px solid #5897fb; }
 
@@ -252,7 +258,7 @@ body.admin a:focus, body.component a:focus { outline: auto 5px -webkit-focus-rin
 
 .select2-container--classic .select2-selection--multiple .select2-selection__clear { display: none; }
 
-.select2-container--classic .select2-selection--multiple .select2-selection__choice { background-color: #e4e4e4; border: 1px solid #ddd; border-radius: 4px; cursor: default; float: left; margin-right: 5px; margin-top: 5px; padding: 0 5px; }
+.select2-container--classic .select2-selection--multiple .select2-selection__choice { background-color: #e4e4e4; border: 1px solid false; border-radius: 4px; cursor: default; float: left; margin-right: 5px; margin-top: 5px; padding: 0 5px; }
 
 .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove { color: #888; cursor: pointer; display: inline-block; font-weight: bold; margin-right: 2px; }
 
@@ -270,7 +276,7 @@ body.admin a:focus, body.component a:focus { outline: auto 5px -webkit-focus-rin
 
 .select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple { border-bottom: none; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 
-.select2-container--classic .select2-search--dropdown .select2-search__field { border: 1px solid #ddd; outline: 0; }
+.select2-container--classic .select2-search--dropdown .select2-search__field { border: 1px solid false; outline: 0; }
 
 .select2-container--classic .select2-search--inline .select2-search__field { outline: 0; }
 
@@ -1475,7 +1481,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-scopebar__search .search_button { margin: 0; padding: 0; list-style: none; border: none; background: transparent; -webkit-appearance: none; display: block; background: white; color: #222222; padding: 7px; height: 32px; padding-right: 32px; border-radius: 0; width: 100%; box-shadow: none; }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid #ddd; } }
+@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid false; } }
 
 .koowa .k-scopebar__search .search_button--empty { position: absolute; top: 7px; right: 10px; font-size: 10px; }
 
@@ -1536,6 +1542,8 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .koowa .k-table small { display: block; }
 
 .koowa .k-table-pagination { background: #eee; border-top: 1px solid #e1e1e1; padding: 13px; }
+
+.koowa .k-table-pagination .pagination { margin: 0; }
 
 .koowa .k-table-pagination .limit { display: inline-block; text-align: center; }
 
@@ -1633,7 +1641,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-form--front .k-container { background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
 
-.koowa .k-overview { border: 1px solid #ddd; background: white; }
+.koowa .k-overview { border: 1px solid false; background: white; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
 
