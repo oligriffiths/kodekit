@@ -215,7 +215,7 @@
 }
 
 @mixin border($position, $border-color) {
-  @if $borders != false {
+  @if $borders != false and $border-color != false {
     @if $position == 'all' {
       border: $border-width $border-style $border-color;
     } @else {

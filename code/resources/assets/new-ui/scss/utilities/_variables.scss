@@ -459,7 +459,9 @@ $padding-base-horizontal:   10px !default;
 $btn-success-bg:            $color-success;
 $btn-success-color:         $color-success-type;
 
-
+$pagination-color:              $color-accent !default;
+$pagination-active-bg:          $color-accent !default;
+$pagination-active-border:      darker($color-accent) !default;
 
 
 

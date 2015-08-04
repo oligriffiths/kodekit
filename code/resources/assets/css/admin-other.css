@@ -19,7 +19,6 @@
 /** Koowa ===== The default koowa container */
 /** Breadcrumbs =========== 1. On mobile we don't show all breadcrumb items 2. The content of the divider 3. The width of dividers between breadcrumb items 4. Height of each breadcrumb item 5. The width when showing all breadcrumbs instead of only first and last */
 /** Sidebar ======= 1. Sidebar width on smaller screens 2. Sidebar width when screen is "$desktop" */
-/** Toggle button ============= The toggle button to toggle the sidebar */
 /** Table ===== 1. Height of the table headings 2. Color of the table headings */
 /** Overview layout =========== The default overview layout */
 /** Scopebar ======== 1. Height of the scopebar */
@@ -706,6 +705,98 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa td, .koowa th { padding: 0; }
 
+.koowa .btn { display: inline-block; margin-bottom: 0; font-weight: normal; text-align: center; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 5px 10px; font-size: 14px; line-height: 1.428571429; border-radius: 4px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.koowa .btn:focus, .koowa .btn.focus, .koowa .btn:active:focus, .koowa .btn:active.focus, .koowa .btn.active:focus, .koowa .btn.active.focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+
+.koowa .btn:hover, .koowa .btn:focus, .koowa .btn.focus { color: #333; text-decoration: none; }
+
+.koowa .btn:active, .koowa .btn.active { outline: 0; background-image: none; box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+
+.koowa .btn.disabled, .koowa .btn[disabled], fieldset[disabled] .koowa .btn { cursor: not-allowed; pointer-events: none; opacity: 0.65; filter: alpha(opacity=65); box-shadow: none; }
+
+.koowa .btn-default { color: #333; background-color: #fff; border-color: #ccc; }
+
+.koowa .btn-default:hover, .koowa .btn-default:focus, .koowa .btn-default.focus, .koowa .btn-default:active, .koowa .btn-default.active, .open > .koowa .btn-default.dropdown-toggle { color: #333; background-color: #e6e6e6; border-color: #adadad; }
+
+.koowa .btn-default:active, .koowa .btn-default.active, .open > .koowa .btn-default.dropdown-toggle { background-image: none; }
+
+.koowa .btn-default.disabled, .koowa .btn-default.disabled:hover, .koowa .btn-default.disabled:focus, .koowa .btn-default.disabled.focus, .koowa .btn-default.disabled:active, .koowa .btn-default.disabled.active, .koowa .btn-default[disabled], .koowa .btn-default[disabled]:hover, .koowa .btn-default[disabled]:focus, .koowa .btn-default[disabled].focus, .koowa .btn-default[disabled]:active, .koowa .btn-default[disabled].active, fieldset[disabled] .koowa .btn-default, fieldset[disabled] .koowa .btn-default:hover, fieldset[disabled] .koowa .btn-default:focus, fieldset[disabled] .koowa .btn-default.focus, fieldset[disabled] .koowa .btn-default:active, fieldset[disabled] .koowa .btn-default.active { background-color: #fff; border-color: #ccc; }
+
+.koowa .btn-default .badge { color: #fff; background-color: #333; }
+
+.koowa .btn-primary { color: #fff; background-color: #337ab7; border-color: #2e6da4; }
+
+.koowa .btn-primary:hover, .koowa .btn-primary:focus, .koowa .btn-primary.focus, .koowa .btn-primary:active, .koowa .btn-primary.active, .open > .koowa .btn-primary.dropdown-toggle { color: #fff; background-color: #286090; border-color: #204d74; }
+
+.koowa .btn-primary:active, .koowa .btn-primary.active, .open > .koowa .btn-primary.dropdown-toggle { background-image: none; }
+
+.koowa .btn-primary.disabled, .koowa .btn-primary.disabled:hover, .koowa .btn-primary.disabled:focus, .koowa .btn-primary.disabled.focus, .koowa .btn-primary.disabled:active, .koowa .btn-primary.disabled.active, .koowa .btn-primary[disabled], .koowa .btn-primary[disabled]:hover, .koowa .btn-primary[disabled]:focus, .koowa .btn-primary[disabled].focus, .koowa .btn-primary[disabled]:active, .koowa .btn-primary[disabled].active, fieldset[disabled] .koowa .btn-primary, fieldset[disabled] .koowa .btn-primary:hover, fieldset[disabled] .koowa .btn-primary:focus, fieldset[disabled] .koowa .btn-primary.focus, fieldset[disabled] .koowa .btn-primary:active, fieldset[disabled] .koowa .btn-primary.active { background-color: #337ab7; border-color: #2e6da4; }
+
+.koowa .btn-primary .badge { color: #337ab7; background-color: #fff; }
+
+.koowa .btn-success { color: white; background-color: #27ae60; border-color: #229955; }
+
+.koowa .btn-success:hover, .koowa .btn-success:focus, .koowa .btn-success.focus, .koowa .btn-success:active, .koowa .btn-success.active, .open > .koowa .btn-success.dropdown-toggle { color: white; background-color: #1e8449; border-color: #176739; }
+
+.koowa .btn-success:active, .koowa .btn-success.active, .open > .koowa .btn-success.dropdown-toggle { background-image: none; }
+
+.koowa .btn-success.disabled, .koowa .btn-success.disabled:hover, .koowa .btn-success.disabled:focus, .koowa .btn-success.disabled.focus, .koowa .btn-success.disabled:active, .koowa .btn-success.disabled.active, .koowa .btn-success[disabled], .koowa .btn-success[disabled]:hover, .koowa .btn-success[disabled]:focus, .koowa .btn-success[disabled].focus, .koowa .btn-success[disabled]:active, .koowa .btn-success[disabled].active, fieldset[disabled] .koowa .btn-success, fieldset[disabled] .koowa .btn-success:hover, fieldset[disabled] .koowa .btn-success:focus, fieldset[disabled] .koowa .btn-success.focus, fieldset[disabled] .koowa .btn-success:active, fieldset[disabled] .koowa .btn-success.active { background-color: #27ae60; border-color: #229955; }
+
+.koowa .btn-success .badge { color: #27ae60; background-color: white; }
+
+.koowa .btn-info { color: #fff; background-color: #5bc0de; border-color: #46b8da; }
+
+.koowa .btn-info:hover, .koowa .btn-info:focus, .koowa .btn-info.focus, .koowa .btn-info:active, .koowa .btn-info.active, .open > .koowa .btn-info.dropdown-toggle { color: #fff; background-color: #31b0d5; border-color: #269abc; }
+
+.koowa .btn-info:active, .koowa .btn-info.active, .open > .koowa .btn-info.dropdown-toggle { background-image: none; }
+
+.koowa .btn-info.disabled, .koowa .btn-info.disabled:hover, .koowa .btn-info.disabled:focus, .koowa .btn-info.disabled.focus, .koowa .btn-info.disabled:active, .koowa .btn-info.disabled.active, .koowa .btn-info[disabled], .koowa .btn-info[disabled]:hover, .koowa .btn-info[disabled]:focus, .koowa .btn-info[disabled].focus, .koowa .btn-info[disabled]:active, .koowa .btn-info[disabled].active, fieldset[disabled] .koowa .btn-info, fieldset[disabled] .koowa .btn-info:hover, fieldset[disabled] .koowa .btn-info:focus, fieldset[disabled] .koowa .btn-info.focus, fieldset[disabled] .koowa .btn-info:active, fieldset[disabled] .koowa .btn-info.active { background-color: #5bc0de; border-color: #46b8da; }
+
+.koowa .btn-info .badge { color: #5bc0de; background-color: #fff; }
+
+.koowa .btn-warning { color: #fff; background-color: #f0ad4e; border-color: #eea236; }
+
+.koowa .btn-warning:hover, .koowa .btn-warning:focus, .koowa .btn-warning.focus, .koowa .btn-warning:active, .koowa .btn-warning.active, .open > .koowa .btn-warning.dropdown-toggle { color: #fff; background-color: #ec971f; border-color: #d58512; }
+
+.koowa .btn-warning:active, .koowa .btn-warning.active, .open > .koowa .btn-warning.dropdown-toggle { background-image: none; }
+
+.koowa .btn-warning.disabled, .koowa .btn-warning.disabled:hover, .koowa .btn-warning.disabled:focus, .koowa .btn-warning.disabled.focus, .koowa .btn-warning.disabled:active, .koowa .btn-warning.disabled.active, .koowa .btn-warning[disabled], .koowa .btn-warning[disabled]:hover, .koowa .btn-warning[disabled]:focus, .koowa .btn-warning[disabled].focus, .koowa .btn-warning[disabled]:active, .koowa .btn-warning[disabled].active, fieldset[disabled] .koowa .btn-warning, fieldset[disabled] .koowa .btn-warning:hover, fieldset[disabled] .koowa .btn-warning:focus, fieldset[disabled] .koowa .btn-warning.focus, fieldset[disabled] .koowa .btn-warning:active, fieldset[disabled] .koowa .btn-warning.active { background-color: #f0ad4e; border-color: #eea236; }
+
+.koowa .btn-warning .badge { color: #f0ad4e; background-color: #fff; }
+
+.koowa .btn-danger { color: #fff; background-color: #d9534f; border-color: #d43f3a; }
+
+.koowa .btn-danger:hover, .koowa .btn-danger:focus, .koowa .btn-danger.focus, .koowa .btn-danger:active, .koowa .btn-danger.active, .open > .koowa .btn-danger.dropdown-toggle { color: #fff; background-color: #c9302c; border-color: #ac2925; }
+
+.koowa .btn-danger:active, .koowa .btn-danger.active, .open > .koowa .btn-danger.dropdown-toggle { background-image: none; }
+
+.koowa .btn-danger.disabled, .koowa .btn-danger.disabled:hover, .koowa .btn-danger.disabled:focus, .koowa .btn-danger.disabled.focus, .koowa .btn-danger.disabled:active, .koowa .btn-danger.disabled.active, .koowa .btn-danger[disabled], .koowa .btn-danger[disabled]:hover, .koowa .btn-danger[disabled]:focus, .koowa .btn-danger[disabled].focus, .koowa .btn-danger[disabled]:active, .koowa .btn-danger[disabled].active, fieldset[disabled] .koowa .btn-danger, fieldset[disabled] .koowa .btn-danger:hover, fieldset[disabled] .koowa .btn-danger:focus, fieldset[disabled] .koowa .btn-danger.focus, fieldset[disabled] .koowa .btn-danger:active, fieldset[disabled] .koowa .btn-danger.active { background-color: #d9534f; border-color: #d43f3a; }
+
+.koowa .btn-danger .badge { color: #d9534f; background-color: #fff; }
+
+.koowa .btn-link { color: #337ab7; font-weight: normal; border-radius: 0; }
+
+.koowa .btn-link, .koowa .btn-link:active, .koowa .btn-link.active, .koowa .btn-link[disabled], fieldset[disabled] .koowa .btn-link { background-color: transparent; box-shadow: none; }
+
+.koowa .btn-link, .koowa .btn-link:hover, .koowa .btn-link:focus, .koowa .btn-link:active { border-color: transparent; }
+
+.koowa .btn-link:hover, .koowa .btn-link:focus { color: #23527c; text-decoration: underline; background-color: transparent; }
+
+.koowa .btn-link[disabled]:hover, .koowa .btn-link[disabled]:focus, fieldset[disabled] .koowa .btn-link:hover, fieldset[disabled] .koowa .btn-link:focus { color: #777777; text-decoration: none; }
+
+.koowa .btn-lg { padding: 10px 16px; font-size: 18px; line-height: 1.3333333; border-radius: 6px; }
+
+.koowa .btn-sm { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
+
+.koowa .btn-xs { padding: 1px 5px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
+
+.koowa .btn-block { display: block; width: 100%; }
+
+.koowa .btn-block + .btn-block { margin-top: 5px; }
+
+.koowa input[type="submit"].btn-block, .koowa input[type="reset"].btn-block, .koowa input[type="button"].btn-block { width: 100%; }
+
 .koowa fieldset { padding: 0; margin: 0; border: 0; min-width: 0; }
 
 .koowa legend { display: block; width: 100%; padding: 0; margin-bottom: 20px; font-size: 21px; line-height: inherit; color: #333333; border: 0; border-bottom: 1px solid #e5e5e5; }
@@ -916,97 +1007,33 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .input-group-btn:last-child > .btn, .koowa .input-group-btn:last-child > .btn-group { margin-left: -1px; }
 
-.koowa .btn { display: inline-block; margin-bottom: 0; font-weight: normal; text-align: center; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 5px 10px; font-size: 14px; line-height: 1.428571429; border-radius: 4px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.koowa .pagination { display: inline-block; padding-left: 0; margin: 20px 0; border-radius: 4px; }
 
-.koowa .btn:focus, .koowa .btn.focus, .koowa .btn:active:focus, .koowa .btn:active.focus, .koowa .btn.active:focus, .koowa .btn.active.focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+.koowa .pagination > li { display: inline; }
 
-.koowa .btn:hover, .koowa .btn:focus, .koowa .btn.focus { color: #333; text-decoration: none; }
+.koowa .pagination > li > a, .koowa .pagination > li > span { position: relative; float: left; padding: 5px 10px; line-height: 1.428571429; text-decoration: none; color: #3BA49B; background-color: #fff; border: 1px solid #ddd; margin-left: -1px; }
 
-.koowa .btn:active, .koowa .btn.active { outline: 0; background-image: none; box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); }
+.koowa .pagination > li:first-child > a, .koowa .pagination > li:first-child > span { margin-left: 0; border-bottom-left-radius: 4px; border-top-left-radius: 4px; }
 
-.koowa .btn.disabled, .koowa .btn[disabled], fieldset[disabled] .koowa .btn { cursor: not-allowed; pointer-events: none; opacity: 0.65; filter: alpha(opacity=65); box-shadow: none; }
+.koowa .pagination > li:last-child > a, .koowa .pagination > li:last-child > span { border-bottom-right-radius: 4px; border-top-right-radius: 4px; }
 
-.koowa .btn-default { color: #333; background-color: #fff; border-color: #ccc; }
+.koowa .pagination > li > a:hover, .koowa .pagination > li > a:focus, .koowa .pagination > li > span:hover, .koowa .pagination > li > span:focus { color: #23527c; background-color: #eeeeee; border-color: #ddd; }
 
-.koowa .btn-default:hover, .koowa .btn-default:focus, .koowa .btn-default.focus, .koowa .btn-default:active, .koowa .btn-default.active, .open > .koowa .btn-default.dropdown-toggle { color: #333; background-color: #e6e6e6; border-color: #adadad; }
+.koowa .pagination > .active > a, .koowa .pagination > .active > a:hover, .koowa .pagination > .active > a:focus, .koowa .pagination > .active > span, .koowa .pagination > .active > span:hover, .koowa .pagination > .active > span:focus { z-index: 2; color: #fff; background-color: #3BA49B; border-color: #328a82; cursor: default; }
 
-.koowa .btn-default:active, .koowa .btn-default.active, .open > .koowa .btn-default.dropdown-toggle { background-image: none; }
+.koowa .pagination > .disabled > span, .koowa .pagination > .disabled > span:hover, .koowa .pagination > .disabled > span:focus, .koowa .pagination > .disabled > a, .koowa .pagination > .disabled > a:hover, .koowa .pagination > .disabled > a:focus { color: #777777; background-color: #fff; border-color: #ddd; cursor: not-allowed; }
 
-.koowa .btn-default.disabled, .koowa .btn-default.disabled:hover, .koowa .btn-default.disabled:focus, .koowa .btn-default.disabled.focus, .koowa .btn-default.disabled:active, .koowa .btn-default.disabled.active, .koowa .btn-default[disabled], .koowa .btn-default[disabled]:hover, .koowa .btn-default[disabled]:focus, .koowa .btn-default[disabled].focus, .koowa .btn-default[disabled]:active, .koowa .btn-default[disabled].active, fieldset[disabled] .koowa .btn-default, fieldset[disabled] .koowa .btn-default:hover, fieldset[disabled] .koowa .btn-default:focus, fieldset[disabled] .koowa .btn-default.focus, fieldset[disabled] .koowa .btn-default:active, fieldset[disabled] .koowa .btn-default.active { background-color: #fff; border-color: #ccc; }
+.koowa .pagination-lg > li > a, .koowa .pagination-lg > li > span { padding: 10px 16px; font-size: 18px; }
 
-.koowa .btn-default .badge { color: #fff; background-color: #333; }
+.koowa .pagination-lg > li:first-child > a, .koowa .pagination-lg > li:first-child > span { border-bottom-left-radius: 6px; border-top-left-radius: 6px; }
 
-.koowa .btn-primary { color: #fff; background-color: #337ab7; border-color: #2e6da4; }
+.koowa .pagination-lg > li:last-child > a, .koowa .pagination-lg > li:last-child > span { border-bottom-right-radius: 6px; border-top-right-radius: 6px; }
 
-.koowa .btn-primary:hover, .koowa .btn-primary:focus, .koowa .btn-primary.focus, .koowa .btn-primary:active, .koowa .btn-primary.active, .open > .koowa .btn-primary.dropdown-toggle { color: #fff; background-color: #286090; border-color: #204d74; }
+.koowa .pagination-sm > li > a, .koowa .pagination-sm > li > span { padding: 5px 10px; font-size: 12px; }
 
-.koowa .btn-primary:active, .koowa .btn-primary.active, .open > .koowa .btn-primary.dropdown-toggle { background-image: none; }
+.koowa .pagination-sm > li:first-child > a, .koowa .pagination-sm > li:first-child > span { border-bottom-left-radius: 3px; border-top-left-radius: 3px; }
 
-.koowa .btn-primary.disabled, .koowa .btn-primary.disabled:hover, .koowa .btn-primary.disabled:focus, .koowa .btn-primary.disabled.focus, .koowa .btn-primary.disabled:active, .koowa .btn-primary.disabled.active, .koowa .btn-primary[disabled], .koowa .btn-primary[disabled]:hover, .koowa .btn-primary[disabled]:focus, .koowa .btn-primary[disabled].focus, .koowa .btn-primary[disabled]:active, .koowa .btn-primary[disabled].active, fieldset[disabled] .koowa .btn-primary, fieldset[disabled] .koowa .btn-primary:hover, fieldset[disabled] .koowa .btn-primary:focus, fieldset[disabled] .koowa .btn-primary.focus, fieldset[disabled] .koowa .btn-primary:active, fieldset[disabled] .koowa .btn-primary.active { background-color: #337ab7; border-color: #2e6da4; }
-
-.koowa .btn-primary .badge { color: #337ab7; background-color: #fff; }
-
-.koowa .btn-success { color: white; background-color: #27ae60; border-color: #229955; }
-
-.koowa .btn-success:hover, .koowa .btn-success:focus, .koowa .btn-success.focus, .koowa .btn-success:active, .koowa .btn-success.active, .open > .koowa .btn-success.dropdown-toggle { color: white; background-color: #1e8449; border-color: #176739; }
-
-.koowa .btn-success:active, .koowa .btn-success.active, .open > .koowa .btn-success.dropdown-toggle { background-image: none; }
-
-.koowa .btn-success.disabled, .koowa .btn-success.disabled:hover, .koowa .btn-success.disabled:focus, .koowa .btn-success.disabled.focus, .koowa .btn-success.disabled:active, .koowa .btn-success.disabled.active, .koowa .btn-success[disabled], .koowa .btn-success[disabled]:hover, .koowa .btn-success[disabled]:focus, .koowa .btn-success[disabled].focus, .koowa .btn-success[disabled]:active, .koowa .btn-success[disabled].active, fieldset[disabled] .koowa .btn-success, fieldset[disabled] .koowa .btn-success:hover, fieldset[disabled] .koowa .btn-success:focus, fieldset[disabled] .koowa .btn-success.focus, fieldset[disabled] .koowa .btn-success:active, fieldset[disabled] .koowa .btn-success.active { background-color: #27ae60; border-color: #229955; }
-
-.koowa .btn-success .badge { color: #27ae60; background-color: white; }
-
-.koowa .btn-info { color: #fff; background-color: #5bc0de; border-color: #46b8da; }
-
-.koowa .btn-info:hover, .koowa .btn-info:focus, .koowa .btn-info.focus, .koowa .btn-info:active, .koowa .btn-info.active, .open > .koowa .btn-info.dropdown-toggle { color: #fff; background-color: #31b0d5; border-color: #269abc; }
-
-.koowa .btn-info:active, .koowa .btn-info.active, .open > .koowa .btn-info.dropdown-toggle { background-image: none; }
-
-.koowa .btn-info.disabled, .koowa .btn-info.disabled:hover, .koowa .btn-info.disabled:focus, .koowa .btn-info.disabled.focus, .koowa .btn-info.disabled:active, .koowa .btn-info.disabled.active, .koowa .btn-info[disabled], .koowa .btn-info[disabled]:hover, .koowa .btn-info[disabled]:focus, .koowa .btn-info[disabled].focus, .koowa .btn-info[disabled]:active, .koowa .btn-info[disabled].active, fieldset[disabled] .koowa .btn-info, fieldset[disabled] .koowa .btn-info:hover, fieldset[disabled] .koowa .btn-info:focus, fieldset[disabled] .koowa .btn-info.focus, fieldset[disabled] .koowa .btn-info:active, fieldset[disabled] .koowa .btn-info.active { background-color: #5bc0de; border-color: #46b8da; }
-
-.koowa .btn-info .badge { color: #5bc0de; background-color: #fff; }
-
-.koowa .btn-warning { color: #fff; background-color: #f0ad4e; border-color: #eea236; }
-
-.koowa .btn-warning:hover, .koowa .btn-warning:focus, .koowa .btn-warning.focus, .koowa .btn-warning:active, .koowa .btn-warning.active, .open > .koowa .btn-warning.dropdown-toggle { color: #fff; background-color: #ec971f; border-color: #d58512; }
-
-.koowa .btn-warning:active, .koowa .btn-warning.active, .open > .koowa .btn-warning.dropdown-toggle { background-image: none; }
-
-.koowa .btn-warning.disabled, .koowa .btn-warning.disabled:hover, .koowa .btn-warning.disabled:focus, .koowa .btn-warning.disabled.focus, .koowa .btn-warning.disabled:active, .koowa .btn-warning.disabled.active, .koowa .btn-warning[disabled], .koowa .btn-warning[disabled]:hover, .koowa .btn-warning[disabled]:focus, .koowa .btn-warning[disabled].focus, .koowa .btn-warning[disabled]:active, .koowa .btn-warning[disabled].active, fieldset[disabled] .koowa .btn-warning, fieldset[disabled] .koowa .btn-warning:hover, fieldset[disabled] .koowa .btn-warning:focus, fieldset[disabled] .koowa .btn-warning.focus, fieldset[disabled] .koowa .btn-warning:active, fieldset[disabled] .koowa .btn-warning.active { background-color: #f0ad4e; border-color: #eea236; }
-
-.koowa .btn-warning .badge { color: #f0ad4e; background-color: #fff; }
-
-.koowa .btn-danger { color: #fff; background-color: #d9534f; border-color: #d43f3a; }
-
-.koowa .btn-danger:hover, .koowa .btn-danger:focus, .koowa .btn-danger.focus, .koowa .btn-danger:active, .koowa .btn-danger.active, .open > .koowa .btn-danger.dropdown-toggle { color: #fff; background-color: #c9302c; border-color: #ac2925; }
-
-.koowa .btn-danger:active, .koowa .btn-danger.active, .open > .koowa .btn-danger.dropdown-toggle { background-image: none; }
-
-.koowa .btn-danger.disabled, .koowa .btn-danger.disabled:hover, .koowa .btn-danger.disabled:focus, .koowa .btn-danger.disabled.focus, .koowa .btn-danger.disabled:active, .koowa .btn-danger.disabled.active, .koowa .btn-danger[disabled], .koowa .btn-danger[disabled]:hover, .koowa .btn-danger[disabled]:focus, .koowa .btn-danger[disabled].focus, .koowa .btn-danger[disabled]:active, .koowa .btn-danger[disabled].active, fieldset[disabled] .koowa .btn-danger, fieldset[disabled] .koowa .btn-danger:hover, fieldset[disabled] .koowa .btn-danger:focus, fieldset[disabled] .koowa .btn-danger.focus, fieldset[disabled] .koowa .btn-danger:active, fieldset[disabled] .koowa .btn-danger.active { background-color: #d9534f; border-color: #d43f3a; }
-
-.koowa .btn-danger .badge { color: #d9534f; background-color: #fff; }
-
-.koowa .btn-link { color: #337ab7; font-weight: normal; border-radius: 0; }
-
-.koowa .btn-link, .koowa .btn-link:active, .koowa .btn-link.active, .koowa .btn-link[disabled], fieldset[disabled] .koowa .btn-link { background-color: transparent; box-shadow: none; }
-
-.koowa .btn-link, .koowa .btn-link:hover, .koowa .btn-link:focus, .koowa .btn-link:active { border-color: transparent; }
-
-.koowa .btn-link:hover, .koowa .btn-link:focus { color: #23527c; text-decoration: underline; background-color: transparent; }
-
-.koowa .btn-link[disabled]:hover, .koowa .btn-link[disabled]:focus, fieldset[disabled] .koowa .btn-link:hover, fieldset[disabled] .koowa .btn-link:focus { color: #777777; text-decoration: none; }
-
-.koowa .btn-lg { padding: 10px 16px; font-size: 18px; line-height: 1.3333333; border-radius: 6px; }
-
-.koowa .btn-sm { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
-
-.koowa .btn-xs { padding: 1px 5px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
-
-.koowa .btn-block { display: block; width: 100%; }
-
-.koowa .btn-block + .btn-block { margin-top: 5px; }
-
-.koowa input[type="submit"].btn-block, .koowa input[type="reset"].btn-block, .koowa input[type="button"].btn-block { width: 100%; }
+.koowa .pagination-sm > li:last-child > a, .koowa .pagination-sm > li:last-child > span { border-bottom-right-radius: 3px; border-top-right-radius: 3px; }
 
 .koowa .btn-right { float: right; }
 
@@ -1431,7 +1458,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-scopebar__search .search_button { margin: 0; padding: 0; list-style: none; border: none; background: transparent; -webkit-appearance: none; display: block; background: white; color: #222222; padding: 7px; height: 32px; padding-right: 32px; border-radius: 0; width: 100%; box-shadow: none; }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid false; } }
+@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid #2e7e78; } }
 
 .koowa .k-scopebar__search .search_button--empty { position: absolute; top: 7px; right: 10px; font-size: 10px; }
 
@@ -1493,13 +1520,13 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table-pagination { background: #eee; border-top: 1px solid #e1e1e1; padding: 13px; }
 
+.koowa .k-table-pagination .limit, .koowa .k-table-pagination .pagination { display: inline-block; vertical-align: middle; }
+
 .koowa .k-table-pagination .pagination { margin: 0; }
 
-.koowa .k-table-pagination .limit { display: inline-block; text-align: center; }
+.koowa .k-table-pagination .limit { text-align: center; }
 
-.koowa .k-table-pagination .limit select { width: auto; }
-
-.koowa .k-table-pagination .pagination-list { vertical-align: middle; }
+.koowa .k-table-pagination .limit select { width: auto; height: 34px; margin-right: 10px; }
 
 .koowa .k-table__checkbox { display: inline-block; }
 

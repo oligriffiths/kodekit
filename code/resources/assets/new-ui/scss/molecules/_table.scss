@@ -73,21 +73,24 @@
   border-top: 1px solid $table-pagination-border;
   padding: $spacing-small;
 
+  .limit,
+  .pagination {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   .pagination {
     margin: 0;
   }
 
   .limit {
-    display: inline-block;
     text-align: center;
 
     select {
       width: auto;
+      height: $input-height-base + 2px;
+      margin-right: 10px;
     }
-  }
-
-  .pagination-list {
-    vertical-align: middle;
   }
 }
 

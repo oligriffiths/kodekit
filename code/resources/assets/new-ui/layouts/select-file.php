@@ -134,7 +134,7 @@
                         </div><!-- .k-table -->
 
                         <div class="k-table-pagination">
-                            <div class="pagination pagination-toolbar">
+                            <div class="k-pagination">
                                 <div class="limit">
                                     <select name="limit" size="1">
                                         <option value="5" class="level1">5</option>
