@@ -61,7 +61,7 @@
     }
   }
 
-  @if $scopebar-btn-alt == true {
+  @if $toolbar-btn-alt == true {
     .btn-success {
       border-color: $scopebar-btn-success-border;
       background: $scopebar-btn-success-background;
