@@ -10,151 +10,153 @@
  * The :not(old-ie) makes sure nothing gets added to older IE
  */
 
-.checkbox-toggle:not(old-ie) {
-  position: relative;
-  display: table;
-  width: 100%;
-
-  /* Hiding the input but keeping accessible */
-  input {
-    @extend .visually-hidden;
-  }
-
-  label {
-    display: block;
-    line-height: $checkbox-toggle-height;
-    font-weight: $regular
-  }
-
-  /* Making label and span fully clickable */
-  label, span {
-    display: block;
-    cursor: pointer;
-    margin: 0;
+@if $radio-toggle == true {
+  .checkbox-toggle:not(old-ie) {
     position: relative;
+    display: table;
+    width: 100%;
 
-    &:before,
-    &:after {
-      display: block;
-      position: absolute;
+    /* Hiding the input but keeping accessible */
+    input {
+      @extend .visually-hidden;
     }
-  }
-
-  label:before {
-    content: " ";
-    width: $checkbox-toggle-width;
-    height: $checkbox-toggle-height;
-    top: 0;
-    right: 0;
-    background: white;
-    border: $checkbox-toggle-border-width solid #ccc;
-    border-radius: $checkbox-toggle-border-radius;
-    transition: all $transition;
-  }
-
-  label:after {
-    content: " ";
-    width: $checkbox-toggle-width-inner;
-    height: $checkbox-toggle-height-inner;
-    top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-    right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-    background: $red;
-    border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
-    transition: all $transition;
-  }
-
-  span:before,
-  span:after {
-    font-size: 10px;
-    line-height: $checkbox-toggle-height-inner - 2;
-    text-transform: uppercase;
-    text-align: center;
-    transition: all $transition;
-  }
-
-  span:before {
-    content: attr(data-false);
-    width: $checkbox-toggle-width-inner - $checkbox-toggle-height-inner;
-    height: $checkbox-toggle-height-inner;
-    top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-    right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-    color: white;
-    border: 1px solid transparent;
-  }
-
-  span:after {
-    content: attr(data-true);
-    width: $checkbox-toggle-height-inner;
-    height: $checkbox-toggle-height-inner;
-    background: white;
-    text-indent: -($checkbox-toggle-width-inner);
-    text-align: center;
-    top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-    border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
-    color: white;
-    right: $checkbox-toggle-width - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
-    border: 1px solid $red;
-    transition: all $transition;
-  }
-
-  span {
-    display: block;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-  }
-
-  input:active,
-  input:focus {
-    & + label:before {
-      border: $checkbox-toggle-border-width solid #66afe9;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-    }
-  }
-
-  input:checked + label {
-    &:after {
-      background: $green;
-    }
-
-    span {
-      &:before {
-        right: -($checkbox-toggle-width-inner - $checkbox-toggle-height-inner);
-      }
-
-      &:after {
-        right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
-        border-color: $green;
-      }
-    }
-  }
-
-  &.checkbox-toggle--neutral {
 
     label {
+      display: block;
+      line-height: $checkbox-toggle-height;
+      font-weight: $regular
+    }
+
+    /* Making label and span fully clickable */
+    label, span {
+      display: block;
+      cursor: pointer;
+      margin: 0;
+      position: relative;
+
+      &:before,
       &:after {
-        background: #ddd;
+        display: block;
+        position: absolute;
       }
     }
 
-    span {
-      &:before {
-        color: #666;
-      }
+    label:before {
+      content: " ";
+      width: $checkbox-toggle-width;
+      height: $checkbox-toggle-height;
+      top: 0;
+      right: 0;
+      background: white;
+      border: $checkbox-toggle-border-width solid #ccc;
+      border-radius: $checkbox-toggle-border-radius;
+      transition: all $transition;
+    }
 
-      &:after {
-        border-color: #999;
+    label:after {
+      content: " ";
+      width: $checkbox-toggle-width-inner;
+      height: $checkbox-toggle-height-inner;
+      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+      right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+      background: $red;
+      border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
+      transition: all $transition;
+    }
+
+    span:before,
+    span:after {
+      font-size: 10px;
+      line-height: $checkbox-toggle-height-inner - 2;
+      text-transform: uppercase;
+      text-align: center;
+      transition: all $transition;
+    }
+
+    span:before {
+      content: attr(data-false);
+      width: $checkbox-toggle-width-inner - $checkbox-toggle-height-inner;
+      height: $checkbox-toggle-height-inner;
+      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+      right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+      color: white;
+      border: 1px solid transparent;
+    }
+
+    span:after {
+      content: attr(data-true);
+      width: $checkbox-toggle-height-inner;
+      height: $checkbox-toggle-height-inner;
+      background: white;
+      text-indent: -($checkbox-toggle-width-inner);
+      text-align: center;
+      top: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+      border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
+      color: white;
+      right: $checkbox-toggle-width - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
+      border: 1px solid $red;
+      transition: all $transition;
+    }
+
+    span {
+      display: block;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    input:active,
+    input:focus {
+      & + label:before {
+        border: $checkbox-toggle-border-width solid #66afe9;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
       }
     }
 
     input:checked + label {
       &:after {
-        background: $blue;
+        background: $green;
       }
 
       span {
+        &:before {
+          right: -($checkbox-toggle-width-inner - $checkbox-toggle-height-inner);
+        }
+
         &:after {
-          border-color: $blue;
+          right: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+          border-color: $green;
+        }
+      }
+    }
+
+    &.checkbox-toggle--neutral {
+
+      label {
+        &:after {
+          background: #ddd;
+        }
+      }
+
+      span {
+        &:before {
+          color: #666;
+        }
+
+        &:after {
+          border-color: #999;
+        }
+      }
+
+      input:checked + label {
+        &:after {
+          background: $blue;
+        }
+
+        span {
+          &:after {
+            border-color: $blue;
+          }
         }
       }
     }
