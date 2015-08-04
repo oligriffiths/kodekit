@@ -1,0 +1,19 @@
+/**
+ * Grid
+ * ====
+ */
+
+.k-container {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $maxwidth;
+  padding: $spacing;
+}
+
+.k-container__main {
+  @include span(8);
+}
+
+.k-container__sub {
+  @include span(4);
+}
