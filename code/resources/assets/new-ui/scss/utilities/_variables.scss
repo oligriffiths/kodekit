@@ -405,10 +405,24 @@ $titlebar-color:        $toolbar-color !default;
  * Overflowing shadows
  */
 
-$overflow-size:     6px;
-$overflow-blur:     $overflow-size * 2;
-$overflow-offset:   -($overflow-size);
-$overflow-color:    rgba(0,0,0,.66);
+$overflow-size:     6px !default;
+$overflow-blur:     $overflow-size * 2 !default;
+$overflow-offset:   -($overflow-size) !default;
+$overflow-color:    rgba(0,0,0,.66) !default;
+
+
+
+/**
+ * Form front
+ * ==========
+ * Forms on frontend
+ */
+
+$form-front-background:           #333 !default;
+$form-front-maxwidth:             $maxwidth !default;
+$form-front-spacing:              1em auto 0 !default;
+$form-front-content-background:   white !default;
+$form-front-content-shadow:       0 3px 6px rgba(0,0,0,.5) !default;
 
 
 

@@ -64,7 +64,7 @@
                         <ul>
                             <li class="home">
                                 <a class="k-breadcrumb__item k-icon-home" href="#">
-                                    <span class="visually-hidden-icon-label">Home</span>
+                                    <span class="visually-hidden">Home</span>
                                 </a>
                             </li>
                             <li>

@@ -3,6 +3,13 @@
  * ======================================
  */
 
+
+/**
+ * Cutting the mustard
+ * -------------------
+ * The :not(old-ie) makes sure nothing gets added to older IE
+ */
+
 @if $radio-toggle == true {
   .radio-toggle:not(ie) {
     display: table;

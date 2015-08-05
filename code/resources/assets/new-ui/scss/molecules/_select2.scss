@@ -1,6 +1,7 @@
 /**
  * Select2
  * =======
+ * Overrides & themes for default select2 container
  */
 
 .koowa .select2 {
@@ -32,7 +33,6 @@
 .koowa .select2-selection__clear {
   margin: -1px -2px 0 10px;
 }
-
 
 .select2-container .select2-selection--single {
   height: 32px;
