@@ -1,4 +1,27 @@
 /**
+ * Default select is not styled outside Joomla scope (for example in koowa template)
+ */
+
+select {
+  @extend .form-control;
+}
+
+
+
+/**
+ * 1. No text-decoration for buttons
+ * 2. Bootstrap 2 uses .btn as default button. Bootstrap 3 uses .btn-default as default
+      Extending the bootstrap 3 default btn styling to the regular .btn class
+ */
+
+.btn {
+  text-decoration: none; // 1
+  @extend .btn-default; // 2
+}
+
+
+
+/**
  * Icons
  * =====
  * Set proper icons for generated icon class names.
@@ -10,6 +33,7 @@
 /**
  * Navigation icons
  * ----------------
+ * @TODO: this should go into com_todo actually
  */
 
 .k-icon-activities {
