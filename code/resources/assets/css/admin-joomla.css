@@ -646,9 +646,9 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) { @font-face { font-family: "koowa-icons"; src: url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); } }
 
-.k-icon-calendar, .k-icon-check, .k-icon-clock, .k-icon-close, .k-icon-download, .k-icon-folder, .k-icon-grid, .k-icon-home, .k-icon-menu, .k-icon-pencil, .k-icon-plus-circle, .k-icon-plus, .k-icon-search, .k-icon-settings, .k-icon-star, .k-icon-table, .k-icon-times-circle, .k-icon-trash, .k-icon-user, .k-icon-activities:before, .k-icon-tasks:before, .icon-new:before, .icon-download:before, .icon-options:before, .icon-delete:before, .icon-purge:before, .icon-publish:before, .icon-unpublish:before, .icon-apply:before, .icon-save:before, .icon-cancel:before { speak: none; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-transform: none; line-height: 1; font-style: normal; font-variant: normal; font-weight: normal; font-family: 'koowa-icons'; }
+.k-icon-calendar, .k-icon-check, .k-icon-clock, .k-icon-close, .k-icon-download, .k-icon-folder, .k-icon-grid, .k-icon-home, .k-icon-menu, .k-icon-pencil, .k-icon-plus-circle, .k-icon-plus, .k-icon-search, .k-icon-settings, .k-icon-star, .k-icon-table, .k-icon-times-circle, .k-icon-trash, .k-icon-user, .k-icon-activities:before, .k-icon-tasks:before, .koowa .icon-new:before, .koowa .icon-download:before, .koowa .icon-options:before, .koowa .icon-delete:before, .koowa .icon-purge:before, .koowa .icon-publish:before, .koowa .icon-unpublish:before, .koowa .icon-apply:before, .koowa .icon-save:before, .koowa .icon-cancel:before { speak: none; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-transform: none; line-height: 1; font-style: normal; font-variant: normal; font-weight: normal; font-family: 'koowa-icons'; }
 
-.k-icon-calendar:before, .k-icon-check:before, .k-icon-clock:before, .k-icon-close:before, .k-icon-download:before, .k-icon-folder:before, .k-icon-grid:before, .k-icon-home:before, .k-icon-menu:before, .k-icon-pencil:before, .k-icon-plus-circle:before, .k-icon-plus:before, .k-icon-search:before, .k-icon-settings:before, .k-icon-star:before, .k-icon-table:before, .k-icon-times-circle:before, .k-icon-trash:before, .k-icon-user:before, .k-icon-activities:before, .k-icon-tasks:before, .icon-new:before, .icon-download:before, .icon-options:before, .icon-delete:before, .icon-purge:before, .icon-publish:before, .icon-unpublish:before, .icon-apply:before, .icon-save:before, .icon-cancel:before { display: inline-block; margin: auto; }
+.k-icon-calendar:before, .k-icon-check:before, .k-icon-clock:before, .k-icon-close:before, .k-icon-download:before, .k-icon-folder:before, .k-icon-grid:before, .k-icon-home:before, .k-icon-menu:before, .k-icon-pencil:before, .k-icon-plus-circle:before, .k-icon-plus:before, .k-icon-search:before, .k-icon-settings:before, .k-icon-star:before, .k-icon-table:before, .k-icon-times-circle:before, .k-icon-trash:before, .k-icon-user:before, .k-icon-activities:before, .k-icon-tasks:before, .koowa .icon-new:before, .koowa .icon-download:before, .koowa .icon-options:before, .koowa .icon-delete:before, .koowa .icon-purge:before, .koowa .icon-publish:before, .koowa .icon-unpublish:before, .koowa .icon-apply:before, .koowa .icon-save:before, .koowa .icon-cancel:before { display: inline-block; margin: auto; }
 
 .k-icon-calendar:before { content: ""; }
 
@@ -1303,7 +1303,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-list { padding: 0; list-style: none; border: none; background: transparent; margin: 7px 0; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
 
-.koowa .k-list li { display: block; }
+.koowa .k-list li { display: block; line-height: 20px; }
 
 .koowa .k-list a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 14px; color: #333; /* Hover & focus ------------- */ }
 
@@ -1335,7 +1335,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-navigation { margin: 0; list-style: none; border: none; border-bottom: 1px solid #cdd2dc; padding: 7px 0; background: #e2e5eb; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
 
-.koowa .k-navigation li { display: block; }
+.koowa .k-navigation li { display: block; line-height: 20px; }
 
 .koowa .k-navigation a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 21px; font-size: 16px; color: #333; /* Faux border ----------- Adding a border to the left, using "after" psuedo since "before" is used for the icon */ position: relative; /* Hover & focus ------------- */ }
 
@@ -1526,6 +1526,10 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table small { display: block; }
 
+.koowa .k-table a { text-decoration: none; }
+
+.koowa .k-table a:hover, .koowa .k-table a:focus { text-decoration: underline; }
+
 .koowa .k-table .selected td { background: #0088CC; color: #EBEDF1; }
 
 .koowa .k-table .selected td a, .koowa .k-table .selected td i, .koowa .k-table .selected td span { color: #EBEDF1; }
@@ -1650,30 +1654,30 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .k-icon-tasks:before { content: ""; margin-right: 10px; }
 
 /** Joomla icons ------------ Icons generated by Joomla overridden by us */
-.icon-new:before { content: ""; }
+.koowa .icon-new:before { content: ""; }
 
-.icon-download:before { content: ""; }
+.koowa .icon-download:before { content: ""; }
 
-.icon-options:before { content: ""; }
+.koowa .icon-options:before { content: ""; }
 
-.icon-delete:before { content: ""; }
+.koowa .icon-delete:before { content: ""; }
 
-.icon-purge:before { content: ""; }
+.koowa .icon-purge:before { content: ""; }
 
-.icon-publish { color: #27ae60; }
+.koowa .icon-publish { color: #27ae60; }
 
-.icon-publish:before { content: ""; }
+.koowa .icon-publish:before { content: ""; }
 
-.icon-unpublish { color: #c0392b; }
+.koowa .icon-unpublish { color: #c0392b; }
 
-.icon-unpublish:before { content: ""; }
+.koowa .icon-unpublish:before { content: ""; }
 
-.icon-apply:before { content: ""; }
+.koowa .icon-apply:before { content: ""; }
 
-.icon-save { color: #27ae60; }
+.koowa .icon-save { color: #27ae60; }
 
-.icon-save:before { content: ""; }
+.koowa .icon-save:before { content: ""; }
 
-.icon-cancel { color: #c0392b; }
+.koowa .icon-cancel { color: #c0392b; }
 
-.icon-cancel:before { content: ""; }
+.koowa .icon-cancel:before { content: ""; }
