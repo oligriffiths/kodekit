@@ -8,7 +8,28 @@
   margin: 0 auto;
   max-width: $maxwidth;
   padding: $spacing;
+  overflow: hidden;
 }
+
+
+
+/**
+ * When flexbox is in use
+ * ======================
+ */
+
+@include flexbox {
+  .k-container {
+    flex: 0 0 auto;
+  }
+}
+
+
+
+/**
+ * Grid children
+ * =============
+ */
 
 .k-container__main {
   @include breakpoint($charlie) {
