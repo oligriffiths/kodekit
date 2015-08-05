@@ -1463,13 +1463,15 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-table table { width: 100%; text-align: left; }
 
-.koowa .k-table th, .koowa .k-table td { padding: 7px; text-align: left; vertical-align: middle; height: 39px; position: relative; }
+.koowa .k-table th, .koowa .k-table td { text-align: left; vertical-align: middle; height: 39px; position: relative; }
 
-.koowa .k-table th input, .koowa .k-table td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; }
+.koowa .k-table th input, .koowa .k-table td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; height: 1em; }
 
-.koowa .k-table th { background: white; white-space: nowrap; }
+.koowa .k-table th { background: white; white-space: nowrap; z-index: 1; padding: 0 7px; }
 
-.koowa .k-table th a { display: block; }
+.koowa .k-table th a { display: block; padding: 7px 0; line-height: 25px; }
+
+.koowa .k-table td { padding: 7px; }
 
 .koowa .k-table tr:last-child td { border-bottom: none; }
 

@@ -76,6 +76,12 @@
         }
 
 
+        $('.select2-selection__clear').click(function(e) {
+            alert('test');
+            e.preventDefault();
+        });
+
+
         // Table items
         if ( $tableitems.length ) {
             $tableitems.click(function () {
