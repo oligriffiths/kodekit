@@ -1,5 +1,5 @@
 {
-    "baseClass": "koowa-icon-",
-    "classPrefix": "koowa-icon-",
-    "mixinPrefix": "koowa-icon-"
+    "baseClass": "k-icon-",
+    "classPrefix": "k-icon-",
+    "mixinPrefix": "k-icon-"
 }
