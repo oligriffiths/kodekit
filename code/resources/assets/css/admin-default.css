@@ -1251,7 +1251,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-list { padding: 0; list-style: none; border: none; background: transparent; margin: 7px 0; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
 
-.koowa .k-list li { display: block; }
+.koowa .k-list li { display: block; line-height: 20px; }
 
 .koowa .k-list a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 14px; color: #ecf0f1; /* Hover & focus ------------- */ }
 
@@ -1283,7 +1283,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-navigation { margin: 0; list-style: none; border: none; padding: 7px 0; background: #2f4154; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
 
-.koowa .k-navigation li { display: block; }
+.koowa .k-navigation li { display: block; line-height: 20px; }
 
 .koowa .k-navigation a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 21px; font-size: 16px; color: #ecf0f1; /* Faux border ----------- Adding a border to the left, using "after" psuedo since "before" is used for the icon */ position: relative; /* Hover & focus ------------- */ }
 
@@ -1471,6 +1471,10 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .koowa .k-table tr:last-child td { border-bottom: none; }
 
 .koowa .k-table small { display: block; }
+
+.koowa .k-table a { text-decoration: none; }
+
+.koowa .k-table a:hover, .koowa .k-table a:focus { text-decoration: underline; }
 
 .koowa .k-table .selected td { background: #3498db; color: #34495e; }
 
