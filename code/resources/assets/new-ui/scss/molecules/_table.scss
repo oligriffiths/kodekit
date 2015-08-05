@@ -47,7 +47,6 @@
 
   th,
   td {
-    padding: $table-cell-spacing;
     text-align: left;
     vertical-align: middle;
     height: $table-cell-size;
@@ -57,6 +56,7 @@
       display: inline-block; // 1
       vertical-align: middle; // 1
       margin: -1px 0 0 0; // 2
+      height: 1em;
     }
   }
 
@@ -72,9 +72,13 @@
     @include border(bottom, $table-header-border);
     background: $table-header-background;
     white-space: nowrap; // 1
+    z-index: 1;
+    padding: 0 $table-cell-spacing;
 
     a {
       display: block; // 2
+      padding: $table-cell-spacing 0;
+      line-height: $table-cell-size - ($table-cell-spacing * 2);
     }
   }
 
@@ -88,6 +92,7 @@
 
   td {
     @include border(bottom, $table-cell-border);
+    padding: $table-cell-spacing;
   }
 
   tr:last-child {
