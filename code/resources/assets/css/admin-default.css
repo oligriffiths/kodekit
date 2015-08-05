@@ -28,6 +28,7 @@
 /* Success button */
 /** Titlebar ======== By default it looks the same as the toolbar */
 /** Overflowing =========== Overflowing shadows */
+/** Form front ========== Forms on frontend */
 /** Radio toggle ============ 1. Use styled radio toggles? 2. The color for "false"/0 items 3. The color for "true"/1 items 4. The color for neutral items */
 /** Checkbox toggle ============ 1. Use styled checkbox toggles? */
 /** Bootstrap overrides =================== We depend on Bootstrap 3 for a few basic things This is the place to overwrite the used variables */
@@ -547,7 +548,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
   .koowa_dialog_modal .mfp-content .mfp-iframe-scaler { height: 100%; max-height: 100% !important; }
   .koowa_dialog_modal .mfp-content .mfp-iframe-scaler iframe { height: 100%; max-height: 100% !important; } }
 
-/** Select2 ======= */
+/** Select2 ======= Overrides & themes for default select2 container */
 .koowa .select2 { width: 100%; max-width: 100% !important; }
 
 .koowa .select2--link-style .select2-container { width: auto !important; }
@@ -591,38 +592,38 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) { @font-face { font-family: "koowa-icons"; src: url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); } }
 
-.koowa-icon-calendar, .koowa-icon-clock, .koowa-icon-close, .koowa-icon-folder, .koowa-icon-grid, .koowa-icon-home, .koowa-icon-menu, .koowa-icon-plus, .koowa-icon-search, .koowa-icon-settings, .koowa-icon-star, .koowa-icon-table, .koowa-icon-user, .koowa .k-icon-star:before, .koowa .k-icon-remove:before, .koowa .k-icon-calendar:before, .koowa .k-icon-activities:before, .koowa .k-icon-home:before, .koowa .k-icon-tasks:before, .koowa .k-icon-burger:before, .koowa .k-icon-list:before, .koowa .k-icon-grid:before, .koowa .k-icon-settings:before, .koowa .k-icon-search:before, .koowa .k-icon-plus:before, .koowa .k-icon-user:before, .koowa .k-icon-clock:before, .koowa .k-icon-folder:before { speak: none; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-transform: none; line-height: 1; font-style: normal; font-variant: normal; font-weight: normal; font-family: 'koowa-icons'; }
+.k-icon-calendar, .k-icon-clock, .k-icon-close, .k-icon-folder, .k-icon-grid, .k-icon-home, .k-icon-menu, .k-icon-plus, .k-icon-search, .k-icon-settings, .k-icon-star, .k-icon-table, .k-icon-user { speak: none; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-transform: none; line-height: 1; font-style: normal; font-variant: normal; font-weight: normal; font-family: 'koowa-icons'; }
 
-.koowa-icon-calendar:before, .koowa-icon-clock:before, .koowa-icon-close:before, .koowa-icon-folder:before, .koowa-icon-grid:before, .koowa-icon-home:before, .koowa-icon-menu:before, .koowa-icon-plus:before, .koowa-icon-search:before, .koowa-icon-settings:before, .koowa-icon-star:before, .koowa-icon-table:before, .koowa-icon-user:before, .koowa .k-icon-star:before, .koowa .k-icon-remove:before, .koowa .k-icon-calendar:before, .koowa .k-icon-activities:before, .koowa .k-icon-home:before, .koowa .k-icon-tasks:before, .koowa .k-icon-burger:before, .koowa .k-icon-list:before, .koowa .k-icon-grid:before, .koowa .k-icon-settings:before, .koowa .k-icon-search:before, .koowa .k-icon-plus:before, .koowa .k-icon-user:before, .koowa .k-icon-clock:before, .koowa .k-icon-folder:before { display: inline-block; margin: auto; }
+.k-icon-calendar:before, .k-icon-clock:before, .k-icon-close:before, .k-icon-folder:before, .k-icon-grid:before, .k-icon-home:before, .k-icon-menu:before, .k-icon-plus:before, .k-icon-search:before, .k-icon-settings:before, .k-icon-star:before, .k-icon-table:before, .k-icon-user:before { display: inline-block; margin: auto; }
 
-.koowa-icon-calendar:before { content: ""; }
+.k-icon-calendar:before { content: ""; }
 
-.koowa-icon-clock:before { content: ""; }
+.k-icon-clock:before { content: ""; }
 
-.koowa-icon-close:before { content: ""; }
+.k-icon-close:before { content: ""; }
 
-.koowa-icon-folder:before { content: ""; }
+.k-icon-folder:before { content: ""; }
 
-.koowa-icon-grid:before { content: ""; }
+.k-icon-grid:before { content: ""; }
 
-.koowa-icon-home:before { content: ""; }
+.k-icon-home:before { content: ""; }
 
-.koowa-icon-menu:before { content: ""; }
+.k-icon-menu:before { content: ""; }
 
-.koowa-icon-plus:before { content: ""; }
+.k-icon-plus:before { content: ""; }
 
-.koowa-icon-search:before { content: ""; }
+.k-icon-search:before { content: ""; }
 
-.koowa-icon-settings:before { content: ""; }
+.k-icon-settings:before { content: ""; }
 
-.koowa-icon-star:before { content: ""; }
+.k-icon-star:before { content: ""; }
 
-.koowa-icon-table:before { content: ""; }
+.k-icon-table:before { content: ""; }
 
-.koowa-icon-user:before { content: ""; }
+.k-icon-user:before { content: ""; }
 
 /** Koowa namespaced styling ======================== By namespacing we make sure our styles never interfere with other styles on the page For example when using Nooku inside of another framework or CMS */
-.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / additions */ /** Default button styles ===================== 1. Right floating buttons */ /** Form and control groups ======================= Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /** Bootstrap input-group ===================== */ /* Atoms */ /** Default link style ================== */ /** Default button style ==================== */ /** Default fieldset style ====================== */ /** Default img style ================= */ /** Default paragraph style ======================= 1. Using single colon so it works in IE8 as well */ /* Molecules */ /** Breadcrumbs =========== 1. Scroll when items don't fit parent anymore */ /** When flexbox is in use ====================== */ /** Breadcrumb contents =================== */ /** Single breadcrumb items ======================= */ /** CSS only animated checkbox toggle styling ========================================= */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** The component div ================= */ /** The content div =============== 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== 1. Reset width needed for table */ /** Container when toggled ====================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough 4. Set a box shadow so menus appear behind container */ /** The overlay =========== 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled ==================== 1. Set opacity 2. Set z-index to 1 so it will become visible */ /** The content wrapping div ======================== 1. Clearing toolbar floats when flexbox is not in use */ /** When flexbox is in use ====================== */ /** Wrapper when toggled ==================== 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /** Form block ========== To be used in sidebar of forms Data in these boxes should be non-required info */ /** Grid ==== */ /** Animated hamburger button ========================= */ /** List ==== 1. Reset default <ul> styling */ /** Navigation ========== 1. Reset default <ul> styling */ /** Overflowing =========== */ /** CSS only animated radio toggle styling ====================================== */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /** Scopebar contents ================= */ /** Scopebar items ============== */ /** Scopebar search --------------- 1. Hide by default so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens */ /** Search toggle button -------------------- 1. Hide when search is visible */ /** Default styles with JavaScript disabled ======================================= */ /** When JavaScript is enabled ========================== */ /** When flexbox is in use ====================== */ /** Left sidebar specific --------------------- */ /** When sidebar is toggled ----------------------- */ /** Right sidebar specific ---------------------- */ /** When sidebar is toggled ----------------------- */ /** When flexbox is in use ====================== */ /** Table contents ============== */ /** Table pagination ================ */ /** Default with JavaScript disabled ================================ 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== */ /** Titlebar when toggled ===================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled ========================= 1. Set opacity 2. Set z-index so it will become visible */ /** Titlebar contents ================= */ /** Toolbar ======= */ /** When flexbox is in use ====================== */ /** Toolbar contents ====================== */ /** Tree ==== */ /** Upload ====== */ /** The drop message ---------------- 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload --------------------------- 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /** Overview layout =============== The default overview layout 1. Left sidebar 2. Toggle button 3. Breadrumbs 4. Upload area 5. Scopebar 6. Table / grid / content 7. Right sidebar _____________________________ |  1  |2|_3___________|  7  | |     |_4_____________|     | |     |_5_____________|     | |     | 6             |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== The default form layout 1. titlebar 2. Main content 3. Extra (non-critical) content boxes _____________________________ |_____________1_____________| |                   _______ | |         2         |  3  | | |                   |_____| | |                   _______ | |                   |  3  | | |                   |_____| | |___________________________| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Utilities --------- loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /** Utilities ============ Checking class three times so we win over most other classes without using !important. Most selectors are max three long */ /** Disable transitions =================== */ /** Nowrap ====== */ /** Disabled ======== */ /** Shame --------- Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
+.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / additions */ /** Default button styles ===================== 1. Right floating buttons */ /** Form and control groups ======================= Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /** Bootstrap input-group ===================== */ /* Atoms */ /** Default link style ================== */ /** Default button style ==================== */ /** Default fieldset style ====================== */ /** Default img style ================= */ /** Default paragraph style ======================= 1. Using single colon so it works in IE8 as well */ /* Molecules */ /** Breadcrumbs =========== 1. Scroll when items don't fit parent anymore */ /** When flexbox is in use ====================== */ /** Breadcrumb contents =================== */ /** Single breadcrumb items ======================= */ /** CSS only animated checkbox toggle styling ========================================= */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** The component div ================= */ /** The content div =============== 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== 1. Reset width needed for table */ /** Container when toggled ====================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough 4. Set a box shadow so menus appear behind container */ /** The overlay =========== 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled ==================== 1. Set opacity 2. Set z-index to 1 so it will become visible */ /** The content wrapping div ======================== 1. Clearing toolbar floats when flexbox is not in use */ /** When flexbox is in use ====================== */ /** Wrapper when toggled ==================== 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /** Form block ========== To be used in sidebar of forms Data in these boxes should be non-required info */ /** Grid ==== */ /** Animated hamburger button ========================= */ /** List ==== 1. Reset default <ul> styling */ /** Navigation ========== 1. Reset default <ul> styling */ /** Overflowing =========== */ /** CSS only animated radio toggle styling ====================================== */ /** Cutting the mustard ------------------- The :not(old-ie) makes sure nothing gets added to older IE */ /** Scopebar ======== */ /** When flexbox is in use ====================== 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /** Scopebar contents ================= */ /** Scopebar items ============== */ /** Scopebar search --------------- 1. Hide by default so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens */ /** Search toggle button -------------------- 1. Hide when search is visible */ /** Default styles with JavaScript disabled ======================================= */ /** When JavaScript is enabled ========================== */ /** When flexbox is in use ====================== */ /** Left sidebar specific --------------------- */ /** When sidebar is toggled ----------------------- */ /** Right sidebar specific ---------------------- */ /** When sidebar is toggled ----------------------- */ /** When flexbox is in use ====================== */ /** Table contents ============== */ /** Table pagination ================ */ /** Default with JavaScript disabled ================================ 1. Set transition for off canvas sidebar 2. Setting a background so container will fall nicely over the sidebar 3. Set the z-index higher than the menus */ /** When flexbox is in use ====================== */ /** Titlebar when toggled ===================== 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled ========================= 1. Set opacity 2. Set z-index so it will become visible */ /** Titlebar contents ================= */ /** Toolbar ======= */ /** When flexbox is in use ====================== */ /** Toolbar contents ====================== */ /** Tree ==== */ /** Upload ====== */ /** The drop message ---------------- 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload --------------------------- 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /** Overview layout =============== The default overview layout 1. Left sidebar 2. Toggle button 3. Breadrumbs 4. Upload area 5. Scopebar 6. Table / grid / content 7. Right sidebar _____________________________ |  1  |2|_3___________|  7  | |     |_4_____________|     | |     |_5_____________|     | |     | 6             |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== The default form layout 1. titlebar 2. Main content 3. Extra (non-critical) content boxes _____________________________ |_____________1_____________| |                   _______ | |         2         |  3  | | |                   |_____| | |                   _______ | |                   |  3  | | |                   |_____| | |___________________________| */ /** Default styles with JavaScript disabled ======================================= */ /** When flexbox is in use ====================== */ /** Form layout =========== Building on top of the _form.scss file The only thing we're doing here is adding a dark background */ /** Utilities --------- loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /** Utilities ============ Checking class three times so we win over most other classes without using !important. Most selectors are max three long */ /** Disable transitions =================== */ /** Nowrap ====== */ /** Disabled ======== */ /** Shame --------- Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
 
 .koowa html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
@@ -1212,7 +1213,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .off-canvas-menu-toggle { width: 33px; height: 33px; border-radius: 3px; background: #34495e; color: #ecf0f1; border: none; padding: 0; margin: 10px; z-index: 3; position: relative; float: left; }
 
-@media screen and (min-width: 768px) { .koowa .off-canvas-menu-toggle { display: none; } }
+@media screen and (min-width: 768px) { .koowa .off-canvas-menu-toggle { display: none; /* hide toggle buttons when screen is wide enough */ } }
 
 .koowa .off-canvas-menu-toggle .bar1, .koowa .off-canvas-menu-toggle .bar2, .koowa .off-canvas-menu-toggle .bar3 { width: 15px; height: 3px; display: block; position: absolute; left: 9px; background: #ecf0f1; border-radius: 1px; vertical-align: middle; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
@@ -1231,62 +1232,6 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .koowa .show-left-menu .off-canvas-menu-toggle .bar2, .koowa .show-right-menu .off-canvas-menu-toggle .bar2 { -webkit-transform: translate(-100%, 0); -ms-transform: translate(-100%, 0); transform: translate(-100%, 0); opacity: 0; }
 
 .koowa .show-left-menu .off-canvas-menu-toggle .bar3, .koowa .show-right-menu .off-canvas-menu-toggle .bar3 { top: 15px; -webkit-transform: rotate(-135deg); -ms-transform: rotate(-135deg); transform: rotate(-135deg); }
-
-.koowa .k-icon-arrows { display: inline-block; vertical-align: middle; position: relative; line-height: 0; margin-left: 6px; width: 4px; height: 10px; }
-
-.koowa .k-icon-arrows:before, .koowa .k-icon-arrows:after { content: " "; display: block; }
-
-.koowa .k-icon-arrows:before { border-left: 4px solid transparent; border-right: 4px solid transparent; border-bottom: 4px solid; border-bottom-color: #555555; margin-bottom: 1px; }
-
-.koowa .k-icon-arrows:after { border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; border-top-color: #555555; }
-
-.koowa .k-ordered-asc .k-icon-arrows:before { border-bottom-color: inherit; }
-
-.koowa .k-ordered-asc a:hover .k-icon-arrows:before, .koowa .k-ordered-asc a:focus .k-icon-arrows:before { border-bottom-color: #555555; }
-
-.koowa .k-ordered-asc a:hover .k-icon-arrows:after, .koowa .k-ordered-asc a:focus .k-icon-arrows:after { border-top-color: inherit; }
-
-.koowa .k-ordered-desc .k-icon-arrows:after { border-top-color: inherit; }
-
-.koowa .k-ordered-desc a:hover .k-icon-arrows:after, .koowa .k-ordered-desc a:focus .k-icon-arrows:after { border-top-color: #555555; }
-
-.koowa .k-ordered-desc a:hover .k-icon-arrows:before, .koowa .k-ordered-desc a:focus .k-icon-arrows:before { border-bottom-color: inherit; }
-
-.koowa .k-table th a:hover .k-icon-arrows:after, .koowa .k-table th a:focus .k-icon-arrows:after { border-top-color: #555555; }
-
-.koowa .k-table th a:hover .k-icon-arrows:before, .koowa .k-table th a:focus .k-icon-arrows:before { border-bottom-color: inherit; }
-
-.koowa .k-icon-arrow { display: inline-block; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; position: relative; top: -2px; left: -1px; }
-
-.koowa .k-icon-arrow-in { display: inline-block; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 4px solid; position: relative; top: 0; left: 0; width: 7px; }
-
-.koowa .k-icon-star:before { content: ""; font-size: 12px; }
-
-.koowa .k-icon-remove:before { content: ""; font-size: 10px; }
-
-.koowa .k-icon-calendar:before, .koowa .k-icon-activities:before { content: ""; margin-right: 10px; }
-
-.koowa .k-icon-home:before, .koowa .k-icon-tasks:before { content: ""; margin-right: 10px; }
-
-.koowa .k-icon-burger:before { content: ""; }
-
-.koowa .k-icon-list:before { content: ""; }
-
-.koowa .k-icon-grid:before { content: ""; }
-
-.koowa .k-icon-settings:before { content: ""; }
-
-.koowa .k-icon-search:before { content: ""; }
-
-.koowa .k-icon-plus:before { content: ""; font-size: 10px; }
-
-.koowa .k-icon-user:before { content: ""; }
-
-.koowa .k-icon-clock:before { content: ""; }
-
-.koowa .k-icon-folder:before { content: ""; }
-
-.koowa .visually-hidden-icon-label { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
 
 .koowa .k-list { padding: 0; list-style: none; border: none; background: transparent; margin: 7px 0; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
 
@@ -1597,16 +1542,6 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .select-message, .flexboxlegacy .koowa .select-message { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; display: block; width: auto; } }
 
-.koowa .k-form--front { background: #333; }
-
-.koowa .k-form--front .k-content { background: #333; }
-
-.koowa .k-form--front .k-toolbar { max-width: 1024px; margin: 1em auto 0; }
-
-.koowa .k-form--front .k-content .k-component { background: #333; }
-
-.koowa .k-form--front .k-container { background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
-
 .koowa .k-overview { background: white; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
@@ -1618,6 +1553,16 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .koowa .k-form .koowa-toolbar { margin: 0 auto; padding: 0 10px; max-width: 1024px; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-form, .flexboxlegacy .koowa .k-form { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+
+.koowa .k-form--front { background: #333; }
+
+.koowa .k-form--front .k-content { background: #333; }
+
+.koowa .k-form--front .k-toolbar { max-width: 1024px; margin: 1em auto 0; }
+
+.koowa .k-form--front .k-content .k-component { background: #333; }
+
+.koowa .k-form--front .k-container { background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
 
 .koowa .hidden.hidden.hidden { display: none; }
 

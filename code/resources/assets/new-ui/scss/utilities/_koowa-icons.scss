@@ -55,7 +55,7 @@ $icons: (
 
 // Creating classnames of all icons
 @each $name, $icon in $icons {
-  .koowa-icon-#{$name} {
+  .k-icon-#{$name} {
     @extend %icon;
     &:before {
       content: "#{$icon}";

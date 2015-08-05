@@ -17,7 +17,7 @@
   float: left;
 
   @include breakpoint($desktop) {
-    display: none; // hide toggle buttons when screen is wide enough
+    display: none; /* hide toggle buttons when screen is wide enough */
   }
 
   .bar1,
