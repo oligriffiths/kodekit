@@ -117,15 +117,21 @@
 .k-scopebar__search {
   position: relative;
   min-width: 200px;
-  display: none; // 1
 
-  @include breakpoint($beta) {
-    display: table-cell; // 2
-    max-width: 320px;
+  @include js-enabled {
+    display: none; // 1
+
+    @include breakpoint($beta) {
+      display: table-cell; // 2
+    }
+
+    @include breakpoint($desktop) {
+      display: block; // 3
+    }
   }
 
-  @include breakpoint($desktop) {
-    display: block; // 3
+  @include breakpoint($beta) {
+    max-width: 320px;
   }
 
   .search__container {
@@ -173,8 +179,22 @@
 
 .toggle-search {
   float: right;
+  display: none;
+  width: 33px;
+  height: 0;
+  padding-top: 33px;
+  overflow: hidden;
 
-  @include breakpoint($beta) {
-    display: none; // 1
+  .k-icon-search {
+    font-size: 16px;
+    vertical-align: middle;
+  }
+
+  @include js-enabled {
+    display: block;
+
+    @include breakpoint($beta) {
+      display: none; // 1
+    }
   }
 }

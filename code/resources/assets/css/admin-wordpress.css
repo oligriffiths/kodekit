@@ -43,7 +43,9 @@ html { box-sizing: border-box; }
 
 *, *::after, *::before { box-sizing: inherit; }
 
-/** Flexbox ======= 1. Is flexbox variable set to true? 2. Make sure to place selector at root since we use modernizr (add classes to html tag) 3. Check for modernizr classes 4. Set media query */
+/** Flexbox ======= 1. Is flexbox variable set to true? 2. Make sure to place selector at root since we use modernizr (add classes to html tag) 3. Check for modernizr classes 4. Set media query Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox */
+/** Border ====== Sets a border to defined side Only sets a border if $borders is set to true in variables */
+/** JS enabled ========== */
 /** Wordpress specific ------------------ Styles that apply to the Wordpress admin */
 /** Core styling ------------ Finally loading the default styling This now makes use of overwritten variables and mixins */
 /** Outside of the koowa namespace ============================== Markup might be rendered outside of the <div class="koowa"> */
@@ -1232,9 +1234,11 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 @media screen and (min-width: 768px) { .koowa .k-container__sub { float: left; display: block; margin-right: 2.4590413082%; width: 31.6939724612%; }
   .koowa .k-container__sub:last-child { margin-right: 0; } }
 
-.koowa .off-canvas-menu-toggle { width: 33px; height: 33px; border-radius: 3px; background: #34495e; color: #ecf0f1; border: none; padding: 0; margin: 10px; z-index: 3; position: relative; float: left; }
+.koowa .off-canvas-menu-toggle { width: 33px; height: 33px; border-radius: 3px; background: #34495e; color: #ecf0f1; border: none; padding: 0; margin: 10px; z-index: 3; position: relative; float: left; display: none; /* Hide when js is disabled */ }
 
-@media screen and (min-width: 768px) { .koowa .off-canvas-menu-toggle { display: none; /* hide toggle buttons when screen is wide enough */ } }
+.k-js-enabled .koowa .off-canvas-menu-toggle { display: block; /* Show on mobile when JS is enabled */ }
+
+@media screen and (min-width: 768px) { .k-js-enabled .koowa .off-canvas-menu-toggle { display: none; /* hide toggle buttons when screen is wide enough */ } }
 
 .koowa .off-canvas-menu-toggle .bar1, .koowa .off-canvas-menu-toggle .bar2, .koowa .off-canvas-menu-toggle .bar3 { width: 15px; height: 3px; display: block; position: absolute; left: 9px; background: #ecf0f1; border-radius: 1px; vertical-align: middle; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
@@ -1407,11 +1411,15 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar__item { display: table-cell; } }
 
-.koowa .k-scopebar__search { position: relative; min-width: 200px; display: none; }
+.koowa .k-scopebar__search { position: relative; min-width: 200px; }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search { display: table-cell; max-width: 320px; } }
+.k-js-enabled .koowa .k-scopebar__search { display: none; }
 
-@media screen and (min-width: 768px) { .koowa .k-scopebar__search { display: block; } }
+@media screen and (min-width: 600px) { .k-js-enabled .koowa .k-scopebar__search { display: table-cell; } }
+
+@media screen and (min-width: 768px) { .k-js-enabled .koowa .k-scopebar__search { display: block; } }
+
+@media screen and (min-width: 600px) { .koowa .k-scopebar__search { max-width: 320px; } }
 
 .koowa .k-scopebar__search .search__container { width: 100%; }
 
@@ -1423,9 +1431,13 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .koowa .k-scopebar__search .search_button--empty { position: absolute; top: 7px; right: 10px; font-size: 10px; }
 
-.koowa .toggle-search { float: right; }
+.koowa .toggle-search { float: right; display: none; width: 33px; height: 0; padding-top: 33px; overflow: hidden; }
 
-@media screen and (min-width: 600px) { .koowa .toggle-search { display: none; } }
+.koowa .toggle-search .k-icon-search { font-size: 16px; vertical-align: middle; }
+
+.k-js-enabled .koowa .toggle-search { display: block; }
+
+@media screen and (min-width: 600px) { .k-js-enabled .koowa .toggle-search { display: none; } }
 
 .koowa .k-sidebar, .koowa .k-sidebar-right { position: relative; -webkit-overflow-scrolling: touch; }
 
@@ -1446,6 +1458,8 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
 
 .k-js-enabled .koowa .k-sidebar { left: 0; }
 
+.k-js-enabled .koowa .k-sidebar { border-bottom: none; }
+
 .koowa .opened--left .k-sidebar { display: block; }
 
 .koowa .k-sidebar-right { background: white; color: #555; }
@@ -1459,7 +1473,7 @@ body { font-family: "Open Sans", Arial, Helvetica, sans-serif; font-size: 13px; 
   .flexbox .koowa .k-table-container .k-table table, .flexboxlegacy .koowa .k-table-container .k-table table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
   .flexbox .koowa .k-table-container .k-table-pagination, .flexboxlegacy .koowa .k-table-container .k-table-pagination { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .k-table { /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't use long header titles since they won't be wrapped 2. Whole <th> should be clickable */ /** Body 1. No bottom border for last item 2. Small extra info below title display" block to display below title */ /** Selected 1. Coloring Links and extra elements */ }
+.koowa .k-table { overflow: auto; /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't use long header titles since they won't be wrapped 2. Whole <th> should be clickable */ /** Body 1. No bottom border for last item 2. Small extra info below title display" block to display below title */ /** Selected 1. Coloring Links and extra elements */ }
 
 .koowa .k-table table { width: 100%; text-align: left; }
 
