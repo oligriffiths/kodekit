@@ -1,6 +1,7 @@
 /**
- * Default styles with JavaScript disabled
- * =======================================
+ * Sidebar
+ * =======
+ * The left and right sidebar
  */
 
 .k-sidebar,
@@ -119,22 +120,6 @@
 
   @include js-enabled {
     right: 0;
-  }
-
-
-
-  /**
-    * Contents
-    * --------
-    */
-
-  p {
-    margin-bottom: 5px;
-  }
-
-  .labl {
-    display: inline-block;
-    width: 100px;
   }
 }
 
