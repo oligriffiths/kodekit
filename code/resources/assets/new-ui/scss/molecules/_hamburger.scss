@@ -15,10 +15,16 @@
   z-index: 3;
   position: relative;
   float: left;
+  display: none; /* Hide when js is disabled */
 
-  @include breakpoint($desktop) {
-    display: none; /* hide toggle buttons when screen is wide enough */
+  @include js-enabled {
+    display: block; /* Show on mobile when JS is enabled */
+
+    @include breakpoint($desktop) {
+      display: none; /* hide toggle buttons when screen is wide enough */
+    }
   }
+
 
   .bar1,
   .bar2,

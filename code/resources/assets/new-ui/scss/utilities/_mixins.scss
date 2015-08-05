@@ -199,6 +199,9 @@
  * 2. Make sure to place selector at root since we use modernizr (add classes to html tag)
  * 3. Check for modernizr classes
  * 4. Set media query
+ *
+ * Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled
+ * This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
  */
 
 @mixin flexbox($horizontal: $flexbox-horizontal, $vertical: $flexbox-vertical) {
@@ -214,6 +217,15 @@
   }
 }
 
+
+
+/**
+ * Border
+ * ======
+ * Sets a border to defined side
+ * Only sets a border if $borders is set to true in variables
+ */
+
 @mixin border($position, $border-color) {
   @if $borders != false and $border-color != false {
     @if $position == 'all' {
@@ -224,6 +236,12 @@
   }
 }
 
+
+
+/**
+ * JS enabled
+ * ==========
+ */
 
 @mixin js-enabled {
   @at-root .k-js-enabled & {

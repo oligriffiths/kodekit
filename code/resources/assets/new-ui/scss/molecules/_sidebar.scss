@@ -85,11 +85,16 @@
 
 .k-sidebar {
   @include border(right, $sidebar-border);
+  @include border(bottom, $sidebar-border);
   background: $sidebar-background;
   color: $sidebar-color;
 
   @include js-enabled {
     left: 0;
+  }
+
+  @include js-enabled {
+    border-bottom: none;
   }
 }
 
