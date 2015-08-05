@@ -1,11 +1,29 @@
-// @TODO: This needs to be fixed with JS by either using FooTable or our own
-@include breakpoint(0,range,$beta) {
-  table {
-    th,
-    td {
-      &:nth-child(n+3) {
-        display: none;
-      }
+$toggle-size: 20px;
+$toggle-color: #ccc;
+$toggle-color-active: white;
+$toggle-border-size: 2px;
+$toggle-icon-size: 10px;
+
+.footable.breakpoint {
+  .footable-toggle {
+    display: block;
+    width: $toggle-size;
+    height: $toggle-size;
+    border-radius: 50%;
+    border: $toggle-border-size solid $toggle-color;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -($toggle-size / 2);
+
+    @include icon-after(chevron-down, true) {
+      display: block;
+      color: $toggle-color;
+      font-size: $toggle-icon-size;
+      width: $toggle-icon-size;
+      height: $toggle-icon-size;
+      line-height: $toggle-icon-size;
+      margin: ((($toggle-size - $toggle-icon-size) / 2) - $toggle-border-size);
     }
   }
 }

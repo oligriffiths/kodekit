@@ -45,6 +45,15 @@
         }
 
 
+        // Footable
+        $('.footable').footable({
+            breakpoints: {
+                phone: 400,
+                tablet: 600
+            }
+        });
+
+
         // Clickable items
         if ( $clickable.length ) {
             $clickable.click(function() {

@@ -51,6 +51,7 @@
     text-align: left;
     vertical-align: middle;
     height: $table-cell-size;
+    position: relative;
 
     input {
       display: inline-block; // 1
@@ -64,22 +65,16 @@
   /**
    * Head
    * 1. Don't use long header titles since they won't be wrapped
-   * 2. Hide by default on mobile since we only show the first cell
-   * 3. Whole <th> should be clickable
+   * 2. Whole <th> should be clickable
    */
 
   th {
     @include border(bottom, $table-header-border);
     background: $table-header-background;
     white-space: nowrap; // 1
-    display: none; // 2
-
-    @include breakpoint($beta) {
-      display: table-cell; // 2
-    }
 
     a {
-      display: block; // 3
+      display: block; // 2
     }
   }
 
