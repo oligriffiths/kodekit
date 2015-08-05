@@ -4,8 +4,8 @@
  */
 
 .k-toolbar {
-  background: $toolbar-background;
   @include border(bottom, $toolbar-border);
+  background: $toolbar-background;
 
   // Faking flexbox for older browsers
   @include breakpoint($desktop) {
@@ -33,17 +33,6 @@
  * Toolbar contents
  * ======================
  */
-
-#toolbar-options {
-  float: right;
-
-  .btn {
-    margin-right: 0;
-    margin-left: $toolbar-spacing;
-  }
-}
-
-
 
 .k-toolbar {
   button,
@@ -74,14 +63,6 @@
         color: $toolbar-btn-success-hover-color;
       }
     }
-  }
-}
-
-.k-toolbar__text {
-  display: none;
-
-  @include breakpoint($charlie) {
-    display: inline;
   }
 }
 

@@ -4,9 +4,9 @@
  */
 
 .k-upload {
-  background: $color-primary;
-  padding: $spacing-small;
-  border-bottom: 1px solid #e1e1e1;
+  @include border(bottom, $upload-border);
+  padding: $upload-spacing;
+  background: $upload-background;
   display: table;
   width: 100%;
 
@@ -31,11 +31,11 @@
  * 1. 100% width so this 'cell' expands
  */
 
-.drop-message {
-  font-size: 1.65em;
-  line-height: 1.25em;
+.k-upload__drop {
+  font-size: $upload-drop-font-size;
+  line-height: $upload-drop-line-height;
   margin: 0;
-  color: #595959;
+  color: $upload-drop-color;
   display: table-cell;
   width: 100%; // 1
 
@@ -64,11 +64,11 @@
  * 2. nowrap to make sure buttons stay next to each other
  */
 
-.select-message {
-  padding-left: 10px;
+.k-upload__buttons {
   display: table-cell;
   width: 1px; // 1
   white-space: nowrap; // 2
+  padding-left: $upload-buttons-spacing;
 
 
 

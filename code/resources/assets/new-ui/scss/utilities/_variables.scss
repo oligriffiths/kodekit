@@ -38,13 +38,13 @@ $flexbox-vertical:    400px !default; // 5
  * Overwrite-able per function call
  */
 
-$light-percentage:      3%;
-$lighter-percentage:    7%;
-$lightest-percentage:   12%;
+$light-percentage:      3% !default;
+$lighter-percentage:    7% !default;
+$lightest-percentage:   12% !default;
 
-$dark-percentage:       3%;
-$darker-percentage:     7%;
-$darkest-percentage:    12%;
+$dark-percentage:       3% !default;
+$darker-percentage:     7% !default;
+$darkest-percentage:    12% !default;
 
 
 
@@ -332,7 +332,7 @@ $list-active-color:       $color-primary-accent !default;
 
 $navigation-spacing:            $spacing-tiny !default;
 $navigation-background:         $color-primary-dark !default;
-$navigation-border:             darker($navigation-background);
+$navigation-border:             darker($navigation-background) !default;
 $navigation-color:              $color-primary-type !default;
 $navigation-accent:             $color-primary-accent !default;
 
@@ -413,6 +413,18 @@ $overflow-color:    rgba(0,0,0,.66) !default;
 
 
 /**
+ * Form layout
+ * ===========
+ */
+
+$form-background: $color-primary-light !default;
+
+
+
+
+
+
+/**
  * Form front
  * ==========
  * Forms on frontend
@@ -423,6 +435,23 @@ $form-front-maxwidth:             $maxwidth !default;
 $form-front-spacing:              1em auto 0 !default;
 $form-front-content-background:   white !default;
 $form-front-content-shadow:       0 3px 6px rgba(0,0,0,.5) !default;
+
+
+
+/**
+ * Upload area
+ * ===========
+ */
+
+$upload-spacing:            $spacing-small !default;
+$upload-background:         $color-primary !default;
+$upload-border:             darker($upload-background) !default;
+
+$upload-drop-font-size:     1.65em !default;
+$upload-drop-line-height:   1.25em !default;
+$upload-drop-color:         #595959 !default;
+
+$upload-buttons-spacing:    10px !default;
 
 
 
@@ -449,13 +478,13 @@ $radio-toggle-neutral:  $color-neutral !default; // 4
  */
 
 $checkbox-toggle:                 true !default; // 1
-$checkbox-toggle-width:           60px;
-$checkbox-toggle-height:          32px;
-$checkbox-toggle-border-width:    1px;
-$checkbox-toggle-padding:         1px;
-$checkbox-toggle-border-radius:   6px;
-$checkbox-toggle-width-inner:     $checkbox-toggle-width - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
-$checkbox-toggle-height-inner:    $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2);
+$checkbox-toggle-width:           60px !default;
+$checkbox-toggle-height:          32px !default;
+$checkbox-toggle-border-width:    1px !default;
+$checkbox-toggle-padding:         1px !default;
+$checkbox-toggle-border-radius:   6px !default;
+$checkbox-toggle-width-inner:     $checkbox-toggle-width - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-height-inner:    $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
 
 
 
@@ -472,8 +501,8 @@ $input-height-base:         32px !default;
 $padding-base-vertical:     5px !default;
 $padding-base-horizontal:   10px !default;
 
-$btn-success-bg:            $color-success;
-$btn-success-color:         $color-success-type;
+$btn-success-bg:            $color-success !default;
+$btn-success-color:         $color-success-type !default;
 
 $pagination-color:          $color-accent !default;
 $pagination-active-bg:      $color-accent !default;
