@@ -348,6 +348,22 @@ $navigation-active-color:       $navigation-accent !default;
 
 
 /**
+ * Form block
+ * ==========
+ */
+
+$form-block-background:         $color-primary-lightest !default;
+$form-block-border:             $color-primary-darker !default;
+
+$form-block-header-spacing:     $spacing-tiny !default;
+$form-block-header-background:  $color-primary !default;
+$form-block-header-border:      darker($form-block-header-background) !default;
+
+$form-block-content-spacing:    $spacing-small !default;
+
+
+
+/**
  * Toolbar
  * =======
  * 1. When true; these colors are being used, when false; bootsrap defaults are being used

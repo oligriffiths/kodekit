@@ -21,14 +21,15 @@
       @extend .visually-hidden;
     }
 
+    /* Basic label styling */
     label {
-      display: block;
       line-height: $checkbox-toggle-height;
       font-weight: $regular
     }
 
     /* Making label and span fully clickable */
-    label, span {
+    label,
+    span {
       display: block;
       cursor: pointer;
       margin: 0;
@@ -99,7 +100,6 @@
     }
 
     span {
-      display: block;
       position: relative;
       z-index: 1;
       overflow: hidden;
