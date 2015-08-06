@@ -23,7 +23,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
     protected static $_loaded = array();
 
     /**
-     * Loads koowa.js
+     * Loads koowa essentials
      *
      * @param array|KObjectConfig $config
      * @return string
@@ -40,7 +40,9 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['koowa']))
         {
             $html .= $this->jquery();
+            $html .= '<ktml:script src="assets://js/modernizr.js" />';
             $html .= '<ktml:script src="assets://js/koowa'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
 
             self::$_loaded['koowa'] = true;
         }
