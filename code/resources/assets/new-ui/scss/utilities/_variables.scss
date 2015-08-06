@@ -105,9 +105,10 @@ $transition:            $transition-duration $transition-easing !default;
  * ===========
  */
 
-$color-type:        #222222 !default;
-$color-type-dark:   darken($color-type, 7%) !default;
-$color-type-light:  lighten($color-type, 20%) !default;
+$color-type:            #222222 !default;
+$color-type-dark:       darken($color-type, 7%) !default;
+$color-type-light:      lighten($color-type, 20%) !default;
+$color-type-lightest:   lighten($color-type, 50%) !default;
 
 
 
@@ -273,12 +274,26 @@ $table-header-border:           darker($table-header-background) !default;
 $table-cell-background-even:    $color-tertiary-light !default;
 $table-cell-background-odd:     $color-tertiary-light !default;
 $table-cell-border:             darker($table-cell-background-even) !default;
+$table-cell-color:              $color-type !default;
 $table-cell-accent-background:  $color-accent !default;
 $table-cell-accent-color:       $color-accent-type !default;
 
 $table-pagination-background:   $color-tertiary !default;
 $table-pagination-border:       dark($table-pagination-background) !default;
 $table-pagination-spacing:      $spacing-small !default;
+
+
+
+/**
+ * Footable
+ * ========
+ */
+
+$footable-toggle-size:          20px !default;
+$footable-toggle-color:         $color-type-lightest !default;
+$footable-toggle-color-active:  $table-cell-accent-color !default;
+$footable-toggle-border-size:   2px !default;
+$footable-toggle-icon-size:     10px !default;
 
 
 
