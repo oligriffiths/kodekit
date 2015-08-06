@@ -34,6 +34,7 @@
 
 .k-table {
   overflow: auto;
+  background: $table-background;
 
   table {
     width: 100%;
@@ -93,7 +94,14 @@
 
   td {
     @include border(bottom, $table-cell-border);
+    background: $table-cell-background-even;
     padding: $table-cell-spacing;
+  }
+
+  tr:nth-child(odd) {
+    td {
+      background: $table-cell-background-odd;
+    }
   }
 
   tr:last-child {

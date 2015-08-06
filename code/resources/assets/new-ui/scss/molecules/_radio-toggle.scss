@@ -11,7 +11,7 @@
  */
 
 @if $radio-toggle == true {
-  .radio-toggle:not(ie) {
+  .booleanlist:not(ie) {
     display: table;
     width: 100%;
     position: relative;
@@ -22,7 +22,7 @@
     padding: 1px;
     height: $input-height-base;
 
-    .radio-toggle-item {
+    .booleanlist__item {
       display: table-cell;
       width: 50%;
       text-align: center;
@@ -34,14 +34,14 @@
       }
     }
 
-    &.radio-toggle--inline,
-    &.radio-toggle--multiple {
-      .radio-toggle-item {
+    &.booleanlist--inline,
+    &.booleanlist--multiple {
+      .booleanlist__item {
         width: auto;
       }
     }
 
-    &.radio-toggle--inline {
+    &.booleanlist--inline {
       width: auto;
     }
 
@@ -91,7 +91,7 @@
       }
     }
 
-    .radio-toggle-item {
+    .booleanlist__item {
       span:before {
         display: block;
         content: " ";
@@ -116,9 +116,9 @@
       }
     }
 
-    &.radio-toggle--inline,
-    &.radio-toggle--multiple {
-      .radio-toggle-item {
+    &.booleanlist--inline,
+    &.booleanlist--multiple {
+      .booleanlist__item {
         &:first-child,
         &:last-child {
           span:before {
@@ -128,7 +128,7 @@
       }
     }
 
-    .radio-toggle-item:first-child {
+    .booleanlist__item:first-child {
       span {
         &:before {
           left: 100%;
@@ -136,7 +136,7 @@
       }
     }
 
-    .radio-toggle-item:last-child {
+    .booleanlist__item:last-child {
       span {
         &:before {
           left: -100%;
@@ -144,7 +144,7 @@
       }
     }
 
-    .radio-toggle-item:nth-child(n) {
+    .booleanlist__item:nth-child(n) {
       input:checked + label {
         z-index: 3;
 
@@ -166,7 +166,7 @@
     }
 
     // Checked classes
-    .radio-toggle-item {
+    .booleanlist__item {
       input:checked + label span {
         color: white;
       }
@@ -188,7 +188,7 @@
 
     // neutral color
     :checked + label span:before,
-    &.radio-toggle--neutral input[value]:checked + label span:before {
+    &.booleanlist--neutral input[value]:checked + label span:before {
       background: $radio-toggle-neutral;
     }
   }

@@ -6,8 +6,8 @@
  */
 
 .k-form-block {
-  background: $color-primary-lightest;
-  border: 1px solid $color-primary-darker;
+  @include border(all, $form-block-border);
+  background: $form-block-background;
 }
 
 .k-form-block__header {

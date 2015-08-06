@@ -31,13 +31,13 @@
 /** Scopebar ======== 1. Height of the scopebar */
 /** List ==== */
 /** Navigation ========== */
-/** Form block ========== */
 /** Toolbar ======= 1. When true; these colors are being used, when false; bootsrap defaults are being used */
 /* Success button */
 /** Titlebar ======== By default it looks the same as the toolbar */
 /** Overflowing =========== Overflowing shadows */
 /** Form layout =========== */
 /** Form front ========== Forms on frontend */
+/** Form block ========== */
 /** Upload area =========== */
 /** Radio toggle ============ 1. Use styled radio toggles? 2. The color for "false"/0 items 3. The color for "true"/1 items 4. The color for neutral items */
 /** Checkbox toggle ============ 1. Use styled checkbox toggles? */
@@ -1227,7 +1227,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-component, .flexboxlegacy .koowa .k-component { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
 
-.koowa .k-content { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: white; position: relative; z-index: 2; }
+.koowa .k-content { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #EBEDF1; position: relative; z-index: 2; }
 
 @media screen and (min-width: 768px) { .koowa .k-content { display: table-cell; width: 100%; } }
 
@@ -1263,9 +1263,9 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media screen and (min-width: 768px) { .koowa .opened--left, .koowa .opened--right { overflow: auto; } }
 
-.koowa .k-form-block { background: white; border: 1px solid #d6dae2; }
+.koowa .k-form-block { border: 1px solid #cfcfcf; background: white; }
 
-.koowa .k-form-block__header { border-bottom: 1px solid #d6dae2; padding: 7px; background: #EBEDF1; font-weight: bold; }
+.koowa .k-form-block__header { border-bottom: 1px solid #d4d4d4; padding: 7px; background: #e6e6e6; font-weight: bold; }
 
 .koowa .k-form-block__content { padding: 13px; }
 
@@ -1387,51 +1387,51 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .overflowing--left { left: 0; box-shadow: inset 6px 0 12px -6px rgba(0, 0, 0, 0.66); }
 
-.koowa .radio-toggle:not(ie) { display: table; width: 100%; position: relative; background: #fff; border: 1px solid #ccc; border-radius: 4px; color: #555555; padding: 1px; height: 32px; }
+.koowa .booleanlist:not(ie) { display: table; width: 100%; position: relative; background: #fff; border: 1px solid #ccc; border-radius: 4px; color: #555555; padding: 1px; height: 32px; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item { display: table-cell; width: 50%; text-align: center; margin: 0; padding: 0; }
+.koowa .booleanlist:not(ie) .booleanlist__item { display: table-cell; width: 50%; text-align: center; margin: 0; padding: 0; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item:last-child:not(:nth-child(2)) input ~ label { z-index: 0; }
+.koowa .booleanlist:not(ie) .booleanlist__item:last-child:not(:nth-child(2)) input ~ label { z-index: 0; }
 
-.koowa .radio-toggle:not(ie).radio-toggle--inline .radio-toggle-item, .koowa .radio-toggle:not(ie).radio-toggle--multiple .radio-toggle-item { width: auto; }
+.koowa .booleanlist:not(ie).booleanlist--inline .booleanlist__item, .koowa .booleanlist:not(ie).booleanlist--multiple .booleanlist__item { width: auto; }
 
-.koowa .radio-toggle:not(ie).radio-toggle--inline { width: auto; }
+.koowa .booleanlist:not(ie).booleanlist--inline { width: auto; }
 
-.koowa .radio-toggle:not(ie) input { width: 1px; height: 1px; position: absolute; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); }
+.koowa .booleanlist:not(ie) input { width: 1px; height: 1px; position: absolute; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-.koowa .radio-toggle:not(ie) label, .koowa .radio-toggle:not(ie) span { display: block; cursor: pointer; margin: 0; border-radius: 3px; height: 28px; }
+.koowa .booleanlist:not(ie) label, .koowa .booleanlist:not(ie) span { display: block; cursor: pointer; margin: 0; border-radius: 3px; height: 28px; }
 
-.koowa .radio-toggle:not(ie) label:before { display: block; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; z-index: 1; background: transparent; }
+.koowa .booleanlist:not(ie) label:before { display: block; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none; z-index: 1; background: transparent; }
 
-.koowa .radio-toggle:not(ie) span { line-height: 28px; font-weight: 400; position: relative; z-index: 2; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
+.koowa .booleanlist:not(ie) span { line-height: 28px; font-weight: 400; position: relative; z-index: 2; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
-.koowa .radio-toggle:not(ie) span:before { border-radius: 3px; }
+.koowa .booleanlist:not(ie) span:before { border-radius: 3px; }
 
-.koowa .radio-toggle:not(ie) span:hover { background: #eee; }
+.koowa .booleanlist:not(ie) span:hover { background: #eee; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item span:before { display: block; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: transparent; pointer-events: none; z-index: -1; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
+.koowa .booleanlist:not(ie) .booleanlist__item span:before { display: block; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: transparent; pointer-events: none; z-index: -1; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item:first-child span:before, .koowa .radio-toggle:not(ie) .radio-toggle-item:last-child span:before { width: 100%; right: auto; left: auto; }
+.koowa .booleanlist:not(ie) .booleanlist__item:first-child span:before, .koowa .booleanlist:not(ie) .booleanlist__item:last-child span:before { width: 100%; right: auto; left: auto; }
 
-.koowa .radio-toggle:not(ie).radio-toggle--inline .radio-toggle-item:first-child span:before, .koowa .radio-toggle:not(ie).radio-toggle--inline .radio-toggle-item:last-child span:before, .koowa .radio-toggle:not(ie).radio-toggle--multiple .radio-toggle-item:first-child span:before, .koowa .radio-toggle:not(ie).radio-toggle--multiple .radio-toggle-item:last-child span:before { width: 50%; }
+.koowa .booleanlist:not(ie).booleanlist--inline .booleanlist__item:first-child span:before, .koowa .booleanlist:not(ie).booleanlist--inline .booleanlist__item:last-child span:before, .koowa .booleanlist:not(ie).booleanlist--multiple .booleanlist__item:first-child span:before, .koowa .booleanlist:not(ie).booleanlist--multiple .booleanlist__item:last-child span:before { width: 50%; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item:first-child span:before { left: 100%; }
+.koowa .booleanlist:not(ie) .booleanlist__item:first-child span:before { left: 100%; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item:last-child span:before { left: -100%; }
+.koowa .booleanlist:not(ie) .booleanlist__item:last-child span:before { left: -100%; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item:nth-child(n) input:checked + label { z-index: 3; }
+.koowa .booleanlist:not(ie) .booleanlist__item:nth-child(n) input:checked + label { z-index: 3; }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item:nth-child(n) input:checked + label span:before { left: 0; width: 100%; }
+.koowa .booleanlist:not(ie) .booleanlist__item:nth-child(n) input:checked + label span:before { left: 0; width: 100%; }
 
-.koowa .radio-toggle:not(ie) input:active + label:before, .koowa .radio-toggle:not(ie) input:focus + label:before { margin: -1px; border-radius: 4px; border: 1px solid #66afe9; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
+.koowa .booleanlist:not(ie) input:active + label:before, .koowa .booleanlist:not(ie) input:focus + label:before { margin: -1px; border-radius: 4px; border: 1px solid #66afe9; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); }
 
-.koowa .radio-toggle:not(ie) .radio-toggle-item input:checked + label span { color: white; }
+.koowa .booleanlist:not(ie) .booleanlist__item input:checked + label span { color: white; }
 
-.koowa .radio-toggle:not(ie) [value="0"]:checked + label span:before { background: #c0392b; }
+.koowa .booleanlist:not(ie) [value="0"]:checked + label span:before { background: #c0392b; }
 
-.koowa .radio-toggle:not(ie) [value="1"]:checked + label span:before { background: #27ae60; }
+.koowa .booleanlist:not(ie) [value="1"]:checked + label span:before { background: #27ae60; }
 
-.koowa .radio-toggle:not(ie) :checked + label span:before, .koowa .radio-toggle:not(ie).radio-toggle--neutral input[value]:checked + label span:before { background: #2980b9; }
+.koowa .booleanlist:not(ie) :checked + label span:before, .koowa .booleanlist:not(ie).booleanlist--neutral input[value]:checked + label span:before { background: #2980b9; }
 
 .koowa .k-scopebar { background: #e6e6e6; color: #333; }
 
@@ -1522,7 +1522,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
   .flexbox .koowa .k-table-container .k-table table, .flexboxlegacy .koowa .k-table-container .k-table table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
   .flexbox .koowa .k-table-container .k-table-pagination, .flexboxlegacy .koowa .k-table-container .k-table-pagination { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .k-table { overflow: auto; /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't use long header titles since they won't be wrapped 2. Whole <th> should be clickable */ /** Body 1. No bottom border for last item 2. Small extra info below title display" block to display below title */ /** Selected 1. Coloring Links and extra elements */ }
+.koowa .k-table { overflow: auto; background: white; /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't use long header titles since they won't be wrapped 2. Whole <th> should be clickable */ /** Body 1. No bottom border for last item 2. Small extra info below title display" block to display below title */ /** Selected 1. Coloring Links and extra elements */ }
 
 .koowa .k-table table { width: 100%; text-align: left; }
 
@@ -1534,7 +1534,9 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table th a { display: block; padding: 7px 0; line-height: 25px; }
 
-.koowa .k-table td { border-bottom: 1px solid #ededed; padding: 7px; }
+.koowa .k-table td { border-bottom: 1px solid #e4e4e4; background: #f6f6f6; padding: 7px; }
+
+.koowa .k-table tr:nth-child(odd) td { background: #f6f6f6; }
 
 .koowa .k-table tr:last-child td { border-bottom: none; }
 
@@ -1620,13 +1622,13 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-upload__buttons, .flexboxlegacy .koowa .k-upload__buttons { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; display: block; width: auto; } }
 
-.koowa .k-overview { background: white; }
+.koowa .k-overview { background: #EBEDF1; }
 
 @media (min-width: 320px) and (min-height: 400px) { .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
 
 .koowa .k-form { /** Component background -------------------- Default component has background for when sliding over sidebars */ /** Toolbar ------- Set a max-width for the toolbar so it's just as big as the container below */ }
 
-.koowa .k-form .k-component { background: #f4f5f7; }
+.koowa .k-form .k-component { background: #eeeeee; }
 
 .koowa .k-form .koowa-toolbar { margin: 0 auto; padding: 0 10px; max-width: 1024px; }
 
