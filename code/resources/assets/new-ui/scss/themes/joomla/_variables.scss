@@ -1,25 +1,25 @@
 /**
-* Borders
-* =======
-*/
+ * Borders
+ * =======
+ */
 
 $borders: true;
 
 
 
 /**
-* Accent color
-* ============
-*/
+ * Accent color
+ * ============
+ */
 
 $color-accent: #0088CC;
 
 
 
 /**
-* Primary color
-* =============
-*/
+ * Primary color
+ * =============
+ */
 
 $color-primary: #EBEDF1;
 $color-primary-type: #333;
@@ -28,9 +28,9 @@ $color-primary-accent: $color-accent;
 
 
 /**
-* Secondary color
-* ===============
-*/
+ * Secondary color
+ * ===============
+ */
 
 $color-secondary: #EEEEEE;
 $color-secondary-type: #333;
@@ -38,9 +38,9 @@ $color-secondary-type: #333;
 
 
 /**
-* Toolbar
-* =======
-*/
+ * Toolbar
+ * =======
+ */
 
 $toolbar-btn-alt: false;
 $toolbar-background: darken($color-primary, 4%);
@@ -48,23 +48,24 @@ $toolbar-background: darken($color-primary, 4%);
 
 
 /**
-* Overview
-* ========
-*/
+ * Overview
+ * ========
+ */
 
 $overview-border: false;
 
 
 
 /**
-* Table
-* =====
-*/
+ * Table
+ * =====
+ */
 
-$table-header-background: #F3F3F3;
+//$table-header-background: #F3F3F3;
+
+
 
 //$borders: false !default;
-
 //$color-primary: #c0392b !default;
 //$color-secondary: #2c3e50 !default;
 //$color-tertiary: #7f8c8d !default;

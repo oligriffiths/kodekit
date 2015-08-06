@@ -130,7 +130,7 @@
    * 1. Coloring Links and extra elements
    */
 
-  .selected {
+  tr.selected {
     td {
       background: $table-cell-accent-background;
       color: $table-cell-accent-color;
