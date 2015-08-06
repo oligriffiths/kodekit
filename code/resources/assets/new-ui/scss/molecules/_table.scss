@@ -224,3 +224,33 @@
     }
   }
 }
+
+
+
+
+/**
+ * Sorting
+ * =======
+ */
+
+th.-koowa-desc a {
+  @include psuedo(after, $display: false, $position: false) {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 5px;
+
+    @include arrow(top);
+  }
+}
+
+th.-koowa-asc a {
+  @include psuedo(after, $display: false, $position: false) {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 5px;
+
+    @include arrow(bottom);
+  }
+}

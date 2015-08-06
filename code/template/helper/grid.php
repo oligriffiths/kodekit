@@ -196,8 +196,8 @@ class KTemplateHelperGrid extends KTemplateHelperAbstract implements KTemplateHe
         $class = '';
         if($config->column == $config->sort)
         {
-            $direction = $direction == 'desc' ? 'asc' : 'desc'; // toggle
             $class = 'class="-koowa-'.$direction.'"';
+            $direction = $direction == 'desc' ? 'asc' : 'desc'; // toggle
         }
 
         $url = clone $this->getTemplate()->url();
@@ -209,17 +209,6 @@ class KTemplateHelperGrid extends KTemplateHelperAbstract implements KTemplateHe
 
         $html  = '<a href="'.$url.'" title="'.$translator->translate('Click to sort by this column').'"  '.$class.'>';
         $html .= $translator->translate($config->title);
-
-        // Mark the current column
-        if ($config->column == $config->sort)
-        {
-            if (strtolower($config->direction) === 'asc') {
-                $html .= ' <span class="koowa_icon--sort_up koowa_icon--12"></span>';
-            } else {
-                $html .= ' <span class="koowa_icon--sort_down koowa_icon--12"></span>';
-            }
-        }
-        else $html .= ' <span class="koowa_icon--sort koowa_icon--12"></span>';
 
         $html .= '</a>';
 
