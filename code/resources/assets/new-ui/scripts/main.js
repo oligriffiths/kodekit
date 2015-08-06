@@ -16,7 +16,8 @@
             $select2filter = $('.select2--filter select'),
             $tree = $('.k-clicker'),
             $magnificframe = $('.mfp-iframe'),
-            $clickable = $('a, button');
+            $clickable = $('a, button'),
+            $searchtoggle = $('.toggle-search');
 
 
         // Offcanvasmenu
@@ -122,10 +123,12 @@
         }
 
 
-
-        $('.toggle-search').click(function() {
-            $('.k-scopebar__search').slideToggle('fast');
-        });
+        // Toggle search
+        if ( $searchtoggle.length ) {
+            $searchtoggle.click(function() {
+                $('.k-scopebar__search').slideToggle('fast');
+            });
+        }
 
 
     });

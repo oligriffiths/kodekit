@@ -71,7 +71,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'code/resources/assets/js/scripts.js': [
+                    'code/resources/assets/js/admin.js': [
                         'bower_components/select2/dist/js/select2.full.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
