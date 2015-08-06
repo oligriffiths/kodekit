@@ -177,7 +177,7 @@
   }
 
   select {
-    height: $input-height-base; // 3
+    height: $table-pagination-height; // 3
     width: auto; // 4
     margin-right: $table-pagination-spacing; // 5
   }
@@ -229,8 +229,8 @@
 
 
 /**
- * Sorting
- * =======
+ * Sorting arrows
+ * ==============
  */
 
 th.-koowa-desc a {

@@ -75,6 +75,7 @@ module.exports = function(grunt) {
                         'bower_components/select2/dist/js/select2.full.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
+                        'bower_components/footable/dist/footable.min.js',
                         'code/resources/assets/new-ui/scripts/tableHeadFixer.js',
                         'code/resources/assets/new-ui/scripts/overflowing.js',
                         'code/resources/assets/new-ui/scripts/tabbable.js',

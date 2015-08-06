@@ -42,7 +42,7 @@
 
         // Sticky table header and footer
         if ( $fixedtable.length ) {
-            $fixedtable.tableHeadFixer({'foot' : true, 'head' : true});
+            $fixedtable.tableHeadFixer({'head' : true});
         }
 
 
@@ -124,11 +124,10 @@
 
 
         // Toggle search
-        if ( $searchtoggle.length ) {
-            $searchtoggle.click(function() {
-                $('.k-scopebar__search').slideToggle('fast');
-            });
-        }
+        if ( )
+        $('.toggle-search').click(function() {
+            $('.k-scopebar__search').slideToggle('fast');
+        });
 
 
     });
