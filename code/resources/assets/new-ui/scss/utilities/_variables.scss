@@ -197,7 +197,7 @@ $color-neutral-type:  white !default;
  * You can override borders in each separate module
  **/
 
-$borders:       false !default;
+$borders:       true !default;
 $border-color:  false !default;
 $border-width:  1px !default;
 $border-style:  solid !default;
@@ -262,14 +262,17 @@ $sidebar-color:             $color-primary-type !default;
  * 2. Table cell padding
  */
 
+$table-background:               white !default;
+
 $table-cell-size:               round($font-size * 3) !default; // 1
 $table-cell-spacing:            $spacing-tiny !default; // 2
 
 $table-header-background:       $color-tertiary !default;
 $table-header-border:           darker($table-header-background) !default;
 
-$table-cell-background:         $color-tertiary-lightest !default;
-$table-cell-border:             darker($table-cell-background) !default;
+$table-cell-background-even:    $color-tertiary-light !default;
+$table-cell-background-odd:     $color-tertiary-light !default;
+$table-cell-border:             darker($table-cell-background-even) !default;
 $table-cell-accent-background:  $color-accent !default;
 $table-cell-accent-color:       $color-accent-type !default;
 
@@ -285,7 +288,7 @@ $table-pagination-spacing:      $spacing-small !default;
  * The default overview layout
  */
 
-$overview-background:   white !default;
+$overview-background:   $color-primary !default;
 $overview-border:       darker($overview-background) !default;
 
 
@@ -348,22 +351,6 @@ $navigation-active-color:       $navigation-accent !default;
 
 
 /**
- * Form block
- * ==========
- */
-
-$form-block-background:         $color-primary-lightest !default;
-$form-block-border:             $color-primary-darker !default;
-
-$form-block-header-spacing:     $spacing-tiny !default;
-$form-block-header-background:  $color-primary !default;
-$form-block-header-border:      darker($form-block-header-background) !default;
-
-$form-block-content-spacing:    $spacing-small !default;
-
-
-
-/**
  * Toolbar
  * =======
  * 1. When true; these colors are being used, when false; bootsrap defaults are being used
@@ -417,10 +404,7 @@ $overflow-color:    rgba(0,0,0,.66) !default;
  * ===========
  */
 
-$form-background: $color-primary-light !default;
-
-
-
+$form-background: $color-tertiary !default;
 
 
 
@@ -435,6 +419,22 @@ $form-front-maxwidth:             $maxwidth !default;
 $form-front-spacing:              1em auto 0 !default;
 $form-front-content-background:   white !default;
 $form-front-content-shadow:       0 3px 6px rgba(0,0,0,.5) !default;
+
+
+
+/**
+ * Form block
+ * ==========
+ */
+
+$form-block-background:         lightest($form-background) !default;
+$form-block-border:             darkest($form-background) !default;
+
+$form-block-header-spacing:     $spacing-tiny !default;
+$form-block-header-background:  dark($form-background) !default;
+$form-block-header-border:      darker($form-block-header-background) !default;
+
+$form-block-content-spacing:    $spacing-small !default;
 
 
 
