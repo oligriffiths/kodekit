@@ -1494,9 +1494,9 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table a:hover, .koowa .k-table a:focus { text-decoration: underline; }
 
-.koowa .k-table .selected td { background: #3498db; color: #34495e; }
+.koowa .k-table tr.selected td { background: #3498db; color: #34495e; }
 
-.koowa .k-table .selected td a, .koowa .k-table .selected td i, .koowa .k-table .selected td span { color: #34495e; }
+.koowa .k-table tr.selected td a, .koowa .k-table tr.selected td i, .koowa .k-table tr.selected td span { color: #34495e; }
 
 .koowa .k-table-pagination { border-top: 1px solid #e6e6e6; background: #eeeeee; padding: 13px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
 
