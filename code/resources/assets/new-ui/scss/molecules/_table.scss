@@ -32,9 +32,12 @@
  * ==============
  */
 
-.k-table {
-  overflow: auto;
-  background: $table-background;
+.k-table-container {
+
+  .k-table {
+    overflow: auto;
+    background: $table-background;
+  }
 
   table {
     width: 100%;
