@@ -40,11 +40,6 @@
         }
 
 
-        // Sticky table header and footer
-        if ( $fixedtable.length ) {
-            $fixedtable.tableHeadFixer({'head' : true});
-        }
-
 
         // Footable
         $('.footable').footable({
@@ -53,6 +48,19 @@
                 tablet: 600
             }
         });
+
+
+        // Sticky table header and footer
+        if ( $fixedtable.length ) {
+            $fixedtable.floatThead({
+                scrollContainer: function($table){
+                    return $table.closest('.k-table');
+                },
+                enableAria: true
+            });
+        }
+
+
 
 
         // Clickable items
@@ -124,7 +132,6 @@
 
 
         // Toggle search
-        if ( )
         $('.toggle-search').click(function() {
             $('.k-scopebar__search').slideToggle('fast');
         });

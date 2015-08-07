@@ -9,6 +9,7 @@
     "bootstrap-sass": "3.3.4",
     "neat": "1.7.2",
     "footable": "2.0.3",
+    "floatThead": "1.2.12",
     "modernizr": "https://github.com/Modernizr/Modernizr.git#2.8.3",
     "magnific-popup": "1.0.0"
   }

@@ -1523,33 +1523,35 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
   .flexbox .koowa .k-table-container .k-table table, .flexboxlegacy .koowa .k-table-container .k-table table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
   .flexbox .koowa .k-table-container .k-table-pagination, .flexboxlegacy .koowa .k-table-container .k-table-pagination { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .k-table { overflow: auto; background: white; /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't use long header titles since they won't be wrapped 2. Whole <th> should be clickable */ /** Body 1. No bottom border for last item 2. Small extra info below title display" block to display below title */ /** Selected 1. Coloring Links and extra elements */ }
+.koowa .k-table-container { /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't use long header titles since they won't be wrapped 2. Whole <th> should be clickable */ /** Body 1. No bottom border for last item 2. Small extra info below title display" block to display below title */ /** Selected 1. Coloring Links and extra elements */ }
 
-.koowa .k-table table { width: 100%; text-align: left; }
+.koowa .k-table-container .k-table { overflow: auto; background: white; }
 
-.koowa .k-table th, .koowa .k-table td { text-align: left; vertical-align: middle; height: 39px; position: relative; }
+.koowa .k-table-container table { width: 100%; text-align: left; }
 
-.koowa .k-table th input, .koowa .k-table td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; height: 1em; }
+.koowa .k-table-container th, .koowa .k-table-container td { text-align: left; vertical-align: middle; height: 39px; position: relative; }
 
-.koowa .k-table th { border-bottom: 1px solid gainsboro; background: #eeeeee; white-space: nowrap; z-index: 1; padding: 0 7px; }
+.koowa .k-table-container th input, .koowa .k-table-container td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; height: 1em; }
 
-.koowa .k-table th a { display: block; padding: 7px 0; line-height: 25px; }
+.koowa .k-table-container th { border-bottom: 1px solid gainsboro; background: #eeeeee; white-space: nowrap; z-index: 1; padding: 0 7px; }
 
-.koowa .k-table td { border-bottom: 1px solid #e4e4e4; background: #f6f6f6; padding: 7px; }
+.koowa .k-table-container th a { display: block; padding: 7px 0; line-height: 25px; }
 
-.koowa .k-table tr:nth-child(odd) td { background: #f6f6f6; }
+.koowa .k-table-container td { border-bottom: 1px solid #e4e4e4; background: #f6f6f6; padding: 7px; }
 
-.koowa .k-table tr:last-child td { border-bottom: none; }
+.koowa .k-table-container tr:nth-child(odd) td { background: #f6f6f6; }
 
-.koowa .k-table small { display: block; }
+.koowa .k-table-container tr:last-child td { border-bottom: none; }
 
-.koowa .k-table a { text-decoration: none; }
+.koowa .k-table-container small { display: block; }
 
-.koowa .k-table a:hover, .koowa .k-table a:focus { text-decoration: underline; }
+.koowa .k-table-container a { text-decoration: none; }
 
-.koowa .k-table tr.selected td { background: #0088CC; color: #EBEDF1; }
+.koowa .k-table-container a:hover, .koowa .k-table-container a:focus { text-decoration: underline; }
 
-.koowa .k-table tr.selected td a, .koowa .k-table tr.selected td i, .koowa .k-table tr.selected td span { color: #EBEDF1; }
+.koowa .k-table-container tr.selected td { background: #0088CC; color: #EBEDF1; }
+
+.koowa .k-table-container tr.selected td a, .koowa .k-table-container tr.selected td i, .koowa .k-table-container tr.selected td span { color: #EBEDF1; }
 
 .koowa .k-table-pagination { border-top: 1px solid #e6e6e6; background: #eeeeee; padding: 13px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
 
@@ -1672,6 +1674,8 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .koowa .k-nowrap.k-nowrap.k-nowrap { white-space: nowrap; }
 
 .koowa .disabled.disabled.disabled { display: none; }
+
+.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; }
 
 /** Extra styling ------------- If editing variables alone isn't enough */
 /** Default select is not styled outside Joomla scope (for example in koowa template) */
