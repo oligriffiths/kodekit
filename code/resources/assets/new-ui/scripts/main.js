@@ -41,26 +41,34 @@
 
 
 
+
+
+
         // Footable
         $('.footable').footable({
             breakpoints: {
                 phone: 400,
                 tablet: 600
             }
+        }).bind('footable_resizing', function() {
+            $fixedtable.floatThead('destroy');
+        }).bind('footable_resized', function() {
+            fixedTable();
         });
 
 
         // Sticky table header and footer
-        if ( $fixedtable.length ) {
-            $fixedtable.floatThead({
-                scrollContainer: function($table){
-                    return $table.closest('.k-table');
-                },
-                enableAria: true
-            });
+        function fixedTable() {
+            if ( $fixedtable.length ) {
+                $fixedtable.floatThead({
+                    scrollContainer: function($table){
+                        return $table.closest('.k-table');
+                    },
+                    enableAria: true
+                });
+            }
         }
-
-
+        fixedTable();
 
 
         // Clickable items
