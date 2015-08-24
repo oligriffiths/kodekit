@@ -76,8 +76,6 @@ module.exports = function(grunt) {
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
                         'bower_components/floatThead/dist/jquery.floatThead.min.js',
-                        //'code/resources/assets/new-ui/scripts/tableHeadFixer.js',
-                        //'code/resources/assets/new-ui/scripts/fixedHeaderTable.min.js',
                         'code/resources/assets/new-ui/scripts/overflowing.js',
                         'code/resources/assets/new-ui/scripts/tabbable.js',
                         'code/resources/assets/new-ui/scripts/off-canvas-menu.js',
