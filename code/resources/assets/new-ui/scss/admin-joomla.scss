@@ -1,13 +1,14 @@
 /**
  * Default Joomla theme
  * ====================
+ * Styled to fit nicely within the Joomla administrator layout
  */
 
 
 /**
  * Joomla variables
  * ----------------
- * Load first so global variables can use them
+ * Load first to win over "!default" variables defined in core/_tools.scss
  */
 
 @import "themes/joomla/variables";
@@ -16,7 +17,7 @@
 /**
  * Global tools
  * ------------
- * Containing variables and mixins
+ * Containing different libraries, variables, mixins and functions
  */
 
 @import "core/tools";
@@ -35,7 +36,6 @@
  * Core styling
  * ------------
  * Finally loading the default styling
- * This now makes use of overwritten variables and mixins
  */
 
 @import "core/core";
@@ -44,7 +44,7 @@
 /**
  * Extra styling
  * -------------
- * If editing variables alone isn't enough
+ * Extra styling that can't be done by merely using variables
  */
 
 @import "themes/joomla/styles";

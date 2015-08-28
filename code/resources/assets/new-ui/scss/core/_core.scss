@@ -7,11 +7,11 @@
 
 
 /**
- * Vendor
- * ------
+ * Vendors
+ * -------
  * 1. Select2
- * 2. Magnific popup core styling
- * 3. Magnific popup override styling
+ * 2. Magnific popup
+ * 3. Vendor overrides / extensions
  */
 
 @import "../../../../../../bower_components/select2/src/scss/core"; // 1
@@ -32,19 +32,10 @@
 
 
 /**
- * Icons
- * -----
- */
-
-@import "../utilities/koowa-icons";
-
-
-
-/**
  * Koowa namespaced styling
  * ========================
  * By namespacing we make sure our styles never interfere with other styles on the page
- * For example when using Nooku inside of another framework or CMS
+ * For example when using Nooku inside of another framework or CMS like Joomla or Wordpress
  */
 
 .koowa {
@@ -58,7 +49,7 @@
   @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
   @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
 
-  /* Bootstrap overrides / additions */
+  /* Bootstrap overrides / extensions */
   @import "../molecules/bootstrap/buttons";
   @import "../molecules/bootstrap/groups";
   @import "../molecules/bootstrap/input-group";
