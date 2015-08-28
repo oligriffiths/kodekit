@@ -1225,11 +1225,19 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-container, .flexboxlegacy .koowa .k-container { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-@media screen and (min-width: 768px) { .koowa .k-container__main { float: left; display: block; margin-right: 2.4590413082%; width: 65.8469862306%; }
+.koowa .k-container__main { margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) { .koowa .k-container__main { margin-bottom: 0; float: left; display: block; margin-right: 2.4590413082%; width: 65.8469862306%; }
   .koowa .k-container__main:last-child { margin-right: 0; } }
 
-@media screen and (min-width: 768px) { .koowa .k-container__sub { float: left; display: block; margin-right: 2.4590413082%; width: 31.6939724612%; }
+.koowa .k-container__main:last-child { margin-bottom: 0; }
+
+.koowa .k-container__sub { margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) { .koowa .k-container__sub { margin-bottom: 0; float: left; display: block; margin-right: 2.4590413082%; width: 31.6939724612%; }
   .koowa .k-container__sub:last-child { margin-right: 0; } }
+
+.koowa .k-container__sub:last-child { margin-bottom: 0; }
 
 .koowa .off-canvas-menu-toggle { width: 33px; height: 33px; border-radius: 3px; background: #34495e; color: #ecf0f1; border: none; padding: 0; margin: 10px; z-index: 3; position: relative; float: left; display: none; /* Hide when js is disabled */ }
 
@@ -1626,4 +1634,4 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .disabled.disabled.disabled { display: none; }
 
-.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; }
+.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; z-index: 1 !important; }

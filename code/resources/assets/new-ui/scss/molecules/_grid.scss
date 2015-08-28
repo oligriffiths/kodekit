@@ -32,13 +32,27 @@
  */
 
 .k-container__main {
+  margin-bottom: $spacing;
+
   @include breakpoint($charlie) {
+    margin-bottom: 0;
     @include span(8);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
 .k-container__sub {
+  margin-bottom: $spacing;
+
   @include breakpoint($charlie) {
+    margin-bottom: 0;
     @include span(4);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
