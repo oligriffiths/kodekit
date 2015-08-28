@@ -270,6 +270,7 @@ $table-cell-spacing:            $spacing-tiny !default; // 2
 
 $table-header-background:       $color-tertiary !default;
 $table-header-border:           darker($table-header-background) !default;
+$table-header-color:            $color-type !default;
 
 $table-cell-background-even:    $color-tertiary-light !default;
 $table-cell-background-odd:     $color-tertiary-light !default;
