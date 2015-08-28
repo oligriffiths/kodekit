@@ -1512,13 +1512,13 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table-container tr.selected td a, .koowa .k-table-container tr.selected td i, .koowa .k-table-container tr.selected td span { color: #34495e; }
 
-.koowa .k-table-pagination { border-top: 1px solid #e6e6e6; background: #eeeeee; padding: 13px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
+.koowa .k-table-pagination { border-top: 1px solid #e6e6e6; background: #eeeeee; padding: 7px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
 
 .koowa .k-table-pagination .limit, .koowa .k-table-pagination .pagination { display: inline-block; vertical-align: middle; }
 
 .koowa .k-table-pagination .pagination { margin: 0; }
 
-.koowa .k-table-pagination select { height: 30px; width: auto; margin-right: 13px; }
+.koowa .k-table-pagination select { height: 30px; width: auto; margin-right: 7px; }
 
 .koowa .footable.breakpoint .footable-toggle { display: block; width: 20px; height: 20px; border-radius: 50%; border: 2px solid #a2a2a2; position: absolute; top: 50%; right: 10px; margin-top: -10px; }
 
