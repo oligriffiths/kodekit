@@ -101,8 +101,8 @@ html { box-sizing: border-box; }
 .k-icon-user:before { content: ""; }
 
 /** Joomla specific --------------- Styles that apply to the Joomla administrator */
-/** Joomla specific styling / overrides =================================== Since we're using flexbox we need to override a couple of styles so all divs align perfectly Set everything to box-sizing: border-box */
-body.admin, body.component { box-sizing: border-box; /** Basic setup ----------- 1. Always remove the toolbar and empty div since we are showing this ourselves 2. Remove ugly border 3. Hide empty div 4. Unless it's the status bar moved to the top 5. Adding bottom-margin for the fixed bottom sttaus bar 6. Remove bottom margin when status bar is on top 7. Don't display the unstyled title when header is set to hide in Isis settings 8. Don't display the footer. It's unstyled and only holds copyright info */ /** Adding spacing to overview */ /** Component only ============== */ /** The main container ================== 1. Set negative margin for smaller screens 2. And remove on larger screens 3. Do not set with shorthand CSS since we set the bottom margin seprately for the status bar */ /** Flexbox setup ------------- Set Joomla containers to flex and adjust margins and paddings As soon as something in this chain of classnames changes we fall back to non-flexbox view */ /** Reduce bottom padding on debug container */ /** Remove margin from bootstrap grid item */ /** Joomla removes default focus style, we bring it back */ }
+/** Joomla specific styling / overrides =================================== Since we're using flexbox we need to override a couple of styles so all divs align perfectly 1. Set everything to box-sizing: border-box !!!!!!!!!! Warning: When making changes to this file make sure you test the following scenarios: - Test all views with the different Isis settings: - Collapse Administrator Menu (yes/no) (especially on mobile) - Display header (yes/no) - Status module position (Top/Bottom) - No need to test "pinned toolbar" since we don't use it anyway - Test all views with the (just described) different settings with both JS enabled and JS disabled - Test all views with the (just described) different settings both on mobile and desktop views !!!!!!!!!! */
+body.admin, body.component { box-sizing: border-box; /** Basic setup ----------- 1. Always remove the toolbar and empty div since we are showing this ourselves 2. Remove ugly border from header 3. Hide empty div after header 4. Don't hide status bar when placed at top 5. Adding bottom-margin for the fixed bottom status bar 6. Remove bottom margin when status bar is on top 7. Don't display the unstyled title when header is set to hide in Isis settings 8. Don't display the footer. It's unstyled and only holds copyright info */ /** Adding spacing to overview */ /** Component only ============== */ /** The main container ================== 1. Set negative margin for smaller screens 2. And remove on larger screens 3. Do not set with shorthand CSS since we set the bottom margin seprately for the status bar 4. always remove bottom margin when flexbox is enabled */ /** Flexbox setup ------------- Set Joomla containers to flex and adjust margins and paddings As soon as something in this chain of classnames changes we fall back to non-flexbox view */ /** Reduce bottom padding on debug container */ /** Remove margin from bootstrap grid item */ /** Joomla removes default focus style, we bring it back */ }
 
 body.admin .btn-subhead, body.admin .subhead-collapse, body.component .btn-subhead, body.component .subhead-collapse { display: none !important; }
 
@@ -126,7 +126,9 @@ body.admin.component, body.component.component { padding: 0; }
 
 body.admin.component .k-overview, body.component.component .k-overview { margin-top: 0; border: none; }
 
-body.admin .container-main, body.component .container-main { margin-left: -20px; margin-right: -20px; margin-bottom: 0; padding: 0; }
+body.admin .container-main, body.component .container-main { margin-left: -20px; margin-right: -20px; padding: 0; }
+
+.flexbox body.admin .container-main, .flexboxlegacy body.admin .container-main, .flexbox body.component .container-main, .flexboxlegacy body.component .container-main { margin-bottom: 0; }
 
 @media screen and (min-width: 768px) { body.admin .container-main, body.component .container-main { margin-left: 0; margin-right: 0; } }
 
@@ -1282,11 +1284,19 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-container, .flexboxlegacy .koowa .k-container { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-@media screen and (min-width: 768px) { .koowa .k-container__main { float: left; display: block; margin-right: 2.4590413082%; width: 65.8469862306%; }
+.koowa .k-container__main { margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) { .koowa .k-container__main { margin-bottom: 0; float: left; display: block; margin-right: 2.4590413082%; width: 65.8469862306%; }
   .koowa .k-container__main:last-child { margin-right: 0; } }
 
-@media screen and (min-width: 768px) { .koowa .k-container__sub { float: left; display: block; margin-right: 2.4590413082%; width: 31.6939724612%; }
+.koowa .k-container__main:last-child { margin-bottom: 0; }
+
+.koowa .k-container__sub { margin-bottom: 20px; }
+
+@media screen and (min-width: 768px) { .koowa .k-container__sub { margin-bottom: 0; float: left; display: block; margin-right: 2.4590413082%; width: 31.6939724612%; }
   .koowa .k-container__sub:last-child { margin-right: 0; } }
+
+.koowa .k-container__sub:last-child { margin-bottom: 0; }
 
 .koowa .off-canvas-menu-toggle { width: 33px; height: 33px; border-radius: 3px; background: #34495e; color: #ecf0f1; border: none; padding: 0; margin: 10px; z-index: 3; position: relative; float: left; display: none; /* Hide when js is disabled */ }
 
@@ -1679,7 +1689,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .disabled.disabled.disabled { display: none; }
 
-.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; }
+.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; z-index: 1 !important; }
 
 /** Extra styling ------------- Extra styling that can't be done by merely using variables */
 /** Default select is not styled outside Joomla scope (for example in koowa template) */
