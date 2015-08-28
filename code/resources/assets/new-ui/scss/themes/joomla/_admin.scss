@@ -1,32 +1,62 @@
-// Joomla specific
-/* Editing for iframe */
+/**
+ * Joomla specific styling / overrides
+ * ===================================
+ * Since we're using flexbox we need to override a couple of styles
+ * so all divs align perfectly
+ * Set everything to box-sizing: border-box
+ */
+
 body.admin,
 body.component {
-  box-sizing: border-box;
-  padding-top: 0;
+  box-sizing: border-box; // 1
+
 
   /**
    * Basic setup
    * -----------
-   * Always remove the toolbar and empty div
-   * We are showing this ourselves
+   * 1. Always remove the toolbar and empty div since we are showing this ourselves
+   * 2. Remove ugly border
+   * 3. Hide empty div
+   * 4. Unless it's the status bar moved to the top
+   * 5. Adding bottom-margin for the fixed bottom sttaus bar
+   * 6. Remove bottom margin when status bar is on top
+   * 7. Don't display the unstyled title when header is set to hide in Isis settings
+   * 8. Don't display the footer. It's unstyled and only holds copyright info
    */
-
-  nav.navbar {
-    position: static;
-  }
-
-  header.header {
-    border-top: none;
-  }
-
-  header.header + div {
-    display: none;
-  }
 
   .btn-subhead,
   .subhead-collapse {
-    display: none !important;
+    display: none !important; // 1
+  }
+
+  header.header {
+    border-top: none; // 2
+  }
+
+  header.header + div {
+    display: none; // 3
+  }
+
+  header.header + #status {
+    display: block; // 4
+  }
+
+  .container-main {
+    @include breakpoint($charlie) {
+      margin-bottom: 30px; // 5
+    }
+  }
+
+  .status-top ~ .container-main {
+    margin-bottom: 0; // 6
+  }
+
+  .content-title {
+    display: none; // 7
+  }
+
+  footer.footer {
+    display: none; // 8
   }
 
 
@@ -57,125 +87,160 @@ body.component {
 
 
   /**
-   * Flexbox setup
-   * -------------
-   * Set Joomla containers to flex and adjust margins and paddings
-   * As soon as something in this chain of classnames changes we fall back to non-flexbox view
-   */
-
-  display: flex;
-  flex-direction: column;
-  overflow: auto;
-
-
-  /**
-   * Do not flex following items
-   */
-
-  nav.navbar,
-  header.header,
-  .subhead-collapse,
-  #status,
-  #system-message-container,
-  #system-debug {
-    flex: 0 0 auto;
-  }
-
-
-  /**
    * The main container
+   * ==================
+   * 1. Set negative margin for smaller screens
+   * 2. And remove on larger screens
+   * 3. Do not set with shorthand CSS since we set the bottom margin seprately for the status bar
    */
 
   .container-main {
-    display: flex;
-    flex: 1 1 auto;
-    overflow: auto;
-    margin: 0 -20px;
+    margin-left: -20px; // 1 + 3
+    margin-right: -20px; // 1 + 3
+    margin-bottom: 0; // 3
     padding: 0;
 
     // Remove negative margin when screen is wide enough
     @include breakpoint(768px) {
-      margin: 0;
+      margin-left: 0; // 2 + 3
+      margin-right: 0; // 2 + 3
     }
 
-
-    /**
-     * Flex all children of main container
-     */
-
-    #content,
-    #content .row-fluid,
-    #content .row-fluid .span12 {
-      display: flex;
-      flex-direction: column;
-      flex: 1 1 auto;
-      overflow: auto;
-    }
-
-
-    /**
-     * Remove clearfix psuedo elements
-     * Otherwise they'll be treated as 1 pixel flex items
-     */
-
-    &:before,
-    &:after,
-    #content:before,
-    #content:after,
-    #content .row-fluid:before,
-    #content .row-fluid:after {
-      display: none;
-    }
-
-
-    /**
-     * No longer a fixed position for the statusbar
-     * since that doesn't play nice with flexbox
-     */
-
-    & + #status {
-      position: relative;
-      top: auto;
-      right: auto;
-      bottom: auto;
-      left: auto;
-      box-shadow: none;
-    }
-
-
-    /**
-     * Remove the border on successful flexbox
-     */
-
+    // Remove top margin by default
     #content .row-fluid .span12 {
       .k-overview {
-        border: none;
         margin-top: 0;
       }
     }
   }
 
 
+
   /**
-   * Remove spacing and border-radius to align alerts to the side
+   * Flexbox setup
+   * -------------
+   * Set Joomla containers to flex and adjust margins and paddings
+   * As soon as something in this chain of classnames changes we fall back to non-flexbox view
    */
 
-  #system-message-container {
-    padding: 0;
+  @include flexbox {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding-top: 0;
 
-    .alert {
-      margin: 0;
-      border-radius: 0;
-      border-bottom: 1px solid $toolbar-border;
-      padding: 10px 35px 10px 10px;
 
-      h4, p, div {
-        &:last-child {
-          margin-bottom: 0;
+    /**
+     * Set navbar from fixed to static
+     */
+
+    nav.navbar {
+      position: static;
+    }
+
+
+    /**
+     * Do not flex following items
+     */
+
+    nav.navbar,
+    header.header,
+    .subhead-collapse,
+    #status,
+    #system-message-container,
+    #system-debug {
+      flex: 0 0 auto;
+    }
+
+
+    /**
+     * The main container
+     */
+
+    .container-main {
+      display: flex;
+      flex: 1 1 auto;
+      overflow: auto;
+
+
+      /**
+       * Flex all children of main container
+       */
+
+      #content,
+      #content .row-fluid,
+      #content .row-fluid .span12 {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        overflow: auto;
+      }
+
+
+      /**
+       * Remove clearfix psuedo elements
+       * Otherwise they'll be treated as 1 pixel flex items
+       */
+
+      &:before,
+      &:after,
+      #content:before,
+      #content:after,
+      #content .row-fluid:before,
+      #content .row-fluid:after {
+        display: none;
+      }
+
+
+      /**
+       * No longer a fixed position for the statusbar
+       * since that doesn't play nice with flexbox
+       */
+
+      & + #status {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        box-shadow: none;
+      }
+
+
+      /**
+       * Remove the border on successful flexbox
+       */
+
+      #content .row-fluid .span12 {
+        .k-overview {
+          border: none;
+        }
+      }
+    }
+
+
+    /**
+     * Remove spacing and border-radius to align alerts to the side
+     */
+
+    #system-message-container {
+      padding: 0;
+
+      .alert {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid $toolbar-border;
+        padding: 10px 35px 10px 10px;
+
+        h4, p, div {
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
     }
   }
+
 
 
   /**
