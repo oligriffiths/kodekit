@@ -86,17 +86,12 @@
 
         // Enable Select2 for all selectboxes within a select2 class container
         if ( $select2filter.length ) {
+            $select2filter.find('option:first').val('').html('');
             $select2filter.select2({
                 minimumResultsForSearch: Infinity,
                 allowClear: true
             });
         }
-
-
-        $('.select2-selection__clear').click(function(e) {
-            alert('test');
-            e.preventDefault();
-        });
 
 
         // Table items
