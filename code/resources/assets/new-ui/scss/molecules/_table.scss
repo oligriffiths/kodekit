@@ -236,12 +236,26 @@
  * ==============
  */
 
+th a {
+  @include icon-after(sorting, true) {
+    font-size: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    margin-left: 5px;
+    opacity: .35;
+    color: $table-header-color;
+  }
+}
+
 th.-koowa-desc a {
   @include psuedo(after, $display: false, $position: false) {
     display: inline-block;
     position: relative;
     vertical-align: middle;
     margin-left: 5px;
+    opacity: 1;
+    color: inherit;
 
     @include arrow(top);
   }
@@ -253,6 +267,8 @@ th.-koowa-asc a {
     position: relative;
     vertical-align: middle;
     margin-left: 5px;
+    opacity: 1;
+    color: inherit;
 
     @include arrow(bottom);
   }
