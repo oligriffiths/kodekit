@@ -35,7 +35,6 @@ module.exports = function(grunt) {
             dist: {
                 files: {
                     'code/resources/assets/css/admin-default.css': 'code/resources/assets/new-ui/scss/admin-default.scss',
-                    'code/resources/assets/css/admin-other.css': 'code/resources/assets/new-ui/scss/admin-other.scss',
                     'code/resources/assets/css/admin-joomla.css': 'code/resources/assets/new-ui/scss/admin-joomla.scss',
                     'code/resources/assets/css/admin-wordpress.css': 'code/resources/assets/new-ui/scss/admin-wordpress.scss'
                 }
@@ -49,7 +48,8 @@ module.exports = function(grunt) {
                 bsFiles: {
                     src : [
                         "code/resources/assets/css/*.*",
-                        "code/resources/assets/js/*.*"
+                        "code/resources/assets/js/*.*",
+                        "code/resources/assets/documentation/*.*"
                     ]
                 },
                 options: {
