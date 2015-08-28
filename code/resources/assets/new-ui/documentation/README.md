@@ -45,3 +45,18 @@ Features
 * Overview (list / grid) layout, form layout (front / back)
 * Comes with 3 themes: default, joomla & wordpress
 * Easily styleable by using Sass variables
+
+Using icons
+===========
+
+The names of icons can be found on the Open Iconic site.
+
+Use in markup
+-------------
+
+`<span class="k-icon-list"></span>` where list would be the name found on the Open Iconic site.
+
+Use in SCSS
+-----------
+
+Check the `utilities/_koowa-icons.scss` file
