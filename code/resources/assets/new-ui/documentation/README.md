@@ -31,6 +31,10 @@ Bootstrap:
 * input-groups
 * buttons
 
+Misc:
+
+* [Open Iconic](https://useiconic.com/open)
+
 Features
 --------
 
