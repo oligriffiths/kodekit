@@ -58,23 +58,23 @@ select {
 
 .koowa {
   .icon-new {
-    @include icon-before(plus-circle, true);
+    @include icon-before(plus, true);
   }
 
   .icon-download {
-    @include icon-before(download, true);
+    @include icon-before(data-transfer-download, true);
   }
 
   .icon-options {
-    @include icon-before(settings, true);
+    @include icon-before(cog, true);
   }
 
   .icon-delete {
-    @include icon-before(close, true);
+    @include icon-before(trash, true);
   }
 
   .icon-purge {
-    @include icon-before(trash, true);
+    @include icon-before(circle-x, true);
   }
 
   .icon-publish {
@@ -83,7 +83,7 @@ select {
   }
 
   .icon-unpublish {
-    @include icon-before(times-circle, true);
+    @include icon-before(circle-x, true);
     color: $color-error;
   }
 
@@ -97,7 +97,7 @@ select {
   }
 
   .icon-cancel {
-    @include icon-before(times-circle, true);
+    @include icon-before(circle-x, true);
     color: $color-error;
   }
 }
