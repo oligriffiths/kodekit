@@ -206,14 +206,14 @@
     right: 10px;
     margin-top: -($footable-toggle-size / 2);
 
-    @include icon-after(chevron-down, true) {
+    @include icon-after(chevron-bottom, true) {
       display: block;
       color: $footable-toggle-color;
       font-size: $footable-toggle-icon-size;
       width: $footable-toggle-icon-size;
       height: $footable-toggle-icon-size;
-      line-height: $footable-toggle-icon-size;
       margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
+      line-height: 1.3em;
     }
   }
 
