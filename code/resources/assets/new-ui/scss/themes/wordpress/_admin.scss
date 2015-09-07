@@ -1,0 +1,63 @@
+/**
+ * Removing spacing between WP sidemenu and component
+ */
+
+#wpcontent {
+  padding-left: 0;
+}
+
+
+
+/**
+ * Placing WP copyright notice on top of component
+ */
+
+#wpfooter {
+  display: none;
+}
+
+#wpwrap {
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+  }
+}
+
+#wpwrap {
+  #wpcontent {
+    padding-left: 0;
+
+    @include flexbox {
+      display: flex;
+      flex: 1 1 auto;
+      height: auto;
+    }
+  }
+}
+
+#wpbody {
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+  }
+}
+
+#wpbody-content {
+  padding: 0;
+
+  @include flexbox {
+    display: flex;
+    flex: 1 1 auto;
+  }
+}
+
+// Hide the options on top-right
+#screen-meta {
+  display: none;
+}
+
+// Lining sidemenu with bottom
+#adminmenuback {
+  bottom: 0;
+}

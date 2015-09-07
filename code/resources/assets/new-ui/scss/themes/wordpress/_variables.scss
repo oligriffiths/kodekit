@@ -1,0 +1,64 @@
+/**
+ * Borders
+ * =======
+ */
+
+$borders: true;
+
+
+
+/**
+ * Sidebar
+ * ============
+ */
+
+$sidebar-width: 220px;
+
+
+
+/**
+ * Accent color
+ * ============
+ */
+
+$color-accent: #0073AA;
+
+
+
+/**
+ * Primary color
+ * =============
+ */
+
+$color-primary: #F1F1F1;
+$color-primary-type: #333;
+$color-primary-accent: $color-accent;
+
+
+
+/**
+ * Secondary color
+ * ===============
+ */
+
+$color-secondary: #EEEEEE;
+$color-secondary-type: #333;
+
+
+
+/**
+ * Toolbar
+ * =======
+ */
+
+$toolbar-btn-alt: false;
+$toolbar-background: darken($color-primary, 4%);
+
+
+
+/**
+ * Overview
+ * ========
+ */
+
+$overview-border: false;

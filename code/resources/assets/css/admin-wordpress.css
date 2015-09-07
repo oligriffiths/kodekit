@@ -1,6 +1,13 @@
 @charset "UTF-8";
 /** Default Wordpress theme ======================= Styled to fit nicely within the Wordpress admin layout */
 /** Wordpress variables ------------------- Load first to win over "!default" variables defined in core/_tools.scss */
+/** Borders ======= */
+/** Sidebar ============ */
+/** Accent color ============ */
+/** Primary color ============= */
+/** Secondary color =============== */
+/** Toolbar ======= */
+/** Overview ======== */
 /** Global tools ------------ Containing different libraries, variables, mixins and functions */
 /** Functions ========= */
 /** Breakpoints =========== Only work with either - (min-width) - (min-width) and (max-width) Try to never use (max-width) alone since that is not very mobile-first 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base width to work from 2. The max width of the form layout 3. Separate $desktop variable is being used so all styles change together when going from small to larger screen. 4. Wether or not to Use flexbox in layouts 5. Separate $flexbox variables are being used */
@@ -503,6 +510,28 @@ html { box-sizing: border-box; }
 .k-icon-zoom-out:before { content: ""; }
 
 /** Wordpress specific ------------------ Styles that apply to the Wordpress admin */
+/** Removing spacing between WP sidemenu and component */
+#wpcontent { padding-left: 0; }
+
+/** Placing WP copyright notice on top of component */
+#wpfooter { display: none; }
+
+@media (min-width: 300px) and (min-height: 400px) { .flexbox #wpwrap, .flexboxlegacy #wpwrap { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; } }
+
+#wpwrap #wpcontent { padding-left: 0; }
+
+@media (min-width: 300px) and (min-height: 400px) { .flexbox #wpwrap #wpcontent, .flexboxlegacy #wpwrap #wpcontent { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; height: auto; } }
+
+@media (min-width: 300px) and (min-height: 400px) { .flexbox #wpbody, .flexboxlegacy #wpbody { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+
+#wpbody-content { padding: 0; }
+
+@media (min-width: 300px) and (min-height: 400px) { .flexbox #wpbody-content, .flexboxlegacy #wpbody-content { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+
+#screen-meta { display: none; }
+
+#adminmenuback { bottom: 0; }
+
 /** Core styling ------------ Finally loading the default styling */
 /** Outside of the koowa namespace ============================== Markup might be rendered outside of the <div class="koowa"> */
 /** Vendors ------- 1. Select2 2. Magnific popup 3. Vendor overrides / extensions */
@@ -1439,7 +1468,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .pagination > li { display: inline; }
 
-.koowa .pagination > li > a, .koowa .pagination > li > span { position: relative; float: left; padding: 5px 10px; line-height: 1.428571429; text-decoration: none; color: #3498db; background-color: #fff; border: 1px solid #ddd; margin-left: -1px; }
+.koowa .pagination > li > a, .koowa .pagination > li > span { position: relative; float: left; padding: 5px 10px; line-height: 1.428571429; text-decoration: none; color: #0073AA; background-color: #fff; border: 1px solid #ddd; margin-left: -1px; }
 
 .koowa .pagination > li:first-child > a, .koowa .pagination > li:first-child > span { margin-left: 0; border-bottom-left-radius: 4px; border-top-left-radius: 4px; }
 
@@ -1447,7 +1476,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .pagination > li > a:hover, .koowa .pagination > li > a:focus, .koowa .pagination > li > span:hover, .koowa .pagination > li > span:focus { color: #23527c; background-color: #eeeeee; border-color: #ddd; }
 
-.koowa .pagination > .active > a, .koowa .pagination > .active > a:hover, .koowa .pagination > .active > a:focus, .koowa .pagination > .active > span, .koowa .pagination > .active > span:hover, .koowa .pagination > .active > span:focus { z-index: 2; color: #fff; background-color: #3498db; border-color: #2386c8; cursor: default; }
+.koowa .pagination > .active > a, .koowa .pagination > .active > a:hover, .koowa .pagination > .active > a:focus, .koowa .pagination > .active > span, .koowa .pagination > .active > span:hover, .koowa .pagination > .active > span:focus { z-index: 2; color: #fff; background-color: #0073AA; border-color: #005b86; cursor: default; }
 
 .koowa .pagination > .disabled > span, .koowa .pagination > .disabled > span:hover, .koowa .pagination > .disabled > span:focus, .koowa .pagination > .disabled > a, .koowa .pagination > .disabled > a:hover, .koowa .pagination > .disabled > a:focus { color: #777777; background-color: #fff; border-color: #ddd; cursor: not-allowed; }
 
@@ -1487,7 +1516,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .input-group .form-control:first-child:not(:last-child), .koowa .input-group .input-group-addon:first-child, .koowa .input-group .input-group-btn:first-child > .btn, .koowa .input-group .input-group-btn:first-child > * > .btn, .koowa .input-group .input-group-btn:first-child > .dropdown-toggle, .koowa .input-group .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) { border-top-right-radius: 0; border-bottom-right-radius: 0; }
 
-.koowa a { color: #3498db; }
+.koowa a { color: #0073AA; }
 
 .koowa button { display: inline-block; background: transparent; border: none; padding: 0; margin: 0; }
 
@@ -1501,15 +1530,15 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa p:last-child { margin-bottom: 0; }
 
-.koowa .k-breadcrumb { border-bottom: 1px solid #2386c8; background: #3498db; color: white; overflow: auto; }
+.koowa .k-breadcrumb { border-bottom: 1px solid gainsboro; background: #EEEEEE; color: #333; overflow: auto; }
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-breadcrumb, .flexboxlegacy .koowa .k-breadcrumb { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 .koowa .k-breadcrumb { /** Links ----- 1. Full background hover */ /** List ---- 1. Reset unordered list styling */ /** Styling list items ------------------ 1. Make each item at least one breadcrumb size wide 2. Make room for the separator 3. Set z-index to 0 so the :after psuedo element will be on top 4. Hide by default so we can show only a few on mobile 5. Hide overflowing content 6. Proper spacing for non-flexbox use */ /** first and last elements ----------------------- 1. Always display these items 2. No flexing for these items so the are readable */ /** One but last item ----------------- Show this item on mobile to get a sense of where you are 1. Set 'missing' content 2. Reset to default content on wider screens */ /** Active item -------------------------------------- */ }
 
-.koowa .k-breadcrumb a { color: white; }
+.koowa .k-breadcrumb a { color: #333; }
 
-.koowa .k-breadcrumb a:focus, .koowa .k-breadcrumb a:hover { background: #2791d9; }
+.koowa .k-breadcrumb a:focus, .koowa .k-breadcrumb a:hover { background: #e6e6e6; }
 
 .koowa .k-breadcrumb ul { margin: 0; padding: 0; list-style: none; border: none; background: transparent; /** Flexing items to get overflow ellipsis -------------------------------------- */ }
 
@@ -1585,17 +1614,17 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-component, .flexboxlegacy .koowa .k-component { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
 
-.koowa .k-content { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #34495e; position: relative; z-index: 2; }
+.koowa .k-content { -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #F1F1F1; position: relative; z-index: 2; }
 
 @media screen and (min-width: 768px) { .koowa .k-content { display: table-cell; width: 100%; } }
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-content, .flexboxlegacy .koowa .k-content { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; width: auto; } }
 
-.koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(270px, 0); -ms-transform: translate(270px, 0); transform: translate(270px, 0); }
+.koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(220px, 0); -ms-transform: translate(220px, 0); transform: translate(220px, 0); }
 
 @media screen and (min-width: 768px) { .koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
 
-.koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-270px, 0); -ms-transform: translate(-270px, 0); transform: translate(-270px, 0); }
+.koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-220px, 0); -ms-transform: translate(-220px, 0); transform: translate(-220px, 0); }
 
 @media screen and (min-width: 768px) { .koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
 
@@ -1677,11 +1706,11 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-list li { display: block; line-height: 20px; }
 
-.koowa .k-list a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 14px; color: #ecf0f1; /* Hover & focus ------------- */ }
+.koowa .k-list a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 14px; color: #333; /* Hover & focus ------------- */ }
 
-.koowa .k-list a:hover, .koowa .k-list a:focus { background: #415b75; color: #ecf0f1; }
+.koowa .k-list a:hover, .koowa .k-list a:focus { background: white; color: #333; }
 
-.koowa .k-list .active a { font-weight: bold; background: #34495e; color: #3498db; }
+.koowa .k-list .active a { font-weight: bold; background: #F1F1F1; color: #0073AA; }
 
 .koowa .k-list .active a:hover { background: transparent; cursor: default; }
 
@@ -1695,7 +1724,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-list .k-clicker:after { display: block; position: absolute; content: " "; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 4px solid; top: 50%; left: -6px; margin-top: -4px; }
 
-.koowa .k-list .k-clicker:hover:after { color: #3498db; }
+.koowa .k-list .k-clicker:hover:after { color: #0073AA; }
 
 .koowa .k-list .toggled .k-clicker:after { border: none; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; margin-left: -3px; margin-top: -2px; }
 
@@ -1705,21 +1734,21 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-list .k-spacer { display: table-cell; width: 12px; min-width: 12px; height: 1.5em; }
 
-.koowa .k-navigation { margin: 0; list-style: none; border: none; border-bottom: 1px solid #222f3d; padding: 7px 0; background: #2f4154; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
+.koowa .k-navigation { margin: 0; list-style: none; border: none; border-bottom: 1px solid #d7d7d7; padding: 7px 0; background: #e9e9e9; /* Items ----- */ /** Links ----- 1. Make it fully clickable 2. removing underlines */ /** Active link ----------- */ }
 
 .koowa .k-navigation li { display: block; line-height: 20px; }
 
-.koowa .k-navigation a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 21px; font-size: 16px; color: #ecf0f1; /* Faux border ----------- Adding a border to the left, using "after" psuedo since "before" is used for the icon */ position: relative; /* Hover & focus ------------- */ }
+.koowa .k-navigation a { display: block; text-decoration: none; padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 21px; font-size: 16px; color: #333; /* Faux border ----------- Adding a border to the left, using "after" psuedo since "before" is used for the icon */ position: relative; /* Hover & focus ------------- */ }
 
 .koowa .k-navigation a:after { display: block; position: absolute; content: " "; width: 5px; height: 100%; left: 0; top: 0; }
 
-.koowa .k-navigation a:hover, .koowa .k-navigation a:focus { background: #395168; }
+.koowa .k-navigation a:hover, .koowa .k-navigation a:focus { background: #f9f9f9; }
 
-.koowa .k-navigation a:hover:after, .koowa .k-navigation a:focus:after { background: #ecf0f1; }
+.koowa .k-navigation a:hover:after, .koowa .k-navigation a:focus:after { background: #333; }
 
-.koowa .k-navigation .active a { font-weight: bold; background: #2f4154; color: #3498db; }
+.koowa .k-navigation .active a { font-weight: bold; background: #e9e9e9; color: #0073AA; }
 
-.koowa .k-navigation .active a:after { height: 76%; top: 12%; background: #3498db; }
+.koowa .k-navigation .active a:after { height: 76%; top: 12%; background: #0073AA; }
 
 .koowa .k-navigation .active a:hover { background: transparent; cursor: default; }
 
@@ -1799,7 +1828,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .booleanlist:not(ie) :checked + label span:before, .koowa .booleanlist:not(ie).booleanlist--neutral input[value]:checked + label span:before { background: #2980b9; }
 
-.koowa .k-scopebar { background: #2791d9; color: white; }
+.koowa .k-scopebar { background: #e6e6e6; color: #333; }
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar { display: table; width: 100%; } }
 
@@ -1812,17 +1841,17 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-scopebar .select2, .koowa .k-scopebar button { height: 32px; padding: 0 7px; }
 
-.koowa .k-scopebar a { color: white; cursor: pointer; }
+.koowa .k-scopebar a { color: #333; cursor: pointer; }
 
-.koowa .k-scopebar .select2-selection__placeholder { color: white; opacity: .7; }
+.koowa .k-scopebar .select2-selection__placeholder { color: #333; opacity: .7; }
 
-.koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__arrow b { border-top-color: white; opacity: .7; }
+.koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__arrow b { border-top-color: #333; opacity: .7; }
 
-.koowa .k-scopebar .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b { border-bottom-color: white; }
+.koowa .k-scopebar .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b { border-bottom-color: #333; }
 
-.koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__rendered { color: white; }
+.koowa .k-scopebar .select2-container--default .select2-selection--single .select2-selection__rendered { color: #333; }
 
-.koowa .k-scopebar__item { vertical-align: middle; width: 100%; border-bottom: 1px solid #217dbb; }
+.koowa .k-scopebar__item { vertical-align: middle; width: 100%; border-bottom: 1px solid #d4d4d4; }
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar__item { display: table-cell; } }
 
@@ -1842,7 +1871,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-scopebar__search .search_button { margin: 0; padding: 0; list-style: none; border: none; background: transparent; -webkit-appearance: none; display: block; background: white; color: #222222; padding: 7px; height: 32px; padding-right: 32px; border-radius: 0; width: 100%; box-shadow: none; }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid #217dbb; } }
+@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid #d4d4d4; } }
 
 .koowa .k-scopebar__search .search_button--empty { position: absolute; top: 7px; right: 10px; font-size: 10px; }
 
@@ -1858,18 +1887,18 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media screen and (min-width: 768px) { .koowa .k-sidebar, .koowa .k-sidebar-right { min-width: 180px; width: 180px; max-width: 180px; display: table-cell; vertical-align: top; } }
 
-@media screen and (min-width: 1024px) { .koowa .k-sidebar, .koowa .k-sidebar-right { min-width: 270px; width: 270px; max-width: 270px; } }
+@media screen and (min-width: 1024px) { .koowa .k-sidebar, .koowa .k-sidebar-right { min-width: 220px; width: 220px; max-width: 220px; } }
 
-.k-js-enabled .koowa .k-sidebar, .k-js-enabled .koowa .k-sidebar-right { min-width: 270px; width: 270px; max-width: 270px; position: absolute; z-index: 1; top: 0; height: 100%; overflow: auto; display: none; }
+.k-js-enabled .koowa .k-sidebar, .k-js-enabled .koowa .k-sidebar-right { min-width: 220px; width: 220px; max-width: 220px; position: absolute; z-index: 1; top: 0; height: 100%; overflow: auto; display: none; }
 
 @media screen and (min-width: 768px) { .k-js-enabled .koowa .k-sidebar, .k-js-enabled .koowa .k-sidebar-right { min-width: 180px; width: 180px; max-width: 180px; position: static; height: auto; display: table-cell; } }
 
-@media screen and (min-width: 1024px) { .k-js-enabled .koowa .k-sidebar, .k-js-enabled .koowa .k-sidebar-right { min-width: 270px; width: 270px; max-width: 270px; } }
+@media screen and (min-width: 1024px) { .k-js-enabled .koowa .k-sidebar, .k-js-enabled .koowa .k-sidebar-right { min-width: 220px; width: 220px; max-width: 220px; } }
 
 @media (min-width: 768px) and (min-height: 400px) { .flexbox .koowa .k-sidebar, .flexbox .koowa .k-sidebar-right, .flexboxlegacy .koowa .k-sidebar, .flexboxlegacy .koowa .k-sidebar-right { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
   .flexbox .koowa .k-sidebar__navigation, .flexbox .koowa .k-sidebar__footer, .flexboxlegacy .koowa .k-sidebar__navigation, .flexboxlegacy .koowa .k-sidebar__footer { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .k-sidebar { border-right: 1px solid #1e2a37; border-bottom: 1px solid #1e2a37; background: #34495e; color: #ecf0f1; }
+.koowa .k-sidebar { border-right: 1px solid #d2d2d2; border-bottom: 1px solid #d2d2d2; background: #F1F1F1; color: #333; }
 
 .k-js-enabled .koowa .k-sidebar { left: 0; }
 
@@ -1877,7 +1906,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .opened--left .k-sidebar { display: block; }
 
-.koowa .k-sidebar-right { border-left: 1px solid #1e2a37; background: #34495e; color: #ecf0f1; }
+.koowa .k-sidebar-right { border-left: 1px solid #d2d2d2; background: #F1F1F1; color: #333; }
 
 .k-js-enabled .koowa .k-sidebar-right { right: 0; }
 
@@ -1914,9 +1943,9 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table-container a:hover, .koowa .k-table-container a:focus { text-decoration: underline; }
 
-.koowa .k-table-container tr.selected td { background: #3498db; color: #34495e; }
+.koowa .k-table-container tr.selected td { background: #0073AA; color: #F1F1F1; }
 
-.koowa .k-table-container tr.selected td a, .koowa .k-table-container tr.selected td i, .koowa .k-table-container tr.selected td span { color: #34495e; }
+.koowa .k-table-container tr.selected td a, .koowa .k-table-container tr.selected td i, .koowa .k-table-container tr.selected td span { color: #F1F1F1; }
 
 .koowa .k-table-pagination { border-top: 1px solid #e6e6e6; background: #eeeeee; padding: 7px; /** Pagination contents ------------------- 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
 
@@ -1930,9 +1959,9 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .footable.breakpoint .footable-toggle:after { content: ""; display: block; color: #a2a2a2; font-size: 10px; width: 10px; height: 10px; margin: 3px; line-height: 1.3em; }
 
-.koowa .footable.breakpoint tr.selected .footable-toggle { border-color: #34495e; }
+.koowa .footable.breakpoint tr.selected .footable-toggle { border-color: #F1F1F1; }
 
-.koowa .footable.breakpoint tr.selected .footable-toggle:after { color: #34495e; }
+.koowa .footable.breakpoint tr.selected .footable-toggle:after { color: #F1F1F1; }
 
 .koowa th a:after { content: ""; font-size: 10px; display: inline-block; position: relative; vertical-align: middle; margin-left: 5px; opacity: .35; color: #222222; }
 
@@ -1944,7 +1973,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa th.-koowa-asc a:after { content: " "; display: inline-block; position: relative; vertical-align: middle; margin-left: 5px; opacity: 1; color: inherit; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid; }
 
-.koowa .k-titlebar { border-bottom: 1px solid #111920; -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #1e2a37; color: #ecf0f1; position: relative; z-index: 2; float: left; width: 100%; /** Create custom 'overlay' for off canvas sidebar ---------------------------------------------- 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; }
+.koowa .k-titlebar { border-bottom: 1px solid #d5d5d5; -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); background: #e7e7e7; color: #333; position: relative; z-index: 2; float: left; width: 100%; /** Create custom 'overlay' for off canvas sidebar ---------------------------------------------- 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; }
 
 .koowa .k-titlebar:before { display: block; position: absolute; content: " "; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin-bottom: -1px; z-index: -1; opacity: 0; background: black; -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
@@ -1952,11 +1981,11 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-titlebar, .flexboxlegacy .koowa .k-titlebar { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(270px, 0); -ms-transform: translate(270px, 0); transform: translate(270px, 0); }
+.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(220px, 0); -ms-transform: translate(220px, 0); transform: translate(220px, 0); }
 
 @media screen and (min-width: 768px) { .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
 
-.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-270px, 0); -ms-transform: translate(-270px, 0); transform: translate(-270px, 0); }
+.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-220px, 0); -ms-transform: translate(-220px, 0); transform: translate(-220px, 0); }
 
 @media screen and (min-width: 768px) { .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
 
@@ -1966,7 +1995,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-titlebar h2 { margin: 13px; }
 
-.koowa .k-toolbar { border-bottom: 1px solid #111920; background: #1e2a37; }
+.koowa .k-toolbar { border-bottom: 1px solid #d5d5d5; background: #e7e7e7; }
 
 @media screen and (min-width: 768px) { .koowa .k-toolbar { width: 100%; display: table; } }
 
@@ -1979,10 +2008,6 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 @media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar button, .koowa .k-toolbar .btn { width: 33px; height: 33px; text-align: center; padding: 6px 8px; overflow: hidden; } }
 
 .koowa .k-toolbar .k-btn-options { float: right; margin-right: 10px; }
-
-.koowa .k-toolbar .btn-success { border-color: #2791d9; background: #3498db; color: white; }
-
-.koowa .k-toolbar .btn-success:hover, .koowa .k-toolbar .btn-success:focus { border-color: #2383c4; background: #258cd1; color: #f2f2f2; }
 
 .koowa .k-toolbar i { display: inline-block; margin: 0 0.25em 0 0.1em; }
 
@@ -2000,7 +2025,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-tree li a { padding-top: 5px; padding-bottom: 5px; }
 
-.koowa .k-upload { border-bottom: 1px solid #273747; padding: 13px; background: #34495e; display: table; width: 100%; /** When flexbox is in use */ }
+.koowa .k-upload { border-bottom: 1px solid #dfdfdf; padding: 13px; background: #F1F1F1; display: table; width: 100%; /** When flexbox is in use */ }
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-upload, .flexboxlegacy .koowa .k-upload { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -2012,7 +2037,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-upload__buttons, .flexboxlegacy .koowa .k-upload__buttons { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; display: block; width: auto; } }
 
-.koowa .k-overview { border: 1px solid #273747; background: #34495e; }
+.koowa .k-overview { background: #F1F1F1; }
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-overview, .flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
 
