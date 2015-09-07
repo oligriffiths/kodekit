@@ -53,7 +53,7 @@ module.exports = function(grunt) {
                     ]
                 },
                 options: {
-                    proxy: "todo.dev",
+                    proxy: "wptest.dev",
                     port: 1338,
                     open: true,
                     notify: false,
