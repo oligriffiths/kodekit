@@ -9,46 +9,17 @@
 
 
 /**
- * Placing WP copyright notice on top of component
+ * Flexboxing the wrapper and children
  */
-
-#wpfooter {
-  display: none;
-}
-
-#wpwrap {
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-    flex-direction: row;
-  }
-}
 
 #wpwrap {
   #wpcontent {
     padding-left: 0;
-
-    @include flexbox {
-      display: flex;
-      flex: 1 1 auto;
-      height: auto;
-    }
+    margin-bottom: 40px;
   }
-}
 
-#wpbody {
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-  }
-}
-
-#wpbody-content {
-  padding: 0;
-
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
+  #wpbody-content {
+    padding: 0;
   }
 }
 
@@ -57,7 +28,10 @@
   display: none;
 }
 
-// Lining sidemenu with bottom
-#adminmenuback {
-  bottom: 0;
+#wpfooter {
+  height: 40px;
+}
+
+.k-component {
+  border-bottom: 1px solid #ddd;
 }
