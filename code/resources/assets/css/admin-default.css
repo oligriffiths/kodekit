@@ -1894,7 +1894,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table-container th, .koowa .k-table-container td { text-align: left; vertical-align: middle; height: 39px; position: relative; }
 
-.koowa .k-table-container th input, .koowa .k-table-container td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; height: 1em; }
+.koowa .k-table-container th input, .koowa .k-table-container td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; width: 16px; height: 16px; }
 
 .koowa .k-table-container th { border-bottom: 1px solid gainsboro; background: #eeeeee; white-space: nowrap; z-index: 1; padding: 0 7px; }
 
