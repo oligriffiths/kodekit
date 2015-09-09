@@ -15,24 +15,9 @@ body {
 /**
  * Default body settings
  * =====================
- * Setting up font and spacing
  */
 
 body {
-  font-family: $font-family;
-  font-size: $font-size;
-  line-height: $line-height;
-  padding: 0;
-  margin: 0;
-  border: none;
-
-
-
-  /**
-   * When flexbox is enabled
-   * -----------------------
-   */
-
   @include flexbox {
     display: flex;
     flex: 1 1 auto;
@@ -50,17 +35,24 @@ body {
  * 2. Reset the max-width when viewport is as large as minwidth
  * 3. Use z-index to be able to talk with JavaScript
  * 4. Needed for webkit / blink for JS to read zindex value
+ * 5. Default font settings
+ * 6. Default styling
  */
 
 .koowa {
   max-width: $minwidth; // 1
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
   z-index: 0; // 3
   position: relative; // 4
-  background: $koowa-background;
+  font-family: $font-family; // 5
+  font-size: $font-size; // 5
+  line-height: $line-height; // 5
+  margin: 0; // 6
   padding: $koowa-padding;
+  border: none; // 6
+  background: $koowa-background; // 6
+  overflow: auto;
   -webkit-font-smoothing: $font-smoothing;
+  -webkit-overflow-scrolling: touch;
 
   @include breakpoint($minwidth) {
     max-width: none; // 2
