@@ -2,13 +2,13 @@
  * Default button styles
  * =====================
  * 1. Right floating buttons
+ * 2. Remove underline when button is an <a> element
  */
-
-a.btn {
-  text-decoration: none;
-}
-
 
 .btn-right {
   float: right; // 1
+}
+
+a.btn {
+  text-decoration: none;
 }
