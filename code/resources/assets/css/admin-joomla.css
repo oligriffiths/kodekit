@@ -1941,7 +1941,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 .koowa .opened--right .k-sidebar-right { display: block; }
 
 @media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-table-container, .flexboxlegacy .koowa .k-table-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; }
-  .flexbox .koowa .k-table-container .k-table, .flexboxlegacy .koowa .k-table-container .k-table { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
+  .flexbox .koowa .k-table-container .k-table, .flexboxlegacy .koowa .k-table-container .k-table { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; background: #f6f6f6; }
   .flexbox .koowa .k-table-container .k-table table, .flexboxlegacy .koowa .k-table-container .k-table table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
   .flexbox .koowa .k-table-container .k-table-pagination, .flexboxlegacy .koowa .k-table-container .k-table-pagination { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -1953,7 +1953,7 @@ body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1
 
 .koowa .k-table-container th, .koowa .k-table-container td { text-align: left; vertical-align: middle; height: 39px; position: relative; }
 
-.koowa .k-table-container th input, .koowa .k-table-container td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; width: 16px; height: 16px; }
+.koowa .k-table-container th input, .koowa .k-table-container td input { display: inline-block; vertical-align: middle; margin: -1px 0 0 0; }
 
 .koowa .k-table-container th { border-bottom: 1px solid gainsboro; background: #eeeeee; white-space: nowrap; z-index: 1; padding: 0 7px; }
 

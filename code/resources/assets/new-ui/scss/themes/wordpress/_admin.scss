@@ -15,7 +15,6 @@
 #wpwrap {
   #wpcontent {
     padding-left: 0;
-    margin-bottom: 40px;
   }
 
   #wpbody-content {
@@ -29,9 +28,5 @@
 }
 
 #wpfooter {
-  height: 40px;
-}
-
-.k-component {
-  border-bottom: 1px solid #ddd;
+  display: none;
 }

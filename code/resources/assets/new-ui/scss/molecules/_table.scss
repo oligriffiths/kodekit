@@ -13,6 +13,7 @@
     .k-table {
       display: flex;
       flex: 1 1 auto;
+      background: $table-cell-background-even;
 
       table {
         flex: 1 1 auto;
@@ -61,8 +62,6 @@
       display: inline-block; // 1
       vertical-align: middle; // 1
       margin: -1px 0 0 0; // 2
-      width: 16px;
-      height: 16px;
     }
   }
 
