@@ -43,7 +43,6 @@ Features
 * Accessible
 * Front & backend layouts
 * Overview (list / grid) layout, form layout (front / back)
-* Comes with 3 themes: default, joomla & wordpress
 * Easily styleable by using Sass variables
 
 Using icons

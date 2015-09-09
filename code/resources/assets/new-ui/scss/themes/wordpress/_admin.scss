@@ -30,3 +30,12 @@
 #wpfooter {
   display: none;
 }
+
+// Re-setting the margin that got erased by namepsaced normalize
+.koowa .wp-switch-editor {
+  margin: 5px 0 0 5px;
+}
+
+.k-table-pagination {
+  border-bottom: 1px solid $sidebar-border;
+}
