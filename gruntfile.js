@@ -9,18 +9,21 @@ module.exports = function(grunt) {
     // grunt config
     grunt.initConfig({
 
+        // Grunt variables
+        assetsPath: '<%= assetsPath %>',
+
         // Iconfont
         webfont: {
             icons: {
-                src: 'code/resources/assets/new-ui/icons/svg/*.svg',
-                dest: 'code/resources/assets/fonts/koowa-icons',
-                destCss: 'code/resources/assets/new-ui/scss/utilities',
+                src: '<%= assetsPath %>/new-ui/icons/svg/*.svg',
+                dest: '<%= assetsPath %>/fonts/koowa-icons',
+                destCss: '<%= assetsPath %>/new-ui/scss/utilities',
                 options: {
                     font: 'koowa-icons',
                     hashes: false,
                     stylesheet: 'scss',
                     relativeFontPath: '../fonts/icons/',
-                    template: 'code/resources/assets/new-ui/icons/template.css',
+                    template: '<%= assetsPath %>/new-ui/icons/template.css',
                     htmlDemo: false
                 }
             }
@@ -34,31 +37,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'code/resources/assets/css/admin.css': 'code/resources/assets/new-ui/scss/admin.scss',
-                    'code/resources/assets/css/admin-joomla.css': 'code/resources/assets/new-ui/scss/admin-joomla.scss',
-                    'code/resources/assets/css/admin-wordpress.css': 'code/resources/assets/new-ui/scss/admin-wordpress.scss'
-                }
-            }
-        },
-
-
-        // Browser Sync
-        browserSync: {
-            dev: {
-                bsFiles: {
-                    src : [
-                        "code/resources/assets/css/*.*",
-                        "code/resources/assets/js/*.*",
-                        "code/resources/assets/documentation/*.*"
-                    ]
-                },
-                options: {
-                    proxy: "wptest.dev",
-                    port: 1338,
-                    open: true,
-                    notify: false,
-                    watchTask: true,
-                    injectChanges: false
+                    '<%= assetsPath %>/css/admin.css': '<%= assetsPath %>/new-ui/scss/admin.scss'
                 }
             }
         },
@@ -71,17 +50,17 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    'code/resources/assets/js/admin.js': [
+                    '<%= assetsPath %>/js/admin.js': [
                         'bower_components/select2/dist/js/select2.full.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
                         'bower_components/floatThead/dist/jquery.floatThead.min.js',
-                        'code/resources/assets/new-ui/scripts/overflowing.js',
-                        'code/resources/assets/new-ui/scripts/tabbable.js',
-                        'code/resources/assets/new-ui/scripts/off-canvas-menu.js',
-                        'code/resources/assets/new-ui/scripts/main.js'
+                        '<%= assetsPath %>/new-ui/scripts/overflowing.js',
+                        '<%= assetsPath %>/new-ui/scripts/tabbable.js',
+                        '<%= assetsPath %>/new-ui/scripts/off-canvas-menu.js',
+                        '<%= assetsPath %>/new-ui/scripts/main.js'
                     ],
-                    'code/resources/assets/js/modernizr.js': [
+                    '<%= assetsPath %>/js/modernizr.js': [
                         'bower_components/modernizr/modernizr.js'
                     ]
                 }
@@ -97,8 +76,8 @@ module.exports = function(grunt) {
             files: {
                 expand: true,
                 flatten: true,
-                src: 'code/resources/assets/css/*.css',
-                dest: 'code/resources/assets/css/'
+                src: '<%= assetsPath %>/css/*.css',
+                dest: '<%= assetsPath %>/css/'
             }
         },
 
@@ -115,7 +94,7 @@ module.exports = function(grunt) {
         watch: {
             fontcustom: {
                 files: [
-                    'code/resources/assets/new-ui/icons/svg/*.svg'
+                    '<%= assetsPath %>/new-ui/icons/svg/*.svg'
                 ],
                 tasks: ['webfont', 'sass', 'autoprefixer'],
                 options: {
@@ -125,8 +104,8 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: [
-                    'code/resources/assets/new-ui/scss/*.scss',
-                    'code/resources/assets/new-ui/scss/**/*.scss'
+                    '<%= assetsPath %>/new-ui/scss/*.scss',
+                    '<%= assetsPath %>/new-ui/scss/**/*.scss'
                 ],
                 tasks: ['sass', 'autoprefixer'],
                 options: {
@@ -137,7 +116,7 @@ module.exports = function(grunt) {
             uglify: {
                 files: [
                     // Including
-                    'code/resources/assets/new-ui/scripts/*.js'
+                    '<%= assetsPath %>/new-ui/scripts/*.js'
                 ],
                 tasks: ['uglify'],
                 options: {
@@ -151,6 +130,6 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['shell', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['shell', 'watch']);
 
 };
