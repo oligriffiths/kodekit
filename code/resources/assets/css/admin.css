@@ -5,6 +5,7 @@
 /** Breakpoints =========== Only work with either - (min-width) - (min-width) and (max-width) Try to never use (max-width) alone since that is not very mobile-first 1. The min width of the interface. Will create a horizontal scrollbar. This way we have a base width to work from 2. The max width of the form layout 3. Separate $desktop variable is being used so all styles change together when going from small to larger screen. 4. Wether or not to Use flexbox in layouts 5. Separate $flexbox variables are being used */
 /** Function variables ================== These are used by our light, lighter, lightest, dark, darker and darkest funxtions This way we can change the amounts all in one. Overwrite-able per function call */
 /** Typography ========== */
+/** Icons ===== */
 /** Spacing ======= can either be used as a padding or a margin on elements Rounding so we won't get half pixels */
 /** Unit size ========= */
 /** Transition ========== The basic transition being used everywhere to get consistent animations Remember to sync the JavaScript animation time with this setting */
@@ -45,7 +46,7 @@ html { box-sizing: border-box; }
 /** Flexbox ======= 1. Is flexbox variable set to true? 2. Make sure to place selector at root since we use modernizr (add classes to html tag) 3. Check for modernizr classes 4. Set media query Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox */
 /** Border ====== Sets a border to defined side Only sets a border if $borders is set to true in variables */
 /** JS enabled ========== */
-@font-face { font-family: "koowa-icons"; src: url("../fonts/koowa-icons/koowa-icons.eot"); src: url("../fonts/koowa-icons/koowa-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/koowa-icons/koowa-icons.woff") format("woff"), url("../fonts/koowa-icons/koowa-icons.ttf") format("truetype"), url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: "koowa-icons"; src: url("../fonts/koowa-icons/koowa-icons.eot"); src: url("../fonts/fonts/koowa-icons/koowa-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/koowa-icons/koowa-icons.woff") format("woff"), url("../fonts/koowa-icons/koowa-icons.ttf") format("truetype"), url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); font-weight: normal; font-style: normal; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) { @font-face { font-family: "koowa-icons"; src: url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); } }
 

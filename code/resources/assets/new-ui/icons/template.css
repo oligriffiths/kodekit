@@ -1,17 +1,18 @@
 @font-face {
   font-family: "<%= fontBaseName %>";
-  src:    url("../fonts/<%= fontBaseName %>/<%= fontBaseName %>.eot");
-  src:    url("../fonts/<%= fontBaseName %>/<%= fontBaseName %>.eot?#iefix") format("embedded-opentype"),
-  url("../fonts/<%= fontBaseName %>/<%= fontBaseName %>.woff") format("woff"),
-  url("../fonts/<%= fontBaseName %>/<%= fontBaseName %>.ttf") format("truetype"),
-  url("../fonts/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
+  src:    url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.eot");
+  src:    url("#{$icon-path}/fonts/<%= fontBaseName %>/<%= fontBaseName %>.eot?#iefix") format("embedded-opentype"),
+  url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.woff") format("woff"),
+  url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.ttf") format("truetype"),
+  url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
   font-weight: normal;
   font-style: normal;
 }
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "<%= fontBaseName %>";
-    src: url("../fonts/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
+    src: url("#{$icon-path}/<%= fontBaseName %>/<%= fontBaseName %>.svg#<%= fontBaseName %>") format("svg");
   }
 }
 
