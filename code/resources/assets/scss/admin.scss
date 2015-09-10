@@ -1,31 +1,22 @@
-// Bootsrap variables and mixins used in files
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+/**
+ * Default theme
+ * =============
+ * A flat colored theme intended to be used for Nooku standalone projects
+ */
 
-// Our own variables and mixins
-@import "generic/variables";
-@import "generic/mixins";
 
-// Outside of the koowa scope
-@import "generic/general";
+/**
+ * Global tools
+ * ------------
+ * Containing different libraries, variables, mixins and functions
+ */
 
-$koowaPath: '..' !default;
+@import "core/tools";
 
-// Core variables and mixins
-@import "koowa/koowa";
 
-// Inside koowa scope
-.koowa {
-  @import "generic/grid";
-  @import "generic/header";
-  @import "generic/input-file";
-  @import "generic/dialog";
-  @import "generic/inputgroups";
-  @import "generic/pagination";
-  @import "generic/sidebar-nav";
+/**
+ * Core styling
+ * ------------
+ */
 
-  @import "admin/layout";
-  @import "admin/scopebar";
-  @import "admin/table";
-  @import "admin/pagination";
-}
+@import "core/core";
