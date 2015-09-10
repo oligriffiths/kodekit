@@ -1612,7 +1612,7 @@ html, body { min-height: 100%; height: 100%; }
 
 @media screen and (min-width: 768px) { .koowa .k-content-wrapper { display: table; width: 100%; } }
 
-@media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-content-wrapper, .flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
+@media (min-width: 300px) and (min-height: 400px) { .flexbox .koowa .k-content-wrapper, .flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: hidden; } }
 
 .koowa .opened--left, .koowa .opened--right { overflow: hidden; }
 
