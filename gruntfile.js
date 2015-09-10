@@ -10,20 +10,20 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         // Grunt variables
-        assetsPath: '<%= assetsPath %>',
+        assetsPath: 'code/resources/assets',
 
         // Iconfont
         webfont: {
             icons: {
-                src: '<%= assetsPath %>/new-ui/icons/svg/*.svg',
+                src: '<%= assetsPath %>/icons/svg/*.svg',
                 dest: '<%= assetsPath %>/fonts/koowa-icons',
-                destCss: '<%= assetsPath %>/new-ui/scss/utilities',
+                destCss: '<%= assetsPath %>/scss/utilities',
                 options: {
                     font: 'koowa-icons',
                     hashes: false,
                     stylesheet: 'scss',
                     relativeFontPath: '../fonts/icons/',
-                    template: '<%= assetsPath %>/new-ui/icons/template.css',
+                    template: '<%= assetsPath %>/icons/template.css',
                     htmlDemo: false
                 }
             }
@@ -37,7 +37,10 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    '<%= assetsPath %>/css/admin.css': '<%= assetsPath %>/new-ui/scss/admin.scss'
+                    '<%= assetsPath %>/css/admin.css': '<%= assetsPath %>/scss/admin.scss',
+                    '<%= assetsPath %>/css/bootstrap.css': '<%= assetsPath %>/scss/bootstrap.scss',
+                    '<%= assetsPath %>/css/debugger.css': '<%= assetsPath %>/scss/debugger.scss',
+                    '<%= assetsPath %>/css/dumper.css': '<%= assetsPath %>/scss/dumper.scss'
                 }
             }
         },
@@ -55,10 +58,10 @@ module.exports = function(grunt) {
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
                         'bower_components/floatThead/dist/jquery.floatThead.min.js',
-                        '<%= assetsPath %>/new-ui/scripts/overflowing.js',
-                        '<%= assetsPath %>/new-ui/scripts/tabbable.js',
-                        '<%= assetsPath %>/new-ui/scripts/off-canvas-menu.js',
-                        '<%= assetsPath %>/new-ui/scripts/main.js'
+                        '<%= assetsPath %>/scripts/overflowing.js',
+                        '<%= assetsPath %>/scripts/tabbable.js',
+                        '<%= assetsPath %>/scripts/off-canvas-menu.js',
+                        '<%= assetsPath %>/scripts/main.js'
                     ],
                     '<%= assetsPath %>/js/modernizr.js': [
                         'bower_components/modernizr/modernizr.js'
@@ -94,7 +97,7 @@ module.exports = function(grunt) {
         watch: {
             fontcustom: {
                 files: [
-                    '<%= assetsPath %>/new-ui/icons/svg/*.svg'
+                    '<%= assetsPath %>/icons/svg/*.svg'
                 ],
                 tasks: ['webfont', 'sass', 'autoprefixer'],
                 options: {
@@ -104,8 +107,8 @@ module.exports = function(grunt) {
             },
             sass: {
                 files: [
-                    '<%= assetsPath %>/new-ui/scss/*.scss',
-                    '<%= assetsPath %>/new-ui/scss/**/*.scss'
+                    '<%= assetsPath %>/scss/*.scss',
+                    '<%= assetsPath %>/scss/**/*.scss'
                 ],
                 tasks: ['sass', 'autoprefixer'],
                 options: {
@@ -116,7 +119,7 @@ module.exports = function(grunt) {
             uglify: {
                 files: [
                     // Including
-                    '<%= assetsPath %>/new-ui/scripts/*.js'
+                    '<%= assetsPath %>/scripts/*.js'
                 ],
                 tasks: ['uglify'],
                 options: {

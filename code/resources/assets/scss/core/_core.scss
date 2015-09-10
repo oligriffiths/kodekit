@@ -14,8 +14,8 @@
  * 3. Vendor overrides / extensions
  */
 
-@import "../../../../../../bower_components/select2/src/scss/core"; // 1
-@import "../../../../../../bower_components/magnific-popup/src/css/main"; // 2
+@import "../../../../../bower_components/select2/src/scss/core"; // 1
+@import "../../../../../bower_components/magnific-popup/src/css/main"; // 2
 @import "../molecules/modal"; // 3
 @import "../molecules/select2"; // 3
 
@@ -41,13 +41,13 @@
 .koowa {
 
   /* Namespaced Normalize */
-  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 
   /* Namespaced Twitter Bootstrap */
-  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
-  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
 
   /* Bootstrap overrides / extensions */
   @import "../molecules/bootstrap/buttons";
