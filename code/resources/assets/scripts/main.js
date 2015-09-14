@@ -139,6 +139,12 @@
             $('.k-scopebar__search').slideToggle('fast');
         });
 
+        // WP sidebar toggle
+        $('#collapse-menu').on('click', function() {
+            $fixedtable.floatThead('destroy');
+            fixedTable();
+        });
+
 
     });
 

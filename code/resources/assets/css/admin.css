@@ -1843,9 +1843,9 @@ html, body { min-height: 100%; height: 100%; }
 
 .koowa .k-scopebar__search .search_button--empty { position: absolute; top: 7px; right: 10px; font-size: 10px; }
 
-.koowa .toggle-search { float: right; display: none; width: 33px; height: 0; padding-top: 33px; overflow: hidden; }
+.koowa .toggle-search { background: transparent; border: none; padding: 0; margin: 0; float: right; display: none; width: 33px; height: 0; padding-top: 33px; overflow: hidden; }
 
-.koowa .toggle-search .k-icon-search { font-size: 16px; vertical-align: middle; }
+.koowa .toggle-search .k-icon-magnifying-glass { font-size: 16px; vertical-align: middle; }
 
 .k-js-enabled .koowa .toggle-search { display: block; }
 
