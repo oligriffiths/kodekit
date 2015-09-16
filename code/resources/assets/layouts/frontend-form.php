@@ -38,9 +38,6 @@
 
                             <fieldset>
 
-                                <?php // @TODO: make sure we can just delete this <legend> without a new one being created ?>
-                                <legend style="height:0;overflow:hidden;padding:0;margin:0;border:none;">Legend</legend>
-
                                 <div class="control-group">
                                     <div class="controls">
                                         <input required="" class="form-control input-lg" id="todo_form_title" type="text" name="title" maxlength="255" value="" placeholder="Enter title here">
