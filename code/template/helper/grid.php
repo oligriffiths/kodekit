@@ -122,13 +122,13 @@ class KTemplateHelperGrid extends KTemplateHelperAbstract implements KTemplateHe
                     }
                 },
                 send = function(event) {
-                    if (event.which === 13 || event.type === "blur") {
+                    if (event.which === 13) {
                         submitForm(kQuery(this).parents("form"));
                     }
                 };
 
             kQuery(function($) {
-                $(".search_button").keypress(send).blur(send);
+                $(".search_button").keypress(send);
                 $(".search_button--empty").click(function(event) {
                     event.preventDefault();
 
