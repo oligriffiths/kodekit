@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/** Debugger ======== A flat colored debugger */
+/** Global tools ------------ 1. Variables 2. Code highlighter styling 3. The dumper styles */
+/** Debugger variables ------------------ */
 /*
 Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
 */
@@ -29,6 +32,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 .tex .hljs-formula { background: #073642; }
 
+/** Debugger variables ------------------ */
 /** Orginal Style from http://tracy.nette.org (c) 2004 David Grudl <http://davidgrudl.com> */
 /* toggle */
 .koowa-collapsed { display: none; }
@@ -64,6 +68,8 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 .koowa-dump-key:before { display: block; content: " "; width: 100%; height: 0; overflow: hidden; }
 
+/** Mixins ------ 1. Transition mixin */
+/** Box-sizing ------ Box sizing border-box all elements for this page */
 body * { box-sizing: border-box; }
 
 .hidden { display: none !important; }

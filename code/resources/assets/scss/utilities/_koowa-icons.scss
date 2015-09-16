@@ -1,3 +1,10 @@
+/**
+ * @font-face
+ * ==========
+ * Custom icon font
+ * The placeholders in this file are being replaced with real values by grunt-webfont
+ */
+
 @font-face {
   font-family: "koowa-icons";
   src:    url("#{$icon-path}/koowa-icons/koowa-icons.eot");
@@ -9,6 +16,14 @@
   font-style: normal;
 }
 
+
+
+/**
+ * Use SVG
+ * =======
+ * Always use SVG on touch / mobile
+ */
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   @font-face {
     font-family: "koowa-icons";
@@ -16,7 +31,15 @@
   }
 }
 
-// Font icon pseudo-element base styles
+
+
+/**
+ * Placeholder
+ * ===========
+ * To be used in mixins
+ * Sets all default values for the icons
+ */
+
 %icon {
   speak: none;
   text-rendering: optimizeLegibility;
@@ -37,7 +60,14 @@
   }
 }
 
-// Creating the map
+
+
+/**
+ * Sass icon map
+ * =============
+ * All the available icons
+ */
+
 $icons: (
   account-login: "\f101",
   account-logout: "\f102",
@@ -265,7 +295,14 @@ $icons: (
   zoom-out: "\f1e0",);
 
 
-// Creating classnames of all icons
+
+/**
+ * Icon classes
+ * ============
+ * Creating a class name for each individual icon to be used in markup like:
+ * <span class="k-icon-circle"></span>
+ */
+
 @each $name, $icon in $icons {
   .k-icon-#{$name} {
     @extend %icon;
@@ -275,7 +312,14 @@ $icons: (
   }
 }
 
-// For adding icons to elements using CSS pseudo-elements
+
+
+/**
+ * 'Icon before' mixin
+ * ===================
+ * For adding icons to elements using CSS pseudo-elements
+ */
+
 @mixin icon-before($icon: false, $styles: false) {
   &:before {
     @if $icon {
@@ -288,6 +332,14 @@ $icons: (
   }
 }
 
+
+
+/**
+ * 'Icon after' mixin
+ * ==================
+ * For adding icons to elements using CSS pseudo-elements
+ */
+
 @mixin icon-after($icon: false, $styles: false) {
   &:after {
     @if $icon {
@@ -299,6 +351,14 @@ $icons: (
     @content;
   }
 }
+
+
+
+/**
+ * 'Icon both' mixin
+ * =================
+ * For adding icons to elements using CSS pseudo-elements
+ */
 
 @mixin icon-both($icon: false, $styles: false) {
   &:before,
