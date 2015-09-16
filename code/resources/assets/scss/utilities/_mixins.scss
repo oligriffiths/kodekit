@@ -1,4 +1,9 @@
-// Cover the entire parent element
+/**
+ * Cover all
+ * =========
+ * Cover the entire parent element
+ */
+
 @mixin coverall($margin: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
   @if $position == true {
     position: absolute;
@@ -32,8 +37,16 @@
   }
 }
 
-// Aspect ratio blocks
-// Probably needs a coverall @mixin as a child
+
+
+
+/**
+ * Aspect ratio blocks
+ * ===================
+ * Works best when it has a coverall mixin child
+ * Default ratio is 16:9
+ */
+
 @mixin ratio-block($ratio: 56.25%) {
   position: relative;
 
@@ -44,7 +57,14 @@
   }
 }
 
-// Psuedo elements (styling mostly)
+
+
+/**
+ * Graphical psuedo element
+ * ========================
+ * Set element to position relative and add a psuedo element with position absolute and a "content"
+ */
+
 @mixin psuedo($psuedo: after, $parentposition: true, $display: true, $position: true, $content: true) {
   @if $parentposition == true {
     position: relative;
@@ -63,14 +83,29 @@
   }
 }
 
-// Default transition
+
+
+/**
+ * Transition
+ * ==========
+ * Set a default transition to be used in the whole project
+ * 1. No 1 pixel jumps on smooth transitons
+ */
+
 @mixin transition($properties: all, $duration: .3s, $easing: ease-in-out) {
   transition: $properties $duration $easing;
-  // No 1 pixel jumps on smooth transitons
-  -webkit-backface-visibility:hidden;
+  -webkit-backface-visibility:hidden; // 1
 }
 
-// Reset elements
+
+
+/**
+ * Reset elements
+ * ==============
+ * Reset an elements default styling
+ * Mostly useful for <ul> etc. where default element shave multiple styling rules
+ */
+
 @mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
   @if $margin == true {
     margin: 0;
@@ -89,7 +124,14 @@
   }
 }
 
-// Breakpoint
+
+
+/**
+ * Breakpoint
+ * ==========
+ * Mobile first media query mixin
+ */
+
 @mixin breakpoint($width, $type: min, $width--max: false) {
   @if $type == min {
     @media screen and (min-width: $width) {
@@ -106,7 +148,15 @@
   }
 }
 
-// Own better clearfix
+
+
+/**
+ * Clearfix
+ * ========
+ * Micro clearfix using display: table and a space for "content" to make it work on Opera
+ * Also using ":before" to clear top-margins as well
+ */
+
 @mixin clearfix {
   &:before,
   &:after {
@@ -119,14 +169,28 @@
   }
 }
 
-// Retina
+
+
+/**
+ * Retina
+ * ======
+ * Only apply styling on retina screens
+ */
+
 @mixin retina {
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     @content;
   }
 }
 
-// Arrows
+
+
+/**
+ * Arrows
+ * ======
+ * CSS only arrows using borders
+ */
+
 @mixin arrow($direction: right, $size: 4px, $color: false) {
 
   // Top and bottom arrows
@@ -178,11 +242,27 @@
   }
 }
 
+
+
+/**
+ * Width mixin
+ * ===========
+ * Set all CSS width values to 'X'
+ */
+
 @mixin allwidth($width) {
   min-width: $width;
   width: $width;
   max-width: $width;
 }
+
+
+
+/**
+ * Height mixin
+ * ============
+ * Set all CSS height values to 'X'
+ */
 
 @mixin allheight($height) {
   min-height: $height;
