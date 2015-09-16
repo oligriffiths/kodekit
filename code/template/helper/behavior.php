@@ -22,6 +22,62 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
      */
     protected static $_loaded = array();
 
+    public function ui($config = array())
+    {
+        $identifier = $this->getTemplate()->getIdentifier();
+
+        $config = new KObjectConfigJson($config);
+        $config->append(array(
+            'debug' => false,
+            'bootstrap' => array(
+                'css'        => true,
+                'javascript' => true
+            ),
+            'package' => $identifier->package,
+            'domain'  => $identifier->type === 'mod' ? 'module' : $identifier->domain,
+            'wrapper_class' => array(
+                'koowa',
+                $identifier->type.'_'.$identifier->package
+            ),
+        ))->append(array(
+            'file'    => 'assets://css/'.$config->domain.'.css',
+            'wrapper' => sprintf('<div class="%s">
+                <!--[if lte IE 8 ]><div class="old-ie"><![endif]-->
+                %%s
+                <!--[if lte IE 8 ]></div><![endif]-->
+                </div>', implode(' ', KObjectConfig::unbox($config->wrapper_class))
+            )
+        ));
+
+        $html = '';
+
+        if ($config->file) {
+            $html .= '<ktml:style src="'.$config->file.'" />';
+
+            $config->bootstrap->css = false;
+        }
+
+        if ($config->domain === 'admin')
+        {
+            if (!$config->css_file) {
+                $html .= '<ktml:script src="assets://css/admin.css" />';
+            }
+
+            $html .= '<ktml:script src="assets://js/admin.js" />';
+        }
+
+        $html .= $this->bootstrap($config->bootstrap);
+        $html .= $this->koowa($config);
+
+        if ($config->wrapper)
+        {
+            $this->getTemplate()->addFilter('wrapper');
+            $this->getTemplate()->getFilter('wrapper')->setWrapper($config->wrapper);
+        }
+
+        return $html;
+    }
+
     /**
      * Loads koowa essentials
      *
