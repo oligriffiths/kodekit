@@ -1,7 +1,13 @@
+/* ==========================================================================
+   Setup html, body and .koowa
+   ========================================================================== */
+
+
+/* HTML, BODY
+   ========================================================================== */
+
 /**
- * Setting up html and body
- * ========================
- * This way we can work with full-height auto overflowing flexbox pages
+ * By using 100% for `height` and `min-height` we can work with full-height auto overflowing flexbox pages
  */
 
 html,
@@ -9,13 +15,6 @@ body {
   min-height: 100%;
   height: 100%;
 }
-
-
-
-/**
- * Default body settings
- * =====================
- */
 
 body {
   @include flexbox {
@@ -25,10 +24,10 @@ body {
 }
 
 
+/* Koowa wrapper
+   ========================================================================== */
 
 /**
- * Default koowa wrapper
- * =====================
  * 1. By using a max-width we essentially set a min-width when the contents are
  *    to large for the koowa container. The reason we don't use min-width is
  *    because if the content is only 300px we don't need horizontal scrollbars
@@ -40,54 +39,40 @@ body {
  */
 
 .koowa {
-  max-width: $minwidth; // 1
-  z-index: 0; // 3
-  position: relative; // 4
-  font-family: $font-family; // 5
-  font-size: $font-size; // 5
-  line-height: $line-height; // 5
-  margin: 0; // 6
+  position: relative; /* 4 */
+  z-index: 0; /* 3 */
+
+  max-width: $minwidth; /* 1 */
+  margin: 0; /* 6 */
+  border: none; /* 6 */
   padding: $koowa-padding;
-  border: none; // 6
-  background: $koowa-background; // 6
   overflow: auto;
+
+  font-family: $font-family; /* 5 */
+  font-size: $font-size; /* 5 */
+  line-height: $line-height; /* 5 */
+  background: $koowa-background; /* 6 */
+
   -webkit-font-smoothing: $font-smoothing;
   -webkit-overflow-scrolling: touch;
 
   @include breakpoint($minwidth) {
-    max-width: none; // 2
+    max-width: none; /* 2 */
   }
 
-  /**
-   * When flexbox is enabled
-   * -----------------------
-   */
-
+  /* When flexbox is enabled */
   @include flexbox {
     display: flex;
     flex: 1 1 auto;
   }
 
-
-
-  /**
-   * On 'desktop' view
-   * -----------------
-   */
-
+  /* On 'desktop' view */
   @include breakpoint($desktop) {
     z-index: 1; // 3
   }
 
-
-
-  /**
-   * Border-box size everything
-   * --------------------------
-   */
-
+  /* Border-box size everything */
   &, *, *:before, *:after {
     box-sizing: border-box;
   }
-
 }

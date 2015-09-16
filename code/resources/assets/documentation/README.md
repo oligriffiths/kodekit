@@ -59,3 +59,15 @@ Use in SCSS
 -----------
 
 Check the `utilities/_koowa-icons.scss` file
+
+Idiomatic CSS
+-------------
+
+We're using the Idiomatic CSS principles: https://github.com/necolas/idiomatic-css
+
+We furthermore add the following for comments:
+
+* All but `Basic comments` should have one line break after
+* `Section comments` should be preceded by 3 line breaks unless it's on the top of the page
+* `Sub-section comments` should be preceded by 2 line breaks unless it's on the top of the page
+* `Short description & basic comments` should be preceded by 1 line break unless it's on the top of the page
