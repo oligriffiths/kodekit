@@ -42,6 +42,8 @@
 /* @TODO: refactor
 =========================================
 */
+/** Column and gutter ================= Better column sizes than the default ones */
+/** Gallery mixin ============= Better column sizes than the default ones */
 html { box-sizing: border-box; }
 
 *, *::after, *::before { box-sizing: inherit; }

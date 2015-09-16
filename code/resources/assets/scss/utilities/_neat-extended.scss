@@ -1,8 +1,20 @@
-// Nicer column sizes
+/**
+ * Column and gutter
+ * =================
+ * Better column sizes than the default ones
+ */
+
 $column: golden-ratio(4em, 1) !global;
 $gutter: golden-ratio(1em, 2) !global;
 
-// Custom gallery mixin
+
+
+/**
+ * Gallery mixin
+ * =============
+ * Better column sizes than the default ones
+ */
+
 @mixin gallery($span: $columns of $container) {
 
   // Variables
