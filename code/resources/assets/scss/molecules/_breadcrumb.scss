@@ -1,22 +1,52 @@
+/* ==========================================================================
+   Breadcrumbs
+   ========================================================================== */
+
 /**
- * Breadcrumbs
- * ===========
+ * Use
+ *
+ *  <!-- Breadcrumbs -->
+ *  <div class="k-breadcrumb">
+ *      <ul>
+ *          <!-- Home icon item -->
+ *          <li class="home">
+ *              <a class="k-breadcrumb__item k-icon-home" href="#">
+ *                  <span class="visually-hidden">Home</span>
+ *              </a>
+ *          </li>
+ *          <!-- All but last items -->
+ *          <li>
+ *              <a class="k-breadcrumb__item" href="#">
+ *                  Some menu item
+ *              </a>
+ *          </li>
+ *          <!-- last / active item -->
+ *          <li class="active">
+ *              <span class="k-breadcrumb__item">Active menu item</span>
+ *          </li>
+ *      </ul>
+ *  </div><!-- .k-breadcrumb -->
+ */
+
+
+/* Parent element
+   ========================================================================== */
+
+/**
  * 1. Scroll when items don't fit parent anymore
  */
 
 .k-breadcrumb {
   @include border(bottom, $breadcrumb-border);
+  overflow: auto; /* 1 */
+
   background: $breadcrumb-background;
   color: $breadcrumb-color;
-  overflow: auto; // 1
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use
+   ========================================================================== */
 
 @include flexbox {
   .k-breadcrumb {
@@ -25,17 +55,14 @@
 }
 
 
-
-/**
- * Breadcrumb contents
- * ===================
- */
+/* Breadcrumb contents
+   ========================================================================== */
 
 .k-breadcrumb {
 
   /**
    * Links
-   * -----
+   *
    * 1. Full background hover
    */
 
@@ -44,27 +71,22 @@
 
     &:focus,
     &:hover {
-      background: $breadcrumb-background-hover; // 1
+      background: $breadcrumb-background-hover; /* 1 */
     }
   }
 
 
-
   /**
    * List
-   * ----
+   *
    * 1. Reset unordered list styling
    */
 
   ul {
-    @include reset; // 1
+    @include reset; /* 1 */
 
 
-
-    /**
-     * Flexing items to get overflow ellipsis
-     * --------------------------------------
-     */
+    /* Flexing items to get overflow ellipsis */
 
     @include flexbox {
       display: flex;
@@ -72,43 +94,36 @@
 
   }
 
+
   /**
    * Styling list items
-   * ------------------
-   * 1. Make each item at least one breadcrumb size wide
-   * 2. Make room for the separator
-   * 3. Set z-index to 0 so the :after psuedo element will be on top
+   *
+   * 1. Set z-index to 0 so the :after psuedo element will be on top
+   * 2. Make room for the psuedo element separator
+   * 3. Make each item at least one breadcrumb size wide
    * 4. Hide by default so we can show only a few on mobile
    * 5. Hide overflowing content
    * 6. Proper spacing for non-flexbox use
    */
 
   li {
-    min-width: $breadcrumb-size; // 1
-    padding-left: $breadcrumb-divider-size; // 2
-    position: relative; // 3
-    z-index: 0; // 3
-    display: none; // 4
-    overflow: hidden; // 5
-    vertical-align: middle; // 6
+    position: relative; /* 1 */
+    z-index: 0; /* 1 */
+    padding-left: $breadcrumb-divider-size; /* 2 */
+    min-width: $breadcrumb-size; /* 3 */
+    display: none; /* 4 */
+    overflow: hidden; /* 5 */
+    vertical-align: middle; /* 6 */
 
 
-
-    /**
-     * Display on larger screens
-     * -------------------------
-     */
+    /* Display on larger screens */
 
     @include breakpoint($breadcrumb-query) {
       display: inline-block;
     }
 
 
-
-    /**
-     * Flexing items to get overflow ellipsis
-     * --------------------------------------
-     */
+    /* Flexing items to get overflow ellipsis */
 
     @include flexbox($horizontal:$breadcrumb-query) {
       display: block;
@@ -116,30 +131,23 @@
     }
 
 
-
-    /**
-     * List item separator
-     * ------------------
-     */
+    /* List item separator */
 
     @include psuedo(before, $content: false) {
-      content: $breadcrumb-divider-content;
-      width: $breadcrumb-divider-size;
       top: 0;
       bottom: 0;
       left: 0;
-      text-align: center;
+      width: $breadcrumb-divider-size;
       padding-top: $breadcrumb-size / 4;
       padding-bottom: $breadcrumb-size / 4;
+
+      text-align: center;
       line-height: $breadcrumb-size / 2;
+      content: $breadcrumb-divider-content;
     }
 
 
-
-    /**
-     * No separator on first item
-     * --------------------------
-     */
+    /* No separator on first item */
 
     &:first-child {
       padding-left: 0;
@@ -150,10 +158,9 @@
     }
 
 
-
     /**
      * Hover
-     * -----
+     *
      * 1. Reset flexbox so the whole item is visible
      */
 
@@ -161,35 +168,33 @@
       overflow: visible;
 
       @include flexbox {
-        flex: 0 0 auto; // 1
+        flex: 0 0 auto; /* 1 */
       }
     }
   }
 
 
-
   /**
    * first and last elements
-   * -----------------------
+   *
    * 1. Always display these items
    * 2. No flexing for these items so the are readable
    */
 
   .home,
   .active {
-    display: inline-block; // 1
-    overflow: visible; // 1
+    display: inline-block; /* 1 */
+    overflow: visible; /* 1 */
 
     @include flexbox($horizontal:$breadcrumb-query) {
-      flex: 0 0 auto; // 2
+      flex: 0 0 auto; /* 2 */
     }
   }
 
 
-
   /**
    * One but last item
-   * -----------------
+   *
    * Show this item on mobile to get a sense of where you are
    *
    * 1. Set 'missing' content
@@ -200,20 +205,16 @@
     display: inline-block;
 
     &:before {
-      content: $breadcrumb-missing-content; // 1
+      content: $breadcrumb-missing-content; /* 1 */
 
       @include breakpoint($breadcrumb-query) {
-        content: $breadcrumb-divider-content; // 2
+        content: $breadcrumb-divider-content; /* 2 */
       }
     }
   }
 
 
-
-  /**
-   * Active item
-   * --------------------------------------
-   */
+  /* Active item */
 
   .active {
     .k-breadcrumb__item {
@@ -224,23 +225,20 @@
 }
 
 
-
-/**
- * Single breadcrumb items
- * =======================
- */
+/* Single breadcrumb items */
 
 .k-breadcrumb__item {
-  min-width: $breadcrumb-size;
-  min-height: $breadcrumb-size;
-  text-align: center;
-  display: block;
   position: relative;
   z-index: 2;
+  display: block;
+  padding: round($breadcrumb-size / 4);
+  min-width: $breadcrumb-size;
+  min-height: $breadcrumb-size;
+  overflow: hidden;
+
+  text-align: center;
   line-height: $breadcrumb-size / 2;
   text-decoration: none;
-  padding: round($breadcrumb-size / 4);
   white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
 }
