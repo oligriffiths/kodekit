@@ -1,14 +1,18 @@
+/* ==========================================================================
+   The content wrapper
+   ========================================================================== */
+
 /**
- * The content wrapping div
- * ========================
  * 1. Clearing toolbar floats when flexbox is not in use
  */
 
 .k-content-wrapper {
+  clear: both; /* 1 */
   margin: 0;
-  clear: both;
+
 
   // Faking flexbox on older browsers by using table styling
+
   @include breakpoint($desktop) {
     display: table;
     width: 100%;
@@ -16,11 +20,7 @@
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use */
 
 @include flexbox {
   .k-content-wrapper {
@@ -32,19 +32,18 @@
 }
 
 
-
 /**
  * Wrapper when toggled
- * ====================
+ *
  * 1. Hide overflowing when menu is toggled
  * 2. Set back to auto when screen is wide enough
  */
 
 .opened--left,
 .opened--right {
-  overflow: hidden; // 1
+  overflow: hidden; /* 1 */
 
   @include breakpoint($desktop) {
-    overflow: auto; // 2
+    overflow: auto; /* 2 */
   }
 }
