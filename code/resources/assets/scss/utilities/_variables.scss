@@ -1,19 +1,24 @@
-/**
- * Breakpoints
- * ===========
- * Only work with either
-   - (min-width)
-   - (min-width) and (max-width)
-   Try to never use (max-width) alone since that is not very mobile-first
- *
- * 1. The min width of the interface. Will create a horizontal scrollbar.
-      This way we have a base width to work from
- * 2. The max width of the form layout
- * 3. Separate $desktop variable is being used so all styles
- *    change together when going from small to larger screen.
- * 4. Wether or not to Use flexbox in layouts
- * 5. Separate $flexbox variables are being used
- */
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+
+// Breakpoints
+// ==========================================================================
+//
+// Only work with either
+// - (min-width)
+// - (min-width) and (max-width)
+//
+// Try to never use (max-width) alone since that is not very mobile-first
+//
+// 1. The min width of the interface. Will create a horizontal scrollbar.
+//    This way we have a base width to work from
+// 2. The max width of the form layout
+// 3. Separate $desktop variable is being used so all styles
+//    change together when going from small to larger screen.
+// 4. Wether or not to Use flexbox in layouts
+// 5. Separate $flexbox variables are being used
 
 $alpha:               400px !default;
 $beta:                600px !default;
@@ -29,14 +34,12 @@ $flexbox-horizontal:  300px !default; // 5
 $flexbox-vertical:    400px !default; // 5
 
 
-
-/**
- * Function variables
- * ==================
- * These are used by our light, lighter, lightest, dark, darker and darkest funxtions
- * This way we can change the amounts all in one.
- * Overwrite-able per function call
- */
+// Function variables
+// ==========================================================================
+//
+// These are used by our light, lighter, lightest, dark, darker and darkest funxtions
+// This way we can change the amounts all in one.
+// Overwrite-able per function call
 
 $light-percentage:      3% !default;
 $lighter-percentage:    7% !default;
@@ -47,11 +50,8 @@ $darker-percentage:     7% !default;
 $darkest-percentage:    12% !default;
 
 
-
-/**
- * Typography
- * ==========
- */
+// Typography
+// ==========================================================================
 
 $font-family:     'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-size:       13px !default;
@@ -62,21 +62,17 @@ $regular:         400 !default;
 $font-smoothing:  subpixel-antialiased !default;
 
 
-
-/**
- * Icons
- * =====
- */
+// Icons
+// ==========================================================================
 
 $icon-path: '../fonts' !default;
 
 
-/**
- * Spacing
- * =======
- * can either be used as a padding or a margin on elements
- * Rounding so we won't get half pixels
- */
+// Spacing
+// ==========================================================================
+//
+// can either be used as a padding or a margin on elements
+// Rounding so we won't get half pixels
 
 $spacing-tiny:  round($font-size / 2) !default;
 $spacing-small: round($font-size) !default;
@@ -85,33 +81,25 @@ $spacing-large: round($font-size * 2) !default;
 $spacing-huge:  round($font-size * 3) !default;
 
 
-
-/**
- * Unit size
- * =========
- */
+// Unit size
+// ==========================================================================
 
 $unit-size: 32px !default;
 
 
-
-/**
- * Transition
- * ==========
- * The basic transition being used everywhere to get consistent animations
- * Remember to sync the JavaScript animation time with this setting
- */
+// Transition
+// ==========================================================================
+//
+// The basic transition being used everywhere to get consistent animations
+// Remember to sync the JavaScript animation time with this setting
 
 $transition-duration:   180ms !default;
 $transition-easing:     cubic-bezier(.2,.57,.44,.83) !default;
 $transition:            $transition-duration $transition-easing !default;
 
 
-
-/**
- * Type colors
- * ===========
- */
+// Colors
+// ==========================================================================
 
 $color-type:            #222222 !default;
 $color-type-dark:       darken($color-type, 7%) !default;
@@ -119,11 +107,7 @@ $color-type-light:      lighten($color-type, 20%) !default;
 $color-type-lightest:   lighten($color-type, 50%) !default;
 
 
-
-/**
- * Primary color
- * =============
- */
+// Primary color
 
 $color-primary:             #34495e !default;
 $color-primary-type:        #ecf0f1 !default;
@@ -135,11 +119,7 @@ $color-primary-darker:      darker($color-primary) !default;
 $color-primary-darkest:     darkest($color-primary) !default;
 
 
-
-/**
- * Secondary color
- * ===============
- */
+// Secondary color
 
 $color-secondary:           #3498db !default;
 $color-secondary-type:      white !default;
@@ -151,11 +131,7 @@ $color-secondary-darker:    darker($color-secondary) !default;
 $color-secondary-darkest:   darkest($color-secondary) !default;
 
 
-
-/**
- * Tertiary color
- * ==============
- */
+// Tertiary color
 
 $color-tertiary:            #eeeeee !default;
 $color-tertiary-type:       white !default;
@@ -167,11 +143,7 @@ $color-tertiary-darker:     darker($color-tertiary) !default;
 $color-tertiary-darkest:    darkest($color-tertiary) !default;
 
 
-
-/**
- * Accent color
- * ============
- */
+// Accent color
 
 $color-accent:                  $color-secondary !default;
 $color-accent-type:             $color-primary !default;
@@ -183,11 +155,7 @@ $color-secondary-accent:        $color-primary !default;
 $color-secondary-accent-type:   $color-secondary !default;
 
 
-
-/**
- * States
- * ======
- */
+// States
 
 $color-success:       #27ae60 !default;
 $color-success-type:  white !default;
@@ -199,12 +167,11 @@ $color-neutral:       #2980b9 !default;
 $color-neutral-type:  white !default;
 
 
-
-/* Border
- * ======
- * Set borders to false if you don't want any borders in your theme
- * You can override borders in each separate module
- **/
+// Border
+// ==========================================================================
+//
+// Set borders to false if you don't want any borders in your theme
+// You can override borders in each separate module
 
 $borders:       true !default;
 $border-color:  false !default;
@@ -212,27 +179,23 @@ $border-width:  1px !default;
 $border-style:  solid !default;
 
 
-
-/**
- * Koowa
- * =====
- * The default koowa container
- */
+// Koowa
+// ==========================================================================
+//
+// The default koowa container
 
 $koowa-background:  white !default;
 $koowa-padding:     0 !default;
 
 
-
-/**
- * Breadcrumbs
- * ===========
- * 1. On mobile we don't show all breadcrumb items
- * 2. The content of the divider
- * 3. The width of dividers between breadcrumb items
- * 4. Height of each breadcrumb item
- * 5. The width when showing all breadcrumbs instead of only first and last
- */
+// Breadcrumbs
+// ==========================================================================
+//
+// 1. On mobile we don't show all breadcrumb items
+// 2. The content of the divider
+// 3. The width of dividers between breadcrumb items
+// 4. Height of each breadcrumb item
+// 5. The width when showing all breadcrumbs instead of only first and last
 
 $breadcrumb-missing-content:    "…" !default; // 4
 $breadcrumb-divider-content:    "»" !default; // 2
@@ -247,13 +210,11 @@ $breadcrumb-color:              $color-primary-type !default;
 $breadcrumb-background-hover:   $color-primary-darker !default;
 
 
-
-/**
- * Sidebar
- * =======
- * 1. Sidebar width on smaller screens
- * 2. Sidebar width when screen is "$desktop"
- */
+// Sidebar
+// ==========================================================================
+//
+// 1. Sidebar width on smaller screens
+// 2. Sidebar width when screen is "$desktop"
 
 $sidebar-width-small:       180px !default; // 1
 $sidebar-width:             270px !default; // 2
@@ -263,13 +224,11 @@ $sidebar-border:            darkest($sidebar-background) !default;
 $sidebar-color:             $color-primary-type !default;
 
 
-
-/**
- * Table
- * =====
- * 1. Height of the table cells
- * 2. Table cell padding
- */
+// Table
+// ==========================================================================
+//
+// 1. Height of the table cells
+// 2. Table cell padding
 
 $table-background:               white !default;
 
@@ -293,11 +252,8 @@ $table-pagination-spacing:      $spacing-tiny !default;
 $table-pagination-height:       30px !default;
 
 
-
-/**
- * Footable
- * ========
- */
+// Footable
+// ==========================================================================
 
 $footable-toggle-size:          20px !default;
 $footable-toggle-color:         $color-type-lightest !default;
@@ -306,23 +262,19 @@ $footable-toggle-border-size:   2px !default;
 $footable-toggle-icon-size:     10px !default;
 
 
-
-/**
- * Overview layout
- * ===========
- * The default overview layout
- */
+// Overview layout
+// ==========================================================================
+//
+// The default overview layout
 
 $overview-background:   $color-primary !default;
 $overview-border:       darker($overview-background) !default;
 
 
-
-/**
- * Scopebar
- * ========
- * 1. Height of the scopebar
- */
+// Scopebar
+// ==========================================================================
+//
+// 1. Height of the scopebar
 
 $scopebar-size:               $unit-size !default; // 1
 
@@ -334,11 +286,8 @@ $scopebar-search-background:  white !default;
 $scopebar-search-color:       $color-type !default;
 
 
-
-/**
- * List
- * ====
- */
+// List
+// ==========================================================================
 
 $list-spacing:            $spacing-tiny !default;
 
@@ -352,11 +301,8 @@ $list-active-background:  $list-background !default;
 $list-active-color:       $color-primary-accent !default;
 
 
-
-/**
- * Navigation
- * ==========
- */
+// Navigation
+// ==========================================================================
 
 $navigation-spacing:            $spacing-tiny !default;
 $navigation-background:         $color-primary-dark !default;
@@ -374,12 +320,10 @@ $navigation-active-border:      $navigation-accent !default;
 $navigation-active-color:       $navigation-accent !default;
 
 
-
-/**
- * Toolbar
- * =======
- * 1. When true; these colors are being used, when false; bootsrap defaults are being used
- */
+// Toolbar
+// ==========================================================================
+//
+// 1. When true; these colors are being used, when false; bootsrap defaults are being used
 
 $toolbar-spacing:                           round($font-size * 0.7) !default;
 
@@ -389,7 +333,9 @@ $toolbar-color:                             $color-primary-type !default;
 
 $toolbar-btn-alt:                           true !default; // 1
 
-/* Success button */
+
+// Success button
+
 $toolbar-btn-success-border:                $color-secondary-dark !default;
 $toolbar-btn-success-background:            $color-secondary !default;
 $toolbar-btn-success-color:                 $color-secondary-type !default;
@@ -398,24 +344,20 @@ $toolbar-btn-success-hover-background:      darken($toolbar-btn-success-backgrou
 $toolbar-btn-success-hover-color:           darken($toolbar-btn-success-color, 5%) !default;
 
 
-
-/**
- * Titlebar
- * ========
- * By default it looks the same as the toolbar
- */
+// Titlebar
+// ==========================================================================
+//
+// By default it looks the same as the toolbar
 
 $titlebar-background:   $toolbar-background !default;
 $titlebar-border:       $toolbar-border !default;
 $titlebar-color:        $toolbar-color !default;
 
 
-
-/**
- * Overflowing
- * ===========
- * Overflowing shadows
- */
+// Overflowing
+// ==========================================================================
+//
+// Overflowing shadows
 
 $overflow-size:     6px !default;
 $overflow-blur:     $overflow-size * 2 !default;
@@ -423,21 +365,16 @@ $overflow-offset:   -($overflow-size) !default;
 $overflow-color:    rgba(0,0,0,.66) !default;
 
 
-
-/**
- * Form layout
- * ===========
- */
+// Form layout
+// ==========================================================================
 
 $form-background: $color-tertiary !default;
 
 
-
-/**
- * Form front
- * ==========
- * Forms on frontend
- */
+// Form front
+// ==========================================================================
+//
+// Forms on frontend
 
 $form-front-background:           #333 !default;
 $form-front-maxwidth:             $maxwidth !default;
@@ -446,11 +383,8 @@ $form-front-content-background:   white !default;
 $form-front-content-shadow:       0 3px 6px rgba(0,0,0,.5) !default;
 
 
-
-/**
- * Form block
- * ==========
- */
+// Form block
+// ==========================================================================
 
 $form-block-background:         lightest($form-background) !default;
 $form-block-border:             darkest($form-background) !default;
@@ -462,11 +396,8 @@ $form-block-header-border:      darker($form-block-header-background) !default;
 $form-block-content-spacing:    $spacing-small !default;
 
 
-
-/**
- * Upload area
- * ===========
- */
+// Upload area
+// ==========================================================================
 
 $upload-spacing:            $spacing-small !default;
 $upload-background:         $color-primary !default;
@@ -479,15 +410,13 @@ $upload-drop-color:         #595959 !default;
 $upload-buttons-spacing:    10px !default;
 
 
-
-/**
- * Radio toggle
- * ============
- * 1. Use styled radio toggles?
- * 2. The color for "false"/0 items
- * 3. The color for "true"/1 items
- * 4. The color for neutral items
- */
+// Radio toggle
+// ==========================================================================
+//
+// 1. Use styled radio toggles?
+// 2. The color for "false"/0 items
+// 3. The color for "true"/1 items
+// 4. The color for neutral items
 
 $radio-toggle:          true !default; // 1
 $radio-toggle-0:        $color-error !default; // 2
@@ -495,12 +424,10 @@ $radio-toggle-1:        $color-success !default; // 3
 $radio-toggle-neutral:  $color-neutral !default; // 4
 
 
-
-/**
- * Checkbox toggle
- * ============
- * 1. Use styled checkbox toggles?
- */
+// Checkbox toggle
+// ==========================================================================
+//
+// 1. Use styled checkbox toggles?
 
 $checkbox-toggle:                 true !default; // 1
 $checkbox-toggle-width:           60px !default;
@@ -512,14 +439,11 @@ $checkbox-toggle-width-inner:     $checkbox-toggle-width - (($checkbox-toggle-bo
 $checkbox-toggle-height-inner:    $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
 
 
-
-
-/**
- * Bootstrap overrides
- * ===================
- * We depend on Bootstrap 3 for a few basic things
- * This is the place to overwrite the used variables
- */
+// Bootstrap overrides
+// ==========================================================================
+//
+// We depend on Bootstrap 3 for a few basic things
+// This is the place to overwrite the used variables
 
 $input-height-base:         32px !default;
 
@@ -547,10 +471,7 @@ $pagination-active-border:  darker($color-accent) !default;
 
 
 
-/* @TODO: refactor
-=========================================
-*/
-
+// @TODO: refactor
 
 // For the off canvas menu
 $button-size: 38px;
