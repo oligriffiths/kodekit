@@ -1,8 +1,5 @@
-/**
- * Cover all
- * =========
- * Cover the entire parent element
- */
+// Cover all
+// Cover the entire parent element
 
 @mixin coverall($margin: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
   @if $position == true {
@@ -38,14 +35,9 @@
 }
 
 
-
-
-/**
- * Aspect ratio blocks
- * ===================
- * Works best when it has a coverall mixin child
- * Default ratio is 16:9
- */
+// Aspect ratio blocks
+// Works best when it has a coverall mixin child
+// Default ratio is 16:9
 
 @mixin ratio-block($ratio: 56.25%) {
   position: relative;
@@ -58,12 +50,8 @@
 }
 
 
-
-/**
- * Graphical psuedo element
- * ========================
- * Set element to position relative and add a psuedo element with position absolute and a "content"
- */
+// Graphical psuedo element
+// Set element to position relative and add a psuedo element with position absolute and a "content"
 
 @mixin psuedo($psuedo: after, $parentposition: true, $display: true, $position: true, $content: true) {
   @if $parentposition == true {
@@ -84,13 +72,9 @@
 }
 
 
-
-/**
- * Transition
- * ==========
- * Set a default transition to be used in the whole project
- * 1. No 1 pixel jumps on smooth transitons
- */
+// Transition
+// Set a default transition to be used in the whole project
+// 1. No 1 pixel jumps on smooth transitons
 
 @mixin transition($properties: all, $duration: .3s, $easing: ease-in-out) {
   transition: $properties $duration $easing;
@@ -98,13 +82,9 @@
 }
 
 
-
-/**
- * Reset elements
- * ==============
- * Reset an elements default styling
- * Mostly useful for <ul> etc. where default element shave multiple styling rules
- */
+// Reset elements
+// Reset an elements default styling
+// Mostly useful for <ul> etc. where default element shave multiple styling rules
 
 @mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
   @if $margin == true {
@@ -125,12 +105,8 @@
 }
 
 
-
-/**
- * Breakpoint
- * ==========
- * Mobile first media query mixin
- */
+// Breakpoint
+// Mobile first media query mixin
 
 @mixin breakpoint($width, $type: min, $width--max: false) {
   @if $type == min {
@@ -149,13 +125,9 @@
 }
 
 
-
-/**
- * Clearfix
- * ========
- * Micro clearfix using display: table and a space for "content" to make it work on Opera
- * Also using ":before" to clear top-margins as well
- */
+// Clearfix
+// Micro clearfix using display: table and a space for "content" to make it work on Opera
+// Also using ":before" to clear top-margins as well
 
 @mixin clearfix {
   &:before,
@@ -170,12 +142,8 @@
 }
 
 
-
-/**
- * Retina
- * ======
- * Only apply styling on retina screens
- */
+// Retina
+// Only apply styling on retina screens
 
 @mixin retina {
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
@@ -184,28 +152,29 @@
 }
 
 
-
-/**
- * Arrows
- * ======
- * CSS only arrows using borders
- */
+// Arrows
+// CSS only arrows using borders
 
 @mixin arrow($direction: right, $size: 4px, $color: false) {
 
   // Top and bottom arrows
+
   @if $direction == top or $direction == bottom {
     border-left: $size solid transparent;
     border-right: $size solid transparent;
   }
 
+
   // Left and right arrows
+
   @if $direction == left or $direction == right {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
   }
 
+
   // Top
+
   @if $direction == top {
     border-bottom: $size solid;
 
@@ -214,7 +183,9 @@
     }
   }
 
+
   // Right
+
   @if $direction == right {
     border-left: $size solid;
 
@@ -223,7 +194,9 @@
     }
   }
 
+
   // Bottom
+
   @if $direction == bottom {
     border-top: $size solid;
 
@@ -232,7 +205,9 @@
     }
   }
 
+
   // Left
+
   @if $direction == left {
     border-right: $size solid;
 
@@ -243,12 +218,8 @@
 }
 
 
-
-/**
- * Width mixin
- * ===========
- * Set all CSS width values to 'X'
- */
+// Width mixin
+// Set all CSS width values to 'X'
 
 @mixin allwidth($width) {
   min-width: $width;
@@ -257,12 +228,8 @@
 }
 
 
-
-/**
- * Height mixin
- * ============
- * Set all CSS height values to 'X'
- */
+// Height mixin
+// Set all CSS height values to 'X'
 
 @mixin allheight($height) {
   min-height: $height;
@@ -271,18 +238,14 @@
 }
 
 
-
-/**
- * Flexbox
- * =======
- * 1. Is flexbox variable set to true?
- * 2. Make sure to place selector at root since we use modernizr (add classes to html tag)
- * 3. Check for modernizr classes
- * 4. Set media query
- *
- * Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled
- * This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
- */
+// Flexbox
+// 1. Is flexbox variable set to true?
+// 2. Make sure to place selector at root since we use modernizr (add classes to html tag)
+// 3. Check for modernizr classes
+// 4. Set media query
+//
+// Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled
+// This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
 
 @mixin flexbox($horizontal: $flexbox-horizontal, $vertical: $flexbox-vertical) {
   @if $flexbox == true { // 1
@@ -298,13 +261,9 @@
 }
 
 
-
-/**
- * Border
- * ======
- * Sets a border to defined side
- * Only sets a border if $borders is set to true in variables
- */
+// Border
+// Sets a border to defined side
+// Only sets a border if $borders is set to true in variables
 
 @mixin border($position, $border-color) {
   @if $borders != false and $border-color != false {
@@ -317,11 +276,7 @@
 }
 
 
-
-/**
- * JS enabled
- * ==========
- */
+// JS enabled
 
 @mixin js-enabled {
   @at-root .k-js-enabled & {

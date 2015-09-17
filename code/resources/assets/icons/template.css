@@ -1,9 +1,11 @@
-/**
- * @font-face
- * ==========
- * Custom icon font
- * The placeholders in this file are being replaced with real values by grunt-webfont
- */
+/* ==========================================================================
+   Custom icon font
+   ========================================================================== */
+
+// The placeholders in this file are being replaced with real values by grunt-webfont
+
+
+/* @font-face */
 
 @font-face {
   font-family: "<%= fontBaseName %>";
@@ -17,10 +19,9 @@
 }
 
 
-
 /**
  * Use SVG
- * =======
+ *
  * Always use SVG on touch / mobile
  */
 
@@ -32,13 +33,9 @@
 }
 
 
-
-/**
- * Placeholder
- * ===========
- * To be used in mixins
- * Sets all default values for the icons
- */
+// Placeholder
+// To be used in mixins
+// Sets all default values for the icons
 
 %icon {
   speak: none;
@@ -61,21 +58,16 @@
 }
 
 
-
-/**
- * Sass icon map
- * =============
- * All the available icons
- */
+// Sass icon map
+// All the available icons
 
 $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
   <%= glyphs[glyphIdx] %>: "<% if (addLigatures) { %><%= glyphs[glyphIdx] %><% } else { %>\<%= codepoints[glyphIdx] %><% } %>",<% } %>);
 
 
-
 /**
  * Icon classes
- * ============
+ *
  * Creating a class name for each individual icon to be used in markup like:
  * <span class="k-icon-circle"></span>
  */
@@ -90,12 +82,8 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
 }
 
 
-
-/**
- * 'Icon before' mixin
- * ===================
- * For adding icons to elements using CSS pseudo-elements
- */
+// 'Icon before' mixin
+// For adding icons to elements using CSS pseudo-elements
 
 @mixin icon-before($icon: false, $styles: false) {
   &:before {
@@ -110,12 +98,8 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
 }
 
 
-
-/**
- * 'Icon after' mixin
- * ==================
- * For adding icons to elements using CSS pseudo-elements
- */
+// 'Icon after' mixin
+// For adding icons to elements using CSS pseudo-elements
 
 @mixin icon-after($icon: false, $styles: false) {
   &:after {
@@ -130,12 +114,8 @@ $icons: (<% for (var glyphIdx = 0; glyphIdx < glyphs.length; glyphIdx++) { %>
 }
 
 
-
-/**
- * 'Icon both' mixin
- * =================
- * For adding icons to elements using CSS pseudo-elements
- */
+// 'Icon both' mixin
+// For adding icons to elements using CSS pseudo-elements
 
 @mixin icon-both($icon: false, $styles: false) {
   &:before,
