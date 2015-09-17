@@ -2,29 +2,35 @@
 // Cover the entire parent element
 
 @mixin coverall($margin: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
+
   @if $position == true {
     position: absolute;
   }
+
   @if $top == true {
     top: $margin;
   } @else if $top != false {
     top: $top;
   }
+
   @if $right == true {
     right: $margin;
   } @else if $right != false {
     right: $right;
   }
+
   @if $bottom == true {
     bottom: $margin;
   } @else if $bottom != false {
     bottom: $bottom;
   }
+
   @if $left == true {
     left: $margin;
   } @else if $left != false {
     left: $left;
   }
+
   @if $reset == true {
     position: relative;
     top: auto;
@@ -44,8 +50,8 @@
 
   &:before {
     display: block;
-    content: " ";
     padding-top: $ratio;
+    content: " ";
   }
 }
 
@@ -54,19 +60,25 @@
 // Set element to position relative and add a psuedo element with position absolute and a "content"
 
 @mixin psuedo($psuedo: after, $parentposition: true, $display: true, $position: true, $content: true) {
+
   @if $parentposition == true {
     position: relative;
   }
+
   &:#{$psuedo} {
+
     @if $display == true {
       display: block;
     }
+
     @if $position == true {
       position: absolute;
     }
+
     @if $content == true {
       content: " ";
     }
+
     @content;
   }
 }
@@ -87,18 +99,23 @@
 // Mostly useful for <ul> etc. where default element shave multiple styling rules
 
 @mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
+
   @if $margin == true {
     margin: 0;
   }
+
   @if $padding == true {
     padding: 0;
   }
+
   @if $list-style == true {
     list-style: none;
   }
+
   @if $border == true {
     border: none;
   }
+
   @if $background == true {
     background: transparent;
   }

@@ -36,6 +36,7 @@ $gutter: golden-ratio(1em, 2) !global;
   &:nth-child(#{$omega}n) {
     margin-right: 0;
   }
+
   &:nth-child(#{$omega}n+1) {
     clear: left;
   }

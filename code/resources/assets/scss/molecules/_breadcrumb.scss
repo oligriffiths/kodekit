@@ -3,30 +3,28 @@
    ========================================================================== */
 
 /**
- * Use
- *
- *  <!-- Breadcrumbs -->
- *  <div class="k-breadcrumb">
- *      <ul>
- *          <!-- Home icon item -->
- *          <li class="home">
- *              <a class="k-breadcrumb__item k-icon-home" href="#">
- *                  <span class="visually-hidden">Home</span>
- *              </a>
- *          </li>
- *          <!-- All but last items -->
- *          <li>
- *              <a class="k-breadcrumb__item" href="#">
- *                  Some menu item
- *              </a>
- *          </li>
- *          <!-- last / active item -->
- *          <li class="active">
- *              <span class="k-breadcrumb__item">Active menu item</span>
- *          </li>
- *      </ul>
- *  </div><!-- .k-breadcrumb -->
- */
+<!-- Breadcrumbs -->
+<div class="k-breadcrumb">
+  <ul>
+      <!-- Home icon item -->
+      <li class="home">
+          <a class="k-breadcrumb__item k-icon-home" href="#">
+              <span class="visually-hidden">Home</span>
+          </a>
+      </li>
+      <!-- All but last items -->
+      <li>
+          <a class="k-breadcrumb__item" href="#">
+              Some menu item
+          </a>
+      </li>
+      <!-- last / active item -->
+      <li class="active">
+          <span class="k-breadcrumb__item">Active menu item</span>
+      </li>
+  </ul>
+</div><!-- .k-breadcrumb -->
+*/
 
 
 /* Parent element

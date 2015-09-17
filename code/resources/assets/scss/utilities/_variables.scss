@@ -430,13 +430,16 @@ $radio-toggle-neutral:  $color-neutral !default; // 4
 // 1. Use styled checkbox toggles?
 
 $checkbox-toggle:                 true !default; // 1
-$checkbox-toggle-width:           60px !default;
-$checkbox-toggle-height:          32px !default;
+$checkbox-toggle-size:            32px !default;
 $checkbox-toggle-border-width:    1px !default;
 $checkbox-toggle-padding:         1px !default;
 $checkbox-toggle-border-radius:   6px !default;
-$checkbox-toggle-width-inner:     $checkbox-toggle-width - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
-$checkbox-toggle-height-inner:    $checkbox-toggle-height - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-width-inner:     ($checkbox-toggle-size * 2) - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-height-inner:    $checkbox-toggle-size - (($checkbox-toggle-border-width + $checkbox-toggle-padding) * 2) !default;
+$checkbox-toggle-0:               $color-error !default;
+$checkbox-toggle-1:               $color-success !default;
+$checkbox-toggle-neutral-0:       #ddd !default;
+$checkbox-toggle-neutral-1:       $color-neutral !default;
 
 
 // Bootstrap overrides

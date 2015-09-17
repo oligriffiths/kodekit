@@ -1,22 +1,23 @@
+/* ==========================================================================
+   Default theme
+   ========================================================================== */
+
 /**
- * Default theme
- * =============
  * A flat colored theme intended to be used for Nooku standalone projects
  */
 
 
+/* Global tools
+   ========================================================================== */
+
 /**
- * Global tools
- * ------------
  * Containing different libraries, variables, mixins and functions
  */
 
 @import "core/tools";
 
 
-/**
- * Core styling
- * ------------
- */
+/* Core styling
+   ========================================================================== */
 
 @import "core/core";
