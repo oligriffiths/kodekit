@@ -53,7 +53,7 @@ class KTemplateFilterWrapper extends KTemplateFilterAbstract
      * @return $this
      */
     public function filter(&$text)
-    {var_dump($this->getWrapper());
+    {
         if ($this->getWrapper()) {
             $text = sprintf($this->getWrapper(), $text);
         }
