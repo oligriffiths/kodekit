@@ -461,28 +461,17 @@ $pagination-active-bg:      $color-accent !default;
 $pagination-active-border:  darker($color-accent) !default;
 
 
+// Offcanvas container with animated hamburger button
+// ==========================================================================
+//
+// 1. The hamburger bar width, best to use a number dividable by 5
+// 2. The height is automatically calculated
 
-
-
-
-
-
-
-
-
-
-
-
-
-// @TODO: refactor
-
-// For the off canvas menu
-$button-size: 38px;
-$bar-width: 20px; // Best to grab a number that can be divided by 5
-$bar-height: round($bar-width / 5);
-$overlay-background: black;
-
-// Hamburger
-$button-size: 33px;
-$bar-width: 15px; // Best to grab a number that can be divided by 5
-$bar-height: round($bar-width / 5);
+$overlay-background:  black !default;
+$overlay-opacity:     .75 !default;
+$button-size:         33px !default;
+$button-background:   $color-accent !default;
+$button-color:        white !default;
+$button-radius:       3px !default;
+$bar-width:           15px !default; // 1
+$bar-height:          round($bar-width / 5) !default; // 2

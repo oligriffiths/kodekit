@@ -1,22 +1,19 @@
-/**
- * Grid
- * ====
- */
+/* ==========================================================================
+   Grid
+   ========================================================================== */
+
+/* Container */
 
 .k-container {
   @include clearfix;
-  margin: 0 auto;
-  max-width: $maxwidth;
-  padding: $spacing;
   overflow: hidden;
+  max-width: $maxwidth;
+  margin: 0 auto;
+  padding: $spacing;
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use */
 
 @include flexbox {
   .k-container {
@@ -25,18 +22,14 @@
 }
 
 
-
-/**
- * Grid children
- * =============
- */
+/* Grid children */
 
 .k-container__main {
   margin-bottom: $spacing;
 
   @include breakpoint($charlie) {
-    margin-bottom: 0;
     @include span(8);
+    margin-bottom: 0;
   }
 
   &:last-child {
@@ -48,8 +41,8 @@
   margin-bottom: $spacing;
 
   @include breakpoint($charlie) {
-    margin-bottom: 0;
     @include span(4);
+    margin-bottom: 0;
   }
 
   &:last-child {

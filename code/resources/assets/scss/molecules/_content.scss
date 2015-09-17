@@ -120,7 +120,7 @@
 .show-left-menu,
 .show-right-menu {
   .off-canvas-overlay {
-    opacity: .5; /* 1 */
+    opacity: $overlay-opacity; /* 1 */
   }
 }
 

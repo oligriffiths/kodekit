@@ -1,14 +1,22 @@
+/* ==========================================================================
+   Form block
+   ========================================================================== */
+
 /**
- * Form block
- * ==========
  * To be used in sidebar of forms
  * Data in these boxes should be non-required info
  */
+
+
+/* The block itself */
 
 .k-form-block {
   @include border(all, $form-block-border);
   background: $form-block-background;
 }
+
+
+/* The header */
 
 .k-form-block__header {
   @include border(bottom, $form-block-header-border);
@@ -16,6 +24,9 @@
   background: $form-block-header-background;
   font-weight: bold;
 }
+
+
+/* The content */
 
 .k-form-block__content {
   padding: $form-block-content-spacing;
