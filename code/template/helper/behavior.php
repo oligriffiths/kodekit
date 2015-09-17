@@ -22,6 +22,12 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
      */
     protected static $_loaded = array();
 
+    /**
+     * Loads the common UI libraries
+     *
+     * @param array $config
+     * @return string
+     */
     public function ui($config = array())
     {
         $identifier = $this->getTemplate()->getIdentifier();
@@ -30,7 +36,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         $config->append(array(
             'debug' => false,
             'bootstrap' => array(
-                'css'        => true,
+                'css'        => false,
                 'javascript' => true
             ),
             'package' => $identifier->package,
@@ -40,7 +46,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
                 $identifier->type.'_'.$identifier->package
             ),
         ))->append(array(
-            'file'    => 'assets://css/'.$config->domain.'.css',
+            'css_file'    => 'assets://css/'.$config->domain.'.css',
             'wrapper' => sprintf('<div class="%s">
                 <!--[if lte IE 8 ]><div class="old-ie"><![endif]-->
                 %%s
@@ -51,19 +57,15 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
 
         $html = '';
 
-        if ($config->file) {
-            $html .= '<ktml:style src="'.$config->file.'" />';
-
-            $config->bootstrap->css = false;
+        if ($config->css_file) {
+            $html .= '<ktml:style src="'.$config->css_file.'" />';
         }
 
-        if ($config->domain === 'admin')
-        {
-            if (!$config->css_file) {
-                $html .= '<ktml:script src="assets://css/admin.css" />';
-            }
-
+        if ($config->domain === 'admin') {
             $html .= '<ktml:script src="assets://js/admin.js" />';
+        } else {
+            // @todo temporary until we have site.css and module.css ready
+            $config->bootstrap->css = true;
         }
 
         $html .= $this->bootstrap($config->bootstrap);
