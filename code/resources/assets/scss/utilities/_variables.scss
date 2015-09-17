@@ -240,11 +240,11 @@ $breadcrumb-divider-size:       $spacing !default; // 3
 $breadcrumb-size:               $unit-size !default; // 4
 $breadcrumb-query:              $charlie !default; // 5
 
-$breadcrumb-background:         $color-secondary !default;
+$breadcrumb-background:         $color-primary !default;
 $breadcrumb-border:             darker($breadcrumb-background) !default;
-$breadcrumb-color:              $color-secondary-type !default;
+$breadcrumb-color:              $color-primary-type !default;
 
-$breadcrumb-background-hover:   $color-secondary-dark !default;
+$breadcrumb-background-hover:   $color-primary-darker !default;
 
 
 
