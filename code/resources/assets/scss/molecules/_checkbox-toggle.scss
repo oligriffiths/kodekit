@@ -29,7 +29,7 @@
  * Cutting the mustard
  *
  * 1. The :not(old-ie) makes sure nothing gets added to older/incapable IE
- *    Instead, normal radio boxes will be presented
+ *    Instead, normal checkboxes will be presented
  */
 
 @if $checkbox-toggle == true {

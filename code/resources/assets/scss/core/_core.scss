@@ -64,6 +64,7 @@
 
   /* Molecules */
 
+  @import "../molecules/booleanlist";
   @import "../molecules/breadcrumb";
   @import "../molecules/checkbox-toggle";
   @import "../molecules/component";
@@ -72,11 +73,9 @@
   @import "../molecules/form-block";
   @import "../molecules/grid";
   @import "../molecules/hamburger";
-  @import "../molecules/icons";
   @import "../molecules/list";
   @import "../molecules/navigation";
   @import "../molecules/overflowing";
-  @import "../molecules/radio-toggle";
   @import "../molecules/scopebar";
   @import "../molecules/sidebar";
   @import "../molecules/table";

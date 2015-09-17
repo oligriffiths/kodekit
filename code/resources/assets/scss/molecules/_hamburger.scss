@@ -38,13 +38,13 @@
   .bar1,
   .bar2,
   .bar3 {
-    width: $bar-width;
-    height: $bar-height;
-    display: block;
     position: absolute;
     left: round(($button-size - $bar-width) / 2);
-    background: $button-color;
+    display: block;
+    width: $bar-width;
+    height: $bar-height;
     border-radius: 1px;
+    background: $button-color;
     vertical-align: middle;
     transition: all $transition;
   }
@@ -89,8 +89,8 @@
     }
 
     .bar2 {
-      transform: translate(-100%, 0);
       opacity: 0;
+      transform: translate(-100%, 0);
     }
 
     .bar3 {
