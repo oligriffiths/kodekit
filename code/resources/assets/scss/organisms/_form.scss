@@ -1,10 +1,14 @@
+/* ==========================================================================
+   Form layout
+   ========================================================================== */
+
 /**
- * Form layout
- * ===========
  * The default form layout
+ *
  * 1. Title bar
  * 2. Main content
  * 3. Extra (non-critical) content boxes
+ *
  * _____________________________
  * |_____________1_____________|
  * |                   _______ |
@@ -16,17 +20,11 @@
  * |___________________________|
  */
 
-
-/**
- * Default styles with JavaScript disabled
- * =======================================
- */
-
 .k-form {
 
   /**
    * Component background
-   * --------------------
+   *
    * Default component has background for when sliding over sidebars
    */
 
@@ -35,27 +33,22 @@
   }
 
 
-
   /**
    * Toolbar
-   * -------
-   * Set a max-width for the toolbar so it's just as big as the container below
+   *
+   * 1. Set a max-width for the toolbar so it's just as big as the container below
    */
 
   .koowa-toolbar {
+    max-width: $maxwidth; /* 1 */
     margin: 0 auto;
     padding: 0 ($spacing / 2);
-    max-width: $maxwidth;
   }
 
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use */
 
 @include flexbox {
   .k-form {

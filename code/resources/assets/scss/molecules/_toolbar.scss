@@ -1,13 +1,14 @@
-/**
- * Toolbar
- * =======
- */
+/* ==========================================================================
+   Toolbar
+   ========================================================================== */
 
 .k-toolbar {
   @include border(bottom, $toolbar-border);
   background: $toolbar-background;
 
-  // Faking flexbox for older browsers
+
+  /* Faking flexbox for older browsers */
+
   @include breakpoint($desktop) {
     width: 100%;
     display: table;
@@ -15,11 +16,7 @@
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use */
 
 @include flexbox {
   .k-toolbar {
@@ -28,11 +25,7 @@
 }
 
 
-
-/**
- * Toolbar contents
- * ======================
- */
+/* Toolbar contents */
 
 .k-toolbar {
   button,
@@ -40,28 +33,26 @@
     margin: 10px 0 10px 10px;
 
 
-
     /**
      * Make buttons square
-     * -------------------
+     *
      * Only make them square if media queries are supported
      * By default we just want them as buttons
      */
 
     @include breakpoint(0, range, $charlie) {
+      overflow: hidden;
       width: 33px;
       height: 33px;
-      text-align: center;
       padding: 6px 8px;
-      overflow: hidden;
+      text-align: center;
     }
   }
 
 
-
   /**
-   * Opions button
-   * -------------
+   * Options button
+   *
    * Align the options button right
    */
 
@@ -71,10 +62,9 @@
   }
 
 
-
   /**
    * Alternative button colors
-   * -------------------------
+   *
    * If the button colors don't fit the toolbar you can have alternative colors
    */
 
@@ -94,10 +84,9 @@
   }
 
 
-
   /**
    * Position the icon
-   * -----------------
+   *
    * Only position them if media queries are supported
    * By default we just want them aligned normally
    */
@@ -115,10 +104,13 @@
   }
 }
 
+
+/* Text on the toolbar buttons */
+
 .k-toolbar__text {
   @include breakpoint(0, range, $charlie) {
-    visibility: hidden;
     position: relative;
     z-index: -1;
+    visibility: hidden;
   }
 }

@@ -1,7 +1,9 @@
-/**
- * When flexbox is in use
- * ======================
- */
+/* ==========================================================================
+   Table
+   ========================================================================== */
+
+
+/* When flexbox is in use */
 
 @include flexbox {
   .k-table-container {
@@ -27,11 +29,7 @@
 }
 
 
-
-/**
- * Table contents
- * ==============
- */
+/* Table contents */
 
 .k-table-container {
 
@@ -45,60 +43,65 @@
     text-align: left;
   }
 
+
   /**
    * Cells
+   *
    * 1. Position checkbox
    * 2. Remove default margin and set negative top margin to visually align vertically
    */
 
   th,
   td {
-    text-align: left;
-    vertical-align: middle;
-    height: $table-cell-size;
     position: relative;
+    height: $table-cell-size;
+    vertical-align: middle;
+    text-align: left;
 
     input {
-      display: inline-block; // 1
-      vertical-align: middle; // 1
-      margin: -1px 0 0 0; // 2
+      display: inline-block; /* 1 */
+      vertical-align: middle; /* 1 */
+      margin: -1px 0 0 0; /* 2 */
     }
   }
 
 
-
   /**
    * Head
-   * 1. Don't use long header titles since they won't be wrapped
-   * 2. Whole <th> should be clickable
+   *
+   * 1. Don't set a vertical padding on table headers. Set padding on table heading children
+   *    We do this so <a> elements are fully clickable for sorting
+   * 2. Don't use long header titles since they won't be wrapped
+   * 3. Whole <th> should be clickable
+   * 4. Set padding here
    */
 
   th {
     @include border(bottom, $table-header-border);
-    background: $table-header-background;
-    white-space: nowrap; // 1
     z-index: 1;
-    padding: 0 $table-cell-spacing;
+    padding: 0 $table-cell-spacing; /* 1 */
+    white-space: nowrap; /* 2 */
+    background: $table-header-background;
 
     a {
-      display: block; // 2
-      padding: $table-cell-spacing 0;
+      display: block; /* 3 */
+      padding: $table-cell-spacing 0; /* 4 */
       line-height: $table-cell-size - ($table-cell-spacing * 2);
     }
   }
 
 
-
   /**
    * Body
+   *
    * 1. No bottom border for last item
-   * 2. Small extra info below title display" block to display below title
+   * 2. Small extra info below title display:block to display below title
    */
 
   td {
     @include border(bottom, $table-cell-border);
-    background: $table-cell-background-even;
     padding: $table-cell-spacing;
+    background: $table-cell-background-even;
   }
 
   tr:nth-child(odd) {
@@ -109,12 +112,12 @@
 
   tr:last-child {
     td {
-      border-bottom: none; // 1
+      border-bottom: none; /* 1 */
     }
   }
 
   small {
-    display: block; // 2
+    display: block; /* 2 */
   }
 
   a {
@@ -127,10 +130,12 @@
   }
 
 
-
   /**
    * Selected
-   * 1. Coloring Links and extra elements
+   *
+   * When rows are selected they are highlighted
+   *
+   * 1. Coloring Links and extra elements that don't color automatically with it's parent
    */
 
   tr.selected {
@@ -139,29 +144,24 @@
       color: $table-cell-accent-color;
 
       a, i, span {
-        color: $table-cell-accent-color;
+        color: $table-cell-accent-color; /* 1 */
       }
     }
   }
 }
 
 
-
-/**
- * Table pagination
- * ================
- */
+/* Table pagination */
 
 .k-table-pagination {
   @include border(top, $table-pagination-border);
-  background: $table-pagination-background;
   padding: $table-pagination-spacing;
-
+  background: $table-pagination-background;
 
 
   /**
    * Pagination contents
-   * -------------------
+   *
    * 1. Align vertically
    * 2. Remove standard Bootstrap margin
    * 3. Style <select> to be as large as the pagination
@@ -171,48 +171,47 @@
 
   .limit,
   .pagination {
-    display: inline-block; // 1
-    vertical-align: middle; // 1
+    display: inline-block; /* 1 */
+    vertical-align: middle; /* 1 */
   }
 
   .pagination {
-    margin: 0; // 2
+    margin: 0; /* 2 */
   }
 
   select {
-    height: $table-pagination-height; // 3
-    width: auto; // 4
-    margin-right: $table-pagination-spacing; // 5
+    height: $table-pagination-height; /* 3 */
+    width: auto; /* 4 */
+    margin-right: $table-pagination-spacing; /* 5 */
   }
 }
 
 
-
 /**
  * Footable
- * ========
+ *
  * Responsive table views
  */
 
 .footable.breakpoint {
   .footable-toggle {
-    display: block;
-    width: $footable-toggle-size;
-    height: $footable-toggle-size;
-    border-radius: 50%;
-    border: $footable-toggle-border-size solid $footable-toggle-color;
     position: absolute;
     top: 50%;
     right: 10px;
+    display: block;
+    width: $footable-toggle-size;
+    height: $footable-toggle-size;
+    border: $footable-toggle-border-size solid $footable-toggle-color;
+    border-radius: 50%;
     margin-top: -($footable-toggle-size / 2);
 
     @include icon-after(chevron-bottom, true) {
       display: block;
-      color: $footable-toggle-color;
-      font-size: $footable-toggle-icon-size;
       width: $footable-toggle-icon-size;
       height: $footable-toggle-icon-size;
       margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
+      color: $footable-toggle-color;
+      font-size: $footable-toggle-icon-size;
       line-height: 1.3em;
     }
   }
@@ -229,29 +228,24 @@
 }
 
 
-
-
-/**
- * Sorting arrows
- * ==============
- */
+/* Sorting arrows */
 
 th a {
   @include icon-after(sorting, true) {
-    font-size: 10px;
-    display: inline-block;
     position: relative;
+    display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
     opacity: .35;
+    font-size: 10px;
     color: $table-header-color;
   }
 }
 
 th.-koowa-desc a {
   @include psuedo(after, $display: false, $position: false) {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
     opacity: 1;
@@ -263,8 +257,8 @@ th.-koowa-desc a {
 
 th.-koowa-asc a {
   @include psuedo(after, $display: false, $position: false) {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     vertical-align: middle;
     margin-left: 5px;
     opacity: 1;

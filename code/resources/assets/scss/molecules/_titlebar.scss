@@ -1,24 +1,27 @@
+/* ==========================================================================
+   Titlebar
+   ========================================================================== */
+
 /**
- * Titlebar
- * ========
- * 1. Set transition for off canvas sidebar
+ * 1. Set the z-index higher than the menus
  * 2. Setting a background so container will fall nicely over the sidebar
- * 3. Set the z-index higher than the menus
+ * 3. Set transition for off canvas sidebar
  */
 
 .k-titlebar {
   @include border(bottom, $titlebar-border);
-  transition: transform $transition; // 1
-  background: $titlebar-background; // 2
-  color: $titlebar-color;
-  position: relative; // 3
-  z-index: 2; // 3
-  float: left;
+  position: relative; /* 1 */
+  z-index: 2; /* 1 */
   width: 100%;
+  float: left;
+  background: $titlebar-background; /* 2 */
+  color: $titlebar-color;
+  transition: transform $transition; /* 3 */
+
 
   /**
    * Create custom 'overlay' for off canvas sidebar
-   * ----------------------------------------------
+   *
    * 1. Overlay over bottom border
    * 2. Hide with negative z-index and opacity: 0
    * 3. Give it a transition
@@ -27,24 +30,20 @@
 
   @include psuedo(before) {
     @include coverall;
-    margin-bottom: -1px; // 1
-    z-index: -1; // 2
-    opacity: 0; // 2
+    margin-bottom: -1px; /* 1 */
+    z-index: -1; /* 2 */
+    opacity: 0; /* 2 */
     background: $overlay-background;
-    transition: opacity $transition; // 3
+    transition: opacity $transition; /* 3 */
 
     @include breakpoint($desktop) {
-      display: none; // 4
+      display: none; /* 4 */
     }
   }
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use */
 
 @include flexbox {
   .k-titlebar {
@@ -53,10 +52,9 @@
 }
 
 
-
 /**
  * Titlebar when toggled
- * =====================
+ *
  * 1. Set left to the width of the menu so the menu will appear
  * 2. Set right to the negative width of the menu so the menu will appear
  * 3. Reset when screen is wide enough
@@ -64,29 +62,28 @@
 
 .show-left-menu {
   .k-titlebar {
-    transform: translate($sidebar-width, 0); // 1
+    transform: translate($sidebar-width, 0); /* 1 */
 
     @include breakpoint($desktop) {
-      transform: translate(0, 0); // 3
+      transform: translate(0, 0); /* 3 */
     }
   }
 }
 
 .show-right-menu {
   .k-titlebar {
-    transform: translate(-($sidebar-width), 0); // 2
+    transform: translate(-($sidebar-width), 0); /* 2 */
 
     @include breakpoint($desktop) {
-      transform: translate(0, 0); // 3
+      transform: translate(0, 0); /* 3 */
     }
   }
 }
 
 
-
 /**
  * Fake Overlay when toggled
- * =========================
+ *
  * 1. Set opacity
  * 2. Set z-index so it will become visible
  */
@@ -94,23 +91,19 @@
 .show-left-menu,
 .show-right-menu {
   .k-titlebar:before {
-    opacity: .5; // 1
+    opacity: .5; /* 1 */
   }
 }
 
 .opened--left,
 .opened--right {
   .k-titlebar:before {
-    z-index: 2; // 2
+    z-index: 2; /* 2 */
   }
 }
 
 
-
-/**
- * Titlebar contents
- * =================
- */
+/* Titlebar contents */
 
 .k-titlebar {
   h2 {

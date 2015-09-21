@@ -1,29 +1,33 @@
+/* ==========================================================================
+   Overview layout
+   ========================================================================== */
+
 /**
- * Overview layout
- * ===============
  * The default overview layout
+ *
  * 1. Left sidebar
  * 2. Toggle button
- * 3. Breadrumbs
- * 4. Upload area
- * 5. Scopebar
- * 6. Table / grid / content
- * 7. Right sidebar
+ * 3. Toolbar
+ * 4. Breadcrumbs
+ * 5. Upload area
+ * 6. Scopebar
+ * 7. Table / grid / content
+ * 8. Right sidebar
+ *
  * _____________________________
- * |  1  |2|_3___________|  7  |
+ * |  1  |_2_|_3_________|  8  |
  * |     |_4_____________|     |
  * |     |_5_____________|     |
- * |     | 6             |     |
+ * |     |_6_____________|     |
+ * |     | 7             |     |
+ * |     |               |     |
+ * |     |               |     |
  * |     |               |     |
  * |     |               |     |
  * |_____|_______________|_____|
+ *
  */
 
-
-/**
- * Default styles with JavaScript disabled
- * =======================================
- */
 
 .k-overview {
   @include border(all, $overview-border);
@@ -31,11 +35,7 @@
 }
 
 
-
-/**
- * When flexbox is in use
- * ======================
- */
+/* When flexbox is in use */
 
 @include flexbox {
   .k-overview {

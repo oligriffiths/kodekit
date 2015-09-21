@@ -13,7 +13,7 @@
     <div class="k-scopebar__item k-scopebar__item--fluid">
 
         <!-- Filter -->
-        <div class="select2-wrapper select2--link-style select2--filter">
+        <div class="select2--link-style select2--filter">
             <select data-placeholder="Status">
                 <option selected>--Status--</option>
                 <option value="1">Published</option>
@@ -112,7 +112,6 @@
 
 .k-scopebar__item {
   @include border(bottom, $scopebar-border);
-  width: 100%;
   vertical-align: middle;
 }
 
