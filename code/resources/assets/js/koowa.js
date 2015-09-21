@@ -522,7 +522,7 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
         this.setTableRows();
 
         // <select> elements in headers and footers are for filters, so they need to submit the form on change
-        this.form.find('thead select, tfoot select').on('change.koowa', function(){
+        this.form.find('thead select, tfoot select, .k-pagination select').on('change.koowa', function(){
             // We need to uncheck rows here otherwise only selected rows will be visible after submitting the form
             self.grid.uncheckAll();
 
