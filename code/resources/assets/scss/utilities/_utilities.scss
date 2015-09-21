@@ -52,8 +52,8 @@
 }
 
 
-/* Hide disabled elements */
+/* Hide disabled buttons in the toolbar */
 
-.disabled.disabled.disabled {
+.k-toolbar .disabled.disabled.disabled {
   display: none;
 }
