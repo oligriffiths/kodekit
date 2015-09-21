@@ -3,6 +3,18 @@
    ========================================================================== */
 
 /**
+<!-- List -->
+<ul class="k-list">
+    <li>
+        <a href="#">
+            <span class="k-icon-clock"></span> Clocks
+        </a>
+    </li>
+</ul>
+*/
+
+
+/**
  * 1. Reset default <ul> styling
  */
 
@@ -60,4 +72,13 @@
       }
     }
   }
+
+
+  /* Icons */
+
+  [class^="k-icon"] {
+    display: inline-block;
+    margin-right: .75em;
+  }
+
 }

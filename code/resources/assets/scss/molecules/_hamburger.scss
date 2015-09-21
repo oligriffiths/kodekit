@@ -8,6 +8,14 @@
  * 3. Hide when the sidebar is visible
  */
 
+/**
+<button id="k-toggle-button" class="off-canvas-menu-toggle" type="button">
+    <span class="bar1"></span>
+    <span class="bar2"></span>
+    <span class="bar3"></span>
+</button>
+*/
+
 .off-canvas-menu-toggle {
   position: relative;
   z-index: 3;

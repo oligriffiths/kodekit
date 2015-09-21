@@ -1,43 +1,50 @@
-  .icon-new {
-    @include icon-before(plus, true);
-  }
+/* ==========================================================================
+   Interface icons
+   ========================================================================== */
 
-  .icon-download {
-    @include icon-before(data-transfer-download, true);
-  }
+/* Toolbar icons
+   ========================================================================== */
 
-  .icon-options {
-    @include icon-before(cog, true);
-  }
+.icon-new {
+  @include icon-before(plus, true);
+}
 
-  .icon-delete {
-    @include icon-before(trash, true);
-  }
+.icon-download {
+  @include icon-before(data-transfer-download, true);
+}
 
-  .icon-purge {
-    @include icon-before(circle-x, true);
-  }
+.icon-options {
+  @include icon-before(cog, true);
+}
 
-  .icon-publish {
-    @include icon-before(check, true);
-    color: $color-success;
-  }
+.icon-delete {
+  @include icon-before(trash, true);
+}
 
-  .icon-unpublish {
-    @include icon-before(circle-x, true);
-    color: $color-error;
-  }
+.icon-purge {
+  @include icon-before(circle-x, true);
+}
 
-  .icon-apply {
-    @include icon-before(pencil, true);
-  }
+.icon-publish {
+  @include icon-before(check, true);
+  color: $color-success;
+}
 
-  .icon-save {
-    @include icon-before(check, true);
-    color: $color-success;
-  }
+.icon-unpublish {
+  @include icon-before(circle-x, true);
+  color: $color-error;
+}
 
-  .icon-cancel {
-    @include icon-before(circle-x, true);
-    color: $color-error;
-  }
+.icon-apply {
+  @include icon-before(pencil, true);
+}
+
+.icon-save {
+  @include icon-before(check, true);
+  color: $color-success;
+}
+
+.icon-cancel {
+  @include icon-before(circle-x, true);
+  color: $color-error;
+}

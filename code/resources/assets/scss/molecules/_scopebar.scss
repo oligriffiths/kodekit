@@ -1,7 +1,44 @@
+/* ==========================================================================
+   Scopebar
+   ========================================================================== */
+
 /**
- * Scopebar
- * ========
- */
+<!-- Scopebar -->
+<div class="k-scopebar">
+
+    <!-- Filter title -->
+    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
+
+    <!-- Filters -->
+    <div class="k-scopebar__item k-scopebar__item--fluid">
+
+        <!-- Filter -->
+        <div class="select2-wrapper select2--link-style select2--filter">
+            <select data-placeholder="Status">
+                <option selected>--Status--</option>
+                <option value="1">Published</option>
+                <option value="0">Unpublished</option>
+            </select>
+        </div>
+
+        <!-- Search toggle button -->
+        <button type="button" class="toggle-search">
+            <span class="k-icon-magnifying-glass"></span>
+            <span class="visually-hidden">Search</span>
+        </button>
+    </div>
+
+    <!-- Search -->
+    <div class="k-scopebar__item k-scopebar__search">
+        <div class="search__container">
+            <label for="search"><i class="icon-search"></i></label>
+            <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="">
+            <a class="search_button--empty"><span>X</span></a>
+        </div>
+    </div>
+
+</div><!-- .k-scopebar -->
+*/
 
 .k-scopebar {
   background: $scopebar-background;
@@ -14,113 +51,80 @@
 }
 
 
-
 /**
  * When flexbox is in use
- * ======================
+ *
  * 1. The scopebar container itself. Changes on global flexbox setting
  * 2. Flexing before global flexbox
  */
 
-@include flexbox { // 1
+@include flexbox {
+
+  /* 1 */
+
   .k-scopebar {
     width: auto;
     flex: 0 0 auto;
   }
 }
 
-@include flexbox($horizontal: $beta) { // 2
+
+/* 2 */
+
+@include flexbox($horizontal: $beta) {
+
   .k-scopebar {
     display: flex;
     flex: 0 0 auto;
   }
 
   .k-scopebar__item {
-    display: block;
+    display: table-cell;
     flex: 0 0 auto;
-  }
-
-  .k-scopebar__item--fluid {
-    flex: 1 1 auto;
   }
 
   .k-scopebar__search {
     flex: 0 1 auto;
   }
-}
 
 
+  /* Put at least one fluid item in every scopebar */
 
-/**
- * Scopebar contents
- * =================
- */
-
-.k-scopebar {
-  .select2,
-  button {
-    height: $unit-size;
-    padding: 0 $spacing-tiny;
-  }
-
-  a {
-    color: $scopebar-color;
-    cursor: pointer;
-  }
-
-  .select2-selection__placeholder {
-    color: $scopebar-color;
-    opacity: .7;
-  }
-
-  .select2-container--default .select2-selection--single .select2-selection__arrow b {
-    border-top-color: $scopebar-color;
-    opacity: .7;
-  }
-
-  .select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
-    border-bottom-color: $scopebar-color;
-  }
-
-  .select2-container--default .select2-selection--single .select2-selection__rendered {
-    color: $scopebar-color;
+  .k-scopebar__item--fluid {
+    flex: 1 1 auto;
   }
 }
 
 
-
-/**
- * Scopebar items
- * ==============
- */
-
-.k-scopebar__item {
-  vertical-align: middle;
-  width: 100%;
-  @include border(bottom, $scopebar-border);
-
-  @include breakpoint($beta) {
-    display: table-cell;
-  }
-}
-
+/* Scopebar filter title */
 
 .k-scopebar__item--title {
   width: auto;
-  font-weight: bold;
   padding: 0 0 0 1em;
-  font-size: 12px;
+  font-weight: bold;
   vertical-align: middle;
+  font-size: 12px;
   line-height: 32px;
+}
+
+
+/* Scopebar items */
+
+.k-scopebar__item {
+  @include border(bottom, $scopebar-border);
+  width: 100%;
+  vertical-align: middle;
 }
 
 
 /**
  * Scopebar search
- * ---------------
- * 1. Hide by default so we can toggle it open
+ *
+ * 1. Hide by default (when JS is enabled) so we can toggle it open
  * 2. Display as table cell on medium sized screens
  * 3. Display as block for flexbox on larger screens
+ * 4. Set a minimum width so the fluid scopebar__item won't make search really small
+ * 5. Search area items
  */
 
 .k-scopebar__search {
@@ -128,20 +132,26 @@
   min-width: 200px;
 
   @include js-enabled {
-    display: none; // 1
+    display: none; /* 1 */
 
     @include breakpoint($beta) {
-      display: table-cell; // 2
+      display: table-cell; /* 2 */
     }
 
     @include breakpoint($desktop) {
-      display: block; // 3
+      display: block; /* 3 */
     }
   }
+
+
+  /* 4 */
 
   @include breakpoint($beta) {
     max-width: 320px;
   }
+
+
+  /* 5 */
 
   .search__container {
     width: 100%;
@@ -153,16 +163,16 @@
 
   .search_button {
     @include reset;
-    -webkit-appearance: none;
     display: block;
+    width: 100%;
+    height: $scopebar-size;
+    border-radius: 0;
+    padding: $spacing-tiny;
+    padding-right: $scopebar-size;
     background: $scopebar-search-background;
     color: $scopebar-search-color;
-    padding: $spacing-tiny;
-    height: $scopebar-size;
-    padding-right: $scopebar-size;
-    border-radius: 0;
-    width: 100%;
     box-shadow: none;
+    -webkit-appearance: none;
 
     @include breakpoint($beta) {
       border-left: 1px solid $scopebar-border;
@@ -182,21 +192,21 @@
 
 /**
  * Search toggle button
- * --------------------
+ *
  * 1. Hide when search is visible
  */
 
 .toggle-search {
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  float: right;
   display: none;
+  float: right;
+  overflow: hidden;
   width: 33px;
   height: 0;
+  margin: 0;
+  border: none;
+  padding: 0;
   padding-top: 33px;
-  overflow: hidden;
+  background: transparent;
 
   .k-icon-magnifying-glass {
     font-size: 16px;
@@ -207,7 +217,7 @@
     display: block;
 
     @include breakpoint($beta) {
-      display: none; // 1
+      display: none; /* 1 */
     }
   }
 }
