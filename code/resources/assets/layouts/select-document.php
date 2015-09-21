@@ -81,7 +81,7 @@
                     <!-- upload -->
                     <div class="k-upload">
                         <div class="k-upload__drop">
-                            Drop files here <small style="font-size: 14px;padding-left: 5px;">(max 10MB)</small>
+                            Drop files here <small>(max 10MB)</small>
                         </div>
                         <div class="k-upload__buttons">
                             <button class="btn btn-sm btn-primary">Select</button>
