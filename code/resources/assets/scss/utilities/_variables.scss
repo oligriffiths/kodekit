@@ -410,6 +410,14 @@ $upload-drop-color:         #595959 !default;
 $upload-buttons-spacing:    10px !default;
 
 
+// Filter container
+// ==========================================================================
+
+$filter-container-spacing:            $spacing-tiny !default;
+$filter-container-background:         $color-primary !default;
+$filter-container-border:             darker($filter-container-background) !default;
+
+
 // Radio toggle
 // ==========================================================================
 //

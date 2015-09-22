@@ -1,0 +1,83 @@
+/* ==========================================================================
+   Upload
+   ========================================================================== */
+
+/**
+<!-- filter container -->
+<div class="k-filter-container">
+    <div class="k-filter-container__item">
+    </div>
+</div><!-- .k-filter-container -->
+*/
+
+.k-filter-container {
+  @include border(bottom, $filter-container-border);
+  display: table;
+  width: 100%;
+  padding: $filter-container-spacing;
+  background: $filter-container-background;
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    display: flex;
+    flex-direction: row;
+    flex: 0 0 auto;
+  }
+}
+
+
+/* The items */
+
+.k-filter-container__item {
+  display: table;
+  width: 100%;
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    display: flex;
+    align-items: center;
+  }
+
+}
+
+
+/* Cells within items */
+
+.k-filter-container__item__cell {
+  display: table-cell;
+  vertical-align: middle;
+  padding-left: $filter-container-spacing;
+
+
+  /* When flexbox is in use */
+
+  @include flexbox {
+    flex: 1 1 auto;
+  }
+
+
+  /* No left padding on first items */
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+
+  /* No margins for labels */
+
+  label {
+    margin: 0;
+  }
+}
+
+
+/*  */
+
+.k-filter-container__item__cell--fixed {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}

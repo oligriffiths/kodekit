@@ -123,3 +123,11 @@
     display: block;
   }
 }
+
+
+/* Sidebar contents */
+
+.k-sidebar__header {
+  padding: $spacing-small $spacing-small 0;
+  font-weight: $bold;
+}
