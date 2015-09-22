@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="../../css/admin-joomla.css">
     <script src="/media/jui/js/jquery.min.js"></script>
     <script src="../../js/modernizr.js"></script>
-    <script src="../../js/scripts.js"></script>
+    <script src="../../js/admin.js"></script>
 </head>
 <body class="component">
 
