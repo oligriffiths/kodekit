@@ -98,7 +98,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['koowa']))
         {
             $html .= $this->jquery();
-            $html .= '<ktml:script src="assets://js/modernizr.js" />';
+            $html .= '<ktml:script src="assets://js/min/modernizr.js" />';
             $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'koowa.js" />';
             $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
 
