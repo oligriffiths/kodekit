@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             },
             build: {
                 files: {
-                    '<%= assetsPath %>/js/admin.js': [
+                    '<%= assetsPath %>/js/min/admin.js': [
                         'bower_components/select2/dist/js/select2.full.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
@@ -64,11 +64,35 @@ module.exports = function(grunt) {
                         '<%= assetsPath %>/scripts/off-canvas-menu.js',
                         '<%= assetsPath %>/scripts/main.js'
                     ],
-                    '<%= assetsPath %>/js/modernizr.js': [
+                    '<%= assetsPath %>/js/min/modernizr.js': [
                         'bower_components/modernizr/modernizr.js'
                     ],
-                    '<%= assetsPath %>/js/koowa.min.js': [
+                    '<%= assetsPath %>/js/min/koowa.js': [
                         '<%= assetsPath %>/js/koowa.js'
+                    ],
+                    '<%= assetsPath %>/js/min/bootstrap.js': [
+                        '<%= assetsPath %>/js/bootstrap.js'
+                    ],
+                    '<%= assetsPath %>/js/min/datepicker.js': [
+                        '<%= assetsPath %>/js/datepicker.js'
+                    ],
+                    '<%= assetsPath %>/js/min/jqtree.js': [
+                        '<%= assetsPath %>/js/jqtree.js'
+                    ],
+                    '<%= assetsPath %>/js/min/jquery.js': [
+                        '<%= assetsPath %>/js/jquery.js'
+                    ],
+                    '<%= assetsPath %>/js/min/jquery.magnific-popup.js': [
+                        '<%= assetsPath %>/js/jquery.magnific-popup.js'
+                    ],
+                    '<%= assetsPath %>/js/min/jquery.validate.js': [
+                        '<%= assetsPath %>/js/jquery.validate.js'
+                    ],
+                    '<%= assetsPath %>/js/min/koowa.tree.js': [
+                        '<%= assetsPath %>/js/koowa.tree.js'
+                    ],
+                    '<%= assetsPath %>/js/min/select2.js': [
+                        '<%= assetsPath %>/js/select2.js'
                     ]
                 }
             }

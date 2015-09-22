@@ -62,7 +62,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         }
 
         if ($config->domain === 'admin') {
-            $html .= '<ktml:script src="assets://js/admin.js" />';
+            $html .= '<ktml:script src="assets://js/min/admin.js" />';
         } else {
             // @todo temporary until we have site.css and module.css ready
             $config->bootstrap->css = true;
@@ -99,7 +99,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         {
             $html .= $this->jquery();
             $html .= '<ktml:script src="assets://js/modernizr.js" />';
-            $html .= '<ktml:script src="assets://js/koowa'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'koowa.js" />';
             $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
 
             self::$_loaded['koowa'] = true;
@@ -129,7 +129,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
 
         if (!isset(self::$_loaded['jquery']))
         {
-            $html .= '<ktml:script src="assets://js/jquery'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'jquery.js" />';
 
             self::$_loaded['jquery'] = true;
         }
@@ -157,7 +157,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if ($config->javascript && !isset(self::$_loaded['bootstrap-javascript']))
         {
             $html .= $this->jquery($config);
-            $html .= '<ktml:script src="assets://js/bootstrap'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'bootstrap.js" />';
 
             self::$_loaded['bootstrap-javascript'] = true;
         }
@@ -193,7 +193,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if(!isset(self::$_loaded['modal']))
         {
             $html .= $this->jquery();
-            $html .= '<ktml:script src="assets://js/jquery.magnific-popup'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'jquery.magnific-popup.js" />';
 
             self::$_loaded['modal'] = true;
         }
@@ -314,7 +314,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             $html .= $this->jquery();
             $html .= $this->koowa();
 
-            $html .= '<ktml:script src="assets://js/jquery.validate'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'jquery.validate.js" />';
             $html .= '<ktml:script src="assets://js/patch.validator.js" />';
 
             self::$_loaded['validator'] = true;
@@ -366,7 +366,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['select2']))
         {
             $html .= $this->jquery();
-            $html .= '<ktml:script src="assets://js/select2'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'select2.js" />';
             $html .= '<ktml:script src="assets://js/koowa.select2.js" />';
 
             self::$_loaded['select2'] = true;
@@ -479,8 +479,8 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['tree']))
         {
             $html .= $this->koowa();
-            $html .= '<ktml:script src="assets://js/jqtree'.($config->debug ? '' : '.min').'.js" />';
-            $html .= '<ktml:script src="assets://js/koowa.tree'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'jqtree.js" />';
+            $html .= '<ktml:script src="assets://js/koowa.tree.js" />';
 
             self::$_loaded['tree'] = true;
         }
@@ -728,7 +728,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
 
         if (!isset(self::$_loaded['calendar']))
         {
-            $html .= '<ktml:script src="assets://js/datepicker'.($config->debug ? '' : '.min').'.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'datepicker.js" />';
             $html .= '<ktml:script src="assets://js/koowa.datepicker.js" />';
 
             $locale = array(
