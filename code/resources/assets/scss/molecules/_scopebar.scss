@@ -6,11 +6,11 @@
 <!-- Scopebar -->
 <div class="k-scopebar">
 
-    <!-- Filter title -->
-    <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
-
     <!-- Filters -->
-    <div class="k-scopebar__item k-scopebar__item--fluid">
+    <div class="k-scopebar__item--fluid">
+
+        <!-- Filter title -->
+        <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
 
         <!-- Filter -->
         <div class="select2--link-style select2--filter">
@@ -100,11 +100,12 @@
 
 .k-scopebar__item--title {
   width: auto;
-  padding: 0 0 0 1em;
+  padding: 0 .5em 0 1em;
   font-weight: bold;
   vertical-align: middle;
   font-size: 12px;
   line-height: 32px;
+  display: inline-block;
 }
 
 
