@@ -55,7 +55,7 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     '<%= assetsPath %>/js/min/admin.js': [
-                        'bower_components/select2/dist/js/select2.full.min.js',
+                        //'bower_components/select2/dist/js/select2.full.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
                         'bower_components/floatThead/dist/jquery.floatThead.min.js',
@@ -67,17 +67,8 @@ module.exports = function(grunt) {
                     '<%= assetsPath %>/js/min/modernizr.js': [
                         'bower_components/modernizr/modernizr.js'
                     ],
-                    '<%= assetsPath %>/js/min/koowa.js': [
-                        '<%= assetsPath %>/js/koowa.js'
-                    ],
                     '<%= assetsPath %>/js/min/bootstrap.js': [
                         '<%= assetsPath %>/js/bootstrap.js'
-                    ],
-                    '<%= assetsPath %>/js/min/datepicker.js': [
-                        '<%= assetsPath %>/js/datepicker.js'
-                    ],
-                    '<%= assetsPath %>/js/min/jqtree.js': [
-                        '<%= assetsPath %>/js/jqtree.js'
                     ],
                     '<%= assetsPath %>/js/min/jquery.js': [
                         '<%= assetsPath %>/js/jquery.js'
@@ -86,13 +77,23 @@ module.exports = function(grunt) {
                         '<%= assetsPath %>/js/jquery.magnific-popup.js'
                     ],
                     '<%= assetsPath %>/js/min/jquery.validate.js': [
-                        '<%= assetsPath %>/js/jquery.validate.js'
+                        '<%= assetsPath %>/js/jquery.validate.js',
+                        '<%= assetsPath %>/js/jquery.validate.patch.js'
+                    ],
+                    '<%= assetsPath %>/js/min/koowa.js': [
+                        '<%= assetsPath %>/js/koowa.js'
+                    ],
+                    '<%= assetsPath %>/js/min/koowa.datepicker.js': [
+                        '<%= assetsPath %>/js/datepicker.js',
+                        '<%= assetsPath %>/js/koowa.datepicker.js'
+                    ],
+                    '<%= assetsPath %>/js/min/koowa.select2.js': [
+                        '<%= assetsPath %>/js/select2.js',
+                        '<%= assetsPath %>/js/koowa.select2.js'
                     ],
                     '<%= assetsPath %>/js/min/koowa.tree.js': [
+                        '<%= assetsPath %>/js/jqtree.js',
                         '<%= assetsPath %>/js/koowa.tree.js'
-                    ],
-                    '<%= assetsPath %>/js/min/select2.js': [
-                        '<%= assetsPath %>/js/select2.js'
                     ]
                 }
             }
