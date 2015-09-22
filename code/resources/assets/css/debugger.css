@@ -1,10 +1,8 @@
 @charset "UTF-8";
 /** Debugger ======== A flat colored debugger */
 /** Global tools ------------ 1. Variables 2. Code highlighter styling 3. The dumper styles */
-/** Debugger variables ------------------ */
-/*
-Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
-*/
+/* ========================================================================== Solarized ========================================================================== */
+/** Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com> */
 .hljs { display: block; overflow-x: auto; padding: 0.5em; background: #002b36; color: #839496; }
 
 .hljs-comment, .hljs-template_comment, .diff .hljs-header, .hljs-doctype, .hljs-pi, .lisp .hljs-string, .hljs-javadoc { color: #586e75; }
@@ -32,7 +30,6 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 .tex .hljs-formula { background: #073642; }
 
-/** Debugger variables ------------------ */
 /** Orginal Style from http://tracy.nette.org (c) 2004 David Grudl <http://davidgrudl.com> */
 /* toggle */
 .koowa-collapsed { display: none; }
