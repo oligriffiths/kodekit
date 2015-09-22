@@ -49,7 +49,8 @@ module.exports = function(grunt) {
         // Uglify
         uglify: {
             options: {
-                soureMap: true
+                sourceMap: true,
+                preserveComments: 'some' // preserve @license tags
             },
             build: {
                 files: {
@@ -65,6 +66,9 @@ module.exports = function(grunt) {
                     ],
                     '<%= assetsPath %>/js/modernizr.js': [
                         'bower_components/modernizr/modernizr.js'
+                    ],
+                    '<%= assetsPath %>/js/koowa.min.js': [
+                        '<%= assetsPath %>/js/koowa.js'
                     ]
                 }
             }
