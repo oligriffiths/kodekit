@@ -11,12 +11,9 @@
 */
 
 .k-filter-container {
-  @include border(bottom, $filter-container-border);
   display: table;
   width: 100%;
-  padding: $filter-container-spacing;
   background: $filter-container-background;
-
 
   /* When flexbox is in use */
 
@@ -31,15 +28,31 @@
 /* The items */
 
 .k-filter-container__item {
-  display: table;
+  @include border(bottom, $filter-container-border);
   width: 100%;
+  padding: $filter-container-spacing;
+  display: table;
 
 
-  /* When flexbox is in use */
+  /* Hide items when JS is enabled */
 
-  @include flexbox {
-    display: flex;
-    align-items: center;
+  @include js-enabled {
+    display: none;
+  }
+
+
+  /* Show items when they have a visible class */
+
+  &.js-is-visible {
+    display: table;
+
+
+    /* When flexbox is in use */
+
+    @include flexbox {
+      display: flex;
+      align-items: center;
+    }
   }
 
 }
