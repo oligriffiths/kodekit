@@ -21,8 +21,6 @@
 
     $.fn.koowaDatepicker = function (options) {
 
-        if(!$.fn.koowaDatepicker.container) $.fn.koowaDatepicker.container = $('<div class="koowa"></div>').appendTo('body');
-
         var settings = {
                 parentEl: $.fn.koowaDatepicker.container
             };

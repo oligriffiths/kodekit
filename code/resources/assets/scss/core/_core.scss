@@ -10,10 +10,11 @@
 /* 3rd party
    ========================================================================== */
 
-@import "../../../../../bower_components/select2/src/scss/core"; /* 1 */
-@import "../../../../../bower_components/magnific-popup/src/css/main"; /* 2 */
-@import "../molecules/modal"; /* 3 */
-@import "../molecules/select2"; /* 3 */
+@import "../../../../../bower_components/select2/src/scss/core";
+@import "../../../../../bower_components/magnific-popup/src/css/main";
+@import "../molecules/modal";
+@import "../molecules/select2";
+@import "../molecules/datepicker";
 
 
 /* Setup html, body and .koowa
@@ -70,7 +71,6 @@
   @import "../molecules/component";
   @import "../molecules/content";
   @import "../molecules/content-wrapper";
-  @import "../molecules/datepicker";
   @import "../molecules/filter-container";
   @import "../molecules/form-block";
   @import "../molecules/grid";
