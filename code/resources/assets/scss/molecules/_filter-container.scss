@@ -17,7 +17,7 @@
 
   /* When flexbox is in use */
 
-  @include flexbox {
+  @include flexbox($horizontal: $charlie) {
     display: flex;
     flex-direction: row;
     flex: 0 0 auto;
@@ -31,7 +31,7 @@
   @include border(bottom, $filter-container-border);
   width: 100%;
   padding: $filter-container-spacing;
-  display: table;
+  display: block;
 
 
   /* Hide items when JS is enabled */
@@ -44,12 +44,12 @@
   /* Show items when they have a visible class */
 
   &.js-is-visible {
-    display: table;
+    display: block;
 
 
     /* When flexbox is in use */
 
-    @include flexbox {
+    @include flexbox($horizontal: $charlie) {
       display: flex;
       align-items: center;
     }
@@ -61,16 +61,29 @@
 /* Cells within items */
 
 .k-filter-container__item__cell {
-  display: table-cell;
+  display: inline-block;
   vertical-align: middle;
-  padding-left: $filter-container-spacing;
-  max-width: 220px;
+  max-width: 100%;
+  margin-bottom: $filter-container-spacing;
 
+
+  @include breakpoint($alpha) {
+    width: 190px;
+  }
+
+
+  @include breakpoint($beta) {
+    width: 230px;
+  }
 
   /* When flexbox is in use */
 
-  @include flexbox {
+  @include flexbox($horizontal: $charlie) {
     flex: 0 1 auto;
+    padding-left: $filter-container-spacing;
+    margin-bottom: 0;
+    width: auto;
+    max-width: 230px;
   }
 
 
@@ -78,6 +91,10 @@
 
   &:first-child {
     padding-left: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 
 
@@ -94,4 +111,9 @@
 .k-filter-container__item__cell--fixed {
   flex: 0 0 auto;
   white-space: nowrap;
+  width: 100%;
+
+  @include flexbox($horizontal: $charlie) {
+    width: auto;
+  }
 }
