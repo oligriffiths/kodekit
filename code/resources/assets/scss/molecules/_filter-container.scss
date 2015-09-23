@@ -11,6 +11,7 @@
 */
 
 .k-filter-container {
+  position: relative;
   display: table;
   width: 100%;
   background: $filter-container-background;
@@ -106,7 +107,7 @@
 }
 
 
-/*  */
+/* Fixed items */
 
 .k-filter-container__item__cell--fixed {
   flex: 0 0 auto;
@@ -115,5 +116,29 @@
 
   @include flexbox($horizontal: $charlie) {
     width: auto;
+  }
+}
+
+
+/* The close button */
+
+.k-filter-container__close {
+  position: absolute;
+  top: 50%;
+  right: $filter-container-spacing;
+  border: none;
+  display: block;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  line-height: 32px;
+  vertical-align: middle;
+  background: transparent;
+  margin-top: -16px;
+  
+  &:focus,
+  &:hover {
+    color: black;
   }
 }
