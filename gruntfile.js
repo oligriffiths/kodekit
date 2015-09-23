@@ -45,6 +45,42 @@ module.exports = function(grunt) {
             }
         },
 
+        concat: {
+            js: {
+                files: {
+                    '<%= assetsPath %>/js/build/jquery.js': [
+                        'bower_components/jquery/dist/jquery.js',
+                        '<%= assetsPath %>/js/koowa.kquery2.js'
+                    ],
+                    '<%= assetsPath %>/js/build/jquery.magnific-popup.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= assetsPath %>/js/build/jquery.validate.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/jquery-validation/dist/jquery.validate.js',
+                        '<%= assetsPath %>/js/jquery.validate.patch.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= assetsPath %>/js/build/koowa.select2.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/select2/dist/js/select2.full.js',
+                        '<%= assetsPath %>/js/koowa.select2.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= assetsPath %>/js/build/koowa.tree.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/jqtree/tree.jquery.js',
+                        '<%= assetsPath %>/js/koowa.tree.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= assetsPath %>/js/build/modernizr.js': [
+                        'bower_components/modernizr/modernizr.js'
+                    ]
+                }
+            }
+        },
 
         // Uglify
         uglify: {
@@ -55,6 +91,7 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     '<%= assetsPath %>/js/min/admin.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
                         'bower_components/select2/dist/js/select2.full.min.js',
                         'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
                         'bower_components/footable/dist/footable.min.js',
@@ -62,23 +99,26 @@ module.exports = function(grunt) {
                         '<%= assetsPath %>/scripts/overflowing.js',
                         '<%= assetsPath %>/scripts/tabbable.js',
                         '<%= assetsPath %>/scripts/off-canvas-menu.js',
-                        '<%= assetsPath %>/scripts/main.js'
-                    ],
-                    '<%= assetsPath %>/js/min/modernizr.js': [
-                        'bower_components/modernizr/modernizr.js'
+                        '<%= assetsPath %>/scripts/main.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
                     ],
                     '<%= assetsPath %>/js/min/bootstrap.js': [
                         '<%= assetsPath %>/js/bootstrap.js'
                     ],
                     '<%= assetsPath %>/js/min/jquery.js': [
-                        '<%= assetsPath %>/js/jquery.js'
+                        'bower_components/jquery/dist/jquery.js',
+                        '<%= assetsPath %>/js/koowa.kquery2.js'
                     ],
                     '<%= assetsPath %>/js/min/jquery.magnific-popup.js': [
-                        '<%= assetsPath %>/js/jquery.magnific-popup.js'
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/magnific-popup/dist/jquery.magnific-popup.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
                     ],
                     '<%= assetsPath %>/js/min/jquery.validate.js': [
-                        '<%= assetsPath %>/js/jquery.validate.js',
-                        '<%= assetsPath %>/js/jquery.validate.patch.js'
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/jquery-validation/dist/jquery.validate.js',
+                        '<%= assetsPath %>/js/jquery.validate.patch.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
                     ],
                     '<%= assetsPath %>/js/min/koowa.js': [
                         '<%= assetsPath %>/js/koowa.js'
@@ -92,8 +132,13 @@ module.exports = function(grunt) {
                         '<%= assetsPath %>/js/koowa.select2.js'
                     ],
                     '<%= assetsPath %>/js/min/koowa.tree.js': [
-                        '<%= assetsPath %>/js/jqtree.js',
-                        '<%= assetsPath %>/js/koowa.tree.js'
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/jqtree/tree.jquery.js',
+                        '<%= assetsPath %>/js/koowa.tree.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= assetsPath %>/js/min/modernizr.js': [
+                        'bower_components/modernizr/modernizr.js'
                     ]
                 }
             }

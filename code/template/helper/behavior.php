@@ -68,8 +68,10 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             $config->bootstrap->css = true;
         }
 
-        $html .= $this->bootstrap($config->bootstrap);
+        $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'modernizr.js" />';
         $html .= $this->koowa($config);
+        $html .= $this->bootstrap($config->bootstrap);
+        $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
 
         if ($config->wrapper)
         {
@@ -98,9 +100,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['koowa']))
         {
             $html .= $this->jquery();
-            $html .= '<ktml:script src="assets://js/min/modernizr.js" />';
             $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'koowa.js" />';
-            $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
 
             self::$_loaded['koowa'] = true;
         }
@@ -129,7 +129,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
 
         if (!isset(self::$_loaded['jquery']))
         {
-            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'jquery.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'jquery.js" />';
 
             self::$_loaded['jquery'] = true;
         }
@@ -193,7 +193,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if(!isset(self::$_loaded['modal']))
         {
             $html .= $this->jquery();
-            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'jquery.magnific-popup.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'jquery.magnific-popup.js" />';
 
             self::$_loaded['modal'] = true;
         }
@@ -311,14 +311,8 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
 
         if(!isset(self::$_loaded['validator']))
         {
-            $html .= $this->jquery();
             $html .= $this->koowa();
-
-            if ($config->debug) {
-                $html .= '<ktml:script src="assets://js/jquery.validate.js" />';
-                $html .= '<ktml:script src="assets://js/jquery.validate.patch.js" />';
-            }
-            else $html .= '<ktml:script src="assets://js/min/jquery.validate.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'jquery.validate.js" />';
 
             self::$_loaded['validator'] = true;
         }
@@ -369,13 +363,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['select2']))
         {
             $html .= $this->jquery();
-
-            if ($config->debug) {
-                $html .= '<ktml:script src="assets://js/select2.js" />';
-                $html .= '<ktml:script src="assets://js/koowa.select2.js" />';
-            }
-            else $html .= '<ktml:script src="assets://js/min/koowa.select2.js" />';
-
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'koowa.select2.js" />';
 
             self::$_loaded['select2'] = true;
         }
@@ -487,12 +475,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['tree']))
         {
             $html .= $this->koowa();
-
-            if ($config->debug) {
-                $html .= '<ktml:script src="assets://js/jqtree.js" />';
-                $html .= '<ktml:script src="assets://js/koowa.tree.js" />';
-            }
-            else $html .= '<ktml:script src="assets://js/min/koowa.tree.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'koowa.tree.js" />';
 
             self::$_loaded['tree'] = true;
         }
