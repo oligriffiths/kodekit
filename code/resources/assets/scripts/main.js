@@ -6,7 +6,7 @@
         var $wrapper = $('.k-overview'),
             $sidebar = $('#k-sidebar'),
             $sidebarright = $('#k-sidebar-right'),
-            $sidebaritem = $('.k-sidebar__item'),
+            $sidebaritem = $('.k-sidebar__item--overflow'),
             $content = $('.k-content'),
             $togglebutton = $('#k-toggle-button'),
             $togglebuttonright = $('#k-toggle-button-right'),

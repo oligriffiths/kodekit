@@ -156,6 +156,8 @@
     th {
       height: auto;
       padding: ($table-cell-spacing * .66) $table-cell-spacing;
+      font-size: .875em;
+      text-transform: uppercase;
     }
   }
 }

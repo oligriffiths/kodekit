@@ -130,11 +130,24 @@
 .k-sidebar__header {
   padding: $spacing-small $spacing-small 0;
   font-weight: $bold;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 
 
 .k-sidebar__item {
   @include flexbox {
-    flex: 0 0 auto;
+    flex: 1 0 auto;
+  }
+
+  & + & {
+    margin-top: $spacing;
+  }
+}
+
+.overflowing--flex {
+  @include flexbox {
+    flex: 0 1 auto;
+    overflow: auto;
   }
 }

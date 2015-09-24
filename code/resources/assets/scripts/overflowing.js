@@ -27,7 +27,11 @@
             // Overflowing?
             function overflowing() {
 
+                console.log(element,element.clientWidth, element.scrollWidth, element.clientHeight, element.scrollHeight);
+
                 if (element.clientWidth != element.scrollWidth || element.clientHeight != element.scrollHeight) {
+
+                    console.log('whoop');
 
                     // Add top overflowing div
                     if (element.scrollTop != 0 && element.scrollTop != 0 && !$('.overflowing--top').length) {
