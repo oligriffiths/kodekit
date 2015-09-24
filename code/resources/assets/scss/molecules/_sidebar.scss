@@ -131,3 +131,10 @@
   padding: $spacing-small $spacing-small 0;
   font-weight: $bold;
 }
+
+
+.k-sidebar__item {
+  @include flexbox {
+    flex: 0 0 auto;
+  }
+}
