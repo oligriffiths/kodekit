@@ -148,6 +148,16 @@
       }
     }
   }
+
+
+  /* Sub headings */
+
+  .k-table__sub-header {
+    th {
+      height: auto;
+      padding: ($table-cell-spacing * .66) $table-cell-spacing;
+    }
+  }
 }
 
 
