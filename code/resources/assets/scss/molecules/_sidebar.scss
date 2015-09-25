@@ -125,15 +125,10 @@
 }
 
 
-/* Sidebar contents */
+/* Sidebar contents
+   ========================================================================== */
 
-.k-sidebar__header {
-  padding: $spacing-small $spacing-small 0;
-  font-weight: $bold;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
+/* Sidebar item */
 
 .k-sidebar__item {
   @include flexbox {
@@ -145,9 +140,27 @@
   }
 }
 
-.overflowing--flex {
+
+/* Sidebar header */
+
+.k-sidebar__header {
+  padding: $spacing-small $spacing-small 0;
+  font-weight: $bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+
+/**
+ * Overflowing items
+ *
+ * 1. Set container to overflow it's items
+ */
+
+.k-sidebar__item--overflow {
+  overflow: auto; /* 1 */
+
   @include flexbox {
-    flex: 0 1 auto;
-    overflow: auto;
+    flex: 1 1 auto;
   }
 }
