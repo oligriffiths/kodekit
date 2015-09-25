@@ -19,6 +19,10 @@
 //    change together when going from small to larger screen.
 // 4. Wether or not to Use flexbox in layouts
 // 5. Separate $flexbox variables are being used
+//    - 300px so flexbox will be active on 320px wide screens
+//    - 460px so flexbox will be active on 480px tall screens
+//      - 25-09-2015 http://mydevice.io/devices/
+//        The only phone at the time to have flexbox in landscape mode is the Blackberry passport
 
 $alpha:               400px !default;
 $beta:                600px !default;
@@ -31,7 +35,7 @@ $desktop:             $charlie !default; // 3
 
 $flexbox:             true !default; // 4
 $flexbox-horizontal:  300px !default; // 5
-$flexbox-vertical:    400px !default; // 5
+$flexbox-vertical:    460px !default; // 5
 
 
 // Function variables
