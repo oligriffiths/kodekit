@@ -350,7 +350,7 @@ Koowa.Controller = Koowa.Class.extend({
      */
     getOptions: function() {
         return $.extend(this.supr(), {
-            toolbar: '.koowa-toolbar',
+            toolbar: '.k-toolbar',
             url: window.location.href
         });
     },
