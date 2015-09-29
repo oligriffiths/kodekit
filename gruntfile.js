@@ -51,6 +51,11 @@ module.exports = function(grunt) {
             dist: {
                 "cache": true,
                 "dest": "code/resources/assets/js/build/modernizr.js",
+                "options": [
+                    "html5shiv",
+                    "setClasses"
+                ],
+                "uglify": false,
                 "tests": [
                     "touchevents",
                     "css/appearance",
@@ -61,12 +66,8 @@ module.exports = function(grunt) {
                     "css/flexwrap",
                     "css/pointerevents"
                 ],
-                "options": [
-                    "html5shiv",
-                    "setClasses"
-                ],
-                "uglify": false,
-                "crawl" : false
+                "crawl" : false,
+                "customTests" : []
             }
         },
 
