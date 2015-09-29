@@ -45,6 +45,34 @@ module.exports = function(grunt) {
             }
         },
 
+
+        // Modernizr
+        modernizr: {
+            dist: {
+                "cache": true,
+                "dest": "code/resources/assets/js/build/modernizr.js",
+                "tests": [
+                    "touchevents",
+                    "css/appearance",
+                    "css/checked",
+                    "css/flexbox",
+                    "css/flexboxlegacy",
+                    "css/flexboxtweener",
+                    "css/flexwrap",
+                    "css/pointerevents"
+                ],
+                "options": [
+                    "html5shiv",
+                    "setClasses"
+                ],
+                "uglify": false,
+                "crawl" : false
+            }
+        },
+
+
+        // Concatenate files
+
         concat: {
             js: {
                 files: {
@@ -74,9 +102,6 @@ module.exports = function(grunt) {
                         'bower_components/jqtree/tree.jquery.js',
                         '<%= assetsPath %>/js/koowa.tree.js',
                         '<%= assetsPath %>/js/kquery.unset.js'
-                    ],
-                    '<%= assetsPath %>/js/build/modernizr.js': [
-                        'bower_components/modernizr/modernizr.js'
                     ]
                 }
             }
@@ -138,7 +163,7 @@ module.exports = function(grunt) {
                         '<%= assetsPath %>/js/kquery.unset.js'
                     ],
                     '<%= assetsPath %>/js/min/modernizr.js': [
-                        'bower_components/modernizr/modernizr.js'
+                        '<%= assetsPath %>/js/build/modernizr.js'
                     ]
                 }
             }
@@ -198,7 +223,7 @@ module.exports = function(grunt) {
                 tasks: ['uglify'],
                 options: {
                     interrupt: true,
-                    atBegin: false
+                    atBegin: true
                 }
             }
         }
@@ -207,6 +232,6 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['shell', 'watch']);
+    grunt.registerTask('default', ['shell', 'modernizr', 'watch']);
 
 };
