@@ -104,7 +104,7 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         }
 
         //Create the id
-        $id = 'toolbar-'.$command->id;
+        $command->attribs->id = 'toolbar-'.$command->id;
 
         $command->attribs->class->append(array('btn', 'btn-default', 'btn-sm', 'k-btn-'.$command->id));
 
