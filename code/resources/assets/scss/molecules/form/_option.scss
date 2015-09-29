@@ -10,7 +10,8 @@ input[type="checkbox"],
 input[type="radio"] {
 
   /**
-   * 1. Resetting the default styling used by browsers
+   * 1. Resetting the default styling used by browsers. Don't do this for -moz-
+        because the checkbox and radio box will look very ugly
    * 2. Positioning relative to position psuedo before element nicely
    * 3. Vertically positioning next to text
    * 4. Aligning vertically next to labels
@@ -18,6 +19,7 @@ input[type="radio"] {
    */
 
   -webkit-appearance: none; /* 1 */
+  /* -moz-appearance: none; /* 1 */
   position: relative; /* 2 */
   height: $form-option-size;
   width: $form-option-size;
@@ -29,7 +31,7 @@ input[type="radio"] {
   vertical-align: middle;
   cursor: pointer; /* 5 */
   box-shadow: $form-option-shadow;
-  transition: $transition;
+  transition: background $transition-duration $transition-easing;
 
 
   /* Hover to indicate element is clickable */
