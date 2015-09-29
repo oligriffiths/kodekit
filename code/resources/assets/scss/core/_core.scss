@@ -67,6 +67,10 @@
 
   /* Molecules */
 
+  @import "../molecules/form/option";
+  @import "../molecules/form/checkbox";
+  @import "../molecules/form/radio";
+
   @import "../molecules/booleanlist";
   @import "../molecules/breadcrumb";
   @import "../molecules/checkbox-toggle";
