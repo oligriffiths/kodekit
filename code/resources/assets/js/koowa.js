@@ -520,6 +520,7 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
 
         this.setTableHeaders();
         this.setTableRows();
+        this.setFilters();
 
         // <select> elements in headers and footers are for filters, so they need to submit the form on change
         this.form.find('thead select, tfoot select, .k-pagination select').on('change.koowa', function(){
@@ -535,6 +536,38 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
             self.form.submit();
         });
 
+    },
+
+    setFilters: function() {
+        var toggles = this.form.find('[data-filter-toggle]'),
+            filters = this.form.find('[data-filter]');
+
+        this.form.on('click.koowa', '[data-filter-toggle]', function(event) {
+            event.preventDefault();
+
+            var toggle = $(event.target),
+                name   = toggle.attr('data-filter-toggle'),
+                filter = filters.filter('[data-filter="'+name+'"]'),
+                is_visible = filter.is(':visible'),
+                visible_filters = filters.filter(':visible');
+
+            if (is_visible) {
+                visible_filters.slideToggle();
+            }
+            else {
+                if (visible_filters.length) {
+                    filters.hide(0, function() {
+                        filter.show(0);
+                    });
+                }
+                else {
+                    filter.slideDown();
+                }
+            }
+
+            toggle.parents('ul').find('li').removeClass('js-is-active');
+            toggle.parent('li').addClass('js-is-active');
+        });
     },
 
     setTableHeaders: function() {
