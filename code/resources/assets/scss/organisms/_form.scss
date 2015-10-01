@@ -39,7 +39,7 @@
    * 1. Set a max-width for the toolbar so it's just as big as the container below
    */
 
-  .koowa-toolbar {
+  .k-toolbar {
     max-width: $maxwidth; /* 1 */
     margin: 0 auto;
     padding: 0 ($spacing / 2);
