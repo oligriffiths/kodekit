@@ -79,11 +79,12 @@
   }
 
   .k-scopebar__item {
-    display: table-cell;
+    display: block;
     flex: 0 0 auto;
   }
 
   .k-scopebar__search {
+    display: block;
     flex: 0 1 auto;
   }
 
