@@ -551,10 +551,14 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
                 is_visible = filter.is(':visible'),
                 visible_filters = filters.filter(':visible');
 
+            toggle.parents('ul').find('li').removeClass('js-is-active');
+
             if (is_visible) {
                 visible_filters.slideToggle();
             }
             else {
+                toggle.parent('li').addClass('js-is-active');
+
                 if (visible_filters.length) {
                     filters.hide(0, function() {
                         filter.show(0);
@@ -564,9 +568,6 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
                     filter.slideDown();
                 }
             }
-
-            toggle.parents('ul').find('li').removeClass('js-is-active');
-            toggle.parent('li').addClass('js-is-active');
         });
     },
 

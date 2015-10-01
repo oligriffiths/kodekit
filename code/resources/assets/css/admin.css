@@ -2263,7 +2263,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-form .k-component { background: #eeeeee; }
 
-.koowa .k-form .koowa-toolbar { max-width: 1024px; /* 1 */ margin: 0 auto; padding: 0 10px; }
+.koowa .k-form .k-toolbar { max-width: 1024px; /* 1 */ margin: 0 auto; padding: 0 10px; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-form, .k-flexboxlegacy .koowa .k-form { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
 
