@@ -11,15 +11,17 @@
  * 5. Set the color of the check icon
  */
 
+@include modernizr('.k-appearance.k-checked') {
+  input[type="checkbox"] {
+    border-radius: 0; /* 1 */
 
-input[type="checkbox"] {
-  border-radius: 0; /* 1 */
-
-  @include icon-before(check, true) { /* 2 */
-    width: $form-option-size - ($form-option-border-size * 2); /* 3 */
-    height: $form-option-size - ($form-option-border-size * 2); /* 3 */
-    line-height: $form-option-size - ($form-option-border-size * 2); /* 3 */
-    font-size: $form-option-size - ($form-option-border-size * 4); /* 4 */
-    color: $color-accent; /* 5 */
+    @include icon-before(check, true) {
+      /* 2 */
+      width: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      height: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      line-height: $form-option-size - ($form-option-border-size * 2); /* 3 */
+      font-size: $form-option-size - ($form-option-border-size * 4); /* 4 */
+      color: $color-accent; /* 5 */
+    }
   }
 }
