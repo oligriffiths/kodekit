@@ -180,6 +180,13 @@
       /* When it has an active filter, show it */
       &.has-active-filter {
         font-weight: bold;
+
+        @include icon-before(check, true) {
+          font-size: 10px;
+          margin-right: 5px;
+          margin-bottom: 2px;
+          vertical-align: middle;
+        }
       }
 
     }
