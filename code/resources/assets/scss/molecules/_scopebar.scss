@@ -150,18 +150,16 @@
 
     button {
       display: inline-block; /* 1 */
-      vertical-align: baseline;
-      cursor: pointer;
-      color: $color-accent; /* 10 */
-
-
-      background: transparent;
-      border-radius: 5px;
       height: $scopebar-filter-size;
-      line-height: $scopebar-filter-size;
-      padding: 0 $scopebar-filter-spacing;
       margin: $scopebar-filter-spacing 0;
       border: 1px solid transparent;
+      border-radius: 5px;
+      padding: 0 $scopebar-filter-spacing;
+      line-height: $scopebar-filter-size;
+      vertical-align: baseline;
+      cursor: pointer;
+      color: $color-accent;
+      background: transparent;
 
 
       /* A hover to show they are clickable */
