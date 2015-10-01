@@ -49,22 +49,25 @@ module.exports = function(grunt) {
         // Modernizr
         modernizr: {
             dist: {
+                // Currently the classPrefix option is not working
+                // We are using a downloaded version from the modernizr site now with the options below
+                // When downloading a new version please update below script as well until the prefix option is fixed in grunt
                 "cache": true,
-                "dest": "code/resources/assets/js/build/modernizr.js",
+                "dest": "code/resources/assets/js/build/modernizr-to-be-used.js",
+                "classPrefix": "k-",
                 "options": [
                     "html5shiv",
+                    "prefixedCSS",
                     "setClasses"
                 ],
                 "uglify": false,
                 "tests": [
-                    "touchevents",
-                    "css/appearance",
-                    "css/checked",
-                    "css/flexbox",
-                    "css/flexboxlegacy",
-                    "css/flexboxtweener",
-                    "css/flexwrap",
-                    "css/pointerevents"
+                    "appearance",
+                    "checked",
+                    "flexbox",
+                    "flexboxlegacy",
+                    "flexboxtweener",
+                    "flexwrap"
                 ],
                 "crawl" : false,
                 "customTests" : []

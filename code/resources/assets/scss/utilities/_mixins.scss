@@ -300,3 +300,15 @@
     @content;
   }
 }
+
+
+// Modernizr
+// Use: @include modernizr(.k-appearance.k-checked) { ... }
+
+@mixin modernizr($classes) {
+  @at-root {
+    #{$classes} & {
+      @content
+    }
+  }
+}
