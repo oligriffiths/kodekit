@@ -25,7 +25,7 @@ body {
 
 
 /**
- * Koowa wrapper
+ * Koowa container
  *
  * 1. By using a max-width we essentially set a min-width when the contents are
  *    to large for the koowa container. The reason we don't use min-width is
@@ -37,7 +37,7 @@ body {
  * 6. Default styling
  */
 
-.koowa {
+.koowa-container {
   position: relative; /* 4 */
   z-index: 0; /* 3 */
 

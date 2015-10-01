@@ -63,7 +63,7 @@
 
 .mfp-inline-holder .mfp-content,
 .mfp-ajax-holder .mfp-content {
-  width: 100%;
+  width: auto;
   cursor: auto;
 }
 
@@ -580,4 +580,32 @@ img.mfp-img {
       }
     }
   }
+}
+
+
+// @TODO: Added for LOGman, also refactor when working on DOCman
+
+.k-modal {
+  background: white;
+}
+
+.k-modal--inline {
+  form {
+    margin: 0;
+  }
+}
+
+.k-modal--padded {
+  padding: $spacing;
+}
+
+.k-modal--small {
+  max-width: 400px;
+  margin: auto;
+}
+
+.k-modal__title {
+  margin: 0 0 $spacing 0;
+  text-transform: uppercase;
+  font-weight: bold;
 }

@@ -42,7 +42,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             'package' => $identifier->package,
             'domain'  => $identifier->type === 'mod' ? 'module' : $identifier->domain,
             'wrapper_class' => array(
-                'koowa',
+                'koowa-container koowa',
                 $identifier->type.'_'.$identifier->package
             ),
         ))->append(array(
