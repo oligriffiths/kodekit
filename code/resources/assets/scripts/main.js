@@ -5,6 +5,7 @@
         // Variables
         var $wrapper = $('.k-overview'),
             $sidebar = $('#k-sidebar'),
+            $toolbar = $sidebar.parent().find('.k-toolbar'),
             $sidebarright = $('#k-sidebar-right'),
             $sidebaritem = $('.k-sidebar__item--overflow'),
             $content = $('.k-content'),
@@ -19,20 +20,32 @@
             $clickable = $('a, button'),
             $searchtoggle = $('.toggle-search');
 
+        var toggle_button = '<button class="off-canvas-menu-toggle" type="button">' +
+            '<span class="bar1"></span>' +
+            '<span class="bar2"></span>' +
+            '<span class="bar3"></span>' +
+            '</button>';
+
 
         // Offcanvasmenu
-        if ( $sidebar.length && $togglebutton.length && $wrapper.length && $content.length ) {
+        if ( $sidebar.length && $wrapper.length && $content.length && $toolbar.length ) {
+            var left_toggle = $(toggle_button);
+            $toolbar.prepend(left_toggle);
+
             $sidebar.offCanvasMenu({
-                menuToggle: $togglebutton,
+                menuToggle: left_toggle,
                 wrapper: $wrapper,
                 container: $content
             });
         }
 
         // Offcanvasmenu
-        if ( $sidebarright.length && $togglebuttonright.length && $wrapper.length && $content.length ) {
+        if ( $sidebarright.length && $wrapper.length && $content.length && $toolbar.length) {
+            var right_toggle = $(toggle_button);
+            $toolbar.append(right_toggle);
+
             $sidebarright.offCanvasMenu({
-                menuToggle: $togglebuttonright,
+                menuToggle: right_toggle,
                 wrapper: $wrapper,
                 container: $content,
                 position: 'right'
