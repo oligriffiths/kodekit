@@ -233,23 +233,13 @@ module.exports = function(grunt) {
                     atBegin: true
                 }
             },
-            uglify: {
+            javascript: {
                 files: [
-                    // Including
-                    '<%= assetsPath %>/scripts/*.js'
+                    '<%= assetsPath %>/scripts/*.js',
+                    '<%= assetsPath %>/js/*.js',
+                    '!<%= assetsPath %>/js/min/*.js'
                 ],
-                tasks: ['uglify'],
-                options: {
-                    interrupt: true,
-                    atBegin: true
-                }
-            },
-            concat: {
-                files: [
-                    // Including
-                    '<%= assetsPath %>/scripts/*.js'
-                ],
-                tasks: ['concat'],
+                tasks: ['uglify', 'concat'],
                 options: {
                     interrupt: true,
                     atBegin: true
