@@ -169,6 +169,9 @@
         text-decoration: underline;
       }
 
+
+      /* Don't show the outline on hover since the active item doesn't show an outline anyways */
+
       &:hover {
         outline: none;
       }
