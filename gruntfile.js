@@ -49,12 +49,9 @@ module.exports = function(grunt) {
         // Modernizr
         modernizr: {
             dist: {
-                // Currently the classPrefix option is not working
-                // We are using a downloaded version from the modernizr site now with the options below
-                // When downloading a new version please update below script as well until the prefix option is fixed in grunt
                 "cache": true,
-                "dest": "code/resources/assets/js/build/modernizr-to-be-used.js",
-                "classPrefix": "k-",
+
+                "dest": "<%= assetsPath %>/js/build/modernizr.js",
                 "options": [
                     "html5shiv",
                     "prefixedCSS",
@@ -71,6 +68,23 @@ module.exports = function(grunt) {
                 ],
                 "crawl" : false,
                 "customTests" : []
+            }
+        },
+
+        "string-replace": {
+            inline: {
+                files: {
+                    "<%= assetsPath %>/js/build/modernizr.js": "<%= assetsPath %>/js/build/modernizr.js"
+                },
+                options: {
+                    replacements: [
+                        // place files inline example
+                        {
+                            pattern: "'classPrefix' : ''",
+                            replacement: "'classPrefix' : 'k-'"
+                        }
+                    ]
+                }
             }
         },
 
@@ -229,6 +243,17 @@ module.exports = function(grunt) {
                     interrupt: true,
                     atBegin: true
                 }
+            },
+            concat: {
+                files: [
+                    // Including
+                    '<%= assetsPath %>/scripts/*.js'
+                ],
+                tasks: ['concat'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
             }
         }
 
@@ -236,6 +261,7 @@ module.exports = function(grunt) {
     });
 
     // The dev task will be used during development
-    grunt.registerTask('default', ['shell', 'modernizr', 'watch']);
+    grunt.registerTask('javascript', ['modernizr', 'string-replace', 'uglify', 'concat']);
+    grunt.registerTask('default', ['shell', 'watch']);
 
 };
