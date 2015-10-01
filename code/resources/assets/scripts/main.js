@@ -99,7 +99,6 @@
             $tableitems.click(function () {
                 var parent = $(this).parent();
                 var checkbox = parent.find('input');
-                parent.toggleClass(activeclass);
                 if (checkbox.is(':checked')) {
                     checkbox.prop('checked', false);
                 } else {
