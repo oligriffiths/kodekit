@@ -176,6 +176,12 @@
         outline: none;
       }
 
+
+      /* When it has an active filter, show it */
+      &.has-active-filter {
+        font-weight: bold;
+      }
+
     }
 
 
