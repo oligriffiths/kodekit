@@ -12,13 +12,13 @@
         <!-- Filter title -->
         <div class="k-scopebar__item k-scopebar__item--title">Filter:</div>
 
-        <!-- Filter -->
-        <div class="select2--link-style select2--filter">
-            <select data-placeholder="Status">
-                <option selected>--Status--</option>
-                <option value="1">Published</option>
-                <option value="0">Unpublished</option>
-            </select>
+        <!-- Filters -->
+        <div class="k-scopebar__item--filters">
+            <ul>
+                <li><button type="button" data-filter-toggle="users">Users</button></li>
+                <li><button type="button" data-filter-toggle="groups">User groups</button></li>
+                <li><button type="button" data-filter-toggle="date">Date</button></li>
+            </ul>
         </div>
 
         <!-- Search toggle button -->
@@ -123,61 +123,45 @@
  * 1. Setting to inline-block to align with title and different filters
  * 2. Setting height to scopebar height
  * 3. Fixing line-height/positioning bug caused by `display: inline-block`
- * 4. Filter size is slightly smaller to make room above the tab
- * 5. Setting the space above the tab
- * 6. An even smaller line-height to position text at the same base as the filter title
- * 7. Set the spacing as bottom so the line-height above will actually work
- * 8. Setting a border for the active item
- * 9. And remove the bottom border to make it a tab
- * 10. Accent color to show it's not just text
  */
 
 .k-scopebar__item--filters {
   display: inline-block; /* 1 */
   height: $scopebar-size; /* 2 */
   width: auto;
-  font-size: 12px;
+  font-size: $scopebar-filter-font-size;
 
   ul {
     @include reset;
+    @include clearfix;
     display: inline-block; /* 1 */
     height: $scopebar-size; /* 2 */
+    line-height: $scopebar-size; /* 2 */
     vertical-align: middle; /* 3 */
   }
 
   li {
-    display: inline-block; /* 1 */
-    height: $scopebar-filter-size; /* 4 */
-    margin-top: $scopebar-filter-spacing; /* 5 */
+    display: block;
+    float: left;
+    line-height: $scopebar-size;
+    vertical-align: middle;
+    height: $scopebar-size; /* 2 */
+    margin-right: $scopebar-filter-spacing;
 
     button {
       display: inline-block; /* 1 */
-      height: $scopebar-filter-size; /* 4 */
-      line-height: $scopebar-filter-size - $scopebar-filter-spacing; /* 6 */
       vertical-align: baseline;
-      border-radius: 4px 4px 0 0;
       cursor: pointer;
-      padding: 0 .5em $scopebar-filter-spacing; /* 7 */
-      border: 1px solid transparent; /* 8 */
-      border-bottom: none; /* 9 */
-      background: transparent;
       color: $color-accent; /* 10 */
 
 
-      /**
-       * Fake bottom border colored the same as the filter window
-       *
-       * 1. Transparent for now, colored only for active items
-       * 2. Position below the item so it will fall over the scopebar bottom-border
-       */
-
-      @include psuedo(after) {
-        width: 100%;
-        height: 1px;
-        background: transparent; /* 1 */
-        left: 0;
-        bottom: -1px; /* 2 */
-      }
+      background: transparent;
+      border-radius: 5px;
+      height: $scopebar-filter-size;
+      line-height: $scopebar-filter-size;
+      padding: 0 $scopebar-filter-spacing;
+      margin: $scopebar-filter-spacing 0;
+      border: 1px solid transparent;
 
 
       /* A hover to show they are clickable */
@@ -185,6 +169,10 @@
       &:hover,
       &:focus {
         text-decoration: underline;
+      }
+
+      &:hover {
+        outline: none;
       }
 
     }
@@ -201,16 +189,11 @@
 
     &.js-is-active {
       button {
-        padding-left: .75em; /* 1 */
-        padding-right: .75em; /* 1 */
-        border-bottom: none;
-        background: $filter-container-background; /* 2 */
-        border-color: darker($scopebar-border); /* 3 */
-        font-weight: bold;
-
-        &:after {
-          background: $filter-container-background; /* 4 */
-        }
+        background: $scopebar-filter-background; /* 2 */
+        border-color: $scopebar-filter-border; /* 3 */
+        outline: none;
+        text-decoration: none;
+        color: $color-type;
       }
     }
   }

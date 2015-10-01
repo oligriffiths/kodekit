@@ -289,8 +289,11 @@ $scopebar-color:              $color-secondary-type !default;
 $scopebar-search-background:  white !default;
 $scopebar-search-color:       $color-type !default;
 
-$scopebar-filter-spacing:     3px !default;
-$scopebar-filter-size:        $scopebar-size - $scopebar-filter-spacing !default;
+$scopebar-filter-spacing:     5px !default;
+$scopebar-filter-size:        $scopebar-size - ($scopebar-filter-spacing * 2) !default;
+$scopebar-filter-font-size:   12px !default;
+$scopebar-filter-border:      $scopebar-border !default;
+$scopebar-filter-background:  white !default;
 
 
 // List
