@@ -9,8 +9,6 @@
             $sidebarright = $('#k-sidebar-right'),
             $sidebaritem = $('.k-sidebar__item--overflow'),
             $content = $('.k-content'),
-            $togglebutton = $('#k-toggle-button'),
-            $togglebuttonright = $('#k-toggle-button-right'),
             $fixedtable = $('.table--fixed'),
             $tableitems = $('tbody td'),
             $select2default = $('.select2--default'),
