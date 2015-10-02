@@ -61,17 +61,17 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             $html .= '<ktml:style src="'.$config->css_file.'" />';
         }
 
+        $html .= $this->modernizr($config);
+        $html .= $this->koowa($config);
+        $html .= $this->bootstrap($config->bootstrap);
+        $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
+
         if ($config->domain === 'admin') {
             $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'admin.js" />';
         } else {
             // @todo temporary until we have site.css and module.css ready
             $config->bootstrap->css = true;
         }
-
-        $html .= $this->modernizr($config);
-        $html .= $this->koowa($config);
-        $html .= $this->bootstrap($config->bootstrap);
-        $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
 
         if ($config->wrapper)
         {
