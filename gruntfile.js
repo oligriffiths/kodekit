@@ -256,6 +256,18 @@ module.exports = function(grunt) {
                     interrupt: true,
                     atBegin: true
                 }
+            },
+            concat: {
+                files: [
+                    '<%= assetsPath %>/scripts/*.js',
+                    '<%= assetsPath %>/js/*.js',
+                    '!<%= assetsPath %>/js/min/*.js'
+                ],
+                tasks: ['concat'],
+                options: {
+                    interrupt: true,
+                    atBegin: true
+                }
             }
         }
 
