@@ -104,21 +104,6 @@
             });
         }
 
-
-        // Table items
-        if ( $tableitems.length ) {
-            $tableitems.click(function () {
-                var parent = $(this).parent();
-                var checkbox = parent.find('input');
-                if (checkbox.is(':checked')) {
-                    checkbox.prop('checked', false);
-                } else {
-                    checkbox.prop('checked', true);
-                }
-            });
-        }
-
-
         // The tree
         if ( $tree.length ) {
             $tree.click(function(event) {
