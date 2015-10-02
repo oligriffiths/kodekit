@@ -35,10 +35,9 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             },
             plugin = this;
 
-        plugin.settings = {}
+        plugin.settings = {};
 
-        var $element = $(element),
-            element = element;
+        var $element = $(element);
 
         plugin.init = function () {
 
@@ -110,7 +109,7 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
                 overflowing();
             });
 
-        }
+        };
 
         plugin.init();
     };
@@ -223,13 +222,13 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             },
 
         focusable: function(element){
-            return focusable(element, !isNaN($.attr(element, 'tabindex')));
+            return focusable(element);
         },
 
         tabbable: function(element){
             var tabIndex = $.attr(element, 'tabindex'),
                 isTabIndexNaN = isNaN(tabIndex);
-            return ( isTabIndexNaN || tabIndex >= 0 ) && focusable(element, !isTabIndexNaN);
+            return ( isTabIndexNaN || tabIndex >= 0 ) && focusable(element);
         }
     });
 
@@ -289,7 +288,8 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
                 container: $('.container'),
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
-                offCanvasOverlay: 'off-canvas-overlay'
+                offCanvasOverlay: 'off-canvas-overlay',
+                ariaControls: null
             },
             plugin = this;
 

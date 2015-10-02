@@ -8,10 +8,9 @@
             },
             plugin = this;
 
-        plugin.settings = {}
+        plugin.settings = {};
 
-        var $element = $(element),
-            element = element;
+        var $element = $(element);
 
         plugin.init = function () {
 
@@ -83,7 +82,7 @@
                 overflowing();
             });
 
-        }
+        };
 
         plugin.init();
     };

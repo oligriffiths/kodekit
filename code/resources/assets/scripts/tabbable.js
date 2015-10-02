@@ -91,13 +91,13 @@
             },
 
         focusable: function(element){
-            return focusable(element, !isNaN($.attr(element, 'tabindex')));
+            return focusable(element);
         },
 
         tabbable: function(element){
             var tabIndex = $.attr(element, 'tabindex'),
                 isTabIndexNaN = isNaN(tabIndex);
-            return ( isTabIndexNaN || tabIndex >= 0 ) && focusable(element, !isTabIndexNaN);
+            return ( isTabIndexNaN || tabIndex >= 0 ) && focusable(element);
         }
     });
 
