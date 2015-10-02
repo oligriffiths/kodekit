@@ -61,9 +61,6 @@
                 container.append('<div class="' + plugin.settings.offCanvasOverlay + '">');
             }
 
-            // Get the overlay layer
-            var overlay = $('.' + plugin.settings.offCanvasOverlay);
-
             function tabToggle(menu) {
                 // When tabbing on toggle button
                 menuToggle.bind('keydown', function(e) {
@@ -230,11 +227,11 @@
                 isScrolling = undefined;
 
                 // Get the opacity of the overlay
-                overlayOpacity = overlay.css('opacity');
+                overlayOpacity = offCanvasOverlay.css('opacity');
 
                 // Add class to remove transition for 1-to-1 touch movement
                 container.addClass(noTransitionClass);
-                overlay.addClass(noTransitionClass);
+                offCanvasOverlay.addClass(noTransitionClass);
 
                 e.stopPropagation();
 
@@ -275,7 +272,7 @@
                         '-o-transform'      : 'translate(' + newPos + 'px, 0)',
                         'transform'         : 'translate(' + newPos + 'px, 0)'
                     });
-                    overlay.css('opacity', opacity);
+                    offCanvasOverlay.css('opacity', opacity);
 
                     e.stopPropagation();
                 }
@@ -303,7 +300,7 @@
                 if (!isScrolling) {
 
                     container.removeAttr('style').removeClass(noTransitionClass);
-                    overlay.removeAttr('style').removeClass(noTransitionClass);
+                    offCanvasOverlay.removeAttr('style').removeClass(noTransitionClass);
 
                     if ( ( position == 'left' && ( absNewPos <= (expandedWidth * 0.66) || newPos <= 0 ) ) ||
                         ( position == 'right' && ( absNewPos <= (expandedWidth * 0.66) || newPos >= 0 ) ) ) {
