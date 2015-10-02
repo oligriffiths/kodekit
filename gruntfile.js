@@ -108,7 +108,7 @@ module.exports = function(grunt) {
                     ],
                     '<%= assetsPath %>/js/build/jquery.js': [
                         'bower_components/jquery/dist/jquery.js',
-                        '<%= assetsPath %>/js/koowa.kquery2.js'
+                        '<%= assetsPath %>/js/koowa.noconflict.js'
                     ],
                     '<%= assetsPath %>/js/build/jquery.magnific-popup.js': [
                         '<%= assetsPath %>/js/kquery.set.js',
@@ -162,7 +162,7 @@ module.exports = function(grunt) {
                     ],
                     '<%= assetsPath %>/js/min/jquery.js': [
                         'bower_components/jquery/dist/jquery.js',
-                        '<%= assetsPath %>/js/koowa.kquery2.js'
+                        '<%= assetsPath %>/js/koowa.noconflict.js'
                     ],
                     '<%= assetsPath %>/js/min/jquery.magnific-popup.js': [
                         '<%= assetsPath %>/js/kquery.set.js',
