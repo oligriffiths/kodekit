@@ -62,7 +62,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         }
 
         if ($config->domain === 'admin') {
-            $html .= '<ktml:script src="assets://js/min/admin.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'admin.js" />';
         } else {
             // @todo temporary until we have site.css and module.css ready
             $config->bootstrap->css = true;

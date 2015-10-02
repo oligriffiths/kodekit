@@ -94,6 +94,18 @@ module.exports = function(grunt) {
         concat: {
             js: {
                 files: {
+                    '<%= assetsPath %>/js/build/admin.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        'bower_components/select2/dist/js/select2.full.min.js',
+                        'bower_components/magnific-popup/dist/jquery.magnific-popup.min.js',
+                        'bower_components/footable/dist/footable.min.js',
+                        'bower_components/floatThead/dist/jquery.floatThead.min.js',
+                        '<%= assetsPath %>/scripts/overflowing.js',
+                        '<%= assetsPath %>/scripts/tabbable.js',
+                        '<%= assetsPath %>/scripts/off-canvas-menu.js',
+                        '<%= assetsPath %>/scripts/main.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
                     '<%= assetsPath %>/js/build/jquery.js': [
                         'bower_components/jquery/dist/jquery.js',
                         '<%= assetsPath %>/js/koowa.kquery2.js'
