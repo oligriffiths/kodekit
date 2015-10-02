@@ -68,7 +68,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             $config->bootstrap->css = true;
         }
 
-        $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'modernizr.js" />';
+        $html .= $this->modernizr($config);
         $html .= $this->koowa($config);
         $html .= $this->bootstrap($config->bootstrap);
         $html .= '<script data-inline type="text/javascript">var el = document.body; var cl = "k-js-enabled"; if (el.classList) { el.classList.add(cl); }else{ el.className += " " + cl;}</script>';
@@ -103,6 +103,31 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'koowa.js" />';
 
             self::$_loaded['koowa'] = true;
+        }
+
+        return $html;
+    }
+
+    /**
+     * Loads Modernizr
+     *
+     * @param array|KObjectConfig $config
+     * @return string
+     */
+    public function modernizr($config = array())
+    {
+        $config = new KObjectConfigJson($config);
+        $config->append(array(
+            'debug' => false
+        ));
+
+        $html = '';
+
+        if (!isset(self::$_loaded['modernizr']))
+        {
+            $html = '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'modernizr.js" />';
+
+            self::$_loaded['modernizr'] = true;
         }
 
         return $html;
