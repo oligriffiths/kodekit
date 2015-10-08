@@ -149,49 +149,6 @@
     height: $scopebar-size; /* 2 */
     margin-right: $scopebar-filter-spacing;
 
-    button {
-      display: inline-block; /* 1 */
-      height: $scopebar-filter-size;
-      margin: $scopebar-filter-spacing 0;
-      border: 1px solid transparent;
-      border-radius: 5px;
-      padding: 0 $scopebar-filter-spacing;
-      line-height: $scopebar-filter-size;
-      vertical-align: baseline;
-      cursor: pointer;
-      color: $color-accent;
-      background: transparent;
-
-
-      /* A hover to show they are clickable */
-
-      &:hover,
-      &:focus {
-        text-decoration: underline;
-      }
-
-
-      /* Don't show the outline on hover since the active item doesn't show an outline anyways */
-
-      &:hover {
-        outline: none;
-      }
-
-
-      /* When it has an active filter, show it */
-      &.has-active-filter {
-        font-weight: bold;
-
-        @include icon-before(check, true) {
-          font-size: 10px;
-          margin-right: 5px;
-          margin-bottom: 2px;
-          vertical-align: middle;
-        }
-      }
-
-    }
-
 
     /**
      * The active item
@@ -211,6 +168,61 @@
         color: $color-type;
       }
     }
+  }
+
+  button {
+    display: inline-block; /* 1 */
+    height: $scopebar-filter-size;
+    margin-top: $scopebar-filter-spacing;
+    margin-bottom: $scopebar-filter-spacing;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 0 $scopebar-filter-spacing;
+    line-height: $scopebar-filter-size;
+    vertical-align: baseline;
+    cursor: pointer;
+    color: $color-accent;
+    background: transparent;
+
+
+    /* A hover to show they are clickable */
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+
+
+    /* Don't show the outline on hover since the active item doesn't show an outline anyways */
+
+    &:hover {
+      outline: none;
+    }
+
+
+    /* When it has an active filter, show it */
+    &.has-active-filter {
+      font-weight: bold;
+
+      @include icon-before(check, true) {
+        font-size: 10px;
+        margin-right: 5px;
+        margin-bottom: 2px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.k-scopebar__reset-filters {
+  @include reset;
+  font-size: .9375em;
+  color: $scopebar-color;
+  margin-left: 1em;
+
+  @include icon-before(circle-x, true) {
+    color: $color-error;
+    margin-right: .7em;
   }
 }
 
