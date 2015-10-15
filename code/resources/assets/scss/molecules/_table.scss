@@ -14,7 +14,7 @@
 
     .k-table {
       display: flex;
-      flex: 1 1 auto;
+      flex: 0 1 auto;
       background: $table-cell-background-even;
 
       table {
@@ -164,12 +164,17 @@
 }
 
 
-/* Table pagination */
+/*
+ * Table pagination
+ *
+ * 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom
+ */
 
 .k-table-pagination {
   @include border(top, $table-pagination-border);
   padding: $table-pagination-spacing;
   background: $table-pagination-background;
+  box-shadow: 0 1px 0 $table-pagination-border;
 
 
   /**

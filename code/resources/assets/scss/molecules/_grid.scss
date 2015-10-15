@@ -22,7 +22,7 @@
 .k-container {
   @include clearfix;
   overflow: hidden;
-  max-width: $maxwidth;
+  width: 100%;
   margin: 0 auto;
   padding: $spacing;
 }

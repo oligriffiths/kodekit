@@ -1,9 +1,9 @@
 /* ==========================================================================
-   Overview layout
+   The content wrapper
    ========================================================================== */
 
 /**
- * The default overview layout
+ * The default content wrapper layout
  *
  * 1. Left sidebar
  * 2. Toggle button
@@ -28,20 +28,49 @@
  *
  */
 
+/**
+ * 1. Clearing toolbar floats when flexbox is not in use
+ */
 
-.k-overview {
-  @include border(all, $overview-border);
-  background: $overview-background;
+.k-content-wrapper {
+  clear: both; /* 1 */
+  margin: 0;
+
+
+  // Faking flexbox on older browsers by using table styling
+
+  @include breakpoint($desktop) {
+    display: table;
+    width: 100%;
+  }
 }
 
 
 /* When flexbox is in use */
 
 @include flexbox {
-  .k-overview {
+  .k-content-wrapper {
     display: flex;
+    flex-direction: row;
     flex: 1 1 auto;
-    flex-direction: column;
-    overflow: auto;
+    overflow: hidden;
   }
 }
+
+
+/**
+ * Wrapper when toggled
+ *
+ * 1. Hide overflowing when menu is toggled
+ * 2. Set back to auto when screen is wide enough
+ */
+
+.opened--left,
+.opened--right {
+  overflow: hidden; /* 1 */
+
+  @include breakpoint($desktop) {
+    overflow: auto; /* 2 */
+  }
+}
+

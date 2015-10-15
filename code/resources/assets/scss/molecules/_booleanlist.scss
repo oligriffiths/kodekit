@@ -60,238 +60,224 @@
  */
 
 @if $radio-toggle == true {
-  .booleanlist:not(ie) { /* 1 */
-    position: relative;
-    display: table; /* 2 */
-    width: 100%;
-    height: $input-height-base;
-    padding: 1px;
-    border: 1px solid $input-border;
-    border-radius: $input-border-radius;
-    background: $input-bg;
-    color: $input-color;
-
-
-    /**
-     * Children
-     *
-     * 1. Display as 'table-cell' so we can have proportional children (if more then two children)
-     * 2. Default width is 50% for evenly spaced items
-     */
-
-    .booleanlist__item {
-      display: table-cell; /* 1 */
-      width: 50%; /* 2 */
-      padding: 0;
-      margin: 0;
-      text-align: center;
-    }
-
-
-    /**
-     * More than 3 children
-     *
-     * 1. Children should now have a proportional width
-     */
-
-    &.booleanlist--multiple {
-      .booleanlist__item {
-        width: auto; /* 1 */
-      }
-    }
-
-
-    /* Hiding the input but keeping accessible */
-
-    input {
-      @extend .visually-hidden;
-    }
-
-
-    /**
-     * Styling label and span
-     *
-     * 1. Minus 4 to adjust for borders and padding
-     * 2. Better looking radius for children
-     */
-
-    label,
-    span {
-      display: block;
-      height: $input-height-base - 4; /* 1 */
-      border-radius: $input-border-radius - 1; /* 2 */
-      margin: 0;
-      cursor: pointer;
-    }
-
-
-    /* Element used for focus / active state */
-
-    label:before {
-      position: absolute;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      display: block;
-      pointer-events: none;
-      content: " ";
-      background: transparent;
-    }
-
-    /* The wrapper for the colored psuedo element */
-
-    span {
+  @include modernizr('.k-appearance.k-checked') {
+    .booleanlist:not(ie) {
+      /* 1 */
       position: relative;
-      z-index: 2;
-      transition: all $transition;
-      line-height: $input-height-base - 4;
-      font-weight: $regular;
+      display: table; /* 2 */
+      width: 100%;
+      height: $input-height-base;
+      padding: 1px;
+      border: 1px solid $input-border;
+      border-radius: $input-border-radius;
+      background: $input-bg;
+      color: $input-color;
 
+      /**
+       * Children
+       *
+       * 1. Display as 'table-cell' so we can have proportional children (if more then two children)
+       * 2. Default width is 50% for evenly spaced items
+       */
 
-      /* Better looking radius for children */
-
-      &:before {
-        border-radius: $input-border-radius - 1;
+      .booleanlist__item {
+        display: table-cell; /* 1 */
+        width: 50%; /* 2 */
+        padding: 0;
+        margin: 0;
+        text-align: center;
       }
 
+      /**
+       * More than 3 children
+       *
+       * 1. Children should now have a proportional width
+       */
 
-      /* Background on hover */
-
-      &:hover {
-        background: #eee;
+      &.booleanlist--multiple {
+        .booleanlist__item {
+          width: auto; /* 1 */
+        }
       }
-    }
 
+      /* Hiding the input but keeping accessible */
 
-    /* Single item */
+      input[type] {
+        @extend .visually-hidden;
+      }
 
-    .booleanlist__item {
-      span:before {
+      /**
+       * Styling label and span
+       *
+       * 1. Minus 4 to adjust for borders and padding
+       * 2. Better looking radius for children
+       */
+
+      label,
+      span {
+        display: block;
+        height: $input-height-base - 4; /* 1 */
+        border-radius: $input-border-radius - 1; /* 2 */
+        margin: 0;
+        cursor: pointer;
+      }
+
+      /* Element used for focus / active state */
+
+      label:before {
         position: absolute;
-        z-index: -1;
+        z-index: 1;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
         display: block;
-        background: transparent;
-        content: " ";
         pointer-events: none;
-        transition: all $transition;
+        content: " ";
+        background: transparent;
       }
 
-      &:first-child,
-      &:last-child {
-        span:before {
-          right: auto;
-          left: auto;
-          width: 100%;
+      /* The wrapper for the colored psuedo element */
+
+      span {
+        position: relative;
+        z-index: 2;
+        transition: all $transition;
+        line-height: $input-height-base - 4;
+        font-weight: $regular;
+
+        /* Better looking radius for children */
+
+        &:before {
+          border-radius: $input-border-radius - 1;
+        }
+
+        /* Background on hover */
+
+        &:hover {
+          background: #eee;
         }
       }
-    }
 
+      /* Single item */
 
-    /* Single item on multiple list */
-
-    &.booleanlist--multiple {
       .booleanlist__item {
+        span:before {
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: block;
+          background: transparent;
+          content: " ";
+          pointer-events: none;
+          transition: all $transition;
+        }
+
         &:first-child,
         &:last-child {
           span:before {
-            width: 50%;
+            right: auto;
+            left: auto;
+            width: 100%;
           }
         }
       }
-    }
 
+      /* Single item on multiple list */
 
-    /* First item */
+      &.booleanlist--multiple {
+        .booleanlist__item {
+          &:first-child,
+          &:last-child {
+            span:before {
+              width: 50%;
+            }
+          }
+        }
+      }
 
-    .booleanlist__item:first-child {
-      span {
+      /* First item */
+
+      .booleanlist__item:first-child {
+        span {
+          &:before {
+            left: 100%;
+          }
+        }
+      }
+
+      /* Last item */
+
+      .booleanlist__item:last-child {
+        span {
+          &:before {
+            left: -100%;
+          }
+        }
+      }
+
+      /* All items */
+
+      .booleanlist__item:nth-child(n) {
+        input:checked + label {
+          z-index: 3;
+
+          span:before {
+            left: 0;
+            width: 100%;
+          }
+        }
+      }
+
+      /**
+       * Active / focus styling
+       *
+       * 1. Faking focus style
+       */
+
+      input:active + label,
+      input:focus + label {
         &:before {
-          left: 100%;
+          border: 1px solid #66afe9;
+          border-radius: 4px;
+          margin: -1px; /* 1 */
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); /* 1 */
         }
       }
-    }
 
+      /* Checked styling color */
 
-    /* Last item */
-
-    .booleanlist__item:last-child {
-      span {
-        &:before {
-          left: -100%;
+      .booleanlist__item {
+        input:checked + label span {
+          color: white;
         }
       }
-    }
 
+      /* Checked styling 'negative' background */
 
-    /* All items */
-
-    .booleanlist__item:nth-child(n) {
-      input:checked + label {
-        z-index: 3;
-
-        span:before {
-          left: 0;
-          width: 100%;
+      [value="0"] {
+        &:checked + label span:before {
+          background: $radio-toggle-0;
         }
       }
-    }
 
+      /* Checked styling 'positive' background */
 
-    /**
-     * Active / focus styling
-     *
-     * 1. Faking focus style
-     */
-
-    input:active + label,
-    input:focus + label {
-      &:before {
-        border: 1px solid #66afe9;
-        border-radius: 4px;
-        margin: -1px; /* 1 */
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); /* 1 */
+      [value="1"] {
+        &:checked + label span:before {
+          background: $radio-toggle-1;
+        }
       }
-    }
 
+      /* Checked styling 'neutral' background */
 
-    /* Checked styling color */
-
-    .booleanlist__item {
-      input:checked + label span {
-        color: white;
+      :checked + label span:before,
+      &.booleanlist--neutral input[value]:checked + label span:before {
+        background: $radio-toggle-neutral;
       }
-    }
-
-
-    /* Checked styling 'negative' background */
-
-    [value="0"] {
-      &:checked + label span:before {
-        background: $radio-toggle-0;
-      }
-    }
-
-
-    /* Checked styling 'positive' background */
-
-    [value="1"] {
-      &:checked + label span:before {
-        background: $radio-toggle-1;
-      }
-    }
-
-
-    /* Checked styling 'neutral' background */
-
-    :checked + label span:before,
-    &.booleanlist--neutral input[value]:checked + label span:before {
-      background: $radio-toggle-neutral;
     }
   }
 }

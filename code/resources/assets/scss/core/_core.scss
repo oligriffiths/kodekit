@@ -45,6 +45,7 @@
 
   /* Namespaced Twitter Bootstrap */
 
+  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
   @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
   @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
   @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
@@ -68,6 +69,7 @@
 
   /* Molecules */
 
+  @import "../molecules/form/form";
   @import "../molecules/form/option";
   @import "../molecules/form/checkbox";
   @import "../molecules/form/radio";
@@ -77,7 +79,6 @@
   @import "../molecules/checkbox-toggle";
   @import "../molecules/component";
   @import "../molecules/content";
-  @import "../molecules/content-wrapper";
   @import "../molecules/filter-container";
   @import "../molecules/form-block";
   @import "../molecules/grid";
@@ -97,8 +98,7 @@
 
   /* Organisms */
 
-  @import "../organisms/overview";
-  @import "../organisms/form";
+  @import "../organisms/content-wrapper";
   @import "../organisms/form-front";
 
 

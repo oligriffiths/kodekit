@@ -59,7 +59,7 @@ $darkest-percentage:    12% !default;
 
 $font-family:     'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-size:       13px !default;
-$font-size-large: 16px !default;
+$font-size-large: 15px !default;
 $line-height:     20px !default;
 $bold:            700 !default;
 $regular:         400 !default;
@@ -234,7 +234,7 @@ $sidebar-color:             $color-primary-type !default;
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$table-background:               white !default;
+$table-background:              white !default;
 
 $table-cell-size:               round($font-size * 3) !default; // 1
 $table-cell-spacing:            $spacing-tiny !default; // 2

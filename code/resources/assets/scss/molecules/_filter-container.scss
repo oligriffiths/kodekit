@@ -28,8 +28,6 @@
 
 /**
  * The items
- *
- * 1. Making room for the close button
  */
 
 .k-filter-container__item {
@@ -37,7 +35,6 @@
   width: 100%;
   padding: $filter-container-spacing;
   display: block;
-  padding-right: 48px; /* 1 */
 
 
   /* Hide items when JS is enabled */

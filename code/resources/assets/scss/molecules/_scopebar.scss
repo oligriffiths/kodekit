@@ -15,9 +15,9 @@
         <!-- Filters -->
         <div class="k-scopebar__item--filters">
             <ul>
-                <li><button type="button" data-filter-toggle="users">Users</button></li>
-                <li><button type="button" data-filter-toggle="groups">User groups</button></li>
-                <li><button type="button" data-filter-toggle="date">Date</button></li>
+                <li><button class="k-filter-button" type="button" data-filter-toggle="users">Users</button></li>
+                <li><button class="k-filter-button" type="button" data-filter-toggle="groups">User groups</button></li>
+                <li><button class="k-filter-button" type="button" data-filter-toggle="date">Date</button></li>
             </ul>
         </div>
 
@@ -30,10 +30,14 @@
 
     <!-- Search -->
     <div class="k-scopebar__item k-scopebar__search">
-        <div class="search__container">
-            <label for="search"><i class="icon-search"></i></label>
-            <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="">
-            <a class="search_button--empty"><span>X</span></a>
+        <div class="k-search__container">
+            <input type="search" name="search" class="k-search__field" placeholder="Find by title or description…" value="">
+            <button class="k-search__button-search" type="submit" data-original-title="Search">
+                <span class="k-icon-magnifying-glass"></span>
+            </button>
+            <button class="k-search__button-empty" onclick="document.id('filter_search').value='';this.form.submit();" title="" type="button" data-original-title="Clear">
+                <span>X</span>
+            </button>
         </div>
     </div>
 
@@ -160,7 +164,7 @@
      */
 
     &.js-is-active {
-      button {
+      .k-filter-button {
         background: $scopebar-filter-background; /* 2 */
         border-color: $scopebar-filter-border; /* 3 */
         outline: none;
@@ -170,7 +174,7 @@
     }
   }
 
-  button {
+  .k-filter-button {
     display: inline-block; /* 1 */
     height: $scopebar-filter-size;
     margin-top: $scopebar-filter-spacing;
@@ -263,24 +267,32 @@
 
   /* 5 */
 
-  .search__container {
+  .k-search__container {
     width: 100%;
+    position: relative;
+  }
+
+  .k-search__container--has-search-button .k-search__field {
+    padding-left: 28px;
+  }
+
+  .k-search__container--has-empty-button .k-search__field {
+    padding-right: 18px;
+  }
+
+  .k-search__container--has-both-buttons .k-search__field {
+    padding-left: 28px;
+    padding-right: 18px;
   }
 
   label {
     @extend .visually-hidden;
   }
 
-  input,
-  input[type="search"] {
+  .k-search__field {
+    @include reset;
     margin: 0;
     max-width: 250px;
-    padding: 0 2px 0 10px;
-    font-size: 12px;
-  }
-
-  .search_button {
-    @include reset;
     display: block;
     width: 100%;
     height: $scopebar-size;
@@ -290,6 +302,7 @@
     background: $scopebar-search-background;
     color: $scopebar-search-color;
     box-shadow: none;
+    font-size: 12px;
     -webkit-appearance: none;
 
     @include breakpoint($beta) {
@@ -297,11 +310,18 @@
     }
   }
 
-  &.search__container--has_empty_button input {
-    padding-right: 22px;
+  .k-search__button-search {
+    @include reset;
+    position: absolute;
+    top: 50%;
+    left: .5em;
+    margin-top: -.75em;
   }
 
-  .search_button--empty {
+  .k-search__button-empty {
+    border: none;
+    margin: 0;
+    padding: 0;
     position: absolute;
     display: inline-block;
     top: 50%;
@@ -352,7 +372,7 @@
  * 1. Hide when search is visible
  */
 
-.toggle-search {
+.k-toggle-search {
   position: relative;
   display: none;
   float: right;
