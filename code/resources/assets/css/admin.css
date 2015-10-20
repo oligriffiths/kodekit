@@ -8,10 +8,6 @@
 /** 1. Bourbon, needed for neat 2. Extending the neat library with own mixins 3. Neat: grid system */
 /* 1 */
 /* 2 */
-html { box-sizing: border-box; }
-
-*, *::after, *::before { box-sizing: inherit; }
-
 /* 3 */
 /* Bootstrap mixins and variables ========================================================================== */
 /* Icons ========================================================================== */
@@ -22,9 +18,9 @@ html { box-sizing: border-box; }
 /** Use SVG Always use SVG on touch / mobile */
 @media screen and (-webkit-min-device-pixel-ratio: 0) { @font-face { font-family: "koowa-icons"; src: url("../fonts/koowa-icons/koowa-icons.svg#koowa-icons") format("svg"); } }
 
-.k-icon-account-login, .k-icon-account-logout, .k-icon-action-redo, .k-icon-action-undo, .k-icon-align-center, .k-icon-align-left, .k-icon-align-right, .k-icon-aperture, .k-icon-arrow-bottom, .k-icon-arrow-circle-bottom, .k-icon-arrow-circle-left, .k-icon-arrow-circle-right, .k-icon-arrow-circle-top, .k-icon-arrow-left, .k-icon-arrow-right, .k-icon-arrow-thick-bottom, .k-icon-arrow-thick-left, .k-icon-arrow-thick-right, .k-icon-arrow-thick-top, .k-icon-arrow-top, .k-icon-audio-spectrum, .k-icon-audio, .k-icon-badge, .k-icon-ban, .k-icon-bar-chart, .k-icon-basket, .k-icon-battery-empty, .k-icon-battery-full, .k-icon-beaker, .k-icon-bell, .k-icon-bluetooth, .k-icon-bold, .k-icon-bolt, .k-icon-book, .k-icon-bookmark, .k-icon-box, .k-icon-briefcase, .k-icon-british-pound, .k-icon-browser, .k-icon-brush, .k-icon-bug, .k-icon-bullhorn, .k-icon-calculator, .k-icon-calendar, .k-icon-camera-slr, .k-icon-caret-bottom, .k-icon-caret-left, .k-icon-caret-right, .k-icon-caret-top, .k-icon-cart, .k-icon-chat, .k-icon-check, .k-icon-chevron-bottom, .k-icon-chevron-left, .k-icon-chevron-right, .k-icon-chevron-top, .k-icon-circle-check, .k-icon-circle-x, .k-icon-clipboard, .k-icon-clock, .k-icon-cloud-download, .k-icon-cloud-upload, .k-icon-cloud, .k-icon-cloudy, .k-icon-code, .k-icon-cog, .k-icon-collapse-down, .k-icon-collapse-left, .k-icon-collapse-right, .k-icon-collapse-up, .k-icon-command, .k-icon-comment-square, .k-icon-compass, .k-icon-contrast, .k-icon-copywriting, .k-icon-credit-card, .k-icon-crop, .k-icon-dashboard, .k-icon-data-transfer-download, .k-icon-data-transfer-upload, .k-icon-delete, .k-icon-dial, .k-icon-document, .k-icon-dollar, .k-icon-double-quote-sans-left, .k-icon-double-quote-sans-right, .k-icon-double-quote-serif-left, .k-icon-double-quote-serif-right, .k-icon-droplet, .k-icon-eject, .k-icon-elevator, .k-icon-ellipses, .k-icon-envelope-closed, .k-icon-envelope-open, .k-icon-euro, .k-icon-excerpt, .k-icon-expand-down, .k-icon-expand-left, .k-icon-expand-right, .k-icon-expand-up, .k-icon-external-link, .k-icon-eye, .k-icon-eyedropper, .k-icon-file, .k-icon-fire, .k-icon-flag, .k-icon-flash, .k-icon-folder, .k-icon-fork, .k-icon-fullscreen-enter, .k-icon-fullscreen-exit, .k-icon-globe, .k-icon-graph, .k-icon-grid-four-up, .k-icon-grid-three-up, .k-icon-grid-two-up, .k-icon-hard-drive, .k-icon-header, .k-icon-headphones, .k-icon-heart, .k-icon-home, .k-icon-image, .k-icon-inbox, .k-icon-infinity, .k-icon-info, .k-icon-italic, .k-icon-justify-center, .k-icon-justify-left, .k-icon-justify-right, .k-icon-key, .k-icon-laptop, .k-icon-layers, .k-icon-lightbulb, .k-icon-link-broken, .k-icon-link-intact, .k-icon-list-rich, .k-icon-list, .k-icon-location, .k-icon-lock-locked, .k-icon-lock-unlocked, .k-icon-loop-circular, .k-icon-loop-square, .k-icon-loop, .k-icon-magnifying-glass, .k-icon-map-marker, .k-icon-map, .k-icon-media-pause, .k-icon-media-play, .k-icon-media-record, .k-icon-media-skip-backward, .k-icon-media-skip-forward, .k-icon-media-step-backward, .k-icon-media-step-forward, .k-icon-media-stop, .k-icon-medical-cross, .k-icon-menu, .k-icon-microphone, .k-icon-minus, .k-icon-monitor, .k-icon-moon, .k-icon-move, .k-icon-musical-note, .k-icon-paperclip, .k-icon-pencil, .k-icon-people, .k-icon-person, .k-icon-phone, .k-icon-pie-chart, .k-icon-pin, .k-icon-play-circle, .k-icon-plus, .k-icon-power-standby, .k-icon-print, .k-icon-project, .k-icon-pulse, .k-icon-puzzle-piece, .k-icon-question-mark, .k-icon-rain, .k-icon-random, .k-icon-reload, .k-icon-resize-both, .k-icon-resize-height, .k-icon-resize-width, .k-icon-rss-alt, .k-icon-rss, .k-icon-script, .k-icon-share-boxed, .k-icon-share, .k-icon-shield, .k-icon-signal, .k-icon-signpost, .k-icon-sort-ascending, .k-icon-sort-descending, .k-icon-sorting, .k-icon-spreadsheet, .k-icon-star, .k-icon-sun, .k-icon-tablet, .k-icon-tag, .k-icon-tags, .k-icon-target, .k-icon-task, .k-icon-terminal, .k-icon-text, .k-icon-thumb-down, .k-icon-thumb-up, .k-icon-timer, .k-icon-transfer, .k-icon-trash, .k-icon-underline, .k-icon-vertical-align-bottom, .k-icon-vertical-align-center, .k-icon-vertical-align-top, .k-icon-video, .k-icon-volume-high, .k-icon-volume-low, .k-icon-volume-off, .k-icon-warning, .k-icon-wifi, .k-icon-wrench, .k-icon-x, .k-icon-yen, .k-icon-zoom-in, .k-icon-zoom-out, .k-appearance.k-checked .koowa input[type="checkbox"]:before, .koowa .icon-new:before, .koowa .icon-download:before, .koowa .icon-options:before, .koowa .icon-delete:before, .koowa .icon-purge:before, .koowa .icon-publish:before, .koowa .icon-unpublish:before, .koowa .icon-apply:before, .koowa .icon-save:before, .koowa .icon-cancel:before, .koowa .k-scopebar__item--filters button.has-active-filter:before, .koowa .k-scopebar__reset-filters:before, .koowa .footable.breakpoint .footable-toggle:after, .koowa th a:after { speak: none; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-transform: none; line-height: 1; font-style: normal; font-variant: normal; font-weight: normal; font-family: 'koowa-icons'; }
+.k-icon-account-login, .k-icon-account-logout, .k-icon-action-redo, .k-icon-action-undo, .k-icon-align-center, .k-icon-align-left, .k-icon-align-right, .k-icon-aperture, .k-icon-arrow-bottom, .k-icon-arrow-circle-bottom, .k-icon-arrow-circle-left, .k-icon-arrow-circle-right, .k-icon-arrow-circle-top, .k-icon-arrow-left, .k-icon-arrow-right, .k-icon-arrow-thick-bottom, .k-icon-arrow-thick-left, .k-icon-arrow-thick-right, .k-icon-arrow-thick-top, .k-icon-arrow-top, .k-icon-audio-spectrum, .k-icon-audio, .k-icon-badge, .k-icon-ban, .k-icon-bar-chart, .k-icon-basket, .k-icon-battery-empty, .k-icon-battery-full, .k-icon-beaker, .k-icon-bell, .k-icon-bluetooth, .k-icon-bold, .k-icon-bolt, .k-icon-book, .k-icon-bookmark, .k-icon-box, .k-icon-briefcase, .k-icon-british-pound, .k-icon-browser, .k-icon-brush, .k-icon-bug, .k-icon-bullhorn, .k-icon-calculator, .k-icon-calendar, .k-icon-camera-slr, .k-icon-caret-bottom, .k-icon-caret-left, .k-icon-caret-right, .k-icon-caret-top, .k-icon-cart, .k-icon-chat, .k-icon-check, .k-icon-chevron-bottom, .k-icon-chevron-left, .k-icon-chevron-right, .k-icon-chevron-top, .k-icon-circle-check, .k-icon-circle-x, .k-icon-clipboard, .k-icon-clock, .k-icon-cloud-download, .k-icon-cloud-upload, .k-icon-cloud, .k-icon-cloudy, .k-icon-code, .k-icon-cog, .k-icon-collapse-down, .k-icon-collapse-left, .k-icon-collapse-right, .k-icon-collapse-up, .k-icon-command, .k-icon-comment-square, .k-icon-compass, .k-icon-contrast, .k-icon-copywriting, .k-icon-credit-card, .k-icon-crop, .k-icon-dashboard, .k-icon-data-transfer-download, .k-icon-data-transfer-upload, .k-icon-delete, .k-icon-dial, .k-icon-document, .k-icon-dollar, .k-icon-double-quote-sans-left, .k-icon-double-quote-sans-right, .k-icon-double-quote-serif-left, .k-icon-double-quote-serif-right, .k-icon-droplet, .k-icon-eject, .k-icon-elevator, .k-icon-ellipses, .k-icon-envelope-closed, .k-icon-envelope-open, .k-icon-euro, .k-icon-excerpt, .k-icon-expand-down, .k-icon-expand-left, .k-icon-expand-right, .k-icon-expand-up, .k-icon-external-link, .k-icon-eye, .k-icon-eyedropper, .k-icon-file, .k-icon-fire, .k-icon-flag, .k-icon-flash, .k-icon-folder, .k-icon-fork, .k-icon-fullscreen-enter, .k-icon-fullscreen-exit, .k-icon-globe, .k-icon-graph, .k-icon-grid-four-up, .k-icon-grid-three-up, .k-icon-grid-two-up, .k-icon-hard-drive, .k-icon-header, .k-icon-headphones, .k-icon-heart, .k-icon-home, .k-icon-image, .k-icon-inbox, .k-icon-infinity, .k-icon-info, .k-icon-italic, .k-icon-justify-center, .k-icon-justify-left, .k-icon-justify-right, .k-icon-key, .k-icon-laptop, .k-icon-layers, .k-icon-lightbulb, .k-icon-link-broken, .k-icon-link-intact, .k-icon-list-rich, .k-icon-list, .k-icon-location, .k-icon-lock-locked, .k-icon-lock-unlocked, .k-icon-loop-circular, .k-icon-loop-square, .k-icon-loop, .k-icon-magnifying-glass, .k-icon-map-marker, .k-icon-map, .k-icon-media-pause, .k-icon-media-play, .k-icon-media-record, .k-icon-media-skip-backward, .k-icon-media-skip-forward, .k-icon-media-step-backward, .k-icon-media-step-forward, .k-icon-media-stop, .k-icon-medical-cross, .k-icon-menu, .k-icon-microphone, .k-icon-minus, .k-icon-monitor, .k-icon-moon, .k-icon-move, .k-icon-musical-note, .k-icon-paperclip, .k-icon-pencil, .k-icon-people, .k-icon-person, .k-icon-phone, .k-icon-pie-chart, .k-icon-pin, .k-icon-play-circle, .k-icon-plus, .k-icon-power-standby, .k-icon-print, .k-icon-project, .k-icon-pulse, .k-icon-puzzle-piece, .k-icon-question-mark, .k-icon-rain, .k-icon-random, .k-icon-reload, .k-icon-resize-both, .k-icon-resize-height, .k-icon-resize-width, .k-icon-rss-alt, .k-icon-rss, .k-icon-script, .k-icon-share-boxed, .k-icon-share, .k-icon-shield, .k-icon-signal, .k-icon-signpost, .k-icon-sort-ascending, .k-icon-sort-descending, .k-icon-sorting, .k-icon-spreadsheet, .k-icon-star, .k-icon-sun, .k-icon-tablet, .k-icon-tag, .k-icon-tags, .k-icon-target, .k-icon-task, .k-icon-terminal, .k-icon-text, .k-icon-thumb-down, .k-icon-thumb-up, .k-icon-timer, .k-icon-transfer, .k-icon-trash, .k-icon-underline, .k-icon-vertical-align-bottom, .k-icon-vertical-align-center, .k-icon-vertical-align-top, .k-icon-video, .k-icon-volume-high, .k-icon-volume-low, .k-icon-volume-off, .k-icon-warning, .k-icon-wifi, .k-icon-wrench, .k-icon-x, .k-icon-yen, .k-icon-zoom-in, .k-icon-zoom-out, .k-appearance.k-checked .koowa input[type="checkbox"]:before, .koowa .icon-new:before, .koowa .icon-download:before, .koowa .icon-options:before, .koowa .icon-delete:before, .koowa .icon-purge:before, .koowa .icon-publish:before, .koowa .icon-unpublish:before, .koowa .icon-apply:before, .koowa .icon-save:before, .koowa .icon-cancel:before, .koowa .k-scopebar__item--filters .k-filter-button.has-active-filter:before, .koowa .k-scopebar__reset-filters:before, .koowa .footable.breakpoint .footable-toggle:after, .koowa th a:after { speak: none; text-rendering: optimizeLegibility; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-smoothing: antialiased; text-transform: none; line-height: 1; font-style: normal; font-variant: normal; font-weight: normal; font-family: 'koowa-icons'; }
 
-.k-icon-account-login:before, .k-icon-account-logout:before, .k-icon-action-redo:before, .k-icon-action-undo:before, .k-icon-align-center:before, .k-icon-align-left:before, .k-icon-align-right:before, .k-icon-aperture:before, .k-icon-arrow-bottom:before, .k-icon-arrow-circle-bottom:before, .k-icon-arrow-circle-left:before, .k-icon-arrow-circle-right:before, .k-icon-arrow-circle-top:before, .k-icon-arrow-left:before, .k-icon-arrow-right:before, .k-icon-arrow-thick-bottom:before, .k-icon-arrow-thick-left:before, .k-icon-arrow-thick-right:before, .k-icon-arrow-thick-top:before, .k-icon-arrow-top:before, .k-icon-audio-spectrum:before, .k-icon-audio:before, .k-icon-badge:before, .k-icon-ban:before, .k-icon-bar-chart:before, .k-icon-basket:before, .k-icon-battery-empty:before, .k-icon-battery-full:before, .k-icon-beaker:before, .k-icon-bell:before, .k-icon-bluetooth:before, .k-icon-bold:before, .k-icon-bolt:before, .k-icon-book:before, .k-icon-bookmark:before, .k-icon-box:before, .k-icon-briefcase:before, .k-icon-british-pound:before, .k-icon-browser:before, .k-icon-brush:before, .k-icon-bug:before, .k-icon-bullhorn:before, .k-icon-calculator:before, .k-icon-calendar:before, .k-icon-camera-slr:before, .k-icon-caret-bottom:before, .k-icon-caret-left:before, .k-icon-caret-right:before, .k-icon-caret-top:before, .k-icon-cart:before, .k-icon-chat:before, .k-icon-check:before, .k-icon-chevron-bottom:before, .k-icon-chevron-left:before, .k-icon-chevron-right:before, .k-icon-chevron-top:before, .k-icon-circle-check:before, .k-icon-circle-x:before, .k-icon-clipboard:before, .k-icon-clock:before, .k-icon-cloud-download:before, .k-icon-cloud-upload:before, .k-icon-cloud:before, .k-icon-cloudy:before, .k-icon-code:before, .k-icon-cog:before, .k-icon-collapse-down:before, .k-icon-collapse-left:before, .k-icon-collapse-right:before, .k-icon-collapse-up:before, .k-icon-command:before, .k-icon-comment-square:before, .k-icon-compass:before, .k-icon-contrast:before, .k-icon-copywriting:before, .k-icon-credit-card:before, .k-icon-crop:before, .k-icon-dashboard:before, .k-icon-data-transfer-download:before, .k-icon-data-transfer-upload:before, .k-icon-delete:before, .k-icon-dial:before, .k-icon-document:before, .k-icon-dollar:before, .k-icon-double-quote-sans-left:before, .k-icon-double-quote-sans-right:before, .k-icon-double-quote-serif-left:before, .k-icon-double-quote-serif-right:before, .k-icon-droplet:before, .k-icon-eject:before, .k-icon-elevator:before, .k-icon-ellipses:before, .k-icon-envelope-closed:before, .k-icon-envelope-open:before, .k-icon-euro:before, .k-icon-excerpt:before, .k-icon-expand-down:before, .k-icon-expand-left:before, .k-icon-expand-right:before, .k-icon-expand-up:before, .k-icon-external-link:before, .k-icon-eye:before, .k-icon-eyedropper:before, .k-icon-file:before, .k-icon-fire:before, .k-icon-flag:before, .k-icon-flash:before, .k-icon-folder:before, .k-icon-fork:before, .k-icon-fullscreen-enter:before, .k-icon-fullscreen-exit:before, .k-icon-globe:before, .k-icon-graph:before, .k-icon-grid-four-up:before, .k-icon-grid-three-up:before, .k-icon-grid-two-up:before, .k-icon-hard-drive:before, .k-icon-header:before, .k-icon-headphones:before, .k-icon-heart:before, .k-icon-home:before, .k-icon-image:before, .k-icon-inbox:before, .k-icon-infinity:before, .k-icon-info:before, .k-icon-italic:before, .k-icon-justify-center:before, .k-icon-justify-left:before, .k-icon-justify-right:before, .k-icon-key:before, .k-icon-laptop:before, .k-icon-layers:before, .k-icon-lightbulb:before, .k-icon-link-broken:before, .k-icon-link-intact:before, .k-icon-list-rich:before, .k-icon-list:before, .k-icon-location:before, .k-icon-lock-locked:before, .k-icon-lock-unlocked:before, .k-icon-loop-circular:before, .k-icon-loop-square:before, .k-icon-loop:before, .k-icon-magnifying-glass:before, .k-icon-map-marker:before, .k-icon-map:before, .k-icon-media-pause:before, .k-icon-media-play:before, .k-icon-media-record:before, .k-icon-media-skip-backward:before, .k-icon-media-skip-forward:before, .k-icon-media-step-backward:before, .k-icon-media-step-forward:before, .k-icon-media-stop:before, .k-icon-medical-cross:before, .k-icon-menu:before, .k-icon-microphone:before, .k-icon-minus:before, .k-icon-monitor:before, .k-icon-moon:before, .k-icon-move:before, .k-icon-musical-note:before, .k-icon-paperclip:before, .k-icon-pencil:before, .k-icon-people:before, .k-icon-person:before, .k-icon-phone:before, .k-icon-pie-chart:before, .k-icon-pin:before, .k-icon-play-circle:before, .k-icon-plus:before, .k-icon-power-standby:before, .k-icon-print:before, .k-icon-project:before, .k-icon-pulse:before, .k-icon-puzzle-piece:before, .k-icon-question-mark:before, .k-icon-rain:before, .k-icon-random:before, .k-icon-reload:before, .k-icon-resize-both:before, .k-icon-resize-height:before, .k-icon-resize-width:before, .k-icon-rss-alt:before, .k-icon-rss:before, .k-icon-script:before, .k-icon-share-boxed:before, .k-icon-share:before, .k-icon-shield:before, .k-icon-signal:before, .k-icon-signpost:before, .k-icon-sort-ascending:before, .k-icon-sort-descending:before, .k-icon-sorting:before, .k-icon-spreadsheet:before, .k-icon-star:before, .k-icon-sun:before, .k-icon-tablet:before, .k-icon-tag:before, .k-icon-tags:before, .k-icon-target:before, .k-icon-task:before, .k-icon-terminal:before, .k-icon-text:before, .k-icon-thumb-down:before, .k-icon-thumb-up:before, .k-icon-timer:before, .k-icon-transfer:before, .k-icon-trash:before, .k-icon-underline:before, .k-icon-vertical-align-bottom:before, .k-icon-vertical-align-center:before, .k-icon-vertical-align-top:before, .k-icon-video:before, .k-icon-volume-high:before, .k-icon-volume-low:before, .k-icon-volume-off:before, .k-icon-warning:before, .k-icon-wifi:before, .k-icon-wrench:before, .k-icon-x:before, .k-icon-yen:before, .k-icon-zoom-in:before, .k-icon-zoom-out:before, .k-appearance.k-checked .koowa input[type="checkbox"]:before, .koowa .icon-new:before, .koowa .icon-download:before, .koowa .icon-options:before, .koowa .icon-delete:before, .koowa .icon-purge:before, .koowa .icon-publish:before, .koowa .icon-unpublish:before, .koowa .icon-apply:before, .koowa .icon-save:before, .koowa .icon-cancel:before, .koowa .k-scopebar__item--filters button.has-active-filter:before, .koowa .k-scopebar__reset-filters:before { display: inline-block; margin: auto; }
+.k-icon-account-login:before, .k-icon-account-logout:before, .k-icon-action-redo:before, .k-icon-action-undo:before, .k-icon-align-center:before, .k-icon-align-left:before, .k-icon-align-right:before, .k-icon-aperture:before, .k-icon-arrow-bottom:before, .k-icon-arrow-circle-bottom:before, .k-icon-arrow-circle-left:before, .k-icon-arrow-circle-right:before, .k-icon-arrow-circle-top:before, .k-icon-arrow-left:before, .k-icon-arrow-right:before, .k-icon-arrow-thick-bottom:before, .k-icon-arrow-thick-left:before, .k-icon-arrow-thick-right:before, .k-icon-arrow-thick-top:before, .k-icon-arrow-top:before, .k-icon-audio-spectrum:before, .k-icon-audio:before, .k-icon-badge:before, .k-icon-ban:before, .k-icon-bar-chart:before, .k-icon-basket:before, .k-icon-battery-empty:before, .k-icon-battery-full:before, .k-icon-beaker:before, .k-icon-bell:before, .k-icon-bluetooth:before, .k-icon-bold:before, .k-icon-bolt:before, .k-icon-book:before, .k-icon-bookmark:before, .k-icon-box:before, .k-icon-briefcase:before, .k-icon-british-pound:before, .k-icon-browser:before, .k-icon-brush:before, .k-icon-bug:before, .k-icon-bullhorn:before, .k-icon-calculator:before, .k-icon-calendar:before, .k-icon-camera-slr:before, .k-icon-caret-bottom:before, .k-icon-caret-left:before, .k-icon-caret-right:before, .k-icon-caret-top:before, .k-icon-cart:before, .k-icon-chat:before, .k-icon-check:before, .k-icon-chevron-bottom:before, .k-icon-chevron-left:before, .k-icon-chevron-right:before, .k-icon-chevron-top:before, .k-icon-circle-check:before, .k-icon-circle-x:before, .k-icon-clipboard:before, .k-icon-clock:before, .k-icon-cloud-download:before, .k-icon-cloud-upload:before, .k-icon-cloud:before, .k-icon-cloudy:before, .k-icon-code:before, .k-icon-cog:before, .k-icon-collapse-down:before, .k-icon-collapse-left:before, .k-icon-collapse-right:before, .k-icon-collapse-up:before, .k-icon-command:before, .k-icon-comment-square:before, .k-icon-compass:before, .k-icon-contrast:before, .k-icon-copywriting:before, .k-icon-credit-card:before, .k-icon-crop:before, .k-icon-dashboard:before, .k-icon-data-transfer-download:before, .k-icon-data-transfer-upload:before, .k-icon-delete:before, .k-icon-dial:before, .k-icon-document:before, .k-icon-dollar:before, .k-icon-double-quote-sans-left:before, .k-icon-double-quote-sans-right:before, .k-icon-double-quote-serif-left:before, .k-icon-double-quote-serif-right:before, .k-icon-droplet:before, .k-icon-eject:before, .k-icon-elevator:before, .k-icon-ellipses:before, .k-icon-envelope-closed:before, .k-icon-envelope-open:before, .k-icon-euro:before, .k-icon-excerpt:before, .k-icon-expand-down:before, .k-icon-expand-left:before, .k-icon-expand-right:before, .k-icon-expand-up:before, .k-icon-external-link:before, .k-icon-eye:before, .k-icon-eyedropper:before, .k-icon-file:before, .k-icon-fire:before, .k-icon-flag:before, .k-icon-flash:before, .k-icon-folder:before, .k-icon-fork:before, .k-icon-fullscreen-enter:before, .k-icon-fullscreen-exit:before, .k-icon-globe:before, .k-icon-graph:before, .k-icon-grid-four-up:before, .k-icon-grid-three-up:before, .k-icon-grid-two-up:before, .k-icon-hard-drive:before, .k-icon-header:before, .k-icon-headphones:before, .k-icon-heart:before, .k-icon-home:before, .k-icon-image:before, .k-icon-inbox:before, .k-icon-infinity:before, .k-icon-info:before, .k-icon-italic:before, .k-icon-justify-center:before, .k-icon-justify-left:before, .k-icon-justify-right:before, .k-icon-key:before, .k-icon-laptop:before, .k-icon-layers:before, .k-icon-lightbulb:before, .k-icon-link-broken:before, .k-icon-link-intact:before, .k-icon-list-rich:before, .k-icon-list:before, .k-icon-location:before, .k-icon-lock-locked:before, .k-icon-lock-unlocked:before, .k-icon-loop-circular:before, .k-icon-loop-square:before, .k-icon-loop:before, .k-icon-magnifying-glass:before, .k-icon-map-marker:before, .k-icon-map:before, .k-icon-media-pause:before, .k-icon-media-play:before, .k-icon-media-record:before, .k-icon-media-skip-backward:before, .k-icon-media-skip-forward:before, .k-icon-media-step-backward:before, .k-icon-media-step-forward:before, .k-icon-media-stop:before, .k-icon-medical-cross:before, .k-icon-menu:before, .k-icon-microphone:before, .k-icon-minus:before, .k-icon-monitor:before, .k-icon-moon:before, .k-icon-move:before, .k-icon-musical-note:before, .k-icon-paperclip:before, .k-icon-pencil:before, .k-icon-people:before, .k-icon-person:before, .k-icon-phone:before, .k-icon-pie-chart:before, .k-icon-pin:before, .k-icon-play-circle:before, .k-icon-plus:before, .k-icon-power-standby:before, .k-icon-print:before, .k-icon-project:before, .k-icon-pulse:before, .k-icon-puzzle-piece:before, .k-icon-question-mark:before, .k-icon-rain:before, .k-icon-random:before, .k-icon-reload:before, .k-icon-resize-both:before, .k-icon-resize-height:before, .k-icon-resize-width:before, .k-icon-rss-alt:before, .k-icon-rss:before, .k-icon-script:before, .k-icon-share-boxed:before, .k-icon-share:before, .k-icon-shield:before, .k-icon-signal:before, .k-icon-signpost:before, .k-icon-sort-ascending:before, .k-icon-sort-descending:before, .k-icon-sorting:before, .k-icon-spreadsheet:before, .k-icon-star:before, .k-icon-sun:before, .k-icon-tablet:before, .k-icon-tag:before, .k-icon-tags:before, .k-icon-target:before, .k-icon-task:before, .k-icon-terminal:before, .k-icon-text:before, .k-icon-thumb-down:before, .k-icon-thumb-up:before, .k-icon-timer:before, .k-icon-transfer:before, .k-icon-trash:before, .k-icon-underline:before, .k-icon-vertical-align-bottom:before, .k-icon-vertical-align-center:before, .k-icon-vertical-align-top:before, .k-icon-video:before, .k-icon-volume-high:before, .k-icon-volume-low:before, .k-icon-volume-off:before, .k-icon-warning:before, .k-icon-wifi:before, .k-icon-wrench:before, .k-icon-x:before, .k-icon-yen:before, .k-icon-zoom-in:before, .k-icon-zoom-out:before, .k-appearance.k-checked .koowa input[type="checkbox"]:before, .koowa .icon-new:before, .koowa .icon-download:before, .koowa .icon-options:before, .koowa .icon-delete:before, .koowa .icon-purge:before, .koowa .icon-publish:before, .koowa .icon-unpublish:before, .koowa .icon-apply:before, .koowa .icon-save:before, .koowa .icon-cancel:before, .koowa .k-scopebar__item--filters .k-filter-button.has-active-filter:before, .koowa .k-scopebar__reset-filters:before { display: inline-block; margin: auto; }
 
 /** Icon classes Creating a class name for each individual icon to be used in markup like: <span class="k-icon-circle"></span> */
 .k-icon-account-login:before { content: ""; }
@@ -683,6 +679,201 @@ html { box-sizing: border-box; }
 
 .select2-container--classic.select2-container--open .select2-dropdown { border-color: #5897fb; }
 
+/*! Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
+.select2-container--bootstrap { display: block; /*------------------------------------*            #COMMON STYLES \*------------------------------------*/ /** Search field in the Select2 dropdown. */ /** No outline for all search fields - in the dropdown and inline in multi Select2s. */ /** Adjust Select2's choices hover and selected styles to match Bootstrap 3's default dropdown styles. @see http://getbootstrap.com/components/#dropdowns */ /** Clear the selection. */ /** Address disabled Select2 styles. @see https://select2.github.io/examples.html#disabled @see http://getbootstrap.com/css/#forms-control-disabled */ /*------------------------------------*            #DROPDOWN \*------------------------------------*/ /** Dropdown border color and box-shadow. */ /** Limit the dropdown height. */ /*------------------------------------*            #SINGLE SELECT2 \*------------------------------------*/ /*------------------------------------*        #MULTIPLE SELECT2 \*------------------------------------*/ /** Address Bootstrap control sizing classes 1. Reset Bootstrap defaults. 2. Adjust the dropdown arrow button icon position. @see http://getbootstrap.com/css/#forms-control-sizes */ /* 1 */ /*------------------------------------*        #RTL SUPPORT \*------------------------------------*/ }
+
+.select2-container--bootstrap .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); background-color: #fff; border: 1px solid #ccc; border-radius: 4px; color: #555555; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; outline: 0; }
+
+.select2-container--bootstrap .select2-search--dropdown .select2-search__field { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); background-color: #fff; border: 1px solid #ccc; border-radius: 4px; color: #555555; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 14px; }
+
+.select2-container--bootstrap .select2-search__field { outline: 0; /* Firefox 18- */ /** Firefox 19+ @see http://stackoverflow.com/questions/24236240/color-for-styled-placeholder-text-is-muted-in-firefox */ }
+
+.select2-container--bootstrap .select2-search__field::-webkit-input-placeholder { color: #999; }
+
+.select2-container--bootstrap .select2-search__field:-moz-placeholder { color: #999; }
+
+.select2-container--bootstrap .select2-search__field::-moz-placeholder { color: #999; opacity: 1; }
+
+.select2-container--bootstrap .select2-search__field:-ms-input-placeholder { color: #999; }
+
+.select2-container--bootstrap .select2-results__option { /** Disabled results. @see https://select2.github.io/examples.html#disabled-results */ /** Hover state. */ /** Selected state. */ }
+
+.select2-container--bootstrap .select2-results__option[role=group] { padding: 0; }
+
+.select2-container--bootstrap .select2-results__option[aria-disabled=true] { color: #777777; cursor: not-allowed; }
+
+.select2-container--bootstrap .select2-results__option[aria-selected=true] { background-color: #f5f5f5; color: #262626; }
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] { background-color: #337ab7; color: #fff; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option { padding: 5px 10px; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__group { padding-left: 0; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option { margin-left: -10px; padding-left: 20px; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -20px; padding-left: 30px; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -30px; padding-left: 40px; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -40px; padding-left: 50px; }
+
+.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -50px; padding-left: 60px; }
+
+.select2-container--bootstrap .select2-results__group { color: #777777; display: block; padding: 5px 10px; font-size: 12px; line-height: 1.428571429; white-space: nowrap; }
+
+.select2-container--bootstrap.select2-container--focus .select2-selection, .select2-container--bootstrap.select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; border-color: #66afe9; }
+
+.select2-container--bootstrap.select2-container--open { /** Make the dropdown arrow point up while the dropdown is visible. */ /** Handle border radii of the container when the dropdown is showing. */ }
+
+.select2-container--bootstrap.select2-container--open .select2-selection .select2-selection__arrow b { border-color: transparent transparent #999 transparent; border-width: 0 4px 4px 4px; }
+
+.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection { border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-bottom-color: transparent; }
+
+.select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection { border-top-right-radius: 0; border-top-left-radius: 0; border-top-color: transparent; }
+
+.select2-container--bootstrap .select2-selection__clear { color: #999; cursor: pointer; float: right; font-weight: bold; margin-right: 10px; }
+
+.select2-container--bootstrap .select2-selection__clear:hover { color: #333; }
+
+.select2-container--bootstrap.select2-container--disabled .select2-selection { border-color: #ccc; box-shadow: none; }
+
+.select2-container--bootstrap.select2-container--disabled .select2-selection, .select2-container--bootstrap.select2-container--disabled .select2-search__field { cursor: not-allowed; }
+
+.select2-container--bootstrap.select2-container--disabled .select2-selection, .select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice { background-color: #eeeeee; }
+
+.select2-container--bootstrap.select2-container--disabled .select2-selection__clear, .select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice__remove { display: none; }
+
+.select2-container--bootstrap .select2-dropdown { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); border-color: #66afe9; overflow-x: hidden; margin-top: -1px; }
+
+.select2-container--bootstrap .select2-dropdown--above { margin-top: 1px; }
+
+.select2-container--bootstrap .select2-results > .select2-results__options { max-height: 200px; overflow-y: auto; }
+
+.select2-container--bootstrap .select2-selection--single { height: 32px; line-height: 1.428571429; padding: 5px 22px 5px 10px; /** Adjust the single Select2's dropdown arrow button appearance. */ }
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__arrow { position: absolute; bottom: 0; right: 10px; top: 0; width: 4px; }
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b { border-color: #999 transparent transparent transparent; border-style: solid; border-width: 4px 4px 0 4px; height: 0; left: 0; margin-left: -4px; margin-top: -2px; position: absolute; top: 50%; width: 0; }
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__rendered { color: #555555; padding: 0; }
+
+.select2-container--bootstrap .select2-selection--single .select2-selection__placeholder { color: #999; }
+
+.select2-container--bootstrap .select2-selection--multiple { min-height: 32px; /** Make Multi Select2's choices match Bootstrap 3's default button styles. */ /** Minus 2px borders. */ /** Clear the selection. */ }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered { box-sizing: border-box; display: block; line-height: 1.428571429; list-style: none; margin: 0; overflow: hidden; padding: 0; width: 100%; text-overflow: ellipsis; white-space: nowrap; }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder { color: #999; float: left; margin-top: 5px; }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice { color: #555555; background: #fff; border: 1px solid #ccc; border-radius: 4px; cursor: default; float: left; margin: 4px 0 0 5px; padding: 0 5px; }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field { background: transparent; padding: 0 10px; height: 30px; line-height: 1.428571429; margin-top: 0; min-width: 5em; }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove { color: #999; cursor: pointer; display: inline-block; font-weight: bold; margin-right: 2.5px; }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover { color: #333; }
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__clear { margin-top: 5px; }
+
+.select2-container--bootstrap.input-sm, .koowa .input-group-sm > .select2-container--bootstrap.form-control, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn, .select2-container--bootstrap.input-lg, .koowa .input-group-lg > .select2-container--bootstrap.form-control, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn { border-radius: 0; font-size: 12px; height: auto; line-height: 1; padding: 0; }
+
+.select2-container--bootstrap.input-sm .select2-selection--single, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--single, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--single, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single, .input-group-sm .select2-container--bootstrap .select2-selection--single, .form-group-sm .select2-container--bootstrap .select2-selection--single { border-radius: 3px; font-size: 12px; height: 30px; line-height: 1.5; padding: 5px 22px 5px 10px; /* 2 */ }
+
+.select2-container--bootstrap.input-sm .select2-selection--single .select2-selection__arrow b, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--single .select2-selection__arrow b, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--single .select2-selection__arrow b, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single .select2-selection__arrow b, .input-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b, .form-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b { margin-left: -5px; }
+
+.select2-container--bootstrap.input-sm .select2-selection--multiple, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple, .input-group-sm .select2-container--bootstrap .select2-selection--multiple, .form-group-sm .select2-container--bootstrap .select2-selection--multiple { min-height: 30px; }
+
+.select2-container--bootstrap.input-sm .select2-selection--multiple .select2-selection__choice, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__choice, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__choice, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__choice, .input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice, .form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice { font-size: 12px; line-height: 1.5; margin: 4px 0 0 5px; padding: 0 5px; }
+
+.select2-container--bootstrap.input-sm .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-search--inline .select2-search__field, .input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, .form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field { padding: 0 10px; font-size: 12px; height: 28px; line-height: 1.5; }
+
+.select2-container--bootstrap.input-sm .select2-selection--multiple .select2-selection__clear, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__clear, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__clear, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__clear, .input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear, .form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear { margin-top: 5px; }
+
+.select2-container--bootstrap.input-lg .select2-selection--single, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--single, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--single, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single, .input-group-lg .select2-container--bootstrap .select2-selection--single, .form-group-lg .select2-container--bootstrap .select2-selection--single { border-radius: 6px; font-size: 15px; height: 42px; line-height: 1.3333333; padding: 10px 31px 10px 16px; /* 1 */ }
+
+.select2-container--bootstrap.input-lg .select2-selection--single .select2-selection__arrow, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--single .select2-selection__arrow, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--single .select2-selection__arrow, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single .select2-selection__arrow, .input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow, .form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow { width: 5px; }
+
+.select2-container--bootstrap.input-lg .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single .select2-selection__arrow b, .input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b, .form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b { border-width: 5px 5px 0 5px; margin-left: -5px; margin-left: -10px; margin-top: -2.5px; }
+
+.select2-container--bootstrap.input-lg .select2-selection--multiple, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple, .input-group-lg .select2-container--bootstrap .select2-selection--multiple, .form-group-lg .select2-container--bootstrap .select2-selection--multiple { min-height: 42px; }
+
+.select2-container--bootstrap.input-lg .select2-selection--multiple .select2-selection__choice, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__choice, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__choice, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__choice, .input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice, .form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice { font-size: 15px; line-height: 1.3333333; border-radius: 4px; margin: 9px 0 0 8px; padding: 0 10px; }
+
+.select2-container--bootstrap.input-lg .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-search--inline .select2-search__field, .input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, .form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field { padding: 0 16px; font-size: 15px; height: 40px; line-height: 1.3333333; }
+
+.select2-container--bootstrap.input-lg .select2-selection--multiple .select2-selection__clear, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__clear, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__clear, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__clear, .input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear, .form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear { margin-top: 10px; }
+
+.select2-container--bootstrap.input-lg.select2-container--open .select2-selection--single, .koowa .input-group-lg > .select2-container--bootstrap.select2-container--open.form-control .select2-selection--single, .koowa .input-group-lg > .select2-container--bootstrap.select2-container--open.input-group-addon .select2-selection--single, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.select2-container--open.btn .select2-selection--single { /** Make the dropdown arrow point up while the dropdown is visible. */ }
+
+.select2-container--bootstrap.input-lg.select2-container--open .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.select2-container--open.form-control .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.select2-container--open.input-group-addon .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.select2-container--open.btn .select2-selection--single .select2-selection__arrow b { border-color: transparent transparent #999 transparent; border-width: 0 5px 5px 5px; }
+
+.input-group-lg .select2-container--bootstrap.select2-container--open .select2-selection--single { /** Make the dropdown arrow point up while the dropdown is visible. */ }
+
+.input-group-lg .select2-container--bootstrap.select2-container--open .select2-selection--single .select2-selection__arrow b { border-color: transparent transparent #999 transparent; border-width: 0 5px 5px 5px; }
+
+.select2-container--bootstrap[dir="rtl"] { /** Single Select2 1. Makes sure that .select2-selection__placeholder is positioned correctly. */ /** Multiple Select2 */ }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--single { padding-left: 22px; padding-right: 10px; }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__rendered { padding-right: 0; padding-left: 0; text-align: right; /* 1 */ }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__clear { float: left; }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__arrow { left: 10px; right: auto; }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__arrow b { margin-left: 0; }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice, .select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder { float: right; }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice { margin-left: 0; margin-right: 5px; }
+
+.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove { margin-left: 2px; margin-right: auto; }
+
+/*------------------------------------*    #ADDITIONAL GOODIES
+\*------------------------------------*/
+/** Address Bootstrap's validation states If a Select2 widget parent has one of Bootstrap's validation state modifier classes, adjust Select2's border colors and focus states accordingly. You may apply said classes to the Select2 dropdown (body > .select2-container) via JavaScript match Bootstraps' to make its styles match. @see http://getbootstrap.com/css/#forms-control-validation */
+.has-warning .select2-dropdown, .has-warning .select2-selection { border-color: #8a6d3b; }
+
+.has-warning .select2-container--focus .select2-selection, .has-warning .select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b; border-color: #66512c; }
+
+.has-warning.select2-drop-active { border-color: #66512c; }
+
+.has-warning.select2-drop-active.select2-drop.select2-drop-above { border-top-color: #66512c; }
+
+.has-error .select2-dropdown, .has-error .select2-selection { border-color: #a94442; }
+
+.has-error .select2-container--focus .select2-selection, .has-error .select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483; border-color: #843534; }
+
+.has-error.select2-drop-active { border-color: #843534; }
+
+.has-error.select2-drop-active.select2-drop.select2-drop-above { border-top-color: #843534; }
+
+.has-success .select2-dropdown, .has-success .select2-selection { border-color: #3c763d; }
+
+.has-success .select2-container--focus .select2-selection, .has-success .select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168; border-color: #2b542c; }
+
+.has-success.select2-drop-active { border-color: #2b542c; }
+
+.has-success.select2-drop-active.select2-drop.select2-drop-above { border-top-color: #2b542c; }
+
+/** Select2 widgets in Bootstrap Input Groups When Select2 widgets are combined with other elements using Bootstraps "Input Group" component, we don't want specific edges of the Select2 container to have a border-radius. Use .select2-bootstrap-prepend and .select2-bootstrap-append on a Bootstrap 3 .input-group to let the contained Select2 widget know which edges should not be rounded as they are directly followed by another element. @see http://getbootstrap.com/components/#input-groups */
+/** Mimick Bootstraps .input-group .form-control styles. @see https://github.com/twbs/bootstrap/blob/master/less/input-groups.less */
+.input-group .select2-container--bootstrap { display: table; table-layout: fixed; position: relative; z-index: 2; float: left; width: 100%; margin-bottom: 0; }
+
+.input-group.select2-bootstrap-prepend .select2-container--bootstrap .select2-selection { border-bottom-left-radius: 0; border-top-left-radius: 0; }
+
+.input-group.select2-bootstrap-append .select2-container--bootstrap .select2-selection { border-bottom-right-radius: 0; border-top-right-radius: 0; }
+
+/** Adjust alignment of Bootstrap buttons in Bootstrap Input Groups to address Multi Select2's height which - depending on how many elements have been selected - may grow taller than its initial size. @see http://getbootstrap.com/components/#input-groups */
+.select2-bootstrap-append .select2-container--bootstrap, .select2-bootstrap-append .input-group-btn, .select2-bootstrap-append .input-group-btn .btn, .select2-bootstrap-prepend .select2-container--bootstrap, .select2-bootstrap-prepend .input-group-btn, .select2-bootstrap-prepend .input-group-btn .btn { vertical-align: top; }
+
+/** Temporary fix for https://github.com/select2/select2-bootstrap-theme/issues/9 Provides `!important` for certain properties of the class applied to the original `<select>` element to hide it. @see https://github.com/select2/select2/pull/3301 @see https://github.com/fk/select2/commit/31830c7b32cb3d8e1b12d5b434dee40a6e753ada */
+.form-control.select2-hidden-accessible { position: absolute !important; width: 1px !important; }
+
+/** Display override for inline forms */
+.form-inline .select2-container--bootstrap { display: inline-block; }
+
 /* Magnific Popup CSS */
 .mfp-bg { top: 0; left: 0; width: 100%; height: 100%; z-index: 1042; overflow: hidden; position: fixed; background: #0b0b0b; opacity: 0.8; filter: alpha(opacity=80); }
 
@@ -994,183 +1185,6 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 
 .k-modal__title { margin: 0 0 20px 0; text-transform: uppercase; font-weight: bold; }
 
-/*! Select2 Bootstrap Theme v0.1.0-beta.4 | MIT License | github.com/select2/select2-bootstrap-theme */
-.select2-container--bootstrap .select2-search--dropdown .select2-search__field, .select2-container--bootstrap .select2-selection { -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); border: 1px solid #ccc; background-color: #fff; color: #555; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
-
-.select2-container--bootstrap { display: block; }
-
-.select2-container--bootstrap .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); border-radius: 4px; font-size: 14px; outline: 0; }
-
-.select2-container--bootstrap .select2-search--dropdown .select2-search__field { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); border-radius: 4px; font-size: 14px; }
-
-.select2-container--bootstrap .select2-search__field { outline: 0; }
-
-.select2-container--bootstrap .select2-search__field::-webkit-input-placeholder { color: #999; }
-
-.select2-container--bootstrap .select2-search__field:-moz-placeholder { color: #999; }
-
-.select2-container--bootstrap .select2-search__field::-moz-placeholder { color: #999; opacity: 1; }
-
-.select2-container--bootstrap .select2-search__field:-ms-input-placeholder { color: #999; }
-
-.select2-container--bootstrap .select2-results__option[role=group] { padding: 0; }
-
-.select2-container--bootstrap .select2-results__option[aria-disabled=true] { color: #777; cursor: not-allowed; }
-
-.select2-container--bootstrap .select2-results__option[aria-selected=true] { background-color: #f5f5f5; color: #262626; }
-
-.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] { background-color: #337ab7; color: #fff; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option { padding: 6px 12px; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__group { padding-left: 0; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option { margin-left: -12px; padding-left: 24px; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -24px; padding-left: 36px; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -36px; padding-left: 48px; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -48px; padding-left: 60px; }
-
-.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option { margin-left: -60px; padding-left: 72px; }
-
-.select2-container--bootstrap .select2-results__group { color: #777; display: block; padding: 6px 12px; font-size: 12px; line-height: 1.428571429; white-space: nowrap; }
-
-.select2-container--bootstrap.select2-container--focus .select2-selection, .select2-container--bootstrap.select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; border-color: #66afe9; }
-
-.select2-container--bootstrap.select2-container--open .select2-selection .select2-selection__arrow b { border-color: transparent transparent #999; border-width: 0 4px 4px; }
-
-.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection { border-bottom-right-radius: 0; border-bottom-left-radius: 0; border-bottom-color: transparent; }
-
-.select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection { border-top-right-radius: 0; border-top-left-radius: 0; border-top-color: transparent; }
-
-.select2-container--bootstrap .select2-selection__clear { color: #999; cursor: pointer; float: right; font-weight: 700; margin-right: 10px; }
-
-.select2-container--bootstrap .select2-selection__clear:hover { color: #333; }
-
-.select2-container--bootstrap.select2-container--disabled .select2-selection { border-color: #ccc; box-shadow: none; }
-
-.select2-container--bootstrap.select2-container--disabled .select2-search__field, .select2-container--bootstrap.select2-container--disabled .select2-selection { cursor: not-allowed; }
-
-.select2-container--bootstrap.select2-container--disabled .select2-selection, .select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice { background-color: #eee; }
-
-.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice__remove, .select2-container--bootstrap.select2-container--disabled .select2-selection__clear { display: none; }
-
-.select2-container--bootstrap .select2-dropdown { box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); border-color: #66afe9; overflow-x: hidden; margin-top: -1px; }
-
-.select2-container--bootstrap .select2-dropdown--above { margin-top: 1px; }
-
-.select2-container--bootstrap .select2-results > .select2-results__options { max-height: 200px; overflow-y: auto; }
-
-.select2-container--bootstrap .select2-selection--single { height: 34px; line-height: 1.428571429; padding: 6px 24px 6px 12px; }
-
-.select2-container--bootstrap .select2-selection--single .select2-selection__arrow { position: absolute; bottom: 0; right: 12px; top: 0; width: 4px; }
-
-.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b { border-color: #999 transparent transparent; border-style: solid; border-width: 4px 4px 0; height: 0; left: 0; margin-left: -4px; margin-top: -2px; position: absolute; top: 50%; width: 0; }
-
-.select2-container--bootstrap .select2-selection--single .select2-selection__rendered { color: #555; padding: 0; }
-
-.select2-container--bootstrap .select2-selection--single .select2-selection__placeholder { color: #999; }
-
-.select2-container--bootstrap .select2-selection--multiple { min-height: 34px; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered { box-sizing: border-box; display: block; line-height: 1.428571429; list-style: none; margin: 0; overflow: hidden; padding: 0; width: 100%; text-overflow: ellipsis; white-space: nowrap; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder { color: #999; float: left; margin-top: 5px; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice { color: #555; background: #fff; border: 1px solid #ccc; border-radius: 4px; cursor: default; float: left; margin: 5px 0 0 6px; padding: 0 6px; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field { background: 0 0; padding: 0 12px; height: 32px; line-height: 1.428571429; margin-top: 0; min-width: 5em; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove { color: #999; cursor: pointer; display: inline-block; font-weight: 700; margin-right: 3px; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover { color: #333; }
-
-.select2-container--bootstrap .select2-selection--multiple .select2-selection__clear { margin-top: 6px; }
-
-.select2-container--bootstrap.input-lg, .koowa .input-group-lg > .select2-container--bootstrap.form-control, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn, .select2-container--bootstrap.input-sm, .koowa .input-group-sm > .select2-container--bootstrap.form-control, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn { border-radius: 0; font-size: 12px; height: auto; line-height: 1; padding: 0; }
-
-.form-group-sm .select2-container--bootstrap .select2-selection--single, .input-group-sm .select2-container--bootstrap .select2-selection--single, .select2-container--bootstrap.input-sm .select2-selection--single, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--single, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--single, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single { border-radius: 3px; font-size: 12px; height: 30px; line-height: 1.5; padding: 5px 22px 5px 10px; }
-
-.form-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b, .input-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b, .select2-container--bootstrap.input-sm .select2-selection--single .select2-selection__arrow b, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--single .select2-selection__arrow b, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--single .select2-selection__arrow b, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single .select2-selection__arrow b { margin-left: -5px; }
-
-.form-group-sm .select2-container--bootstrap .select2-selection--multiple, .input-group-sm .select2-container--bootstrap .select2-selection--multiple, .select2-container--bootstrap.input-sm .select2-selection--multiple, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple { min-height: 30px; }
-
-.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice, .input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice, .select2-container--bootstrap.input-sm .select2-selection--multiple .select2-selection__choice, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__choice, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__choice, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__choice { font-size: 12px; line-height: 1.5; margin: 4px 0 0 5px; padding: 0 5px; }
-
-.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, .input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, .select2-container--bootstrap.input-sm .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-search--inline .select2-search__field { padding: 0 10px; font-size: 12px; height: 28px; line-height: 1.5; }
-
-.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear, .input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear, .select2-container--bootstrap.input-sm .select2-selection--multiple .select2-selection__clear, .koowa .input-group-sm > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__clear, .koowa .input-group-sm > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__clear, .koowa .input-group-sm > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__clear { margin-top: 5px; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--single, .input-group-lg .select2-container--bootstrap .select2-selection--single, .select2-container--bootstrap.input-lg .select2-selection--single, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--single, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--single, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single { border-radius: 6px; font-size: 18px; height: 46px; line-height: 1.3333333; padding: 10px 31px 10px 16px; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow, .input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow, .select2-container--bootstrap.input-lg .select2-selection--single .select2-selection__arrow, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--single .select2-selection__arrow, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--single .select2-selection__arrow, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single .select2-selection__arrow { width: 5px; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b, .input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b, .select2-container--bootstrap.input-lg .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--single .select2-selection__arrow b { border-width: 5px 5px 0; margin-left: -10px; margin-top: -2.5px; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--multiple, .input-group-lg .select2-container--bootstrap .select2-selection--multiple, .select2-container--bootstrap.input-lg .select2-selection--multiple, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple { min-height: 46px; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice, .input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice, .select2-container--bootstrap.input-lg .select2-selection--multiple .select2-selection__choice, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__choice, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__choice, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__choice { font-size: 18px; line-height: 1.3333333; border-radius: 4px; margin: 9px 0 0 8px; padding: 0 10px; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, .input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field, .select2-container--bootstrap.input-lg .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-search--inline .select2-search__field, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-search--inline .select2-search__field { padding: 0 16px; font-size: 18px; height: 44px; line-height: 1.3333333; }
-
-.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear, .input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear, .select2-container--bootstrap.input-lg .select2-selection--multiple .select2-selection__clear, .koowa .input-group-lg > .select2-container--bootstrap.form-control .select2-selection--multiple .select2-selection__clear, .koowa .input-group-lg > .select2-container--bootstrap.input-group-addon .select2-selection--multiple .select2-selection__clear, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.btn .select2-selection--multiple .select2-selection__clear { margin-top: 10px; }
-
-.input-group-lg .select2-container--bootstrap.select2-container--open .select2-selection--single .select2-selection__arrow b, .select2-container--bootstrap.input-lg.select2-container--open .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.select2-container--open.form-control .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .select2-container--bootstrap.select2-container--open.input-group-addon .select2-selection--single .select2-selection__arrow b, .koowa .input-group-lg > .input-group-btn > .select2-container--bootstrap.select2-container--open.btn .select2-selection--single .select2-selection__arrow b { border-color: transparent transparent #999; border-width: 0 5px 5px; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--single { padding-left: 24px; padding-right: 12px; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__rendered { padding-right: 0; padding-left: 0; text-align: right; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__clear { float: left; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__arrow { left: 12px; right: auto; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--single .select2-selection__arrow b { margin-left: 0; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice, .select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__placeholder { float: right; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice { margin-left: 0; margin-right: 6px; }
-
-.select2-container--bootstrap[dir=rtl] .select2-selection--multiple .select2-selection__choice__remove { margin-left: 2px; margin-right: auto; }
-
-.has-warning .select2-dropdown, .has-warning .select2-selection { border-color: #8a6d3b; }
-
-.has-warning .select2-container--focus .select2-selection, .has-warning .select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c0a16b; border-color: #66512c; }
-
-.has-warning.select2-drop-active { border-color: #66512c; }
-
-.has-warning.select2-drop-active.select2-drop.select2-drop-above { border-top-color: #66512c; }
-
-.has-error .select2-dropdown, .has-error .select2-selection { border-color: #a94442; }
-
-.has-error .select2-container--focus .select2-selection, .has-error .select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483; border-color: #843534; }
-
-.has-error.select2-drop-active { border-color: #843534; }
-
-.has-error.select2-drop-active.select2-drop.select2-drop-above { border-top-color: #843534; }
-
-.has-success .select2-dropdown, .has-success .select2-selection { border-color: #3c763d; }
-
-.has-success .select2-container--focus .select2-selection, .has-success .select2-container--open .select2-selection { box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #67b168; border-color: #2b542c; }
-
-.has-success.select2-drop-active { border-color: #2b542c; }
-
-.has-success.select2-drop-active.select2-drop.select2-drop-above { border-top-color: #2b542c; }
-
-.input-group .select2-container--bootstrap { display: table; table-layout: fixed; position: relative; z-index: 2; float: left; width: 100%; margin-bottom: 0; }
-
-.input-group.select2-bootstrap-prepend .select2-container--bootstrap .select2-selection { border-bottom-left-radius: 0; border-top-left-radius: 0; }
-
-.input-group.select2-bootstrap-append .select2-container--bootstrap .select2-selection { border-bottom-right-radius: 0; border-top-right-radius: 0; }
-
-.select2-bootstrap-append .input-group-btn, .select2-bootstrap-append .input-group-btn .btn, .select2-bootstrap-append .select2-container--bootstrap, .select2-bootstrap-prepend .input-group-btn, .select2-bootstrap-prepend .input-group-btn .btn, .select2-bootstrap-prepend .select2-container--bootstrap { vertical-align: top; }
-
-.form-control.select2-hidden-accessible { position: absolute !important; width: 1px !important; }
-
-.form-inline .select2-container--bootstrap { display: inline-block; }
-
 /* We need the dropdowns for the datepicker */
 .caret { display: inline-block; width: 0; height: 0; margin-left: 2px; vertical-align: middle; border-top: 4px dashed; border-right: 4px solid transparent; border-left: 4px solid transparent; }
 
@@ -1330,7 +1344,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 /* ========================================================================== Koowa namespaced styling ========================================================================== */
 /** By namespacing we make sure our styles never interfere with other styles on the page For example when using Nooku inside of another framework or CMS like Joomla or Wordpress */
-.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / extensions */ /** Default button styles 1. Right floating buttons 2. Remove underline when button is an <a> element */ /** Form and control groups Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /* ========================================================================== Bootstrap input group ========================================================================== */ /* Atoms */ /* Default link style */ /** Default fieldset style 1. Default bottom-margin of 1.5 times the font-size 2. Using single colon so it works in IE8 as well 3. No bottom-margin for all the last-childs so parents can have bottom padding */ /** Default img style 1. Responsive images */ /** Default paragraph style 1. Remove default top-margin 2. Default bottom-margin of 1.5 times the font-size 3. Using single colon so it works in IE8 as well 4. No bottom-margin for all the last-childs so parents can have bottom padding */ /* Molecules */ /* ========================================================================== CSS only styled checkboxes and radio boxes ========================================================================== */ /** Shared styling between radio boxes and checkboxes */ /* ========================================================================== CSS only styled checkbox ========================================================================== */ /** 1. Remove rounded corners by default 2. Display a check icon in the psuedo before element 3. Height of the box minus the border size 4. Height of the psuedo element minus a 1px padding/margin to move icon away from the side of the box 5. Set the color of the check icon */ /* ========================================================================== CSS only styled radio box ========================================================================== */ /** 1. Making the radio box round 2. Adding content to display the psuedo element 3. Small inner circle, scaling with the box itself 4. positioning the inner circle 5. Making inner circle actually round */ /* ========================================================================== CSS only animated radio toggle styling ========================================================================== */ /** Default radio toggle ========================================================================= <div class="booleanlist"> <div class="booleanlist__item"> <input type="radio" name="enabled" id="enabled1" value="1" checked="checked"> <label for="enabled1"><span>Published</span></label> </div> <div class="booleanlist__item"> <input type="radio" name="enabled" id="enabled0" value="0"> <label for="enabled0"><span>Unpublished</span></label> </div> </div> */ /** Neutral radio toggle ========================================================================= <div class="booleanlist booleanlist--neutral"> <div class="booleanlist__item"> <input type="radio" name="enabled" id="enabled1" value="1" checked="checked"> <label for="enabled1"><span>Published</span></label> </div> <div class="booleanlist__item"> <input type="radio" name="enabled" id="enabled0" value="0"> <label for="enabled0"><span>Unpublished</span></label> </div> </div> */ /** Radio toggle with more then two items ========================================================================= <div class="booleanlist booleanlist--multiple"> <div class="booleanlist__item"> <input type="radio" name="enabled" id="item1" value="1" checked="checked"> <label for="item1"><span>Published</span></label> </div> <div class="booleanlist__item"> <input type="radio" name="enabled" id="item2" value="0"> <label for="item2"><span>Unpublished</span></label> </div> <div class="booleanlist__item"> <input type="radio" name="enabled" id="item3" value="0"> <label for="item3"><span>Unpublished</span></label> </div> </div> */ /** Cutting the mustard 1. The :not(old-ie) makes sure nothing gets added to older/incapable IE Instead, normal radio boxes will be presented 2. Display parent element as 'table' so we can have proportional children (if more then two children) */ /* ========================================================================== Breadcrumbs ========================================================================== */ /** <!-- Breadcrumbs --> <div class="k-breadcrumb"> <ul> <!-- Home icon item --> <li class="home"> <a class="k-breadcrumb__item k-icon-home" href="#"> <span class="visually-hidden">Home</span> </a> </li> <!-- All but last items --> <li> <a class="k-breadcrumb__item" href="#"> Some menu item </a> </li> <!-- last / active item --> <li class="active"> <span class="k-breadcrumb__item">Active menu item</span> </li> </ul> </div><!-- .k-breadcrumb --> */ /* Parent element ========================================================================== */ /** 1. Scroll when items don't fit parent anymore */ /* When flexbox is in use ========================================================================== */ /* Breadcrumb contents ========================================================================== */ /* Single breadcrumb items */ /* ========================================================================== CSS only animated checkbox toggle styling ========================================================================== */ /** Default checkbox toggle ========================================================================= <div class="k-checkbox-toggle"> <input type="checkbox" name="group1" id="group1a" value="1"> <label for="group1a"> <span data-true="✓" data-false="✖">Do something?</span> </label> </div> */ /** Neutral checkbox toggle ========================================================================= <div class="k-checkbox-toggle k-checkbox-toggle--neutral"> <input type="checkbox" name="group1" id="group1a" value="1"> <label for="group1a"> <span data-true="✓" data-false="✖">Do something?</span> </label> </div> */ /** Cutting the mustard 1. The :not(old-ie) makes sure nothing gets added to older/incapable IE Instead, normal checkboxes will be presented */ /* ========================================================================== The component div ========================================================================== */ /* ========================================================================== The content div ========================================================================== */ /** 1. Set the z-index higher than the menus 2. Setting a background so container will fall nicely over the sidebar 3. Set transition for off canvas sidebar */ /** When flexbox is in use 1. Reset width needed for table */ /** Container when toggled 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** The overlay 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled 1. Set opacity 2. Set z-index to 1 so it will become visible */ /* ========================================================================== The content wrapper ========================================================================== */ /** 1. Clearing toolbar floats when flexbox is not in use */ /* When flexbox is in use */ /** Wrapper when toggled 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /* ========================================================================== Upload ========================================================================== */ /** <!-- filter container --> <div class="k-filter-container"> <div class="k-filter-container__item"> </div> </div><!-- .k-filter-container --> */ /** The items 1. Making room for the close button */ /* Cells within items */ /* Fixed items */ /* The close button */ /* ========================================================================== Form block ========================================================================== */ /** To be used in sidebar of forms Data in these boxes should be non-required info */ /** <!-- Breadcrumbs --> <fieldset class="k-form-block"> <div class="k-form-block__header"> Block header </div> <div class="k-form-block__content"> Block content </div> </fieldset> */ /* The block itself */ /* The header */ /* The content */ /* ========================================================================== Grid ========================================================================== */ /** <!-- Container --> <div class="k-container"> <!-- Main information --> <div class="k-container__main"> Main </div><!-- .k-container__main --> <!-- Other information --> <div class="k-container__sub"> Sub </div><!-- .k-container__sub --> </div><!-- .k-container --> */ /* Container */ /* When flexbox is in use */ /* Grid children */ /* ========================================================================== Animated hamburger button ========================================================================== */ /** 1. Hide when JS is disabled, we don't need a toggle when there's no JS 2. Show when JS is enabled 3. Hide when the sidebar is visible */ /** <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button"> <span class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span> </button> */ /** Positioning the toggle button(s) */ /** Transform hamburger into a cross when the sidebar is opened */ /* ========================================================================== Interface icons ========================================================================== */ /* Toolbar icons ========================================================================== */ /* ========================================================================== Sidebar list ========================================================================== */ /** <!-- List --> <ul class="k-list"> <!-- Active item --> <li> <a href="#"> <span class="k-icon-clock"></span> Clocks </a> </li> <!-- Other items --> <li> <a href="#"> <span class="k-icon-clock"></span> Clocks </a> </li> </ul> */ /** 1. Reset default <ul> styling */ /* ========================================================================== Sidebar navigation ========================================================================== */ /** <!-- Navigation --> <ul class="k-navigation"> <!-- Active item --> <li class="active"> <a class="k-icon-activities" href="#"> Activities </a> </li> <!-- Other items --> <li> <a class="k-icon-tasks" href="#"> Tasks </a> </li> </ul> */ /** 1. Reset default <ul> styling */ /* ========================================================================== Overflowing ========================================================================== */ /** Add overflowing shadow boxes to either top, right, bottom or left side of an element. This shows the user that there's more content to see when no scrollbars are visible. To properly use this you need to wrap the overflowing container inside another container named `overflowing`. JS will take care of this if you don't. 1. This wrapping container needs to have overflow: hidden set 2. It also needs have a relative position for positioning the shadows 3. And adding overflow-scrolling: touch for smooth scroll on iOs 4. Add display: flex so child (actual overflowing container) can flex */ /* ========================================================================== Scopebar ========================================================================== */ /**
+.koowa { /* Namespaced Normalize */ /*! normalize.css v3.0.2 | MIT License | git.io/normalize */ /* Namespaced Twitter Bootstrap */ /* Bootstrap overrides / extensions */ /** Default button styles 1. Right floating buttons 2. Remove underline when button is an <a> element */ /** Form and control groups Remove the bottom margin of the last child This way the groups don't add large spacing in bordered boxes */ /* ========================================================================== Bootstrap input group ========================================================================== */ /* Atoms */ /* Default link style */ /** Default fieldset style 1. Default bottom-margin of 1.5 times the font-size 2. Using single colon so it works in IE8 as well 3. No bottom-margin for all the last-childs so parents can have bottom padding */ /** Default img style 1. Responsive images */ /** Default paragraph style 1. Remove default top-margin 2. Default bottom-margin of 1.5 times the font-size 3. Using single colon so it works in IE8 as well 4. No bottom-margin for all the last-childs so parents can have bottom padding */ /* Molecules */ /* ========================================================================== Form layouts ========================================================================== */ /* ========================================================================== CSS only styled checkboxes and radio boxes ========================================================================== */ /** Shared styling between radio boxes and checkboxes Handles following marlup styles: Markup example 1: <input id="input1"> <label for="input1">Label 1</label> <input id="input2"> <label for="input2">Label 2</label> Markup example 2: <label><input id="input1"> Label 1</label> <label><input id="input2"> Label 2</label> */ /* ========================================================================== CSS only styled checkbox ========================================================================== */ /** 1. Remove rounded corners by default 2. Display a check icon in the psuedo before element 3. Height of the box minus the border size 4. Height of the psuedo element minus a 1px padding/margin to move icon away from the side of the box 5. Set the color of the check icon */ /* ========================================================================== CSS only styled radio box ========================================================================== */ /** 1. Making the radio box round 2. Adding content to display the psuedo element 3. Small inner circle, scaling with the box itself 4. positioning the inner circle 5. Making inner circle actually round */ /* ========================================================================== CSS only animated boolean list ========================================================================== */ /** Default booleanlist ========================================================================= <div class="booleanlist"> <input type="radio" name="enabled" id="enabled1" value="1" checked="checked"> <label for="enabled1"><span>Published</span></label> <input type="radio" name="enabled" id="enabled0" value="0"> <label for="enabled0"><span>Unpublished</span></label> </div> */ /** Neutral booleanlist ========================================================================= <div class="booleanlist booleanlist--neutral"> <input type="radio" name="enabled" id="enabled1" value="1" checked="checked"> <label for="enabled1"><span>Published</span></label> <input type="radio" name="enabled" id="enabled0" value="0"> <label for="enabled0"><span>Unpublished</span></label> </div> */ /** Check if :checked is supported using modernizr */ /* ========================================================================== Breadcrumbs ========================================================================== */ /** <!-- Breadcrumbs --> <div class="k-breadcrumb"> <ul> <!-- Home icon item --> <li class="home"> <a class="k-breadcrumb__item k-icon-home" href="#"> <span class="visually-hidden">Home</span> </a> </li> <!-- All but last items --> <li> <a class="k-breadcrumb__item" href="#"> Some menu item </a> </li> <!-- last / active item --> <li class="active"> <span class="k-breadcrumb__item">Active menu item</span> </li> </ul> </div><!-- .k-breadcrumb --> */ /* Parent element ========================================================================== */ /** 1. Scroll when items don't fit parent anymore */ /* When flexbox is in use ========================================================================== */ /* Breadcrumb contents ========================================================================== */ /* Single breadcrumb items */ /* ========================================================================== CSS only animated checkbox toggle styling ========================================================================== */ /** Default checkbox toggle ========================================================================= <div class="k-checkbox-toggle"> <input type="checkbox" name="group1" id="group1a" value="1"> <label for="group1a"> <span data-true="✓" data-false="✖">Do something?</span> </label> </div> */ /** Neutral checkbox toggle ========================================================================= <div class="k-checkbox-toggle k-checkbox-toggle--neutral"> <input type="checkbox" name="group1" id="group1a" value="1"> <label for="group1a"> <span data-true="✓" data-false="✖">Do something?</span> </label> </div> */ /** Cutting the mustard 1. The :not(old-ie) makes sure nothing gets added to older/incapable IE Instead, normal checkboxes will be presented */ /* ========================================================================== The component div ========================================================================== */ /* ========================================================================== The content div ========================================================================== */ /** 1. Set the z-index higher than the menus 2. Setting a background so container will fall nicely over the sidebar 3. Set transition for off canvas sidebar */ /** When flexbox is in use 1. Reset width needed for table */ /** Container when toggled 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** The overlay 1. Cover the entire container 2. Hide by setting z-index to -1 because item can't transition if display is set from none to block 3. Set opacity to 0 by default 4. Hide overlay when screen is wide enough */ /** Overlay when toggled 1. Set opacity 2. Set z-index to 1 so it will become visible */ /* ========================================================================== Upload ========================================================================== */ /** <!-- filter container --> <div class="k-filter-container"> <div class="k-filter-container__item"> </div> </div><!-- .k-filter-container --> */ /** The items */ /* Cells within items */ /* Fixed items */ /* The close button */ /* ========================================================================== Form block ========================================================================== */ /** To be used in sidebar of forms Data in these boxes should be non-required info */ /** <!-- Breadcrumbs --> <fieldset class="k-form-block"> <div class="k-form-block__header"> Block header </div> <div class="k-form-block__content"> Block content </div> </fieldset> */ /* The block itself */ /* The header */ /* The content */ /* ========================================================================== Grid ========================================================================== */ /** <!-- Container --> <div class="k-container"> <!-- Main information --> <div class="k-container__main"> Main </div><!-- .k-container__main --> <!-- Other information --> <div class="k-container__sub"> Sub </div><!-- .k-container__sub --> </div><!-- .k-container --> */ /* Container */ /* When flexbox is in use */ /* Grid children */ /* ========================================================================== Animated hamburger button ========================================================================== */ /** 1. Hide when JS is disabled, we don't need a toggle when there's no JS 2. Show when JS is enabled 3. Hide when the sidebar is visible */ /** <button id="k-toggle-button" class="off-canvas-menu-toggle" type="button"> <span class="bar1"></span> <span class="bar2"></span> <span class="bar3"></span> </button> */ /** Positioning the toggle button(s) */ /** Transform hamburger into a cross when the sidebar is opened */ /* ========================================================================== Interface icons ========================================================================== */ /* Toolbar icons ========================================================================== */ /* ========================================================================== Sidebar list ========================================================================== */ /** <!-- List --> <ul class="k-list"> <!-- Active item --> <li> <a href="#"> <span class="k-icon-clock"></span> Clocks </a> </li> <!-- Other items --> <li> <a href="#"> <span class="k-icon-clock"></span> Clocks </a> </li> </ul> */ /** 1. Reset default <ul> styling */ /* ========================================================================== Sidebar navigation ========================================================================== */ /** <!-- Navigation --> <ul class="k-navigation"> <!-- Active item --> <li class="active"> <a class="k-icon-activities" href="#"> Activities </a> </li> <!-- Other items --> <li> <a class="k-icon-tasks" href="#"> Tasks </a> </li> </ul> */ /** 1. Reset default <ul> styling */ /* ========================================================================== Overflowing ========================================================================== */ /** Add overflowing shadow boxes to either top, right, bottom or left side of an element. This shows the user that there's more content to see when no scrollbars are visible. To properly use this you need to wrap the overflowing container inside another container named `overflowing`. JS will take care of this if you don't. 1. This wrapping container needs to have overflow: hidden set 2. It also needs have a relative position for positioning the shadows 3. And adding overflow-scrolling: touch for smooth scroll on iOs 4. Add display: flex so child (actual overflowing container) can flex */ /* ========================================================================== Scopebar ========================================================================== */ /**
 <!-- Scopebar -->
 <div class="k-scopebar">
 
@@ -1343,9 +1357,9 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
         <!-- Filters -->
         <div class="k-scopebar__item--filters">
             <ul>
-                <li><button type="button" data-filter-toggle="users">Users</button></li>
-                <li><button type="button" data-filter-toggle="groups">User groups</button></li>
-                <li><button type="button" data-filter-toggle="date">Date</button></li>
+                <li><button class="k-filter-button" type="button" data-filter-toggle="users">Users</button></li>
+                <li><button class="k-filter-button" type="button" data-filter-toggle="groups">User groups</button></li>
+                <li><button class="k-filter-button" type="button" data-filter-toggle="date">Date</button></li>
             </ul>
         </div>
 
@@ -1358,15 +1372,19 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
     <!-- Search -->
     <div class="k-scopebar__item k-scopebar__search">
-        <div class="search__container">
-            <label for="search"><i class="icon-search"></i></label>
-            <input type="search" name="search" class="search_button" placeholder="Find by title or description…" value="">
-            <a class="search_button--empty"><span>X</span></a>
+        <div class="k-search__container">
+            <input type="search" name="search" class="k-search__field" placeholder="Find by title or description…" value="">
+            <button class="k-search__button-search" type="submit" data-original-title="Search">
+                <span class="k-icon-magnifying-glass"></span>
+            </button>
+            <button class="k-search__button-empty" onclick="document.id('filter_search').value='';this.form.submit();" title="" type="button" data-original-title="Clear">
+                <span>X</span>
+            </button>
         </div>
     </div>
 
 </div><!-- .k-scopebar -->
-*/ /** When flexbox is in use 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /* 2 */ /* Scopebar items */ /* Scopebar filter title */ /** Scopebar filters 1. Setting to inline-block to align with title and different filters 2. Setting height to scopebar height 3. Fixing line-height/positioning bug caused by `display: inline-block` */ /** Scopebar search 1. Hide by default (when JS is enabled) so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens 4. Set a minimum width so the fluid scopebar__item won't make search really small 5. Search area items */ /** Search toggle button 1. Hide when search is visible */ /* ========================================================================== Sidebars ========================================================================== */ /** The left and right sidebar */ /* When JavaScript is enabled */ /* When flexbox is in use */ /* Left sidebar specific styling */ /* When sidebar is toggled */ /* Right sidebar specific styling */ /* When sidebar is toggled */ /* Sidebar contents ========================================================================== */ /* Sidebar item */ /* Sidebar header */ /** Overflowing items 1. Set container to overflow it's items */ /* ========================================================================== Table ========================================================================== */ /* When flexbox is in use */ /* Table contents */ /* Table pagination */ /** Footable Responsive table views */ /* Sorting arrows */ /* ========================================================================== Titlebar ========================================================================== */ /** 1. Set the z-index higher than the menus 2. Setting a background so container will fall nicely over the sidebar 3. Set transition for off canvas sidebar */ /* When flexbox is in use */ /** Titlebar when toggled 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled 1. Set opacity 2. Set z-index so it will become visible */ /* Titlebar contents */ /* ========================================================================== Toolbar ========================================================================== */ /* When flexbox is in use */ /* Toolbar contents */ /* Text on the toolbar buttons */ /** Tree ==== */ /* ========================================================================== Upload ========================================================================== */ /** <!-- upload --> <div class="k-upload"> <div class="k-upload__drop"> Drop files here <small>(max 10MB)</small> </div> <div class="k-upload__buttons"> <button class="btn btn-sm btn-primary">Select</button> <button class="btn btn-sm btn-primary">From URL</button> </div> </div><!-- .k-upload --> */ /** The drop message 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /* ========================================================================== Overview layout ========================================================================== */ /** The default overview layout 1. Left sidebar 2. Toggle button 3. Toolbar 4. Breadcrumbs 5. Upload area 6. Scopebar 7. Table / grid / content 8. Right sidebar _____________________________ |  1  |_2_|_3_________|  8  | |     |_4_____________|     | |     |_5_____________|     | |     |_6_____________|     | |     | 7             |     | |     |               |     | |     |               |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /* When flexbox is in use */ /* ========================================================================== Form layout ========================================================================== */ /** The default form layout 1. Title bar 2. Main content 3. Extra (non-critical) content boxes _____________________________ |_____________1_____________| |                   _______ | |         2         |  3  | | |                   |_____| | |                   _______ | |                   |  3  | | |                   |_____| | |___________________________| */ /* When flexbox is in use */ /* ========================================================================== Frontend form layout ========================================================================== */ /** Building on top of the _form.scss file The main thing we're doing here is adding a dark background to make it look like a modal as if you're editing on top of the website */ /** Utilities loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /* ========================================================================== Utilities ========================================================================== */ /** Adding class three times so we win over most other classes without using !important. Most selectors are max three long e.g.: `.some.longer[css=selector]` will still lose from `.selector.selector.selector` since we load this file last */ /* Just hide the content in a non-accessible way */ /* Hide the content in an accessible way */ /* Add bottom-margin to an element */ /* Disable transitions */ /* Don't wrap content */ /* Hide disabled buttons in the toolbar */ /** Shame Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
+*/ /** When flexbox is in use 1. The scopebar container itself. Changes on global flexbox setting 2. Flexing before global flexbox */ /* 2 */ /* Scopebar items */ /* Scopebar filter title */ /** Scopebar filters 1. Setting to inline-block to align with title and different filters 2. Setting height to scopebar height 3. Fixing line-height/positioning bug caused by `display: inline-block` */ /** Scopebar search 1. Hide by default (when JS is enabled) so we can toggle it open 2. Display as table cell on medium sized screens 3. Display as block for flexbox on larger screens 4. Set a minimum width so the fluid scopebar__item won't make search really small 5. Search area items */ /** Search toggle button 1. Hide when search is visible */ /* ========================================================================== Sidebars ========================================================================== */ /** The left and right sidebar */ /* When JavaScript is enabled */ /* When flexbox is in use */ /* Left sidebar specific styling */ /* When sidebar is toggled */ /* Right sidebar specific styling */ /* When sidebar is toggled */ /* Sidebar contents ========================================================================== */ /* Sidebar item */ /* Sidebar header */ /* Sidebar content */ /** Overflowing items 1. Set container to overflow it's items */ /* ========================================================================== Table ========================================================================== */ /* When flexbox is in use */ /* Table contents */ /* Table pagination 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom */ /** Footable Responsive table views */ /* Sorting arrows */ /* ========================================================================== Titlebar ========================================================================== */ /** 1. Set the z-index higher than the menus 2. Setting a background so container will fall nicely over the sidebar 3. Set transition for off canvas sidebar */ /* When flexbox is in use */ /** Titlebar when toggled 1. Set left to the width of the menu so the menu will appear 2. Set right to the negative width of the menu so the menu will appear 3. Reset when screen is wide enough */ /** Fake Overlay when toggled 1. Set opacity 2. Set z-index so it will become visible */ /* Titlebar contents */ /* ========================================================================== Toolbar ========================================================================== */ /* When flexbox is in use */ /* Toolbar contents */ /* Text on the toolbar buttons */ /** Tree ==== */ /* ========================================================================== Upload ========================================================================== */ /** <!-- upload --> <div class="k-upload"> <div class="k-upload__drop"> Drop files here <small>(max 10MB)</small> </div> <div class="k-upload__buttons"> <button class="btn btn-sm btn-primary">Select</button> <button class="btn btn-sm btn-primary">From URL</button> </div> </div><!-- .k-upload --> */ /** The drop message 1. 100% width so this 'cell' expands */ /** Clickable buttons to upload 1. 1px width so this 'cell' stays small 2. nowrap to make sure buttons stay next to each other */ /* Organisms */ /* ========================================================================== The content wrapper ========================================================================== */ /** The default content wrapper layout 1. Left sidebar 2. Toggle button 3. Toolbar 4. Breadcrumbs 5. Upload area 6. Scopebar 7. Table / grid / content 8. Right sidebar _____________________________ |  1  |_2_|_3_________|  8  | |     |_4_____________|     | |     |_5_____________|     | |     |_6_____________|     | |     | 7             |     | |     |               |     | |     |               |     | |     |               |     | |     |               |     | |_____|_______________|_____| */ /** 1. Clearing toolbar floats when flexbox is not in use */ /* When flexbox is in use */ /** Wrapper when toggled 1. Hide overflowing when menu is toggled 2. Set back to auto when screen is wide enough */ /* ========================================================================== Frontend form layout ========================================================================== */ /** Building on top of the _form.scss file The main thing we're doing here is adding a dark background to make it look like a modal as if you're editing on top of the website */ /** Utilities loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /* ========================================================================== Utilities ========================================================================== */ /** Adding class three times so we win over most other classes without using !important. Most selectors are max three long e.g.: `.some.longer[css=selector]` will still lose from `.selector.selector.selector` since we load this file last */ /* Just hide the content in a non-accessible way */ /* Hide the content in an accessible way */ /* Add bottom-margin to an element */ /* Disable transitions */ /* Don't wrap content */ /* Hide disabled buttons in the toolbar */ /** Shame Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
 
 .koowa html { font-family: sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }
 
@@ -1448,6 +1466,44 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa td, .koowa th { padding: 0; }
 
+.koowa .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
+
+.koowa .alert h4 { margin-top: 0; color: inherit; }
+
+.koowa .alert .alert-link { font-weight: bold; }
+
+.koowa .alert > p, .koowa .alert > ul { margin-bottom: 0; }
+
+.koowa .alert > p + p { margin-top: 5px; }
+
+.koowa .alert-dismissable, .koowa .alert-dismissible { padding-right: 35px; }
+
+.koowa .alert-dismissable .close, .koowa .alert-dismissible .close { position: relative; top: -2px; right: -21px; color: inherit; }
+
+.koowa .alert-success { background-color: #dff0d8; border-color: #d6e9c6; color: #3c763d; }
+
+.koowa .alert-success hr { border-top-color: #c9e2b3; }
+
+.koowa .alert-success .alert-link { color: #2b542c; }
+
+.koowa .alert-info { background-color: #d9edf7; border-color: #bce8f1; color: #31708f; }
+
+.koowa .alert-info hr { border-top-color: #a6e1ec; }
+
+.koowa .alert-info .alert-link { color: #245269; }
+
+.koowa .alert-warning { background-color: #fcf8e3; border-color: #faebcc; color: #8a6d3b; }
+
+.koowa .alert-warning hr { border-top-color: #f7e1b5; }
+
+.koowa .alert-warning .alert-link { color: #66512c; }
+
+.koowa .alert-danger { background-color: #f2dede; border-color: #ebccd1; color: #a94442; }
+
+.koowa .alert-danger hr { border-top-color: #e4b9c0; }
+
+.koowa .alert-danger .alert-link { color: #843534; }
+
 .koowa .btn { display: inline-block; margin-bottom: 0; font-weight: normal; text-align: center; vertical-align: middle; -ms-touch-action: manipulation; touch-action: manipulation; cursor: pointer; background-image: none; border: 1px solid transparent; white-space: nowrap; padding: 5px 10px; font-size: 14px; line-height: 1.428571429; border-radius: 4px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
 .koowa .btn:focus, .koowa .btn.focus, .koowa .btn:active:focus, .koowa .btn:active.focus, .koowa .btn.active:focus, .koowa .btn.active.focus { outline: thin dotted; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
@@ -1528,7 +1584,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .btn-link[disabled]:hover, .koowa .btn-link[disabled]:focus, fieldset[disabled] .koowa .btn-link:hover, fieldset[disabled] .koowa .btn-link:focus { color: #777777; text-decoration: none; }
 
-.koowa .btn-lg { padding: 10px 16px; font-size: 16px; line-height: 1.3333333; border-radius: 6px; }
+.koowa .btn-lg { padding: 10px 16px; font-size: 15px; line-height: 1.3333333; border-radius: 6px; }
 
 .koowa .btn-sm { padding: 5px 10px; font-size: 12px; line-height: 1.5; border-radius: 3px; }
 
@@ -1580,7 +1636,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) { .koowa input[type="date"], .koowa input[type="time"], .koowa input[type="datetime-local"], .koowa input[type="month"] { line-height: 32px; }
   .koowa input[type="date"].input-sm, .koowa .input-group-sm > input[type="date"].form-control, .koowa .input-group-sm > input[type="date"].input-group-addon, .koowa .input-group-sm > .input-group-btn > input[type="date"].btn, .input-group-sm .koowa input[type="date"], .koowa input[type="time"].input-sm, .koowa .input-group-sm > input[type="time"].form-control, .koowa .input-group-sm > input[type="time"].input-group-addon, .koowa .input-group-sm > .input-group-btn > input[type="time"].btn, .input-group-sm .koowa input[type="time"], .koowa input[type="datetime-local"].input-sm, .koowa .input-group-sm > input[type="datetime-local"].form-control, .koowa .input-group-sm > input[type="datetime-local"].input-group-addon, .koowa .input-group-sm > .input-group-btn > input[type="datetime-local"].btn, .input-group-sm .koowa input[type="datetime-local"], .koowa input[type="month"].input-sm, .koowa .input-group-sm > input[type="month"].form-control, .koowa .input-group-sm > input[type="month"].input-group-addon, .koowa .input-group-sm > .input-group-btn > input[type="month"].btn, .input-group-sm .koowa input[type="month"] { line-height: 30px; }
-  .koowa input[type="date"].input-lg, .koowa .input-group-lg > input[type="date"].form-control, .koowa .input-group-lg > input[type="date"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="date"].btn, .input-group-lg .koowa input[type="date"], .koowa input[type="time"].input-lg, .koowa .input-group-lg > input[type="time"].form-control, .koowa .input-group-lg > input[type="time"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="time"].btn, .input-group-lg .koowa input[type="time"], .koowa input[type="datetime-local"].input-lg, .koowa .input-group-lg > input[type="datetime-local"].form-control, .koowa .input-group-lg > input[type="datetime-local"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="datetime-local"].btn, .input-group-lg .koowa input[type="datetime-local"], .koowa input[type="month"].input-lg, .koowa .input-group-lg > input[type="month"].form-control, .koowa .input-group-lg > input[type="month"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg .koowa input[type="month"] { line-height: 44px; } }
+  .koowa input[type="date"].input-lg, .koowa .input-group-lg > input[type="date"].form-control, .koowa .input-group-lg > input[type="date"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="date"].btn, .input-group-lg .koowa input[type="date"], .koowa input[type="time"].input-lg, .koowa .input-group-lg > input[type="time"].form-control, .koowa .input-group-lg > input[type="time"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="time"].btn, .input-group-lg .koowa input[type="time"], .koowa input[type="datetime-local"].input-lg, .koowa .input-group-lg > input[type="datetime-local"].form-control, .koowa .input-group-lg > input[type="datetime-local"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="datetime-local"].btn, .input-group-lg .koowa input[type="datetime-local"], .koowa input[type="month"].input-lg, .koowa .input-group-lg > input[type="month"].form-control, .koowa .input-group-lg > input[type="month"].input-group-addon, .koowa .input-group-lg > .input-group-btn > input[type="month"].btn, .input-group-lg .koowa input[type="month"] { line-height: 42px; } }
 
 .koowa .form-group { margin-bottom: 15px; }
 
@@ -1620,19 +1676,19 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .form-group-sm .form-control-static { height: 30px; padding: 5px 10px; font-size: 12px; line-height: 1.5; min-height: 32px; }
 
-.koowa .input-lg, .koowa .input-group-lg > .form-control, .koowa .input-group-lg > .input-group-addon, .koowa .input-group-lg > .input-group-btn > .btn { height: 44px; padding: 10px 16px; font-size: 16px; line-height: 1.3333333; border-radius: 6px; }
+.koowa .input-lg, .koowa .input-group-lg > .form-control, .koowa .input-group-lg > .input-group-addon, .koowa .input-group-lg > .input-group-btn > .btn { height: 42px; padding: 10px 16px; font-size: 15px; line-height: 1.3333333; border-radius: 6px; }
 
-.koowa select.input-lg, .koowa .input-group-lg > select.form-control, .koowa .input-group-lg > select.input-group-addon, .koowa .input-group-lg > .input-group-btn > select.btn { height: 44px; line-height: 44px; }
+.koowa select.input-lg, .koowa .input-group-lg > select.form-control, .koowa .input-group-lg > select.input-group-addon, .koowa .input-group-lg > .input-group-btn > select.btn { height: 42px; line-height: 42px; }
 
 .koowa textarea.input-lg, .koowa .input-group-lg > textarea.form-control, .koowa .input-group-lg > textarea.input-group-addon, .koowa .input-group-lg > .input-group-btn > textarea.btn, .koowa select[multiple].input-lg, .koowa .input-group-lg > select[multiple].form-control, .koowa .input-group-lg > select[multiple].input-group-addon, .koowa .input-group-lg > .input-group-btn > select[multiple].btn { height: auto; }
 
-.koowa .form-group-lg .form-control { height: 44px; padding: 10px 16px; font-size: 16px; line-height: 1.3333333; border-radius: 6px; }
+.koowa .form-group-lg .form-control { height: 42px; padding: 10px 16px; font-size: 15px; line-height: 1.3333333; border-radius: 6px; }
 
-.koowa .form-group-lg select.form-control { height: 44px; line-height: 44px; }
+.koowa .form-group-lg select.form-control { height: 42px; line-height: 42px; }
 
 .koowa .form-group-lg textarea.form-control, .koowa .form-group-lg select[multiple].form-control { height: auto; }
 
-.koowa .form-group-lg .form-control-static { height: 44px; padding: 10px 16px; font-size: 16px; line-height: 1.3333333; min-height: 36px; }
+.koowa .form-group-lg .form-control-static { height: 42px; padding: 10px 16px; font-size: 15px; line-height: 1.3333333; min-height: 35px; }
 
 .koowa .has-feedback { position: relative; }
 
@@ -1640,7 +1696,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .form-control-feedback { position: absolute; top: 0; right: 0; z-index: 2; display: block; width: 32px; height: 32px; line-height: 32px; text-align: center; pointer-events: none; }
 
-.koowa .input-lg + .form-control-feedback, .koowa .input-group-lg > .form-control + .form-control-feedback, .koowa .input-group-lg > .input-group-addon + .form-control-feedback, .koowa .input-group-lg > .input-group-btn > .btn + .form-control-feedback { width: 44px; height: 44px; line-height: 44px; }
+.koowa .input-lg + .form-control-feedback, .koowa .input-group-lg > .form-control + .form-control-feedback, .koowa .input-group-lg > .input-group-addon + .form-control-feedback, .koowa .input-group-lg > .input-group-btn > .btn + .form-control-feedback { width: 42px; height: 42px; line-height: 42px; }
 
 .koowa .input-sm + .form-control-feedback, .koowa .input-group-sm > .form-control + .form-control-feedback, .koowa .input-group-sm > .input-group-addon + .form-control-feedback, .koowa .input-group-sm > .input-group-btn > .btn + .form-control-feedback { width: 30px; height: 30px; line-height: 30px; }
 
@@ -1726,7 +1782,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .input-group-addon.input-sm, .koowa .input-group-sm > .input-group-addon, .koowa .input-group-sm > .input-group-btn > .input-group-addon.btn { padding: 5px 10px; font-size: 12px; border-radius: 3px; }
 
-.koowa .input-group-addon.input-lg, .koowa .input-group-lg > .input-group-addon, .koowa .input-group-lg > .input-group-btn > .input-group-addon.btn { padding: 10px 16px; font-size: 16px; border-radius: 6px; }
+.koowa .input-group-addon.input-lg, .koowa .input-group-lg > .input-group-addon, .koowa .input-group-lg > .input-group-btn > .input-group-addon.btn { padding: 10px 16px; font-size: 15px; border-radius: 6px; }
 
 .koowa .input-group-addon input[type="radio"], .koowa .input-group-addon input[type="checkbox"] { margin-top: 0; }
 
@@ -1766,7 +1822,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .pagination > .disabled > span, .koowa .pagination > .disabled > span:hover, .koowa .pagination > .disabled > span:focus, .koowa .pagination > .disabled > a, .koowa .pagination > .disabled > a:hover, .koowa .pagination > .disabled > a:focus { color: #777777; background-color: #fff; border-color: #ddd; cursor: not-allowed; }
 
-.koowa .pagination-lg > li > a, .koowa .pagination-lg > li > span { padding: 10px 16px; font-size: 16px; }
+.koowa .pagination-lg > li > a, .koowa .pagination-lg > li > span { padding: 10px 16px; font-size: 15px; }
 
 .koowa .pagination-lg > li:first-child > a, .koowa .pagination-lg > li:first-child > span { border-bottom-left-radius: 6px; border-top-left-radius: 6px; }
 
@@ -1816,9 +1872,13 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa p:last-child { /* 3 */ margin-bottom: 0; /* 4 */ }
 
+.koowa .k-list-layout, .koowa .k-form-layout { margin: 0; }
+
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-list-layout, .k-flexbox .koowa .k-form-layout, .k-flexboxlegacy .koowa .k-list-layout, .k-flexboxlegacy .koowa .k-form-layout { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
+
 .k-appearance.k-checked .koowa { /* Put some space between the box and the label */ }
 
-.k-appearance.k-checked .koowa input[type="checkbox"], .k-appearance.k-checked .koowa input[type="radio"] { /** 1. Resetting the default styling used by browsers. Don't do this for -moz- because the checkbox and radio box will look very ugly 2. Positioning relative to position psuedo before element nicely 3. Vertically positioning next to text 4. Aligning vertically next to labels 5. Indicate that element is clickable */ -webkit-appearance: none; /* 1 */ /* -moz-appearance: none; /* 1 */ position: relative; /* 2 */ height: 15px; width: 15px; margin: -1px 0 2px; /* 3 */ border: 1px solid #aaa; padding: 0; background: white; display: inline-block; vertical-align: middle; cursor: pointer; /* 5 */ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15); -webkit-transition: background 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: background 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); /* Hover to indicate element is clickable */ /* Set disabled border color a bit lighter so it won't appear to be larger */ /** 1. Position psuedo element absolute to have full control 2. Position top-left, margin, width and height will take care of centering 3. Initially hide the psuedo element 4. Show the psuedo element when item is checked */ /* Put some space between the box and the label */ }
+.k-appearance.k-checked .koowa input[type="checkbox"], .k-appearance.k-checked .koowa input[type="radio"] { /** 1. Resetting the default styling used by browsers. Don't do this for -moz- because the checkbox and radio box will look very ugly 2. Positioning relative to position psuedo before element nicely 3. Vertically positioning next to text 4. Aligning vertically next to labels 5. Indicate that element is clickable */ -webkit-appearance: none; /* 1 */ /* -moz-appearance: don't set this; /* 1 */ position: relative; /* 2 */ height: 15px; width: 15px; margin-top: -1px; /* 3 */ margin-bottom: 2px; /* 3 */ margin-left: 0; margin-right: .33em; border: 1px solid #aaa; padding: 0; background: white; display: inline-block; vertical-align: middle; cursor: pointer; /* 5 */ box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15); -webkit-transition: background 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: background 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); /* Hover to indicate element is clickable */ /* Set disabled border color a bit lighter so it won't appear to be larger */ /** 1. Position psuedo element absolute to have full control 2. Position top-left, margin, width and height will take care of centering 3. Initially hide the psuedo element 4. Show the psuedo element when item is checked */ }
 
 .k-appearance.k-checked .koowa input[type="checkbox"]:hover, .k-appearance.k-checked .koowa input[type="radio"]:hover { background: #f1f1f1; }
 
@@ -1828,9 +1888,11 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .k-appearance.k-checked .koowa input[type="checkbox"]:checked:before, .k-appearance.k-checked .koowa input[type="radio"]:checked:before { display: block; /* 4 */ }
 
-.k-appearance.k-checked .koowa input[type="checkbox"] + label, .k-appearance.k-checked .koowa input[type="radio"] + label { margin-left: .15em; }
+.k-appearance.k-checked .koowa label { /** <input id="input1"> <label for="input1">Label 1</label> <input id="input2"> <label for="input2">Label 2</label> */ /** <label><input id="input1"> Label 1</label> <label><input id="input2"> Label 2</label> */ }
 
-.k-appearance.k-checked .koowa label input[type="checkbox"], .k-appearance.k-checked .koowa label input[type="radio"] { margin-right: .15em; }
+.k-appearance.k-checked .koowa label + input[type="checkbox"], .k-appearance.k-checked .koowa label + input[type="radio"] { margin-left: 1em; }
+
+.k-appearance.k-checked .koowa label + label { margin-left: 1em; }
 
 .k-appearance.k-checked .koowa input[type="checkbox"] { border-radius: 0; /* 1 */ }
 
@@ -1840,45 +1902,35 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .k-appearance.k-checked .koowa input[type="radio"]:before { content: " "; /* 2 */ width: 7px; /* 3 */ height: 7px; /* 3 */ margin: 3px; /* 4 */ background: #3498db; border-radius: 50%; /* 5 */ }
 
-.koowa .booleanlist:not(ie) { /* 1 */ position: relative; display: table; /* 2 */ width: 100%; height: 32px; padding: 1px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #555555; /** Children 1. Display as 'table-cell' so we can have proportional children (if more then two children) 2. Default width is 50% for evenly spaced items */ /** More than 3 children 1. Children should now have a proportional width */ /* Hiding the input but keeping accessible */ /** Styling label and span 1. Minus 4 to adjust for borders and padding 2. Better looking radius for children */ /* Element used for focus / active state */ /* The wrapper for the colored psuedo element */ /* Single item */ /* Single item on multiple list */ /* First item */ /* Last item */ /* All items */ /** Active / focus styling 1. Faking focus style */ /* Checked styling color */ /* Checked styling 'negative' background */ /* Checked styling 'positive' background */ /* Checked styling 'neutral' background */ }
+.k-checked .koowa .booleanlist { position: relative; z-index: 1; display: block; margin: 0; border: 1px solid #ccc; padding: 1px; width: 100%; height: 32px; max-width: 400px; border-radius: 4px; background: white; /* Hiding the input but keeping accessible */ /** Label styling 1. Float left so the two labels line up next to each other 2. Display block so we have styling control 3. Set height to input height minus border and spacing 4. Take up half of the parent 5. Take one pixel off the radius to look smooth 6. Don't let the user select */ /** Styling label on hover, focus and checked 1. White text on colored labels 2. Display colored background when item is :checked 3. Show fake :focus when any item has :active or :focus */ /** Positioning the colored backgrounds We're not using transform here since an 'overflow:hidden' on the parent would make our fake :focus disappear 1. Set correct color to item 2. Start with 0% (not 0) to have smooth transitions 3. Set position to half so the background takes only up half the space of the parent */ /** Positioning the colored backgrounds when :checked 1. 1px to account for padding in parent element 2. Set position to half so the background takes only up half the space of the parent */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item { display: table-cell; /* 1 */ width: 50%; /* 2 */ padding: 0; margin: 0; text-align: center; }
+.k-checked .koowa .booleanlist label { float: left; /* 1 */ display: block; /* 2 */ margin: 0; padding: 0; height: 28px; /* 3 */ line-height: 28px; /* 3 */ width: 50%; /* 4 */ text-align: center; color: #555555; font-weight: normal; border-radius: 3px; /* 5 */ -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; /* 6 */ -webkit-transition: 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); /** Colored backgrounds 1. Position absolute to place behind the label 2. Set background behind the text on the label but on top of the parent 3. Respect the 1px padding set on the parent 4. Set to black and set content to display psuedo element 5. Hide by default, using opacity for performance reasons 6. Take one pixel off the radius to look smooth */ /** Faking :focus on parent 1. Position absolute to parent 2. Set below label itself but above parent 3. Set 1px back because of padding on parent element 4. Hide by default, using opacity for performance reasons 5. Set to black and set content to display psuedo element 6. Same border-radius as parent 7. Same "focus" styling as input elements */ /* A little darker background on hovering */ }
 
-.koowa .booleanlist:not(ie).booleanlist--multiple .booleanlist__item { width: auto; /* 1 */ }
+.k-checked .koowa .booleanlist label:before { position: absolute; /* 1 */ z-index: -1; /* 2 */ top: 1px; /* 3 */ bottom: 1px; /* 3 */ display: block; /* 4 */ content: " "; /* 4 */ opacity: 0; /* 5 */ border-radius: 3px; /* 6 */ -webkit-transition: 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
 
-.koowa .booleanlist:not(ie) label, .koowa .booleanlist:not(ie) span { display: block; height: 28px; /* 1 */ border-radius: 3px; /* 2 */ margin: 0; cursor: pointer; }
+.k-checked .koowa .booleanlist label:after { position: absolute; /* 1 */ z-index: -1; /* 2 */ top: -1px; /* 3 */ right: -1px; /* 3 */ bottom: -1px; /* 3 */ left: -1px; /* 3 */ opacity: 0; /* 4 */ display: block; /* 5 */ content: " "; /* 5 */ border-radius: 4px; /* 6 */ border: 1px solid #66afe9; /* 7 */ box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); /* 7 */ }
 
-.koowa .booleanlist:not(ie) label:before { position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; display: block; pointer-events: none; content: " "; background: transparent; }
+.k-checked .koowa .booleanlist label:hover { background: rgba(0, 0, 0, 0.15); }
 
-.koowa .booleanlist:not(ie) span { position: relative; z-index: 2; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); line-height: 28px; font-weight: 400; /* Better looking radius for children */ /* Background on hover */ }
+.k-checked .koowa .booleanlist input:checked + label { color: white; /* 1 */ }
 
-.koowa .booleanlist:not(ie) span:before { border-radius: 3px; }
+.k-checked .koowa .booleanlist input:checked + label:before { opacity: 1; /* 2 */ }
 
-.koowa .booleanlist:not(ie) span:hover { background: #eee; }
+.k-checked .koowa .booleanlist input:active + label:after, .k-checked .koowa .booleanlist input:focus + label:after { opacity: 1; /* 3 */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item span:before { position: absolute; z-index: -1; top: 0; right: 0; bottom: 0; left: 0; display: block; background: transparent; content: " "; pointer-events: none; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); }
+.k-checked .koowa .booleanlist input:first-of-type + label:before { right: 0%; /* 2 */ left: 50%; /* 3 */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item:first-child span:before, .koowa .booleanlist:not(ie) .booleanlist__item:last-child span:before { right: auto; left: auto; width: 100%; }
+.k-checked .koowa .booleanlist input:last-of-type + label:before { right: 50%; /* 3 */ left: 0%; /* 2 */ }
 
-.koowa .booleanlist:not(ie).booleanlist--multiple .booleanlist__item:first-child span:before, .koowa .booleanlist:not(ie).booleanlist--multiple .booleanlist__item:last-child span:before { width: 50%; }
+.k-checked .koowa .booleanlist input[value="1"] + label:before { background: #27ae60; /* 1 */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item:first-child span:before { left: 100%; }
+.k-checked .koowa .booleanlist input[value="0"] + label:before { background: #c0392b; /* 1 */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item:last-child span:before { left: -100%; }
+.k-checked .koowa .booleanlist--neutral input[value] + label:before { background: #2980b9; /* 1 */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item:nth-child(n) input:checked + label { z-index: 3; }
+.k-checked .koowa .booleanlist input:checked:first-of-type + label:before { left: 1px; /* 1 */ right: 50%; /* 2 */ }
 
-.koowa .booleanlist:not(ie) .booleanlist__item:nth-child(n) input:checked + label span:before { left: 0; width: 100%; }
-
-.koowa .booleanlist:not(ie) input:active + label:before, .koowa .booleanlist:not(ie) input:focus + label:before { border: 1px solid #66afe9; border-radius: 4px; margin: -1px; /* 1 */ box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6); /* 1 */ }
-
-.koowa .booleanlist:not(ie) .booleanlist__item input:checked + label span { color: white; }
-
-.koowa .booleanlist:not(ie) [value="0"]:checked + label span:before { background: #c0392b; }
-
-.koowa .booleanlist:not(ie) [value="1"]:checked + label span:before { background: #27ae60; }
-
-.koowa .booleanlist:not(ie) :checked + label span:before, .koowa .booleanlist:not(ie).booleanlist--neutral input[value]:checked + label span:before { background: #2980b9; }
+.k-checked .koowa .booleanlist input:checked:last-of-type + label:before { right: 1px; /* 1 */ left: 50%; /* 2 */ }
 
 .koowa .k-breadcrumb { border-bottom: 1px solid #273747; overflow: auto; /* 1 */ background: #34495e; color: #ecf0f1; }
 
@@ -1996,21 +2048,11 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .opened--left .off-canvas-overlay, .koowa .opened--right .off-canvas-overlay { z-index: 2; /* 2 */ }
 
-.koowa .k-content-wrapper { clear: both; /* 1 */ margin: 0; }
-
-@media screen and (min-width: 768px) { .koowa .k-content-wrapper { display: table; width: 100%; } }
-
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-content-wrapper, .k-flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: hidden; } }
-
-.koowa .opened--left, .koowa .opened--right { overflow: hidden; /* 1 */ }
-
-@media screen and (min-width: 768px) { .koowa .opened--left, .koowa .opened--right { overflow: auto; /* 2 */ } }
-
 .koowa .k-filter-container { position: relative; display: table; width: 100%; background: #34495e; /* When flexbox is in use */ }
 
 @media (min-width: 768px) and (min-height: 460px) { .k-flexbox .koowa .k-filter-container, .k-flexboxlegacy .koowa .k-filter-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .k-filter-container__item { border-bottom: 1px solid #273747; width: 100%; padding: 7px; display: block; padding-right: 48px; /* 1 */ /* Hide items when JS is enabled */ /* Show items when they have a visible class */ }
+.koowa .k-filter-container__item { border-bottom: 1px solid #273747; width: 100%; padding: 7px; display: block; /* Hide items when JS is enabled */ /* Show items when they have a visible class */ }
 
 .k-js-enabled .koowa .k-filter-container__item { display: none; }
 
@@ -2046,7 +2088,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-form-block__content { padding: 13px; }
 
-.koowa .k-container { overflow: hidden; max-width: 1024px; margin: 0 auto; padding: 20px; }
+.koowa .k-container { overflow: hidden; width: 100%; margin: 0 auto; padding: 20px; }
 
 .koowa .k-container:before, .koowa .k-container:after { content: " "; display: table; }
 
@@ -2126,7 +2168,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-list a { display: block; /* 1 */ padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 14px; color: #ecf0f1; text-decoration: none; /* 2 */ /* Hover & focus state */ }
 
-.koowa .k-list a:hover, .koowa .k-list a:focus { background: #415b75; color: #ecf0f1; }
+.koowa .k-list a:hover, .koowa .k-list a:focus { background: #415b75; color: #ecf0f1; text-decoration: none; /* 2 */ }
 
 .koowa .k-list .active a { font-weight: bold; background: #34495e; color: #3498db; }
 
@@ -2138,7 +2180,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-navigation li { display: block; line-height: 20px; }
 
-.koowa .k-navigation a { display: block; /* 1 */ padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 21px; font-size: 16px; color: #ecf0f1; text-decoration: none; /** Faux border Adding a border to the left, using "after" psuedo since "before" is used for the icon */ position: relative; /* Hover & focus states */ }
+.koowa .k-navigation a { display: block; /* 1 */ padding-top: 7px; padding-bottom: 7px; padding-right: 14px; padding-left: 21px; font-size: 15px; color: #ecf0f1; text-decoration: none; /** Faux border Adding a border to the left, using "after" psuedo since "before" is used for the icon */ position: relative; /* Hover & focus states */ }
 
 .koowa .k-navigation a:after { display: block; position: absolute; content: " "; left: 0; top: 0; width: 5px; height: 100%; }
 
@@ -2207,17 +2249,17 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-scopebar__item--filters li { display: block; float: left; line-height: 32px; vertical-align: middle; height: 32px; /* 2 */ margin-right: 5px; /** The active item 1. Larger padding to appear more like a tab 2. Set same color as filter container to appear as a tab 3. Darken the border so it's better visible 4. Give fake border the same color as filter container */ }
 
-.koowa .k-scopebar__item--filters li.js-is-active button { background: white; /* 2 */ border-color: #217dbb; /* 3 */ outline: none; text-decoration: none; color: #222222; }
+.koowa .k-scopebar__item--filters li.js-is-active .k-filter-button { background: white; /* 2 */ border-color: #217dbb; /* 3 */ outline: none; text-decoration: none; color: #222222; }
 
-.koowa .k-scopebar__item--filters button { display: inline-block; /* 1 */ height: 22px; margin-top: 5px; margin-bottom: 5px; border: 1px solid transparent; border-radius: 5px; padding: 0 5px; line-height: 22px; vertical-align: baseline; cursor: pointer; color: #3498db; background: transparent; /* A hover to show they are clickable */ /* Don't show the outline on hover since the active item doesn't show an outline anyways */ /* When it has an active filter, show it */ }
+.koowa .k-scopebar__item--filters .k-filter-button { display: inline-block; /* 1 */ height: 22px; margin-top: 5px; margin-bottom: 5px; border: 1px solid transparent; border-radius: 5px; padding: 0 5px; line-height: 22px; vertical-align: baseline; cursor: pointer; color: #3498db; background: transparent; /* A hover to show they are clickable */ /* Don't show the outline on hover since the active item doesn't show an outline anyways */ /* When it has an active filter, show it */ }
 
-.koowa .k-scopebar__item--filters button:hover, .koowa .k-scopebar__item--filters button:focus { text-decoration: underline; }
+.koowa .k-scopebar__item--filters .k-filter-button:hover, .koowa .k-scopebar__item--filters .k-filter-button:focus { text-decoration: underline; }
 
-.koowa .k-scopebar__item--filters button:hover { outline: none; }
+.koowa .k-scopebar__item--filters .k-filter-button:hover { outline: none; }
 
-.koowa .k-scopebar__item--filters button.has-active-filter { font-weight: bold; }
+.koowa .k-scopebar__item--filters .k-filter-button.has-active-filter { font-weight: bold; }
 
-.koowa .k-scopebar__item--filters button.has-active-filter:before { content: ""; font-size: 10px; margin-right: 5px; margin-bottom: 2px; vertical-align: middle; }
+.koowa .k-scopebar__item--filters .k-filter-button.has-active-filter:before { content: ""; font-size: 10px; margin-right: 5px; margin-bottom: 2px; vertical-align: middle; }
 
 .koowa .k-scopebar__reset-filters { margin: 0; padding: 0; list-style: none; border: none; background: transparent; font-size: .9375em; color: white; margin-left: 1em; }
 
@@ -2233,31 +2275,35 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 @media screen and (min-width: 600px) { .koowa .k-scopebar__search { max-width: 320px; } }
 
-.koowa .k-scopebar__search .search__container { width: 100%; }
+.koowa .k-scopebar__search .k-search__container { width: 100%; position: relative; }
 
-.koowa .k-scopebar__search input, .koowa .k-scopebar__search input[type="search"] { margin: 0; max-width: 250px; padding: 0 2px 0 10px; font-size: 12px; }
+.koowa .k-scopebar__search .k-search__container--has-search-button .k-search__field { padding-left: 28px; }
 
-.koowa .k-scopebar__search .search_button { margin: 0; padding: 0; list-style: none; border: none; background: transparent; display: block; width: 100%; height: 32px; border-radius: 0; padding: 7px; padding-right: 32px; background: white; color: #222222; box-shadow: none; -webkit-appearance: none; }
+.koowa .k-scopebar__search .k-search__container--has-empty-button .k-search__field { padding-right: 18px; }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search .search_button { border-left: 1px solid #217dbb; } }
+.koowa .k-scopebar__search .k-search__container--has-both-buttons .k-search__field { padding-left: 28px; padding-right: 18px; }
 
-.koowa .k-scopebar__search.search__container--has_empty_button input { padding-right: 22px; }
+.koowa .k-scopebar__search .k-search__field { margin: 0; padding: 0; list-style: none; border: none; background: transparent; margin: 0; max-width: 250px; display: block; width: 100%; height: 32px; border-radius: 0; padding: 7px; padding-right: 32px; background: white; color: #222222; box-shadow: none; font-size: 12px; -webkit-appearance: none; }
 
-.koowa .k-scopebar__search .search_button--empty { position: absolute; display: inline-block; top: 50%; right: 0; width: 22px; height: 22px; margin-top: -10px; background: transparent; }
+@media screen and (min-width: 600px) { .koowa .k-scopebar__search .k-search__field { border-left: 1px solid #217dbb; } }
 
-.koowa .k-scopebar__search .search_button--empty span { margin: 3px; box-sizing: border-box; width: 16px; height: 16px; display: inline-block; line-height: 16px; text-align: center; border-radius: 100%; color: #777; text-decoration: none; font-weight: bold; font-family: Arial, helvetica, sans-serif; font-size: 10px; }
+.koowa .k-scopebar__search .k-search__button-search { margin: 0; padding: 0; list-style: none; border: none; background: transparent; position: absolute; top: 50%; left: .5em; margin-top: -.75em; }
 
-.koowa .k-scopebar__search .search_button--empty:hover { cursor: pointer; }
+.koowa .k-scopebar__search .k-search__button-empty { border: none; margin: 0; padding: 0; position: absolute; display: inline-block; top: 50%; right: 0; width: 22px; height: 22px; margin-top: -10px; background: transparent; }
 
-.koowa .k-scopebar__search .search_button--empty:hover span { background: #ea9393; border: 1px solid #ce4c4c; color: #fff; text-shadow: 1px 1px 1px #ce4c4c; box-shadow: inset 1px 2px 1px #d97474; }
+.koowa .k-scopebar__search .k-search__button-empty span { margin: 3px; box-sizing: border-box; width: 16px; height: 16px; display: inline-block; line-height: 16px; text-align: center; border-radius: 100%; color: #777; text-decoration: none; font-weight: bold; font-family: Arial, helvetica, sans-serif; font-size: 10px; }
 
-.koowa .toggle-search { position: relative; display: none; float: right; overflow: hidden; width: 33px; height: 0; margin: 0; border: none; padding: 0; padding-top: 33px; background: transparent; }
+.koowa .k-scopebar__search .k-search__button-empty:hover { cursor: pointer; }
 
-.koowa .toggle-search .k-icon-magnifying-glass { position: absolute; top: 50%; left: 50%; font-size: 16px; vertical-align: middle; margin: -8px 0 0 -8px; }
+.koowa .k-scopebar__search .k-search__button-empty:hover span { background: #ea9393; border: 1px solid #ce4c4c; color: #fff; text-shadow: 1px 1px 1px #ce4c4c; box-shadow: inset 1px 2px 1px #d97474; }
 
-.k-js-enabled .koowa .toggle-search { display: block; }
+.koowa .k-toggle-search { position: relative; display: none; float: right; overflow: hidden; width: 33px; height: 0; margin: 0; border: none; padding: 0; padding-top: 33px; background: transparent; }
 
-@media screen and (min-width: 600px) { .k-js-enabled .koowa .toggle-search { display: none; /* 1 */ } }
+.koowa .k-toggle-search .k-icon-magnifying-glass { position: absolute; top: 50%; left: 50%; font-size: 16px; vertical-align: middle; margin: -8px 0 0 -8px; }
+
+.k-js-enabled .koowa .k-toggle-search { display: block; }
+
+@media screen and (min-width: 600px) { .k-js-enabled .koowa .k-toggle-search { display: none; /* 1 */ } }
 
 .koowa .k-sidebar, .koowa .k-sidebar-right { position: relative; -webkit-overflow-scrolling: touch; /* Faking flexbox on older browsers by using table styling */ /* Larger sidebar when space is available */ }
 
@@ -2286,18 +2332,20 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .opened--right .k-sidebar-right { display: block; }
 
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-sidebar__item, .k-flexboxlegacy .koowa .k-sidebar__item { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; } }
-
 .koowa .k-sidebar__item + .koowa .k-sidebar__item { margin-top: 20px; }
+
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-sidebar__item--flex, .k-flexboxlegacy .koowa .k-sidebar__item--flex { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; } }
 
 .koowa .k-sidebar__header { padding: 13px 13px 0; font-weight: 700; text-transform: uppercase; font-size: 12px; }
 
+.koowa .k-sidebar__content { padding: 13px 13px 0; }
+
 .koowa .k-sidebar__item--overflow { overflow: auto; /* 1 */ }
 
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-sidebar__item--overflow, .k-flexboxlegacy .koowa .k-sidebar__item--overflow { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-sidebar__item--overflow, .k-flexboxlegacy .koowa .k-sidebar__item--overflow { -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; } }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-table-container, .k-flexboxlegacy .koowa .k-table-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; }
-  .k-flexbox .koowa .k-table-container .k-table, .k-flexboxlegacy .koowa .k-table-container .k-table { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; background: #f6f6f6; }
+  .k-flexbox .koowa .k-table-container .k-table, .k-flexboxlegacy .koowa .k-table-container .k-table { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; background: #f6f6f6; }
   .k-flexbox .koowa .k-table-container .k-table table, .k-flexboxlegacy .koowa .k-table-container .k-table table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
   .k-flexbox .koowa .k-table-container .k-table-pagination, .k-flexboxlegacy .koowa .k-table-container .k-table-pagination { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -2333,7 +2381,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-table-container .k-table__sub-header th { height: auto; padding: 4.62px 7px; font-size: .875em; text-transform: uppercase; }
 
-.koowa .k-table-pagination { border-top: 1px solid #e6e6e6; padding: 7px; background: #eeeeee; /** Pagination contents 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
+.koowa .k-table-pagination { border-top: 1px solid #e6e6e6; padding: 7px; background: #eeeeee; box-shadow: 0 1px 0 #e6e6e6; /** Pagination contents 1. Align vertically 2. Remove standard Bootstrap margin 3. Style <select> to be as large as the pagination 4. Make sure <select> is always as small as possible 5. Separate <select> from pagination */ }
 
 .koowa .k-table-pagination .limit, .koowa .k-table-pagination .pagination { display: inline-block; /* 1 */ vertical-align: middle; /* 1 */ }
 
@@ -2401,7 +2449,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-toolbar i { display: inline-block; margin: 0 0.25em 0 0.1em; }
 
-@media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar i { display: block; margin: 0; font-size: 16px; line-height: 1.2em; } }
+@media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar i { display: block; margin: 0; font-size: 15px; line-height: 1.2em; } }
 
 @media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar__text { position: relative; z-index: -1; visibility: hidden; } }
 
@@ -2429,17 +2477,15 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-upload__buttons, .k-flexboxlegacy .koowa .k-upload__buttons { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; /* 1 */ display: block; /* 2 */ width: auto; /* 3 */ } }
 
-.koowa .k-overview { border: 1px solid #273747; background: #34495e; }
+.koowa .k-content-wrapper { clear: both; /* 1 */ margin: 0; }
 
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-overview, .k-flexboxlegacy .koowa .k-overview { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
+@media screen and (min-width: 768px) { .koowa .k-content-wrapper { display: table; width: 100%; } }
 
-.koowa .k-form { /** Component background Default component has background for when sliding over sidebars */ /** Toolbar 1. Set a max-width for the toolbar so it's just as big as the container below */ }
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-content-wrapper, .k-flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: hidden; } }
 
-.koowa .k-form .k-component { background: #eeeeee; }
+.koowa .opened--left, .koowa .opened--right { overflow: hidden; /* 1 */ }
 
-.koowa .k-form .k-toolbar { max-width: 1024px; /* 1 */ margin: 0 auto; padding: 0 10px; }
-
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-form, .k-flexboxlegacy .koowa .k-form { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+@media screen and (min-width: 768px) { .koowa .opened--left, .koowa .opened--right { overflow: auto; /* 2 */ } }
 
 .koowa .k-form--front { background: #333; }
 
@@ -2453,7 +2499,7 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .hidden.hidden.hidden { display: none; }
 
-.koowa .visually-hidden.visually-hidden.visually-hidden, .koowa .booleanlist:not(ie) input, .koowa .k-checkbox-toggle:not(old-ie) input, .koowa .k-scopebar__search label { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
+.koowa .visually-hidden.visually-hidden.visually-hidden, .k-checked .koowa .booleanlist input[type="radio"], .koowa .k-checkbox-toggle:not(old-ie) input, .koowa .k-scopebar__search label { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
 
 .koowa .margin-bottom.margin-bottom.margin-bottom { margin-bottom: 20px; }
 
@@ -2463,4 +2509,4 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-toolbar .disabled.disabled.disabled { display: none; }
 
-.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; z-index: 1 !important; }
+.koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; overflow: auto; z-index: 1 !important; }

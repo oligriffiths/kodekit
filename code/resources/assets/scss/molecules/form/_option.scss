@@ -4,6 +4,18 @@
 
 /**
  * Shared styling between radio boxes and checkboxes
+ *
+ * Handles following marlup styles:
+ *
+ * Markup example 1:
+ * <input id="input1">
+ * <label for="input1">Label 1</label>
+ * <input id="input2">
+ * <label for="input2">Label 2</label>
+ *
+ * Markup example 2:
+ * <label><input id="input1"> Label 1</label>
+ * <label><input id="input2"> Label 2</label>
  */
 
 @include modernizr('.k-appearance.k-checked') {
@@ -20,11 +32,14 @@
      */
 
     -webkit-appearance: none; /* 1 */
-    /* -moz-appearance: none; /* 1 */
+    /* -moz-appearance: don't set this; /* 1 */
     position: relative; /* 2 */
     height: $form-option-size;
     width: $form-option-size;
-    margin: -1px 0 2px; /* 3 */
+    margin-top: -1px; /* 3 */
+    margin-bottom: 2px; /* 3 */
+    margin-left: 0;
+    margin-right: .33em;
     border: $form-option-border-size solid $form-option-border;
     padding: 0;
     background: $form-option-background;
@@ -67,18 +82,30 @@
       display: block; /* 4 */
     }
 
-    /* Put some space between the box and the label */
-
-    & + label {
-      margin-left: .15em;
-    }
   }
 
   /* Put some space between the box and the label */
   label {
-    input[type="checkbox"],
-    input[type="radio"] {
-      margin-right: .15em;
+
+    /**
+     * <input id="input1">
+     * <label for="input1">Label 1</label>
+     * <input id="input2">
+     * <label for="input2">Label 2</label>
+     */
+
+    & + input[type="checkbox"],
+    & + input[type="radio"] {
+      margin-left: 1em;
+    }
+
+    /**
+     * <label><input id="input1"> Label 1</label>
+     * <label><input id="input2"> Label 2</label>
+     */
+
+    & + label {
+      margin-left: 1em;
     }
   }
 }

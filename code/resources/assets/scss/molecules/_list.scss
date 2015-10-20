@@ -61,6 +61,7 @@
     &:focus {
       background: $list-hover-background;
       color: $list-hover-color;
+      text-decoration: none; /* 2 */
     }
   }
 
