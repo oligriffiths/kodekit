@@ -38,6 +38,12 @@
 
 .koowa {
 
+  /* Border-box size everything */
+
+  &, *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
   /* Namespaced Normalize */
 
   @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
@@ -64,6 +70,7 @@
   @import "../atoms/a";
   @import "../atoms/fieldset";
   @import "../atoms/img";
+  @import "../atoms/legend";
   @import "../atoms/p";
 
 
@@ -86,6 +93,7 @@
   @import "../molecules/icons";
   @import "../molecules/list";
   @import "../molecules/navigation";
+  @import "../molecules/optionlist";
   @import "../molecules/overflowing";
   @import "../molecules/scopebar";
   @import "../molecules/sidebar";

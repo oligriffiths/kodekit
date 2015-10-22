@@ -58,6 +58,16 @@
     text-decoration: none; // 2
 
 
+    /* Hover & focus state */
+
+    &:hover,
+    &:focus {
+      background: $list-hover-background;
+      color: $list-hover-color;
+      text-decoration: none; /* 2 */
+    }
+
+
     /**
      * Faux border
      *

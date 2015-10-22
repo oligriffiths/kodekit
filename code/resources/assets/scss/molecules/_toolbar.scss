@@ -42,8 +42,8 @@
 
     @include breakpoint(0, range, $charlie) {
       overflow: hidden;
-      width: 33px;
-      height: 33px;
+      width: 32px;
+      height: 32px;
       padding: 6px 8px;
       text-align: center;
     }

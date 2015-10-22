@@ -613,7 +613,7 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-overview'),
+        var $wrapper = $('.k-content-wrapper'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.table--fixed'),

@@ -6,10 +6,10 @@
     =========================================================================
 
 <div class="booleanlist">
-  <input type="radio" name="enabled" id="enabled1" value="1" checked="checked">
-  <label for="enabled1"><span>Published</span></label>
-  <input type="radio" name="enabled" id="enabled0" value="0">
-  <label for="enabled0"><span>Unpublished</span></label>
+  <input type="radio" name="name" id="id1" value="1" checked="checked">
+  <label for="id1">True</label>
+  <input type="radio" name="name" id="id0" value="0">
+  <label for="id0">False</label>
 </div>
 */
 
@@ -17,10 +17,10 @@
     =========================================================================
 
 <div class="booleanlist booleanlist--neutral">
-  <input type="radio" name="enabled" id="enabled1" value="1" checked="checked">
-  <label for="enabled1"><span>Published</span></label>
-  <input type="radio" name="enabled" id="enabled0" value="0">
-  <label for="enabled0"><span>Unpublished</span></label>
+  <input type="radio" name="name" id="id1" value="1" checked="checked">
+  <label for="id1">Option 1</label>
+  <input type="radio" name="name" id="id0" value="0">
+  <label for="id0">Option 2</label>
 </div>
 */
 
@@ -134,6 +134,7 @@
       &:hover {
         background: rgba(0,0,0,.15);
       }
+
     }
 
 

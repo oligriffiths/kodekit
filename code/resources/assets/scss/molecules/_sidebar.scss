@@ -131,6 +131,8 @@
 /* Sidebar item */
 
 .k-sidebar__item {
+  width: 100%;
+
   & + & {
     margin-top: $spacing;
   }

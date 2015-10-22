@@ -74,10 +74,4 @@ body {
     z-index: 1; // 3
   }
 
-
-  /* Border-box size everything */
-
-  &, *, *:before, *:after {
-    box-sizing: border-box;
-  }
 }
