@@ -622,7 +622,7 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             $tree = $('.k-clicker'),
             $magnificframe = $('.mfp-iframe'),
             $clickable = $('a, button'),
-            $searchtoggle = $('.toggle-search');
+            $searchtoggle = $('.k-toggle-search');
 
         // Sidebar
         if ($wrapper.length && $content.length && $toolbar.length)

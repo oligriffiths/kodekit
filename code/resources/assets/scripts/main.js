@@ -12,7 +12,7 @@
             $tree = $('.k-clicker'),
             $magnificframe = $('.mfp-iframe'),
             $clickable = $('a, button'),
-            $searchtoggle = $('.toggle-search');
+            $searchtoggle = $('.k-toggle-search');
 
         // Sidebar
         if ($wrapper.length && $content.length && $toolbar.length)
