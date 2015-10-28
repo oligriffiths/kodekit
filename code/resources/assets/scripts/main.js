@@ -3,7 +3,7 @@
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-overview'),
+        var $wrapper = $('.k-content-wrapper'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.table--fixed'),

@@ -292,7 +292,6 @@
   .k-search__field {
     @include reset;
     margin: 0;
-    max-width: 250px;
     display: block;
     width: 100%;
     height: $scopebar-size;
@@ -306,6 +305,7 @@
     -webkit-appearance: none;
 
     @include breakpoint($beta) {
+      max-width: 250px;
       border-left: 1px solid $scopebar-border;
     }
   }
