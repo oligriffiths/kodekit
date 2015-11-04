@@ -2,30 +2,18 @@
    Bootstrap input group
    ========================================================================== */
 
-.input-group,
-.input-group-inside {
-  .help-block {
-    position: absolute;
-    top: 100%;
-    left: auto;
-  }
-}
+/**
+ * Set width to 100% for input-group inside another input group
+ */
 
 .input-group {
   width: 100%;
 }
 
-.input-group-inside {
-  position: relative;
-  border-collapse: separate;
-  width: 100%;
-  display: table;
 
-  .btn,
-  .form-control:nth-child(n) {
-    border-radius: $input-border-radius;
-  }
-}
+/**
+ * Align to top so we can add a help message below the field
+ */
 
 .input-group-input,
 .input-group-btn,
@@ -33,29 +21,59 @@
   vertical-align: top;
 }
 
-.input-group .input-group-addon:not(:first-child):not(:last-child),
-.input-group .input-group-btn:not(:first-child):not(:last-child) > .btn,
-.input-group .form-control:not(:first-child):not(:last-child),
-.input-group .input-group-content:not(:first-child):not(:last-child) .input-group-addon,
-.input-group .input-group-content:not(:first-child):not(:last-child) .form-control {
-  border-radius: 0;
+
+/**
+ * Position the dropdown toggles properly
+ */
+
+.input-group {
+  ul {
+    top: auto;
+  }
 }
 
-.input-group .form-control:last-child,
-.input-group .input-group-addon:last-child,
-.input-group .input-group-btn:last-child > .btn,
-.input-group .input-group-btn:last-child > .dropdown-toggle,
-.input-group .input-group-btn:first-child > .btn:not(:first-child) {
-  border-bottom-left-radius: 0;
-  border-top-left-radius: 0;
+
+/**
+ * Position the dropdown toggles properly
+ */
+
+.input-group {
+  .input-group-btn:not(:last-child) {
+    .btn {
+      border-right: 0;
+    }
+  }
 }
 
-.input-group .form-control:first-child:not(:last-child),
-.input-group .input-group-addon:first-child,
-.input-group .input-group-btn:first-child > .btn,
-.input-group .input-group-btn:first-child > * > .btn,
-.input-group .input-group-btn:first-child > .dropdown-toggle,
-.input-group .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+
+/**
+ * Border radius control
+ */
+
+.has-no-radius {
+  border-radius: 0 !important;
+}
+
+.has-radius {
+  border-radius: $input-border-radius !important;
+}
+
+.has-right-radius {
+  border-top-right-radius: $input-border-radius !important;
+  border-bottom-right-radius: $input-border-radius !important;
+}
+
+.has-left-radius {
+  border-top-left-radius: $input-border-radius !important;
+  border-bottom-left-radius: $input-border-radius !important;
+}
+
+.has-no-right-radius {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.has-no-left-radius {
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
 }

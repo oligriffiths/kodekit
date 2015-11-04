@@ -23,6 +23,7 @@
         var defaults = {
             width: "resolve",
             minimumInputLength: 2,
+            theme: "bootstrap",
             ajax: {
                 url: options.url,
                 delay: 100,

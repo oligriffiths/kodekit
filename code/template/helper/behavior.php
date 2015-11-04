@@ -379,6 +379,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
             'debug'   => false,
             'element' => '.select2-listbox',
             'options' => array(
+                'theme'   => 'bootstrap',
                 'width' => 'resolve'
             )
         ));

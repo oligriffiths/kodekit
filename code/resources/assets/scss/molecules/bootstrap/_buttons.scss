@@ -10,5 +10,7 @@
 }
 
 a.btn {
-  text-decoration: none; /* 2 */
+  &, &:hover, &:focus, &:active {
+    text-decoration: none; /* 2 */
+  }
 }
