@@ -11,7 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Nooku UI">
 
-    <link rel="stylesheet" href="../../css/admin-joomla.css">
+    <link rel="stylesheet" href="http://extensions.dev/media/com_docman/css/admin.css">
     <script src="/media/jui/js/jquery.min.js"></script>
     <script src="../../js/modernizr.js"></script>
     <script src="../../js/admin.js"></script>

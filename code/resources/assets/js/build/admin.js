@@ -613,7 +613,8 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
     $(document).ready(function () {
 
         // Variables
-        var $wrapper = $('.k-content-wrapper'),
+        var $wrapper = $('.k-wrapper'),
+            $titlebar = $('.k-titlebar'),
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.table--fixed'),
@@ -625,19 +626,24 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             $searchtoggle = $('.k-toggle-search');
 
         // Sidebar
-        if ($wrapper.length && $content.length && $toolbar.length)
+        if ( ($toolbar.length || $titlebar.length) && $wrapper.length && $content.length)
         {
-            var toggle_button = '<button class="off-canvas-menu-toggle" type="button">' +
+            var toggle_button = '<div class="off-canvas-menu-toggle-holder"><button class="off-canvas-menu-toggle" type="button">' +
                 '<span class="bar1"></span>' +
                 '<span class="bar2"></span>' +
                 '<span class="bar3"></span>' +
-                '</button>',
+                '</button></div>',
                 sidebar_left  = $('#k-sidebar'),
                 sidebar_right = $('#k-sidebar-right');
 
             if (sidebar_left.length) {
                 var left_toggle = $(toggle_button);
-                $toolbar.prepend(left_toggle);
+
+                if ($titlebar.length) {
+                    $titlebar.prepend(left_toggle);
+                } else if ($toolbar.length) {
+                    $toolbar.prepend(left_toggle);
+                }
 
                 sidebar_left.offCanvasMenu({
                     menuToggle: left_toggle,
@@ -648,7 +654,12 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
 
             if (sidebar_right.length) {
                 var right_toggle = $(toggle_button);
-                $toolbar.append(right_toggle);
+
+                if ($titlebar.length) {
+                    $titlebar.append(right_toggle);
+                } else if ($toolbar.length) {
+                    $toolbar.append(right_toggle);
+                }
 
                 sidebar_right.offCanvasMenu({
                     menuToggle: right_toggle,

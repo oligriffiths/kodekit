@@ -12,8 +12,8 @@
   @include border(bottom, $titlebar-border);
   position: relative; /* 1 */
   z-index: 2; /* 1 */
+  display: table;
   width: 100%;
-  float: left;
   background: $titlebar-background; /* 2 */
   color: $titlebar-color;
   transition: transform $transition; /* 3 */
@@ -91,7 +91,7 @@
 .show-left-menu,
 .show-right-menu {
   .k-titlebar:before {
-    opacity: .5; /* 1 */
+    opacity: .75; /* 1 */
   }
 }
 
@@ -106,7 +106,23 @@
 /* Titlebar contents */
 
 .k-titlebar {
+  .off-canvas-menu-toggle-holder,
   h2 {
-    margin: $spacing-small;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .off-canvas-menu-toggle-holder {
+    white-space: nowrap;
+  }
+
+  h2 {
+    width: 99%;
+    padding: $spacing-small;
+    text-align: center;
+
+    @include breakpoint($beta) {
+      text-align: left;
+    }
   }
 }
