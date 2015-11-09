@@ -64,3 +64,10 @@
 .no-margin.no-margin.no-margin {
   margin: 0;
 }
+
+
+/* Add padding to bottom of the field */
+@at-root :root:root:root .margin-bottom--small {
+  padding-bottom: $spacing-small;
+}
+

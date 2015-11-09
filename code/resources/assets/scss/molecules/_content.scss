@@ -11,7 +11,7 @@
 .k-content {
   position: relative; /* 1 */
   z-index: 2; /* 1 */
-  background: $overview-background; /* 2 */
+  background: $content-background; /* 2 */
   transition: transform $transition; /* 3 */
 
 
