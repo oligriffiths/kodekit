@@ -20,17 +20,41 @@
 
 /* Properly styling the search input */
 
-.select2-container {
+.select2-container--bootstrap {
+
+  /* Single select box */
+
   .select2-search {
     float: none;
+
+    .select2-search__field {
+      width: 100% !important;
+      margin: 0;
+      height: $input-height-base;
+      line-height: $line-height-base;
+      -webkit-appearance: none;
+      display: block;
+    }
   }
 
-  input[type="search"] {
-    width: 100% !important;
-    margin: 0;
-    height: $input-height-base;
-    line-height: $line-height-base;
-    -webkit-appearance: none;
-    display: block;
+  /* Multiple select box */
+
+  .select2-selection--multiple {
+    .select2-selection__rendered {
+      cursor: text;
+    }
+
+    .select2-search--inline {
+      .select2-search__field {
+        box-shadow: none;
+        margin: 0;
+        width: 20px !important;
+        min-width: 0;
+      }
+    }
+
+    .select2-selection__choice {
+      margin: 5px 0 0 5px;
+    }
   }
 }
