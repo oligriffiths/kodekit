@@ -747,6 +747,36 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
         $searchtoggle.click(function() {
             $('.k-scopebar__search').slideToggle('fast');
         });
+
+
+        // Toggle the filter bar and the filter button content
+        $('.k-scopebar__filter-button').on('click', function() {
+            $(this).toggleClass('k-scopebar__filter-button--reset');
+            $(this).find('.add-filter').toggle();
+            $(this).find('.clear-filter').toggle();
+            $('[data-filter="all"]').slideToggle('fast');
+        });
+
+        // Special theme for the select2 filters in the scopebar (tiny theme)
+        $('.select2-filter').select2({
+            theme: "tiny"
+        });
+
+        // Special theme for the select2 filters in the scopebar (tiny theme)
+        $('.select2-filter--no-search').select2({
+            theme: "tiny"
+        });
+
+        // TEMP: Show the second group of filters
+        $('.first--and').on('click', function() {
+            $('.first--group').show();
+        });
+
+        // TEMP: Hide the second group of filters
+        $('.btn-remove-filter').on('click', function() {
+            $(this).closest('.first--group').hide();
+        });
+
     });
 
 })(jQuery);
