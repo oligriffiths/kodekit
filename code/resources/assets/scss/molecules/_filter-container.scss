@@ -5,16 +5,26 @@
 /**
 <!-- filter container -->
 <div class="k-filter-container">
-    <div class="k-filter-container__item">
+    <div class="k-filter-group">
+        <div class="k-filter">
+            ...
+        </div>
+        <div class="k-filter k-filter--text">
+            is
+        </div>
+        <div class="k-filter">
+            ...
+        </div>
     </div>
 </div><!-- .k-filter-container -->
 */
 
 .k-filter-container {
+  @include border(bottom, $filter-container-border);
   position: relative;
-  display: table;
-  width: 100%;
   background: $filter-container-background;
+  font-size: 0;
+
 
   /* When flexbox is in use */
 
@@ -23,28 +33,16 @@
     flex-direction: row;
     flex: 0 0 auto;
   }
-}
 
 
-/**
- * The items
- */
-
-.k-filter-container__item {
-  @include border(bottom, $filter-container-border);
-  width: 100%;
-  padding: $filter-container-spacing;
-  display: block;
-
-
-  /* Hide items when JS is enabled */
+  /* Hide when JS is enabled */
 
   @include js-enabled {
     display: none;
   }
 
 
-  /* Show items when they have a visible class */
+  /* Show when it has a visible class */
 
   &.js-is-visible {
     display: block;
@@ -57,90 +55,17 @@
       align-items: center;
     }
   }
-
 }
 
 
-/* Cells within items */
 
-.k-filter-container__item__cell {
+/**
+ * Group in single item
+ */
+
+.k-filter-group {
   display: inline-block;
-  vertical-align: middle;
-  max-width: 100%;
-  margin-bottom: $filter-container-spacing;
-
-
-  @include breakpoint($alpha) {
-    width: 190px;
-  }
-
-
-  @include breakpoint($beta) {
-    width: 230px;
-  }
-
-  /* When flexbox is in use */
-
-  @include flexbox($horizontal: $charlie) {
-    flex: 0 1 auto;
-    padding-left: $filter-container-spacing;
-    margin-bottom: 0;
-    width: auto;
-    max-width: 230px;
-  }
-
-
-  /* No left padding on first items */
-
-  &:first-child {
-    padding-left: 0;
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-
-  /* No margins for labels */
-
-  label {
-    margin: 0;
-  }
-}
-
-
-/* Fixed items */
-
-.k-filter-container__item__cell--fixed {
-  flex: 0 0 auto;
-  white-space: nowrap;
-  width: 100%;
-
-  @include flexbox($horizontal: $charlie) {
-    width: auto;
-  }
-}
-
-
-/* The close button */
-
-.k-filter-container__close {
-  position: absolute;
-  top: 50%;
-  right: $filter-container-spacing;
-  border: none;
-  display: block;
-  padding: 0;
-  width: 32px;
-  height: 32px;
-  margin: 0;
-  line-height: 32px;
-  vertical-align: middle;
-  background: transparent;
-  margin-top: -16px;
-  
-  &:focus,
-  &:hover {
-    color: black;
-  }
+  padding: 5px;
+  font-size: 12px;
+  line-height: 12px;
 }

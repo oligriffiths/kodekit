@@ -13,12 +13,11 @@
         <div class="k-scopebar__item--title">Filter:</div>
 
         <!-- Filters -->
-        <div class="k-scopebar__item--filters">
-            <ul>
-                <li><button class="k-filter-button" type="button" data-filter-toggle="users">Users</button></li>
-                <li><button class="k-filter-button" type="button" data-filter-toggle="groups">User groups</button></li>
-                <li><button class="k-filter-button" type="button" data-filter-toggle="date">Date</button></li>
-            </ul>
+        <div class="k-scopebar__item--filter">
+            <button type="button" class="k-scopebar__filter-button">
+                <span class="add-filter">Add filter</span>
+                <span class="remove-filter" style="display: none;">Clear filter</span>
+            </button>
         </div>
 
         <!-- Search toggle button -->
@@ -123,110 +122,60 @@
 
 
 /**
- * Scopebar filters
+ * Scopebar filter
  *
  * 1. Setting to inline-block to align with title and different filters
  * 2. Setting height to scopebar height
- * 3. Fixing line-height/positioning bug caused by `display: inline-block`
  */
 
-.k-scopebar__item--filters {
+.k-scopebar__item--filter {
   display: inline-block; /* 1 */
   height: $scopebar-size; /* 2 */
   width: auto;
   font-size: $scopebar-filter-font-size;
-
-  ul {
-    @include reset;
-    @include clearfix;
-    display: inline-block; /* 1 */
-    height: $scopebar-size; /* 2 */
-    line-height: $scopebar-size; /* 2 */
-    vertical-align: middle; /* 3 */
-  }
-
-  li {
-    display: block;
-    float: left;
-    line-height: $scopebar-size;
-    vertical-align: middle;
-    height: $scopebar-size; /* 2 */
-    margin-right: $scopebar-filter-spacing;
+}
 
 
-    /**
-     * The active item
-     *
-     * 1. Larger padding to appear more like a tab
-     * 2. Set same color as filter container to appear as a tab
-     * 3. Darken the border so it's better visible
-     * 4. Give fake border the same color as filter container
-     */
 
-    &.js-is-active {
-      .k-filter-button {
-        background: $scopebar-filter-background; /* 2 */
-        border-color: $scopebar-filter-border; /* 3 */
-        outline: none;
-        text-decoration: none;
-        color: $color-type;
-      }
-    }
-  }
+/**
+ * Scopebar filter button
+ */
 
-  .k-filter-button {
-    display: inline-block; /* 1 */
-    height: $scopebar-filter-size;
-    margin-top: $scopebar-filter-spacing;
-    margin-bottom: $scopebar-filter-spacing;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    padding: 0 $scopebar-filter-spacing;
-    line-height: $scopebar-filter-size;
-    vertical-align: baseline;
-    cursor: pointer;
-    color: $color-accent;
-    background: transparent;
+.k-scopebar__filter-button {
+  display: inline-block;
+  width: auto;
+  padding: 0;
+  background: transparent;
+  border: none;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: $scopebar-size;
+  color: $color-accent;
 
 
-    /* A hover to show they are clickable */
-
-    &:hover,
-    &:focus {
+  /* A hover to show they are clickable */
+  &:hover,
+  &:focus {
+    span {
       text-decoration: underline;
-    }
-
-
-    /* Don't show the outline on hover since the active item doesn't show an outline anyways */
-
-    &:hover {
-      outline: none;
-    }
-
-
-    /* When it has an active filter, show it */
-    &.has-active-filter {
-      font-weight: bold;
-
-      @include icon-before(check, true) {
-        font-size: 10px;
-        margin-right: 5px;
-        margin-bottom: 2px;
-        vertical-align: middle;
-      }
     }
   }
 }
 
-.k-scopebar__reset-filters {
-  @include reset;
-  font-size: .9375em;
-  color: $scopebar-color;
-  margin-left: 1em;
+
+
+/**
+ * Scopebar filter reset button
+ */
+
+.k-scopebar__filter-button--reset {
+  color: $color-accent;
 
   @include icon-before(circle-x, true) {
+    display: inline-block;
+    vertical-align: middle;
     color: $color-error;
-    margin-right: .7em;
+    margin-right: .35em;
   }
 }
 
