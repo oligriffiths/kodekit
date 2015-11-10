@@ -3432,9 +3432,9 @@ module.exports = '1.2.1';
                             var states = self.options.toggler,
                                 state = states[node.is_open ? 1 : 0],
                                 text = 'folder' + (node.is_open ? '' : ' open'),
-                                triangle = $('<i />', {
-                                    'class': 'icon-toggler '+state.triangle[0], //Either icon-triangle-right or icon-triangle-down
-                                    html: state.triangle[1], //The html entity code for either a down or right arrow
+                                triangle = $('<span />', {
+                                    'class': 'icon-toggler '+state.folder, //Either icon-triangle-right or icon-triangle-down
+                                    //html: state.triangle[1], //The html entity code for either a down or right arrow
                                     on: {
                                         click: function(event){
                                             // making sure that select.node doesn't fire when clicking the open/close toggler
@@ -3447,10 +3447,10 @@ module.exports = '1.2.1';
                                     }
                                 });
                             // prepend the toggler triangle and the folder icon to the title
-                            $li.find('.jqtree-title').prepend('<span class="'+state.folder+'"><i>'+text+'</i></span> ').prepend(triangle);
+                            $li.find('.jqtree-title').before(triangle);
                         } else {
                             // prepend the folder icon, and an empty space for the triangle so the indendation is correct
-                            $li.find('.jqtree-title').prepend('<span class="'+self.options.toggler[0].folder+'"><i>folder</i></span> ').prepend('<i class="icon-triangle-hide"></i>');
+                            $li.find('.jqtree-title').before('<span class="'+self.options.toggler[0].triangle+'"></span> ');
                         }
 
                         /**
@@ -3459,7 +3459,7 @@ module.exports = '1.2.1';
                          */
                         var level = node.getLevel();
                         for (var i = 1; i < level; ++i) {
-                            $li.find('.jqtree-title').prepend('<i class="icon-whitespace"></i> ');
+                            $li.find('.jqtree-title').before('<i class="icon-whitespace"></i> ');
                         }
                     }
                 };
@@ -3601,7 +3601,7 @@ module.exports = '1.2.1';
                     function(event) {
                         // toggle classes and html on the triangle, and folder icon
                         var node = event.node, state = states[1], old = states[0], triangle = $(node.element).children('a').find('.icon-toggler');
-                        triangle.removeClass(old.triangle[0]).addClass(state.triangle[0]).html(state.triangle[1]);
+                        triangle.removeClass(old.folder).addClass(state.folder);
 
                         triangle.closest('a').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
                     },
@@ -3609,7 +3609,7 @@ module.exports = '1.2.1';
                     function(event) {
                         // toggle classes and html on the triangle, and folder icon
                         var node = event.node, state = states[0], old = states[1], triangle = $(node.element).children('a').find('.icon-toggler');
-                        triangle.removeClass(old.triangle[0]).addClass(state.triangle[0]).html(state.triangle[1]);
+                        triangle.removeClass(old.folder).addClass(state.folder);
 
                         triangle.closest('a').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
                     },
