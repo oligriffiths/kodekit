@@ -66,7 +66,7 @@
                             var states = self.options.toggler,
                                 state = states[node.is_open ? 1 : 0],
                                 triangle = $('<span />', {
-                                    'class': 'jqtree_common jqtree-folder '+state.folder,
+                                    'class': 'jqtree_common  jqtree-icon '+state.folder,
                                     on: {
                                         click: function(event){
                                             // making sure that select.node doesn't fire when clicking the open/close toggler
@@ -232,7 +232,7 @@
                 'tree.open':
                     function(event) {
                         // toggle classes and html on the triangle, and folder icon
-                        var node = event.node, state = states[1], old = states[0], triangle = $(node.element).children('span').find('.jqtree-folder');
+                        var node = event.node, state = states[1], old = states[0], triangle = $(node.element).children('span').find('. jqtree-icon');
                         triangle.removeClass(old.folder).addClass(state.folder);
 
                         triangle.closest('span').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
@@ -240,7 +240,7 @@
                 'tree.close':
                     function(event) {
                         // toggle classes and html on the triangle, and folder icon
-                        var node = event.node, state = states[0], old = states[1], triangle = $(node.element).children('span').find('.jqtree-folder');
+                        var node = event.node, state = states[0], old = states[1], triangle = $(node.element).children('span').find('. jqtree-icon');
                         triangle.removeClass(old.folder).addClass(state.folder);
 
                         triangle.closest('span').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
