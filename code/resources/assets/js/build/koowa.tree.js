@@ -3397,8 +3397,8 @@ module.exports = '1.2.1';
                     data: [], //Default empty value to avoid errors when there are no items yet
                     autoOpen: 0, //Auto open just "All Categories" by default, this value is the nesting level not the node id
                     useContextMenu: false, //This allows us to right-click menu items again
-                    toggler: [{triangle: ['icon-triangle-right', '&#x25ba;'], folder: 'koowa_icon--folder'},//Styling options for toggler
-                              {triangle: ['icon-triangle-down', '&#x25bc;'], folder: 'koowa_icon--folder_open'}],
+                    toggler: [{folder: 'k-icon-folder'},//Styling options for toggler
+                              {folder: 'k-icon-folder--open'}],
                     onCreateLi: function(node, $li){ //Method for customizing <li> markup
 
                         /**
@@ -3410,10 +3410,8 @@ module.exports = '1.2.1';
                             // states variable is for easy toggling on the click event
                             var states = self.options.toggler,
                                 state = states[node.is_open ? 1 : 0],
-                                text = 'folder' + (node.is_open ? '' : ' open'),
                                 triangle = $('<span />', {
-                                    'class': 'icon-toggler '+state.folder, //Either icon-triangle-right or icon-triangle-down
-                                    //html: state.triangle[1], //The html entity code for either a down or right arrow
+                                    'class': 'jqtree_common jqtree-folder '+state.folder,
                                     on: {
                                         click: function(event){
                                             // making sure that select.node doesn't fire when clicking the open/close toggler
@@ -3429,7 +3427,7 @@ module.exports = '1.2.1';
                             $li.find('.jqtree-title').before(triangle);
                         } else {
                             // prepend the folder icon, and an empty space for the triangle so the indendation is correct
-                            $li.find('.jqtree-title').before('<span class="'+self.options.toggler[0].triangle+'"></span> ');
+                            $li.find('.jqtree-title').before('<span class="'+self.options.toggler[0].folder+'"></span> ');
                         }
 
                         /**
@@ -3579,18 +3577,18 @@ module.exports = '1.2.1';
                 'tree.open':
                     function(event) {
                         // toggle classes and html on the triangle, and folder icon
-                        var node = event.node, state = states[1], old = states[0], triangle = $(node.element).children('a').find('.icon-toggler');
+                        var node = event.node, state = states[1], old = states[0], triangle = $(node.element).children('span').find('.jqtree-folder');
                         triangle.removeClass(old.folder).addClass(state.folder);
 
-                        triangle.closest('a').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
+                        triangle.closest('span').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
                     },
                 'tree.close':
                     function(event) {
                         // toggle classes and html on the triangle, and folder icon
-                        var node = event.node, state = states[0], old = states[1], triangle = $(node.element).children('a').find('.icon-toggler');
+                        var node = event.node, state = states[0], old = states[1], triangle = $(node.element).children('span').find('.jqtree-folder');
                         triangle.removeClass(old.folder).addClass(state.folder);
 
-                        triangle.closest('a').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
+                        triangle.closest('span').find('.'+old.folder).removeClass(old.folder).addClass(state.folder);
                     },
                 'tree.init':
                     function() {
