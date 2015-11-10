@@ -82,16 +82,17 @@
                             $li.find('.jqtree-title').before(triangle);
                         } else {
                             // prepend the folder icon, and an empty space for the triangle so the indendation is correct
-                            $li.find('.jqtree-title').before('<span class="'+self.options.toggler[0].folder+'"></span> ');
+                            $li.find('.jqtree-title').before('<span class="jqtree_common jqtree-icon '+self.options.toggler[0].folder+'"></span> ');
                         }
 
                         /**
                          * Generates indentation for each list item according to nesting level.
                          * @TODO the node.getLevel() property lookup isn't cached, submit patch on the jqTree github
                          */
-                        var level = node.getLevel();
+                        var level = node.getLevel(),
+                            parent = $li.find('.jqtree-title').parent();
                         for (var i = 1; i < level; ++i) {
-                            $li.find('.jqtree-title').before('<i class="icon-whitespace"></i> ');
+                            parent.prepend('<i class="icon-whitespace"></i>');
                         }
                     }
                 };
