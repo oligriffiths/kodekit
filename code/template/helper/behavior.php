@@ -75,6 +75,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
 
         if ($config->wrapper)
         {
+            $html .= '<ktml:template:wrapper>'; // used to make sure the template only wraps once
             $this->getTemplate()->addFilter('wrapper');
             $this->getTemplate()->getFilter('wrapper')->setWrapper($config->wrapper);
         }

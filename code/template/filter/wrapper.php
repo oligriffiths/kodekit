@@ -48,14 +48,17 @@ class KTemplateFilterWrapper extends KTemplateFilterAbstract
     }
 
     /**
-     * @param $text
+     * Checks if the text has <ktml:template:wrapper> to make sure it only runs once
      *
+     * @param $text
      * @return $this
      */
     public function filter(&$text)
     {
-        if ($this->getWrapper()) {
+        if ($this->getWrapper() && strpos($text, '<ktml:template:wrapper>') !== false)
+        {
             $text = sprintf($this->getWrapper(), $text);
+            $text = str_replace('<ktml:template:wrapper>', '', $text);
         }
 
         return $this;
