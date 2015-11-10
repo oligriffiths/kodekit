@@ -58,29 +58,8 @@
 
                         /**
                          * Adds a title attribute for the full title in case of overflow.
-                         * Wraps the inner elements of the <li> with a <a> tag to apply nav list styling from bootstrap
-                         * on each nav element.
-                         * Doing this also increases click area to the entire row, instead of a smaller element just
-                         * around the title.
-                         * The href="#" gives each element cursor:pointer styling.
-                         * Click handler makes sure clicking the outer <a> element selects the node, instead of doing nothing.
                          */
-
-                        $li.find('.jqtree-element').attr('title', node.name).wrap($('<a />', {
-                            /**
-                             * Using javascript:void() instead of # to avoid issues with url routers using # as Root node
-                             */
-                            href: 'javascript:void(0)',
-                            on: {
-                                click: function(event){
-                                    event.preventDefault(); //Prevent '#' added to the url, causing a scroll to top
-                                    event.stopPropagation(); //Prevent bubbling up to the click handler in jqTree
-
-                                    // Pass null to deselect, selectNode API never deselects when passing a node
-                                    self.tree('selectNode', node);
-                                }
-                            }
-                        }));
+                        $li.find('.jqtree-element').attr('title', node.name);
 
                         if(node.isFolder()) {
                             // states variable is for easy toggling on the click event
