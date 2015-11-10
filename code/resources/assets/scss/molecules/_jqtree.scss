@@ -1,155 +1,174 @@
-.jqtree-tree {
-  ul.jqtree_common {
-    list-style: none outside;
-    margin: 0;
-    padding: 0;
-  }
+//.jqtree-tree {
+//  ul.jqtree_common {
+//    list-style: none outside;
+//    margin: 0;
+//    padding: 0;
+//  }
+//
+//  li.jqtree-closed > ul.jqtree_common {
+//    display: none;
+//  }
+//
+//  li.jqtree_common {
+//    clear: both;
+//    list-style-type: none;
+//  }
+//
+//  /* We use different markup to display the toggler, so we hide the old one */
+//  .jqtree-toggler {
+//    display: none !important;
+//  }
+//
+//  .jqtree-title {
+//    vertical-align: middle;
+//    text-shadow: none;
+//    line-height: 1em; // Make both lists the same height
+//  }
+//
+//  span.jqtree-dragging {
+//    color: #fff;
+//    background: #000;
+//    opacity: 0.6;
+//    cursor: pointer;
+//    padding: 2px 8px;
+//  }
+//
+//  li.jqtree-ghost {
+//    position: relative;
+//    z-index: 10;
+//    margin-right: 10px;
+//  }
+//
+//  li.jqtree-ghost span {
+//    display: block;
+//  }
+//
+//  li.jqtree-ghost span.jqtree-circle {
+//    background-repeat: no-repeat;
+//    height: 8px;
+//    width: 8px;
+//    position: absolute;
+//    top: -4px;
+//    left: 2px;
+//  }
+//
+//  li.jqtree-ghost span.jqtree-line {
+//    background-color: #0000ff;
+//    height: 2px;
+//    padding: 0;
+//    position: absolute;
+//    top: -1px;
+//    left: 10px;
+//    width: 100%;
+//  }
+//
+//  li.jqtree-ghost.jqtree-inside {
+//    margin-left: 48px;
+//  }
+//
+//  span.jqtree-border {
+//    position: absolute;
+//    display: block;
+//    left: -2px;
+//    top: 0;
+//    border: solid 2px #0000ff;
+//    -webkit-border-radius: 6px;
+//    -moz-border-radius: 6px;
+//    border-radius: 6px;
+//    margin: 0;
+//  }
+//
+//  .jqtree-element {
+//    position: relative;
+//  }
+//
+//  .koowa_icon--folder, .koowa_icon--folder_open {
+//    opacity: 0.9;
+//  }
+//
+//  /* .icon-triangle-hide elements are for indenting folders with no children on the same column as the other folders */
+//  .icon-triangle-right, .icon-triangle-down, .icon-triangle-hide {
+//    opacity: 0.6;
+//    padding-right: 2px;
+//    transition: opacity 300ms;
+//    font-style: normal;
+//  }
+//  .icon-toggler {
+//    font-size: 10px;
+//    &:hover {
+//      opacity: 1;
+//      transition: opacity 300ms;
+//    }
+//  }
+//
+//  .jqtree-moving > .jqtree-element .jqtree-title {
+//    outline: dashed 1px #0000ff;
+//  }
+//
+//  &:before,
+//  &:after {
+//    display: table;
+//    content: "";
+//    clear: both;
+//  }
+//
+//  ul, li {
+//    float: left !important;
+//    min-width: 100%;
+//    overflow: visible;
+//
+//    a {
+//      width: auto;
+//    }
+//  }
+//}
 
-  li.jqtree-closed > ul.jqtree_common {
-    display: none;
-  }
 
-  li.jqtree_common {
-    clear: both;
-    list-style-type: none;
-  }
 
-  /* We use different markup to display the toggler, so we hide the old one */
-  .jqtree-toggler {
-    display: none !important;
-  }
 
-  .jqtree-title {
-    vertical-align: middle;
-    text-shadow: none;
-    line-height: 1em; // Make both lists the same height
-  }
 
-  span.jqtree-dragging {
-    color: #fff;
-    background: #000;
-    opacity: 0.6;
-    cursor: pointer;
-    padding: 2px 8px;
-  }
-
-  li.jqtree-ghost {
-    position: relative;
-    z-index: 10;
-    margin-right: 10px;
-  }
-
-  li.jqtree-ghost span {
-    display: block;
-  }
-
-  li.jqtree-ghost span.jqtree-circle {
-    background-repeat: no-repeat;
-    height: 8px;
-    width: 8px;
-    position: absolute;
-    top: -4px;
-    left: 2px;
-  }
-
-  li.jqtree-ghost span.jqtree-line {
-    background-color: #0000ff;
-    height: 2px;
-    padding: 0;
-    position: absolute;
-    top: -1px;
-    left: 10px;
-    width: 100%;
-  }
-
-  li.jqtree-ghost.jqtree-inside {
-    margin-left: 48px;
-  }
-
-  span.jqtree-border {
-    position: absolute;
-    display: block;
-    left: -2px;
-    top: 0;
-    border: solid 2px #0000ff;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    margin: 0;
-  }
-
-  .jqtree-element {
-    position: relative;
-  }
-
-  .koowa_icon--folder, .koowa_icon--folder_open {
-    opacity: 0.9;
-  }
-
-  /* .icon-triangle-hide elements are for indenting folders with no children on the same column as the other folders */
-  .icon-triangle-right, .icon-triangle-down, .icon-triangle-hide {
-    opacity: 0.6;
-    padding-right: 2px;
-    transition: opacity 300ms;
-    font-style: normal;
-  }
-  .icon-toggler {
-    font-size: 10px;
-    &:hover {
-      opacity: 1;
-      transition: opacity 300ms;
-    }
-  }
-
-  .jqtree-moving > .jqtree-element .jqtree-title {
-    outline: dashed 1px #0000ff;
-  }
-
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-    clear: both;
-  }
-
-  ul, li {
-    float: left !important;
-    min-width: 100%;
-    overflow: visible;
-
-    a {
-      width: auto;
-    }
-  }
-}
 
 
 /* New extra styling */
 .jqtree-tree {
-  a {
-    padding: 0;
+
+  /* Reset default ul li styling */
+  &, ul {
+    @include reset;
   }
 }
 
-.jqtree-element {
-  display: block;
-}
 
-.jqtree-title {
+.jqtree-element {
+  position: relative;
   display: block;
+  font-size: 0;
+  line-height: 0;
   padding: 0 $spacing-tiny 0 $spacing-small;
   white-space: nowrap;
   height: auto;
-  font-size: 0;
-  line-height: 0;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: white;
+  }
+
+  a {
+    padding: 0;
+    background: transparent;
+  }
+
+  .jqtree-toggler {
+    height: 0;
+    padding-top: 30px;
+    overflow: hidden;
+  }
 }
 
-.k-jqtree-whitespace,
-.k-jqtree-toggler,
-.k-jqtree-toggler--hide,
-.k-jqtree-folder,
-.k-jqtree-folder--open,
-.k-jqtree-name {
+.jqtree-toggler,
+.jqtree-icon,
+.jqtree-title {
   display: inline-block;
   font-size: 12px;
   height: 30px;
@@ -157,43 +176,43 @@
   vertical-align: middle;
 }
 
-.k-jqtree-whitespace,
-.k-jqtree-toggler,
-.k-jqtree-toggler--hide,
-.k-jqtree-folder,
-.k-jqtree-folder--open {
+.jqtree-toggler,
+.jqtree-icon {
   width: 18px;
   text-align: center;
 }
 
-.k-jqtree-toggler {
-  text-align: left;
-}
-
-.k-jqtree-folder {
+.k-icon-folder {
   @include icon-before(k-folder,true) {font-size: 16px;margin-bottom: -1px;}
 }
 
-.k-jqtree-folder--open {
+.k-icon-folder--open {
   @include icon-before(k-folder_open,true) {font-size: 16px;margin-bottom: -1px;}
 }
 
-.k-jqtree-name {
-  padding-left: 5px;
+.jqtree-title {
+  padding: 0 0 0 5px;
 }
 
-.k-jqtree-toggler {
+.jqtree-toggler {
   @include psuedo(before) {
     top: 50%;
-    margin-top: -4px;
+    margin-top: -2px;
     left: 4px;
-    @include arrow(right);
+    @include arrow(bottom);
+    transition: $transition;
   }
 
   &:hover,
   &:focus {
     &:before {
-      border-left-color: black;
+      border-top-color: black;
+    }
+  }
+
+  &.jqtree-closed {
+    &:before {
+      transform: rotate(-90deg);
     }
   }
 }
