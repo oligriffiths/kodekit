@@ -122,3 +122,78 @@
     }
   }
 }
+
+
+/* New extra styling */
+.jqtree-tree {
+  a {
+    padding: 0;
+  }
+}
+
+.jqtree-element {
+  display: block;
+}
+
+.jqtree-title {
+  display: block;
+  padding: 0 $spacing-tiny 0 $spacing-small;
+  white-space: nowrap;
+  height: auto;
+  font-size: 0;
+  line-height: 0;
+}
+
+.k-jqtree-whitespace,
+.k-jqtree-toggler,
+.k-jqtree-toggler--hide,
+.k-jqtree-folder,
+.k-jqtree-folder--open,
+.k-jqtree-name {
+  display: inline-block;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.k-jqtree-whitespace,
+.k-jqtree-toggler,
+.k-jqtree-toggler--hide,
+.k-jqtree-folder,
+.k-jqtree-folder--open {
+  width: 18px;
+  text-align: center;
+}
+
+.k-jqtree-toggler {
+  text-align: left;
+}
+
+.k-jqtree-folder {
+  @include icon-before(k-folder,true) {font-size: 16px;margin-bottom: -1px;}
+}
+
+.k-jqtree-folder--open {
+  @include icon-before(k-folder_open,true) {font-size: 16px;margin-bottom: -1px;}
+}
+
+.k-jqtree-name {
+  padding-left: 5px;
+}
+
+.k-jqtree-toggler {
+  @include psuedo(before) {
+    top: 50%;
+    margin-top: -4px;
+    left: 4px;
+    @include arrow(right);
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      border-left-color: black;
+    }
+  }
+}
