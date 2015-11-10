@@ -3427,7 +3427,8 @@ module.exports = '1.2.1';
                             $li.find('.jqtree-title').before(triangle);
                         } else {
                             // prepend the folder icon, and an empty space for the triangle so the indendation is correct
-                            $li.find('.jqtree-title').before('<span class="jqtree_common jqtree-icon '+self.options.toggler[0].folder+'"></span> ');
+                            $li.find('.jqtree-title').before('<i class="jqtree-whitespace"></i>')
+                                .before('<span class="jqtree_common jqtree-icon '+self.options.toggler[0].folder+'"></span> ');
                         }
 
                         /**
@@ -3437,7 +3438,7 @@ module.exports = '1.2.1';
                         var level = node.getLevel(),
                             parent = $li.find('.jqtree-title').parent();
                         for (var i = 1; i < level; ++i) {
-                            parent.prepend('<i class="icon-whitespace"></i>');
+                            parent.prepend('<i class="jqtree-whitespace"></i>');
                         }
                     }
                 };
