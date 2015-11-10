@@ -177,6 +177,7 @@
   vertical-align: middle;
 }
 
+.jqtree-whitespace,
 .jqtree-toggler,
 .jqtree-icon {
   width: 18px;
@@ -216,4 +217,9 @@
       transform: rotate(-90deg);
     }
   }
+}
+
+.jqtree_common.active > .jqtree-element {
+  color: $jqtree-color;
+  font-weight: $bold;
 }
