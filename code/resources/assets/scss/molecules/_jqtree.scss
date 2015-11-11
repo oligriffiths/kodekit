@@ -131,17 +131,26 @@
 
 /* New extra styling */
 .jqtree-tree {
+  @include clearfix;
 
   /* Reset default ul li styling */
   &, ul {
     @include reset;
+    @include clearfix;
+    float: left;
+    min-width: 100%;
   }
+}
+
+.jqtree-folder {
+  @include clearfix;
 }
 
 
 .jqtree-element {
   position: relative;
   display: block;
+  width: 100%;
   font-size: 0;
   line-height: 0;
   padding: 0 $spacing-tiny 0 $spacing-small;
