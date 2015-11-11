@@ -66,6 +66,7 @@
 
   a {
     color: $breadcrumb-color;
+    cursor: pointer;
 
     &:focus,
     &:hover {
@@ -186,6 +187,17 @@
 
     @include flexbox($horizontal:$breadcrumb-query) {
       flex: 0 0 auto; /* 2 */
+    }
+  }
+
+  .k-breadcrumb_root-text {
+    @extend .visually-hidden;
+  }
+
+  .home.active {
+    .k-breadcrumb_root-text {
+      @extend .visually-shown;
+      padding-left: $spacing-tiny;
     }
   }
 

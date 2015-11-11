@@ -31,6 +31,19 @@
 }
 
 
+
+/* Show visually-hidden class items */
+
+.visually-shown.visually-shown.visually-shown {
+  position: static;
+  overflow: visible;
+  clip: auto;
+  height: auto;
+  width: auto;
+  margin: 0;
+}
+
+
 /* Add bottom-margin to an element */
 
 .margin-bottom.margin-bottom.margin-bottom {
