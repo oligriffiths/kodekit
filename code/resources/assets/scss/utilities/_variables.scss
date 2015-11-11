@@ -60,6 +60,7 @@ $darkest-percentage:    12% !default;
 $font-family:     'Helvetica Neue', Helvetica, Arial, sans-serif !default;
 $font-size:       13px !default;
 $font-size-large: 15px !default;
+$font-size-huge:  21px !default;
 $line-height:     20px !default;
 $bold:            700 !default;
 $regular:         400 !default;
@@ -388,7 +389,7 @@ $form-background: $color-tertiary !default;
 
 $form-front-background:           #333 !default;
 $form-front-maxwidth:             $maxwidth !default;
-$form-front-spacing:              1em auto 0 !default;
+$form-front-spacing:              $spacing-small auto 0 !default;
 $form-front-content-background:   white !default;
 $form-front-content-shadow:       0 3px 6px rgba(0,0,0,.5) !default;
 
@@ -413,11 +414,11 @@ $upload-spacing:            $spacing-small !default;
 $upload-background:         $color-primary !default;
 $upload-border:             darker($upload-background) !default;
 
-$upload-drop-font-size:     1.65em !default;
-$upload-drop-line-height:   1.25em !default;
+$upload-drop-font-size:     $font-size-huge !default;
+$upload-drop-line-height:   $font-size-large !default;
 $upload-drop-color:         #595959 !default;
 
-$upload-buttons-spacing:    10px !default;
+$upload-buttons-spacing:    $spacing-small !default;
 
 
 // Filter container
