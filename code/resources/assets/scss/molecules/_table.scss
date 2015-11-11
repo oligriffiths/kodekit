@@ -234,6 +234,11 @@
     width: auto; /* 4 */
     margin-right: $table-pagination-spacing; /* 5 */
   }
+
+  .k-pagination-pages {
+    float: right;
+    line-height: 30px;
+  }
 }
 
 

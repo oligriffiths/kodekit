@@ -190,16 +190,26 @@
     }
   }
 
+
+
+  /**
+   * Root element
+   *
+   * 1. Hide root text by default
+   * 2. Show and position it when root is the active item to show more then just a home icon
+   */
+
   .k-breadcrumb_root-text {
-    @extend .visually-hidden;
+    @extend .visually-hidden; /* 1 */
   }
 
   .home.active {
     .k-breadcrumb_root-text {
-      @extend .visually-shown;
-      padding-left: $spacing-tiny;
+      @extend .visually-shown; /* 2 */
+      padding-left: $spacing-tiny; /* 2 */
     }
   }
+
 
 
   /**
