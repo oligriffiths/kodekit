@@ -370,10 +370,9 @@ $titlebar-color:        $toolbar-color !default;
 //
 // Overflowing shadows
 
-$overflow-size:     6px !default;
+$overflow-size:     30px !default;
 $overflow-blur:     $overflow-size * 2 !default;
 $overflow-offset:   -($overflow-size) !default;
-$overflow-color:    rgba(0,0,0,.25) !default;
 
 
 // Form layout

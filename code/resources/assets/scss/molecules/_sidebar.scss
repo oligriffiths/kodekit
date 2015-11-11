@@ -174,4 +174,15 @@
   @include flexbox {
     flex: 0 1 auto;
   }
+
+
+  /**
+   * Box shadow for overflowing containers
+   *
+   * 1. Set as same color as background to make it look like text is fading
+   */
+
+  & ~ [class^="overflowing"] {
+    color: $sidebar-background;
+  }
 }

@@ -48,7 +48,7 @@
   &--left {
     position: absolute; /* 2 */
     z-index: 99;
-    background: $overflow-color;
+    background: transparent;
     transition: all .5s $transition-easing;
     margin: 0;
 
@@ -59,21 +59,21 @@
 
   &--top,
   &--bottom {
-    height: 1px;
+    height: 0;
     left: 0;
     right: 0;
   }
 
   &--right,
   &--left {
-    width: 1px;
+    width: 0;
     top: 0;
     bottom: 0;
   }
 
   &--top {
     top: 0;
-    box-shadow: 0 (-($overflow-size/2)) $overflow-size $overflow-size $overflow-color;
+    box-shadow: 0 (-($overflow-size/2)) $overflow-size $overflow-size;
 
     &.js-is-hidden {
       margin-top: -$overflow-size;
@@ -82,7 +82,7 @@
 
   &--right {
     right: 0;
-    box-shadow: ($overflow-size/2) 0 $overflow-size $overflow-size $overflow-color;
+    box-shadow: ($overflow-size/2) 0 $overflow-size $overflow-size;
 
     &.js-is-hidden {
       margin-right: -$overflow-size;
@@ -91,7 +91,7 @@
 
   &--bottom {
     bottom: 0;
-    box-shadow: 0 ($overflow-size/2) $overflow-size $overflow-size $overflow-color;
+    box-shadow: 0 ($overflow-size/2) $overflow-size $overflow-size;
 
     &.js-is-hidden {
       margin-bottom: -$overflow-size;
@@ -100,7 +100,7 @@
 
   &--left {
     left: 0;
-    box-shadow: (-($overflow-size/2)) 0 $overflow-size $overflow-size $overflow-color;
+    box-shadow: (-($overflow-size/2)) 0 $overflow-size $overflow-size;
 
     &.js-is-hidden {
       margin-left: -$overflow-size;
