@@ -80,14 +80,14 @@
   th {
     @include border(bottom, $table-header-border);
     z-index: 1;
-    padding: 0 $table-cell-spacing; /* 1 */
+    padding: 0 $table-cell-spacing-horizontal; /* 1 */
     white-space: nowrap; /* 2 */
     background: $table-header-background;
 
     a {
       display: block; /* 3 */
-      padding: $table-cell-spacing 0; /* 4 */
-      line-height: $table-cell-size - ($table-cell-spacing * 2);
+      padding: $table-cell-spacing-vertical 0; /* 4 */
+      line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
     }
   }
 
@@ -101,8 +101,9 @@
 
   td {
     @include border(bottom, $table-cell-border);
-    padding: $table-cell-spacing;
+    padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal;
     background: $table-cell-background-even;
+    line-height: 18px;
   }
 
   tr:nth-child(odd) {
@@ -119,6 +120,8 @@
 
   small {
     display: block; /* 2 */
+    font-size: 11px;
+    line-height: 11px;
   }
 
   a {
@@ -188,7 +191,6 @@
   .k-table__sub-header {
     th {
       height: auto;
-      padding: ($table-cell-spacing * .66) $table-cell-spacing;
       font-size: .875em;
       text-transform: uppercase;
     }

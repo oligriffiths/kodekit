@@ -238,7 +238,8 @@ $sidebar-color:             $color-primary-type !default;
 $table-background:              white !default;
 
 $table-cell-size:               round($font-size * 3) !default; // 1
-$table-cell-spacing:            $spacing-tiny !default; // 2
+$table-cell-spacing-vertical:   6px !default; // 2
+$table-cell-spacing-horizontal: 8px !default; // 2
 
 $table-header-background:       $color-tertiary !default;
 $table-header-border:           darker($table-header-background) !default;

@@ -232,3 +232,9 @@
   color: $jqtree-color;
   font-weight: $bold;
 }
+
+.jqtree-closed {
+  ul {
+    display: none;
+  }
+}
