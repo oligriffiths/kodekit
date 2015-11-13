@@ -128,8 +128,8 @@ class KTemplateHelperGrid extends KTemplateHelperAbstract implements KTemplateHe
                 };
 
             kQuery(function($) {
-                $(".search_button").keypress(send);
-                $(".search_button--empty").click(function(event) {
+                $(".k-search__field").keypress(send);
+                $(".k-search__button-empty").click(function(event) {
                     event.preventDefault();
 
                     var input = $(this).siblings("input");
