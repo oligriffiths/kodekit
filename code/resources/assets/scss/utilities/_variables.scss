@@ -57,7 +57,7 @@ $darkest-percentage:    12% !default;
 // Typography
 // ==========================================================================
 
-$font-family:     'Helvetica Neue', Helvetica, Arial, sans-serif !default;
+$font-family:     Arial, sans-serif !default;
 $font-size:       13px !default;
 $font-size-large: 15px !default;
 $font-size-huge:  21px !default;
@@ -371,7 +371,7 @@ $titlebar-color:        $toolbar-color !default;
 //
 // Overflowing shadows
 
-$overflow-size:     30px !default;
+$overflow-size:     20px !default;
 $overflow-blur:     $overflow-size * 2 !default;
 $overflow-offset:   -($overflow-size) !default;
 

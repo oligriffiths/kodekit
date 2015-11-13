@@ -48,7 +48,7 @@
 
 @include flexbox {
   .k-breadcrumb {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
   }
 }
 
@@ -255,9 +255,8 @@
   min-width: $breadcrumb-size;
   min-height: $breadcrumb-size;
   overflow: hidden;
-
   text-align: center;
-  line-height: $breadcrumb-size / 2;
+  line-height: round($breadcrumb-size / 2);
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;

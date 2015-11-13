@@ -28,6 +28,7 @@
  * When flexbox is in use
  *
  * 1. Reset width needed for table
+ * 2. Set overflow for breadcrumbs to properly work
  */
 
 @include flexbox {
@@ -36,6 +37,7 @@
     flex: 1 1 auto;
     flex-direction: column;
     width: auto; /* 1 */
+    overflow: hidden; /* 2 */
   }
 }
 
