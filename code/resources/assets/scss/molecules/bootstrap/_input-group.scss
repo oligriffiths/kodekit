@@ -17,8 +17,28 @@
 
 .input-group-input,
 .input-group-btn,
-.input-group-content {
+.input-group-content,
+.input-group-input {
   vertical-align: top;
+}
+
+
+
+/**
+ * For multiple inputs on one line
+ *
+ * 1. Make it 50% wide to have both fields evenly wide
+ */
+
+.input-group-input {
+  display: table-cell;
+  width: 50%; /* 1 */
+
+  & + .input-group-input {
+    .form-control {
+      border-left: none !important;
+    }
+  }
 }
 
 

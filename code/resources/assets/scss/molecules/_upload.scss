@@ -83,7 +83,7 @@
   display: table-cell;
   width: 1px; /* 1 */
   white-space: nowrap; /* 2 */
-  padding-left: $upload-buttons-spacing;
+  padding-right: $upload-buttons-spacing;
 
 
   /**
@@ -98,5 +98,34 @@
     flex: 0 0 auto; /* 1 */
     display: block; /* 2 */
     width: auto; /* 3 */
+  }
+}
+
+
+
+
+
+
+
+
+
+.k-upload__drop__content {
+  display: table;
+  width: 100%;
+}
+
+.k-upload__drop__message {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.k-upload__drop__uploader {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.plupload_filelist_footer {
+  div {
+    display: inline-block;
   }
 }
