@@ -21,6 +21,7 @@
   width: 100%;
   padding: $upload-spacing;
   background: $upload-background;
+  position: relative;
 
 
   /* When flexbox is in use */
@@ -108,7 +109,7 @@
 
 
 
-
+// @TODO: refactor
 .k-upload__drop__content {
   display: table;
   width: 100%;
@@ -128,4 +129,33 @@
   div {
     display: inline-block;
   }
+}
+
+.k-upload__loading {
+  @include coverall;
+  background: white;
+  z-index: 10;
+  text-align: right;
+}
+
+.k-upload__loading__bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  background: lightest($color-accent);
+  border: 1px solid white;
+}
+
+.k-upload__loading__text {
+  color: black;
+  height: 20px;
+  line-height: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  margin-top: -10px;
+  padding: 0 1em 0 0;
 }
