@@ -144,8 +144,14 @@ class KTemplateHelperPaginator extends KTemplateHelperSelect
             $html .= '</ul>';
         }
 
-        if($config->show_count) {
-            $html .= sprintf($this->getObject('translator')->translate('Page %s of %s'), $config->current, $config->count);
+        if($config->show_count)
+        {
+            $current = '<strong class="page-current">'.$config->current.'</strong>';
+            $total   = '<strong class="page-total">'.$config->count.'</strong>';
+
+            $html .= '<div class="k-pagination-pages">';
+            $html .= sprintf($this->getObject('translator')->translate('Page %s of %s'), $current, $total);
+            $html .= '</div>';
         }
 
         $html .= '</div>';
