@@ -32,9 +32,10 @@
 /* Table contents */
 
 .k-table-container {
+  overflow: hidden;
 
   .k-table {
-    overflow: auto;
+    overflow: hidden;
     background: $table-background;
   }
 
