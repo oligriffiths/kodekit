@@ -64,3 +64,37 @@
     margin-bottom: 0;
   }
 }
+
+.k-container__full {
+  margin-bottom: $spacing;
+
+  @include breakpoint($charlie) {
+    @include span(12);
+    margin-bottom: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.k-batch-list {
+  @include clearfix;
+
+  .document-form {
+
+    @include breakpoint($beta) {
+      @include gallery(4 of 8);
+    }
+
+    @include breakpoint($charlie) {
+      @include gallery(3 of 9);
+    }
+
+    @include breakpoint($delta) {
+      @include gallery(3 of 12);
+    }
+
+  }
+}
