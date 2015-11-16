@@ -27,6 +27,7 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         $config->append(array(
             'toolbar' => null,
             'title'   => null,
+            'buttons' => null
         ))->append(array(
             'icon' => $config->toolbar->getName()
         ));
@@ -53,21 +54,21 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         }
 
         //Render the buttons
-        $html = '%s';
+        $html = '';
 
-        $buttons = '';
-        foreach ($config->toolbar->getCommands() as $command)
+        if ($config->buttons !== 'false' && $config->buttons !== false)
         {
-            $name = $command->getName();
+            foreach ($config->toolbar->getCommands() as $command)
+            {
+                $name = $command->getName();
 
-            if(method_exists($this, $name)) {
-                $buttons .= $this->$name(array('command' => $command));
-            } else {
-                $buttons .= $this->command(array('command' => $command));
+                if(method_exists($this, $name)) {
+                    $html .= $this->$name(array('command' => $command));
+                } else {
+                    $html .= $this->command(array('command' => $command));
+                }
             }
         }
-
-        $html = sprintf($html, $buttons);
 
         return $html;
     }
