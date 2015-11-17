@@ -587,9 +587,13 @@ img.mfp-img {
 
 .k-modal {
   background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
 .k-modal--inline {
+  padding: 15px;
+
   form {
     margin: 0;
   }
