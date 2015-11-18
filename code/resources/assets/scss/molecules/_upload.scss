@@ -84,7 +84,7 @@
   display: table-cell;
   width: 1px; /* 1 */
   white-space: nowrap; /* 2 */
-  padding-right: $upload-buttons-spacing;
+  padding-left: $upload-buttons-spacing;
 
 
   /**
@@ -194,5 +194,11 @@
     width: 100%;
     background: #27AE60;
     color: white;
+  }
+}
+
+.k-upload__buttons {
+  .btn.active {
+    display: none;
   }
 }
