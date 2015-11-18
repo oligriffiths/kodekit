@@ -647,7 +647,7 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
                 box.find('.k-filter--select').append(buildSelectList(filter));
                 box.find('.k-filter--container').append(boxes.filter('[data-filter="'+filter+'"]'));
 
-                box.removeClass('k-filter-group--prototype').css('display', 'block').data('filter', filter);
+                box.removeClass('k-filter-group--prototype').css('display', '').data('filter', filter);
 
                 box.insertBefore(container.find('.js-placeholder'));
 
@@ -656,12 +656,13 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
                 updateSelectBoxes();
                 updateAddButton();
 
-                // TODO: Mark first box to remove first "And"
-
                 return box;
             };
 
             var updateAddButton = function() {
+                // first one is the protoype, hide the second, display the rest
+                container.find('.k-filter--text--and').css('display', '').eq(1).css('display', 'none');
+
                 add_button.attr('disabled', hasInvisible() ? false : true);
             };
 
