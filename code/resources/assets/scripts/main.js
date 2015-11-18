@@ -145,27 +145,27 @@
             $(this).find('.add-filter').toggle();
             $(this).find('.clear-filter').toggle();
             $('[data-filter="all"]').slideToggle('fast');
-        });
+        }).trigger('click');
 
         // Special theme for the select2 filters in the scopebar (tiny theme)
-        $('.select2-filter').select2({
+        /*$('.select2-filter').select2({
             theme: "tiny"
         });
 
         // Special theme for the select2 filters in the scopebar (tiny theme)
         $('.select2-filter--no-search').select2({
             theme: "tiny"
-        });
+        });*/
 
         // TEMP: Show the second group of filters
-        $('.first--and').on('click', function() {
+        /*$('.first--and').on('click', function() {
             $('.first--group').show();
         });
 
         // TEMP: Hide the second group of filters
         $('.btn-remove-filter').on('click', function() {
             $(this).closest('.first--group').hide();
-        });
+        });*/
 
     });
 

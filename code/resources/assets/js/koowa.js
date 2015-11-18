@@ -539,36 +539,168 @@ Koowa.Controller.Grid = Koowa.Controller.extend({
     },
 
     setFilters: function() {
-        var toggles = this.form.find('[data-filter-toggle]'),
-            filters = this.form.find('[data-filter]');
+        var container = this.form.find('.k-filter-container'),
+            prototype = container.find('.k-filter-group--prototype'),
+            boxes     = container.find('.k-filter-container__item'),
+            add_button  = container.find('.js-add-button'),
+            filters   = {},
+            visible_filters = [],
+            buildSelectList, showFilter, showFirstFilter, updateSelectBoxes;
 
-        this.form.on('click.koowa', '[data-filter-toggle]', function(event) {
-            event.preventDefault();
+            boxes.each(function(i, box) {
+                var $box = $(box);
+                filters[$box.attr('data-filter')] = $box.attr('data-label');
+            });
 
-            var toggle = $(event.target),
-                name   = toggle.attr('data-filter-toggle'),
-                filter = filters.filter('[data-filter="'+name+'"]'),
-                is_visible = filter.is(':visible'),
-                visible_filters = filters.filter(':visible');
+            boxes = boxes.detach();
 
-            toggle.parents('ul').find('li').removeClass('js-is-active');
+            var setInvisible = function(filter) {
+                if (isVisible(filter)) {
+                    for (var i = visible_filters.length-1; i >= 0; i--) {
+                        if (visible_filters[i] === filter) {
+                            visible_filters.splice(i, 1);
+                        }
+                    }
+                }
+            };
 
-            if (is_visible) {
-                visible_filters.slideToggle();
-            }
-            else {
-                toggle.parent('li').addClass('js-is-active');
+            var setVisible = function(filter) {
+                if (!isVisible(filter)) {
+                    visible_filters.push(filter);
+                }
+            };
 
-                if (visible_filters.length) {
-                    filters.hide(0, function() {
-                        filter.show(0);
+            var isVisible = function(filter) {
+                return $.inArray(filter, visible_filters) !== -1;
+            };
+
+            var hasInvisible = function() {
+                return visible_filters.length < $.map(filters, function() { return 0}).length;
+            };
+
+            buildSelectList = function(filter) {
+                var select = $('<select />');
+
+                $.each(filters, function(key, label) {
+                    if (!isVisible(key)) {
+                        select.append($('<option />', {'value': key, 'text': label}));
+                    }
+                });
+
+                select.addClass('select2-filter--no-search js-filter-select');
+
+                select.data('selected', filter);
+
+                select.change(function() {
+                    var old_value = select.data('selected');
+                    var new_value = $(this).val();
+                    var container = $(this).parents('.k-filter-group').find('.k-filter--container');
+
+                    container.empty().append(boxes.filter('[data-filter="'+new_value+'"]'));
+
+                    select.data('selected', new_value);
+
+                    if (old_value) {
+                        setInvisible(old_value);
+                    }
+
+                    updateSelectBoxes();
+                });
+                /*select.select2({
+                    minimumResultsForSearch: -1,
+                    theme: "tiny"
+                });*/
+
+                return select;
+            };
+
+            updateSelectBoxes = function() {
+                container.find('.js-filter-select').each(function(i, element) {
+                    var select = $(element),
+                        selected = select.val(),
+                        values   = [];
+
+                    // remove extras
+                    select.find('option').each(function(i, option) {
+                        var $option = $(option),
+                            value   = $option.val();
+
+                        if (value !== selected && isVisible(value)) {
+                            $option.remove();
+                        } else {
+                            values.push(value);
+                        }
                     });
+
+                    // add missing
+                    $.each(filters, function(key, label) {
+                        if (!isVisible(key) && key !== selected && $.inArray(key, values) === -1) {
+                            select.append($('<option />', {'value': key, 'text': label}));
+                        }
+                    });
+                });
+            };
+
+            showFilter = function(filter) {
+                var box = prototype.clone(true);
+
+                box.find('.k-filter--select').append(buildSelectList(filter));
+                box.find('.k-filter--container').append(boxes.filter('[data-filter="'+filter+'"]'));
+
+                box.removeClass('k-filter-group--prototype').css('display', 'block').data('filter', filter);
+
+                box.insertBefore(container.find('.js-placeholder'));
+
+                setVisible(filter);
+
+                updateSelectBoxes();
+                updateAddButton();
+
+                // TODO: Mark first box to remove first "And"
+
+                return box;
+            };
+
+            var updateAddButton = function() {
+                add_button.attr('disabled', hasInvisible() ? false : true);
+            };
+
+            showFirstFilter = function() {
+                var filter = null;
+                $.each(filters, function(key) {
+                    if (!filter && !isVisible(key)) {
+                        filter = key;
+                    }
+                });
+
+                if (filter) {
+                    filter = showFilter(filter);
                 }
-                else {
-                    filter.slideDown();
-                }
-            }
-        });
+
+                return filter;
+            };
+
+            showFirstFilter();
+            //box.addClass('first--group');
+
+            add_button.click(function(event) {
+                event.preventDefault();
+
+                showFirstFilter();
+            });
+
+            container.on('click', '.btn-remove-filter', function(event) {
+                event.preventDefault();
+
+                var box = $(event.target).parents('.k-filter-group'),
+                    filter = box.data('filter');
+
+                setInvisible(filter);
+                updateSelectBoxes();
+                updateAddButton();
+
+                box.remove();
+            });
     },
 
     setTableHeaders: function() {
