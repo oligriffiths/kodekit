@@ -143,19 +143,56 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 50%;
-  background: lightest($color-accent);
+  background: #27AE60;
   border: 1px solid white;
+  transition: $transition;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+
+  &:after {
+    content: "upload complete!";
+    line-height: 52px;
+    padding-right: 20px;
+  }
 }
 
-.k-upload__loading__text {
-  color: white;
-  height: 20px;
-  line-height: 20px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  margin-top: -10px;
-  padding: 0 1em 0 0;
+.k-load-bar {
+  animation-name: loadBar;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
+}
+
+@keyframes loadBar {
+  0% {
+    width: 0;
+    background: lightest($color-accent);
+    color: lightest($color-accent);
+  }
+  20% {
+    width: 40%
+  }
+  40% {
+    width: 70%;
+  }
+  60% {
+    width: 80%;
+  }
+  80% {
+    width: 90%;
+  }
+  90% {
+    width: 98%;
+  }
+  95% {
+    width: 99%;
+    background: lightest($color-accent);
+    color: lightest($color-accent);
+  }
+  100% {
+    width: 100%;
+    background: #27AE60;
+    color: white;
+  }
 }
