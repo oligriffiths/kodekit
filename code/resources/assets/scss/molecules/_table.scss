@@ -96,8 +96,7 @@
   /**
    * Body
    *
-   * 1. No bottom border for last item
-   * 2. Small extra info below title display:block to display below title
+   * 1. Small extra info below title display:block to display below title
    */
 
   td {
@@ -113,14 +112,8 @@
     }
   }
 
-  tr:last-child {
-    td {
-      border-bottom: none; /* 1 */
-    }
-  }
-
   small {
-    display: block; /* 2 */
+    display: block; /* 1 */
     font-size: 11px;
     line-height: 11px;
   }
