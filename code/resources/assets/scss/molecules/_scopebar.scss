@@ -316,6 +316,28 @@
 
 
 /**
+ * Right floating button group
+ */
+
+.k-scopebar__group-right {
+  float: right;
+}
+
+.k-scopebar__group-right__item {
+  float: left;
+  height: $scopebar-size;
+}
+
+
+
+/**
+ * transparent buttons
+ */
+
+
+
+
+/**
  * Search toggle button
  *
  * 1. Hide when search is visible
@@ -324,7 +346,6 @@
 .k-toggle-search {
   position: relative;
   display: none;
-  float: right;
   overflow: hidden;
   width: 33px;
   height: 0;
