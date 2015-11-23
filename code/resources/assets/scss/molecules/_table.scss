@@ -21,10 +21,6 @@
         flex: 1 1 auto;
       }
     }
-
-    .k-table-pagination {
-      flex: 0 0 auto;
-    }
   }
 }
 
@@ -231,7 +227,6 @@
  */
 
 .k-table-pagination {
-  @include border(top, $table-pagination-border);
   padding: $table-pagination-spacing;
   background: $table-pagination-background;
   box-shadow: 0 1px 0 $table-pagination-border;
