@@ -134,6 +134,8 @@ var klass = (function () {
     return klass
 })();
 
+(function($) {
+
 /** @class */
 Koowa.Class = klass({
 
@@ -162,3 +164,5 @@ Koowa.Class = klass({
         return this;
     }
 });
+
+})(window.kQuery);
