@@ -101,7 +101,7 @@ class KTemplateHelperBehavior extends KTemplateHelperAbstract
         if (!isset(self::$_loaded['koowa']))
         {
             $html .= $this->jquery();
-            $html .= '<ktml:script src="assets://js/'.($config->debug ? '' : 'min/').'koowa.js" />';
+            $html .= '<ktml:script src="assets://js/'.($config->debug ? 'build/' : 'min/').'koowa.js" />';
 
             self::$_loaded['koowa'] = true;
         }

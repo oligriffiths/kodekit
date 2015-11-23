@@ -132,6 +132,13 @@ module.exports = function(grunt) {
                         'bower_components/jqtree/tree.jquery.js',
                         '<%= assetsPath %>/js/koowa.tree.js',
                         '<%= assetsPath %>/js/kquery.unset.js'
+                    ],
+                    '<%= assetsPath %>/js/build/koowa.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        '<%= assetsPath %>/js/koowa.class.js',
+                        '<%= assetsPath %>/js/koowa.grid.js',
+                        '<%= assetsPath %>/js/koowa.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
                     ]
                 }
             }
@@ -175,9 +182,6 @@ module.exports = function(grunt) {
                         '<%= assetsPath %>/js/jquery.validate.patch.js',
                         '<%= assetsPath %>/js/kquery.unset.js'
                     ],
-                    '<%= assetsPath %>/js/min/koowa.js': [
-                        '<%= assetsPath %>/js/koowa.js'
-                    ],
                     '<%= assetsPath %>/js/min/koowa.datepicker.js': [
                         '<%= assetsPath %>/js/datepicker.js',
                         '<%= assetsPath %>/js/koowa.datepicker.js'
@@ -194,6 +198,13 @@ module.exports = function(grunt) {
                     ],
                     '<%= assetsPath %>/js/min/modernizr.js': [
                         '<%= assetsPath %>/js/build/modernizr.js'
+                    ],
+                    '<%= assetsPath %>/js/min/koowa.js': [
+                        '<%= assetsPath %>/js/kquery.set.js',
+                        '<%= assetsPath %>/js/koowa.class.js',
+                        '<%= assetsPath %>/js/koowa.grid.js',
+                        '<%= assetsPath %>/js/koowa.js',
+                        '<%= assetsPath %>/js/kquery.unset.js'
                     ]
                 }
             }
