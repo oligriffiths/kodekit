@@ -88,6 +88,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
 
     boxes: null,
     add_button: null,
+    filter_button: null,
     filter_prototype: null,
 
     filters: {},
@@ -96,10 +97,11 @@ Koowa.Grid.Filter = Koowa.Class.extend({
      */
     getOptions: function() {
         return $.extend(true, this.supr(), {
-            prototype_selector: '.k-filter-group--prototype',
+            prototype_selector: '.js-filter-group--prototype',
             filter_selector:    '.k-filter-container__item',
             add_selector:       '.js-add-button',
-            remove_selector:    '.btn-remove-filter',
+            remove_selector:    '.js-remove-filter',
+            filter_button_selector: '.js-filter-button',
             and_selector:       '.k-filter--text--and'
         });
     },
@@ -111,6 +113,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         this.filter_prototype  = this.element.find(this.options.prototype_selector);
         this.add_button = this.element.find(this.options.add_selector);
         this.boxes      = this.element.find(this.options.filter_selector);
+        this.filter_button = this.element.find(this.options.filter_button_selector);
 
         this.boxes.detach();
 
@@ -129,6 +132,10 @@ Koowa.Grid.Filter = Koowa.Class.extend({
                 self.showFilter($box.attr('data-filter'));
             }
         });
+
+        if (!this.hasVisible()) {
+            this.filter_button.hide();
+        }
 
         this.addEvents();
     },
@@ -149,7 +156,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
 
             self.setInvisible(filter);
             self.updateSelectBoxes();
-            self.updateAddButton();
+            self.updateButtons();
 
             box.remove();
         });
@@ -231,7 +238,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         this.setVisible(filter);
 
         this.updateSelectBoxes();
-        this.updateAddButton();
+        this.updateButtons();
 
         box.find('.js-filter-select').select2({
             minimumResultsForSearch: -1,
@@ -255,11 +262,15 @@ Koowa.Grid.Filter = Koowa.Class.extend({
 
         return filter;
     },
-    updateAddButton: function() {
+    updateButtons: function() {
         // first one is the protoype, hide the second, display the rest
         this.element.find(this.options.and_selector).css('display', '').eq(1).css('display', 'none');
 
+        // show/hide add button
         this.add_button.attr('disabled', this.hasInvisible() ? false : true);
+
+        // filter button
+        this.filter_button.show();
     },
     isVisible: function(filter) {
         return typeof this.filters[filter] === 'undefined' ? false : this.filters[filter].visible;
@@ -287,6 +298,17 @@ Koowa.Grid.Filter = Koowa.Class.extend({
             });
         }
     },
+    hasVisible: function() {
+        var result = false;
+
+        $.each(this.filters, function(key, filter) {
+            if (!result && filter.visible) {
+                result = true;
+            }
+        });
+
+        return result;
+    },
     hasInvisible: function() {
         var result = false;
 
@@ -297,8 +319,6 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         });
 
         return result;
-
-        //return this.visible_filters.length < $.map(this.filters, function() { return 0}).length;
     }
 });
 
