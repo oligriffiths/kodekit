@@ -91,7 +91,6 @@ Koowa.Grid.Filter = Koowa.Class.extend({
     filter_prototype: null,
 
     filters: {},
-    visible_filters: [],
     /**
      * @returns {object}
      */
@@ -111,12 +110,19 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         this.element    = $(element);
         this.filter_prototype  = this.element.find(this.options.prototype_selector);
         this.add_button = this.element.find(this.options.add_selector);
-        this.boxes      = this.element.find(this.options.filter_selector).detach();
+        this.boxes      = this.element.find(this.options.filter_selector);
+
+        this.boxes.detach();
 
         var self = this;
         this.boxes.each(function(i, box) {
             var $box = $(box);
-            self.filters[$box.attr('data-filter')] = $box.attr('data-label');
+
+            self.filters[$box.attr('data-filter')] = {
+                visible: false,
+                label: $box.attr('data-label'),
+                form_elements: $box.find(':input')
+            };
         }).each(function(i, box) {
             var $box = $(box);
             if($(box).attr('data-active') === 'true' || $(box).find('select').val()) {
@@ -145,7 +151,6 @@ Koowa.Grid.Filter = Koowa.Class.extend({
             self.updateSelectBoxes();
             self.updateAddButton();
 
-            //self.element('.k-filter-hidden').append(box);
             box.remove();
         });
     },
@@ -153,9 +158,9 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         var select = $('<select />'),
             self = this;
 
-        $.each(this.filters, function(key, label) {
+        $.each(this.filters, function(key, filter) {
             if (!self.isVisible(key)) {
-                select.append($('<option />', {'value': key, 'text': label}));
+                select.append($('<option />', {'value': key, 'text': filter.label}));
             }
         });
 
@@ -206,9 +211,9 @@ Koowa.Grid.Filter = Koowa.Class.extend({
             });
 
             // add missing
-            $.each(self.filters, function(key, label) {
+            $.each(self.filters, function(key, filter) {
                 if (!self.isVisible(key) && key !== selected && $.inArray(key, values) === -1) {
-                    select.append($('<option />', {'value': key, 'text': label}));
+                    select.append($('<option />', {'value': key, 'text': filter.label}));
                 }
             });
         });
@@ -257,24 +262,43 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         this.add_button.attr('disabled', this.hasInvisible() ? false : true);
     },
     isVisible: function(filter) {
-        return $.inArray(filter, this.visible_filters) !== -1;
+        return typeof this.filters[filter] === 'undefined' ? false : this.filters[filter].visible;
     },
     setVisible: function(filter) {
-        if (!this.isVisible(filter)) {
-            this.visible_filters.push(filter);
+        if (typeof this.filters[filter] !== 'undefined') {
+            this.filters[filter].visible = true;
+
+            this.element.find('.k-filter-hidden').find('input[data-filter="'+filter+'"]').remove();
         }
     },
     setInvisible: function(filter) {
-        if (this.isVisible(filter)) {
-            for (var i = this.visible_filters.length-1; i >= 0; i--) {
-                if (this.visible_filters[i] === filter) {
-                    this.visible_filters.splice(i, 1);
-                }
-            }
+        if (typeof this.filters[filter] !== 'undefined') {
+            this.filters[filter].visible = false;
+
+            var form_els = this.filters[filter].form_elements,
+                container = this.element.find('.k-filter-hidden');
+
+            $.each(form_els, function(i, el) {
+                $('<input type="hidden" />')
+                    .attr('data-filter', filter)
+                    .attr('name', $(el).attr('name'))
+                    .val('')
+                    .appendTo(container);
+            });
         }
     },
     hasInvisible: function() {
-        return this.visible_filters.length < $.map(this.filters, function() { return 0}).length;
+        var result = false;
+
+        $.each(this.filters, function(key, filter) {
+            if (!result && !filter.visible) {
+                result = true;
+            }
+        });
+
+        return result;
+
+        //return this.visible_filters.length < $.map(this.filters, function() { return 0}).length;
     }
 });
 
