@@ -112,7 +112,7 @@
 
 .k-scopebar__item--title {
   width: auto;
-  padding: 0 .5em 0 1em;
+  padding: 0 0 0 1em;
   font-weight: bold;
   vertical-align: middle;
   font-size: 12px;
@@ -370,5 +370,29 @@
     @include breakpoint($beta) {
       display: none; /* 1 */
     }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @TODO refactor */
+.k-filter-container__item {
+  .input-group {
+    max-width: 200px;
   }
 }

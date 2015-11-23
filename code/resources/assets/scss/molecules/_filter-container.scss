@@ -28,42 +28,10 @@
 
 
 .k-filter-container {
-  @include border(bottom, $filter-container-border);
   position: relative;
-  background: $filter-container-background;
+  display: inline-block;
   font-size: 0; /* 1 */
   line-height: 0; /* 1 */
-
-
-  /* When flexbox is in use */
-
-  @include flexbox($horizontal: $charlie) {
-    display: flex;
-    flex-direction: row;
-    flex: 0 0 auto;
-  }
-
-
-  /* Hide when JS is enabled */
-
-  @include js-enabled {
-    display: none;
-  }
-
-
-  /* Show when it has a visible class */
-
-  &.js-is-visible {
-    display: block;
-
-
-    /* When flexbox is in use */
-
-    @include flexbox($horizontal: $charlie) {
-      display: flex;
-      align-items: center;
-    }
-  }
 }
 
 
@@ -167,7 +135,7 @@
  * 4. Display the erase area
  */
 
-.btn-remove-filter {
+.js-remove-filter {
   position: relative; /* 1 */
   z-index: 2; /* 2 */
 
