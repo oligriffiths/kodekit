@@ -102,7 +102,8 @@ Koowa.Grid.Filter = Koowa.Class.extend({
             add_selector:       '.js-add-button',
             remove_selector:    '.js-remove-filter',
             filter_button_selector: '.js-filter-button',
-            and_selector:       '.k-filter--text--and'
+            and_selector:       '.k-filter--text--and',
+            filter_container:   '.js-filter-container'
         });
     },
     initialize: function(element, options) {
@@ -114,6 +115,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         this.add_button = this.element.find(this.options.add_selector);
         this.boxes      = this.element.find(this.options.filter_selector);
         this.filter_button = this.element.find(this.options.filter_button_selector);
+        this.filter_container = this.element.find(this.options.filter_container);
 
         this.boxes.detach();
 
@@ -279,7 +281,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
         if (typeof this.filters[filter] !== 'undefined') {
             this.filters[filter].visible = true;
 
-            this.element.find('.k-filter-hidden').find('input[data-filter="'+filter+'"]').remove();
+            this.filter_container.find('input[data-filter="'+filter+'"]').remove();
         }
     },
     setInvisible: function(filter) {
@@ -287,7 +289,7 @@ Koowa.Grid.Filter = Koowa.Class.extend({
             this.filters[filter].visible = false;
 
             var form_els = this.filters[filter].form_elements,
-                container = this.element.find('.k-filter-hidden');
+                container = this.filter_container;
 
             $.each(form_els, function(i, el) {
                 $('<input type="hidden" />')
