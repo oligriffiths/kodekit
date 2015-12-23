@@ -130,6 +130,12 @@
 
 
 /* New extra styling */
+
+.k-tree {
+  @include clearfix;
+  margin: $list-spacing 0;
+}
+
 .jqtree-tree {
   @include clearfix;
 
@@ -153,14 +159,14 @@
   width: 100%;
   font-size: 0;
   line-height: 0;
-  padding: 0 $spacing-tiny 0 $spacing-small;
+  padding: 0 $spacing-tiny 0 $spacing;
   white-space: nowrap;
   height: auto;
   cursor: pointer;
 
   &:hover,
   &:focus {
-    background: white;
+    background: $jqtree-hover-background;
   }
 
   a {
@@ -172,6 +178,7 @@
     height: 0;
     padding-top: 30px;
     overflow: hidden;
+    color: inherit;
   }
 }
 
@@ -229,7 +236,7 @@
 }
 
 .jqtree_common.active > .jqtree-element {
-  color: $jqtree-color;
+  color: $color-accent;
   font-weight: $bold;
 }
 

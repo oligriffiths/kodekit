@@ -39,7 +39,6 @@
     z-index: 1;
     top: 0;
     height: 100%;
-    overflow: auto;
     display: none;
 
 
@@ -47,7 +46,7 @@
 
     @include breakpoint($desktop) {
       @include allwidth($sidebar-width-small);
-      position: static;
+      position: relative;
       height: auto;
       display: table-cell;
     }
@@ -90,6 +89,15 @@
   @include js-enabled {
     left: 0;
     border-bottom: none;
+  }
+
+  @include psuedo(after,true) {
+    width: 105%;
+    height: 999px;
+    top: 100%;
+    right: -1px;
+    background: $sidebar-background;
+    @include border(right, $sidebar-border);
   }
 }
 
@@ -148,7 +156,7 @@
 /* Sidebar header */
 
 .k-sidebar__header {
-  padding: $spacing-small $spacing-small 0;
+  padding: $spacing $spacing 0;
   font-weight: $bold;
   text-transform: uppercase;
   font-size: 12px;
@@ -158,7 +166,7 @@
 /* Sidebar content */
 
 .k-sidebar__content {
-  padding: $spacing-small $spacing-small 0;
+  padding: $spacing $spacing 0;
 }
 
 

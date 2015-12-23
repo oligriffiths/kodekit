@@ -12,3 +12,36 @@
 
 
 
+.k-mobile-title {
+  padding: 10px;
+
+  .k-heading {
+    margin: 0;
+  }
+}
+
+.k-heading {
+  font-size: 20px;
+  margin: 0 0 $spacing;
+}
+
+.hide-when-sidebar-is-visible {
+  @include breakpoint($charlie) {
+    display: none;
+  }
+}
+
+.k-mobile-title {
+  background: colorpicker(primary);
+  border-bottom: 1px solid colorpicker(primary,10);
+}
+
+
+.testing {
+  border: 5px solid green;
+  transition: all 2s;
+}
+
+@at-root .k-js .testing {
+  border-color: purple;
+}

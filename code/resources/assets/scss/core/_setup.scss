@@ -45,14 +45,14 @@ body {
   margin: 0; /* 6 */
   border: none; /* 6 */
   padding: $koowa-padding;
-  overflow: auto;
 
   font-family: $font-family; /* 5 */
   font-size: $font-size; /* 5 */
   line-height: $line-height; /* 5 */
   background: $koowa-background; /* 6 */
 
-  -webkit-font-smoothing: $font-smoothing;
+  -webkit-font-smoothing: $webkit-font-smoothing;
+  -moz-osx-font-smoothing: $firefox-font-smoothing;
   -webkit-overflow-scrolling: touch;
 
   @include breakpoint($minwidth) {

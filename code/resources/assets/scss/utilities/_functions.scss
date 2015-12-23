@@ -34,3 +34,13 @@
 @function darkest($color, $percentage: $darkest-percentage) {
   @return darken($color, $percentage)
 }
+
+
+
+// Palette function
+
+@function colorpicker($color, $shade: 0) {
+  $colorMap: map-get($colorpicker, $color);
+  $result: map-get($colorMap, $shade);
+  @return $result;
+}
