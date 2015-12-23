@@ -419,7 +419,7 @@ $form-block-content-spacing:    $spacing-small !default;
 // ==========================================================================
 
 $upload-spacing:            $spacing-small !default;
-$upload-background:         $color-primary !default;
+$upload-background:         colorpicker(primary, 5) !default;
 $upload-border:             darker($upload-background) !default;
 
 $upload-drop-font-size:     21px !default;
