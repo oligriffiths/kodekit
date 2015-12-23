@@ -32,8 +32,8 @@
 }
 
 .k-mobile-title {
-  background: colorpicker(primary);
-  border-bottom: 1px solid colorpicker(primary,10);
+  background: $mobile-title-background;
+  border-bottom: 1px solid $mobile-title-border;
 }
 
 

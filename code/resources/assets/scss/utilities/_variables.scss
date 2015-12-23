@@ -170,13 +170,13 @@ $color-accent-type:             white !default;
 
 // States
 
-$color-success:       palette(Light Green, 700) !default;
+$color-success:       #27ae60 !default;
 $color-success-type:  white !default;
 
-$color-error:         palette(Deep Orange, 700) !default;
+$color-error:         #c0392b !default;
 $color-error-type:    white !default;
 
-$color-neutral:       colorpicker(primaryz, -2) !default;
+$color-neutral:       #2980b9 !default;
 $color-neutral-type:  white !default;
 
 
@@ -351,7 +351,7 @@ $toolbar-background:                        colorpicker(primary, 3) !default;
 $toolbar-border:                            darkest($toolbar-background) !default;
 $toolbar-color:                             $color-type !default;
 
-$toolbar-btn-alt:                           true !default; // 1
+$toolbar-btn-alt:                           false !default; // 1
 
 
 // Success button
@@ -532,7 +532,8 @@ $form-option-shadow:        inset 0 1px 2px rgba(0,0,0,.15) !default;
 
 
 // Shame
-
+$mobile-title-background: colorpicker(primary,1) !default;
+$mobile-title-border: darkest($mobile-title-background) !default;
 $tree-background: $sidebar-background !default;
 $tree-color: $sidebar-color !default;
 $tree-spacing: $spacing-tiny !default;
