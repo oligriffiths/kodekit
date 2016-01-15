@@ -138,7 +138,7 @@ var klass = (function () {
 })();
 
 (function($) {
-    
+
 /** @class */
 Koowa.Class = klass({
 
