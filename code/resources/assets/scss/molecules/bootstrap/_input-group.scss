@@ -3,15 +3,6 @@
    ========================================================================== */
 
 /**
- * Set width to 100% for input-group inside another input group
- */
-
-.input-group {
-  width: 100%;
-}
-
-
-/**
  * Align to top so we can add a help message below the field
  */
 
@@ -22,24 +13,6 @@
   vertical-align: top;
 }
 
-
-
-/**
- * For multiple inputs on one line
- *
- * 1. Make it 50% wide to have both fields evenly wide
- */
-
-.input-group-input {
-  display: table-cell;
-  width: 50%; /* 1 */
-
-  & + .input-group-input {
-    .form-control {
-      border-left: none !important;
-    }
-  }
-}
 
 
 /**
@@ -64,54 +37,6 @@
     }
   }
 }
-
-
-/**
- * Border radius control
- */
-
-.has-no-radius {
-  border-radius: 0 !important;
-}
-
-.has-radius {
-  border-radius: $input-border-radius !important;
-}
-
-.has-right-radius {
-  border-top-right-radius: $input-border-radius !important;
-  border-bottom-right-radius: $input-border-radius !important;
-}
-
-.has-left-radius {
-  border-top-left-radius: $input-border-radius !important;
-  border-bottom-left-radius: $input-border-radius !important;
-}
-
-.has-no-right-radius {
-  border-top-right-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-}
-
-.has-no-left-radius {
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
-
-.input-group .input-group-btn:not(:first-child):not(:last-child) .btn {
-  border-radius: 0;
-}
-
-.input-group .input-group-btn:not(:first-child) .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.input-group .input-group-btn:not(:last-child) .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
 
 
 /* Input group XS */

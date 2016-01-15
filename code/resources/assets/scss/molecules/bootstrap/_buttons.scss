@@ -15,7 +15,9 @@ a.btn {
   }
 }
 
+/* Remove all shadows for a more flat looking button */
+
 .btn {
   box-shadow: none;
+  text-shadow: none;
 }
-
