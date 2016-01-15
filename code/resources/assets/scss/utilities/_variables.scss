@@ -119,22 +119,6 @@ $color-secondary:       #3498db !default;
 $color-secondary-type:  white !default;
 
 $colorpicker: (
-        primaryz: (
-                -5: darken($color-primary,37%),
-                -4: darken($color-primary,28%),
-                -3: darken($color-primary,20%),
-                -2: darken($color-primary,13%),
-                -1: darken($color-primary,6%),
-                0: $color-primary,
-                +1: lighten($color-primary,8%),
-                +2: lighten($color-primary,16%),
-                +3: lighten($color-primary,27%),
-                +4: lighten($color-primary,32%),
-                +5: lighten($color-primary,37%),
-                +6: lighten($color-primary,42%),
-                +7: lighten($color-primary,47%),
-                +8: lighten($color-primary,52%),
-        ),
         secondary: (
                 -5: darken($color-secondary,37%),
                 -4: darken($color-secondary,28%),
@@ -243,27 +227,31 @@ $sidebar-color:             $color-type !default;
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$table-background:              white !default;
+$table-background:                      white !default;
 
-$table-cell-size:               round($font-size * 3) !default; // 1
-$table-cell-spacing-vertical:   10px !default; // 2
-$table-cell-spacing-horizontal: 10px !default; // 2
+$table-cell-size:                       round($font-size * 3) !default; // 1
+$table-cell-spacing-vertical:           10px !default; // 2
+$table-cell-spacing-horizontal:         10px !default; // 2
 
-$table-header-background:       colorpicker(primary, 5) !default;
-$table-header-border:           darkest($table-header-background) !default;
-$table-header-color:            $color-type !default;
+$table-header-background:               colorpicker(primary, 5) !default;
+$table-header-border:                   darkest($table-header-background) !default;
+$table-header-color:                    $color-type !default;
+$table-header-background-hover:         colorpicker(primary, 4) !default;
 
-$table-cell-background-even:    colorpicker(primary, 6) !default;
-$table-cell-background-odd:     colorpicker(primary, 6) !default;
-$table-cell-border:             darker($table-cell-background-odd) !default;
-$table-cell-color:              $color-type !default;
-$table-cell-accent-background:  $color-accent !default;
-$table-cell-accent-color:       white !default;
+$table-cell-background-even:            colorpicker(primary, 6) !default;
+$table-cell-background-odd:             colorpicker(primary, 6) !default;
+$table-cell-background-even-hover:      colorpicker(primary, 5) !default;
+$table-cell-background-odd-hover:       colorpicker(primary, 5) !default;
+$table-cell-border:                     darker($table-cell-background-odd) !default;
+$table-cell-color:                      $color-type !default;
+$table-cell-accent-background:          $color-accent !default;
+$table-cell-accent-color:               white !default;
+$table-cell-accent-background-hover:    darken($color-accent,10%) !default;
 
-$table-pagination-background:   $table-header-background !default;
-$table-pagination-border:       $table-header-border !default;
-$table-pagination-spacing:      $spacing-tiny !default;
-$table-pagination-height:       30px !default;
+$table-pagination-background:           $table-header-background !default;
+$table-pagination-border:               $table-header-border !default;
+$table-pagination-spacing:              $spacing-tiny !default;
+$table-pagination-height:               30px !default;
 
 
 // Footable
@@ -328,12 +316,12 @@ $navigation-spacing:            $spacing-tiny !default;
 $navigation-background:         colorpicker(primary, 1) !default;
 $navigation-border:             darkest($navigation-background) !default;
 $navigation-color:              $color-type !default;
-$navigation-accent:             colorpicker(primaryz, -5) !default;
+$navigation-accent:             colorpicker(primary, -5) !default;
 
 $navigation-hover-background:   lighter($navigation-background) !default;
-$navigation-hover-border:       colorpicker(primaryz, -3) !default;
+$navigation-hover-border:       colorpicker(primary, -3) !default;
 $navigation-hover-color:        $color-type !default;
-$navigation-hover-accent:       colorpicker(primaryz) !default;
+$navigation-hover-accent:       colorpicker(primary) !default;
 
 $navigation-active-background:  $navigation-background !default;
 $navigation-active-border:      $color-accent !default;

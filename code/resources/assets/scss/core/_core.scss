@@ -10,18 +10,18 @@
 /* 3rd party
    ========================================================================== */
 
-//@import "../../../../../bower_components/select2/src/scss/core";
-//@import "../../../../../bower_components/select2-bootstrap/src/select2-bootstrap";
+@import "../../../../../bower_components/select2/src/scss/core";
+@import "../../../../../bower_components/select2-bootstrap/src/select2-bootstrap";
 //@import "../../../../../bower_components/magnific-popup/src/css/main";
 @import "../molecules/modal";
 @import "../molecules/select2";
 @import "../molecules/select2-tiny";
-/* We need the dropdowns for the datepicker */
+/* We need the dropdowns for the datepicker until we found a better datepicker */
 @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
 @import "../molecules/datepicker";
 
 
-/* Setup html, body and .koowa
+/* Setup html, body and .koowa-container
    ========================================================================== */
 
 @import "setup";
@@ -39,11 +39,13 @@
 
 .koowa {
 
+
   /* Border-box size everything */
 
   &, *, *:before, *:after {
     box-sizing: border-box;
   }
+
 
   /* Namespaced Normalize */
 
@@ -81,7 +83,6 @@
   @import "../molecules/form/option";
   @import "../molecules/form/checkbox";
   @import "../molecules/form/radio";
-
   @import "../molecules/booleanlist";
   @import "../molecules/breadcrumb";
   @import "../molecules/checkbox-toggle";

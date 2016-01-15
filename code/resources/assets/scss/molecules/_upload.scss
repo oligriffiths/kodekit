@@ -1,204 +1,140 @@
-/* ==========================================================================
-   Upload
-   ========================================================================== */
-
-/**
-<!-- upload -->
-<div class="k-upload">
-    <div class="k-upload__drop">
-        Drop files here <small>(max 10MB)</small>
-    </div>
-    <div class="k-upload__buttons">
-        <button class="btn btn-sm btn-primary">Select</button>
-        <button class="btn btn-sm btn-primary">From URL</button>
-    </div>
-</div><!-- .k-upload -->
-*/
-
-.k-upload {
-  @include border(bottom, $upload-border);
-  display: table;
-  width: 100%;
-  padding: $upload-spacing;
-  background: $upload-background;
-  position: relative;
-
-
-  /* When flexbox is in use */
-
-  @include flexbox {
-    display: flex;
-    flex-direction: row;
-    flex: 0 0 auto;
-  }
-}
-
-
-/**
- * The drop message
- *
- * 1. 100% width so this 'cell' expands
- */
-
-.k-upload__drop {
-  display: table-cell;
-  width: 100%; /* 1 */
-  margin: 0;
-  line-height: $upload-drop-line-height;
-  font-size: $upload-drop-font-size;
-  color: $upload-drop-color;
-
-
-  /**
-   * When flexbox is in use
-   *
-   * 1. Flexible item
-   * 2. Reset display to block
-   * 3. Reset width for flexbox
-   */
-
-  @include flexbox {
-    flex: 1 0 auto; /* 1 */
-    display: block; /* 2 */
-    width: auto; /* 3 */
-  }
-
-
-  /* <small> upload message behind title */
-
-  small {
-    font-size: $font-size;
-    padding-left: 5px;
-  }
-}
-
-
-/**
- * Clickable buttons to upload
- *
- * 1. 1px width so this 'cell' stays small
- * 2. nowrap to make sure buttons stay next to each other
- */
-
-.k-upload__buttons {
-  display: table-cell;
-  width: 1px; /* 1 */
-  white-space: nowrap; /* 2 */
-  padding-left: $upload-buttons-spacing;
-
-
-  /**
-   * When flexbox is in use
-   *
-   * 1. Non-flexible item
-   * 2. Reset display to block
-   * 3. Reset width for flexbox
-   */
-
-  @include flexbox {
-    flex: 0 0 auto; /* 1 */
-    display: block; /* 2 */
-    width: auto; /* 3 */
-  }
-}
-
-
-
-
-
-
-
-
-// @TODO: refactor
-.k-upload__drop__content {
-  display: table;
-  width: 100%;
-}
-
-.k-upload__drop__message {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.k-upload__drop__uploader {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.plupload_filelist_footer {
-  div {
-    display: inline-block;
-  }
-}
-
-.k-upload__loading {
-  @include coverall;
-  background: white;
-  z-index: 10;
-  text-align: right;
-}
-
-.k-upload__loading__bar {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  background: #27AE60;
-  border: 1px solid white;
-  transition: $transition;
-  width: 100%;
-  color: white;
-  overflow: hidden;
-
-  &:after {
-    content: "upload complete!";
-    line-height: 52px;
-    padding-right: 20px;
-  }
-}
-
-.k-load-bar {
-  animation-name: loadBar;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in-out;
-  animation-duration: 2s;
-}
-
-@keyframes loadBar {
-  0% {
-    width: 0;
-    background: lightest($color-accent);
-    color: lightest($color-accent);
-  }
-  20% {
-    width: 40%
-  }
-  40% {
-    width: 70%;
-  }
-  60% {
-    width: 80%;
-  }
-  80% {
-    width: 90%;
-  }
-  90% {
-    width: 98%;
-  }
-  95% {
-    width: 99%;
-    background: lightest($color-accent);
-    color: lightest($color-accent);
-  }
-  100% {
-    width: 100%;
-    background: #27AE60;
-    color: white;
-  }
-}
-
-.k-upload__buttons {
-  .btn.active {
-    display: none;
-  }
-}
+///* ==========================================================================
+//   Upload
+//   ========================================================================== */
+//
+///**
+//<!-- upload -->
+//<div class="k-upload">
+//    <div class="k-upload__drop">
+//        Drop files here <small>(max 10MB)</small>
+//    </div>
+//    <div class="k-upload__buttons">
+//        <button class="btn btn-sm btn-primary">Select</button>
+//        <button class="btn btn-sm btn-primary">From URL</button>
+//    </div>
+//</div><!-- .k-upload -->
+//*/
+//
+//.k-upload {
+//  @include border(bottom, $upload-border);
+//  display: table;
+//  width: 100%;
+//  padding: $upload-spacing;
+//  background: $upload-background;
+//  position: relative;
+//
+//
+//  /* When flexbox is in use */
+//
+//  @include flexbox {
+//    display: flex;
+//    flex-direction: row;
+//    flex: 0 0 auto;
+//  }
+//}
+//
+//
+///**
+// * The drop message
+// *
+// * 1. 100% width so this 'cell' expands
+// */
+//
+//.k-upload__drop {
+//  display: table-cell;
+//  width: 100%; /* 1 */
+//  margin: 0;
+//  line-height: $upload-drop-line-height;
+//  font-size: $upload-drop-font-size;
+//  color: $upload-drop-color;
+//
+//
+//  /**
+//   * When flexbox is in use
+//   *
+//   * 1. Flexible item
+//   * 2. Reset display to block
+//   * 3. Reset width for flexbox
+//   */
+//
+//  @include flexbox {
+//    flex: 1 0 auto; /* 1 */
+//    display: block; /* 2 */
+//    width: auto; /* 3 */
+//  }
+//
+//
+//  /* <small> upload message behind title */
+//
+//  small {
+//    font-size: $font-size;
+//    padding-left: 5px;
+//  }
+//}
+//
+//
+///**
+// * Clickable buttons to upload
+// *
+// * 1. 1px width so this 'cell' stays small
+// * 2. nowrap to make sure buttons stay next to each other
+// */
+//
+//.k-upload__buttons {
+//  display: table-cell;
+//  width: 1px; /* 1 */
+//  white-space: nowrap; /* 2 */
+//  padding-left: $upload-buttons-spacing;
+//
+//
+//  /**
+//   * When flexbox is in use
+//   *
+//   * 1. Non-flexible item
+//   * 2. Reset display to block
+//   * 3. Reset width for flexbox
+//   */
+//
+//  @include flexbox {
+//    flex: 0 0 auto; /* 1 */
+//    display: block; /* 2 */
+//    width: auto; /* 3 */
+//  }
+//}
+//
+//
+//
+//
+//
+//
+//
+//
+//// @TODO: refactor
+//.k-upload__drop__content {
+//  display: table;
+//  width: 100%;
+//}
+//
+//.k-upload__drop__message {
+//  display: table-cell;
+//  vertical-align: middle;
+//}
+//
+//.k-upload__drop__uploader {
+//  display: table-cell;
+//  vertical-align: middle;
+//}
+//
+//.plupload_filelist_footer {
+//  div {
+//    display: inline-block;
+//  }
+//}
+//
+//
+//
+//.k-upload__buttons {
+//  .btn.active {
+//    display: none;
+//  }
+//}

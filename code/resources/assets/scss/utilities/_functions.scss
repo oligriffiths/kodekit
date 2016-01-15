@@ -37,7 +37,7 @@
 
 
 
-// Palette function
+// Colorpicker function
 
 @function colorpicker($color, $shade: 0) {
   $colorMap: map-get($colorpicker, $color);

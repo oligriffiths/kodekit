@@ -1,7 +1,14 @@
 // Cover all
 // Cover the entire parent element
 
-@mixin coverall($margin: 0, $top: true, $right: true, $bottom: true, $left: true, $reset: false, $position: true) {
+@mixin coverall(
+  $margin: 0,
+  $top: true,
+  $right: true,
+  $bottom: true,
+  $left: true,
+  $reset: false,
+  $position: true) {
 
   @if $position == true {
     position: absolute;
@@ -67,7 +74,12 @@
 // Graphical psuedo element
 // Set element to position relative and add a psuedo element with position absolute and a "content"
 
-@mixin psuedo($psuedo: after, $parentposition: true, $display: true, $position: true, $content: true) {
+@mixin psuedo(
+  $psuedo: after,
+  $parentposition: true,
+  $display: true,
+  $position: true,
+  $content: true) {
 
   @if $parentposition == true {
     position: relative;
@@ -96,7 +108,11 @@
 // Set a default transition to be used in the whole project
 // 1. No 1 pixel jumps on smooth transitons
 
-@mixin transition($properties: all, $duration: .3s, $easing: ease-in-out) {
+@mixin transition(
+  $properties: all,
+  $duration: .3s,
+  $easing: ease-in-out) {
+
   transition: $properties $duration $easing;
   -webkit-backface-visibility:hidden; // 1
 }
@@ -106,7 +122,12 @@
 // Reset an elements default styling
 // Mostly useful for <ul> etc. where default element shave multiple styling rules
 
-@mixin reset($margin: true, $padding: true, $list-style: true, $border: true, $background: true) {
+@mixin reset(
+  $margin: true,
+  $padding: true,
+  $list-style: true,
+  $border: true,
+  $background: true) {
 
   @if $margin == true {
     margin: 0;
@@ -133,7 +154,11 @@
 // Breakpoint
 // Mobile first media query mixin
 
-@mixin breakpoint($width, $type: min, $width--max: false) {
+@mixin breakpoint(
+  $width,
+  $type: min,
+  $width--max: false) {
+
   @if $type == min {
     @media screen and (min-width: $width) {
       @content;
@@ -180,7 +205,10 @@
 // Arrows
 // CSS only arrows using borders
 
-@mixin arrow($direction: right, $size: 4px, $color: false) {
+@mixin arrow(
+  $direction: right,
+  $size: 4px,
+  $color: false) {
 
   // Top and bottom arrows
 
@@ -272,7 +300,10 @@
 // Because we're adding .flexbox and .flexboxlegacy classes flexbox will only work when JS is enabled
 // This is a good thing since we're not sure what we're showing / hiding with JS that might mess with flexbox
 
-@mixin flexbox($horizontal: $flexbox-horizontal, $vertical: $flexbox-vertical) {
+@mixin flexbox(
+  $horizontal: $flexbox-horizontal,
+  $vertical: $flexbox-vertical) {
+
   @if $flexbox == true { // 1
     @at-root { // 2
       .k-flexbox &, // 3

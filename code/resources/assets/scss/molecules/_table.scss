@@ -55,6 +55,7 @@
     height: $table-cell-size;
     vertical-align: middle;
     text-align: left;
+    transition: $transition;
 
     input {
       display: inline-block; /* 1 */
@@ -83,8 +84,16 @@
 
     a {
       display: block; /* 3 */
-      padding: $table-cell-spacing-vertical 0; /* 4 */
+      padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal; /* 4 */
+      margin-left: -$table-cell-spacing-horizontal;
+      margin-right: -$table-cell-spacing-horizontal;
       line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
+      transition: $transition;
+
+      &:focus,
+      &:hover {
+        background: $table-header-background-hover;
+      }
     }
   }
 
@@ -102,9 +111,22 @@
     line-height: 18px;
   }
 
+
   tr:nth-child(odd) {
     td {
       background: $table-cell-background-odd;
+    }
+  }
+
+
+  /* Hover background */
+  tr,
+  tr:nth-child(n) {
+    &:focus,
+    &:hover {
+      td {
+        background: $table-cell-background-even-hover;
+      }
     }
   }
 
@@ -121,6 +143,10 @@
     &:focus {
       text-decoration: underline;
     }
+  }
+
+  a {
+    transition: $transition;
   }
 
 
@@ -171,6 +197,13 @@
 
       a, i, span {
         color: $table-cell-accent-color; /* 1 */
+      }
+    }
+
+    &:hover,
+    &:focus {
+      td {
+        background-color: $table-cell-accent-background-hover;
       }
     }
   }
