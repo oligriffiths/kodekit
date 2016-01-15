@@ -5,8 +5,6 @@
 /* ========================================================================== Tools ========================================================================== */
 /* Variables, functions and mixins ========================================================================== */
 /** 1. Bourbon, needed for neat 2. Extending the neat library with own mixins 3. Neat: grid system */
-/** google-material-color v1.2.6 https://github.com/danlevan/google-material-color */
-/* NOTE: I added values 75 and 150 to Blue Grey to get some more variations in the lighter colors */
 /* 1 */
 /* 2 */
 /* 3 */
@@ -2518,13 +2516,13 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .koowa .k-toolbar button, .koowa .k-toolbar .btn { margin: 10px 0 10px 10px; /** Make buttons square Only make them square if media queries are supported By default we just want them as buttons */ }
 
-@media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar button, .koowa .k-toolbar .btn { overflow: hidden; width: 32px; height: 32px; padding: 6px 8px; text-align: center; } }
+@media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar button, .koowa .k-toolbar .btn { overflow: hidden; width: 32px; height: 32px; padding: 7px 6px; text-align: center; } }
 
 .koowa .k-toolbar .k-btn-options { float: right; margin-right: 10px; }
 
 .koowa .k-toolbar i { display: inline-block; margin: 0 0.25em 0 0.1em; }
 
-@media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar i { display: block; margin: 0; font-size: 18px; line-height: 1.2em; } }
+@media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar i { display: block; margin: 0; width: 18px; height: 18px; font-size: 18px; line-height: 18px; } }
 
 @media screen and (min-width: 0) and (max-width: 768px) { .koowa .k-toolbar__text { position: relative; z-index: -1; visibility: hidden; } }
 
@@ -2582,8 +2580,4 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 @media screen and (min-width: 768px) { .koowa .hide-when-sidebar-is-visible { display: none; } }
 
-.koowa .k-mobile-title { background: #e6e6e6; border-bottom: 1px solid #c7c7c7; }
-
-.koowa .testing { border: 5px solid green; -webkit-transition: all 2s; transition: all 2s; }
-
-.k-js .testing { border-color: purple; }
+.koowa .k-mobile-title { background: #e1e1e1; border-bottom: 1px solid #c2c2c2; }

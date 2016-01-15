@@ -44,7 +44,7 @@
       overflow: hidden;
       width: 32px;
       height: 32px;
-      padding: 6px 8px;
+      padding: 7px 6px;
       text-align: center;
     }
   }
@@ -95,8 +95,10 @@
     @include breakpoint(0, range, $charlie) {
       display: block;
       margin: 0;
+      width: $font-size-large;
+      height: $font-size-large;
       font-size: $font-size-large;
-      line-height: 1.2em;
+      line-height: $font-size-large;
     }
 
     display: inline-block;

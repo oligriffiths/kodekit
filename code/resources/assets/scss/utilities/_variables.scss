@@ -136,6 +136,7 @@ $colorpicker: (
                 +8: lighten($color-secondary,52%),
         ),
         primary: (
+                0: #e1e1e1,
                 1: #e6e6e6,
                 2: #eeeeee,
                 3: #ececec,
@@ -520,7 +521,7 @@ $form-option-shadow:        inset 0 1px 2px rgba(0,0,0,.15) !default;
 
 
 // Shame
-$mobile-title-background: colorpicker(primary,1) !default;
+$mobile-title-background: colorpicker(primary,0) !default;
 $mobile-title-border: darkest($mobile-title-background) !default;
 $tree-background: $sidebar-background !default;
 $tree-color: $sidebar-color !default;

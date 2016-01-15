@@ -5,13 +5,12 @@
   z-index: 1 !important; // Overriding inline styling, we don't need a z-index of 1000+
 }
 
-
+// Hide the modal holders by default
 .k-modal-holder {
   display: none;
 }
 
-
-
+// Mobile title
 .k-mobile-title {
   padding: 10px;
 
@@ -34,14 +33,4 @@
 .k-mobile-title {
   background: $mobile-title-background;
   border-bottom: 1px solid $mobile-title-border;
-}
-
-
-.testing {
-  border: 5px solid green;
-  transition: all 2s;
-}
-
-@at-root .k-js .testing {
-  border-color: purple;
 }
