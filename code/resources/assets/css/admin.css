@@ -1911,8 +1911,6 @@ html, body { min-height: 100%; height: 100%; padding: 0; margin: 0; }
 
 .k-appearance.k-checked .koowa input[type="checkbox"]:before, .k-appearance.k-checked .koowa input[type="radio"]:before { position: absolute; /* 1 */ top: 0; /* 2 */ left: 0; /* 2 */ display: none; /* 3 */ text-align: center; vertical-align: middle; background: transparent; }
 
-.k-appearance.k-checked .koowa input[type="checkbox"]:checked, .k-appearance.k-checked .koowa input[type="radio"]:checked { outline: none; }
-
 .k-appearance.k-checked .koowa input[type="checkbox"]:checked:before, .k-appearance.k-checked .koowa input[type="radio"]:checked:before { display: block; /* 4 */ }
 
 .k-appearance.k-checked .koowa label { /** <input id="input1"> <label for="input1">Label 1</label> <input id="input2"> <label for="input2">Label 2</label> */ /** <label><input id="input1"> Label 1</label> <label><input id="input2"> Label 2</label> */ }

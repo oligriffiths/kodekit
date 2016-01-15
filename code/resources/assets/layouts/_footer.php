@@ -1,4 +1,4 @@
-    </div> <!-- #koowa -->
+    </div> <!-- .koowa-container -->
 
 </body>
 </html>
