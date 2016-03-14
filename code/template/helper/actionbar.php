@@ -27,14 +27,16 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         $config->append(array(
             'toolbar' => null,
             'title'   => null,
-            'buttons' => null
         ))->append(array(
             'icon' => $config->toolbar->getName()
         ));
 
+        $config->render_title   = !in_array($config->render_title, array('false', false), true);
+        $config->render_buttons = !in_array($config->render_buttons, array('false', false), true);
+
         //Set a custom title
         if ($config->title === 'false' || $config->title === false) {
-            $config->toolbar->removeCommand('title');
+            //$config->toolbar->removeCommand('title');
         }
         elseif($config->title || $config->icon)
         {
@@ -56,17 +58,22 @@ class KTemplateHelperActionbar extends KTemplateHelperAbstract
         //Render the buttons
         $html = '';
 
-        if ($config->buttons !== 'false' && $config->buttons !== false)
+        foreach ($config->toolbar->getCommands() as $command)
         {
-            foreach ($config->toolbar->getCommands() as $command)
-            {
-                $name = $command->getName();
+            $name = $command->getName();
 
-                if(method_exists($this, $name)) {
-                    $html .= $this->$name(array('command' => $command));
-                } else {
-                    $html .= $this->command(array('command' => $command));
+            if ($name === 'title') {
+                if (!$config->render_title) {
+                    continue;
                 }
+            } elseif (!$config->render_buttons) {
+                continue;
+            }
+
+            if(method_exists($this, $name)) {
+                $html .= $this->$name(array('command' => $command));
+            } else {
+                $html .= $this->command(array('command' => $command));
             }
         }
 
