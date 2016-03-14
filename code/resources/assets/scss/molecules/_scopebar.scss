@@ -10,7 +10,7 @@
     <div class="k-scopebar__item--fluid">
 
         <!-- Filter title -->
-        <div class="k-scopebar__item--title">Filter:</div>
+        <div class="k-scopebar__item--filter">Filter:</div>
 
         <!-- Filters -->
         <div class="k-scopebar__item--filter">
@@ -110,10 +110,10 @@
 
 /* Scopebar filter title */
 
-.k-scopebar__item--title {
+.k-scopebar__item--filter {
   width: auto;
   padding: 0 0 0 1em;
-  font-weight: bold;
+  font-weight: normal;
   vertical-align: middle;
   font-size: 12px;
   line-height: $scopebar-size;
@@ -133,6 +133,16 @@
   height: $scopebar-size; /* 2 */
   width: auto;
   font-size: $scopebar-filter-font-size;
+}
+
+.k-scopebar__item--filter__title,
+.k-scopebar__item--filter__icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.k-scopebar__item--filter__icon {
+  margin-left: 8px;
 }
 
 

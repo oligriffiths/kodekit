@@ -61,3 +61,55 @@
 .k-form-layout {
   background: $form-background;
 }
+
+
+
+
+
+
+
+
+
+
+
+.dropdown {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+
+  &.is-active {
+    overflow: visible;
+    z-index: 3;
+
+    .dropdown__body {
+      visibility: visible;
+    }
+
+    .k-scopebar__item--filter__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.dropdown__button {
+  border: none;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown__body {
+  position: absolute;
+  left: 0;
+  visibility: hidden;
+  background: white;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 3px rgba(0,0,0,.15);
+  border-radius: 0 0 5px 5px;
+  min-width: 300px;
+
+  .select2 {
+    min-width: 100%;
+  }
+}
