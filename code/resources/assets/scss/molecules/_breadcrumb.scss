@@ -207,6 +207,7 @@
     .k-breadcrumb_root-text {
       @extend .visually-shown; /* 2 */
       padding-left: $spacing-tiny; /* 2 */
+      font-family: "Arial", sans-serif;
     }
   }
 
@@ -256,7 +257,7 @@
   min-height: $breadcrumb-size;
   overflow: hidden;
   text-align: center;
-  line-height: round($breadcrumb-size / 2);
+  line-height: floor($breadcrumb-size / 2);
   text-decoration: none;
   white-space: nowrap;
   text-overflow: ellipsis;
