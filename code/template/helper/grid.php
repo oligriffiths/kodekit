@@ -122,13 +122,21 @@ class KTemplateHelperGrid extends KTemplateHelperAbstract implements KTemplateHe
                     }
                 },
                 send = function(event) {
+                    var v = kQuery(this).val();
+
+                    if (v) {
+                        kQuery(".k-search__button-empty").addClass("is-visible");
+                    } else {
+                        kQuery(".k-search__button-empty").removeClass("is-visible");
+                    }
+
                     if (event.which === 13) {
                         submitForm(kQuery(this).parents("form"));
                     }
                 };
 
             kQuery(function($) {
-                $(".k-search__field").keypress(send);
+                $(".k-search__field").on("input", send);
                 $(".k-search__button-empty").click(function(event) {
                     event.preventDefault();
 
