@@ -75,6 +75,7 @@
   @import "../layout/content-wrapper";
   @import "../layout/form-layout";
   @import "../layout/grid";
+  @import "../layout/grid-table-container";
   @import "../layout/list-layout";
   @import "../layout/mobile-title";
   @import "../layout/overflowing";
@@ -98,6 +99,8 @@
   @import "../molecules/booleanlist";
   @import "../molecules/checkbox-radio";
   @import "../molecules/checkbox-toggle";
+  @import "../molecules/dropdown";
+  @import "../molecules/floatthead";
   @import "../molecules/form-block";
   @import "../molecules/hamburger";
   @import "../molecules/icons";

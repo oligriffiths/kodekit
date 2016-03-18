@@ -8,8 +8,10 @@
 
 .input-group-input,
 .input-group-btn,
+.input-group-btn .btn,
 .input-group-content,
-.input-group-input {
+.input-group-input,
+.form-control {
   vertical-align: top;
 }
 
@@ -34,6 +36,17 @@
   .input-group-btn:not(:last-child) {
     .btn {
       border-right: 0;
+    }
+  }
+}
+
+
+/* Multiple buttons in a row */
+
+.input-group {
+  .input-group-btn:not(:first-child):not(:last-child) {
+    .btn {
+      border-radius: 0;
     }
   }
 }
