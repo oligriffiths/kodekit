@@ -73,7 +73,7 @@
         <div class="k-content">
 
             <!-- Title when sidebar is inivisible -->
-            <div class="k-mobile-title hide-when-sidebar-is-visible">
+            <div class="k-mobile-title">
                 <div class="k-heading">Page title</div>
             </div>
 

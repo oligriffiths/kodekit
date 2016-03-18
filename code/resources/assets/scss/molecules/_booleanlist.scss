@@ -1,11 +1,11 @@
 /* ==========================================================================
-     CSS only animated boolean list
-     ========================================================================== */
+   CSS only animated boolean list
+   ========================================================================== */
 
 /** Default booleanlist
     =========================================================================
 
-<div class="booleanlist">
+<div class="k-booleanlist">
   <input type="radio" name="name" id="id1" value="1" checked="checked">
   <label for="id1">True</label>
   <input type="radio" name="name" id="id0" value="0">
@@ -16,7 +16,7 @@
 /** Neutral booleanlist
     =========================================================================
 
-<div class="booleanlist booleanlist--neutral">
+<div class="k-booleanlist k-booleanlist--neutral">
   <input type="radio" name="name" id="id1" value="1" checked="checked">
   <label for="id1">Option 1</label>
   <input type="radio" name="name" id="id0" value="0">
@@ -72,6 +72,7 @@
       color: $input-color;
       font-weight: normal;
       border-radius: $input-border-radius - 1px; /* 5 */
+      cursor: pointer;
       user-select: none; /* 6 */
       transition: $transition;
 

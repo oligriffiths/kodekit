@@ -25,15 +25,8 @@
 */
 
 
-/**
- * Cutting the mustard
- *
- * 1. The :not(old-ie) makes sure nothing gets added to older/incapable IE
- *    Instead, normal checkboxes will be presented
- */
-
-@if $checkbox-toggle == true {
-  .k-checkbox-toggle:not(old-ie) { /* 1 */
+@include modernizr('.k-appearance.k-checked') {
+  .k-checkbox-toggle {
     position: relative;
     display: block;
     margin-bottom: $spacing-small;

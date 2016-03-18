@@ -13,12 +13,9 @@
 
 @import "../../../../../bower_components/select2/src/scss/core";
 @import "../../../../../bower_components/select2-bootstrap/src/select2-bootstrap";
-//@import "../../../../../bower_components/magnific-popup/src/css/main";
-@import "../molecules/modal";
+@import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns"; /* We need the dropdowns for the datepicker until we found a better datepicker */
+@import "../organisms/modal";
 @import "../molecules/select2";
-@import "../molecules/select2-tiny";
-/* We need the dropdowns for the datepicker until we found a better datepicker */
-@import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns";
 @import "../molecules/datepicker";
 
 
@@ -27,7 +24,7 @@
 
 @import "../atoms/html";
 @import "../atoms/body";
-@import "../organisms/koowa-container";
+@import "../layout/koowa-container";
 
 
 
@@ -71,6 +68,22 @@
   @import "../molecules/bootstrap/input-group";
 
 
+  /* Layout */
+
+  @import "../layout/component";
+  @import "../layout/content";
+  @import "../layout/content-wrapper";
+  @import "../layout/form-layout";
+  @import "../layout/grid";
+  @import "../layout/list-layout";
+  @import "../layout/mobile-title";
+  @import "../layout/overflowing";
+  @import "../layout/sidebar";
+  @import "../layout/titlebar";
+  @import "../layout/toolbar";
+  @import "../layout/wrapper";
+
+
   /* Atoms */
 
   @import "../atoms/a";
@@ -83,34 +96,22 @@
   /* Molecules */
 
   @import "../molecules/booleanlist";
-  @import "../molecules/breadcrumb";
   @import "../molecules/checkbox-radio";
   @import "../molecules/checkbox-toggle";
-  @import "../molecules/component";
-  @import "../molecules/content";
-  @import "../molecules/filter-container";
   @import "../molecules/form-block";
-  @import "../molecules/grid";
   @import "../molecules/hamburger";
   @import "../molecules/icons";
   @import "../molecules/jqtree";
   @import "../molecules/list";
   @import "../molecules/navigation";
   @import "../molecules/optionlist";
-  @import "../molecules/overflowing";
-  @import "../molecules/scopebar";
-  @import "../molecules/sidebar";
-  @import "../molecules/table";
-  @import "../molecules/titlebar";
-  @import "../molecules/toolbar";
-  @import "../molecules/upload";
 
 
   /* Organisms */
 
-  @import "../organisms/wrapper";
-  @import "../organisms/content-wrapper";
-  @import "../organisms/form-front";
+  @import "../organisms/breadcrumb";
+  @import "../organisms/scopebar";
+  @import "../organisms/table";
 
 
   /**

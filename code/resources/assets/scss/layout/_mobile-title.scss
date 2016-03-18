@@ -1,0 +1,14 @@
+// Mobile title
+.k-mobile-title {
+  background: $mobile-title-background;
+  border-bottom: 1px solid $mobile-title-border;
+  padding: 10px;
+
+  .k-heading {
+    margin: 0;
+  }
+
+  @include breakpoint($charlie) {
+    display: none;
+  }
+}

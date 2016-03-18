@@ -10,57 +10,16 @@
   display: none;
 }
 
-// Mobile title
-.k-mobile-title {
-  padding: 10px;
 
-  .k-heading {
-    margin: 0;
-  }
-}
 
 .k-heading {
   font-size: 20px;
   margin: 0 0 $spacing;
 }
 
-.hide-when-sidebar-is-visible {
-  @include breakpoint($charlie) {
-    display: none;
-  }
-}
-
-.k-mobile-title {
-  background: $mobile-title-background;
-  border-bottom: 1px solid $mobile-title-border;
-}
-
-/* ==========================================================================
-   Form layouts
-   ========================================================================== */
-
-.k-list-layout,
-.k-form-layout {
-  margin: 0;
-}
-
-@include flexbox {
-  .k-list-layout,
-  .k-form-layout {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    overflow: auto;
-  }
-}
 
 
 
-/* Form background */
-
-.k-form-layout {
-  background: $form-background;
-}
 
 
 

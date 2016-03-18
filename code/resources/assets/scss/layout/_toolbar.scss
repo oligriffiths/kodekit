@@ -51,18 +51,6 @@
 
 
   /**
-   * Options button
-   *
-   * Align the options button right
-   */
-
-  .k-btn-options {
-    float: right;
-    margin-right: 10px;
-  }
-
-
-  /**
    * Alternative button colors
    *
    * If the button colors don't fit the toolbar you can have alternative colors
@@ -85,7 +73,7 @@
 
 
   /**
-   * Position the icon
+   * Position the icons
    *
    * Only position them if media queries are supported
    * By default we just want them aligned normally
