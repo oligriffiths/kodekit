@@ -1,29 +1,3 @@
-/* ==========================================================================
-   Setup html, body and .koowa
-   ========================================================================== */
-
-/**
- * HTML, BODY
- *
- * By using 100% for `height` and `min-height` we can work with full-height auto overflowing flexbox pages
- */
-
-html,
-body {
-  min-height: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-body {
-  @include flexbox {
-    display: flex;
-    flex: 1 1 auto;
-  }
-}
-
-
 /**
  * Koowa container
  *

@@ -105,7 +105,7 @@
                     <!-- Breadcrumbs -->
                     <div class="k-breadcrumb">
                         <ul>
-                            <li class="home">
+                            <li class="k-breadcrumb__home">
                                 <a class="k-breadcrumb__item k-icon-home" href="#">
                                     <span class="visually-hidden">Home</span>
                                 </a>
@@ -115,11 +115,11 @@
                                     Item
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="k-breadcrumb__last">
                                 <span class="k-breadcrumb__item">Current item</span>
                             </li>
                         </ul>
-                    </div><!-- .k-breadcrumbs -->
+                    </div><!-- .k-breadcrumb -->
 
                     <!-- Scopebar -->
                     <div class="k-scopebar">

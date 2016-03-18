@@ -37,17 +37,3 @@
     }
   }
 }
-
-
-/* Input group XS */
-.k-filter-container .input-group,
-.input-group-xs {
-  & > .form-control,
-  & > .input-group-addon,
-  & > .input-group-btn > .btn {
-    font-size: $font-size-small;
-    line-height: $line-height-small;
-    padding: $padding-xs-vertical $padding-xs-horizontal;
-    height: 23px;
-  }
-}

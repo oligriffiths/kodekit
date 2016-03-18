@@ -6,20 +6,20 @@
 <!-- Breadcrumbs -->
 <div class="k-breadcrumb">
   <ul>
-      <!-- Home icon item -->
-      <li class="home">
-          <a class="k-breadcrumb__item k-icon-home" href="#">
+      <!-- Home item -->
+      <li class="k-breadcrumb__home">
+          <a class="k-breadcrumb__item k-icon-home" href="...">
               <span class="visually-hidden">Home</span>
           </a>
       </li>
-      <!-- All but last items -->
+      <!-- All items but last -->
       <li>
-          <a class="k-breadcrumb__item" href="#">
+          <a class="k-breadcrumb__item" href="...">
               Some menu item
           </a>
       </li>
       <!-- last / active item -->
-      <li class="active">
+      <li class="k-breadcrumb__last">
           <span class="k-breadcrumb__item">Active menu item</span>
       </li>
   </ul>
@@ -37,7 +37,6 @@
 .k-breadcrumb {
   @include border(bottom, $breadcrumb-border);
   overflow: auto; /* 1 */
-
   background: $breadcrumb-background;
   color: $breadcrumb-color;
 }
@@ -174,14 +173,14 @@
 
 
   /**
-   * first and last elements
+   * Home and last elements
    *
    * 1. Always display these items
    * 2. No flexing for these items so the are readable
    */
 
-  .home,
-  .active {
+  .k-breadcrumb__home,
+  .k-breadcrumb__last {
     display: inline-block; /* 1 */
     overflow: visible; /* 1 */
 
@@ -203,7 +202,7 @@
     @extend .visually-hidden; /* 1 */
   }
 
-  .home.active {
+  .k-breadcrumb__home.k-breadcrumb__last {
     .k-breadcrumb_root-text {
       @extend .visually-shown; /* 2 */
       padding-left: $spacing-tiny; /* 2 */
@@ -237,7 +236,7 @@
 
   /* Active item */
 
-  .active {
+  .k-breadcrumb__last {
     .k-breadcrumb__item {
       font-weight: $bold;
     }

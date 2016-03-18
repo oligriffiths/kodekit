@@ -58,7 +58,7 @@
                     <!-- Breadcrumbs -->
                     <div class="k-breadcrumb">
                         <ul>
-                            <li class="home">
+                            <li class="k-breadcrumb__home">
                                 <a class="k-breadcrumb__item k-icon-home" href="#">
                                     <span class="visually-hidden">Home</span>
                                 </a>
@@ -68,11 +68,11 @@
                                     Some category
                                 </a>
                             </li>
-                            <li class="active">
+                            <li class="k-breadcrumb__last">
                                 <span class="k-breadcrumb__item">Some other category</span>
                             </li>
                         </ul>
-                    </div>
+                    </div><!-- .k-breadcrumb -->
 
                     <!-- upload -->
                     <div class="k-upload">

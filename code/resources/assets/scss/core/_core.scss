@@ -3,7 +3,8 @@
    ========================================================================== */
 
 /**
- * Markup might be rendered outside of the <div class="koowa">
+ * Markup might be rendered outside of the <div class="koowa"> therefor we need
+ * to put the CSS outside of the namespace as well
  */
 
 
@@ -24,7 +25,9 @@
 /* Setup html, body and .koowa-container
    ========================================================================== */
 
-@import "setup";
+@import "../atoms/html";
+@import "../atoms/body";
+@import "../organisms/koowa-container";
 
 
 
