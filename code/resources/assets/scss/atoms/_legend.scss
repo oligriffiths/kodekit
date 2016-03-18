@@ -9,8 +9,9 @@ legend {
   border-bottom: 1px solid darker($form-background);
   padding-top: $spacing;
   padding-bottom: 4px;
-  font-size: 21px;
-  font-weight: normal;
+  font-size: $font-size--large;
+  line-height: $line-height--large;
+  font-weight: $regular;
 
   /* No margin top for the first legend */
   &:first-child {

@@ -108,6 +108,11 @@
 }
 
 
+.k-scopebar__item--fluid {
+  display: table-cell;
+  width: 99%;
+}
+
 /* Scopebar filter title */
 
 .k-scopebar__item--filter {
@@ -197,13 +202,15 @@
  * 1. Hide by default (when JS is enabled) so we can toggle it open
  * 2. Display as table cell on medium sized screens
  * 3. Display as block for flexbox on larger screens
- * 4. Set a minimum width so the fluid scopebar__item won't make search really small
  * 5. Search area items
  */
 
 .k-scopebar__search {
   position: relative;
-  min-width: 200px;
+
+  @include breakpoint($beta) {
+    @include allwidth(225px);
+  }
 
   @include js-enabled {
     display: none; /* 1 */
@@ -211,18 +218,8 @@
     @include breakpoint($beta) {
       display: table-cell; /* 2 */
     }
-
-    @include breakpoint($desktop) {
-      display: block; /* 3 */
-    }
   }
 
-
-  /* 4 */
-
-  @include breakpoint($beta) {
-    max-width: 320px;
-  }
 
 
   /* 5 */

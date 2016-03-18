@@ -54,11 +54,15 @@
   border: none;
   background: transparent;
   margin: 0;
-  padding: 0 19px 0 13px;
+  padding: 0 6px 0 6px;
 
   &:hover,
   &:focus {
     background: #DFDFDF;
+  }
+
+  @include breakpoint($beta) {
+    padding: 0 19px 0 13px;
   }
 }
 
@@ -94,8 +98,8 @@
 .k-scopebar__item__label {
   position: absolute;
   z-index: 9;
-  top: 6px;
-  right: 4px;
+  top: 2px;
+  right: 2px;
   min-width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -106,6 +110,11 @@
   text-align: center;
   font-weight: bold;
   box-shadow: inset 0 0 2px rgba(0,0,0,.1);
+
+  @include breakpoint($beta) {
+    top: 6px;
+    right: 4px;
+  }
 }
 
 .dropdown__body__button {
