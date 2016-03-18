@@ -26,14 +26,11 @@
   @include breakpoint($delta) {
     @include allwidth($sidebar-width);
   }
-}
 
 
-/* When JavaScript is enabled */
+  /* When JavaScript is enabled */
 
-@include js-enabled {
-  .k-sidebar,
-  .k-sidebar-right {
+  @include js-enabled {
     @include allwidth($sidebar-width);
     position: absolute;
     z-index: 1;
@@ -58,22 +55,19 @@
       @include allwidth($sidebar-width);
     }
   }
-}
 
 
-/* When flexbox is in use */
+  /* When flexbox is in use */
 
-@include flexbox($horizontal: $desktop) {
-  .k-sidebar,
-  .k-sidebar-right {
+  @include flexbox($horizontal: $desktop) {
     display: flex;
     flex-direction: column;
     flex: 0 0 auto;
-  }
 
-  .k-sidebar__navigation,
-  .k-sidebar__footer {
-    flex: 0 0 auto;
+    .k-sidebar__navigation,
+    .k-sidebar__footer {
+      flex: 0 0 auto;
+    }
   }
 }
 

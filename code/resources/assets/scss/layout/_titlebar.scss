@@ -40,13 +40,10 @@
       display: none; /* 4 */
     }
   }
-}
 
+  /* When flexbox is in use */
 
-/* When flexbox is in use */
-
-@include flexbox {
-  .k-titlebar {
+  @include flexbox {
     flex: 0 0 auto;
   }
 }

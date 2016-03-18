@@ -3,42 +3,36 @@
    ========================================================================== */
 
 
-/* When flexbox is in use */
-
-@include flexbox {
-  .k-table-container {
+.k-table-container {
+  @include flexbox {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
     overflow: auto;
-
-    .k-table {
-      display: flex;
-      flex: 0 1 auto;
-      background: $table-cell-background-even;
-
-      table {
-        flex: 1 1 auto;
-      }
-    }
   }
 }
 
 
-/* Table contents */
+/* Table container */
 
-.k-table-container {
-  overflow: hidden;
+.k-table {
+  overflow: auto;
+  background: $table-background;
 
-  .k-table {
-    overflow: auto;
-    background: $table-background;
+  @include flexbox {
+    display: flex;
+    flex: 0 1 auto;
+    background: $table-cell-background-even;
   }
 
   table {
     width: 100%;
     text-align: left;
     border-collapse: separate;
+
+    @include flexbox {
+      flex: 1 1 auto;
+    }
   }
 
 
@@ -259,6 +253,8 @@
 }
 
 
+
+
 /*
  * Table pagination
  *
@@ -270,6 +266,13 @@
   background: $table-pagination-background;
   box-shadow: 0 1px 0 $table-pagination-border;
   border-top: 1px solid #D2D2D2;
+
+
+  /* Flexbox */
+
+  @include flexbox {
+      flex: 0 0 auto;
+  }
 
 
   /**
@@ -303,15 +306,6 @@
     line-height: 30px;
   }
 }
-
-/* When flexbox is in use */
-
-@include flexbox {
-  .k-table-pagination {
-    flex: 0 0 auto;
-  }
-}
-
 
 
 /**

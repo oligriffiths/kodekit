@@ -13,13 +13,11 @@
     width: 100%;
     display: table;
   }
-}
 
 
-/* When flexbox is in use */
+  /* When flexbox is in use */
 
-@include flexbox {
-  .k-toolbar {
+  @include flexbox {
     flex: 0 0 auto;
   }
 }

@@ -21,7 +21,7 @@
                 container: $('.container'),
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
-                offCanvasOverlay: 'off-canvas-overlay',
+                offCanvasOverlay: 'k-off-canvas-overlay',
                 ariaControls: null
             },
             plugin = this;

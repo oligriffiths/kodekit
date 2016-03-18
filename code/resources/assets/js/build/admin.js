@@ -288,7 +288,7 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
                 container: $('.container'),
                 menuToggle: [],
                 expandedWidth: $(element).outerWidth(),
-                offCanvasOverlay: 'off-canvas-overlay',
+                offCanvasOverlay: 'k-off-canvas-overlay',
                 ariaControls: null
             },
             plugin = this;
