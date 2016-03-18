@@ -112,12 +112,13 @@
 
 .k-scopebar__item--filter {
   width: auto;
-  padding: 0 0 0 1em;
   font-weight: normal;
   vertical-align: middle;
   font-size: 12px;
   line-height: $scopebar-size;
-  display: inline-block;
+  display: block;
+  float: left;
+  border-right: 1px solid #ccc;
 }
 
 

@@ -31,7 +31,7 @@
   overflow: hidden;
 
   .k-table {
-    overflow: hidden;
+    overflow: auto;
     background: $table-background;
   }
 
@@ -109,6 +109,12 @@
     padding: $table-cell-spacing-vertical $table-cell-spacing-horizontal;
     background: $table-cell-background-even;
     line-height: 18px;
+  }
+
+  tr:last-child {
+    td {
+      border-bottom: none;
+    }
   }
 
 
@@ -263,6 +269,7 @@
   padding: $table-pagination-spacing;
   background: $table-pagination-background;
   box-shadow: 0 1px 0 $table-pagination-border;
+  border-top: 1px solid #D2D2D2;
 
 
   /**
@@ -294,6 +301,14 @@
   .k-pagination-pages {
     float: right;
     line-height: 30px;
+  }
+}
+
+/* When flexbox is in use */
+
+@include flexbox {
+  .k-table-pagination {
+    flex: 0 0 auto;
   }
 }
 
