@@ -276,7 +276,7 @@ class KTemplateHelperSelect extends KTemplateHelperAbstract implements KTemplate
 
         $html  = array();
 
-        $html[] = '<div class="booleanlist">';
+        $html[] = '<div class="k-booleanlist">';
 
         $extra = $config->selected ? 'checked="checked"' : '';
         $text  = $config->translate ? $translator->translate( $config->true ) : $config->true;
