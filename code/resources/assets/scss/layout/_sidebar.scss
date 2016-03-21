@@ -54,6 +54,7 @@
     @include breakpoint($delta) {
       @include allwidth($sidebar-width);
     }
+
   }
 
 

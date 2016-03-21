@@ -179,8 +179,7 @@
    * 2. No flexing for these items so the are readable
    */
 
-  .k-breadcrumb__home,
-  .k-breadcrumb__last {
+  .k-breadcrumb__home {
     display: inline-block; /* 1 */
     overflow: visible; /* 1 */
 

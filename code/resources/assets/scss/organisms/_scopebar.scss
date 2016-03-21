@@ -49,7 +49,7 @@
   background: $scopebar-background;
   color: $scopebar-color;
 
-  @include breakpoint($beta) {
+  @include breakpoint($delta) {
     display: table;
     width: 100%;
   }
@@ -76,7 +76,7 @@
 
 /* 2 */
 
-@include flexbox($horizontal: $beta) {
+@include flexbox($horizontal: $delta) {
 
   .k-scopebar {
     display: flex;
@@ -98,6 +98,7 @@
 
   .k-scopebar__item--fluid {
     flex: 1 1 auto;
+    width: auto;
   }
 }
 
@@ -111,8 +112,11 @@
 
 
 .k-scopebar__item--fluid {
-  display: table-cell;
-  width: 99%;
+
+  @include breakpoint($delta) {
+    display: table-cell;
+    width: 99%;
+  }
 }
 
 /* Scopebar filter title */
@@ -210,14 +214,14 @@
 .k-scopebar__search {
   position: relative;
 
-  @include breakpoint($beta) {
-    @include allwidth(225px);
+  @include breakpoint($delta) {
+    @include allwidth(200px);
   }
 
   @include js-enabled {
     display: none; /* 1 */
 
-    @include breakpoint($beta) {
+    @include breakpoint($delta) {
       display: table-cell; /* 2 */
     }
   }
@@ -263,8 +267,7 @@
     font-size: 12px;
     -webkit-appearance: none;
 
-    @include breakpoint($beta) {
-      max-width: 250px;
+    @include breakpoint($delta) {
       border-left: 1px solid $scopebar-border;
     }
   }
@@ -381,7 +384,7 @@
   @include js-enabled {
     display: block;
 
-    @include breakpoint($beta) {
+    @include breakpoint($delta) {
       display: none; /* 1 */
     }
   }
