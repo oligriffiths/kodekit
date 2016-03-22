@@ -1,6 +1,6 @@
 // Bootsrap variables and mixins used in files
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
+@import "../lib/sass-twitter-bootstrap/variables";
+@import "../lib/sass-twitter-bootstrap/mixins";
 
 // Our own variables and mixins
 @import "generic/variables";
