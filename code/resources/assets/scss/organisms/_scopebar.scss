@@ -443,3 +443,9 @@
     max-width: 200px;
   }
 }
+
+.k-scopebar {
+  .k-breadcrumb {
+    flex: 1 1 auto;
+  }
+}

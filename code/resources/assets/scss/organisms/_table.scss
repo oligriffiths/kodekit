@@ -16,6 +16,7 @@
   .k-table {
     overflow: auto;
     background: $table-background;
+    min-height: 180px;
 
     @include flexbox {
       display: flex;
@@ -248,6 +249,33 @@
   .k-grid-sort--text {
     min-width: 30px; /* 5 */
     padding: 0 3px; /* 6 */
+  }
+
+
+
+  .dropdown-toggle {
+    &,&:hover,&:focus {
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    input, span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .dropdown-menu {
+    margin-left: 1px;
+    a {
+      margin: 0;
+      padding: 5px;
+
+      &:focus,
+      &:hover {
+        background: $color-accent;
+      }
+    }
   }
 }
 
