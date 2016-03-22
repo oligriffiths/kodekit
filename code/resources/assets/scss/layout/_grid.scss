@@ -62,4 +62,12 @@
   }
 }
 
+.k-container__full {
+  @include clearfix;
+  clear: both;
+  margin-bottom: $spacing;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

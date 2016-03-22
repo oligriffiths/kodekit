@@ -136,7 +136,7 @@
                                     <th width="1%">
                                         <input type="checkbox">
                                     </th>
-                                    <th class="docman_table__title_field">
+                                    <th>
                                         Title
                                     </th>
                                 </tr>
@@ -146,7 +146,7 @@
                                     <td>
                                         <input type="checkbox">
                                     </td>
-                                    <td class="docman_table__title_field">
+                                    <td>
                                         <div class="koowa_wrapped_content">
                                             <div class="whitespace_preserver">
                                                 <a href="#">

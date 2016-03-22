@@ -181,6 +181,40 @@
   }
 
 
+  /**
+   * Table levels
+   *
+   * Indented levels for a clearer overview
+   */
+
+  @for $i from 1 through 20 {
+    .k-table__item-level#{$i}{padding-left: 24px * ($i - 1)}
+  }
+
+  .k-table__item-level__title {
+    position: relative;
+    padding-left: 5px;
+
+    &:before {
+      content: " ";
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-left: 1px solid #bbb;
+      border-bottom: 1px solid #bbb;
+      position: absolute;
+      top: 50%;
+      left: -36px;
+      margin-top: -.25em;
+    }
+  }
+
+  .k-table__item-level1 {
+    .k-table__item-level__title:before {
+      display: none;
+    }
+  }
+
 
   /**
    * Selected
@@ -370,5 +404,33 @@
         color: $footable-toggle-color-active;
       }
     }
+  }
+}
+
+
+/* Table item states */
+
+.k-table__item--state {
+  cursor: pointer;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &.k-pending {
+    color: $color-warning;
+  }
+
+  &.k-expired {
+    color: $color-neutral;
+  }
+
+  &.k-unpublished {
+    color: $color-error;
+  }
+
+  &.k-published {
+    color: $color-success;
   }
 }
