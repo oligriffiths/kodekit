@@ -76,6 +76,7 @@
   @import "../layout/form-layout";
   @import "../layout/grid";
   @import "../layout/grid-table-container";
+  @import "../layout/layout-switcher";
   @import "../layout/list-layout";
   @import "../layout/mobile-title";
   @import "../layout/overflowing";
@@ -115,6 +116,7 @@
   /* Organisms */
 
   @import "../organisms/breadcrumb";
+  @import "../organisms/grid";
   @import "../organisms/scopebar";
   @import "../organisms/table";
 
