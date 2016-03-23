@@ -82,7 +82,7 @@ $icon-path: '../fonts' !default;
 
 $spacing-tiny:    round($font-size / 2) !default;
 $spacing-small:   $font-size !default;
-$spacing:         $font-size * 1.5 !default;
+$spacing:         round($font-size * 1.5) !default;
 $spacing-large:   $font-size * 2 !default;
 $spacing-huge:    $font-size * 3 !default;
 
