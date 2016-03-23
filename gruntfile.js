@@ -39,6 +39,7 @@ module.exports = function(grunt) {
                 files: {
                     '<%= assetsPath %>/css/admin.css': '<%= assetsPath %>/scss/admin.scss',
                     '<%= assetsPath %>/css/bootstrap.css': '<%= assetsPath %>/scss/bootstrap.scss',
+                    '<%= assetsPath %>/css/component.css': '<%= assetsPath %>/scss/component.scss',
                     '<%= assetsPath %>/css/debugger.css': '<%= assetsPath %>/scss/debugger.scss',
                     '<%= assetsPath %>/css/dumper.css': '<%= assetsPath %>/scss/dumper.scss'
                 }

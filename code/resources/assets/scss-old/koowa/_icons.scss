@@ -1,8 +1,10 @@
+@import "../../scss/utilities/koowa-icons";
+
 // Loading the fonts
 @font-face {
   font-family: 'koowa';
-  src: url('#{$koowaPath}/fonts/koowa.eot');
-  src: url('#{$koowaPath}/fonts/koowa.eot?#iefix') format('embedded-opentype'), url('#{$koowaPath}/fonts/koowa.ttf') format('truetype'), url('#{$koowaPath}/fonts/koowa.woff') format('woff'), url('#{$koowaPath}/fonts/koowa.svg#koowa') format('svg');
+  src: url('#{$koowaPath}/fonts/koowa-icons/koowa-icons.eot');
+  src: url('#{$koowaPath}/fonts/koowa-icons/koowa-icons.eot?#iefix') format('embedded-opentype'), url('#{$koowaPath}/fonts/koowa-icons/koowa-icons.ttf') format('truetype'), url('#{$koowaPath}/fonts/koowa-icons/koowa-icons.woff') format('woff'), url('#{$koowaPath}/fonts/koowa-icons/koowa-icons.svg#koowa') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -99,72 +101,80 @@
 }
 
 // Actual icons
-.koowa_icon--default:before {
-  content: "\e600";
+.koowa_icon--default {
+  @include icon-before(k-default,true);
 }
 
-.koowa_icon--image:before {
-  content: "\e602";
+.koowa_icon--image {
+  @include icon-before(k-image,true);
 }
 
-.koowa_icon--video:before {
-  content: "\e603";
+.koowa_icon--video {
+  @include icon-before(k-video,true);
 }
 
-.koowa_icon--archive:before {
-  content: "\e601";
+.koowa_icon--archive {
+  @include icon-before(k-archive,true);
 }
 
-.koowa_icon--folder:before {
-  content: "\e604";
+.koowa_icon--folder {
+  @include icon-before(k-folder,true);
 }
 
-.koowa_icon--pdf:before {
-  content: "\e608";
+.koowa_icon--pdf {
+  @include icon-before(k-pdf,true);
 }
 
-.koowa_icon--audio:before {
-  content: "\e60d";
+.koowa_icon--audio {
+  @include icon-before(k-audio,true);
 }
 
-.koowa_icon--document:before {
-  content: "\e605";
+.koowa_icon--document {
+  @include icon-before(k-document,true);
 }
 
-.koowa_icon--spreadsheet:before {
-  content: "\e606";
+.koowa_icon--spreadsheet {
+  @include icon-before(k-spreadsheet,true);
 }
 
-.koowa_icon--locked:before {
-  content: "\e607";
+.koowa_icon--locked {
+  @include icon-before(k-locked,true);
 }
 
-.koowa_icon--unlocked:before {
-  content: "\e609";
+.koowa_icon--unlocked {
+  @include icon-before(k-unlocked,true);
 }
 
-.koowa_icon--disabled:before {
-  content: "\e60a";
+.koowa_icon--disabled {
+  @include icon-before(k-disabled,true);
 }
 
-.koowa_icon--enabled:before {
-  content: "\e60b";
+.koowa_icon--enabled {
+  @include icon-before(k-enabled,true);
 }
 
-.koowa_icon--open:before {
-  content: "\e60c";
+.koowa_icon--open {
+  @include icon-before(k-open,true);
 }
 
-.koowa_icon--close:before {
-  content: "\e60e";
+.koowa_icon--close {
+  @include icon-before(k-close,true);
 }
 
-.koowa_icon--folder_open:before {
-  content: "\e60f";
+.koowa_icon--folder_open {
+  @include icon-before(k-folder-open,true);
 }
 
-.koowa_icon--calendar:before {
-  content: "\e610";
+.koowa_icon--calendar {
+  @include icon-before(k-calendar,true);
+}
+
+.koowa_icon--menu {
+  @include icon-before(k-menu,true);
+}
+
+.koowa_icon--menu_open {
+  @include icon-before(k-menu_open,true);
 }
 
 .koowa_icon--sort:before {
@@ -193,14 +203,6 @@
 
 .koowa_icon--sort_up:before {
   content: "\e617";
-}
-
-.koowa_icon--menu:before {
-  content: "\e618";
-}
-
-.koowa_icon--menu_open:before {
-  content: "\e619";
 }
 
 .jqtree-tree {
