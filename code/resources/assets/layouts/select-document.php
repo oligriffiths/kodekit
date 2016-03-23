@@ -122,7 +122,7 @@
                         </div>
 
                         <!-- Search -->
-                        <div class="k-scopebar__item k-scopebar__search">
+                        <div class="k-scopebar__item k-scopebar__item--search">
                             <div class="search__container search__container--has_empty_button">
                                 <label for="search">
                                     <i class="icon-search"></i>

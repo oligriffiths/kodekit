@@ -135,7 +135,7 @@
 
         // Toggle search
         $searchtoggle.click(function() {
-            $('.k-scopebar__search').slideToggle('fast');
+            $('.k-scopebar__item--search').slideToggle('fast');
         });
 
 

@@ -745,7 +745,7 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
 
         // Toggle search
         $searchtoggle.click(function() {
-            $('.k-scopebar__search').slideToggle('fast');
+            $('.k-scopebar__item--search').slideToggle('fast');
         });
 
 

@@ -1,5 +1,3 @@
-// @TODO: a LOT changed in the scopebar, need to refactor this file
-
 /* ==========================================================================
    Scopebar
    ========================================================================== */
@@ -9,41 +7,57 @@
 <div class="k-scopebar">
 
     <!-- Filters -->
-    <div class="k-scopebar__item--fluid">
+    <div class="k-scopebar__item k-scopebar__item--fluid">
 
         <!-- Filter title -->
-        <div class="k-scopebar__item--filter">Filter:</div>
+        <div class="k-scopebar__filters">
 
-        <!-- Filters -->
-        <div class="k-scopebar__item--filter">
-            <button type="button" class="k-scopebar__filter-button">
-                <span class="add-filter">Add filter</span>
-                <span class="remove-filter" style="display: none;">Clear filter</span>
-            </button>
-        </div>
+            <div class="k-scopebar__item--filter k-dropdown js-dropdown">
+                <button type="button" class="k-dropdown__button js-dropdown-button">
+                    <span class="k-scopebar__item--filter__title"><?= translate('Filter'); ?></span>
+                    <span class="k-scopebar__item--filter__title k-icon-chevron-bottom"></span>
+                </button>
+                <div class="k-dropdown__body js-dropdown-body">
+                    <div class="k-dropdown__body__content">
+                        <ul>
+                            <li>Unpublished</li>
+                            <li>Published</li>
+                            <li>Pending</li>
+                            <li>Expired</li>
+                        </ul>
+                    </div>
+                    <div class="k-dropdown__body__buttons">
+                        <button type="button" class="btn btn-sm">Remove filter</button>
+                        <button type="button" class="btn btn-primary btn-sm">Apply</button>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Search toggle button -->
-        <button type="button" class="toggle-search">
-            <span class="k-icon-magnifying-glass"></span>
-            <span class="visually-hidden">Search</span>
-        </button>
+        </div><!-- .k-scopebar__filters -->
+
+        <!-- Right floating group -->
+        <div class="k-scopebar__group--right">
+
+            <!-- Search toggle button -->
+            <div class="k-scopebar__group--right__item">
+                <button type="button" class="k-scopebar-icon-button k-toggle-search">
+                    <span class="k-icon-magnifying-glass"></span>
+                    <span class="visually-hidden"><?= translate('Search'); ?></span>
+                </button>
+            </div>
+
+        </div><!-- .k-scopebar__group--right -->
+
     </div>
 
     <!-- Search -->
-    <div class="k-scopebar__item k-scopebar__search">
-        <div class="k-search__container">
-            <input type="search" name="search" class="k-search__field" placeholder="Find by title or description…" value="">
-            <button class="k-search__button-search" type="submit" data-original-title="Search">
-                <span class="k-icon-magnifying-glass"></span>
-            </button>
-            <button class="k-search__button-empty" onclick="document.id('filter_search').value='';this.form.submit();" title="" type="button" data-original-title="Clear">
-                <span>X</span>
-            </button>
-        </div>
+    <div class="k-scopebar__item k-scopebar__item--search">
+        <?= helper('grid.search', array('submit_on_clear' => true)) ?>
     </div>
 
 </div><!-- .k-scopebar -->
 */
+
 
 .k-scopebar {
   background: $scopebar-background;
@@ -53,99 +67,111 @@
     display: table;
     width: 100%;
   }
-}
 
 
-/**
- * When flexbox is in use
- *
- * 1. The scopebar container itself. Changes on global flexbox setting
- * 2. Flexing before global flexbox
- */
+  /**
+   * When flexbox is in use
+   */
 
-@include flexbox {
-
-  /* 1 */
-
-  .k-scopebar {
+  @include flexbox($horizontal: $delta) {
+    display: flex;
     width: auto;
     flex: 0 0 auto;
   }
+
+
+  /**
+   * Breadcrumbs in the scopebar
+   *
+   * When the breadcrumbs are in the scopebar the breadcrumbs should be flexing
+   */
+
+  .k-breadcrumb {
+    flex: 1 1 auto;
+  }
 }
 
 
-/* 2 */
 
-@include flexbox($horizontal: $delta) {
+/**
+ * Items
+ */
 
-  .k-scopebar {
-    display: flex;
-    flex: 0 0 auto;
-  }
+.k-scopebar__item {
+  @include border(bottom, $scopebar-border);
+  vertical-align: middle;
 
-  .k-scopebar__item {
+
+  /**
+   * When flexbox is in use
+   */
+
+  @include flexbox($horizontal: $delta) {
     display: block;
     flex: 0 0 auto;
+
+
+    /* Search item */
+
+    &.k-scopebar__item--search {
+      display: block;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+
+
+/**
+ * Fluid item
+ *
+ * Put at least one fluid item in every scopebar for flexbox to work correctly
+ */
+
+.k-scopebar__item--fluid {
+  @include breakpoint($delta) {
+    display: table-cell;
+    width: 99%;
   }
 
-  .k-scopebar__search {
-    display: block;
-    flex: 0 1 auto;
-  }
-
-
-  /* Put at least one fluid item in every scopebar */
-
-  .k-scopebar__item--fluid {
+  @include flexbox($horizontal: $delta) {
     flex: 1 1 auto;
     width: auto;
   }
 }
 
 
-/* Scopebar items */
-
-.k-scopebar__item {
-  @include border(bottom, $scopebar-border);
-  vertical-align: middle;
-}
-
-
-.k-scopebar__item--fluid {
-
-  @include breakpoint($delta) {
-    display: table-cell;
-    width: 99%;
-  }
-}
-
-/* Scopebar filter title */
-
-.k-scopebar__item--filter {
-  width: auto;
-  font-weight: normal;
-  vertical-align: middle;
-  font-size: 12px;
-  line-height: $scopebar-size;
-  display: block;
-  float: left;
-  border-right: 1px solid #ccc;
-}
 
 
 /**
- * Scopebar filter
+ * Filters
  *
- * 1. Setting to inline-block to align with title and different filters
- * 2. Setting height to scopebar height
+ * 1. Clearfix so we can float individual filters
+ * 2. Inline block to stay next to other items
  */
 
+.k-scopebar__filters {
+  @include clearfix; /* 1 */
+  display: inline-block; /* 2 */
+  vertical-align: middle;
+}
+
+
+/* Individual filter */
+
 .k-scopebar__item--filter {
-  display: inline-block; /* 1 */
-  height: $scopebar-size; /* 2 */
+  position: relative;
+  display: block;
+  float: left;
   width: auto;
+  line-height: $scopebar-size;
+  border-right: 1px solid #ccc;
+  height: $scopebar-size;
   font-size: $scopebar-filter-font-size;
 }
+
+
+/* Filter title */
 
 .k-scopebar__item--filter__title,
 .k-scopebar__item--filter__icon {
@@ -154,64 +180,46 @@
 }
 
 .k-scopebar__item--filter__icon {
-  margin-left: 8px;
+  margin-left: 4px;
 }
 
 
+/* Scopebar label showing how many active filters you have below a filter button */
 
-/**
- * Scopebar filter button
- */
+.k-scopebar__item__label {
+  position: absolute;
+  z-index: 9;
+  top: 2px;
+  right: 2px;
+  min-width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #d35400;
+  color: white;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: inset 0 0 2px rgba(0,0,0,.1);
 
-.k-scopebar__filter-button {
-  display: inline-block;
-  width: auto;
-  padding: 0;
-  background: transparent;
-  border: none;
-  vertical-align: middle;
-  font-size: 12px;
-  line-height: $scopebar-size;
-  color: $color-accent;
-
-
-  /* A hover to show they are clickable */
-  &:hover,
-  &:focus {
-    span {
-      text-decoration: underline;
-    }
+  @include breakpoint($beta) {
+    top: 6px;
+    right: 4px;
   }
 }
 
 
 
 /**
- * Scopebar filter reset button
- */
-
-.k-scopebar__filter-button--reset {
-  color: $color-accent;
-
-  @include icon-before(circle-x, true) {
-    display: inline-block;
-    vertical-align: middle;
-    color: $color-error;
-    margin-right: .35em;
-  }
-}
-
-
-/**
- * Scopebar search
+ * Search
  *
  * 1. Hide by default (when JS is enabled) so we can toggle it open
- * 2. Display as table cell on medium sized screens
+ * 2. Display as table cell on medium sized screens (!important so it displays even if it's hidden by JS)
  * 3. Display as block for flexbox on larger screens
  * 5. Search area items
  */
 
-.k-scopebar__search {
+.k-scopebar__item--search {
   position: relative;
 
   @include breakpoint($delta) {
@@ -222,10 +230,9 @@
     display: none; /* 1 */
 
     @include breakpoint($delta) {
-      display: table-cell; /* 2 */
+      display: table-cell!important; /* 2 */
     }
   }
-
 
 
   /* 5 */
@@ -327,30 +334,7 @@
       }
     }
   }
-
 }
-
-
-
-/**
- * Right floating button group
- */
-
-.k-scopebar__group-right {
-  float: right;
-}
-
-.k-scopebar__group-right__item {
-  float: left;
-  height: $scopebar-size;
-}
-
-
-
-/**
- * transparent buttons
- */
-
 
 
 
@@ -392,60 +376,15 @@
 
 
 
+/**
+ * Right floating button group
+ */
 
-
-
-
-.k-scopebar__item--filter {
-  position: relative;
+.k-scopebar__group--right {
+  float: right;
 }
 
-.k-scopebar__item__label {
-  position: absolute;
-  z-index: 9;
-  top: 2px;
-  right: 2px;
-  min-width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background: #d35400;
-  color: white;
-  font-size: 10px;
-  line-height: 15px;
-  text-align: center;
-  font-weight: bold;
-  box-shadow: inset 0 0 2px rgba(0,0,0,.1);
-
-  @include breakpoint($beta) {
-    top: 6px;
-    right: 4px;
-  }
-}
-
-.k-scopebar__filters {
-  @include clearfix;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-
-
-
-
-
-
-
-
-
-/* @TODO refactor */
-.k-filter-container__item {
-  .input-group {
-    max-width: 200px;
-  }
-}
-
-.k-scopebar {
-  .k-breadcrumb {
-    flex: 1 1 auto;
-  }
+.k-scopebar__group--right__item {
+  float: left;
+  height: $scopebar-size;
 }

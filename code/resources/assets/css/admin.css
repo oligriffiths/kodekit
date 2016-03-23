@@ -1295,7 +1295,7 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
     </div>
 
     <!-- Search -->
-    <div class="k-scopebar__item k-scopebar__search">
+    <div class="k-scopebar__item k-scopebar__item--search">
         <div class="k-search__container">
             <input type="search" name="search" class="k-search__field" placeholder="Find by title or description…" value="">
             <button class="k-search__button-search" type="submit" data-original-title="Search">
@@ -2351,7 +2351,7 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 @media (min-width: 600px) and (min-height: 460px) { .k-flexbox .koowa, .k-flexboxlegacy .koowa { /* Put at least one fluid item in every scopebar */ }
   .k-flexbox .koowa .k-scopebar, .k-flexboxlegacy .koowa .k-scopebar { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
   .k-flexbox .koowa .k-scopebar__item, .k-flexboxlegacy .koowa .k-scopebar__item { display: block; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; }
-  .k-flexbox .koowa .k-scopebar__search, .k-flexboxlegacy .koowa .k-scopebar__search { display: block; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; }
+  .k-flexbox .koowa .k-scopebar__item--search, .k-flexboxlegacy .koowa .k-scopebar__item--search { display: block; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; }
   .k-flexbox .koowa .k-scopebar__item--fluid, .k-flexboxlegacy .koowa .k-scopebar__item--fluid { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
 
 .koowa .k-scopebar__item { border-bottom: 1px solid #d2d2d2; vertical-align: middle; }
@@ -2374,41 +2374,41 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 .koowa .k-scopebar__filter-button--reset:before { content: ""; display: inline-block; vertical-align: middle; color: #c0392b; margin-right: .35em; }
 
-.koowa .k-scopebar__search { position: relative; /* 5 */ }
+.koowa .k-scopebar__item--search { position: relative; /* 5 */ }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search { min-width: 225px; width: 225px; max-width: 225px; } }
+@media screen and (min-width: 600px) { .koowa .k-scopebar__item--search { min-width: 225px; width: 225px; max-width: 225px; } }
 
-.k-js-enabled .koowa .k-scopebar__search { display: none; /* 1 */ }
+.k-js-enabled .koowa .k-scopebar__item--search { display: none; /* 1 */ }
 
-@media screen and (min-width: 600px) { .k-js-enabled .koowa .k-scopebar__search { display: table-cell; /* 2 */ } }
+@media screen and (min-width: 600px) { .k-js-enabled .koowa .k-scopebar__item--search { display: table-cell; /* 2 */ } }
 
-.koowa .k-scopebar__search .k-search__container { width: 100%; position: relative; }
+.koowa .k-scopebar__item--search .k-search__container { width: 100%; position: relative; }
 
-.koowa .k-scopebar__search .k-search__container--has-search-button .k-search__field { padding-left: 28px; }
+.koowa .k-scopebar__item--search .k-search__container--has-search-button .k-search__field { padding-left: 28px; }
 
-.koowa .k-scopebar__search .k-search__container--has-empty-button .k-search__field { padding-right: 18px; }
+.koowa .k-scopebar__item--search .k-search__container--has-empty-button .k-search__field { padding-right: 18px; }
 
-.koowa .k-scopebar__search .k-search__container--has-both-buttons .k-search__field { padding-left: 28px; padding-right: 18px; }
+.koowa .k-scopebar__item--search .k-search__container--has-both-buttons .k-search__field { padding-left: 28px; padding-right: 18px; }
 
-.koowa .k-scopebar__search .k-search__field { margin: 0; padding: 0; list-style: none; border: none; background: transparent; margin: 0; display: block; width: 100%; height: 39px; border-radius: 0; padding: 7px; padding-right: 39px; background: white; color: #333333; box-shadow: none; font-size: 12px; -webkit-appearance: none; }
+.koowa .k-scopebar__item--search .k-search__field { margin: 0; padding: 0; list-style: none; border: none; background: transparent; margin: 0; display: block; width: 100%; height: 39px; border-radius: 0; padding: 7px; padding-right: 39px; background: white; color: #333333; box-shadow: none; font-size: 12px; -webkit-appearance: none; }
 
-@media screen and (min-width: 600px) { .koowa .k-scopebar__search .k-search__field { max-width: 250px; border-left: 1px solid #d2d2d2; } }
+@media screen and (min-width: 600px) { .koowa .k-scopebar__item--search .k-search__field { max-width: 250px; border-left: 1px solid #d2d2d2; } }
 
-.koowa .k-scopebar__search .k-search__button-search { margin: 0; padding: 0; list-style: none; border: none; background: transparent; position: absolute; top: 50%; left: .5em; margin-top: -.75em; }
+.koowa .k-scopebar__item--search .k-search__button-search { margin: 0; padding: 0; list-style: none; border: none; background: transparent; position: absolute; top: 50%; left: .5em; margin-top: -.75em; }
 
-.koowa .k-scopebar__search .k-search__button-empty { border: none; margin: 0; padding: 0; position: absolute; display: none; top: 50%; right: 0; width: 22px; height: 22px; margin-top: -10px; background: transparent; }
+.koowa .k-scopebar__item--search .k-search__button-empty { border: none; margin: 0; padding: 0; position: absolute; display: none; top: 50%; right: 0; width: 22px; height: 22px; margin-top: -10px; background: transparent; }
 
-.koowa .k-scopebar__search .k-search__button-empty.is-visible { display: inline-block; }
+.koowa .k-scopebar__item--search .k-search__button-empty.is-visible { display: inline-block; }
 
-.koowa .k-scopebar__search .k-search__button-empty span { margin: 3px; box-sizing: border-box; width: 16px; height: 16px; display: inline-block; line-height: 16px; text-align: center; border-radius: 100%; color: #777; text-decoration: none; font-weight: bold; font-family: Arial, helvetica, sans-serif; font-size: 10px; }
+.koowa .k-scopebar__item--search .k-search__button-empty span { margin: 3px; box-sizing: border-box; width: 16px; height: 16px; display: inline-block; line-height: 16px; text-align: center; border-radius: 100%; color: #777; text-decoration: none; font-weight: bold; font-family: Arial, helvetica, sans-serif; font-size: 10px; }
 
-.koowa .k-scopebar__search .k-search__button-empty:hover { cursor: pointer; }
+.koowa .k-scopebar__item--search .k-search__button-empty:hover { cursor: pointer; }
 
-.koowa .k-scopebar__search .k-search__button-empty:hover span { background: #ea9393; border: 1px solid #ce4c4c; color: #fff; text-shadow: 1px 1px 1px #ce4c4c; box-shadow: inset 1px 2px 1px #d97474; }
+.koowa .k-scopebar__item--search .k-search__button-empty:hover span { background: #ea9393; border: 1px solid #ce4c4c; color: #fff; text-shadow: 1px 1px 1px #ce4c4c; box-shadow: inset 1px 2px 1px #d97474; }
 
-.koowa .k-scopebar__group-right { float: right; }
+.koowa .k-scopebar__group--right { float: right; }
 
-.koowa .k-scopebar__group-right__item { float: left; height: 39px; }
+.koowa .k-scopebar__group--right__item { float: left; height: 39px; }
 
 .koowa .k-toggle-search { position: relative; display: none; overflow: hidden; width: 33px; height: 0; margin: 0; border: none; padding: 0; padding-top: 33px; background: transparent; }
 
@@ -2516,7 +2516,7 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 .koowa .hidden.hidden.hidden { display: none; }
 
-.koowa .visually-hidden.visually-hidden.visually-hidden, .k-checked .koowa .k-booleanlist input[type="radio"], .k-appearance.k-checked .koowa .k-checkbox-toggle input, .k-checked .koowa .k-option-list input[type=radio], .koowa .k-breadcrumb .k-breadcrumb_root-text, .koowa .k-scopebar__search label { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
+.koowa .visually-hidden.visually-hidden.visually-hidden, .k-checked .koowa .k-booleanlist input[type="radio"], .k-appearance.k-checked .koowa .k-checkbox-toggle input, .k-checked .koowa .k-option-list input[type=radio], .koowa .k-breadcrumb .k-breadcrumb_root-text, .koowa .k-scopebar__item--search label { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
 
 .koowa .visually-shown.visually-shown.visually-shown, .koowa .k-breadcrumb .k-breadcrumb__home.k-breadcrumb__last .k-breadcrumb_root-text { position: static; overflow: visible; clip: auto; height: auto; width: auto; margin: 0; }
 
