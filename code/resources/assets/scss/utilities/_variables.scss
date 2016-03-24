@@ -107,34 +107,15 @@ $transition:            $transition-duration $transition-easing !default;
 // Colors
 // ==========================================================================
 
+
+// Type
+
 $color-type:            #333333 !default;
 $color-type-lightest:   lighten($color-type, 50%) !default;
 
 
-// Primary and secondary colors
-$color-primary:         #607D8B !default;
-$color-primary-type:    #ecf0f1 !default;
-
-$color-secondary:       #3498db !default;
-$color-secondary-type:  white !default;
-
+// Colorpicker
 $colorpicker: (
-        secondary: (
-                -5: darken($color-secondary,37%),
-                -4: darken($color-secondary,28%),
-                -3: darken($color-secondary,20%),
-                -2: darken($color-secondary,13%),
-                -1: darken($color-secondary,6%),
-                0: $color-secondary,
-                +1: lighten($color-secondary,8%),
-                +2: lighten($color-secondary,16%),
-                +3: lighten($color-secondary,27%),
-                +4: lighten($color-secondary,32%),
-                +5: lighten($color-secondary,37%),
-                +6: lighten($color-secondary,42%),
-                +7: lighten($color-secondary,47%),
-                +8: lighten($color-secondary,52%),
-        ),
         primary: (
                 0: #e1e1e1,
                 1: #e6e6e6,
@@ -149,8 +130,8 @@ $colorpicker: (
 
 // Accent color
 
-$color-accent:                  #3071a9 !default;
-$color-accent-type:             white !default;
+$color-accent:        #3071a9 !default;
+$color-accent-type:   white !default;
 
 
 // States
@@ -419,14 +400,6 @@ $upload-drop-line-height:   15px !default;
 $upload-drop-color:         #595959 !default;
 
 $upload-buttons-spacing:    $spacing-small !default;
-
-
-// Filter container
-// ==========================================================================
-
-$filter-container-spacing:            $spacing-tiny !default;
-$filter-container-background:         $color-primary !default;
-$filter-container-border:             darker($filter-container-background) !default;
 
 
 // Radio toggle
