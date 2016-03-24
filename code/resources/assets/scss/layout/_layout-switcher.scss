@@ -10,7 +10,7 @@
   transition: $transition;
   text-align: center;
   line-height: round($scopebar-size * .8);
-  border: 1px solid transparent;
+  @include border(all, transparent);
 
   &:hover {
     border-color: $scopebar-border;

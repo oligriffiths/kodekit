@@ -2,6 +2,8 @@
 // Functions
 // ==========================================================================
 
+
+
 // Lighten a color with a certain percentage
 // Doing this by using a function makes sure we can change all the 'lighten'
 // values in the whole project at once.
@@ -17,6 +19,7 @@
 @function lightest($color, $percentage: $lightest-percentage){
   @return lighten($color, $percentage)
 }
+
 
 
 // Darken a color with a certain percentage

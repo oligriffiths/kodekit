@@ -110,8 +110,8 @@
 
 @mixin transition(
   $properties: all,
-  $duration: .3s,
-  $easing: ease-in-out) {
+  $duration: $transition-duration,
+  $easing: $transition-easing) {
 
   transition: $properties $duration $easing;
   -webkit-backface-visibility:hidden; // 1

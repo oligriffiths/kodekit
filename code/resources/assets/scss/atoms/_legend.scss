@@ -17,4 +17,9 @@ legend {
   &:first-child {
     margin-top: 0;
   }
+
+  /* No margin bottom for the last legend */
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

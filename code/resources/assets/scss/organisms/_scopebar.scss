@@ -165,7 +165,7 @@
   float: left;
   width: auto;
   line-height: $scopebar-size;
-  border-right: 1px solid #ccc;
+  @include border(right, #ccc);
   height: $scopebar-size;
   font-size: $scopebar-filter-font-size;
 }
@@ -275,7 +275,7 @@
     -webkit-appearance: none;
 
     @include breakpoint($delta) {
-      border-left: 1px solid $scopebar-border;
+      @include border(left, $scopebar-border);
     }
   }
 
