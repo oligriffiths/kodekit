@@ -1,3 +1,9 @@
+/**
+ * Files layout switcher
+ *
+ * Switches layout from grid to list view
+ */
+
 .files-layout-switcher {
   @include reset;
   display: block;
@@ -14,7 +20,7 @@
 
   &:hover {
     border-color: $scopebar-border;
-    background: white;
+    background: lighter($scopebar-background);
   }
 
   &.active {

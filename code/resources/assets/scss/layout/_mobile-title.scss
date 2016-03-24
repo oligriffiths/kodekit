@@ -1,12 +1,16 @@
-// Mobile title
+/* ==========================================================================
+   Mobile title
+   ========================================================================== */
+
 .k-mobile-title {
   background: $mobile-title-background;
-  border-bottom: 1px solid $mobile-title-border;
-  padding: 10px;
+  @include border(bottom, $mobile-title-border);
+  padding: $mobile-title-spacing;
 
   .k-heading {
     margin: 0;
-    font-size: 20px;
+    font-size: $mobile-title-font-size;
+    line-height: $mobile-title-line-height;
   }
 
   @include breakpoint($charlie) {

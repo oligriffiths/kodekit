@@ -1,8 +1,12 @@
-/* Styled warning for when there are no categories yet */
+/**
+ * Styled warning for when there are no categories yet
+ *
+ * 1. Reset border styling from Bootstrap
+ */
 
 .no-items-container.alert {
-  border-radius: 0;
-  border: none;
+  border-radius: 0; /* 1 */
+  border: none; /* 1 */
   margin: 0;
   @include border(bottom, $no-items-border);
   font-size: 1.5em;
@@ -17,6 +21,9 @@
       margin-bottom: 0;
     }
   }
+
+
+  /* Don't flex this container */
 
   @include flexbox {
     flex: 0 0 auto;

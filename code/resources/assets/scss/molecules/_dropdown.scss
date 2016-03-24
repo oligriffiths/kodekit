@@ -27,7 +27,7 @@
 
   &:hover,
   &:focus {
-    background: $filter-background-hover;
+    background: $scopebar-buttons-background-hover;
   }
 
   @include breakpoint($beta) {
@@ -37,7 +37,7 @@
 
 .is-active {
   .k-dropdown__button {
-    background: $filter-background-hover;
+    background: $scopebar-buttons-background-hover;
   }
 }
 

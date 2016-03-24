@@ -70,7 +70,7 @@
 
   .active {
     a {
-      font-weight: bold;
+      font-weight: $bold;
       background: $list-active-background;
       color: $list-active-color;
 

@@ -34,7 +34,7 @@
   @include border(bottom, $form-block-header-border);
   padding: $form-block-header-spacing;
   background: $form-block-header-background;
-  font-weight: bold;
+  font-weight: $bold;
 }
 
 

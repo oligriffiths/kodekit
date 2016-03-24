@@ -194,8 +194,11 @@ $titlebar-color:        $color-type !default;
 //
 // Since we're hiding the sidemenu on smaller screens we need to display the title
 
+$mobile-title-spacing:      $spacing-tiny !default
 $mobile-title-background:   colorpicker(primary,0) !default;
 $mobile-title-border:       darkest($mobile-title-background) !default;
+$mobile-title-font-size:    $font-size--large !default;
+$mobile-title-line-height:  $line-height--large !default;
 
 
 // Toolbar
@@ -242,8 +245,10 @@ $sidebar-color:             $color-type !default;
 $navigation-spacing:            $spacing-tiny !default;
 $navigation-background:         colorpicker(primary, 1) !default;
 $navigation-border:             darkest($navigation-background) !default;
+$navigation-border-width:       5px !default;
 $navigation-color:              $color-type !default;
 $navigation-accent:             colorpicker(primary, -5) !default;
+$navigation-font-size:          16px !default;
 
 $navigation-hover-background:   lighter($navigation-background) !default;
 $navigation-hover-border:       colorpicker(primary, -3) !default;
@@ -312,28 +317,19 @@ $scopebar-color:              $color-type !default;
 $scopebar-search-background:  white !default;
 $scopebar-search-color:       $color-type !default;
 
-$scopebar-filter-spacing:     5px !default;
-$scopebar-filter-size:        $scopebar-size - ($scopebar-filter-spacing * 2) !default;
 $scopebar-filter-font-size:   12px !default;
-$scopebar-filter-border:      $scopebar-border !default;
-$scopebar-filter-background:  white !default;
-
-
-// Filters
-// ==========================================================================
-
-$filter-background-hover:   darker($scopebar-background) !default;
 
 
 // Dropdowns
 // ==========================================================================
 
-$dropdown-background:           colorpicker(primary, 6) !default;
-$dropdown-border:               darkest($dropdown-background) !default;
-$dropdown-color:                $color-type !default;
-$dropdown-buttons-background:   colorpicker(primary, 5) !default;
-$dropdown-buttons-border:       darkest($dropdown-background) !default;
-$dropdown-buttons-color:        $color-type !default;
+$dropdown-background:                 colorpicker(primary, 6) !default;
+$dropdown-border:                     darkest($dropdown-background) !default;
+$dropdown-color:                      $color-type !default;
+$dropdown-buttons-background:         colorpicker(primary, 5) !default;
+$scopebar-buttons-background-hover:   darker($dropdown-buttons-background) !default;
+$dropdown-buttons-border:             darkest($dropdown-background) !default;
+$dropdown-buttons-color:              $color-type !default;
 
 
 // Table

@@ -1,6 +1,7 @@
 /* Simple heading styling */
 
 .k-heading {
-  font-size: 20px;
+  font-size: $font-size--large;
+  line-height: $line-height--large;
   margin: 0 0 $spacing;
 }
