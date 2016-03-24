@@ -87,7 +87,7 @@
     margin-top: -2px;
     left: 4px;
     @include arrow(bottom);
-    transition: $transition;
+    @include transition;
   }
 
   &:hover,

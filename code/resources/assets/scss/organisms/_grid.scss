@@ -98,7 +98,7 @@ $grid-width: 2560px !default;
     padding: 10px;
     border: 1px solid #ddd;
     background: colorpicker(primary, 5);
-    transition: $transition;
+    @include transition;
 
     @include icon-before(k-folder,true) {
       padding-right: 5px;
@@ -121,7 +121,7 @@ $grid-width: 2560px !default;
     background: white;
     border: 1px solid #ddd;
     padding: 1px;
-    transition: $transition;
+    @include transition;
   }
 
   .k-grid__file-wrapper {
@@ -151,7 +151,7 @@ $grid-width: 2560px !default;
 
   .k-grid__item__title {
     padding: 10px;
-    transition: $transition;
+    @include transition;
   }
 
   &:focus,

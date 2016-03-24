@@ -23,7 +23,7 @@
   border: none;
   background: transparent;
   margin: 0;
-  padding: 0 6px 0 6px;
+  padding: 0 6px;
 
   &:hover,
   &:focus {
@@ -31,7 +31,7 @@
   }
 
   @include breakpoint($beta) {
-    padding: 0 12px 0 12px;
+    padding: 0 12px;
   }
 }
 

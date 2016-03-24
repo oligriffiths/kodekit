@@ -16,7 +16,7 @@
   width: 100%;
   background: $titlebar-background; /* 2 */
   color: $titlebar-color;
-  transition: transform $transition; /* 3 */
+  @include transition(transform); /* 3 */
 
 
   /**
@@ -34,7 +34,7 @@
     z-index: -1; /* 2 */
     opacity: 0; /* 2 */
     background: $overlay-background;
-    transition: opacity $transition; /* 3 */
+    @include transition(opacity); /* 3 */
 
     @include breakpoint($desktop) {
       display: none; /* 4 */

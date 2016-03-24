@@ -79,7 +79,7 @@
       border-radius: $checkbox-toggle-border-radius;
       content: " ";
       background: white;
-      transition: all $transition;
+      @include transition;
     }
 
 
@@ -93,7 +93,7 @@
       border-radius: $checkbox-toggle-border-radius - $checkbox-toggle-padding;
       content: " ";
       background: $checkbox-toggle-0;
-      transition: all $transition;
+      @include transition;
     }
 
 
@@ -112,7 +112,7 @@
       line-height: $checkbox-toggle-height-inner - 2;
       text-transform: uppercase;
       text-align: center;
-      transition: all $transition;
+      @include transition;
     }
 
 
@@ -153,8 +153,8 @@
       content: attr(data-true); /* 1 */
       text-indent: -($checkbox-toggle-width-inner); /* 1 */
       text-align: center;
-      transition: all $transition;
       color: rgba(white, 0); /* 2 */
+      @include transition;
     }
 
 

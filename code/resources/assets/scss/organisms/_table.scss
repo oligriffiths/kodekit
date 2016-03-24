@@ -49,7 +49,7 @@
     height: $table-cell-size;
     vertical-align: middle;
     text-align: left;
-    transition: $transition;
+    @include transition;
 
     input {
       display: inline-block; /* 1 */
@@ -82,7 +82,7 @@
       margin-left: -$table-cell-spacing-horizontal;
       margin-right: -$table-cell-spacing-horizontal;
       line-height: $table-cell-size - ($table-cell-spacing-vertical * 2);
-      transition: $transition;
+      @include transition;
 
       &:focus,
       &:hover {
@@ -146,7 +146,7 @@
   }
 
   a {
-    transition: $transition;
+    @include transition;
   }
 
 

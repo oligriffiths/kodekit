@@ -49,8 +49,8 @@
     position: absolute; /* 2 */
     z-index: 99;
     background: transparent;
-    transition: all .5s $transition-easing;
     margin: 0;
+    @include transition;
 
     &.js-is-hidden {
       opacity: 0;

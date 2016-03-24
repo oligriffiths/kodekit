@@ -10,13 +10,13 @@
 // - (min-width)
 // - (min-width) and (max-width)
 //
-// Try to never use (max-width) alone since that is not very mobile-first
+// Try to never use (max-width) alone since that is not mobile-first
 //
 // 1. The min width of the interface. Will create a horizontal scrollbar.
 //    This way we have a base width to work from
-// 2. The max width of the form layout
 // 3. Separate $desktop variable is being used so all styles
 //    change together when going from small to larger screen.
+// 2. The max width of the frontend form layout
 // 4. Wether or not to Use flexbox in layouts
 // 5. Separate $flexbox variables are being used
 //    - 300px so flexbox will be active on 320px wide screens
@@ -30,8 +30,8 @@ $charlie:             768px !default;
 $delta:               1024px !default;
 
 $minwidth:            $alpha !default; // 1
-$maxwidth:            $delta !default; // 2
-$desktop:             $charlie !default; // 3
+$desktop:             $charlie !default; // 2
+$maxwidth:            $delta !default; // 3
 
 $flexbox:             true !default; // 4
 $flexbox-horizontal:  300px !default; // 5

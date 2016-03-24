@@ -54,7 +54,7 @@
     border-radius: 1px;
     background: $button-color;
     vertical-align: middle;
-    transition: all $transition;
+    @include transition;
   }
 
   .bar1 {

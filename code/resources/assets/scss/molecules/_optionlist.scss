@@ -65,7 +65,7 @@
       border-radius: $input-border-radius - 1px; /* 3 */
       cursor: pointer;
       user-select: none; /* 4 */
-      transition: $transition;
+      @include transition;
 
 
       /* A little darker background on hovering */

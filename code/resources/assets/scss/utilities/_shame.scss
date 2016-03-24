@@ -54,7 +54,7 @@
           vertical-align: middle;
           font-size: 10px;
           cursor: pointer;
-          transition: $transition;
+          @include transition;
         }
 
         &.is-active:after {

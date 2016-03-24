@@ -180,7 +180,11 @@
 }
 
 .k-scopebar__item--filter__icon {
-  margin-left: 4px;
+  margin-left: 2px;
+
+  @include breakpoint($beta) {
+    margin-left: 4px;
+  }
 }
 
 

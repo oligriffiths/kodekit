@@ -47,7 +47,7 @@
     vertical-align: middle;
     cursor: pointer; /* 5 */
     box-shadow: $form-option-shadow;
-    transition: background $transition-duration $transition-easing;
+    @include transition(background);
 
     /* Hover to indicate element is clickable */
 
