@@ -11,9 +11,9 @@
 /* 3rd party
    ========================================================================== */
 
-@import "../../../../../bower_components/select2/src/scss/core";
-@import "../../../../../bower_components/select2-bootstrap/src/select2-bootstrap";
-@import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns"; /* We need the dropdowns for the datepicker until we found a better datepicker */
+@import "../../../../../../bower_components/select2/src/scss/core";
+@import "../../../../../../bower_components/select2-bootstrap/src/select2-bootstrap";
+@import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/dropdowns"; /* We need the dropdowns for the datepicker until we found a better datepicker */
 @import "../organisms/modal";
 @import "../molecules/select2";
 @import "../molecules/datepicker";
@@ -49,18 +49,18 @@
 
   /* Namespaced Normalize */
 
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/normalize";
 
 
   /* Namespaced Twitter Bootstrap */
 
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
-  @import "../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/buttons";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/button-groups";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/thumbnails";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/forms";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/input-groups";
+  @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/pagination";
 
 
   /* Bootstrap overrides / extensions */
