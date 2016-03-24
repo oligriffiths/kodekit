@@ -108,8 +108,6 @@ $transition:            $transition-duration $transition-easing !default;
 // ==========================================================================
 
 $color-type:            #333333 !default;
-$color-type-dark:       darken($color-type, 7%) !default;
-$color-type-light:      lighten($color-type, 20%) !default;
 $color-type-lightest:   lighten($color-type, 50%) !default;
 
 
