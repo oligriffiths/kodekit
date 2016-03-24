@@ -27,7 +27,7 @@
 
   &:hover,
   &:focus {
-    background: #DFDFDF;
+    background: $filter-background-hover;
   }
 
   @include breakpoint($beta) {
@@ -37,7 +37,7 @@
 
 .is-active {
   .k-dropdown__button {
-    background: #DFDFDF;
+    background: $filter-background-hover;
   }
 }
 
@@ -45,8 +45,9 @@
   position: absolute;
   left: -1px;
   visibility: hidden;
-  background: white;
-  @include border(all, #ccc);
+  background: $dropdown-background;
+  @include border(all, $dropdown-border);
+  color: $dropdown-color;
   box-shadow: 2px 2px 3px rgba(0,0,0,.15);
   border-radius: 0 0 5px 5px;
   min-width: 300px;
@@ -62,8 +63,9 @@
 
 .k-dropdown__body__buttons {
   line-height: 14px;
-  @include border(top, #ccc);
-  background: #f5f5f5;
+  @include border(top, $dropdown-buttons-border);
+  background: $dropdown-buttons-background;
+  color: $dropdown-buttons-color;
   padding: 8px 5px;
   text-align: center;
   border-radius: 0 0 5px 5px;

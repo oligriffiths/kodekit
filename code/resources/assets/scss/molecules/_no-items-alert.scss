@@ -2,11 +2,13 @@
 
 .no-items-container.alert {
   border-radius: 0;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  border: none;
+  margin: 0;
+  @include border(bottom, $no-items-border);
   font-size: 1.5em;
   line-height: 1.5em;
+  background: $no-items-background;
+  color: $no-items-color;
 
   p {
     margin-bottom: 1em;

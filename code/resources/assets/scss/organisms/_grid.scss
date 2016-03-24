@@ -68,6 +68,7 @@ $grid-width: 2560px !default;
 }
 
 .k-grid {
+  background: $table-background;
   @include border(bottom, $table-header-border);
   padding: $grid-spacing / 2;
 }
@@ -118,7 +119,7 @@ $grid-width: 2560px !default;
 
   .k-grid__item__content {
     @include ratio-block(4 to 3);
-    background: white;
+    background: colorpicker(primary, 6);
     border: 1px solid #ddd;
     padding: 1px;
     @include transition;
@@ -141,6 +142,7 @@ $grid-width: 2560px !default;
     display: inline-block;
     vertical-align: middle;
     font-size: 14px;
+    color: $color-accent;
 
     img {
       display: inline-block;

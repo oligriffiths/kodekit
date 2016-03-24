@@ -108,12 +108,6 @@ $transition:            $transition-duration $transition-easing !default;
 // ==========================================================================
 
 
-// Type
-
-$color-type:            #333333 !default;
-$color-type-lightest:   lighten($color-type, 50%) !default;
-
-
 // Colorpicker
 $colorpicker: (
         primary: (
@@ -125,7 +119,13 @@ $colorpicker: (
                 5: #fafafa,
                 6: #ffffff,
         )
-);
+) !default;
+
+
+// Type
+
+$color-type:            #333333 !default;
+$color-type-lightest:   lighten($color-type, 50%) !default;
 
 
 // Accent color
@@ -212,7 +212,7 @@ $sidebar-color:             $color-type !default;
 // 1. Height of the table cells
 // 2. Table cell padding
 
-$table-background:                      white !default;
+$table-background:                      colorpicker(primary, 6) !default;
 
 $table-cell-size:                       round($font-size * 3) !default; // 1
 $table-cell-spacing-vertical:           10px !default; // 2
@@ -277,6 +277,23 @@ $scopebar-filter-size:        $scopebar-size - ($scopebar-filter-spacing * 2) !d
 $scopebar-filter-font-size:   12px !default;
 $scopebar-filter-border:      $scopebar-border !default;
 $scopebar-filter-background:  white !default;
+
+
+// Filters
+// ==========================================================================
+
+$filter-background-hover:   darker($scopebar-background) !default;
+
+
+// Dropdowns
+// ==========================================================================
+
+$dropdown-background:           colorpicker(primary, 6) !default;
+$dropdown-border:               darkest($dropdown-background) !default;
+$dropdown-color:                $color-type !default;
+$dropdown-buttons-background:   colorpicker(primary, 5) !default;
+$dropdown-buttons-border:       darkest($dropdown-background) !default;
+$dropdown-buttons-color:        $color-type !default;
 
 
 // List
@@ -480,8 +497,12 @@ $form-option-color:         $color-accent !default;
 $form-option-shadow:        inset 0 1px 2px rgba(0,0,0,.15) !default;
 
 
+// Info block
+// ==========================================================================
 
-
+$no-items-border:       lighten($color-neutral, 40%) !default;
+$no-items-background:   lighten($color-neutral, 50%) !default;
+$no-items-color:        darken($color-neutral, 5%) !default;
 
 
 
