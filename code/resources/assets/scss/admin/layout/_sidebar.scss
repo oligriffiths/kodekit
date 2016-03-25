@@ -21,6 +21,13 @@
   }
 
 
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+
+
   /* Larger sidebar when space is available */
 
   @include breakpoint($delta) {

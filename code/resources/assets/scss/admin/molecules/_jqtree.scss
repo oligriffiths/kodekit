@@ -81,6 +81,13 @@
 
 .jqtree-title {
   padding: 0 0 0 5px;
+
+
+  /* RTL */
+
+  @include rtl {
+    padding: 0 5px 0 0;
+  }
 }
 
 .jqtree-toggler {
@@ -92,6 +99,7 @@
     @include transition;
   }
 
+
   &:hover,
   &:focus {
     &:before {
@@ -102,6 +110,13 @@
   &.jqtree-closed {
     &:before {
       transform: rotate(-90deg);
+
+
+      /* RTL */
+
+      @include rtl {
+        transform: rotate(90deg);
+      }
     }
   }
 }

@@ -27,6 +27,12 @@
     display: none;
   }
 
+  /* RTL */
+
+  @include rtl {
+    float: right;
+  }
+
   span {
     display: block;
     margin: round((($scopebar-size * .8) - (2px + 16px)) / 2); // absolute center

@@ -232,3 +232,41 @@
     }
   }
 }
+
+@include modernizr-rtl('.k-checked') {
+  .k-booleanlist {
+    direction: rtl;
+
+    label {
+      float: right;
+    }
+
+    input:first-of-type + label {
+      &:before {
+        right: 50%;
+        left: 0%;
+      }
+    }
+
+    input:last-of-type + label {
+      &:before {
+        right: 0%;
+        left: 50%;
+      }
+    }
+
+    input:checked:first-of-type + label {
+      &:before {
+        left: 50%;
+        right: 1px;
+      }
+    }
+
+    input:checked:last-of-type + label {
+      &:before {
+        right: 50%;
+        left: 1px;
+      }
+    }
+  }
+}

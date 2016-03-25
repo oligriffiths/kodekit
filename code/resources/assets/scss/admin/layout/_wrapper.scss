@@ -16,6 +16,13 @@
   }
 
 
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+
+
   /* When flexbox is in use */
 
   @include flexbox {

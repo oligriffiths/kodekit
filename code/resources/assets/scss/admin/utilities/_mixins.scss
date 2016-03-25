@@ -351,3 +351,19 @@
     }
   }
 }
+
+
+// Koowa RTL
+@mixin rtl {
+  @at-root .koowa--rtl#{&} {
+    @content;
+  }
+}
+
+@mixin modernizr-rtl($classes) {
+  @at-root {
+    #{$classes} .koowa--rtl#{&} {
+      @content
+    }
+  }
+}

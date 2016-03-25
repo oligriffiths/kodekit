@@ -43,6 +43,13 @@
   }
 
 
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
+  }
+
+
   /* On 'desktop' view */
 
   @include breakpoint($desktop) {

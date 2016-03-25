@@ -58,6 +58,14 @@
     text-decoration: none; // 2
 
 
+    /* RTL */
+
+    @include rtl {
+      padding-right: round($navigation-spacing * 3);
+      padding-left: round($navigation-spacing * 2);
+    }
+
+
     /* Hover & focus state */
 
     &:hover,
@@ -79,6 +87,13 @@
       top: 0;
       width: $navigation-border-width;
       height: 100%;
+
+      /* RTL */
+
+      @include rtl {
+        left: auto;
+        right: 0;
+      }
     }
 
 

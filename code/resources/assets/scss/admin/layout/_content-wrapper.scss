@@ -39,11 +39,18 @@
   @include border(bottom, $sidebar-border);
 
 
-  // Faking flexbox on older browsers by using table styling
+  /* Faking flexbox on older browsers by using table styling */
 
   @include breakpoint($desktop) {
     display: table;
     width: 100%;
+  }
+
+
+  /* RTL */
+
+  @include rtl {
+    direction: rtl;
   }
 
 

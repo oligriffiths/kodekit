@@ -68,3 +68,128 @@
     }
   }
 }
+
+.k-checked .koowa .k-booleanlist {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin: 0;
+  border: 1px solid #ccc;
+  padding: 1px;
+  width: 100%;
+  height: 32px;
+  border-radius: 4px;
+  background: white
+}
+
+.koowa--rtl.k-checked .koowa .k-booleanlist {
+  direction: rtl
+}
+
+.k-checked .koowa .k-booleanlist label {
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 28px;
+  line-height: 28px;
+  width: 50%;
+  text-align: center;
+  color: #555;
+  font-weight: normal;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none
+}
+
+.koowa--rtl.k-checked .koowa .k-booleanlist label {
+  left: auto;
+  float: right
+}
+
+.k-checked .koowa .k-booleanlist label:before {
+  position: absolute;
+  z-index: -1;
+  top: 1px;
+  bottom: 1px;
+  display: block;
+  content: " ";
+  opacity: 0;
+  border-radius: 3px
+}
+
+.k-checked .koowa .k-booleanlist label:after {
+  position: absolute;
+  z-index: -1;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  opacity: 0;
+  display: block;
+  content: " ";
+  border-radius: 4px;
+  border: 1px solid #66afe9;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6)
+}
+
+.k-checked .koowa .k-booleanlist label:hover {
+  background: rgba(0, 0, 0, 0.15)
+}
+
+.k-checked .koowa .k-booleanlist input:checked + label {
+  color: white
+}
+
+.k-checked .koowa .k-booleanlist input:checked + label:before {
+  opacity: 1
+}
+
+.k-checked .koowa .k-booleanlist input:active + label:after, .k-checked .koowa .k-booleanlist input:focus + label:after {
+  opacity: 1
+}
+
+.k-checked .koowa .k-booleanlist input:first-of-type + label:before {
+  right: 0%;
+  left: 50%
+}
+
+.koowa--rtl.k-checked .koowa .k-booleanlist input:first-of-type + label:before {
+  right: 50%;
+  left: 0%
+}
+
+.k-checked .koowa .k-booleanlist input:last-of-type + label:before {
+  right: 50%;
+  left: 0%
+}
+
+.koowa--rtl.k-checked .koowa .k-booleanlist input:last-of-type + label:before {
+  right: 0%;
+  left: 50%
+}
+
+.k-checked .koowa .k-booleanlist input[value="1"] + label:before {
+  background: #27ae60
+}
+
+.k-checked .koowa .k-booleanlist input[value="0"] + label:before {
+  background: #c0392b
+}
+
+.k-checked .koowa .k-booleanlist--neutral input[value] + label:before {
+  background: #2980b9
+}
+
+.k-checked .koowa .k-booleanlist input:checked:first-of-type + label:before {
+  left: 1px;
+  right: 50%
+}
+
+.koowa--rtl.k-checked .koowa .k-booleanlist input:checked:first-of-type + label:before {
+  left: 50%;
+  right: 1px
+}

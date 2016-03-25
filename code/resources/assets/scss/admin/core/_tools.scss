@@ -16,16 +16,9 @@
 @import "../../../../../../bower_components/bourbon/app/assets/stylesheets/bourbon"; /* 1 */
 @import "../utilities/neat-extended"; /* 2 */
 @import "../../../../../../bower_components/neat/app/assets/stylesheets/neat"; /* 3 */
-@import "../utilities/mixins";
-
-
-
-/* Bootstrap mixins and variables
-   ========================================================================== */
-
 @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/variables";
 @import "../../../../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-
+@import "../utilities/mixins";
 
 
 /* Icons
