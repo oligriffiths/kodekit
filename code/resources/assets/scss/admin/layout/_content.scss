@@ -64,6 +64,17 @@
       transform: translate(0, 0); /* 3 */
     }
   }
+
+  @include rtl {
+    .k-content,
+    .k-titlebar {
+      transform: translate(-($sidebar-width), 0);
+
+      @include breakpoint($desktop) {
+        transform: translate(0, 0);
+      }
+    }
+  }
 }
 
 .show-right-menu {
@@ -73,6 +84,17 @@
 
     @include breakpoint($desktop) {
       transform: translate(0, 0); /* 3 */
+    }
+  }
+
+  @include rtl {
+    .k-content,
+    .k-titlebar {
+      transform: translate($sidebar-width, 0);
+
+      @include breakpoint($desktop) {
+        transform: translate(0, 0);
+      }
     }
   }
 }

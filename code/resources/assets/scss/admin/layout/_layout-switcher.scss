@@ -18,6 +18,12 @@
   @include transition;
   @include border(all, transparent);
 
+  @include rtl {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+  }
+
   &:hover {
     border-color: $scopebar-border;
     background: lighter($scopebar-background);
@@ -25,12 +31,6 @@
 
   &.active {
     display: none;
-  }
-
-  /* RTL */
-
-  @include rtl {
-    float: right;
   }
 
   span {

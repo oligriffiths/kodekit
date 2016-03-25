@@ -30,7 +30,6 @@
   .btn {
     margin: 10px 0 10px 10px;
 
-
     /**
      * Make buttons square
      *
@@ -44,6 +43,13 @@
       height: 32px;
       padding: 7px 6px;
       text-align: center;
+    }
+  }
+
+  @include rtl {
+    button,
+    .btn {
+      margin: 10px 10px 10px 0;
     }
   }
 

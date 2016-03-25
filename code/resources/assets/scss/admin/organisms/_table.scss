@@ -30,6 +30,10 @@
     text-align: left;
     border-collapse: separate;
 
+    @include rtl {
+      text-align: right;
+    }
+
     @include flexbox {
       flex: 1 1 auto;
     }
@@ -51,10 +55,21 @@
     text-align: left;
     @include transition;
 
+    @include rtl {
+      text-align: right;
+    }
+
     input {
       display: inline-block; /* 1 */
       vertical-align: middle; /* 1 */
       margin: -1px 0 0 0; /* 2 */
+    }
+  }
+
+  @include rtl {
+    th,
+    td {
+      text-align: right;
     }
   }
 
@@ -159,6 +174,10 @@
 
   .k-table-data--right {
     text-align: right;
+
+    @include rtl {
+      text-align: left;
+    }
   }
 
   .k-table-data--center {
@@ -188,12 +207,24 @@
    */
 
   @for $i from 1 through 20 {
-    .k-table__item-level#{$i}{padding-left: 24px * ($i - 1)}
+    .k-table__item-level#{$i}{
+      padding-left: 24px * ($i - 1);
+
+      @include rtl {
+        padding-left: 0;
+        padding-right: 24px * ($i - 1);
+      }
+    }
   }
 
   .k-table__item-level__title {
     position: relative;
     padding-left: 5px;
+
+    @include rtl {
+      padding-left: 0;
+      padding-right: 5px;
+    }
 
     &:before {
       content: " ";
@@ -206,6 +237,13 @@
       top: 50%;
       left: -36px;
       margin-top: -.25em;
+
+      @include rtl {
+        left: auto;
+        right: -36px;
+        border-left: none;
+        border-right: 1px solid #bbb;
+      }
     }
   }
 
@@ -301,6 +339,12 @@
 
   .dropdown-menu {
     margin-left: 1px;
+
+    @include rtl {
+      margin-left: 0;
+      margin-right: 1px;
+    }
+
     a {
       margin: 0;
       padding: 5px;
@@ -360,11 +404,20 @@
     height: $table-pagination-height; /* 3 */
     width: auto; /* 4 */
     margin-right: $table-pagination-spacing; /* 5 */
+
+    @include rtl {
+      margin-right: auto;
+      margin-left: $table-pagination-spacing;
+    }
   }
 
   .k-pagination-pages {
     float: right;
     line-height: 30px;
+
+    @include rtl {
+      float: left;
+    }
   }
 }
 
@@ -386,6 +439,11 @@
     border: $footable-toggle-border-size solid $footable-toggle-color;
     border-radius: 50%;
     margin-top: -($footable-toggle-size / 2);
+
+    @include rtl {
+      right: 0;
+      left: 10px;
+    }
 
     @include icon-after(chevron-bottom, true) {
       display: block;

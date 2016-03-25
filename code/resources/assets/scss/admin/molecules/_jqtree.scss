@@ -17,6 +17,12 @@
     float: left;
     min-width: 100%;
   }
+
+  @include rtl {
+    &, ul {
+      float: right;
+    }
+  }
 }
 
 .jqtree-folder {
@@ -82,9 +88,6 @@
 .jqtree-title {
   padding: 0 0 0 5px;
 
-
-  /* RTL */
-
   @include rtl {
     padding: 0 5px 0 0;
   }
@@ -97,6 +100,11 @@
     left: 4px;
     @include arrow(bottom);
     @include transition;
+
+    @include rtl {
+      left: auto;
+      right: 4px;
+    }
   }
 
 
@@ -110,9 +118,6 @@
   &.jqtree-closed {
     &:before {
       transform: rotate(-90deg);
-
-
-      /* RTL */
 
       @include rtl {
         transform: rotate(90deg);

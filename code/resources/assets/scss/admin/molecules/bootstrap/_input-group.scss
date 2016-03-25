@@ -36,6 +36,10 @@
   .input-group-btn:not(:last-child) {
     .btn {
       border-right: 0;
+
+      @include rtl {
+        border-left: 0;
+      }
     }
   }
 }

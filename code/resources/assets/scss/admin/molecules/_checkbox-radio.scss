@@ -111,6 +111,36 @@
 }
 
 
+/* RTL */
+
+@include modernizr-rtl('.k-appearance.k-checked') {
+  input[type="checkbox"],
+  input[type="radio"] {
+    margin-left: .33em;
+    margin-right: 0;
+
+    &:before {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  label {
+
+    & + input[type="checkbox"],
+    & + input[type="radio"] {
+      margin-left: auto;
+      margin-right: 1em;
+    }
+
+    & + label {
+      margin-left: auto;
+      margin-right: 1em;
+    }
+  }
+}
+
+
 
 /* ==========================================================================
    CSS only styled checkbox

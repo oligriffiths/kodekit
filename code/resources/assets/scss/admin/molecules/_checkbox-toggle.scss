@@ -243,3 +243,44 @@
     }
   }
 }
+
+
+/* RTL */
+
+@include modernizr-rtl('.k-appearance.k-checked') {
+  .k-checkbox-toggle {
+    label:before {
+      right: auto;
+      left: 0;
+    }
+
+    label:after {
+      right: auto;
+      left: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+    }
+
+    span:before {
+      right: auto;
+      left: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+    }
+
+    span:after {
+      right: auto;
+      left: ($checkbox-toggle-size * 2) - $checkbox-toggle-height-inner - ($checkbox-toggle-border-width + $checkbox-toggle-padding);
+    }
+
+    input:checked + label {
+      span {
+        &:before {
+          right: auto;
+          left: -($checkbox-toggle-width-inner - $checkbox-toggle-height-inner);
+        }
+
+        &:after {
+          right: auto;
+          left: $checkbox-toggle-border-width + $checkbox-toggle-padding;
+        }
+      }
+    }
+  }
+}

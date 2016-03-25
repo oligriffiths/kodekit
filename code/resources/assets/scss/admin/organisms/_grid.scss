@@ -82,6 +82,10 @@ $grid-width: 2560px !default;
   padding: $grid-spacing / 2;
   width: 100%;
 
+  @include rtl {
+    float: right;
+  }
+
   // Set breakpoints
   @include setGridBreakpoint;
 }
@@ -103,6 +107,11 @@ $grid-width: 2560px !default;
 
     @include icon-before(k-folder,true) {
       padding-right: 5px;
+
+      @include rtl {
+        padding-right: 0;
+        padding-left: 5px;
+      }
     }
   }
 

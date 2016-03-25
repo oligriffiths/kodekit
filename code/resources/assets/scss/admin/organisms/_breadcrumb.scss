@@ -113,6 +113,11 @@
     overflow: hidden; /* 5 */
     vertical-align: middle; /* 6 */
 
+    @include rtl {
+      padding-left: 0;
+      padding-right: $breadcrumb-divider-size;
+    }
+
 
     /* Display on larger screens */
 
@@ -138,10 +143,14 @@
       width: $breadcrumb-divider-size;
       padding-top: $breadcrumb-size / 4;
       padding-bottom: $breadcrumb-size / 4;
-
       text-align: center;
       line-height: $breadcrumb-size / 2;
       content: $breadcrumb-divider-content;
+
+      @include rtl {
+        left: auto;
+        right: 0;
+      }
     }
 
 
@@ -149,6 +158,10 @@
 
     &:first-child {
       padding-left: 0;
+
+      @include rtl {
+        padding-right: 0;
+      }
 
       &:before {
         display: none;
@@ -207,6 +220,11 @@
       @extend .visually-shown; /* 2 */
       padding-left: $spacing-tiny; /* 2 */
       font-family: "Arial", sans-serif;
+
+      @include rtl {
+        padding-left: 0;
+        padding-right: $spacing-tiny;
+      }
     }
   }
 

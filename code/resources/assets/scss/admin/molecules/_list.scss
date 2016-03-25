@@ -87,6 +87,10 @@
   [class^="k-icon"] {
     display: inline-block;
     margin-right: .75em;
-  }
 
+    @include rtl {
+      margin-right: auto;
+      margin-left: .75em;
+    }
+  }
 }

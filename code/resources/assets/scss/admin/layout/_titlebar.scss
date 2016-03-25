@@ -61,8 +61,16 @@
   .k-titlebar {
     transform: translate($sidebar-width, 0); /* 1 */
 
+    @include rtl {
+      transform: translate(-($sidebar-width), 0);
+    }
+
     @include breakpoint($desktop) {
       transform: translate(0, 0); /* 3 */
+
+      @include rtl {
+        transform: translate(0, 0);
+      }
     }
   }
 }
@@ -71,8 +79,16 @@
   .k-titlebar {
     transform: translate(-($sidebar-width), 0); /* 2 */
 
+    @include rtl {
+      transform: translate($sidebar-width, 0); /* 2 */
+    }
+
     @include breakpoint($desktop) {
       transform: translate(0, 0); /* 3 */
+
+      @include rtl {
+        transform: translate(0, 0);
+      }
     }
   }
 }
@@ -120,6 +136,10 @@
 
     @include breakpoint($beta) {
       text-align: left;
+
+      @include rtl {
+        text-align: right;
+      }
     }
   }
 }

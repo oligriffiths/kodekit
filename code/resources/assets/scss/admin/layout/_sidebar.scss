@@ -21,13 +21,6 @@
   }
 
 
-  /* RTL */
-
-  @include rtl {
-    direction: rtl;
-  }
-
-
   /* Larger sidebar when space is available */
 
   @include breakpoint($delta) {
@@ -80,6 +73,16 @@
 }
 
 
+/* RTL */
+
+@include rtl {
+  .k-sidebar,
+  .k-sidebar-right {
+    direction: rtl;
+  }
+}
+
+
 /* Left sidebar specific styling */
 
 .k-sidebar {
@@ -87,8 +90,20 @@
   background: $sidebar-background;
   color: $sidebar-color;
 
+  @include rtl {
+    border-right: none;
+    @include border(left, $sidebar-border);
+  }
+
   @include js-enabled {
     left: 0;
+  }
+
+  @include rtl {
+    @include js-enabled {
+      left: auto;
+      right: 0;
+    }
   }
 
   @include psuedo(after,true) {
@@ -98,6 +113,13 @@
     right: -1px;
     background: $sidebar-background;
     @include border(right, $sidebar-border);
+
+    @include rtl {
+      right: auto;
+      left: -1px;
+      border-right: none;
+      @include border(left, $sidebar-border);
+    }
   }
 }
 
@@ -120,6 +142,13 @@
 
   @include js-enabled {
     right: 0;
+  }
+
+  @include rtl {
+    @include js-enabled {
+      right: auto;
+      left: 0;
+    }
   }
 }
 
