@@ -82,7 +82,7 @@
     @include border-left-radius(0);
   }
   .input-group-addon:first-child {
-    border-right: 1px;
+    border-right: 1px solid $input-border;
     border-left: 0;
   }
   .input-group .form-control:last-child,
@@ -96,7 +96,7 @@
     @include border-right-radius(0);
   }
   .input-group-addon:last-child {
-    border-left: 1px;
+    border-left: 1px solid $input-border;
     border-right: 0;
   }
 

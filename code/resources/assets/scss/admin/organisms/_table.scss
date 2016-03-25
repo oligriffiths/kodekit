@@ -55,10 +55,6 @@
     text-align: left;
     @include transition;
 
-    @include rtl {
-      text-align: right;
-    }
-
     input {
       display: inline-block; /* 1 */
       vertical-align: middle; /* 1 */

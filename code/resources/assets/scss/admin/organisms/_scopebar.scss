@@ -170,6 +170,8 @@
   font-size: $scopebar-filter-font-size;
 
   @include rtl {
+    border-right: none;
+    @include border(left, #ccc);
     float: right;
   }
 }
