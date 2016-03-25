@@ -140,6 +140,11 @@
   background: $sidebar-background;
   color: $sidebar-color;
 
+  @include rtl {
+    border-left: none;
+    @include border(right, $sidebar-border);
+  }
+
   @include js-enabled {
     right: 0;
   }

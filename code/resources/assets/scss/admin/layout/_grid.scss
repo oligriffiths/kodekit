@@ -71,3 +71,23 @@
     margin-bottom: 0;
   }
 }
+
+
+/* RTL */
+@include direction-context(right-to-left) {
+  .k-container__main {
+    @include breakpoint($charlie) {
+      float: none;
+      margin-right: 0;
+      @include span(8);
+    }
+  }
+
+  .k-container__sub {
+    @include breakpoint($charlie) {
+      float: none;
+      margin-right: 0;
+      @include span(4);
+    }
+  }
+}
