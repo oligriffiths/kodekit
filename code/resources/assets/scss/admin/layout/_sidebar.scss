@@ -9,6 +9,7 @@
 .k-sidebar,
 .k-sidebar-right {
   position: relative;
+  overflow: auto;
   -webkit-overflow-scrolling: touch;
 
 
@@ -103,22 +104,6 @@
     @include js-enabled {
       left: auto;
       right: 0;
-    }
-  }
-
-  @include psuedo(after,true) {
-    width: 105%;
-    height: 999px;
-    top: 100%;
-    right: -1px;
-    background: $sidebar-background;
-    @include border(right, $sidebar-border);
-
-    @include rtl {
-      right: auto;
-      left: -1px;
-      border-right: none;
-      @include border(left, $sidebar-border);
     }
   }
 }
