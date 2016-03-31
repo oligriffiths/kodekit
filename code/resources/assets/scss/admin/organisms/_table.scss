@@ -188,6 +188,16 @@
     word-break: break-all;
   }
 
+  .k-table-data--toggle {
+    white-space: nowrap;
+    padding-left: 0;
+
+    @include rtl {
+      padding-left: $table-cell-spacing-horizontal;
+      padding-right: 0;
+    }
+  }
+
   .k-table-data--ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -426,29 +436,28 @@
 
 .footable.breakpoint {
   .footable-toggle {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    display: block;
+    display: inline-block;
     width: $footable-toggle-size;
     height: $footable-toggle-size;
     border: $footable-toggle-border-size solid $footable-toggle-color;
     border-radius: 50%;
-    margin-top: -($footable-toggle-size / 2);
+    margin-right: $table-cell-spacing-horizontal;
 
     @include rtl {
-      right: 0;
-      left: 10px;
+      margin-right: 0;
+      margin-left: $table-cell-spacing-horizontal;
     }
 
     @include icon-after(chevron-bottom, true) {
-      display: block;
+      display: inline-block;
       width: $footable-toggle-icon-size;
       height: $footable-toggle-icon-size;
       margin: ((($footable-toggle-size - $footable-toggle-icon-size) / 2) - $footable-toggle-border-size);
       color: $footable-toggle-color;
       font-size: $footable-toggle-icon-size;
       line-height: 1.3em;
+      transform: rotate(-90deg);
+      @include transition;
     }
   }
 
@@ -460,6 +469,26 @@
         color: $footable-toggle-color-active;
       }
     }
+  }
+
+  tr.footable-detail-show {
+    .footable-toggle {
+      &:after {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  .footable-row-detail-row {
+    margin-bottom: $table-cell-spacing-vertical;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .footable-row-detail-name {
+    font-weight: $bold;
   }
 }
 
