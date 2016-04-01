@@ -29,26 +29,44 @@
  * like a modal as if you're editing on top of the website
  */
 
-.k-form--front {
+@at-root .k-template {
   background: $form-front-background;
+  padding: 65px 10px 30px;
+  height: auto;
+  max-height: none;
 
-  .k-content {
-    background: $form-front-background;
+  .koowa-container {
+    margin: 0 auto;
+    max-width: 1020px;
+    height: 100%;
   }
 
-  .k-toolbar {
-    max-width: $form-front-maxwidth;
-    margin: $form-front-spacing;
-  }
-
-  .k-content {
-    .k-component{
-      background: $form-front-background;
+  .koowa {
+    &,
+    .k-wrapper,
+    .k-content-wrapper,
+    .k-content,
+    .k-component,
+    .k-form-layout {
+      @include flexbox {
+        overflow: visible;
+        height: auto;
+        max-height: none;
+        display: block;
+      }
     }
   }
 
-  .k-container {
-    background: $form-front-content-background;
-    box-shadow: $form-front-content-shadow;
+  .k-toolbar {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: auto;
+    right: auto;
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+    border-top: 15px solid #333;
+    max-width: 1020px;
   }
 }
