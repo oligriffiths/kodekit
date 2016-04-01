@@ -17,7 +17,7 @@ module.exports = function(grunt) {
             icons: {
                 src: '<%= assetsPath %>/icons/svg/*.svg',
                 dest: '<%= assetsPath %>/fonts/koowa-icons',
-                destCss: '<%= assetsPath %>/scss/utilities',
+                destCss: '<%= assetsPath %>/scss/admin/utilities',
                 options: {
                     font: 'koowa-icons',
                     hashes: false,

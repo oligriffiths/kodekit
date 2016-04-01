@@ -147,13 +147,11 @@
  * Filters
  *
  * 1. Clearfix so we can float individual filters
- * 2. Inline block to stay next to other items
  */
 
 .k-scopebar__filters {
   @include clearfix; /* 1 */
-  display: inline-block; /* 2 */
-  vertical-align: middle;
+  @include border(left,$scopebar-border);
 }
 
 
@@ -409,19 +407,19 @@
  * 1. Hide when search is visible
  */
 
-.k-toggle-search {
+.k-scopebar-icon-button {
   position: relative;
   display: none;
   overflow: hidden;
-  width: 33px;
+  width: $scopebar-size;
   height: 0;
   margin: 0;
   border: none;
   padding: 0;
-  padding-top: 33px;
+  padding-top: $scopebar-size;
   background: transparent;
 
-  .k-icon-magnifying-glass {
+  [class^="k-icon"] {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -438,9 +436,69 @@
 
   @include js-enabled {
     display: block;
+  }
+}
+
+
+.k-scopebar__filter-toggle-wrapper,
+.k-scopebar__search-toggle-wrapper {
+  width: $scopebar-size;
+  height: $scopebar-size;
+}
+
+
+
+
+
+
+.k-scopebar__filters-wrapper {
+  display: table;
+  width: 100%;
+}
+
+.k-scopebar__filter-toggle-wrapper,
+.k-scopebar__filters-content,
+.k-scopebar__search-toggle-wrapper {
+  display: table-cell;
+}
+
+.k-scopebar__filters {
+  @include js-enabled {
+    display: none;
+
+    @include breakpoint($beta) {
+      display: block !important;
+    }
+  }
+}
+
+
+.k-toggle-filters {
+  @include js-enabled {
+    display: block;
+
+    @include breakpoint($beta) {
+      display: none;
+    }
+  }
+}
+
+.k-toggle-filters-icon {
+  @include js-enabled {
+    display: none;
+
+    @include breakpoint($beta) {
+      display: block;
+    }
+  }
+}
+
+.k-toggle-search {
+  @include js-enabled {
+    display: block;
 
     @include breakpoint($delta) {
-      display: none; /* 1 */
+      display: none;
     }
   }
 }

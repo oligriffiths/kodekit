@@ -13,7 +13,8 @@
             $tree = $('.k-clicker'),
             $magnificframe = $('.mfp-iframe'),
             $clickable = $('a, button'),
-            $searchtoggle = $('.k-toggle-search');
+            $searchtoggle = $('.js-toggle-search'),
+            $filtertoggle = $('.js-toggle-filters');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length) && $wrapper.length && $content.length)
@@ -138,34 +139,10 @@
             $('.k-scopebar__item--search').slideToggle('fast');
         });
 
-
-        // Toggle the filter bar and the filter button content
-        $('.k-scopebar__filter-button').on('click', function() {
-            $(this).toggleClass('k-scopebar__filter-button--reset');
-            $(this).find('.add-filter').toggle();
-            $(this).find('.clear-filter').toggle();
-            $('[data-filter="all"]').slideToggle('fast');
-        }).trigger('click');
-
-        // Special theme for the select2 filters in the scopebar (tiny theme)
-        /*$('.select2-filter').select2({
-            theme: "tiny"
+        // Filter search
+        $filtertoggle.click(function() {
+            $('.k-scopebar__filters').toggle('fast');
         });
-
-        // Special theme for the select2 filters in the scopebar (tiny theme)
-        $('.select2-filter--no-search').select2({
-            theme: "tiny"
-        });*/
-
-        // TEMP: Show the second group of filters
-        /*$('.first--and').on('click', function() {
-            $('.first--group').show();
-        });
-
-        // TEMP: Hide the second group of filters
-        $('.btn-remove-filter').on('click', function() {
-            $(this).closest('.first--group').hide();
-        });*/
 
     });
 
