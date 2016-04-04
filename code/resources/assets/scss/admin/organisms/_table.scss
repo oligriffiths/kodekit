@@ -11,6 +11,10 @@
     overflow: auto;
   }
 
+  @include resizing {
+    overflow: hidden;
+  }
+
   /* Table container */
 
   .k-table {
@@ -22,6 +26,10 @@
       display: flex;
       flex: 0 1 auto;
       background: $table-cell-background-even;
+    }
+
+    @include resizing {
+      overflow: hidden;
     }
   }
 
@@ -36,6 +44,10 @@
 
     @include flexbox {
       flex: 1 1 auto;
+    }
+
+    @include resizing {
+      overflow: hidden;
     }
   }
 

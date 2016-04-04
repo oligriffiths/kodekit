@@ -13,6 +13,10 @@
   -webkit-overflow-scrolling: touch;
 
 
+  @include resizing {
+    overflow: hidden;
+  }
+
   /* Faking flexbox on older browsers by using table styling */
 
   @include breakpoint($desktop) {
@@ -203,6 +207,10 @@
 
   @include flexbox {
     flex: 0 1 auto;
+  }
+
+  @include resizing {
+    overflow: hidden;
   }
 
 

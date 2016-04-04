@@ -618,13 +618,10 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             $toolbar = $('.k-toolbar'),
             $content = $('.k-content'),
             $fixedtable = $('.table--fixed'),
-            $select2default = $('.select2--default'),
-            $select2filter = $('.select2--filter select'),
-            $tree = $('.k-clicker'),
-            $magnificframe = $('.mfp-iframe'),
             $clickable = $('a, button'),
             $searchtoggle = $('.js-toggle-search'),
-            $filtertoggle = $('.js-toggle-filters');
+            $filtertoggle = $('.js-toggle-filters'),
+            $footable = $('.footable');
 
         // Sidebar
         if ( ($toolbar.length || $titlebar.length) && $wrapper.length && $content.length)
@@ -674,17 +671,25 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             $('.k-sidebar__item--overflow').overflowing();
         }
 
-        // Footable
-        $('.footable').footable({
-            breakpoints: {
-                phone: 400,
-                tablet: 600
-            }
-        }).bind('footable_resizing', function() {
-            $fixedtable.floatThead('destroy');
-        }).bind('footable_resized', function() {
-            fixedTable();
-        });
+
+
+        if ( $footable.length ) {
+            $footable.on('click', '.footable-toggle', function(event){
+                event.stopPropagation();
+            }).footable({
+                toggleSelector: '.footable-toggle',
+                breakpoints: {
+                    phone: 400,
+                    tablet: 600,
+                    desktop: 800
+                }
+            }).bind('footable_resizing', function() {
+                $fixedtable.floatThead('destroy');
+            }).bind('footable_resized', function() {
+                fixedTable();
+                $fixedtable.floatThead('reflow');
+            });
+        }
 
         // WP sidebar toggle
         $('#collapse-menu').on('click', function() {
@@ -713,37 +718,6 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
             });
         }
 
-        // Enable Select2 for all selectboxes within a select2 class container
-        if ( $select2default.length ) {
-            $select2default.select2();
-        }
-
-        // Enable Select2 for all selectboxes within a select2 class container
-        if ( $select2filter.length ) {
-            $select2filter.find('option:first').val('').html('');
-            $select2filter.select2({
-                minimumResultsForSearch: Infinity,
-                allowClear: true
-            });
-        }
-
-        // The tree
-        if ( $tree.length ) {
-            $tree.click(function(event) {
-                event.stopPropagation();
-                var element = $(this).parent();
-                element.toggleClass('toggled').next('ul').toggleClass('opened').slideToggle('fast');
-            });
-        }
-
-        // Magnific popup
-        if ( $magnificframe.length ) {
-            $magnificframe.magnificPopup({
-                type: 'iframe',
-                mainClass: 'koowa_dialog_modal'
-            });
-        }
-
         // Toggle search
         $searchtoggle.click(function() {
             $('.k-scopebar__item--search').slideToggle('fast');
@@ -752,6 +726,24 @@ b.id!=f.id&&d.push(f.id)}c.$element.val(d.join(c._valueSeparator)),c.$element.tr
         // Filter search
         $filtertoggle.click(function() {
             $('.k-scopebar__filters').toggle('fast');
+        });
+
+
+        // Add a class during resizing event so we can hide overflowing stuff
+        var resizeTimer;
+
+        $(window).on('resize', function(e) {
+
+            // Add the class
+            $('body').addClass('k-is-resizing');
+
+            // Remove the class when resize is done
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                $('body').removeClass('k-is-resizing');
+                $fixedtable.floatThead('reflow');
+            }, 250);
+
         });
 
     });

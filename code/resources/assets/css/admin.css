@@ -1119,9 +1119,9 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
   .mfp-img-mobile .mfp-figure small { display: inline; margin-left: 5px; }
   [dir="rtl"] .mfp-img-mobile .mfp-figure small { margin-left: 0; margin-right: 5px; } }
 
-@media all and (max-width: 900px) { .mfp-arrow { -webkit-transform: scale(0.75); -ms-transform: scale(0.75); transform: scale(0.75); }
-  .mfp-arrow-left { -webkit-transform-origin: 0; -ms-transform-origin: 0; transform-origin: 0; }
-  .mfp-arrow-right { -webkit-transform-origin: 100%; -ms-transform-origin: 100%; transform-origin: 100%; }
+@media all and (max-width: 900px) { .mfp-arrow { -webkit-transform: scale(0.75); transform: scale(0.75); }
+  .mfp-arrow-left { -webkit-transform-origin: 0; transform-origin: 0; }
+  .mfp-arrow-right { -webkit-transform-origin: 100%; transform-origin: 100%; }
   .mfp-container { padding-left: 6px; padding-right: 6px; } }
 
 .mfp-ie7 .mfp-img { padding: 0; }
@@ -1302,6 +1302,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox body, .k-flexboxlegacy body { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
 
+body.k-resizing { overflow: hidden; }
+
 /** Koowa container 1. By using a max-width we essentially set a min-width when the contents are to large for the koowa container. The reason we don't use min-width is because if the content is only 300px we don't need horizontal scrollbars 2. Reset the max-width when viewport is as large as minwidth 3. Use z-index to be able to talk with JavaScript 4. Needed for webkit / blink for JS to read zindex value 5. Default font settings 6. Default styling */
 .koowa-container { position: relative; /* 4 */ z-index: 0; /* 3 */ max-width: 400px; /* 1 */ margin: 0; /* 6 */ border: none; /* 6 */ width: 100%; overflow: hidden; padding: 0; font-family: sans-serif; /* 5 */ font-size: 13px; /* 5 */ line-height: 19px; /* 5 */ background: white; /* 6 */ color: #333333; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; -webkit-overflow-scrolling: touch; /* When flexbox is enabled */ /* RTL */ /* On 'desktop' view */ }
 
@@ -1369,7 +1371,7 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
     </div>
 
 </div><!-- .k-scopebar -->
-*/ /** Items */ /** Fluid item Put at least one fluid item in every scopebar for flexbox to work correctly */ /** Filters 1. Clearfix so we can float individual filters */ /* Individual filter */ /* Filter title */ /* Scopebar label showing how many active filters you have below a filter button */ /** Search 1. Hide by default (when JS is enabled) so we can toggle it open 2. Display as table cell on medium sized screens (!important so it displays even if it's hidden by JS) 3. Display as block for flexbox on larger screens 5. Search area items */ /** Search toggle button 1. Hide when search is visible */ /* ========================================================================== Table ========================================================================== */ /* Table pagination 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom */ /** Footable Responsive table views */ /* Table item states */ /** Utilities loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /* ========================================================================== Utilities ========================================================================== */ /** Adding class three times so we win over most other classes without using !important. Most selectors are max three long e.g.: `.some.longer[css=selector]` will still lose from `.selector.selector.selector` since we load this file last */ /* Just hide the content in a non-accessible way */ /* Hide the content in an accessible way */ /* Show visually-hidden class items */ /* Add bottom-margin to an element */ /* Disable transitions */ /* Don't wrap content */ /* Hide disabled buttons in the toolbar */ /* Remove all margins from an element */ /* Add padding to bottom of the field */ /* Hide the modal holders by default */ /** Shame Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
+*/ /** Items */ /** Fluid item Put at least one fluid item in every scopebar for flexbox to work correctly */ /** Filters 1. Clearfix so we can float individual filters */ /* Individual filter */ /* Filter title */ /* Scopebar label showing how many active filters you have below a filter button */ /** Search 1. Hide by default (when JS is enabled) so we can toggle it open 2. Display as table cell on medium sized screens (!important so it displays even if it's hidden by JS) 3. Display as block for flexbox on larger screens 5. Search area items */ /** Search toggle button 1. Hide when search is visible */ /** Right floating button group */ /* ========================================================================== Table ========================================================================== */ /* Table pagination 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom */ /** Footable Responsive table views */ /* Table item states */ /** Utilities loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /* ========================================================================== Utilities ========================================================================== */ /** Adding class three times so we win over most other classes without using !important. Most selectors are max three long e.g.: `.some.longer[css=selector]` will still lose from `.selector.selector.selector` since we load this file last */ /* Just hide the content in a non-accessible way */ /* Hide the content in an accessible way */ /* Show visually-hidden class items */ /* Add bottom-margin to an element */ /* Disable transitions */ /* Don't wrap content */ /* Hide disabled buttons in the toolbar */ /* Remove all margins from an element */ /* Add padding to bottom of the field */ /* Hide the modal holders by default */ /** Shame Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
 
 .koowa, .koowa *, .koowa *:before, .koowa *:after { box-sizing: border-box; }
 
@@ -1955,6 +1957,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-component, .k-flexboxlegacy .koowa .k-component { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
 
+.k-is-resizing .koowa .k-component { overflow: hidden; }
+
 .koowa .k-content { position: relative; /* 1 */ z-index: 2; /* 1 */ background: white; /* 2 */ -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; /* 3 */ /* Faking flexbox on older browsers by using table styling */ /* RTL */ /** When flexbox is in use 1. Reset width needed for table 2. Set overflow for breadcrumbs to properly work */ }
 
 @media screen and (min-width: 768px) { .koowa .k-content { display: table-cell; width: 100%; } }
@@ -1963,25 +1967,27 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-content, .k-flexboxlegacy .koowa .k-content { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; width: auto; /* 1 */ overflow: hidden; /* 2 */ } }
 
-.koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(270px, 0); -ms-transform: translate(270px, 0); transform: translate(270px, 0); /* 1 */ }
+.koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(270px, 0); transform: translate(270px, 0); /* 1 */ }
 
-@media screen and (min-width: 768px) { .koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ } }
+@media screen and (min-width: 768px) { .koowa .show-left-menu .k-content, .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ } }
 
-.koowa--rtl.koowa .show-left-menu .k-content, .koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(-270px, 0); -ms-transform: translate(-270px, 0); transform: translate(-270px, 0); }
+.koowa--rtl.koowa .show-left-menu .k-content, .koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(-270px, 0); transform: translate(-270px, 0); }
 
-@media screen and (min-width: 768px) { .koowa--rtl.koowa .show-left-menu .k-content, .koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
+@media screen and (min-width: 768px) { .koowa--rtl.koowa .show-left-menu .k-content, .koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); } }
 
-.koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-270px, 0); -ms-transform: translate(-270px, 0); transform: translate(-270px, 0); /* 2 */ }
+.koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-270px, 0); transform: translate(-270px, 0); /* 2 */ }
 
-@media screen and (min-width: 768px) { .koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ } }
+@media screen and (min-width: 768px) { .koowa .show-right-menu .k-content, .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ } }
 
-.koowa--rtl.koowa .show-right-menu .k-content, .koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(270px, 0); -ms-transform: translate(270px, 0); transform: translate(270px, 0); }
+.koowa--rtl.koowa .show-right-menu .k-content, .koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(270px, 0); transform: translate(270px, 0); }
 
-@media screen and (min-width: 768px) { .koowa--rtl.koowa .show-right-menu .k-content, .koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
+@media screen and (min-width: 768px) { .koowa--rtl.koowa .show-right-menu .k-content, .koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); } }
 
 .koowa .opened--left .k-content, .koowa .opened--right .k-content { overflow: hidden; }
 
 @media screen and (min-width: 768px) { .koowa .opened--left .k-content, .koowa .opened--right .k-content { overflow: auto; /* 3 */ } }
+
+.k-is-resizing .koowa .opened--left .k-content, .k-is-resizing .koowa .opened--right .k-content { overflow: hidden; }
 
 .koowa .k-off-canvas-overlay { position: absolute; /* 1 */ top: 0; /* 1 */ right: 0; /* 1 */ bottom: 0; /* 1 */ left: 0; /* 1 */ z-index: -1; /* 2 */ display: block; opacity: 0; /* 3 */ content: " "; background: black; -webkit-transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: opacity 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
 
@@ -1997,21 +2003,21 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 .koowa--rtl.koowa .k-content-wrapper { direction: rtl; }
 
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-content-wrapper, .k-flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: hidden; border-bottom: none; } }
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-content-wrapper, .k-flexboxlegacy .koowa .k-content-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; border-bottom: none; } }
 
 .koowa .k-form-layout { margin: 0; background: #fafafa; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-form-layout, .k-flexboxlegacy .koowa .k-form-layout { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
 
-.koowa .k-form--front { background: #333; }
+.k-is-resizing .koowa .k-form-layout { overflow: hidden; }
 
-.koowa .k-form--front .k-content { background: #333; }
+.k-template { background: #333; padding: 65px 10px 30px; height: auto; max-height: none; }
 
-.koowa .k-form--front .k-toolbar { max-width: 1024px; margin: 13px auto 0; }
+.k-template .koowa-container { margin: 0 auto; max-width: 1020px; height: 100%; }
 
-.koowa .k-form--front .k-content .k-component { background: #333; }
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .k-template .koowa, .k-flexboxlegacy .k-template .koowa, .k-flexbox .k-template .koowa .k-wrapper, .k-flexboxlegacy .k-template .koowa .k-wrapper, .k-flexbox .k-template .koowa .k-content-wrapper, .k-flexboxlegacy .k-template .koowa .k-content-wrapper, .k-flexbox .k-template .koowa .k-content, .k-flexboxlegacy .k-template .koowa .k-content, .k-flexbox .k-template .koowa .k-component, .k-flexboxlegacy .k-template .koowa .k-component, .k-flexbox .k-template .koowa .k-form-layout, .k-flexboxlegacy .k-template .koowa .k-form-layout { overflow: visible; height: auto; max-height: none; display: block; } }
 
-.koowa .k-form--front .k-container { background: white; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5); }
+.k-template .k-toolbar { position: fixed; z-index: 999; top: 0; left: auto; right: auto; width: 100%; margin: 0 auto; float: none; border-top: 15px solid #333; max-width: 1020px; }
 
 .koowa .k-container { overflow: hidden; width: 100%; margin: 0 auto; padding: 20px; /* When flexbox is in use */ }
 
@@ -2020,6 +2026,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 .koowa .k-container:after { clear: both; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-container, .k-flexboxlegacy .koowa .k-container { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
+
+.k-is-resizing .koowa .k-container { overflow: hidden; }
 
 .koowa .k-container__main { margin-bottom: 20px; }
 
@@ -2067,6 +2075,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-list-layout, .k-flexboxlegacy .koowa .k-list-layout { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; overflow: auto; } }
 
+.k-is-resizing .koowa .k-list-layout { overflow: hidden; }
+
 .koowa .k-mobile-title { background: #e1e1e1; border-bottom: 1px solid #c2c2c2; padding: 7px; }
 
 .koowa .k-mobile-title .k-heading { margin: 0; font-size: 21px; line-height: 32px; }
@@ -2104,6 +2114,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 .koowa .overflowing--left.js-is-hidden { margin-left: -20px; }
 
 .koowa .k-sidebar, .koowa .k-sidebar-right { position: relative; overflow: auto; -webkit-overflow-scrolling: touch; /* Faking flexbox on older browsers by using table styling */ /* Larger sidebar when space is available */ /* When JavaScript is enabled */ /* When flexbox is in use */ }
+
+.k-is-resizing .koowa .k-sidebar, .k-is-resizing .koowa .k-sidebar-right { overflow: hidden; }
 
 @media screen and (min-width: 768px) { .koowa .k-sidebar, .koowa .k-sidebar-right { min-width: 210px; width: 210px; max-width: 210px; display: table-cell; vertical-align: top; } }
 
@@ -2155,6 +2167,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-sidebar__item--overflow, .k-flexboxlegacy .koowa .k-sidebar__item--overflow { -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; } }
 
+.k-is-resizing .koowa .k-sidebar__item--overflow { overflow: hidden; }
+
 .koowa .k-sidebar__item--overflow ~ [class^="overflowing"] { color: #eeeeee; }
 
 .koowa .k-titlebar { border-bottom: 1px solid #cdcdcd; position: relative; /* 1 */ z-index: 2; /* 1 */ display: table; width: 100%; background: #ececec; /* 2 */ color: #333333; -webkit-transition: -webkit-transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: transform 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; /* 3 */ /** Create custom 'overlay' for off canvas sidebar 1. Overlay over bottom border 2. Hide with negative z-index and opacity: 0 3. Give it a transition 4. Do not display when screen is wide enough */ position: relative; /* When flexbox is in use */ }
@@ -2165,19 +2179,19 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-titlebar, .k-flexboxlegacy .koowa .k-titlebar { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
-.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(270px, 0); -ms-transform: translate(270px, 0); transform: translate(270px, 0); /* 1 */ }
+.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(270px, 0); transform: translate(270px, 0); /* 1 */ }
 
-.koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(-270px, 0); -ms-transform: translate(-270px, 0); transform: translate(-270px, 0); }
+.koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(-270px, 0); transform: translate(-270px, 0); }
 
-@media screen and (min-width: 768px) { .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ }
-  .koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
+@media screen and (min-width: 768px) { .koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ }
+  .koowa--rtl.koowa .show-left-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); } }
 
-.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-270px, 0); -ms-transform: translate(-270px, 0); transform: translate(-270px, 0); /* 2 */ }
+.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(-270px, 0); transform: translate(-270px, 0); /* 2 */ }
 
-.koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(270px, 0); -ms-transform: translate(270px, 0); transform: translate(270px, 0); /* 2 */ }
+.koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(270px, 0); transform: translate(270px, 0); /* 2 */ }
 
-@media screen and (min-width: 768px) { .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ }
-  .koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); -ms-transform: translate(0, 0); transform: translate(0, 0); } }
+@media screen and (min-width: 768px) { .koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); /* 3 */ }
+  .koowa--rtl.koowa .show-right-menu .k-titlebar { -webkit-transform: translate(0, 0); transform: translate(0, 0); } }
 
 .koowa .show-left-menu .k-titlebar:before, .koowa .show-right-menu .k-titlebar:before { opacity: .75; /* 1 */ }
 
@@ -2223,6 +2237,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 .koowa .opened--left, .koowa .opened--right { overflow: hidden; /* 1 */ }
 
 @media screen and (min-width: 768px) { .koowa .opened--left, .koowa .opened--right { overflow: auto; /* 2 */ } }
+
+.k-is-resizing .koowa .opened--left, .k-is-resizing .koowa .opened--right { overflow: hidden; }
 
 .koowa a { color: #333333; }
 
@@ -2410,6 +2426,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .floatThead-wrapper, .k-flexboxlegacy .koowa .floatThead-wrapper { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; overflow: auto; } }
 
+.k-is-resizing .koowa .floatThead-wrapper { overflow: hidden; }
+
 .koowa .k-form-block { border: 1px solid #e0e0e0; background: #ffffff; }
 
 .koowa .k-form-block__header { border-bottom: 1px solid #d2d2d2; padding: 7px; background: #f1f1f1; font-weight: 700; }
@@ -2442,13 +2460,13 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 .koowa--rtl.koowa #right-menu-toggle { right: auto; left: 0; }
 
-.koowa .show-left-menu .off-canvas-menu-toggle .bar1, .koowa .show-right-menu .off-canvas-menu-toggle .bar1 { top: 15px; -webkit-transform: rotate(135deg); -ms-transform: rotate(135deg); transform: rotate(135deg); }
+.koowa .show-left-menu .off-canvas-menu-toggle .bar1, .koowa .show-right-menu .off-canvas-menu-toggle .bar1 { top: 15px; -webkit-transform: rotate(135deg); transform: rotate(135deg); }
 
-.koowa .show-left-menu .off-canvas-menu-toggle .bar2, .koowa .show-right-menu .off-canvas-menu-toggle .bar2 { opacity: 0; -webkit-transform: translate(-100%, 0); -ms-transform: translate(-100%, 0); transform: translate(-100%, 0); }
+.koowa .show-left-menu .off-canvas-menu-toggle .bar2, .koowa .show-right-menu .off-canvas-menu-toggle .bar2 { opacity: 0; -webkit-transform: translate(-100%, 0); transform: translate(-100%, 0); }
 
-.koowa--rtl.koowa .show-left-menu .off-canvas-menu-toggle .bar2, .koowa .show-right-menu .off-canvas-menu-toggle .bar2 { -webkit-transform: translate(100%, 0); -ms-transform: translate(100%, 0); transform: translate(100%, 0); }
+.koowa--rtl.koowa .show-left-menu .off-canvas-menu-toggle .bar2, .koowa .show-right-menu .off-canvas-menu-toggle .bar2 { -webkit-transform: translate(100%, 0); transform: translate(100%, 0); }
 
-.koowa .show-left-menu .off-canvas-menu-toggle .bar3, .koowa .show-right-menu .off-canvas-menu-toggle .bar3 { top: 15px; -webkit-transform: rotate(-135deg); -ms-transform: rotate(-135deg); transform: rotate(-135deg); }
+.koowa .show-left-menu .off-canvas-menu-toggle .bar3, .koowa .show-right-menu .off-canvas-menu-toggle .bar3 { top: 15px; -webkit-transform: rotate(-135deg); transform: rotate(-135deg); }
 
 .koowa .k-heading { font-size: 21px; line-height: 32px; margin: 0 0 20px; }
 
@@ -2532,9 +2550,9 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 .koowa .jqtree-toggler:hover:before, .koowa .jqtree-toggler:focus:before { border-top-color: black; }
 
-.koowa .jqtree-toggler.jqtree-closed:before { -webkit-transform: rotate(-90deg); -ms-transform: rotate(-90deg); transform: rotate(-90deg); }
+.koowa .jqtree-toggler.jqtree-closed:before { -webkit-transform: rotate(-90deg); transform: rotate(-90deg); }
 
-.koowa--rtl.koowa .jqtree-toggler.jqtree-closed:before { -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); }
+.koowa--rtl.koowa .jqtree-toggler.jqtree-closed:before { -webkit-transform: rotate(90deg); transform: rotate(90deg); }
 
 .koowa .jqtree_common.active > .jqtree-element { color: #3071a9; font-weight: 700; }
 
@@ -2599,6 +2617,8 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 .k-checked .koowa .k-option-list input:focus ~ .faux-focus { opacity: 1; /* 3 */ visibility: visible; /* 3 */ }
 
 .koowa .k-breadcrumb { border-bottom: 1px solid #d2d2d2; overflow: auto; /* 1 */ background: #f1f1f1; color: #333333; }
+
+.k-is-resizing .koowa .k-breadcrumb { overflow: hidden; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-breadcrumb, .k-flexboxlegacy .koowa .k-breadcrumb { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -2770,7 +2790,7 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 @media screen and (min-width: 600px) { .koowa .k-scopebar__item--filter__icon { margin-left: 4px; }
   .koowa--rtl.koowa .k-scopebar__item--filter__icon { margin-left: 0; margin-right: 4px; } }
 
-.koowa .k-scopebar__item__label { position: absolute; z-index: 9; top: 2px; right: 2px; min-width: 15px; height: 15px; border-radius: 50%; background: #d35400; color: white; font-size: 10px; line-height: 15px; text-align: center; font-weight: 700; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); }
+.koowa .k-scopebar__item__label { position: absolute; z-index: 9; top: 2px; right: 2px; min-width: 15px; height: 15px; border-radius: 50%; background: #d35400; color: white; font-size: 10px; line-height: 15px; text-align: center; font-weight: 700; box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1); pointer-events: none; }
 
 .koowa--rtl.koowa .k-scopebar__item__label { right: auto; left: 2px; }
 
@@ -2852,19 +2872,33 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 @media screen and (min-width: 1024px) { .k-js-enabled .koowa .k-toggle-search { display: none; } }
 
+.koowa .k-scopebar__group--right { float: right; }
+
+.koowa--rtl.koowa .k-scopebar__group--right { float: left; }
+
+.koowa .k-scopebar__group--right__item { float: left; height: 39px; }
+
+.koowa--rtl.koowa .k-scopebar__group--right__item { float: right; }
+
 .koowa .k-table-container { /* Table container */ /** Cells 1. Position checkbox 2. Remove default margin and set negative top margin to visually align vertically */ /** Head 1. Don't set a vertical padding on table headers. Set padding on table heading children We do this so <a> elements are fully clickable for sorting 2. Don't use long header titles since they won't be wrapped 3. Whole <th> should be clickable 4. Set padding here */ /** Body 1. Small extra info below title display:block to display below title */ /* Hover background */ /** Table classes Classes to add to table cells */ /** Table levels Indented levels for a clearer overview */ /** Selected When rows are selected they are highlighted 1. Coloring Links and extra elements that don't color automatically with it's parent */ /* Sub headings */ /** Sorting arrows 1. Display table to line them up horizontally while: - We keep everything vertically centered - We keep it all on one line but don't have to deal with inline-block spacing trouble 2. Set base line-height to 16px to keep it all vertically centered 3. Set min-width to 16px so icons and placeholder have the same width, lining all arrows perfectly below each other 4. Aligning items in center 5. Min-width for text larger to fit 3 digits by default. Icons will line up nice to at least 999 6. Set a little padding for when text item gets 4 digits */ }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-table-container, .k-flexboxlegacy .koowa .k-table-container { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; overflow: auto; } }
 
+.k-is-resizing .koowa .k-table-container { overflow: hidden; }
+
 .koowa .k-table-container .k-table { overflow: auto; background: #ffffff; min-height: 180px; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-table-container .k-table, .k-flexboxlegacy .koowa .k-table-container .k-table { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; -webkit-box-flex: 0; -webkit-flex: 0 1 auto; -ms-flex: 0 1 auto; flex: 0 1 auto; background: #ffffff; } }
+
+.k-is-resizing .koowa .k-table-container .k-table { overflow: hidden; }
 
 .koowa .k-table-container table { width: 100%; text-align: left; border-collapse: separate; }
 
 .koowa--rtl.koowa .k-table-container table { text-align: right; }
 
 @media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-table-container table, .k-flexboxlegacy .koowa .k-table-container table { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; } }
+
+.k-is-resizing .koowa .k-table-container table { overflow: hidden; }
 
 .koowa .k-table-container th, .koowa .k-table-container td { position: relative; height: 39px; vertical-align: middle; text-align: left; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
 
@@ -3046,13 +3080,13 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 
 .koowa--rtl.koowa .footable.breakpoint .footable-toggle { margin-right: 0; margin-left: 10px; }
 
-.koowa .footable.breakpoint .footable-toggle:after { content: ""; display: inline-block; width: 10px; height: 10px; margin: 3px; color: #b3b3b3; font-size: 10px; line-height: 1.3em; -webkit-transform: rotate(-90deg); -ms-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
+.koowa .footable.breakpoint .footable-toggle:after { content: ""; display: inline-block; width: 10px; height: 10px; margin: 3px; color: #b3b3b3; font-size: 10px; line-height: 1.3em; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
 
 .koowa .footable.breakpoint tr.selected .footable-toggle { border-color: white; }
 
 .koowa .footable.breakpoint tr.selected .footable-toggle:after { color: white; }
 
-.koowa .footable.breakpoint tr.footable-detail-show .footable-toggle:after { -webkit-transform: rotate(0deg); -ms-transform: rotate(0deg); transform: rotate(0deg); }
+.koowa .footable.breakpoint tr.footable-detail-show .footable-toggle:after { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
 
 .koowa .footable.breakpoint .footable-row-detail-row { margin-bottom: 10px; }
 
@@ -3109,7 +3143,7 @@ body { min-height: 100%; height: 100%; padding: 0; margin: 0; /* Setup flexbox *
 .koowa .k-quick-filters .k-sidebar__header { position: relative; }
 
 @media (min-height: 460px) { .k-js-enabled .koowa .k-quick-filters .k-sidebar__toggle:after { content: ""; background: white; border: 1px solid #ddd; border-radius: 10px; width: 20px; height: 20px; position: absolute; top: 20px; right: 20px; display: block; text-align: center; line-height: 20px; vertical-align: middle; font-size: 10px; cursor: pointer; -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
-  .k-js-enabled .koowa .k-quick-filters .k-sidebar__toggle.is-active:after { -webkit-transform: rotate(180deg); -ms-transform: rotate(180deg); transform: rotate(180deg); } }
+  .k-js-enabled .koowa .k-quick-filters .k-sidebar__toggle.is-active:after { -webkit-transform: rotate(180deg); transform: rotate(180deg); } }
 
 @media (min-height: 550px) { .k-js-enabled .koowa .k-quick-filters .k-sidebar__toggle { display: none; } }
 

@@ -31,6 +31,10 @@
   @include flexbox {
     flex: 0 0 auto;
   }
+
+  @include resizing {
+    overflow: hidden;
+  }
 }
 
 

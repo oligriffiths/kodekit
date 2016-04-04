@@ -107,6 +107,10 @@
     @include breakpoint($desktop) {
       overflow: auto; /* 3 */
     }
+
+    @include resizing {
+      overflow: hidden;
+    }
   }
 }
 

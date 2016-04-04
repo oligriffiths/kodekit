@@ -18,4 +18,8 @@ body {
     flex-direction: column;
     flex: 1 1 auto;
   }
+
+  &.k-resizing {
+    overflow: hidden;
+  }
 }

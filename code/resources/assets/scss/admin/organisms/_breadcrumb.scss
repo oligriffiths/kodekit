@@ -39,6 +39,10 @@
   overflow: auto; /* 1 */
   background: $breadcrumb-background;
   color: $breadcrumb-color;
+
+  @include resizing {
+    overflow: hidden;
+  }
 }
 
 
