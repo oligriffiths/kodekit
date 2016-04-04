@@ -18,7 +18,7 @@
 
 .off-canvas-menu-toggle {
   position: relative;
-  z-index: 3;
+  z-index: 10;
   float: left;
   display: none; /* 1 */
   width: $button-size;

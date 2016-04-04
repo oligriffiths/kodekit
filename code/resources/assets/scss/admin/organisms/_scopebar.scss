@@ -133,6 +133,8 @@
  */
 
 .k-scopebar__item--fluid {
+  @include clearfix;
+
   @include breakpoint($delta) {
     display: table-cell;
     width: 99%;
@@ -216,7 +218,7 @@
 
 .k-scopebar__item__label {
   position: absolute;
-  z-index: 9;
+  z-index: 2;
   top: 2px;
   right: 2px;
   min-width: 15px;
@@ -457,6 +459,15 @@
   height: $scopebar-size;
 }
 
+.k-scopebar__filter-toggle-wrapper {
+  position: relative;
+
+  .k-scopebar__item__label {
+    @include breakpoint($beta) {
+      display: none;
+    }
+  }
+}
 
 
 .k-scopebar__filters-wrapper {
