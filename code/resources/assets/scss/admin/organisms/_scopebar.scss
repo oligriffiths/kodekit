@@ -74,7 +74,7 @@
    */
 
   @include flexbox {
-    flex: 1 0 auto;
+    flex: 0 0 auto;
   }
 
   @include flexbox($horizontal: $delta) {
@@ -151,18 +151,20 @@
  * Filters
  *
  * 1. Clearfix so we can float individual filters
+ * 2. For positioning dropdowns on smaller screens
  */
 
 .k-scopebar__filters {
   @include clearfix; /* 1 */
   @include border(left,$scopebar-border);
+  position: relative; /* 2 */
+  z-index: 2; /* 2 */
 }
 
 
 /* Individual filter */
 
 .k-scopebar__item--filter {
-  position: relative;
   display: block;
   float: left;
   width: auto;
@@ -170,6 +172,10 @@
   @include border(right, #ccc);
   height: $scopebar-size;
   font-size: $scopebar-filter-font-size;
+
+  @include breakpoint($beta) {
+    position: relative;
+  }
 
   @include rtl {
     border-right: none;

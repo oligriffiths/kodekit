@@ -1371,7 +1371,7 @@ body.k-resizing { overflow: hidden; }
     </div>
 
 </div><!-- .k-scopebar -->
-*/ /** Items */ /** Fluid item Put at least one fluid item in every scopebar for flexbox to work correctly */ /** Filters 1. Clearfix so we can float individual filters */ /* Individual filter */ /* Filter title */ /* Scopebar label showing how many active filters you have below a filter button */ /** Search 1. Hide by default (when JS is enabled) so we can toggle it open 2. Display as table cell on medium sized screens (!important so it displays even if it's hidden by JS) 3. Display as block for flexbox on larger screens 5. Search area items */ /** Search toggle button 1. Hide when search is visible */ /** Right floating button group */ /* ========================================================================== Table ========================================================================== */ /* Table pagination 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom */ /** Footable Responsive table views */ /* Table item states */ /** Utilities loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /* ========================================================================== Utilities ========================================================================== */ /** Adding class three times so we win over most other classes without using !important. Most selectors are max three long e.g.: `.some.longer[css=selector]` will still lose from `.selector.selector.selector` since we load this file last */ /* Just hide the content in a non-accessible way */ /* Hide the content in an accessible way */ /* Show visually-hidden class items */ /* Add bottom-margin to an element */ /* Disable transitions */ /* Don't wrap content */ /* Hide disabled buttons in the toolbar */ /* Remove all margins from an element */ /* Add padding to bottom of the field */ /* Hide the modal holders by default */ /** Shame Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
+*/ /** Items */ /** Fluid item Put at least one fluid item in every scopebar for flexbox to work correctly */ /** Filters 1. Clearfix so we can float individual filters 2. For positioning dropdowns on smaller screens */ /* Individual filter */ /* Filter title */ /* Scopebar label showing how many active filters you have below a filter button */ /** Search 1. Hide by default (when JS is enabled) so we can toggle it open 2. Display as table cell on medium sized screens (!important so it displays even if it's hidden by JS) 3. Display as block for flexbox on larger screens 5. Search area items */ /** Search toggle button 1. Hide when search is visible */ /** Right floating button group */ /* ========================================================================== Table ========================================================================== */ /* Table pagination 1. Faking a bottom border, this shadow will disappear when pagination is positioned to bottom */ /** Footable Responsive table views */ /* Table item states */ /** Utilities loading last so we have the biggest chance of 'winning' specificity wars without using !important */ /* ========================================================================== Utilities ========================================================================== */ /** Adding class three times so we win over most other classes without using !important. Most selectors are max three long e.g.: `.some.longer[css=selector]` will still lose from `.selector.selector.selector` since we load this file last */ /* Just hide the content in a non-accessible way */ /* Hide the content in an accessible way */ /* Show visually-hidden class items */ /* Add bottom-margin to an element */ /* Disable transitions */ /* Don't wrap content */ /* Hide disabled buttons in the toolbar */ /* Remove all margins from an element */ /* Add padding to bottom of the field */ /* Hide the modal holders by default */ /** Shame Add styling that has not found a place in the directory structure yet. Ideally this should be moved as fast as possible but at least before shipping */ }
 
 .koowa, .koowa *, .koowa *:before, .koowa *:after { box-sizing: border-box; }
 
@@ -2394,7 +2394,9 @@ body.k-resizing { overflow: hidden; }
 
 .k-appearance.k-checked .koowa--rtl.koowa .k-checkbox-toggle input:checked + label span:after { right: auto; left: 2px; }
 
-.koowa .k-dropdown { position: relative; z-index: 2; overflow: hidden; }
+.koowa .k-dropdown { overflow: hidden; }
+
+@media screen and (min-width: 600px) { .koowa .k-dropdown { position: relative; z-index: 2; } }
 
 .koowa .k-dropdown.is-active { overflow: visible; z-index: 3; }
 
@@ -2402,7 +2404,7 @@ body.k-resizing { overflow: hidden; }
 
 .koowa .k-dropdown.is-active .k-scopebar__item--filter__title { text-decoration: underline; }
 
-.koowa .k-dropdown__button { border: none; background: transparent; margin: 0; padding: 0 6px; }
+.koowa .k-dropdown__button { position: relative; border: none; background: transparent; margin: 0; padding: 0 6px; }
 
 .koowa .k-dropdown__button:hover, .koowa .k-dropdown__button:focus { background: #e8e8e8; }
 
@@ -2410,9 +2412,10 @@ body.k-resizing { overflow: hidden; }
 
 .koowa .is-active .k-dropdown__button { background: #e8e8e8; }
 
-.koowa .k-dropdown__body { position: absolute; left: -1px; visibility: hidden; background: #ffffff; border: 1px solid #e0e0e0; color: #333333; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15); border-radius: 0 0 5px 5px; min-width: 300px; }
+.koowa .k-dropdown__body { position: absolute; visibility: hidden; background: #ffffff; border: 1px solid #e0e0e0; color: #333333; box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15); border-radius: 0 0 5px 5px; min-width: 200px; left: 0; right: 0; top: 100%; }
 
-.koowa--rtl.koowa .k-dropdown__body { left: auto; right: -1px; }
+@media screen and (min-width: 600px) { .koowa .k-dropdown__body { min-width: 300px; right: auto; left: -1px; }
+  .koowa--rtl.koowa .k-dropdown__body { left: auto; right: -1px; } }
 
 .koowa .k-dropdown__body .select2 { min-width: 100%; }
 
@@ -2758,7 +2761,7 @@ body.k-resizing { overflow: hidden; }
 
 @media screen and (min-width: 1024px) { .koowa .k-scopebar { display: table; width: 100%; } }
 
-@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-scopebar, .k-flexboxlegacy .koowa .k-scopebar { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; } }
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-scopebar, .k-flexboxlegacy .koowa .k-scopebar { -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 @media (min-width: 1024px) and (min-height: 460px) { .k-flexbox .koowa .k-scopebar, .k-flexboxlegacy .koowa .k-scopebar { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; width: auto; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
@@ -2773,13 +2776,15 @@ body.k-resizing { overflow: hidden; }
 
 @media (min-width: 1024px) and (min-height: 460px) { .k-flexbox .koowa .k-scopebar__item--fluid, .k-flexboxlegacy .koowa .k-scopebar__item--fluid { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; width: auto; } }
 
-.koowa .k-scopebar__filters { /* 1 */ border-left: 1px solid #d2d2d2; }
+.koowa .k-scopebar__filters { /* 1 */ border-left: 1px solid #d2d2d2; position: relative; /* 2 */ z-index: 2; /* 2 */ }
 
 .koowa .k-scopebar__filters:before, .koowa .k-scopebar__filters:after { display: table; content: " "; }
 
 .koowa .k-scopebar__filters:after { clear: both; }
 
-.koowa .k-scopebar__item--filter { position: relative; display: block; float: left; width: auto; line-height: 39px; border-right: 1px solid #ccc; height: 39px; font-size: 12px; }
+.koowa .k-scopebar__item--filter { display: block; float: left; width: auto; line-height: 39px; border-right: 1px solid #ccc; height: 39px; font-size: 12px; }
+
+@media screen and (min-width: 600px) { .koowa .k-scopebar__item--filter { position: relative; } }
 
 .koowa--rtl.koowa .k-scopebar__item--filter { border-right: none; border-left: 1px solid #ccc; float: right; }
 
