@@ -2758,6 +2758,8 @@ body.k-resizing { overflow: hidden; }
 
 @media screen and (min-width: 1024px) { .koowa .k-scopebar { display: table; width: 100%; } }
 
+@media (min-width: 300px) and (min-height: 460px) { .k-flexbox .koowa .k-scopebar, .k-flexboxlegacy .koowa .k-scopebar { -webkit-box-flex: 1; -webkit-flex: 1 0 auto; -ms-flex: 1 0 auto; flex: 1 0 auto; } }
+
 @media (min-width: 1024px) and (min-height: 460px) { .k-flexbox .koowa .k-scopebar, .k-flexboxlegacy .koowa .k-scopebar { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; width: auto; -webkit-box-flex: 0; -webkit-flex: 0 0 auto; -ms-flex: 0 0 auto; flex: 0 0 auto; } }
 
 .koowa .k-scopebar .k-breadcrumb { -webkit-box-flex: 1; -webkit-flex: 1 1 auto; -ms-flex: 1 1 auto; flex: 1 1 auto; }
@@ -2852,9 +2854,9 @@ body.k-resizing { overflow: hidden; }
 
 .koowa .k-scopebar__filter-toggle-wrapper, .koowa .k-scopebar__search-toggle-wrapper { width: 39px; height: 39px; }
 
-.koowa .k-scopebar__filters-wrapper { display: table; width: 100%; }
+.koowa .k-scopebar__filters-wrapper { display: table; width: 100%; height: auto; }
 
-.koowa .k-scopebar__filter-toggle-wrapper, .koowa .k-scopebar__filters-content, .koowa .k-scopebar__search-toggle-wrapper { display: table-cell; }
+.koowa .k-scopebar__filter-toggle-wrapper, .koowa .k-scopebar__filters-content, .koowa .k-scopebar__search-toggle-wrapper { display: table-cell; vertical-align: top; }
 
 .k-js-enabled .koowa .k-scopebar__filters { display: none; }
 
@@ -2868,9 +2870,11 @@ body.k-resizing { overflow: hidden; }
 
 @media screen and (min-width: 600px) { .k-js-enabled .koowa .k-toggle-filters-icon { display: block; } }
 
-.k-js-enabled .koowa .k-toggle-search { display: block; }
+.k-js-enabled .koowa .k-toggle-search { display: block; float: right; }
 
 @media screen and (min-width: 1024px) { .k-js-enabled .koowa .k-toggle-search { display: none; } }
+
+.koowa--rtl.k-js-enabled .koowa .k-toggle-search { float: left; }
 
 .koowa .k-scopebar__group--right { float: right; }
 
@@ -3076,11 +3080,11 @@ body.k-resizing { overflow: hidden; }
 
 .koowa--rtl.koowa .k-table-pagination .k-pagination-pages { float: left; }
 
-.koowa .footable.breakpoint .footable-toggle { display: inline-block; width: 20px; height: 20px; border: 2px solid #b3b3b3; border-radius: 50%; margin-right: 10px; }
+.koowa .footable.breakpoint .footable-toggle { display: inline-block; width: 20px; height: 20px; line-height: 18px; border: 1px solid #b3b3b3; border-radius: 50%; margin-right: 10px; text-align: center; }
 
 .koowa--rtl.koowa .footable.breakpoint .footable-toggle { margin-right: 0; margin-left: 10px; }
 
-.koowa .footable.breakpoint .footable-toggle:after { content: ""; display: inline-block; width: 10px; height: 10px; margin: 3px; color: #b3b3b3; font-size: 10px; line-height: 1.3em; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
+.koowa .footable.breakpoint .footable-toggle:after { content: ""; display: inline-block; width: 10px; height: 10px; margin: 4px; color: #b3b3b3; font-size: 10px; line-height: 1.3em; -webkit-transform: rotate(-90deg); transform: rotate(-90deg); -webkit-transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); transition: all 180ms cubic-bezier(0.2, 0.57, 0.44, 0.83); -webkit-backface-visibility: hidden; }
 
 .koowa .footable.breakpoint tr.selected .footable-toggle { border-color: white; }
 
@@ -3148,3 +3152,8 @@ body.k-resizing { overflow: hidden; }
 @media (min-height: 550px) { .k-js-enabled .koowa .k-quick-filters .k-sidebar__toggle { display: none; } }
 
 .k-js-enabled .koowa--rtl.koowa .k-quick-filters .k-sidebar__toggle { right: auto; left: 20px; }
+
+/* ========================================================================== Fixes ========================================================================== */
+/** iOs autozzom fix iOs zooms automatically when an input or select is focused Making the font size 16px fixes this behaviour since iOs believes the input is readable enough */
+/** Set font-size to selectable elements to 16px to avoid iOs to zoom automatically This way the user is still able to zoom manually Acknowledgements: Doesn't work within framed content. The whole body will zoom regardless */
+@media screen and (-webkit-min-device-pixel-ratio: 0) { select, textarea, input { font-size: 16px !important; } }

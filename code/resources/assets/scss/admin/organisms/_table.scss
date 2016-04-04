@@ -451,9 +451,11 @@
     display: inline-block;
     width: $footable-toggle-size;
     height: $footable-toggle-size;
+    line-height: ($footable-toggle-size - ($footable-toggle-border-size * 2));
     border: $footable-toggle-border-size solid $footable-toggle-color;
     border-radius: 50%;
     margin-right: $table-cell-spacing-horizontal;
+    text-align: center;
 
     @include rtl {
       margin-right: 0;

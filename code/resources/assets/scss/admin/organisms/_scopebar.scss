@@ -73,6 +73,10 @@
    * When flexbox is in use
    */
 
+  @include flexbox {
+    flex: 1 0 auto;
+  }
+
   @include flexbox($horizontal: $delta) {
     display: flex;
     width: auto;
@@ -449,18 +453,17 @@
 
 
 
-
-
-
 .k-scopebar__filters-wrapper {
   display: table;
   width: 100%;
+  height: auto;
 }
 
 .k-scopebar__filter-toggle-wrapper,
 .k-scopebar__filters-content,
 .k-scopebar__search-toggle-wrapper {
   display: table-cell;
+  vertical-align: top;
 }
 
 .k-scopebar__filters {
@@ -497,9 +500,14 @@
 .k-toggle-search {
   @include js-enabled {
     display: block;
+    float: right;
 
     @include breakpoint($delta) {
       display: none;
+    }
+
+    @include rtl {
+      float: left;
     }
   }
 }

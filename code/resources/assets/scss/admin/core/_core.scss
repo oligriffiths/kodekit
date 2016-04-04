@@ -143,3 +143,17 @@
   @import "../utilities/shame";
 
 }
+
+
+/* ==========================================================================
+   Fixes
+   ========================================================================== */
+
+/**
+ * iOs autozzom fix
+ *
+ * iOs zooms automatically when an input or select is focused
+ * Making the font size 16px fixes this behaviour since iOs believes the input is readable enough
+ */
+
+@import "../utilities/ios-autozoom-fix";

@@ -1,0 +1,15 @@
+/**
+ * Set font-size to selectable elements to 16px to avoid iOs to zoom automatically
+ * This way the user is still able to zoom manually
+ *
+ * Acknowledgements:
+ * Doesn't work within framed content. The whole body will zoom regardless
+ */
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
+}
