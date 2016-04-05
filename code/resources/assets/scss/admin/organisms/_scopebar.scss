@@ -471,7 +471,6 @@
   }
 }
 
-
 .k-scopebar__filters-wrapper {
   display: table;
   width: 100%;
@@ -483,6 +482,12 @@
 .k-scopebar__search-toggle-wrapper {
   display: table-cell;
   vertical-align: top;
+}
+
+.k-scopebar__search-toggle-wrapper {
+  @include breakpoint($delta) {
+    display: none;
+  }
 }
 
 .k-scopebar__filters-content {
@@ -526,10 +531,6 @@
   @include js-enabled {
     display: block;
     float: right;
-
-    @include breakpoint($delta) {
-      display: none;
-    }
 
     @include rtl {
       float: left;
