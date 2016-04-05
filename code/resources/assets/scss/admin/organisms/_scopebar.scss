@@ -456,7 +456,9 @@
 .k-scopebar__filter-toggle-wrapper,
 .k-scopebar__search-toggle-wrapper {
   width: $scopebar-size;
+  max-width: $scopebar-size;
   height: $scopebar-size;
+  white-space: nowrap;
 }
 
 .k-scopebar__filter-toggle-wrapper {
@@ -481,6 +483,12 @@
 .k-scopebar__search-toggle-wrapper {
   display: table-cell;
   vertical-align: top;
+}
+
+.k-scopebar__filters-content {
+  min-height: $scopebar-size;
+  min-width: $scopebar-size;
+  width: 99%;
 }
 
 .k-scopebar__filters {
